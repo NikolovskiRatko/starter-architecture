@@ -3,7 +3,7 @@ Starter Architecture is a custom web application software project that follows a
 
 ## Folder Structure
 
-###1 - Development Environment
+### 1 - Development Environment
 #### Folder: dev_env
 
 Approach: Containerization
@@ -15,7 +15,7 @@ Syntax: YAML
 Language: Go
 
 
-###2 - Back-end API
+### 2 - Back-end API
 #### Folder: website
 
 Approach: S.O.L.I.D Principles
@@ -27,7 +27,7 @@ Syntax: Object-Oriented design (OOD)
 Language: PHP
 
 
-###3 - Front-end Single Page Application
+### 3 - Front-end Single Page Application
 #### Folder: frontend
 
 Approach: Composition API
@@ -38,7 +38,7 @@ Syntax: Typescript
 
 Language: Javascript
 
-###4 - Server Provisioning
+### 4 - Server Provisioning
 #### Folder: server
 
 Approach: Configuration Management
