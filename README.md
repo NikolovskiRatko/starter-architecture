@@ -4,7 +4,7 @@ Starter Architecture is a custom web application software project that follows a
 ## Folder Structure
 
 ### 1 - Development Environment
-#### Folder: dev_env
+#### Folder: infrastructure/dev_env
 
 Approach: Containerization
 
@@ -16,7 +16,7 @@ Language: Go
 
 
 ### 2 - Back-end API
-#### Folder: website
+#### Folder: server/api
 
 Approach: S.O.L.I.D Principles
 
@@ -28,7 +28,7 @@ Language: PHP
 
 
 ### 3 - Front-end Single Page Application
-#### Folder: frontend
+#### Folder: client/admin-panel
 
 Approach: Composition API
 
@@ -39,7 +39,7 @@ Syntax: Typescript
 Language: Javascript
 
 ### 4 - Server Provisioning
-#### Folder: server
+#### Folder: infrastructure/host
 
 Approach: Configuration Management
 
@@ -49,6 +49,27 @@ Syntax: YAML
 
 Language: Python 
 
+### 5 - Continuous Integration
+#### Folder: infrastructure/integration
+
+Approach: Continuous Delivery
+
+Technologies: Jenkins
+
+Syntax: Jenkinsfile
+
+Language: Groovy
+
+### 6 - Release Management
+#### Folder: infrastructure/integration
+
+Approach: Application Deployment
+
+Technologies: Ansible
+
+Syntax: YAML
+
+Language: Python
 
 ## Summary
 
