@@ -1,0 +1,6 @@
+/.env
+/.vscode
+/.idea
+/data/*
+.DS_Store
+/logs/*

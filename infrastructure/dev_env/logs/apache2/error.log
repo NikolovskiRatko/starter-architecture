@@ -1,0 +1,16 @@
+AH00112: Warning: DocumentRoot [/var/www/html/starter/public/] does not exist
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.3. Set the 'ServerName' directive globally to suppress this message
+[Mon Jul 17 10:39:42.390918 2023] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.57 (Debian) PHP/8.2.8 configured -- resuming normal operations
+[Mon Jul 17 10:39:42.390998 2023] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Mon Jul 17 10:41:22.061830 2023] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.21.0.3. Set the 'ServerName' directive globally to suppress this message
+[Mon Jul 17 10:48:24.833971 2023] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.57 (Debian) PHP/8.2.8 configured -- resuming normal operations
+[Mon Jul 17 10:48:24.834004 2023] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Mon Jul 17 10:51:53.497044 2023] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.21.0.4. Set the 'ServerName' directive globally to suppress this message
+[Mon Jul 17 10:53:13.638560 2023] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.57 (Debian) PHP/8.2.8 configured -- resuming normal operations
+[Mon Jul 17 10:53:13.638592 2023] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Mon Jul 17 10:58:10.468431 2023] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.22.0.4. Set the 'ServerName' directive globally to suppress this message
+[Mon Jul 17 11:07:54.408948 2023] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.57 (Debian) PHP/8.2.8 configured -- resuming normal operations
+[Mon Jul 17 11:07:54.408996 2023] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
