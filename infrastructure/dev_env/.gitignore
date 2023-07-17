@@ -1,6 +1,6 @@
 /.env
 /.vscode
 /.idea
-/data
+data/
 .DS_Store
-/logs
+logs/
