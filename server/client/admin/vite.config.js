@@ -6,7 +6,7 @@ import vue from '@vitejs/plugin-vue';
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['app.ts'],
+            input: ['src/app.ts'],
             refresh: true,
         }),
         vue({
@@ -31,5 +31,10 @@ export default defineConfig({
     build: {
         outDir: path.resolve(__dirname, './../../api/public/build'),
         emptyOutDir: true,
+    },
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, './src')
+        },
     },
 });
