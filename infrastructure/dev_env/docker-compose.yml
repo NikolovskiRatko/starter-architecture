@@ -62,7 +62,7 @@ services:
     networks:
       - main
     volumes:
-      - ${NODE_ROOT-./www}:/usr/app
+      - ${DOCUMENT_ROOT-./www}:/usr/app
     working_dir: /usr/app
     environment:
       HOST: 0.0.0.0

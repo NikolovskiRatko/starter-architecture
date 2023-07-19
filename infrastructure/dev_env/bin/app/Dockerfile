@@ -19,6 +19,7 @@ RUN apt-get -y update && \
         libpq-dev \
         libmemcached-dev \
         curl \
+        htop \
         libsqlite3-dev \
         libsqlite3-0 && \
     apt-get -y --no-install-recommends install default-mysql-client \

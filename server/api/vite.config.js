@@ -4,7 +4,10 @@ import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
     plugins: [
-        laravel(['./../../client/admin-panel/app.ts']),
+        laravel({
+            input: ['./../client/admin/app.ts'],
+            refresh: true,
+        }),
         vue({
             template: {
                 transformAssetUrls: {
@@ -26,7 +29,7 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            '@': './../../client/admin-panel/app.ts',
+            '@': './../client/admin',
         },
     },
 });
