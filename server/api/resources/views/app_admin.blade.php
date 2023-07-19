@@ -38,7 +38,7 @@
     <meta property="og:description" content="">
     <link href="" rel="image_src">
 
-    @vite('../client/admin/app.ts')
+    @vite('app.ts')
 
 {{--    <script type="text/javascript">--}}
 {{--        var baseUrl = "{{url('/api')}}";--}}
