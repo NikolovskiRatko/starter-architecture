@@ -26,6 +26,6 @@
 //    return view('app_admin');
 //})->where('any', '.*');
 
-Route::get('/{any}', function () {
-    return view('app_admin');
-})->where('any', '.*');
+use App\Http\Controllers\HomeController;
+
+Route::get('/{any}', [HomeController::class,'index'])->where('any', '.*');
