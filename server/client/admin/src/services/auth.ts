@@ -26,8 +26,7 @@ const auth = createAuth({
         }
     },
     options: {
-        rolesKey: 'permissions_array',
-        notFoundRedirect: {name: 'user-account'},
+        rolesKey: 'permissions',
     }
 })
 

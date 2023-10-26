@@ -1,54 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title>Admin Panel</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta id="viewporthackid" name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{csrf_token()}}">
-    <meta name="application-name" content="{{config('app.name', 'Laravel')}}">
-    <meta name="apple-mobile-web-app-title" content="{{config('app.name', 'Laravel')}}">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <head>
+        <!-- Character Set Declaration for ensuring the correct character encoding -->
+        <meta charset="UTF-8">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+        <!-- Browser Compatibility to ensure proper rendering in Internet Explorer -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!--TODO: Load this font with Yarn-->
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+        <!-- Responsive Design to make sure the website displays correctly across devices -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{{--    <link rel="shortcut icon" href="{{url('favicon.ico')}}">--}}
-{{--    <link rel="stylesheet" href="{{mix('css/app-admin.css')}}">--}}
+        <!-- Page Description for SEO -->
+        <meta name="description" content="Laravel/Vue SPA Admin Panel application">
 
-    <base href="{{url('/')}}">
+        <!-- Robots to control search engine behavior: no indexing needed since it is an admin panel -->
+        <meta name="robots" content="noindex">
 
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
-    <meta name="publisher" content="">
-    <meta name="robots" content="index,follow">
-    <meta name="revisit-after" content="7 days">
-    <link rel="canonical" href="">
+        <!-- Favicon for a recognizable tab icon -->
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <meta property="og:title" content="">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="">
+        <!-- Theme Color to specify a default color for the browser's address bar -->
+        <meta name="theme-color" content="#ADD8E6">
 
-    <meta property="og:url" content="">
-    <meta property="og:description" content="">
-    <link href="" rel="image_src">
+        <title>Admin Panel</title>
 
-    @vite('src/app.ts')
+        <!-- Bootstrap Vite integration -->
+        @vite('src/app.ts')
 
-    <script type="text/javascript">
-        var baseUrl = "{{url('/api')}}";
-        var baseMetaUrl = "{{url('/')}}";
-    </script>
-</head>
+        <!-- Set global base URLs for your JavaScript -->
+        <script type="text/javascript">
+            var baseUrl = "{{url('/api')}}";
+            var baseMetaUrl = "{{url('/')}}";
+        </script>
+    </head>
 
-<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-aside--enabled">
-    <div id="app">
-      Loading...
-    </div>
-</body>
+    <body>
+        <div id="app">
+            Loading...
+        </div>
+    </body>
 </html>

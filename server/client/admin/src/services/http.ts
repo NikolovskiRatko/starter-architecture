@@ -8,6 +8,7 @@ const apiClient: AxiosInstance = axios.create({
     headers: {
         'Content-type': 'application/json',
     },
+    withCredentials: true,
     validateStatus: function (status) {
         return status === 422 ||
             status === 401 ||
@@ -15,18 +16,5 @@ const apiClient: AxiosInstance = axios.create({
             status < 300
     }
 })
-
-// let token = document.head.querySelector('meta[name="csrf-token"]')
-// let api_token = document.head.querySelector('meta[name="api-token"]')
-//
-// if (token) {
-//     apiClient.defaults.headers.common['X-CSRF-TOKEN'] = token.content
-// } else {
-//     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token')
-// }
-//
-// if (api_token) {
-//     apiClient.defaults.headers.common['Authorization'] = 'Bearer ' + api_token.content
-// }
 
 export default apiClient

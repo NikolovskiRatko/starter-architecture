@@ -1,86 +1,127 @@
-<script lang="ts">
-    import Vue, { defineComponent } from 'vue';
-    import { mapState, mapActions } from "vuex";
-
-    // import { isTouchDevice } from "@/utils/userAgentCheck";
-
-    export default defineComponent({
-        name: 'App',
-        computed: {
-            // ...mapState('Root', [
-            //     'bodyClasses'
-            // ]),
-            // isAuthLoaded: () => Vue.auth.ready()
-        },
-        methods: {
-            // ...mapActions('Root', [
-            //     'setData',
-            //     'setFrontActiveClass'
-            // ]),
-            // routerChangeHandler(to) {
-            //     setTimeout(() => {
-            //         window.scrollTo({
-            //             top: 0,
-            //             left: 0
-            //         });
-            //     }, 500);
-            //
-            //     this.setFrontActiveClass(to.name);
-            // },
-            // bodyStyles() {
-            //     let bodyStyles = '';
-            //
-            //     if (!this.touchDevice && this.bodyClasses.isBodyOverflowing) {
-            //         if (this.bodyClasses.modalOpen || this.bodyClasses.navMenuOpen)  {
-            //             bodyStyles = 'padding-right:'+this.bodyClasses.scrollBarWidth+'px;';
-            //         }
-            //     }
-            //
-            //     return bodyStyles;
-            // },
-            // bodyClassesControll(classObj) {
-            //     let body = document.getElementsByTagName('body')[0];
-            //     let bodyClasses : string[] = [];
-            //
-            //     body.className = "";
-            //
-            //     this.touchDevice ? bodyClasses.push('touch-device') : bodyClasses.push('no-touch-device');
-            //     if (classObj.modalOpen) { bodyClasses.push('modal-open') }
-            //     if (classObj.navMenuOpen) { bodyClasses.push('nav-menu-open') }
-            //     if (classObj.navSearchActive) { bodyClasses.push('nav-search-active') }
-            //
-            //     body.classList.add(...bodyClasses);
-            // }
-        },
-        watch: {
-            // bodyClasses (value) {
-            //     this.bodyClassesControll(value);
-            // }
-        },
-        mounted() {
-            // this.touchDevice = isTouchDevice();
-
-            // Vue.auth.load().then(async () => {
-            //     if (Vue.auth.check()) {
-            //         await this.setData();
-            //     }
-            // })
-        },
-        created() {
-            // this.$router.afterEach(this.routerChangeHandler);
-        },
-        data() : {
-            touchDevice: boolean,
-            el: any
-        } {
-            return {
-                touchDevice: false,
-                el: 'body'
-            }
-        }
-    })
-</script>
-
 <template>
-    <router-view/> <!-- Main tag from subview is displayed instead of this-->
+    <div class="background"></div>
+    <div class="navbar">
+        <nav class="nav">
+            <div class="nav-el" id="name_project">
+                <img src="images/logo.png" width="30" class="me-2" alt="" />
+                Vue Laravel Authentication
+            </div>
+        </nav>
+    </div>
+    <router-view id="content" />
 </template>
+
+<style>
+    /* CUSTOM STYLE */
+
+    #content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid lightgray;
+        padding: 4rem 4rem;
+        border-radius: 5px;
+        background: #fefefe;
+    }
+
+    .background {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        background: rgb(250, 250, 250);
+    }
+
+    .navbar {
+        background: #fafafa;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 70px;
+        box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+        22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+        100px 100px 80px rgba(0, 0, 0, 0.07);
+    }
+
+    .nav {
+        width: 80%;
+        min-width: 400px;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background: #fafafa;
+    }
+
+    #name_project {
+        font-weight: 700;
+    }
+
+    .container {
+        width: 400px;
+        max-width: 95%;
+    }
+
+    .input {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    .input > label {
+        text-align: start;
+    }
+
+    .input > input {
+        margin-top: 6px;
+        height: 38px !important;
+    }
+
+    /* From uiverse.io */
+    .btn-pers {
+        position: relative;
+        left: 50%;
+        padding: 1em 2.5em;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        font-weight: 700;
+        color: #000;
+        background-color: #fff;
+        border: none;
+        border-radius: 45px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        outline: none;
+        transform: translateX(-50%);
+    }
+
+    .btn-pers:hover {
+        background-color: #198754;
+        box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+        color: #fff;
+        transform: translate(-50%, -7px);
+    }
+
+    .btn-pers:active {
+        transform: translate(-50%, -1px);
+    }
+
+    /*  */
+
+    .alternative-option {
+        text-align: center;
+    }
+
+    .alternative-option > span {
+        color: #0d6efd;
+        cursor: pointer;
+    }
+
+    #sign_out {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+</style>

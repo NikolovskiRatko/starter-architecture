@@ -2,8 +2,10 @@
 import { InjectionKey } from 'vue'
 import { AxiosInstance } from 'axios'
 import { Router } from 'vue-router'
+import { Store } from 'vuex'
 import { Auth } from '@websanova/vue-auth'
 
 export const AxiosKey: InjectionKey<AxiosInstance> = Symbol('http')
 export const RouterKey: InjectionKey<Router> = Symbol('router')
 export const AuthKey: InjectionKey<Auth> = Symbol('auth')
+export const StoreKey: InjectionKey<Store> = Symbol('store')
