@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import path from 'path'
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig({
     plugins: [
@@ -27,6 +28,14 @@ export default defineConfig({
                 },
             },
         }),
+        viteStaticCopy({
+            targets: [
+                {
+                    src: path.resolve(__dirname, './assets/images'),
+                    dest: './'
+                }
+            ]
+        })
     ],
     build: {
         outDir: path.resolve(__dirname, './../../api/public/build'),
@@ -36,12 +45,5 @@ export default defineConfig({
         alias: {
             '@': path.resolve(__dirname, './src')
         },
-    },
-    css: {
-        preprocessorOptions: {
-            scss: {
-                additionalData: `@import "./assets/sass/main.scss";`
-            }
-        }
     },
 });

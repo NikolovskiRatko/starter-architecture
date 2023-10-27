@@ -27,12 +27,17 @@
 
 </script>
 <template>
-    <div class="row">
-        <div class="col-md-6">
-            <button @click="logoutUser"
-                    class="mt-4 btn-pers">
-                Logout
-            </button>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Admin Dashboard</div>
+                    <div class="card-body">
+                        <p>This is the dashboard.</p>
+                        <button class="btn btn-danger" @click="logoutUser">Logout</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
