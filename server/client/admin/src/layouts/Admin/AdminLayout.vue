@@ -1,4 +1,6 @@
 <script>
+    import './Admin.scss';
+
     import AdminHeader from '@/layouts/Admin/AdminHeader.vue';
     import AdminSidebar from '@/layouts/Admin/AdminSidebar.vue';
     import AdminFooter from '@/layouts/Admin/AdminFooter.vue';
@@ -14,18 +16,39 @@
 
 <template>
     <div>
-        <AdminHeader />
+        <!-- @TOC -->
+        <!-- =================================================== -->
+        <!--
+          + @Page Loader
+          + @App Content
+              - #Left Sidebar
+                  > $Sidebar Header
+                  > $Sidebar Menu
 
-        <div class="container-fluid">
-            <div class="row">
-                <AdminSidebar />
+              - #Main
+                  > $Topbar
+                  > $App Screen Content
+        -->
 
-                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                    <router-view></router-view>
-                </main>
+        <!-- @Page Loader -->
+        <!-- =================================================== -->
+<!--        <div id='loader'>-->
+<!--            <div class="spinner"></div>-->
+<!--        </div>-->
+
+        <!-- @App Content -->
+        <!-- =================================================== -->
+        <div>
+            <AdminSidebar />
+
+            <!-- #Main ============================ -->
+            <div class="page-container">
+                <AdminHeader />
+
+                <router-view></router-view>
+
+                <AdminFooter />
             </div>
         </div>
-
-        <AdminFooter />
     </div>
 </template>
