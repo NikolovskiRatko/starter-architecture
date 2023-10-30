@@ -36,20 +36,20 @@
             <!-- ### $Sidebar Menu ### -->
             <ul class="sidebar-menu scrollable pos-r">
                 <li class="nav-item mT-30 actived">
-                    <a class="sidebar-link" href="javascript:void(0);">
+                    <router-link class="sidebar-link" :to="{ name: 'dashboard' }">
                         <span class="icon-holder">
-                          <i class="c-blue-500 ti-home"></i>
-                        </span>
+                              <i class="c-blue-500 ti-home"></i>
+                            </span>
                         <span class="title">Dashboard</span>
-                    </a>
+                    </router-link>
                 </li>
                 <li class="nav-item">
-                    <a class='sidebar-link' href="javascript:void(0);">
+                    <router-link class="sidebar-link" :to="{ name: 'users' }">
                         <span class="icon-holder">
                           <i class="c-orange-500 ti-layout-list-thumb"></i>
                         </span>
                         <span class="title">Users</span>
-                    </a>
+                    </router-link>
                 </li>
             </ul>
         </div>
