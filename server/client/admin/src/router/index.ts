@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, Router } from 'vue-router'
 
-import { adminPaths } from './admin';
-import { authPaths } from './auth';
+import { adminPaths } from './admin'
+import { authPaths } from './auth'
 
 const routes =
 [
@@ -20,4 +20,10 @@ const router: Router = createRouter({
   routes
 })
 
-export default router
+export default (app) => {
+  // Set the router instance to the global properties
+  app.router = router;
+  app.config.globalProperties.router = router;
+
+  app.use(router);
+}

@@ -3,5 +3,5 @@ import { InjectionKey } from 'vue'
 import { AxiosInstance } from 'axios'
 import { Auth } from '@websanova/vue-auth'
 
-export const AxiosKey: InjectionKey<AxiosInstance> = Symbol('http')
+export const AxiosKey: InjectionKey<AxiosInstance> = Symbol('axios')
 export const AuthKey: InjectionKey<Auth> = Symbol('auth')

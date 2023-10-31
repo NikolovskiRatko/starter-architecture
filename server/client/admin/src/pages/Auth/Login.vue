@@ -50,7 +50,7 @@
 
             if (response.status === 200) {
                 // Redirect to the desired route after successful login
-                router.push('/dashboard');
+                router.push('/admin/dashboard');
             } else {
                 // Handle non-200 response status here
                 console.error(`Received response with status ${response.status}:`, response.data);

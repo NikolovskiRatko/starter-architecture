@@ -16,7 +16,7 @@ export let adminPaths: RouteConfig =
   component: AdminLayout,
   children: [
     {
-      path: "/dashboard",
+      path: "dashboard",
       name: "dashboard",
       component: Dashboard,
       meta: {
@@ -24,11 +24,13 @@ export let adminPaths: RouteConfig =
       },
     },
     {
-      path: "/users",
+      path: "users",
       name: "users",
       component: Users,
       meta: {
-        auth: true,
+        auth: {
+          roles: ['read_users']
+        }
       },
     },
     /*INSERT NEW CONFIGURATOR OPTIONS HERE*/

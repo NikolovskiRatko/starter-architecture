@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { PropType, inject } from "vue";
   import { PortletHeadSizes } from "@/components/Portlet/types/components";
-  import { layoutConfigKey } from '@/views/types/WrapperPage';
+  import { layoutConfigKey } from '@/layouts/Admin/types/Admin';
   import { portletThemeKey } from '../types';
 
   import './PortletHead.scss';

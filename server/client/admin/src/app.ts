@@ -1,32 +1,26 @@
 import { createApp } from 'vue'
+// Pinia is a state management library
+import { createPinia } from 'pinia'
+// Import plugins attached to global Vue instance
+import { axios, auth, globalComponents } from './plugins'
+import router from './router'
 
 // Import the encompassing App component
 import App from './App.vue'
 
-// Import global Axios instance
-import http from '@/services/http'
-
-// Import the Vue Router instance
-import router from '@/router'
-
-// Import the Vue Auth instance
-import auth from '@/services/auth'
-
-// Here we import the Pinia state management library
-import { createPinia } from 'pinia';
-
-// Import typings
-import { AxiosKey, AuthKey } from '@/types/symbols'
-
+const pinia = createPinia()
 // Finally create the Vue instance passing the defined routes, store and App component
 const app = createApp(App)
 
-app.provide(AxiosKey, http)
-app.provide(AuthKey, auth)
-
-// Create an instance of Pinia and install it to the app
-const pinia = createPinia();
 app.use(pinia);
+app.use(router);
+app.use(axios);
+app.use(auth);
+app.use(globalComponents)
 
-app.use(router)
+import { AuthKey, AxiosKey } from '@/types/symbols'
+
+app.provide(AuthKey, app.config.globalProperties.auth)
+app.provide(AxiosKey, app.config.globalProperties.axios)
+
 app.mount("#app")
