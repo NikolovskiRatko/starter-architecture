@@ -1,0 +1,152 @@
+// Build Aside Skin
+.aside {
+  width: kt-get($aside-config, base, default, width);
+  transition: kt-get($aside-config, base, minimize, transition);
+	background-color: kt-get($layout-skins, dark);
+
+	// Scrollbar
+	@include perfect-scrollbar-skin(#637099);
+
+	&__footer {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+		background-color: #1f2231;
+
+		.btn {
+			@include kt-transition();
+			background-color: transparent;
+
+			i {
+        @include kt-transition();
+        font-size: 1.4rem;
+        color: kt-brand-color();
+				@include kt-transition();
+			}
+		}
+
+
+    &:hover {
+      background-color: kt-brand-color();
+
+      i {
+        @include kt-transition();
+        color: kt-brand-color(inverse);
+      }
+    }
+
+		.show .btn,
+		.btn:hover {
+			@include kt-transition();
+			background-color: #191b27;
+
+			i {
+				@include kt-transition();
+				color: kt-brand-color();
+			}
+		}
+	}
+
+  &__menu {
+    margin: 15px 0;
+
+    .ps__rail-y {
+      right: 3px;
+    }
+
+    > .kt-menu__nav {
+      .kt-menu__item {
+        > .kt-menu__link:not(.kt-menu__link--active):not(.kt-menu__link--here):not(.kt-menu__link--hover) {
+          [class^="flaticon2-"],
+          [class*=" flaticon2-"] {
+            color: #434d6b;
+          }
+        }
+      }
+    }
+  }
+
+  &__footer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 30px;
+  }
+
+  &__footer-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--minimize {
+    .dropdown.dropdown-inline,
+    .btn {
+      display: none;
+
+      &:last-child {
+        display: inline-block;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+// Build Aside Menu Skin
+@include kt-menu-ver-build-skin(kt-get($aside-config, menu), dark);
+
+// Aside close button
+.aside-close {
+	background-color: rgba(#fff, 0.2);
+
+	i {
+		color: rgba(#fff, 0.7);
+	}
+
+	&:hover {
+		background-color: kt-brand-color();
+
+		i {
+			color: kt-brand-color(inverse);
+		}
+	}
+}
+
+@include kt-desktop {
+	.aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: kt-get($aside-config, base, fixed, zindex);
+
+		&--minimize {
+			width: kt-get($aside-config, base, minimize, width);
+			transition: kt-get($aside-config, base, minimize, transition);
+		}
+
+		&--minimizing {
+			overflow: hidden;
+		}
+
+    &--minimize-hover {
+      width: kt-get($aside-config, base, default, width);
+      transition: kt-get($aside-config, base, minimize, transition);
+    }
+
+    &__menu {
+      &--misnimizing {
+        .kt-menu__nav  {
+          width: kt-get($aside-config, base, default, width);
+          overflow: hidden;
+        }
+      }
+    }
+
+		// Scroll
+		@include perfect-scrollbar-ver-size( kt-get($aside-config, base, fixed, scroll, width) );
+	}
+}
+
+@include kt-menu-ver-build-layout(kt-get($aside-config, menu));
+@include kt-offcanvas-build(kt-aside, tablet-and-mobile, kt-get($aside-config, base, offcanvas-mobile));

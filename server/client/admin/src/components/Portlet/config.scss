@@ -1,0 +1,73 @@
+// Portlet settings
+$portlet: (
+  min-height: (
+    default: (
+      desktop: 60px,
+      mobile: 50px
+    ),
+    sm: (
+      desktop: 50px,
+      mobile: 40px
+    ),
+    lg: (
+      desktop: 80px,
+      mobile: 60px
+    ),
+    xl: (
+      desktop: 100px,
+      mobile: 80px
+    )
+  ),
+  space: (
+    desktop: 25px,
+    mobile: 15px
+  ),
+  bottom-space: (
+    desktop: 20px,
+    mobile: 20px
+  ),
+  border-color: kt-base-color(grey, 2),
+  bg-color: #ffffff,
+  shadow: 0px 0px 30px 0px rgba(82,63,105,0.05)
+);
+
+@mixin solid-skins($template) {
+  @each $name, $color in $state-colors {
+
+    &--theme-#{$name} {
+      @if $template == portlet {
+        background: kt-get($color, base);
+      }
+
+      @if $template == portlet-body {
+        padding-top: 5px;
+        color: kt-get($color, inverse);
+      }
+
+      @if $template == portlet-head {
+        color: kt-get($color, inverse);
+        border-bottom: 1px solid transparent;
+      }
+
+      @if $template == portlet-foot {
+        color: kt-get($color, inverse);
+        border-top: 1px solid transparent;
+        background: darken(kt-get($color, base), 6%);
+      }
+
+      @if $template == portlet-head-label-title {
+        color: kt-get($color, inverse);
+
+        small {
+          color: darken(kt-get($color, inverse), 6%);
+        }
+      }
+
+      @if $template == portlet-head-label-icon {
+        i {
+          color: darken(kt-get($color, inverse), 6%);
+        }
+      }
+    }
+  }
+}

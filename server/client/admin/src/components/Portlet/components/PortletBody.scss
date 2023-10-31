@@ -1,0 +1,86 @@
+@import '../config';
+@import "@styles/utils";
+
+@mixin alignment() {
+  &--center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--center-x {
+    justify-content: center;
+  }
+
+  &--center-y {
+    align-items: center;
+  }
+
+  &--hor-fit {
+    margin-left: -(kt-get($portlet, space, desktop));
+    margin-right: -(kt-get($portlet, space, desktop));
+  }
+
+  &--stick-bottom {
+    position: relative;
+    bottom: 0;
+  }
+
+  &--fluid {
+    height: 100%;
+    flex-direction: row;
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  // Full height
+  &--fill {
+    flex-grow: 1 !important;
+  }
+
+  // Non full height
+  &--unfill {
+    flex-grow: 0 !important;
+  }
+
+  &--fullheight {
+    flex-grow: auto;
+  }
+}
+
+.kt-portlet__body {
+  display: flex;
+  flex-direction: column;
+  padding: kt-get($portlet, space, desktop);
+
+  @include kt-rounded {
+    border-radius: $border-radius;
+  }
+
+  @include alignment;
+
+  .kt-portlet__content {
+    padding: 0;
+    margin: 0;
+  }
+
+  &--fit {
+    padding: 0;
+  }
+
+  &--loading {
+    position: relative;
+  }
+
+  @include solid-skins(portlet-body);
+
+  @include kt-desktop {
+    &--height-fluid,
+    &--height-fluid-half{
+      flex-grow: 1;
+    }
+  }
+
+  @include kt-tablet-and-mobile {
+    padding: kt-get($portlet, space, mobile);
+  }
+}

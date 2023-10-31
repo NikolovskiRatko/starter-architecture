@@ -1,0 +1,15 @@
+.header-user-bar {
+  position: relative;
+
+  &__dropdown {
+    position: absolute;
+    will-change: transform;
+    top: 100%;
+    right: 0;
+    left: auto;
+  }
+
+  &__user-card {
+    background-image: url("/images/header-user-bar-background.jpg");
+  }
+}

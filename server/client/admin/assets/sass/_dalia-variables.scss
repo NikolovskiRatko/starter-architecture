@@ -1,0 +1,91 @@
+/*
+* Typography
+ */
+$font-primary: "Montserrat", sans-serif;
+$font-secondary: Cormorant,serif;
+$font-tertiary: "Oswald", sans-serif;
+$font-awesome: Font Awesome 5 Free;
+
+$body-font-size: 15;
+$root-font-size: 10;
+$body-line-height: 26;
+
+// weights
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 900;
+
+// spacement
+$spacement-increment: 5px;
+$spacement-xs: $spacement-increment;
+$spacement-sm: $spacement-xs + $spacement-increment;
+$spacement-md: $spacement-sm + $spacement-increment;
+$spacement-lg: $spacement-md + $spacement-increment;
+$spacement-xl: $spacement-lg + $spacement-increment;
+$spacement-xlg: $spacement-xl + $spacement-increment;
+
+// borders
+$border-thin: 3px;
+$border-normal: 5px;
+$border-thick: 7px;
+
+
+$color-font-default: #868686;
+
+$freja-default-light: #d0936a;
+$freja-default-light-faded: #f7e9dd;
+$freja-green:         #CFEC52;
+
+$freja-text:          #333333;
+
+$freja-brown:       #977c6b;
+$freja-light-brown: #c1a07d;
+$freja-cream:       #f3e9df;
+$freja-dark-cream:  #dccbaf;
+$freja-brown-red:   #d4b4a9;
+
+$freja-box-shadow: 2px 2px 20px 0 rgba(208,147,106,.17);
+$freja-black-box-shadow: 4px 8px 16px 0 rgba(0,0,0,.17);
+
+// =============================================================================
+// DALIA VARIABLES
+// =============================================================================
+$dalia-light-bg:  #faf3ed;
+$dalia-dark-bg:   #e9cdb9;
+
+$dalia-border:    #e9cdb9;
+
+$dalia-text:            #d0936a;
+$dalia-grey-link:       #868686;
+$dalia-grey-link-hover: #d0936a;
+
+$dalia-grey-text: #8f8f8f;
+
+$dali-image-folder: '../images/freja';
+
+
+$black:       #121212;
+$white:       #ffffff;
+$true-black:  #000000;
+$dark-grey:   #5a5a5a;
+$dark-grey-1: #2c2c2c;
+$dark-grey-2: #1c1c1c;
+$green:       #7ce756;
+
+$pink:        #FF5A75;
+$pink-2:      #EC536C;
+$pink-3:      #D94D64;
+$pink-4:      #DA4860;
+$pink-5:      #C4455A;
+
+$grey:        #F2F2F2;
+$grey-2:      #ECECEC;
+$grey-3:      #D9D9D9;
+$grey-4:      #C5C5C5;
+$grey-5:      #727272;
+$grey-6:      #4F4F4F;
+
+$dir: ltr !default;

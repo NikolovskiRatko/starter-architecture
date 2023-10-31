@@ -1,71 +1,38 @@
 <script setup lang="ts">
-    // typing inject
-    import { injectStrict } from '@/types/injectTyped'
-    import {  AuthKey } from '@/types/symbols'
+  import './AdminHeader.scss';
 
-    const auth = injectStrict(AuthKey);
+  import { storeToRefs } from 'pinia';
+  import { navMenu as navMenuData } from '@/data/navMenu';
+  import { NavMenu, HeaderTopBar } from '@/components/Admin';
+  import { useRootStore } from '@/store/root';
 
-    const logoutUser = async () => {
-        try {
-            await auth.logout();
-            console.log('Logged out successfully');
-        } catch (error) {
-            console.error('Error during logout:', error);
-        }
-    }
+  const rootStore = useRootStore();
+  const { sidebarState } = storeToRefs(rootStore);
 
+  // activeTopSubmenu
+  // setActiveTopSubmenu
 </script>
-
 <template>
-    <!-- ### $Topbar ### -->
-    <div class="header navbar">
-        <div class="header-container">
-            <ul class="nav-left">
-                <li>
-                    <a id='sidebar-toggle' class="sidebar-toggle" href="javascript:void(0);">
-                        <i class="ti-menu"></i>
-                    </a>
-                </li>
-            </ul>
-            <ul class="nav-right">
-                <li class="dropdown">
-                    <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-bs-toggle="dropdown">
-                        <div class="peer mR-10">
-                            <img class="w-2r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
-                        </div>
-                        <div class="peer">
-                            <span class="fsz-sm c-grey-900">John Doe</span>
-                        </div>
-                    </a>
-                    <ul class="dropdown-menu fsz-sm">
-                        <li>
-                            <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                                <i class="ti-settings mR-10"></i>
-                                <span>Setting</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                                <i class="ti-user mR-10"></i>
-                                <span>Profile</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="email.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                                <i class="ti-email mR-10"></i>
-                                <span>Messages</span>
-                            </a>
-                        </li>
-                        <li role="separator" class="divider"></li>
-                        <li>
-                            <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700" @click="logoutUser">
-                                <i class="ti-power-off mR-10"></i>
-                                <span>Logout</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+  <div class="kt-header kt-header--fixed" :class="{
+    'kt-header--sidebar-minimized': sidebarState.minimized
+  }">
+    <button
+      id="kt_header_menu_mobile_close_btn"
+      class="kt-header-menu-wrapper-close"
+    >
+      <i class="la la-close" />
+    </button>
+    <div
+      id="kt_header_menu_wrapper"
+      class="kt-header-menu-wrapper"
+    >
+      <div
+        id="kt_header_menu"
+        class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout-default "
+      >
+        <NavMenu :data="navMenuData" />
+      </div>
     </div>
+    <HeaderTopBar />
+  </div>
 </template>

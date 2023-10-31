@@ -1,0 +1,25 @@
+//Bootstrap dependencies
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../sass/bootstrap/variables';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+
+@import "./utils/imports";
+@import "./layout/footer/config";
+
+// Layout
+$aside-default-width: 265px;
+$aside-minimize-width: 70px;
+$aside-offcanvas-width: 255px;
+
+// Layout Skins
+$layout-skins: (
+	dark: #1e1e2d,
+	light: #ffffff
+);
+
+// content bg color
+$content-bg-color: #f2f3f8;
+
+// Border Radius
+$border-radius: 4px;

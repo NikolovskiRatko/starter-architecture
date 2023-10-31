@@ -1,0 +1,8 @@
+// Configs what have been moved to vue
+@import "../../src/components/Portlet/config";
+
+// 1: Include global config
+@import "framework-config";
+
+// 2: Include demo config (that overrides the above global config)
+@import "starter-config";

@@ -1,0 +1,117 @@
+@import "../variables";
+$themecolor: #009efb;
+$themecolor-dark: #028ee1;
+/* ====================================
+                Overlay
+=====================================*/
+.sk-modal-overlay {
+  position: fixed;
+  z-index: 1500;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 0 !important;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .sk-modal-overlay-inner {
+
+    width: 420px;
+    max-height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background: $light-bg;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: .3rem;
+    animation: slide-up 0.4s ease;
+
+    .sk-modal-head {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      border-bottom: 1px solid #eaeaea;
+      h4 {
+        font-size: 24px;
+        line-height: 24px;
+        font-family: $font-primary;
+        margin: 0;
+      }
+      .close-btn {
+        cursor: pointer;
+        font-size: 1.6rem;
+      }
+    }
+
+    .sk-modal-foot {
+      padding: 1rem;
+      display: flex;
+      justify-content: flex-start;
+      border-top: 1px solid #eaeaea;
+      a:hover{
+        cursor: pointer;
+      }
+      span {
+        display: inline-block;
+
+        &.wizard_login{
+          display: block;
+          font-family: $font-primary;
+          font-weight: $font-weight-bold;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .sk-modal-body {
+      padding: 1rem;
+    }
+
+    .link {
+      cursor: pointer;
+      color: $themecolor;
+      text-decoration: none;
+      &:hover {
+        color: $themecolor-dark;
+      }
+    }
+
+    .success {
+      padding: 20px 30px 20px 30px;
+      background: #f2fbea;
+      color: #86ce3a;
+      margin: 20px 0 0 0;
+      text-align: center;
+      font-family: $font-primary;
+      font-weight: $font-weight-bold;
+    }
+
+  }
+}
+
+#login_form {
+  .sk-modal-foot {
+    justify-content: space-between;
+  }
+}
+
+.overlay_visible {
+  display: block;
+}
+/* ====================================
+            End of overlay
+=====================================*/
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

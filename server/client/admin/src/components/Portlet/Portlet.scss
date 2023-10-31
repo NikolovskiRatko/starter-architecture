@@ -1,0 +1,44 @@
+@import './config';
+@import "@styles/utils";
+
+.kt-portlet {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  box-shadow: $elevate-shadow;
+  background-color: kt-get($portlet, bg-color);
+  margin-bottom: kt-get($portlet, bottom-space, desktop);
+
+  @include kt-rounded {
+    border-radius: $border-radius;
+  }
+
+  &--bordered {
+    box-shadow: none;
+    border: 1px solid kt-get($portlet, border-color);
+  }
+
+  &--sticky-header {
+    position: relative;
+  }
+
+  &--loading {
+    cursor: wait;
+  }
+
+  @include solid-skins(portlet);
+
+  @include kt-desktop {
+    &--height-fluid {
+      height: calc(100% - #{kt-get($portlet, bottom-space, desktop)});
+    }
+
+    &--height-fluid-half {
+      height: calc(50% - #{kt-get($portlet, bottom-space, desktop)});
+    }
+  }
+
+  @include kt-tablet-and-mobile {
+    margin-bottom: kt-get($portlet, bottom-space, mobile);
+  }
+}

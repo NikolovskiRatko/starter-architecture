@@ -1,0 +1,10 @@
+.mat-checkbox {
+	> label {  
+		margin-bottom: 0 
+	}
+}
+
+.mat-pseudo-checkbox-checked::after {
+	top: 4.4px !important;
+	left: 2px !important;
+}

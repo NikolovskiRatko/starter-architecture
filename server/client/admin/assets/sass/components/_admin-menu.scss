@@ -1,0 +1,127 @@
+@import "../settings/colors";
+@import "../settings/fonts";
+
+.sidebar-nav{
+    position: fixed;
+    padding: 20px 0px 20px 0px;
+    width: $menu-width;
+    background: $color02;
+    min-height: calc( 100% - #{$header-height} );
+    overflow-y: auto;
+    height: calc( 100% - 60px );
+    .list-item{
+      border-bottom: 2px solid darken($color02, 2%);
+      font-size: 14px;
+    }
+    .list-item ul.submenu{
+        display: none;
+    }
+    .list-item.active ul.submenu{
+        display: block;
+    }
+    .submenu{
+        padding:0px;
+        background-color: darken($color02, 2%);
+    }
+    .down-arrow.menu-heading::after,
+    .down-arrow.submenu-heading::after{
+      border-style: solid;
+      border-width: 0.09em 0.09em 0 0;
+      content: "";
+      display: inline-block;
+      height: 0.45em;
+      left: 0.15em;
+      position: relative;
+      top: 0.15em;
+      vertical-align: top;
+      width: 0.45em;
+      float: right;
+      -webkit-transform: rotate(135deg);
+      transform: rotate(135deg);
+    }
+    .up-arrow.menu-heading::after,
+    .up-arrow.submenu-heading::after{
+      border-style: solid;
+      border-width: 0.09em 0.09em 0 0;
+      content: "";
+      display: inline-block;
+      height: 0.45em;
+      left: 0.15em;
+      position: relative;
+      top: 0.15em;
+      vertical-align: top;
+      width: 0.45em;
+      float: right;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+    .list-subitem{
+       // padding: 10px 20px 10px 20px;
+        color: $menu-active-fg;
+        padding-left:10px;
+        a{
+            display: block;
+            width: 100%;
+            padding: $menu-subitem-padding;
+            color: #c0d4de;
+          &:hover {
+            background-color: darken($color02, 4%);
+            color: #FF5370;
+          }
+        }
+    }
+    a.list-subitem{
+        display: block;
+        width: 100%;
+        padding: $menu-mainitem-padding;
+    }
+    .menu-heading{
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        padding: 15px;
+        line-height: 1.14;
+        letter-spacing: 0.4px;
+        text-align: left;
+        color: #c0d4de;
+        &:hover {
+          background-color: darken($color02, 2%);
+          color: #FF5370;
+        }
+        a{
+            color: $menu-active-fg;
+        }
+    }
+  .up-arrow.menu-heading{
+    background-color: darken($color02, 4%);
+    //border-left: solid 2px $color04;
+     color: #fff;
+  }
+    .submenu-heading{
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        padding: $menu-mainitem-padding;
+        line-height: 1.14;
+        letter-spacing: 0.4px;
+        text-align: left;
+        color: #c0d4de;
+        a{
+            color: $menu-active-fg;
+        }
+    }
+    .active.list-subitem{
+        background-color: darken($color02, 5%);
+        border-left: solid 2px $color04;
+        color: #ff526e;
+        & > a {
+          color: #ff526e;
+        }
+    }
+    ul{
+        list-style: none;
+        padding: 7px 0 7px 0;
+        margin: 0;
+    }
+
+}

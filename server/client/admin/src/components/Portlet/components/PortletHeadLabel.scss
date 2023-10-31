@@ -1,0 +1,32 @@
+@import '../config';
+
+.kt-portlet__head__label {
+  display: flex;
+  align-items: center;
+  align-content: flex-first;
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: kt-base-color(label, 4);
+
+    small {
+      font-weight: 300;
+      padding-left: 0.5rem;
+      font-size: 1rem;
+      color: kt-base-color(label, 2);
+    }
+
+    @include solid-skins(portlet-head-label-title);
+  }
+
+  &__icon {
+    padding-right: 0.75rem;
+    font-size: 1.3rem;
+    color:kt-base-color(label, 2);
+
+    @include solid-skins(portlet-head-label-icon);
+  }
+}

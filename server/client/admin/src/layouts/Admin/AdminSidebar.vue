@@ -1,57 +1,102 @@
-<script>
-    export default {}
+<script setup lang="ts">
+  import './AdminSidebar.scss';
+
+  import { computed, onMounted, ref } from 'vue';
+  import { storeToRefs } from 'pinia';
+  // import useAuthComp from "@/composables/useAuthComp";
+  import { useRootStore } from '@/store/root';
+  import BrandComponent from '@/components/Admin/Brand.vue';
+  import FirstLevelMenuItem from '@/components/Admin/FirstLevelMenuItem.vue';
+
+  // const { permissionsArray } = useAuthComp();
+  const rootStore = useRootStore();
+  const { mainMenu, sidebarState } = storeToRefs(rootStore);
+  const { setMenu, setSidebarState } = rootStore;
+  const emit = defineEmits(['sidebarHover']);
+
+  const clearMinimizingTimeout = ref<number>(0);
+  const blockToggle = ref<boolean>(false);
+
+  const menuItems = computed(() => {
+    return mainMenu.value
+  });
+
+  const setMinimizing = () => {
+    clearTimeout(clearMinimizingTimeout.value);
+    sidebarState.value.minimizing = true;
+    clearMinimizingTimeout.value = window.setTimeout(()=>{
+      sidebarState.value.minimizing = false;
+      console.log('minimizingOff');
+    },300);
+  };
+
+  const toggleSidebar = () => {
+    const { minimized } = sidebarState.value;
+    if (!blockToggle.value) {
+      blockToggle.value = true;
+      sidebarState.value.minimized = !minimized;
+      if (!minimized) {
+        sidebarState.value.minimizeHover = false;
+      }
+
+      window.setTimeout(() => {
+        blockToggle.value = false;
+      }, 300);
+
+      setMinimizing();
+      emit('sidebarHover', sidebarState);
+    }
+  }
+
+  const sidebarHover = (isOver: boolean) => {
+    const { minimized } = sidebarState.value;
+    if (minimized && !blockToggle.value) {
+      sidebarState.value.minimizeHover = isOver;
+      setMinimizing();
+      emit('sidebarHover', sidebarState);
+    }
+  }
+
+  onMounted(() => {
+    setMenu([]);
+  })
 </script>
 
 <template>
-    <!-- #Left Sidebar ==================== -->
-    <div class="sidebar">
-        <div class="sidebar-inner">
-            <!-- ### $Sidebar Header ### -->
-            <div class="sidebar-logo">
-                <div class="peers ai-c fxw-nw">
-                    <div class="peer peer-greed">
-                        <a class="sidebar-link td-n" href="javascript:void(0);">
-                            <div class="peers ai-c fxw-nw">
-                                <div class="peer">
-                                    <div class="logo">
-                                        <img src="build/images/sm_logo.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="peer peer-greed">
-                                    <h5 class="lh-1 mB-0 logo-text">Starter</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="peer">
-                        <div class="mobile-toggle sidebar-toggle">
-                            <a href="" class="td-n">
-                                <i class="ti-arrow-circle-left"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!--<button class="aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>-->
+  <div
+    class="aside"
+    :class="{
+      'aside--minimize': sidebarState.minimized,
+      'aside--minimize-hover' : sidebarState.minimizeHover,
+      'aside--minimizing' : sidebarState.minimizing,
+    }"
+    @mouseover="sidebarHover(true)"
+    @mouseleave="sidebarHover(false)"
+  >
+    <BrandComponent @toggleSidebar="toggleSidebar" />
 
-            <!-- ### $Sidebar Menu ### -->
-            <ul class="sidebar-menu scrollable pos-r">
-                <li class="nav-item mT-30 actived">
-                    <router-link class="sidebar-link" :to="{ name: 'dashboard' }">
-                        <span class="icon-holder">
-                              <i class="c-blue-500 ti-home"></i>
-                            </span>
-                        <span class="title">Dashboard</span>
-                    </router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link class="sidebar-link" :to="{ name: 'users' }">
-                        <span class="icon-holder">
-                          <i class="c-orange-500 ti-layout-list-thumb"></i>
-                        </span>
-                        <span class="title">Users</span>
-                    </router-link>
-                </li>
-            </ul>
-        </div>
+    <div class="aside__menu-wrapper">
+      <div class="aside__menu" :class="{
+        'aside__menu--minimize': sidebarState.minimized && !sidebarState.minimizeHover,
+        'aside__menu--minimize-hover' : sidebarState.minimizeHover,
+        'aside__menu--minimizing' : sidebarState.minimizing,
+      }">
+        <ul class="kt-menu__nav">
+          <li class="kt-menu__section ">
+            <h4 class="kt-menu__section-text">
+              Main
+            </h4>
+            <i class="kt-menu__section-icon flaticon-more-v2" />
+          </li>
+
+          <first-level-menu-item
+            v-for="(item,key) in menuItems"
+            :key="key"
+            :item="item"
+          />
+        </ul>
+      </div>
     </div>
+  </div>
 </template>

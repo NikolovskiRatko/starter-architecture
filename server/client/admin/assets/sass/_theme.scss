@@ -1,0 +1,33 @@
+//
+// Demo1 Stylesheets
+//
+
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY BELOW INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
+
+// 1: Utilities and configs
+@import "utils";
+
+// 3: Bootstrap Include
+@import "bootstrap/variables";
+@import "bootstrap/bootstrap.scss";
+
+// 4: Core Include
+@import "core/include";
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY ABOVE INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
+
+// 5: Demo Configs
+@import "layout/header/config";
+@import "layout/aside/brand/config";
+@import "layout/aside/config";
+@import "layout/footer/config";
+
+
+// 6: Demo Includes
+// Layout
+@import "layout/base/base";
+@import "layout/header/menu";
+@import "layout/footer/footer";

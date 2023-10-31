@@ -1,0 +1,165 @@
+.auth-base {
+  background-image: url('@/../assets/images/auth-background.jpg');
+  background-repeat: no-repeat;
+  background-position: center right;
+  height: 100%;
+
+  &__wrapper {
+    padding: 6% 2rem 1rem 2rem;
+    margin: 0 auto 2rem auto;
+    overflow: hidden;
+  }
+
+  &__container {
+    width: 430px;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    text-align: center;
+    margin: 0 auto 4rem auto;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__account {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  &__account-msg {
+    font-size: 1rem;
+    font-weight: 400;
+    color:kt-base-color(label, 2);
+  }
+
+  &__account-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: kt-base-color(label, 3);
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: kt-brand-color();
+      transition: color 0.3s ease;
+    }
+  }
+
+  &__head {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: kt-base-color(label, 3);
+  }
+
+  &__desc {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: kt-base-color(label, 2);
+  }
+
+  &__extra {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: kt-base-color(label, 2);
+    font-size: 1rem;
+
+    .kt-checkbox {
+      font-size: 1rem;
+    }
+
+    .auth-base__link {
+      font-size: 1rem;
+      color: kt-base-color(label, 2);
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: kt-brand-color();
+        transition: color 0.3s ease;
+      }
+    }
+  }
+
+  &__actions {
+    text-align: center;
+    margin-top: 7%;
+  }
+
+  &__btn-secondary,
+  &__btn-primary {
+    height: 50px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  &__form {
+    margin: 0 auto;
+
+    .input-group {
+      padding: 0;
+      margin: 0 auto;
+    }
+
+    .form-control {
+      height: 46px;
+      border: none;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      margin-top: 1.5rem;
+      background: rgba(kt-base-color(grey, 2), 0.4);
+
+      @include kt-input-placeholder(kt-base-color(label, 2));
+    }
+
+    .form-control.is-valid + .valid-feedback,
+    .form-control.is-invalid + .invalid-feedback {
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding-left: 1.6rem;
+    }
+  }
+
+  @include kt-tablet-and-mobile {
+    &__wrapper {
+      padding-top: 5rem;
+      width: 100%;
+    }
+
+    &__container {
+      margin: 0 auto;
+    }
+
+    &__account {
+      margin-top: 1rem;
+    }
+  }
+
+  @include kt-mobile() {
+    &__wrapper {
+      width: 100%;
+    }
+
+    &__container {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    &__account {
+      margin-top: 1rem;
+    }
+
+    &__form {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}

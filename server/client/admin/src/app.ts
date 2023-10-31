@@ -7,25 +7,26 @@ import App from './App.vue'
 import http from '@/services/http'
 
 // Import the Vue Router instance
-import router from './router'
+import router from '@/router'
 
 // Import the Vue Auth instance
 import auth from '@/services/auth'
 
-// Here we import the Vuex store
-import store from './store';
+// Here we import the Pinia state management library
+import { createPinia } from 'pinia';
 
 // Import typings
-import { AxiosKey, RouterKey, AuthKey, StoreKey } from '@/types/symbols'
+import { AxiosKey, AuthKey } from '@/types/symbols'
 
 // Finally create the Vue instance passing the defined routes, store and App component
 const app = createApp(App)
 
 app.provide(AxiosKey, http)
-app.provide(RouterKey, router)
 app.provide(AuthKey, auth)
-app.provide(StoreKey, store)
 
+// Create an instance of Pinia and install it to the app
+const pinia = createPinia();
+app.use(pinia);
 
 app.use(router)
 app.mount("#app")

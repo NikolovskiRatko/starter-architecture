@@ -1,17 +1,17 @@
 <script setup lang="ts">
-    import './Login.scss';
-
     import { ref } from 'vue';
-    import { AuthKey, RouterKey } from '@/types/symbols';
+    import { useRouter } from 'vue-router'
+    import { AuthKey } from '@/types/symbols';
     import { injectStrict } from '@/types/injectTyped'
 
 
     const form = ref({ email: '', password: '' });
     const formErrors = ref({ email: '', password: '' });
+    const authError = ref(false);
     const isSending = ref(false);
     const staySignedIn = ref(true);
 
-    const router = injectStrict(RouterKey);
+    const router = useRouter();
     const auth = injectStrict(AuthKey);
 
     const validateForm = () => {
@@ -55,11 +55,12 @@
                 // Handle non-200 response status here
                 console.error(`Received response with status ${response.status}:`, response.data);
                 formErrors.value.email = 'An unexpected error occurred. Please try again.';
+                authError.value = true;
             }
 
         } catch (err) {
             formErrors.value.email = 'An error occurred. Please try again';
-
+            authError.value = true;
             // Log any error messages or details for debugging
             console.error("Login error:", err);
             if (err.response) {
@@ -73,66 +74,57 @@
 </script>
 
 <template>
-    <div class="peers ai-s fxw-nw h-100vh">
-        <div class="col-12 col-md-8 d-n@sm- peer peer-greed h-100 pos-r bgr-n bgpX-c bgpY-c bgsz-cv">
-            <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <div class="bgc-white pos-r md_size_logo">
+    <div class="auth-login">
+        <div class="auth-base__head">
+            <h3 class="auth-base__title">Login</h3>
+        </div>
+        <form class="kt-form auth-base__form" @submit.prevent="submitForm">
+            <div class="input-group">
+                <input
+                        v-model="form.email"
+                        class="form-control"
+                        type="text"
+                        placeholder="admin@example.com"
+                        name="email"
+                        autocomplete="off"
+                        required
+                        autofocus
+                >
+            </div>
+            <div class="input-group">
+                <input
+                        v-model="form.password"
+                        class="form-control"
+                        type="password"
+                        placeholder="password"
+                        name="password"
+                        required
+                >
+            </div>
+            <span v-if="authError" class="error invalid-feedback">
+                Authentication failed
+            </span>
+            <div class="row auth-base__extra">
+                <div class="col">
+                    <label class="kt-checkbox">
+                        <input v-model="staySignedIn" type="checkbox" name="remember">
+                        Remember Me
+                        <span></span>
+                    </label>
                 </div>
-                <div class="starter-font">
-                    Starter
+                <div class="col kt-align-right">
+<!--                    <router-link id="kt_login_forgot" to="/password/reset" class="auth-base__link">-->
+<!--                        Password Reset-->
+<!--                    </router-link>-->
                 </div>
             </div>
-        </div>
-        <div class="col-12 col-md-4 peer pX-40 pY-80 h-100 bgc-white scrollable pos-r" style='min-width: 320px;'>
-            <h4 class="fw-300 c-grey-900 mB-40">Login</h4>
-            <form @submit.prevent="submitForm">
-                <div class="mb-3">
-                    <label for="login_email" class="text-normal text-dark form-label">Email address</label>
-                    <input
-                            id="login_email"
-                            class="form-control"
-                            type="email"
-                            name="email"
-                            placeholder="admin@example.com"
-                            required
-                            autofocus
-                            v-model="form.email"
-                    />
-                    <!-- If there's an error for the email, you can display it below the input -->
-                    <div v-if="formErrors.email" class="text-danger mt-1">{{ formErrors.email }}</div>
-                </div>
-                <div class="mb-3">
-                    <label for="login_password" class="text-normal text-dark form-label">Password</label>
-                    <input
-                            id="login_password"
-                            class="form-control"
-                            type="password"
-                            name="password"
-                            placeholder="password"
-                            required
-                            v-model="form.password"
-                    />
-                    <!-- If there's an error for the password, you can display it below the input -->
-                    <div v-if="formErrors.password" class="text-danger mt-1">{{ formErrors.password }}</div>
-                </div>
-                <div class="">
-                    <div class="peers ai-c jc-sb fxw-nw">
-                        <div class="peer">
-                            <div class="checkbox checkbox-circle checkbox-info peers ai-c">
-                                <input type="checkbox" id="inputCall1" name="inputCheckboxesCall" class="peer">
-                                <label for="inputCall1" class=" peers peer-greed js-sb ai-c form-label">
-                                    <span class="peer peer-greed">Remember Me</span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="peer">
-                            <button type="submit" class="btn btn-primary btn-color" id="login_button">
-                                Login
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
+            <div class="auth-base__actions">
+                <input
+                        class="btn btn-brand btn-elevate auth-base__btn-primary"
+                        type="submit"
+                        value="Sign In"
+                />
+            </div>
+        </form>
     </div>
 </template>

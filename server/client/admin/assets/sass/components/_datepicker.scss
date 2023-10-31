@@ -1,0 +1,232 @@
+@import '../dalia-variables';
+
+/*
+ * Classic inline calendar
+ */
+.sk-calendar-classic {
+  border: 1px solid $dalia-border;
+  box-shadow: $freja-box-shadow;
+  font-weight: 600;
+  padding: 2rem 1rem 3rem;
+  max-width: 30rem;
+}
+
+.sk-calendar-classic__header {}
+
+.sk-calendar-classic__arrow {
+  background: no-repeat;
+  border: none;
+  .fa {
+    color: $freja-brown-red;
+  }
+}
+
+.sk-calendar-classic__month {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 1rem 2rem;
+}
+
+.sk-calendar-classic__month-label {
+  flex: 1;
+  text-align: center;
+  font-size: 1.5rem;
+  color: $freja-brown-red;
+}
+
+.sk-calendar-classic__day-labels {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-bottom: 1px solid $dalia-border;
+  padding-bottom: .5rem;
+}
+
+.sk-calendar-classic__day-label {
+  width: percentage(1/7);
+  text-align: center;
+}
+
+.sk-calendar-classic__body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.sk-calendar-classic__day {
+  width: percentage(1/7);
+  text-align: center;
+  padding: .5rem 0;
+}
+
+.sk-calendar-classic__day-value {
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 5px;
+  background-color: transparent;
+  color: $freja-default-light-faded;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  &--current {
+    cursor: pointer;
+    color: $dalia-text;
+    &:hover {
+
+    }
+  }
+  &--today {
+    border: 1px solid $dalia-border;
+  }
+  &--selected {
+    background-color: $dalia-dark-bg;
+    color: $white;
+  }
+}
+
+/*
+ * Modern inline calendar
+ */
+.sk-calendar-modern__days-container {
+  display: flex;
+}
+.sk-calendar-modern__days-inner {
+  flex: 1;
+  overflow: hidden;
+}
+.sk-calendar-modern__days-wrap {
+  user-select: none;
+  cursor: grab;
+  //display: flex;
+  //justify-content: space-between;
+  position: relative;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+.sk-calendar-modern__day {
+  width: 14.28571428571429%;
+  display: inline-block;
+  text-align: center;
+  font-size: 16px;
+  font-weight: $font-weight-normal;
+  color: $freja-brown;
+  margin: 20px 0;
+}
+.sk-calendar-modern__day-inner {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  @at-root .sk-calendar-modern__days-wrap--sliding & {
+    transition: background-color 0.2s linear,
+                box-shadow 0.2s linear;
+  }
+}
+.sk-calendar-modern__day-inner--selected {
+  background-color: $freja-cream;
+  box-shadow: $freja-box-shadow;
+  @at-root .sk-calendar-modern__days-wrap--sliding & {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+.sk-calendar-modern__day-inner--next {
+  @at-root .sk-calendar-modern__days-wrap--sliding & {
+    background-color: $freja-cream;
+    box-shadow: $freja-box-shadow;
+  }
+}
+.sk-calendar-modern__day-inner--previous {
+  opacity: 0.2vv;
+}
+
+.sk-calendar-modern_day_name {
+
+}
+.sk-calendar-modern_day_date {
+
+}
+
+//.calendar {
+//  background-color: $dalia-light-bg;
+//  border: 1px solid $dalia-border;
+//  padding: .25rem .5rem 1rem .5rem;
+//  box-shadow: $freja-box-shadow;
+//
+//  > .header {
+//    padding: .75rem;
+//    font-size: 1.25rem;
+//    grid-column: 1 / span 7;
+//
+//    >span {
+//      flex: 1;
+//      text-align: center;
+//    }
+//
+//    button {
+//      border: none;
+//      background: $dalia-dark-bg;
+//      margin: 0 1rem;
+//      padding: .25rem .5rem;
+//
+//      &:hover {
+//        cursor: pointer;
+//        background: $dalia-light-bg;
+//        transition: background 150ms;
+//      }
+//    }
+//  }
+//
+//  > * {
+//    align-items: center;
+//    display: flex;
+//    justify-content: center;
+//  }
+//
+//  > .day {
+//    color: var(--black-200);
+//    font-size: 1rem;
+//    border-radius: 2px;
+//
+//    &.selected {
+//      border: 1px solid var(--blue-grey-100);
+//    }
+//
+//    &.current {
+//      color: var(--black-100);
+//    }
+//
+//    &::before {
+//      content: "";
+//      display: inline-block;
+//      height: 0;
+//      padding-bottom: 100%;
+//      width: 1px;
+//    }
+//
+//    button {
+//      color: inherit;
+//      background: transparent;
+//      border: none;
+//      height: 100%;
+//      width: 100%;
+//      &:hover {
+//        background: var(--black-400);
+//        transition: background 150ms;
+//      }
+//    }
+//  }
+//
+//  > .today {
+//    background: var(--black-400);
+//    border-radius: 2px;
+//  }
+//}

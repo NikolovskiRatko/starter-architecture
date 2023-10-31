@@ -39,6 +39,7 @@ Route::group([
 Route::group([
     'middleware' => 'auth:sanctum'
 ], function () {
+    Route::get('vue', 'HomeController@vue');
     // AUTHENTICATION ROUTES
     Route::group([
         'prefix' => 'auth',

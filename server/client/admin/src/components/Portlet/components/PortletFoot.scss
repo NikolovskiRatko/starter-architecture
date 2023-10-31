@@ -1,0 +1,58 @@
+@import '../config';
+@import "@styles/utils";
+
+.kt-portlet__foot {
+  padding: kt-get($portlet, space, desktop);
+  border-top: 1px solid kt-get($portlet, border-color);
+
+  .kt-portlet__foot-wrapper {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @include kt-rounded {
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+
+  &--fit {
+    padding: 0;
+  }
+
+  &.kt-portlet__foot--sm {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  &.kt-portlet__foot--md {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &.kt-portlet__foot--no-border {
+    border-top: 0;
+  }
+
+  &.kt-portlet__foot--top {
+    border-top: 0;
+    border-bottom: 1px solid kt-get($portlet, border-color);
+  }
+
+  &.kt-portlet__foot--solid {
+    background-color: kt-base-color(grey, 1);
+    border-top: 0;
+
+    &.kt-portlet__foot--top {
+      border-bottom: 0;
+    }
+  }
+
+  @include solid-skins(portlet-foot);
+
+  @include kt-tablet-and-mobile {
+    padding: kt-get($portlet, space, mobile);
+  }
+}

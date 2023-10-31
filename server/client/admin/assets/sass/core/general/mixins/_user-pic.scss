@@ -1,0 +1,26 @@
+//
+// User Pics
+//
+
+
+
+@mixin kt-user-pic-size($image-size, $font-size) {
+    img {
+        width: 100%;
+        max-width: $image-size; 
+        height: $image-size;
+    }
+
+    span {
+        width: $image-size;
+        height: $image-size;
+
+        @if $font-size {
+            font-size: $font-size;
+        }
+    }
+}
+
+
+
+ 

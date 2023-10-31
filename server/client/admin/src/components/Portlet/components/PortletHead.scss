@@ -1,0 +1,62 @@
+@import '../config';
+@import "@styles/utils";
+
+@mixin head-sizes($device) {
+  $sizes: 'default', 'sm', 'lg', 'xl';
+  $sufix: 'size';
+  $block: &;
+
+  @each $size in $sizes {
+    &--#{$size}-#{$sufix} {
+      min-height: kt-get($portlet, min-height, $size, $device);
+
+      &#{$block}--sticky {
+        min-height: kt-get($portlet, min-height, $size, $device) - 10px;
+      }
+    }
+  }
+}
+
+.kt-portlet__head {
+  $block: &;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  position:relative;
+  padding: 0 kt-get($portlet, space, desktop);
+  border-bottom: 1px solid kt-get($portlet, border-color);
+
+  @include head-sizes(desktop);
+
+  @include kt-rounded {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+
+  &--noborder {
+    border-bottom: 0;
+  }
+
+  &--fit {
+    padding: 0;
+  }
+
+  &--sticky {
+    position: sticky;
+    top: 0;
+    z-index: kt-get($layers, over);
+    box-shadow: 0 1px 15px 1px rgba(69, 65, 78, 0.1);
+    background: #fff;
+
+    &#{$block}--main-header-fixed {
+      top: kt-get($header-config, base, desktop, default, height);
+    }
+  }
+
+  @include solid-skins(portlet-head);
+
+  @include kt-tablet-and-mobile {
+    padding: 0 kt-get($portlet, space, mobile);
+    @include head-sizes(mobile);
+  }
+}
