@@ -7,12 +7,14 @@
 <template>
   <div class="kt-aside__brand">
     <div class="kt-aside__brand-logo">
-      <a href="demo1/index.html">
-        <img
-          alt="Logo"
-          src="images/starter-kit-logo-light.png"
+        <router-link to="/admin/dashboard"
+                class="kt-menu__link"
         >
-      </a>
+          <img
+            alt="Logo"
+            src="/build/images/sm_logo_white.png"
+          >
+        </router-link>.
     </div>
     <div class="kt-aside__brand-tools">
       <button

@@ -1,8 +1,9 @@
 <script setup lang="ts">
     import './Admin.scss';
 
-    import { provide } from 'vue';
+    import {onMounted, provide} from 'vue';
     import { storeToRefs } from 'pinia';
+    import { useAuth } from '@websanova/vue-auth/src/v3.js';
     import AdminHeader from '@/layouts/Admin/AdminHeader.vue';
     import AdminSidebar from '@/layouts/Admin/AdminSidebar.vue';
     import { Grid, GridItem } from '@/components/Grid';
@@ -18,8 +19,17 @@
     const rootStore = useRootStore();
     const { setMenu } = rootStore;
     const { sidebarState } = storeToRefs(rootStore);
+    const auth = useAuth();
 
     provide(layoutConfigKey, layoutConfig);
+
+    onMounted(() => {
+        auth.load().then(async () => {
+            if (auth.check()) {
+                await rootStore.setData();
+            }
+        })
+    })
 </script>
 
 <template>

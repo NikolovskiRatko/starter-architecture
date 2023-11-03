@@ -94,7 +94,7 @@
         }
 
         .kt-portlet__body {
-            padding-top: kt-get($portlet, space, desktop) / 2;
+            padding-top: calc(kt-get($portlet, space, desktop) / 2);
         }
     }
 

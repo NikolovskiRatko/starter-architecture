@@ -151,13 +151,13 @@
         margin: $margin;
         height: $height;
         width: $width + $space;
-        border-radius: ($height/2);
+        border-radius: calc($height / 2);
     }
 
     input:empty ~ span:before,
     input:empty ~ span:after {
         width: $width;
-        border-radius: ($height/2);
+        border-radius: calc($height / 2);
     }
 
     input:empty ~ span:after {

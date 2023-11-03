@@ -15,7 +15,7 @@ driverOAuth2Facebook.params.client_id = FACEBOOK_CLIENT_ID
 
 // The function to initialize and configure the auth plugin
 export default (app) => {
-    const authInstance = createAuth({
+    app.use(createAuth({
         plugins: {
             http: app.axios,
             router: app.router,
@@ -32,15 +32,8 @@ export default (app) => {
         options: {
             rolesKey: 'permissions_array',
             parseUserData: function(data) {
-                return data;
+                return data
             }
         }
-    })
-
-    // Set auth on global properties for access in components
-    app.auth = authInstance
-    app.config.globalProperties.auth = authInstance
-
-    // Use the auth plugin
-    app.use(authInstance)
+    }))
 }

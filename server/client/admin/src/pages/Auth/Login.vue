@@ -1,75 +1,46 @@
 <script setup lang="ts">
-    import { ref } from 'vue';
+    import { ref } from 'vue'
     import { useRouter } from 'vue-router'
-    import { AuthKey } from '@/types/symbols';
-    import { injectStrict } from '@/types/injectTyped'
+    import useAuthComp from "@/composables/useAuthComp"
 
+    const form = ref({ email: '', password: '' })
+    const formErrors = ref({ email: '', password: '' })
+    const authError = ref(false)
+    const staySignedIn = ref(true)
 
-    const form = ref({ email: '', password: '' });
-    const formErrors = ref({ email: '', password: '' });
-    const authError = ref(false);
-    const isSending = ref(false);
-    const staySignedIn = ref(true);
-
-    const router = useRouter();
-    const auth = injectStrict(AuthKey);
+    const router = useRouter()
+    const { login } = useAuthComp()
 
     const validateForm = () => {
-        let isValid = true;
-        formErrors.value.email = '';
-        formErrors.value.password = '';
+        let isValid = true
+        formErrors.value.email = ''
+        formErrors.value.password = ''
 
         if (!form.value.email) {
-            formErrors.value.email = 'Email is required';
-            isValid = false;
+            formErrors.value.email = 'Email is required'
+            isValid = false
         }
         if (!form.value.password) {
-            formErrors.value.password = 'Password is required';
-            isValid = false;
+            formErrors.value.password = 'Password is required'
+            isValid = false
         }
 
-        return isValid;
+        return isValid
     }
 
     const submitForm = async () => {
-        if (!validateForm()) return;
+        if (!validateForm()) return
 
-        isSending.value = true;
-
-        // Logging the data being sent to the login method
-        console.log("Logging in with data:", form.value);
-
-        try {
-            const response = await auth.login({
-                body: form.value,
-                data: form.value,
-                redirect: null,
-                remember: false,
-                staySignedIn: staySignedIn.value
-            });
-
-            if (response.status === 200) {
-                // Redirect to the desired route after successful login
-                router.push('/admin/dashboard');
-            } else {
-                // Handle non-200 response status here
-                console.error(`Received response with status ${response.status}:`, response.data);
-                formErrors.value.email = 'An unexpected error occurred. Please try again.';
-                authError.value = true;
-            }
-
-        } catch (err) {
-            formErrors.value.email = 'An error occurred. Please try again';
-            authError.value = true;
-            // Log any error messages or details for debugging
-            console.error("Login error:", err);
-            if (err.response) {
-                console.error("Error response:", err.response);
-            }
-        } finally {
-            isSending.value = false;
-        }
-    };
+        login({
+            data: form.value,
+            redirect: false,
+            remember: false,
+            staySignedIn: staySignedIn.value,
+        }).catch((error) => {
+            authError.value = true
+            console.log(error)
+        })
+    }
 
 </script>
 

@@ -1,4 +1,4 @@
-import { RouteConfig } from 'vue-router';
+import { RouteConfig } from 'vue-router'
 
 // Layouts
 import AuthBase from '@/layouts/Auth/AuthBase.vue'
@@ -13,9 +13,14 @@ export const authPaths: RouteConfig =
   component: AuthBase,
   children: [
     {
-      path: "/",
+      path: "",
+      name: "home",
+      component: Login,
+    },
+    {
+      path: "login",
       name: "login",
       component: Login,
     },
   ]
-};
+}

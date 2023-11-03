@@ -39,7 +39,7 @@
         &.toast-center-h {
             right: auto;
             left: 50%;
-            margin-left: -($toast-width/2);
+            margin-left: - calc($toast-width/2);
         }
 
         .toast-header {

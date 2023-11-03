@@ -61,7 +61,7 @@
                 left: auto;
                 right: $input-btn-padding-x + 0.85rem;
                 margin-right: 0.4rem;
-                margin-top: -(2rem/2);
+                margin-top: - calc(2rem/2);
             }
         }
 

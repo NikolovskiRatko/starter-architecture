@@ -69,7 +69,7 @@
                             @include kt-la-icon('\f17b');
                             top: 50%;
                             position: absolute;
-                            margin-top: - (0.85rem / 2);
+                            margin-top: - calc(0.85rem / 2);
                             font-size: 0.85rem;
                             right: $input-btn-padding-x;
                             display: inline-block;

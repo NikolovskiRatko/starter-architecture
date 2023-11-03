@@ -1,5 +1,38 @@
+<script setup lang="ts">
+    import { computed } from 'vue';
+    import { useRootStore } from '@/store/root';
+    import { useAuth } from '@websanova/vue-auth/src/v3.js';
+
+    import { isTouchDevice } from "@/utils/userAgentCheck";
+
+    const auth = useAuth();
+    const rootStore = useRootStore();
+    const touchDevice = isTouchDevice();
+
+    const isAuthLoaded = computed(() => auth.ready());
+
+    const bodyStyles = computed(() => {
+        const { isBodyOverflowing, modalOpen, scrollBarWidth, navMenuOpen } = rootStore.bodyClasses;
+
+        if (isTouchDevice() && isBodyOverflowing) {
+            if (modalOpen || navMenuOpen)  {
+                return `padding-right:${scrollBarWidth}px;`;
+            }
+        }
+
+        return '';
+    })
+</script>
+
 <template>
-    <div>
-        <router-view></router-view>
-    </div>
+    <router-view
+            v-show="isAuthLoaded"
+            :style="bodyStyles"
+            :class="['main-wrapper',{
+      'main-wrapper--modal-open':rootStore.bodyClasses.modalOpen,
+      'main-wrapper--dimmed':rootStore.bodyClasses.navMenuOpen,
+      'main-wrapper--nav-search-active':rootStore.bodyClasses.navSearchActive,
+      'main-wrapper--touch-device':touchDevice,
+      'main-wrapper--no-touch-device':!touchDevice}]"
+    /> <!-- Main tag from subview is displayed instead of this-->
 </template>

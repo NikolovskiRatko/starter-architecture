@@ -1,30 +1,25 @@
 <script setup lang="ts">
-    import { ref, onMounted } from 'vue';
+    import { ref, onMounted } from 'vue'
+    import { get } from "@/services/HTTP"
     import { useRootStore } from '@/store/root'
 
-    // typing inject
-    import { injectStrict } from '@/types/injectTyped'
-    import { AxiosKey } from '@/types/symbols'
-
-    const http = injectStrict(AxiosKey) // it's typed now
-
-    const categories = ref([]);
-    const isLoading = ref(false);
-    const { setActiveClasses } = useRootStore();
+    const categories = ref([])
+    const isLoading = ref(false)
+    const { setActiveClasses } = useRootStore()
 
     onMounted(() => {
-        isLoading.value = true;
+        isLoading.value = true
         setActiveClasses({
             main: 'item_dashboard',
             sub: 'item_dashboard',
             title: 'strings.dashboard'
         })
 
-        http.get('/common/dashboard/get')
-            .then((response) => {
-                isLoading.value = false;
-                categories.value = response.data;
-            });
+        // get('/common/dashboard/get')
+        //     .then((response) => {
+        //         isLoading.value = false;
+        //         categories.value = response.data;
+        //     })
     })
 </script>
 <template>

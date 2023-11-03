@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 //});
 
 // NON AUTHORIZED ROUTES
+Route::get('vue', [HomeController::class,'vue']);
 // AUTHENTICATION ROUTES
 Route::group([
     'prefix' => 'auth',
@@ -39,7 +41,6 @@ Route::group([
 Route::group([
     'middleware' => 'auth:sanctum'
 ], function () {
-    Route::get('vue', 'HomeController@vue');
     // AUTHENTICATION ROUTES
     Route::group([
         'prefix' => 'auth',

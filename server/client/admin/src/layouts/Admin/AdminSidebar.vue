@@ -1,64 +1,64 @@
 <script setup lang="ts">
-  import './AdminSidebar.scss';
+  import './AdminSidebar.scss'
 
-  import { computed, onMounted, ref } from 'vue';
-  import { storeToRefs } from 'pinia';
-  // import useAuthComp from "@/composables/useAuthComp";
-  import { useRootStore } from '@/store/root';
-  import BrandComponent from '@/components/Admin/Brand.vue';
-  import FirstLevelMenuItem from '@/components/Admin/FirstLevelMenuItem.vue';
+  import { computed, onMounted, ref } from 'vue'
+  import { storeToRefs } from 'pinia'
+  import useAuthComp from "@/composables/useAuthComp"
+  import { useRootStore } from '@/store/root'
+  import BrandComponent from '@/components/Admin/Brand.vue'
+  import FirstLevelMenuItem from '@/components/Admin/FirstLevelMenuItem.vue'
 
-  // const { permissionsArray } = useAuthComp();
-  const rootStore = useRootStore();
-  const { mainMenu, sidebarState } = storeToRefs(rootStore);
-  const { setMenu, setSidebarState } = rootStore;
-  const emit = defineEmits(['sidebarHover']);
+  const { permissionsArray } = useAuthComp()
+  const rootStore = useRootStore()
+  const { mainMenu, sidebarState } = storeToRefs(rootStore)
+  const { setMenu, setSidebarState } = rootStore
+  const emit = defineEmits(['sidebarHover'])
 
-  const clearMinimizingTimeout = ref<number>(0);
-  const blockToggle = ref<boolean>(false);
+  const clearMinimizingTimeout = ref<number>(0)
+  const blockToggle = ref<boolean>(false)
 
   const menuItems = computed(() => {
-    return mainMenu.value
-  });
+    return mainMenu.value.filter(menuItem => permissionsArray.value.includes(menuItem.permission)) || []
+  })
 
   const setMinimizing = () => {
-    clearTimeout(clearMinimizingTimeout.value);
-    sidebarState.value.minimizing = true;
+    clearTimeout(clearMinimizingTimeout.value)
+    sidebarState.value.minimizing = true
     clearMinimizingTimeout.value = window.setTimeout(()=>{
-      sidebarState.value.minimizing = false;
-      console.log('minimizingOff');
-    },300);
-  };
+      sidebarState.value.minimizing = false
+      console.log('minimizingOff')
+    },300)
+  }
 
   const toggleSidebar = () => {
-    const { minimized } = sidebarState.value;
+    const { minimized } = sidebarState.value
     if (!blockToggle.value) {
-      blockToggle.value = true;
-      sidebarState.value.minimized = !minimized;
+      blockToggle.value = true
+      sidebarState.value.minimized = !minimized
       if (!minimized) {
-        sidebarState.value.minimizeHover = false;
+        sidebarState.value.minimizeHover = false
       }
 
       window.setTimeout(() => {
-        blockToggle.value = false;
-      }, 300);
+        blockToggle.value = false
+      }, 300)
 
-      setMinimizing();
-      emit('sidebarHover', sidebarState);
+      setMinimizing()
+      emit('sidebarHover', sidebarState)
     }
   }
 
   const sidebarHover = (isOver: boolean) => {
-    const { minimized } = sidebarState.value;
+    const { minimized } = sidebarState.value
     if (minimized && !blockToggle.value) {
-      sidebarState.value.minimizeHover = isOver;
-      setMinimizing();
-      emit('sidebarHover', sidebarState);
+      sidebarState.value.minimizeHover = isOver
+      setMinimizing()
+      emit('sidebarHover', sidebarState)
     }
   }
 
   onMounted(() => {
-    setMenu([]);
+    setMenu([])
   })
 </script>
 

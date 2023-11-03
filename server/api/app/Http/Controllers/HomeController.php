@@ -20,51 +20,30 @@ class HomeController extends Controller
     {
         $mainMenu = [
             [
-                'label' => 'strings.dashboard',
+                'label' => 'admin.dashboard',
                 'name' => 'item_dashboard',
                 'link' => 'dashboard',
-                'permission' => 'read-users', // Change to dashboard_view
+                'permission' => 'read_users', // Change to dashboard_view
             ],
             [
-                'label' => 'strings.users.main',
+                'label' => 'admin.users.main',
                 'name' => 'item_users',
                 'link' => 'users',
                 'expanded' => false,
-                'permission' => 'read-users',
+                'permission' => 'read_users',
                 'subcategories' => [
                     [
-                        'label' => 'strings.users.admin',
+                        'label' => 'admin.users.admin',
                         'name' => 'item_users',
                         'link' => 'users',
-                        'permission' => 'read-users',
+                        'permission' => 'read_users',
                     ],
                     [
-                        'label' => 'strings.users.public',
+                        'label' => 'admin.users.public',
                         'name' => 'item_users_public',
                         'link' => 'users.public',
-                        'permission' => 'read-users',
+                        'permission' => 'read_users',
                     ],
-                ]
-            ],
-            [
-                'label' => 'components.label',
-                'name' => 'components',
-                'link' => 'components',
-                'expanded' => false,
-                'permission' => 'read-users',
-                'subcategories' => [
-                    [
-                        'label' => 'components.portlets.label',
-                        'name' => 'components.portlets',
-                        'link' => 'components.portlets',
-                        'permission' => 'read-users',
-                    ],
-                    [
-                        'label' => 'components.buttons.label',
-                        'name' => 'components.buttons',
-                        'link' => 'components.buttons',
-                        'permission' => 'read-users',
-                    ]
                 ]
             ]
         ];

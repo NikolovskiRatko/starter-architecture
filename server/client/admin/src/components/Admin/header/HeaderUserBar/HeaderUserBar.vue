@@ -1,21 +1,9 @@
 <script setup>
   import { ref } from 'vue';
+  import useAuthComp from "@/composables/useAuthComp";
   import './HeaderUserBar.scss';
 
-  // typing inject
-  import { injectStrict } from '@/types/injectTyped'
-  import {  AuthKey } from '@/types/symbols'
-  const auth = injectStrict(AuthKey);
-
-  const logoutUser = async () => {
-    try {
-      await auth.logout();
-      console.log('Logged out successfully');
-    } catch (error) {
-      console.error('Error during logout:', error);
-    }
-  }
-
+  const { logout, user } = useAuthComp();
   const isDropdownVisible = ref(false);
 
   const toggleDropdown = () => isDropdownVisible.value = !isDropdownVisible.value;
@@ -25,7 +13,7 @@
     <div class="kt-header__topbar-wrapper" @click="toggleDropdown">
       <div class="kt-header__topbar-user">
         <span class="kt-header__topbar-welcome kt-hidden-mobile">Hi,</span>
-        <span class="kt-header__topbar-username kt-hidden-mobile">Name</span>
+        <span class="kt-header__topbar-username kt-hidden-mobile">{{ user.name }}</span>
         <img
             class="kt-hidden"
             alt="Pic"
@@ -52,7 +40,7 @@
           <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">S</span>
         </div>
         <div class="kt-user-card__name">
-          Name
+          {{ user.name }}
         </div>
         <div class="kt-user-card__badge">
           <span class="btn btn-success btn-sm btn-bold btn-font-md">23 messages</span>
@@ -144,7 +132,7 @@
           </div>
         </a>
         <div class="kt-notification__custom kt-space-between">
-          <a @click.prevent="logoutUser" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
+          <a @click.prevent="logout" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
           <a
               href="demo1/custom/user/login-v2.html"
               target="_blank"

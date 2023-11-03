@@ -1,17 +1,21 @@
 import { createRouter, createWebHistory, Router } from 'vue-router'
+import { useRootStore } from '@/store/root';
 
 import { adminPaths } from './admin'
 import { authPaths } from './auth'
+
+// Pages
+import Error from '@/pages/Error/Error.vue'
 
 const routes =
 [
   authPaths,
   adminPaths,
-  // {
-  //   path: "/:catchAll(.*)",
-  //   name: 'errorpage',
-  //   component : Error
-  // },
+  {
+    path: "/:catchAll(.*)",
+    name: 'errorpage',
+    component : Error
+  },
 ];
 
 const history = createWebHistory()
@@ -20,10 +24,20 @@ const router: Router = createRouter({
   routes
 })
 
-export default (app) => {
-  // Set the router instance to the global properties
-  app.router = router;
-  app.config.globalProperties.router = router;
+router.afterEach((to, from) => {
+  const { setFrontActiveClass } = useRootStore()
 
-  app.use(router);
+  setTimeout(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0
+    })
+  }, 500)
+
+  setFrontActiveClass(to.name)
+})
+
+export default (app) => {
+  app.router = router
+  app.use(router)
 }

@@ -70,8 +70,8 @@ $radio-config: (
             display: none; // Hide check
             top: 50%;
             left: 50%;
-            margin-left: -(kt-get($radio-config, self, tick) / 2);
-            margin-top: -(kt-get($radio-config, self, tick) / 2);
+            margin-left: - calc(kt-get($radio-config, self, tick) / 2);
+            margin-top: - calc(kt-get($radio-config, self, tick) / 2);
             width: kt-get($radio-config, self, tick);
             height: kt-get($radio-config, self, tick);
             border-radius: 100% !important;

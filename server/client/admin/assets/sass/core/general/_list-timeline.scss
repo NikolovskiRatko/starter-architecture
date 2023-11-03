@@ -79,7 +79,7 @@
                     height: 7px;
                     left: 0;
                     top: 50%;
-                    margin-top: -(7px / 2);
+                    margin-top: - calc(7px / 2);
                     border-radius: 100%;
                 }
 

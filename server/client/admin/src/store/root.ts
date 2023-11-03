@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
 import { mergeWith } from 'lodash';
 import { bodyClasses } from "@/utils/bodyClasses";
+import { get } from "@/services/HTTP";
 import type { RootState, SetActiveClassesPayload } from "./types/root";
 
 export const useRootStore = defineStore('root', {
@@ -55,14 +56,14 @@ export const useRootStore = defineStore('root', {
         },
         async setData() {
             try {
-                const response = await this.axios.get('vue');
+                const response = await get('vue');
                 const { status, data } = response;
 
                 if (status === 200 && !data.errors) {
                     this.$state = data;
                 }
             } catch (error) {
-                alert("Error getting data from API", null);
+                alert("Error getting data from API");
                 window.location.reload();
 
                 return;
