@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Auth\LoginController;
+use App\Applications\User\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,13 +26,13 @@ Route::get('vue', [HomeController::class,'vue']);
 Route::group([
     'prefix' => 'auth',
 ], function () {
-    Route::post('/login', [LoginController::class,'login']);
+    Route::post('login', [LoginController::class,'login']);
 });
 // GUEST ROUTES
 Route::group([
     'prefix' => 'guest',
 ], function () {
-    Route::get('/test', function (Request $request) {
+    Route::get('test', function (Request $request) {
         return "OPEN";
     });
 });
@@ -45,9 +45,9 @@ Route::group([
     Route::group([
         'prefix' => 'auth',
     ], function () {
-        Route::post('/logout', [LoginController::class,'logout']);
-        Route::get('/user', [LoginController::class, 'user']);
-        Route::get('/refresh', [LoginController::class, 'refresh']);
+        Route::post('logout', [LoginController::class,'logout']);
+        Route::get('user', [LoginController::class, 'user']);
+        Route::get('refresh', [LoginController::class, 'refresh']);
     });
 });
 

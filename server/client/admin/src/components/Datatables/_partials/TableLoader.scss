@@ -1,0 +1,36 @@
+@import "@styles/utils";
+@import "../utils";
+
+.kt-datatable__loader {
+  @include kt-full-absolute-positioned(rgba(255,255,255,0.6));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__message {
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    padding: .8rem 1.3rem;
+    font-size: 1rem;
+
+    &--noshadow {
+      box-shadow: none;
+    }
+
+    @include kt-rounded {
+      border-radius: $border-radius;
+    }
+
+    .fa,.la {
+      position: relative;
+      top: 2px;
+      margin-left: 5px;
+      width: 17px;
+      height: 17px;
+      text-align: center;
+      font-size: 17px;
+      animation: kt-rotate 1s linear infinite;
+    }
+  }
+}

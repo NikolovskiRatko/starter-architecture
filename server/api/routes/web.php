@@ -12,4 +12,5 @@
 
 use App\Http\Controllers\HomeController;
 
+Route::get('/login', [HomeController::class,'index'])->name('login');
 Route::get('/{any}', [HomeController::class,'index'])->where('any', '.*');

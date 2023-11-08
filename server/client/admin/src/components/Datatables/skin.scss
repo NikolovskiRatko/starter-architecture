@@ -1,0 +1,52 @@
+// Base color
+$base_color: #f9fbfe;
+
+// Scrollbar
+$scrollbar_color: darken(kt-base-color(shape, 2), 3%);
+
+// Table
+$base_bg: #fff;
+
+// Head
+$head_cell_bg: transparent;
+$head_cell_color: kt-base-color(label, 3);
+$head_cell_sorted_color: kt-state-color(brand);
+$head_cell_icon_color: kt-state-color(brand);
+
+// Checkbox
+$checkbox_bg: kt-base-color(shape, 1);
+$checkbox_checked_bg: kt-base-color(shape, 2);
+
+// Row colors
+$row-border-color: kt-base-color(shape, 1);
+$row-even: transparent;
+$row-hover: transparent;
+$row-active: kt-base-color(grey, 1);
+
+// Body cell
+$body_cell_font_color: kt-base-color(label, 3);
+
+// Lock table shadow
+$lock-shadow: 0px 0px 17px 5px rgba(113, 106, 202, 0.14);
+
+// Subtable
+$subtable_toggle_icon: kt-state-color(brand);
+$subtable_expanded: $row-active;
+$subtable_pager_pagel: $base-color;
+$subtable_shadow: 0px 0px 15px 1px rgba(113, 106, 202, 0.1);
+
+$detail_icon_color: kt-state-color(brand); //kt-base-color(shape, 2);
+$detail_icon_color_hover: kt-state-color(brand);
+
+// Pagination colors
+$page-default: kt-base-color(shape, 1);
+$page-default-font: kt-base-color(shape, 3);
+$page-hover: kt-state-color(brand);
+$page-hover-font: kt-state-color(brand, inverse);
+$page-active: kt-state-color(brand);
+$page-active-font: kt-state-color(brand, inverse);
+
+$page-info: kt-base-color(shape, 1);
+$page-info-font: kt-base-color(shape, 3);
+$page-info-hover: kt-state-color(brand);
+$page-info-hover-font: kt-state-color(brand, inverse);

@@ -1,0 +1,142 @@
+@import "@styles/utils";
+@import "utils";
+@import "skin";
+
+// Base
+.kt-datatable {
+  margin-bottom: $table-space;
+  position: relative;
+
+  @include kt-mobile {
+    margin-bottom: $table-space-mobile;
+  }
+
+  &--loading {
+    min-height: 15rem;
+    position: relative;
+    cursor: wait;
+  }
+
+  &__table {
+    background-color: $base_bg;
+    border-bottom: 1px solid $row-border-color;
+    border-collapse: collapse;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+
+    &--portlet {
+      border-radius: $border-radius;
+    }
+  }
+
+  &__body {
+    visibility: hidden;
+    display: block;
+    position: relative;
+
+    &--loaded {
+      visibility: visible;
+    }
+
+    &--error {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .kt-datatable__toggle-detail {
+      vertical-align: middle;
+      i {
+        transition: color 0.3s ease;
+        color: $detail_icon_color;
+
+        &:before {
+          line-height: 0;
+          vertical-align: middle;
+        }
+      }
+
+      &:hover,
+      &.kt-datatable__toggle-detail--active {
+        i {
+          transition: color 0.3s ease;
+          color: $detail_icon_color_hover;
+        }
+      }
+    }
+    .kt-datatable__row-detail {
+      display: block;
+      .kt-datatable__detail {
+        display: block;
+        padding: 0 ($table-space + 35px);
+
+        .kt-datatable__row {
+          display: table-row;
+
+          > .kt-datatable__cell {
+            padding: 8px 12px;
+            text-align: left;
+            vertical-align: top;
+
+            > span {
+              width: auto !important;
+            }
+
+            &:first-child {
+              font-weight: 500;
+            }
+
+            &:last-child {
+              font-weight: regular;
+              padding-left: 20px;
+            }
+          }
+        }
+        table {
+          border-left: 1px solid $row-border-color;
+          border-right: 1px solid $row-border-color;
+        }
+      }
+    }
+
+    &.ps {
+      padding-bottom: 0;
+    }
+  }
+
+  &__head {
+    display: block;
+    position: relative;
+  }
+
+  &__foot {
+    visibility: hidden;
+    display: block;
+  }
+
+  &__toggle-detail {
+    > span {
+      width: 12px;
+    }
+    > & {
+      display: inline-block;
+      text-align: right;
+
+      > i {
+        font-size: 1.4rem;
+        width: 12px;
+      }
+    }
+  }
+
+  // Scrollbar
+  .ps > .ps__rail-y > .ps__thumb-y,
+  .ps > .ps__rail-x > .ps__thumb-x {
+    background: $scrollbar_color;
+
+    &:hover,
+    &:focus {
+      background: $scrollbar_color;
+    }
+  }
+}

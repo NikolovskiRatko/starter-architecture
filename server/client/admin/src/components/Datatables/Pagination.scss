@@ -1,0 +1,125 @@
+@import "@styles/utils";
+@import "utils";
+@import "skin";
+
+.kt-datatable__pager {
+  margin: 0px;
+  padding: $table-space;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include kt-mobile {
+    margin: 0;
+    padding: $table-space-mobile $table-space-mobile calc($table-space-mobile/2) $table-space-mobile;
+  }
+
+  &--top {
+    margin-bottom: 20px;
+  }
+
+  &__nav {
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    > li {
+      padding: 0;
+      margin-right: 5px;
+      display: inline-block;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      > .kt-pager-input {
+        height: $page-size;
+        width: 3.5rem;
+        text-align: center;
+
+        @include kt-rounded {
+          border-radius: 3px !important;
+        }
+      }
+    }
+
+    @include kt-mobile {
+      margin-top: 10px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+
+    @include kt-mobile {
+      margin-top: 10px;
+    }
+  }
+
+  &__size {
+    margin-right: 10px;
+
+    .btn.dropdown-toggle {
+      //border-radius: 3px !important;
+      height: $page-size;
+      padding: 0.45rem 1rem;
+
+      @include kt-not-rounded {
+        border-radius: 0 !important;
+      }
+    }
+
+    .dropdown-menu.inner > li.selected > a span.check-mark {
+      margin-top: -0.6rem;
+    }
+  }
+
+  &__input {
+    @include kt-transition();
+    background: $page-default;
+    border-color: $page-default;
+
+    &:focus {
+      @include kt-transition();
+      background: $page-hover;
+      border-color: $page-hover;
+    }
+  }
+
+  &__size,
+  &__info {
+    .btn.dropdown-toggle {
+      font-size: 1rem;
+      font-weight: 500;
+      border: 0 !important;
+      color: $page-info-font;
+      background: $page-info;
+
+      i {
+        color: $page-info-hover-font;
+      }
+    }
+
+    .btn.dropdown-toggle:focus,
+    .btn.dropdown-toggle:hover,
+    &.show > .btn.dropdown-toggle {
+      border: 0 !important;
+      color: $page-info-hover-font !important;
+      background: $page-info-hover;
+
+      i {
+        color: $page-info-hover-font !important;
+      }
+    }
+
+    .dropdown-menu {
+      z-index: 100;
+
+      .modal & {
+        z-index: $modal-zindex + 1;
+      }
+    }
+  }
+}

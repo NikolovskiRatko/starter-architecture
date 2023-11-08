@@ -1,30 +1,31 @@
 <script setup lang="ts">
-    import './Users.scss';
+    import { onMounted } from "vue";
+    import { useRootStore } from '@/store/root';
     import { ColumnObject } from '@/components/Datatables/typings';
     import UserDatatable from '@/features/UsersCrud/UserDatatable.vue';
 
+    const { setBackUrl, setActiveClasses } = useRootStore();
+
+    onMounted(() => {
+        setBackUrl('/');
+        setActiveClasses({
+            main: 'users',
+            sub: 'users',
+            title: 'users.title',
+            hasFilters: 'users'
+        })
+    });
+
     const columns: ColumnObject[] = [
-        { id: 0, width: '40%', label: 'name', name: 'name', sortable: true },
-        { id: 1, width: '40%', label: 'email', name: 'email', sortable: true },
-        { id: 2, width: '10%', label: 'actions', name: 'actions', sortable: false },
-        { id: 3, width: '10%', label: 'delete', name: 'actions', sortable: false }
+        { id: 0, width: '15%', label: 'admin.datatable.first_name', name: 'first_name', sortable: true },
+        { id: 1, width: '15%', label: 'admin.datatable.last_name', name: 'last_name', sortable: true },
+        { id: 2, width: '20%', label: 'admin.datatable.email', name: 'email', sortable: true },
+        { id: 3, width: '10%', label: 'admin.datatable.user_role', name: 'roles', sortable: true },
+        { id: 4, width: '5%', label: 'admin.datatable.status', name: 'status', sortable: true },
+        { id: 5, width: '5%', label: 'strings.actions', name: 'actions', sortable: false },
+        { id: 6, width: '5%', label: 'strings.delete', name: 'actions', sortable: false }
     ];
 </script>
 <template>
-    <!-- ### $App Screen Content ### -->
-    <main class='main-content bgc-grey-100'>
-        <div id='mainContent'>
-            <div class="container-fluid">
-                <h4 class="c-grey-900 mT-10 mB-30">Users Table Display</h4>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="bgc-white bd bdrs-3 p-20 mB-20">
-                            <h4 class="c-grey-900 mB-20">Admin Users</h4>
-                            <user-datatable :columns="columns" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+    <user-datatable :columns="columns" />
 </template>

@@ -168,6 +168,11 @@ return [
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
+
+        // Load module service providers before the RouteServiceProvider
+        App\Applications\User\Providers\UserServiceProvider::class,
+
+        // Load the RouteServiceProvider last because it has the any route redirect
         App\Providers\RouteServiceProvider::class,
     ])->toArray(),
 

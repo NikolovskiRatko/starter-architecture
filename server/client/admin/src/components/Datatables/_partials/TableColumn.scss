@@ -1,0 +1,201 @@
+@import "@styles/utils";
+@import "../utils";
+@import "../skin";
+
+.kt-datatable__cell {
+  $block: &;
+
+  vertical-align: middle;
+  padding: 10px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  display: table-cell;
+
+  &:first-child {
+    padding-left: $table-space;
+  }
+
+  &:last-child {
+    padding-right: $table-space;
+  }
+
+  &:hover {
+    transition: background 0.3s ease;
+    background: $row-hover;
+
+    &:not(#{block}--active) { // Both of these should be regarding the row been hovered or not active
+      transition: background 0.3s ease;
+      background: $row-hover;
+    }
+  }
+
+  i {
+    //font-size: 1.4rem;
+  }
+
+  > span {
+    color: $body_cell_font_color;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-weight: 500;
+    vertical-align: middle;
+  }
+
+  @include kt-mobile {
+    &:first-child {
+      padding-left: $table-space-mobile;
+    }
+
+    &:last-child {
+      padding-right: $table-space-mobile;
+    }
+  }
+
+  &--left {
+    text-align: left;
+    > span {
+      text-align: left;
+    }
+  }
+
+  &--right {
+    text-align: right;
+    > span {
+      text-align: right;
+      > i {
+        right: 0;
+      }
+    }
+  }
+
+  &--center {
+    text-align: center;
+    > span {
+      text-align: center;
+    }
+  }
+
+  &--sort {
+    cursor: pointer;
+
+    i {
+      font-size: 0.85rem;
+      right: -5px;
+    }
+  }
+
+  &--resizing {
+    cursor: col-resize;
+  }
+
+  &--check {
+    text-align: center;
+
+    > span {
+      overflow: visible;
+
+      > .kt-checkbox {
+        top: 2px;
+        padding: 0;
+        margin: 0 0 0 0;
+      }
+    }
+  }
+
+  &--head {
+    padding: 16px 10px;
+    > span {
+      > i {
+        color: $head_cell_icon_color;
+        display: inline-block;
+        position: relative;
+        right: -10px;
+        line-height: 0;
+        vertical-align: middle;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  &--body {
+    font-weight: regular;
+
+    &--check {
+      > span {
+        > .kt-checkbox {
+          top: 1px;
+        }
+      }
+    }
+  }
+
+  &--error {
+
+    &#{$block}--header,
+    &#{$block}--foot {
+      padding-top: 6rem;
+      text-align: center;
+      padding-bottom: 6rem;
+    }
+  }
+
+  &--header,
+  &--foot {
+    .dropdown {
+      display: inline-block;
+
+      .dropdown-menu {
+        margin-top: 0.5rem;
+      }
+
+      &.dropup {
+        .dropdown-menu {
+          margin-top: auto;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      .dropdown-menu.dropdown-menu-right {
+        margin-right: -0.8rem;
+        /*rtl:ignore*/
+        margin-left: 65px;
+      }
+
+      .dropdown-menu.dropdown-menu-left {
+        margin-left: -10rem;
+      }
+    }
+
+    background: $head_cell_bg;
+
+    > span {
+      color: $head_cell_color;
+    }
+  }
+
+  &--even-row {
+    background: $row-even;
+  }
+
+  &--active {
+    background: $row-active;
+  }
+
+
+  &--sorted {
+
+    #{$block}--header,
+    #{$block}--foot {
+      color: $head_cell_sorted_color;
+    }
+  }
+
+  .kt-checkbox.kt-checkbox--solid > span {
+    background: $checkbox_bg;
+  }
+  .kt-checkbox.kt-checkbox--solid > input:checked ~ span {
+    background: $checkbox_checked_bg;
+  }
+}

@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Models;
+namespace App\Applications\User\Model;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -12,6 +13,11 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
     use HasRoles;
+    use SoftDeletes;
+
+    const ADMIN = 'administrator';
+    const EDITOR = 'editor';
+    const COLLABORATOR = 'collaborator';
 
     /**
      * The attributes that are mass assignable.
@@ -19,9 +25,13 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
+        'email_verified_at',
         'password',
+        'is_disabled',
+        'activation_code'
     ];
 
     /**
@@ -49,7 +59,9 @@ class User extends Authenticatable
      *
      * @var array<string>
      */
-    protected $appends = ['permissions_array'];
+    protected $appends = [
+        'permissions_array'
+    ];
 
     public function getPermissionsArrayAttribute(){
         return $this->getAllPermissions()->pluck('name')->toArray();

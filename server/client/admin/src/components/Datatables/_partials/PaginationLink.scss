@@ -1,0 +1,77 @@
+@import "@styles/utils";
+@import "../utils";
+@import "../skin";
+
+.kt-datatable__pager__link {
+  $block: &;
+  color: $page-default-font;
+
+  @include kt-transition();
+
+  cursor: pointer;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $page-size;
+  min-width: $page-size;
+  padding: 0.5rem;
+  border-radius: 3px;
+
+  @include kt-not-rounded {
+    border-radius: 0;
+  }
+
+  position: relative;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 500;
+
+  > i {
+    font-size: 1rem;
+    text-align: center;
+    display: inline-block;
+  }
+
+  &--more-prev,
+  &--more-next {
+    font-weight: 600;
+  }
+
+  &--first,
+  &--prev,
+  &--next,
+  &--last {
+    background: $page-default;
+
+    &:hover {
+      background: $page-hover;
+      color: $page-hover-font;
+    }
+  }
+
+  &:hover {
+    background: $page-hover;
+    color: $page-hover-font;
+  }
+
+  &--arrow {
+    background: $page-default;
+
+    &:hover {
+      background: $page-hover;
+    }
+  }
+
+  &--active {
+    background: $page-active;
+    color: $page-active-font;
+  }
+
+  &--disabled,
+  &--disabled:hover {
+    color: $page-default-font;
+    background: $page-default;
+    opacity: 0.3;
+  }
+}
