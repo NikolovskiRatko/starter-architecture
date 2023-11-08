@@ -5,7 +5,11 @@ import { adminPaths } from './admin'
 import { authPaths } from './auth'
 
 // Pages
-import Error from '@/pages/Error/Error.vue'
+const Error = () => import(
+    /* webpackChunkName: "error" */
+    /* webpackPrefetch: true */
+    '@/pages/Error/Error.vue'
+    );
 
 const routes =
 [

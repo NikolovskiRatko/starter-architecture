@@ -1,7 +1,9 @@
 <script setup lang="ts">
   import { Portlet } from '@/components';
   import { PortletBody, PortletHeadLabel, PortletHead } from '@/components/Portlet/components';
-  import { SkButton, SkSection } from '@/components/base'
+  import SkButton from '@/components/base/SkButton/SkButton.vue';
+  import SkSection from '@/components/base/typography/SkSection/SkSection.vue';
+
   import buttons from '@/data/buttons';
 </script>
 <template>

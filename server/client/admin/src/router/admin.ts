@@ -3,18 +3,55 @@ import { i18n } from '@/plugins/i18n';
 const { t } = i18n.global;
 
 // Layouts
-import AdminLayout from '@/layouts/Admin/AdminLayout.vue'
+const AdminLayout = () => import(
+    /* webpackChunkName: "admin-layout" */
+    /* webpackPrefetch: true */
+    '@/layouts/Admin/AdminLayout.vue'
+    );
 
 // Pages
-import Dashboard from '@/pages/Dashboard/Dashboard.vue'
-import Users from '@/pages/Users/Users.vue'
-import UserForm from '@/pages/Users/UserForm.vue'
+const Dashboard = () => import(
+    /* webpackChunkName: "dashboard" */
+    /* webpackPrefetch: true */
+    '@/pages/Dashboard/Dashboard.vue'
+    );
+
+const Users = () => import(
+    /* webpackChunkName: "users" */
+    /* webpackPrefetch: true */
+    '@/pages/Users/Users.vue'
+    );
+
+const UserForm = () => import(
+    /* webpackChunkName: "user-form" */
+    /* webpackPrefetch: true */
+    '@/pages/Users/UserForm.vue'
+    );
 
 // Admin Components
-import MyProfile from '@/pages/Admin/MyProfile.vue'
-import NotFound from '@/pages/Admin/NotFound.vue'
-import Portlets from '@/pages/Components/Portlets.vue'
-import Buttons from '@/pages/Components/Buttons.vue'
+const MyProfile = () => import(
+    /* webpackChunkName: "my-profile" */
+    /* webpackPrefetch: true */
+    '@/pages/Admin/MyProfile.vue'
+    );
+
+const NotFound = () => import(
+    /* webpackChunkName: "not-found" */
+    /* webpackPrefetch: true */
+    '@/pages/Admin/NotFound.vue'
+    );
+
+const Portlets = () => import(
+    /* webpackChunkName: "portlets" */
+    /* webpackPrefetch: true */
+    '@/pages/Components/Portlets.vue'
+    );
+
+const Buttons = () => import(
+    /* webpackChunkName: "buttons" */
+    /* webpackPrefetch: true */
+    '@/pages/Components/Buttons.vue'
+    );
 
 /*INSERT NEW IMPORTS HERE*/
 

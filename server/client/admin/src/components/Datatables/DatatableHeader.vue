@@ -4,7 +4,8 @@
   // import { BDropdown, BDropdownItem, BDropdownText } from 'bootstrap-vue';
   import { PortletHead, PortletHeadLabel, PortletHeadToolbar } from "@/components/Portlet/components";
   import { useAuth } from '@websanova/vue-auth/src/v3.js';
-  import { SkButton } from '@/components/base';
+  import SkButton from '@/components/base/SkButton/SkButton.vue';
+
 
   const props = defineProps(['value', 'addRouteName', 'langKey', 'draggableAddNewEnable']);
   const exportGeneration: Ref<boolean> = ref(false);

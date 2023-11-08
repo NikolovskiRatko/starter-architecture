@@ -1,10 +1,21 @@
 import { RouteConfig } from 'vue-router'
 
 // Layouts
-import AuthBase from '@/layouts/Auth/AuthBase.vue'
+const AuthBase = () => import(
+    /* webpackChunkName: "auth-base" */
+    /* webpackPrefetch: true */
+    '@/layouts/Auth/AuthBase.vue'
+    );
 
 // Pages
-import Login from '@/pages/Auth/Login.vue'
+const Login = () => import(
+    /* webpackChunkName: "login" */
+    /* webpackPrefetch: true */
+    '@/pages/Auth/Login.vue'
+    );
+
+
+
 
 export const authPaths: RouteConfig =
 //  AUTHENTICATION

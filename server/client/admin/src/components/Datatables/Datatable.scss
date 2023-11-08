@@ -114,20 +114,21 @@
     display: block;
   }
 
-  &__toggle-detail {
-    > span {
-      width: 12px;
-    }
-    > & {
-      display: inline-block;
-      text-align: right;
-
-      > i {
-        font-size: 1.4rem;
-        width: 12px;
-      }
-    }
-  }
+  // WAS TRIGGERING WARNINGS
+  //&__toggle-detail {
+  //  > span {
+  //    width: 12px;
+  //  }
+  //  > & {
+  //    display: inline-block;
+  //    text-align: right;
+  //
+  //    > i {
+  //      font-size: 1.4rem;
+  //      width: 12px;
+  //    }
+  //  }
+  //}
 
   // Scrollbar
   .ps > .ps__rail-y > .ps__thumb-y,
@@ -138,5 +139,19 @@
     &:focus {
       background: $scrollbar_color;
     }
+  }
+}
+
+.kt-datatable__toggle-detail {
+  display: inline-block;
+  text-align: right;
+
+  > span {
+    width: 12px;
+  }
+
+  > i {
+    font-size: 1.4rem;
+    width: 12px;
   }
 }
