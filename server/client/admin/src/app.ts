@@ -2,7 +2,8 @@ import { createApp } from 'vue'
 // Pinia is a state management library
 import { createPinia } from 'pinia'
 // Import plugins attached to global Vue instance
-import { axios, auth, globalComponents, i18n } from './plugins'
+import { axios, auth, globalComponents } from './plugins'
+import { i18n } from './plugins/i18n'
 import router from './router'
 
 // Import the encompassing App component

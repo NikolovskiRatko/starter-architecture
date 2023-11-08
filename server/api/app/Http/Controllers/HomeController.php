@@ -37,13 +37,7 @@ class HomeController extends Controller
                         'name' => 'item_users',
                         'link' => 'users',
                         'permission' => 'read_users',
-                    ],
-                    [
-                        'label' => 'admin.users.public',
-                        'name' => 'item_users_public',
-                        'link' => 'users.public',
-                        'permission' => 'read_users',
-                    ],
+                    ]
                 ]
             ]
         ];
