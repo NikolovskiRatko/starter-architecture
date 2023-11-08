@@ -25,7 +25,7 @@ class UserRepository implements UserRepositoryInterface
     private const COLUMNS_MAP = [
         'first_name' => 'users.first_name',
         'last_name' => 'users.last_name',
-        'email' => 'email',
+        'email' => 'users.email',
         'roles' => 'roles.id',
         'status' => 'users.is_disabled'
     ];

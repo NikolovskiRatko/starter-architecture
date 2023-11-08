@@ -15,7 +15,7 @@ class User extends Authenticatable
     use HasRoles;
     use SoftDeletes;
 
-    const ADMIN = 'administrator';
+    const ADMIN = 'admin';
     const EDITOR = 'editor';
     const COLLABORATOR = 'collaborator';
 
