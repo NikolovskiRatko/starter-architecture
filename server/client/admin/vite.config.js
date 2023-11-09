@@ -4,6 +4,8 @@ import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
+const shouldMinify = process.env.NODE_ENV !== 'development';
+
 export default defineConfig({
     plugins: [
         laravel({
@@ -40,6 +42,7 @@ export default defineConfig({
     build: {
         outDir: path.resolve(__dirname, './../../api/public/build'),
         emptyOutDir: true,
+        minify: shouldMinify ? 'terser' : false,
     },
     resolve: {
         alias: {
