@@ -1,0 +1,30 @@
+---
+- name: "Install other dependencies."
+  apt: "name={{ item }} state=present"
+  with_items:
+    - git
+    - curl
+    - unzip
+    - sendmail
+    - libpcre3-dev
+    - libapache2-mod-php8.0
+    - libapache2-mod-wsgi
+    - acl
+    - moreutils
+
+- name: "ensure SSH key is generated"
+  command: ssh-keygen -t rsa -f /root/.ssh/id_rsa -N ''
+  args:
+    creates: /root/.ssh/id_rsa
+
+# Set some settings in ~/.gitconfig
+- name: setup git name
+  git_config:
+    name: user.name
+    scope: global
+    value: "ESOF Starter"
+- name: setup git user email
+  git_config:
+    name: user.email
+    scope: global
+    value: esofstarter@gmail.com

@@ -1,0 +1,3 @@
+---
+nodejs_version: "16.x"
+nodejs_npm_global_packages: ['pm2']

@@ -1,0 +1,114 @@
+{# Set up VirtualHosts #}
+{% for vhost in apache_vhosts %}
+    <VirtualHost {{ apache_listen_ip }}:{{ apache_listen_port }}>
+        ServerName {{ vhost.servername }}
+        {% if vhost.serveralias is defined %}
+          ServerAlias {{ vhost.serveralias }}
+        {% endif %}
+        {% if vhost.documentroot is defined %}
+          DocumentRoot "{{ vhost.documentroot }}/website/public"
+        {% endif %}
+
+        {% if vhost.serveradmin is defined %}
+          ServerAdmin {{ vhost.serveradmin }}
+        {% endif %}
+
+        {% if vhost.extra_parameters is defined %}
+          {{ vhost.extra_parameters }}
+        {% endif %}
+    </VirtualHost>
+{% endfor %}
+
+{# Set up SSL VirtualHosts #}
+{% for vhost in apache_vhosts_ssl %}
+    {% if apache_ignore_missing_ssl_certificate or apache_ssl_certificates.results[loop.index0].stat.exists %}
+    <IfModule mod_ssl.c>
+        <VirtualHost {{ apache_listen_ip }}:{{ apache_listen_port_ssl }}>
+            ServerName {{ vhost.servername }}
+            {% if vhost.serveralias is defined %}
+              ServerAlias {{ vhost.serveralias }}
+            {% endif %}
+            {% if vhost.documentroot is defined %}
+              DocumentRoot "{{ vhost.documentroot }}/website/public"
+            {% endif %}
+
+              SSLProxyEngine on
+              SSLProxyVerify none
+              SSLProxyCheckPeerCN off
+              SSLProxyCheckPeerName off
+              SSLProxyCheckPeerExpire off
+
+              SSLCertificateFile {{ vhost.certificate_file }}
+              SSLCertificateKeyFile {{ vhost.certificate_key_file }}
+            {% if vhost.certificate_chain_file is defined %}
+              SSLCertificateChainFile {{ vhost.certificate_chain_file }}
+            {% endif %}
+
+            {% if vhost.serveradmin is defined %}
+              ServerAdmin {{ vhost.serveradmin }}
+            {% endif %}
+            {% if vhost.extra_parameters is defined %}
+              {{ vhost.extra_parameters }}
+            {% endif %}
+        </VirtualHost>
+    </IfModule>
+    {% endif %}
+{% endfor %}
+
+{% for vhost in apache_vhosts %}
+    {% if vhost.documentroot is defined %}
+      <Directory "{{ vhost.documentroot }}/website/public">
+        AllowOverride {{ vhost.allow_override | default(apache_allow_override) }}
+        Options {{ vhost.options | default(apache_options) }}
+        {% if apache_vhosts_version == "2.2" %}
+            Order allow,deny
+            Allow from all
+        {% else %}
+        WSGIPassAuthorization On
+
+        AuthType Basic
+        AuthName "Restricted Content"
+        AuthUserFile {{ vhost.documentroot }}/.htpasswd
+
+        Require expr %{HTTP:Authorization} =~ /Bearer/
+        Require expr %{REQUEST_URI} =~ m#^/admin.*#
+        Require expr %{REQUEST_URI} =~ m#^/login.*#
+        Require expr %{REQUEST_URI} =~ m#^/api.*#
+        Require expr %{HTTP:User-Agent} =~ m#Prerender#
+        Require expr %{HTTP:User-Agent} =~ m#Googlebot#
+        Require valid-user
+        Require local
+
+        <IfModule mod_expires.c>
+            ExpiresActive on
+            ExpiresByType text/css                              "access plus 1 year"
+
+            ExpiresByType image/vnd.microsoft.icon              "access plus 1 week"
+            ExpiresByType image/x-icon                          "access plus 1 week"
+
+
+            ExpiresByType application/javascript                "access plus 1 year"
+            ExpiresByType application/x-javascript              "access plus 1 year"
+            ExpiresByType text/javascript                       "access plus 1 year"
+
+            ExpiresByType image/bmp                             "access plus 4 month"
+            ExpiresByType image/gif                             "access plus 4 month"
+            ExpiresByType image/jpeg                            "access plus 4 month"
+            ExpiresByType image/png                             "access plus 4 month"
+            ExpiresByType image/svg+xml                         "access plus 4 month"
+            ExpiresByType video/mp4                             "access plus 4 month"
+
+            ExpiresByType application/vnd.ms-fontobject         "access plus 1 month"
+            ExpiresByType application/font-sfnt                 "access plus 1 month"
+            ExpiresByType font/eot                              "access plus 1 month"
+            ExpiresByType font/opentype                         "access plus 1 month"
+            ExpiresByType application/x-font-ttf                "access plus 1 month"
+            ExpiresByType application/font-woff                 "access plus 1 month"
+            ExpiresByType application/x-font-woff               "access plus 1 month"
+            ExpiresByType font/woff                             "access plus 1 month"
+            ExpiresByType application/font-woff2                "access plus 1 month"
+        </IfModule>
+        {% endif %}
+      </Directory>
+    {% endif %}
+{% endfor %}

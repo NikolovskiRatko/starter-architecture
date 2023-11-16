@@ -1,0 +1,15 @@
+---
+mysql_packages:
+  - mariadb-client
+  - mariadb-server
+  - python3-mysqldb
+mysql_root_password: "{{ lookup('file', 'sensitive/database_password') }}"
+mysql_databases:
+  - name: starter
+    encoding: latin1
+    collation: latin1_general_ci
+mysql_users:
+  - name: starter
+    host: "%"
+    password: "{{ lookup('file', 'sensitive/database_password') }}"
+    priv: "starter.*:ALL"

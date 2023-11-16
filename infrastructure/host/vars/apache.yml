@@ -1,0 +1,88 @@
+---
+apache_create_vhosts: true
+apache_vhosts_filename: "starter.conf"
+apache_vhosts_template: "vhosts.conf.j2"
+apache_vhosts:
+  - servername: "starter.test"
+    serveralias: "www.starter.test"
+    documentroot: "/var/www/html/starter"
+    extra_parameters: |
+      ProxyPass /index.php !
+      ProxyPass /api !
+      ProxyPass /storage !
+      ProxyPass /login !
+      ProxyPass /admin !
+      ProxyPass /js !
+      ProxyPass /fonts !
+      ProxyPass /images !
+      ProxyPass /css !
+      ProxyPass / http://localhost:3090/
+      ProxyPassReverse / http://localhost:3090/
+
+      ErrorLog ${APACHE_LOG_DIR}/starter.test-error.log
+      CustomLog ${APACHE_LOG_DIR}/starter.test-access.log combined
+
+      RewriteEngine on
+      RewriteCond %{SERVER_NAME} =www.starter.test [OR]
+      RewriteCond %{SERVER_NAME} =starter.test
+      RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+
+apache_vhosts_extra_param: |
+  ProxyPass /index.php !
+  ProxyPass /api !
+  ProxyPass /storage !
+  ProxyPass /login !
+  ProxyPass /admin !
+  ProxyPass /js !
+  ProxyPass /fonts !
+  ProxyPass /images !
+  ProxyPass /css !
+  ProxyPass /documents !
+  ProxyPassMatch "^(/sla-20(.*))$" !
+  ProxyPassMatch "^(/sitemap(.*))$" !
+  ProxyPassMatch "^(/password/email)$" !
+  ProxyPassMatch "^(/password/laravel/reset)$" !
+  ProxyPass / http://localhost:3030/
+  ProxyPassReverse / http://localhost:3030/
+
+  ErrorLog ${APACHE_LOG_DIR}/starter.test-error.log
+  CustomLog ${APACHE_LOG_DIR}/starter.test-access.log combined
+
+  <Proxy *>
+      Order deny,allow
+      Allow from all
+      Authtype Basic
+      Authname "Password Required"
+      AuthUserFile /var/www/html/starter/.htpasswd
+      Require valid-user
+      Require local
+  </Proxy>
+
+apache_vhosts_ssl:
+  - {
+    servername: "starter.test",
+    documentroot: "/var/www/html/starter",
+    certificate_file: "/etc/letsencrypt/live/starter.test/fullchain.pem",
+    certificate_key_file: "/etc/letsencrypt/live/starter.test/privkey.pem",
+    extra_parameters: "{{apache_vhosts_extra_param}}"
+  }
+
+apache_allow_override: "All"
+apache_options: "-Indexes +FollowSymLinks"
+apache_mods_enabled:
+  - rewrite.load
+  - headers.load
+  - proxy.load
+  - proxy.conf
+  - socache_shmcb.load
+  - http2.conf
+  - http2.load
+  - ssl.conf
+  - ssl.load
+  - rewrite.load
+  - expires.load
+  - proxy_fcgi.load
+  - proxy_http.load
+  - wsgi.conf
+  - wsgi.load
+apache_mods_disabled: []
