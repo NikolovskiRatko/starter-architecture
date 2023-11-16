@@ -14,7 +14,7 @@ certbot_create_method: standalone
 certbot_admin_email: esofstarter@gmail.com
 certbot_certs:
   - domains:
-    - starter.test
-    - www.starter.test
+    - thestarter.net
+    - www.thestarter.net
 certbot_create_standalone_stop_services:
   - apache2

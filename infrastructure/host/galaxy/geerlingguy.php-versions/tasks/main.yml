@@ -10,7 +10,7 @@
     __php_packages: "{{ __php_packages | reject('search','php' + php_version + '-json') | list }}"
   when:
     - __php_packages is defined
-    - php_version is version('8.0', '>=')
+    - php_version is version('8.1', '>=')
 
 - name: Define PHP variables.
   set_fact: "{{ item.key }}={{ lookup('vars', item.value) }}"
