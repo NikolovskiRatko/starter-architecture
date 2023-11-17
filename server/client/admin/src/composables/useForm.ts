@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 import type { Ref } from 'vue'
-import Form from 'form-backend-validation';
+import { Form } from '@/plugins/form-backend-validation';
 import { mergeWith, cloneDeep } from 'lodash';
 import { useRouter, onBeforeRouteLeave } from 'vue-router';
 import { get } from "@/services/HTTP";
@@ -10,6 +10,7 @@ export function useForm(fetchUri, data) {
   const item = ref(cloneDeep(data));
   const message: Ref<String> = ref('');
   const messageClass: Ref<String> = ref('');
+  // TODO: Implement a new custom Object for Form, similar to the package but simpler
   const form =  ref(new Form(item.value));
   const loading: Ref<Boolean> = ref(false);
   const confirmUnsavedChangesModal: Ref<Boolean> = ref(false);
@@ -37,10 +38,12 @@ export function useForm(fetchUri, data) {
 
   // TODO: All functions that receive form , should probably use this.form instead of the parametar they recieve
   function removeFormErrors(form, field: string) {
+    // TODO: Implement the clear errors functionality here from the package
     form.value.errors.clear(field);
   }
 
   function resetForm(form) {
+    // TODO: Implement the reset value functionality here from the package
     form.value.reset();
   }
 
@@ -62,6 +65,7 @@ export function useForm(fetchUri, data) {
 
   const onSubmit : OnSubmit = (route, redirectRoute, hasToRedirect) => {
     loading.value = true;
+    // TODO: Change this so that it uses the post method from the HTTP service wrapper and the custom Form object as payload
     return form.value.post(route)
       .then((responseInternal) => {
         response.value = responseInternal;
@@ -85,6 +89,7 @@ export function useForm(fetchUri, data) {
       });
   };
 
+  // TODO: Understand the need for this and consider removing it if redundant
   function checkEqual(form) {
     let equal: boolean = true;
     for (const key in form.initial) {
@@ -112,10 +117,12 @@ export function useForm(fetchUri, data) {
   });
 
   function clearErrors(event: Event) {
+    // TODO: Implement clear errors similar to the package
     form.value.errors.clear(event.target.name);
   }
 
   function confirmUnsavedChanges() {
+    // TODO: Consider removing this complexity for the time being, it seems to have to do something with modals and different routes for a given form
     form.reset();
     router.push(routeTo);
     confirmUnsavedChangesModal.value = false;
@@ -126,6 +133,7 @@ export function useForm(fetchUri, data) {
   }
 
   function prepareValidation() {
+    // TODO: Not sure why this is needed if all validation is done server side
     const { validation_messages: validationMessages } = item;
     if (validationMessages) {
       for (const [key, value] of Object.entries(validationMessages)) {

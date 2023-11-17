@@ -119,7 +119,14 @@ class UserRepository implements UserRepositoryInterface
     }
 
     public function getUserRoles(){
-        return $this->role->select('id', 'name')->get();
+        return $this->role->select('id', 'name', DB::raw("name as display_name"))->get();
+    }
+
+    public function changeRole($id, $role_id){
+        $this->user
+            ->where('id', $id)
+            ->first()
+            ->syncRoles($role_id);
     }
 
     public function setPassword($user, $password){

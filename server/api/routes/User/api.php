@@ -22,12 +22,12 @@ Route::group([
     ], function () {
         // CRUD ROUTES
         Route::get('all', [UserController::class, 'getAll']);
-        Route::get('{id}/get', [UserController::class, 'get']);
         Route::post('create', [UserController::class, 'create']);
-        Route::post('{id}/update', [UserController::class, 'update']);
-        Route::get('{id}/delete', [UserController::class, 'delete']);
         Route::post('draw', [UserController::class, 'draw']);
         Route::get('roles/get', [UserController::class, 'getUserRoles']);
+        Route::get('{id}/get', [UserController::class, 'get']);
+        Route::post('{id}/update', [UserController::class, 'update']);
+        Route::get('{id}/delete', [UserController::class, 'delete']);
 
         // Admin profile
         Route::post('edit/myprofile/{id}', [UserController::class, 'updateMyProfile']);

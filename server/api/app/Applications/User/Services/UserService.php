@@ -45,7 +45,7 @@ class UserService implements UserServiceInterface
         $this->userRepository->update($user, $user_data);
         if(!empty($request_array['password']) || $request_array['password'] != null)
             $this->userRepository->setPassword($user, $request_array['password']);
-        $this->userRepository->changeRoles($id, $request_array['roles']);
+        $this->userRepository->changeRole($id, $request_array['role']);
     }
 
     public function delete($id){

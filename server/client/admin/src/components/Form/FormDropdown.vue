@@ -45,8 +45,8 @@
           <option
             v-for="option in options"
             :key="option.id"
-            :selected="option.id == value? 'selected': ''"
-            :value="option.id"
+            :selected="option.name == value? 'selected': ''"
+            :value="option.name"
           >
             {{ option.name }}
           </option>

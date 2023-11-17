@@ -1,6 +1,5 @@
 <script lang="ts" setup>
   import { ref, provide, computed, onMounted } from 'vue';
-  import 'bootstrap';
   import { cloneDeep } from 'lodash';
   import { useRoute } from 'vue-router';
   import { useForm } from '@/composables';
@@ -24,7 +23,6 @@
   const id = Number(route.params.userId);
   const fetchUri = `/user/${id}/get`;
   const roles = ref([]);
-  const countries = ref([]);
   const {
     form,
     messageClass,
@@ -38,26 +36,13 @@
   provide('form', form.value);
   provide('labelStart', 'user');
 
-  const postUri = computed(() => edit ? `/user/${id}/edit` : '/user/new');
-  const redirectRoute = computed(() => [1,2].includes(form.roles) ? 'users' : 'users.public');
+  const postUri = computed(() => edit ? `/user/${id}/update` : '/user/create');
+  const redirectRoute = 'users';
 
   const fetchRoles = async () => {
     try {
       const response = await get('user/roles/get');
       roles.value = response.data;
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  const fetchCountries = async () => {
-    try {
-      const response = await get('guest/common/get-countries');
-      for (let key in response.data) {
-        if (response.data.hasOwnProperty(key)) {
-          countries.value.push({ id: key, name: `${response.data[key]['full_name']}` });
-        }
-      }
     } catch (error) {
       console.error(error);
     }
@@ -79,16 +64,8 @@
   }
 
   onMounted(() => {
-    if (edit) {
-      item.value.roles = item.value.roles_array[0];
-    } else {
-      item.value.roles = 3;
-    }
     initFormFromItem();
-    fetchCountries();
     fetchRoles();
-    // form.populate(item.value);
-    // form.setInitialValues(item.value);
   })
 </script>
 
@@ -110,7 +87,7 @@
             <PortletHeadToolbar>
               <router-link
                 :loading="loading"
-                :to="`/admin/users/public`"
+                :to="`/admin/users`"
                 exact=""
                 class="btn btn-clean kt-margin-r-10"
               >
@@ -170,7 +147,7 @@
                     <div class="form-group row">
                       <label class="col-3 col-form-label">{{$t('users.roles.label')}}</label>
                       <div class="col-9">
-                        <FormDropdown v-model="form.roles" :options="roles" />
+                        <FormDropdown v-model="form.role" :options="roles" />
                       </div>
                     </div>
                     <div class="form-group row">
@@ -222,121 +199,6 @@
                           <FormInput v-model="form.email" />
                         </div>
                         <span class="form-text text-muted">We'll never share your email with anyone else.</span>
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-3 col-form-label">{{$t('users.phone.label')}}</label>
-                      <div class="col-9">
-                        <div class="input-group">
-                          <div class="input-group-prepend"><span class="input-group-text"><i class="la la-phone"></i></span></div>
-                          <FormInput v-model="form.phone" />
-                        </div>
-                        <span class="form-text text-muted">We'll never share your phone with anyone else.</span>
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-3 col-form-label">{{$t('users.country.label')}}</label>
-                      <div class="col-9">
-                        <FormDropdown v-model="form.country_id" :options="countries" />
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-3 col-form-label">{{$t('users.company')}}</label>
-                      <div class="col-9">
-                        <FormInput v-model="form.company" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg"></div>
-
-                <!--TODO sections below should be disabled but visible if the user role does not currently have them (Enable on switch role)-->
-                <div class="kt-section">
-                  <div class="kt-section__body">
-                    <h3 class="kt-section__title kt-section__title-lg">{{ $t('users.shipping_address') }}:</h3>
-                    <div class="form-group row">
-                      <label class="col-3 col-form-label">{{$t('pages.user_dashboard.labels.name')}}</label>
-                      <div class="col-9">
-                        <FormInput v-model="form.shipping_details.name" :disabled="form.roles!=3" />
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-3 col-form-label">{{$t('pages.user_dashboard.labels.address')}}</label>
-                      <div class="col-9">
-                        <FormInput v-model="form.shipping_details.address" :disabled="form.roles!=3" />
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-3 col-form-label">{{$t('pages.user_dashboard.labels.city')}}</label>
-                      <div class="col-9">
-                        <FormInput v-model="form.shipping_details.city" :disabled="form.roles!=3" />
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-3 col-form-label">{{$t('pages.user_dashboard.labels.country')}}</label>
-                      <div class="col-9">
-                        <FormDropdown
-                          v-model="form.shipping_details.country_id"
-                          :is-inline="true"
-                          :options="countries"
-                          :disabled="form.roles!=3"
-                        />
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-3 col-form-label">{{$t('pages.user_dashboard.labels.phone_number')}}</label>
-                      <div class="col-9">
-                        <div class="input-group">
-                          <div class="input-group-prepend"><span class="input-group-text"><i class="la la-phone"></i></span></div>
-                          <FormInput v-model="form.shipping_details.phone" :disabled="form.roles!=3" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg"></div>
-
-                <div class="kt-section">
-                  <div class="kt-section__body">
-                    <h3 class="kt-section__title kt-section__title-lg">{{ $t('users.billing_address') }}:</h3>
-                    <div class="form-group row">
-                      <label class="col-3 col-form-label">{{$t('pages.user_dashboard.labels.name')}}</label>
-                      <div class="col-9">
-                        <FormInput v-model="form.billing_details.name" :disabled="form.roles!=3" />
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-3 col-form-label">{{$t('pages.user_dashboard.labels.address')}}</label>
-                      <div class="col-9">
-                        <FormInput v-model="form.billing_details.address" :disabled="form.roles!=3" />
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-3 col-form-label">{{$t('pages.user_dashboard.labels.city')}}</label>
-                      <div class="col-9">
-                        <FormInput v-model="form.billing_details.city" :disabled="form.roles!=3" />
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-3 col-form-label">{{$t('pages.user_dashboard.labels.country')}}</label>
-                      <div class="col-9">
-                        <FormDropdown
-                          v-model="form.billing_details.country_id"
-                          :is-inline="true"
-                          :options="countries"
-                          :disabled="form.roles!=3"
-                        />
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-3 col-form-label">{{$t('pages.user_dashboard.labels.phone_number')}}</label>
-                      <div class="col-9">
-                        <div class="input-group">
-                          <div class="input-group-prepend"><span class="input-group-text"><i class="la la-phone"></i></span></div>
-                          <FormInput v-model="form.billing_details.phone" :disabled="form.roles!=3" />
-                        </div>
                       </div>
                     </div>
                   </div>

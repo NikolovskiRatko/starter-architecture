@@ -56,6 +56,13 @@ interface UserRepositoryInterface
     public function getUserRoles();
 
     /**
+     * @param integer $id
+     * @param integer $role_id
+     * @return void
+     */
+    public function changeRole($id, $role_id);
+
+    /**
      * @param User $user
      * @param string $password
      * @return void

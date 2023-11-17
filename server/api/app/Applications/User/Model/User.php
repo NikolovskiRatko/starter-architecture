@@ -40,6 +40,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
+        'roles',
         'password',
         'remember_token',
     ];
@@ -60,10 +61,15 @@ class User extends Authenticatable
      * @var array<string>
      */
     protected $appends = [
-        'permissions_array'
+        'permissions_array',
+        'role'
     ];
 
     public function getPermissionsArrayAttribute(){
         return $this->getAllPermissions()->pluck('name')->toArray();
+    }
+
+    public function getRoleAttribute(){
+        return $this->roles()->pluck('name')->first();
     }
 }

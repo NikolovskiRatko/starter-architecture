@@ -30,7 +30,7 @@ class UserRequest extends FormRequest
             'email' => 'required|email|min:2|max:255|unique:users,email,'.$this->segment(3),
             'password' => 'required_with:password_confirmation|nullable|between:6,30|confirmed',
             'password_confirmation' => 'required_with:password|nullable|between:6,30|same:password',
-            'roles' => 'required|exists:roles,id',
+//            'roles' => 'required|exists:roles,id',
         ];
 
         return $rules;
@@ -48,8 +48,8 @@ class UserRequest extends FormRequest
             'email.max' => 'users.email.max',
             'email.min' => 'users.email.min',
             'email.unique' => 'users.email.unique',
-            'roles.required' => 'users.roles.required',
-            'roles.exists' => 'users.roles.exists',
+//            'roles.required' => 'users.roles.required',
+//            'roles.exists' => 'users.roles.exists',
             'password.required_with' => 'users.password.required',
             'password_confirmation.required_with' => 'users.password_confirmation.required',
             'password.between' => 'users.password.between',
