@@ -1,6 +1,4 @@
 <script setup lang="ts">
-    import './Admin.scss';
-
     import {onMounted, provide} from 'vue';
     import { storeToRefs } from 'pinia';
     import { useAuth } from '@websanova/vue-auth/src/v3.js';
@@ -9,6 +7,7 @@
     import { Grid, GridItem } from '@/components/Grid';
     import { useRootStore } from '@/store/root';
     import { layoutConfigKey } from './types/Admin';
+    import './Admin.scss';
 
     const layoutConfig = {
         hasFixedHeader: true,

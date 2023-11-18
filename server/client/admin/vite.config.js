@@ -54,7 +54,7 @@ export default defineConfig({
     css: {
         preprocessorOptions: {
             scss: {
-                additionalData: `@import "./assets/sass/main.scss";`
+                additionalData: `@import "@styles/vite-resources.scss";`
             }
         }
     },
