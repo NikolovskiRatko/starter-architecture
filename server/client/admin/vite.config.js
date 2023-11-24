@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import path from 'path'
+import path from 'node:path'
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 import { viteStaticCopy } from 'vite-plugin-static-copy'
@@ -11,6 +11,7 @@ export default defineConfig({
         laravel({
             input: ['src/app.ts'],
             refresh: true,
+            publicDirectory: '../../api/public'
         }),
         vue({
             template: {
@@ -53,8 +54,15 @@ export default defineConfig({
     css: {
         preprocessorOptions: {
             scss: {
-                additionalData: `@import "./assets/sass/main.scss";`
+                additionalData: `@import "@styles/vite-resources.scss";`
             }
+        }
+    },
+    server: {
+        host: '0.0.0.0',
+        hmr: {
+            host: 'localhost',
+            clientPort: 5173
         }
     },
     __VUE_PROD_DEVTOOLS__ : process.env.NODE_ENV === 'development'

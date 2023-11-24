@@ -2,8 +2,8 @@
     import { computed } from 'vue';
     import { useRootStore } from '@/store/root';
     import { useAuth } from '@websanova/vue-auth/src/v3.js';
-
     import { isTouchDevice } from "@/utils/userAgentCheck";
+    import '@styles/main.scss'
 
     const auth = useAuth();
     const rootStore = useRootStore();

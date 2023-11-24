@@ -58,7 +58,7 @@ services:
     restart: always
     tty: true
     ports:
-      - "3030:3030"
+      - "5173:5173"
     networks:
       - main
     volumes:
