@@ -1,5 +1,4 @@
 @import '../config';
-@import "@styles/utils";
 
 @mixin head-sizes($device) {
   $sizes: 'default', 'sm', 'lg', 'xl';

@@ -44,7 +44,7 @@
       >
         <i
           aria-hidden="true"
-          class="fa fa-pencil-square-o"
+          class="la la-pencil"
         /> 
         {{ $t('buttons.edit') }}
       </router-link>
@@ -55,7 +55,7 @@
         v-if="auth.user().permissions_array.includes('delete_users')"
         variant="link"
         aria-hidden="true"
-        class="fa fa-trash-o"
+        class="la la-trash"
         @click="deleteUser(user, user.id)"
       />
     </TableColumn>

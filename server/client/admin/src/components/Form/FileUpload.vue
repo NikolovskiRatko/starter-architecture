@@ -91,7 +91,7 @@
 <!--            v-show="componentType === 'image'"-->
 <!--            class="edit-overlay"-->
 <!--          >-->
-<!--            <i class="fa fa-upload" />-->
+<!--            <i class="la la-upload" />-->
 <!--          </div>-->
 <!--          <template v-if="url || placeholderImage !== ''">-->
 <!--            <img-->

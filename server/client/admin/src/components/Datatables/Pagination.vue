@@ -57,7 +57,7 @@
         :is-disabled="!arrowNavigation.firstPage"
         @onClick="handleNavClick(arrowNavigation.firstPage)"
       >
-        <i class="fa fa-angle-double-left" />
+        <i class="la la-angle-double-left"></i>
       </PaginationLink>
 
       <PaginationLink
@@ -65,7 +65,7 @@
         :is-disabled="!arrowNavigation.previousPage"
         @onClick="handleNavClick(arrowNavigation.previousPage)"
       >
-        <i class="fa fa-angle-left" />
+        <i class="la la-angle-left"></i>
       </PaginationLink>
 
       <!--<li style="display: none;">
@@ -87,7 +87,7 @@
         :is-disabled="!arrowNavigation.nextPage"
         @onClick="handleNavClick(arrowNavigation.nextPage)"
       >
-        <i class="fa fa-angle-right" />
+        <i class="la la-angle-right"></i>
       </PaginationLink>
 
       <PaginationLink
@@ -95,7 +95,7 @@
         :is-disabled="!arrowNavigation.lastPage"
         @onClick="handleNavClick(arrowNavigation.lastPage)"
       >
-        <i class="fa fa-angle-double-right" />
+        <i class="la la-angle-double-right" />
       </PaginationLink>
     </ul>
 

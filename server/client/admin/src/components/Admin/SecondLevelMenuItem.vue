@@ -68,7 +68,7 @@
         <span class="kt-menu__link-text">
           {{ $t(subitem.label) }}
         </span>
-        <i class="kt-menu__ver-arrow fa fa-chevron-right" />
+        <i class="kt-menu__ver-arrow la la-angle-right" />
       </span>
 
       <div class="kt-menu__submenu ">

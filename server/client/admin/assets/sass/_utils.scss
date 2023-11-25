@@ -1,0 +1,18 @@
+// Functions
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/mixins';
+@import "core/functions";
+
+// Mixins
+@import "core/mixins";
+@import "vendors/mixins/perfect-scrollbar";
+@import "core/base/mixins/burger-menu";
+@import "core/base/mixins/menu-horizontal";
+@import "core/base/mixins/menu-vertical";
+@import "core/base/mixins/offcanvas";
+@import "core/base/mixins/spinner";
+
+// Theme mixins
+@import "core/layout/mixins/app";
+@import "core/typography/mixins/link";
+@import "core/general/mixins/user-pic";

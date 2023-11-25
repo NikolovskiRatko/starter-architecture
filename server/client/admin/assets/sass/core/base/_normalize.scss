@@ -28,12 +28,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    a:hover,
-    a:active,
-    a:focus {
-        text-decoration: none !important;
-    }
-
     a,
     button {
         outline: none !important;
@@ -46,45 +40,23 @@ body {
     color: kt-get($font-color, text);
 }
 
-// Angular integration
-router-outlet {
-    display: none;
-}
-
 canvas {
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
 }
 
-/* Customize website's scrollbar like Mac OS */
-/*
-::-webkit-scrollbar {
-    background-color:#f6f6f6;
-    width:14px;
-}
+// Links
 
-::-webkit-scrollbar-track {
-    transition: all 0.3s ease;
-    background-color:#f6f6f6;
-    width:14px;
-}
+a {
+    color: kt-get($font-color, link, default);
+    text-decoration: none;
 
-::-webkit-scrollbar-track:hover {
-    transition: all 0.3s ease;
-    background-color:#f6f6f6;
+    &:hover {
+        color: kt-get($font-color, link, hover);
+        text-decoration: $link-hover-decoration;
+    }
 }
-
-::-webkit-scrollbar-thumb {
-    transition: all 0.3s ease;
-    background-color:#c1c1c1;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    transition: all 0.3s ease;
-    background-color: darken(#c1c1c1, 3%);
-}
-*/
 
 /* set button(top and bottom of the scrollbar) */
 ::-webkit-scrollbar-button {display:none}

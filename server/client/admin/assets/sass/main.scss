@@ -1,5 +1,18 @@
-@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
-@import "theme";
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY BELOW INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
 
-@import "components/imports";
-@import "pages/imports";
+// 1: Bootstrap Include
+@import "bootstrap/bootstrap.scss";
+
+// 2: Core Include
+@import "core/include";
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY ABOVE INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
+
+// 3: Demo Includes
+// Layout
+@import "layout/base/base";
+@import "layout/header/menu";
+@import "layout/footer/footer";

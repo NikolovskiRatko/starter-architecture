@@ -19,7 +19,7 @@
           :loading="loading"
           class="btn btn-success col-md-6 col-sm-6"
         >
-          <i class="fa fa-save mr-1" />
+          <i class="la la-save mr-1" />
           {{ $t('buttons.save') }}
         </button>
 

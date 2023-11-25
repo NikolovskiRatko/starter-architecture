@@ -24,7 +24,7 @@
       }"
     >
       Loading
-      <i class="fa fa-spinner" />
+      <i class="la la-spinner"></i>
     </div>
   </div>
 </template>

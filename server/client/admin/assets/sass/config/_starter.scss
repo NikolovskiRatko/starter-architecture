@@ -1,11 +1,5 @@
 //Bootstrap dependencies
-@import '../../node_modules/bootstrap/scss/functions';
-@import '../sass/bootstrap/variables';
-@import '../../node_modules/bootstrap/scss/variables';
-@import '../../node_modules/bootstrap/scss/mixins';
-
-@import "./utils/imports";
-@import "./layout/footer/config";
+@import 'layers';
 
 // Layout
 $aside-default-width: 265px;

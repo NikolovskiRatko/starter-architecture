@@ -2,23 +2,6 @@
 // Global Config
 //
 
-// Functions
-@import "core/functions";
-
-// Mixins
-@import "core/mixins";
-@import "vendors/mixins/perfect-scrollbar";
-@import "core/base/mixins/burger-menu";
-@import "core/base/mixins/menu-horizontal";
-@import "core/base/mixins/menu-vertical";
-@import "core/base/mixins/offcanvas";
-@import "core/base/mixins/spinner";
-
-// Theme mixins
-@import "core/layout/mixins/app";
-@import "core/typography/mixins/link";
-@import "core/general/mixins/user-pic";
-
 // Layout Breakpoints(bootstrap responsive breakpoints)
 // Define the minimum and maximum dimensions at which your layout will change, adapting to different screen sizes, for use in media queries.
 $media-breakpoints: (

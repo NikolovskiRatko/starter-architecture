@@ -100,7 +100,7 @@
                   :loading="loading"
                   class="btn btn-brand"
                 >
-                  <i class="fa fa-save mr-1" />
+                  <i class="la la-save mr-1" />
                   {{ $t('buttons.save') }}
                 </button>
                 <button type="button" class="btn btn-brand dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

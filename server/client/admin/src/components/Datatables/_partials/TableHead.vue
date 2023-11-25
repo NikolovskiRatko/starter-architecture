@@ -66,8 +66,8 @@
         >
         <span @click="triggerSort(column.name)">
           {{ $t(column.label) }}
-          <i v-show="isArrowVisible('desc', column)" class="fa fa-arrow-down" />
-          <i v-show="isArrowVisible('asc', column)" class="fa fa-arrow-up" />
+          <i v-show="isArrowVisible('desc', column)" class="la la-arrow-down" />
+          <i v-show="isArrowVisible('asc', column)" class="la la-arrow-up" />
         </span>
         </th>
         <th

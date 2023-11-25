@@ -1,5 +1,19 @@
-@import 'framework-config';
-@import 'starter-config';
+// Include utility mixins and functions
+@import 'utils';
 
-@import 'layout/header/config';
-@import 'layout/aside/config';
+// Include global config
+@import 'config/framework';
+
+// Include starter config (that overrides the above global config)
+@import 'config/starter';
+
+// Bootstrap Variables
+@import '../../node_modules/bootstrap/scss/variables';
+@import "bootstrap/variables";
+
+@import "./layout/footer/config";
+@import './layout/header/config';
+@import './layout/aside/config';
+
+// Configs that are moved to Vue
+@import "../../src/components/Portlet/config";
