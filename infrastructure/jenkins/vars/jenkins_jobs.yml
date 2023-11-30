@@ -7,6 +7,7 @@ database_password: "{{ lookup('file', 'sensitive/database_password') }}"
 jenkins_jobs:
   - {
     job_name: "Starter",
+    jenkinsfile_path: "infrastructure/ci_cd/Jenkinsfile",
     git_repository: "git@github.com:esofstarter/starter-architecture.git",
     git_branches: "dev|qa|prod",
     ssh_credentials_id: "{{ssh_credentials_id}}"

@@ -23,7 +23,7 @@ pipeline {
                     usernameVariable: 'MYSQL_ROOT_USER',
                     passwordVariable: 'MYSQL_ROOT_PASSWORD'
                 )]) {
-                  sh 'docker compose -f devops/build/docker-compose.yml up -d'
+                  sh 'docker compose -f infrastructure/build/docker-compose.yml up -d'
                   // Wait for a moment to give the containers some time to start
                   sleep(time: 10, unit: 'SECONDS')
 
@@ -48,7 +48,7 @@ pipeline {
 
                 }
 
-                sh 'docker compose -f devops/build/docker-compose.yml down'
+                sh 'docker compose -f infrastructure/build/docker-compose.yml down'
             }
         }
         stage('Test') {
@@ -59,7 +59,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploy stage'
-                sh 'ansible-playbook -i devops/deploy/inventory devops/deploy/starter.yml --private-key=/var/lib/jenkins/.ssh/jenkins'
+                sh 'ansible-playbook -i infrastructure/deploy/inventory infrastructure/deploy/starter.yml --private-key=/var/lib/jenkins/.ssh/jenkins'
             }
         }
     }
