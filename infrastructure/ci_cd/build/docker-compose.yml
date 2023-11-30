@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: ${COMPOSE_PROJECT_NAME}_app
+    image: ${COMPOSE_PROJECT_NAME}_app:latest
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - ./../../website:/var/www/html
+    networks:
+      - main
+    depends_on:
+      - db
+
+  node:
+    container_name: ${COMPOSE_PROJECT_NAME}_node
+    image: ${COMPOSE_PROJECT_NAME}_node:latest
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    command: tail -f /dev/null
+    restart: always
+    ports:
+      - "3030:3030"
+    volumes:
+      - ./../../website:/usr/app
+    networks:
+      - main
+
+  db:
+    container_name: ${COMPOSE_PROJECT_NAME}_db
+    image: ${COMPOSE_PROJECT_NAME}_db:latest
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - /var/jenkins_data/db_data:/var/lib/mysql
+    networks:
+      - main
+
+networks:
+  main:

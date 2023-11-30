@@ -1,0 +1,13 @@
+---
+#Database credentials
+database_username: root
+database_password: "{{ lookup('file', 'sensitive/database_password') }}"
+
+#Multipipeline Jenkins jobs
+jenkins_jobs:
+  - {
+    job_name: "Starter",
+    git_repository: "git@github.com:esofstarter/starter-architecture.git",
+    git_branches: "dev|qa|prod",
+    ssh_credentials_id: "{{ssh_credentials_id}}"
+  }

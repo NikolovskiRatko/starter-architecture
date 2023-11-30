@@ -1,0 +1,28 @@
+---
+#Jenkins server variables
+jenkins_home: /var/lib/jenkins
+jenkins_hostname: localhost
+jenkins_http_port: 8080
+jenkins_jar_location: /opt/jenkins-cli.jar
+jenkins_url: "http://{{ jenkins_hostname }}:{{ jenkins_http_port }}"
+
+#Jenkins root credentials
+jenkins_admin_username: admin
+jenkins_admin_password: "{{ lookup('file', 'sensitive/admin_password') }}"
+
+#Github username
+git_username: esofstarter
+git_email: esofstarter@gmail.com
+
+#Jenkins Credentials
+#Github API access token
+github_access_token: "{{ lookup('file', 'sensitive/github_access_token') }}"
+ssh_credentials_id: esofstarter-github-ssh
+
+#Database credentials
+database_username: root
+database_password: "{{ lookup('file', 'sensitive/database_password') }}"
+database_credentials_id: database-credentials
+
+#Multipipeline Jenkins jobs
+jenkins_jobs: []

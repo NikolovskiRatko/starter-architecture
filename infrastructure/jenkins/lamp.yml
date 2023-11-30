@@ -1,0 +1,28 @@
+---
+- hosts: web
+  remote_user: root
+  gather_facts: true
+
+  vars_files:
+    - vars/firewall.yml
+    - vars/apache.yml
+    - vars/certbot.yml
+    - vars/java.yml
+    - vars/docker.yml
+    - vars/jenkins.yml
+    - vars/jenkins_jobs.yml
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=yes
+
+  roles:
+    - role: geerlingguy.firewall
+    - role: geerlingguy.apache
+    - role: custom_dependencies
+    - role: geerlingguy.java
+    - role: geerlingguy.docker
+    - role: geerlingguy.ansible
+    - role: geerlingguy.jenkins
+    - role: jenkins_jobs
+    - role: geerlingguy.certbot

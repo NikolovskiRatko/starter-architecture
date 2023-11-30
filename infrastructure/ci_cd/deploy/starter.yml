@@ -1,0 +1,91 @@
+---
+- hosts: web
+  vars:
+    source_directory: "/var/lib/jenkins/workspace/Starter_dev/website"
+    base_directory: "/var/www/html/thestarter.net"
+    base_deploy_directory: "{{ base_directory }}/releases"
+    current_symlink: "{{ base_directory }}/website"
+    backup_directory: "/var/backups/starter"
+
+  tasks:
+    - name: Set the version timestamp
+      set_fact:
+        version: "{{ lookup('pipe', 'date +%Y%m%d%H%M') }}"
+
+    - name: Set the deploy directory name
+      set_fact:
+        deploy_directory: "{{ base_deploy_directory }}/{{ version }}"
+
+    - name: Create versioned directory
+      file:
+        path: "{{ deploy_directory }}"
+        state: directory
+        mode: '0755'
+
+    - name: Copy website content to versioned directory
+      synchronize:
+        src: "{{ source_directory }}/"
+        dest: "{{ deploy_directory }}/"
+        recursive: yes
+        rsync_opts:
+          - "--exclude=.git"
+
+    - name: Copy .env file to the new deployment directory
+      copy:
+        src: "{{ base_directory }}/.env"
+        dest: "{{ deploy_directory }}/.env"
+        remote_src: yes
+
+    - name: Rename existing directory
+      command:
+        cmd: "mv {{ current_symlink }} {{backup_directory}}/website.backup_{{ version }}"
+        warn: false
+      args:
+        removes: "{{ current_symlink }}"
+
+    - name: Update current symlink
+      file:
+        src: "{{ deploy_directory }}"
+        dest: "{{ current_symlink }}"
+        state: link
+
+    #Post deployment commands
+    - name: Set ownership for the Laravel application
+      file:
+        path: "{{ deploy_directory }}"
+        owner: www-data
+        group: www-data
+        recurse: yes
+
+    - name: Ensure storage directory is writable
+      file:
+        path: "{{ deploy_directory }}/storage"
+        mode: '0755'
+        recurse: true
+        owner: www-data
+        group: www-data
+
+    - name: Ensure bootstrap/cache directory is writable
+      file:
+        path: "{{ deploy_directory }}/bootstrap/cache"
+        mode: '0755'
+        owner: www-data
+        group: www-data
+
+    - name: Clear config cache
+      command: "php {{ deploy_directory }}/artisan config:cache"
+
+    - name: Clear route cache
+      command: "php {{ deploy_directory }}/artisan route:cache"
+
+    - name: Clear view cache
+      command: "php {{ deploy_directory }}/artisan view:cache"
+
+    - name: Run database migrations
+      command: "php {{ deploy_directory }}/artisan migrate --force"
+      register: migration_result
+
+    - name: Restart Apache2 service
+      service:
+        name: apache2
+        state: restarted

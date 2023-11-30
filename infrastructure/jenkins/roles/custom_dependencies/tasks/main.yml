@@ -1,0 +1,48 @@
+---
+- name: "Install other dependencies."
+  apt: "name={{ item }} state=present"
+  with_items:
+    - git
+    - curl
+    - unzip
+    - sendmail
+    - acl
+
+- name: "Ensure SSH key is generated"
+  command: ssh-keygen -t rsa -b 4096 -C "{{git_email}}" -f /root/.ssh/id_rsa -N ''
+  args:
+    creates: /root/.ssh/id_rsa
+
+- name: Ensure Jenkins user exists
+  user:
+    name: jenkins
+    state: present
+
+- name: Ensure .ssh directory for Jenkins exists
+  file:
+    path: "/var/lib/jenkins/.ssh"
+    state: directory
+    owner: jenkins
+    group: jenkins
+    mode: '0700'
+
+- name: Generate SSH key for Jenkins
+  openssh_keypair:
+    path: "/var/lib/jenkins/.ssh/jenkins"
+    owner: jenkins
+    group: jenkins
+    size: 4096
+    type: rsa
+
+# Set some settings in ~/.gitconfig
+- name: Setup git name
+  git_config:
+    name: user.name
+    scope: global
+    value: "{{git_username}}"
+
+- name: Setup git user email
+  git_config:
+    name: user.email
+    scope: global
+    value: "{{git_email}}"

@@ -1,0 +1,42 @@
+---
+apache_create_vhosts: true
+apache_vhosts_filename: "jenkins.thestarter.net.conf"
+apache_vhosts_template: "vhosts.conf.j2"
+apache_vhosts:
+  - servername: "jenkins.thestarter.net"
+    serveralias: "www.jenkins.thestarter.net"
+    extra_parameters: |
+      ProxyPreserveHost On
+      ProxyPass / http://localhost:8080/
+      ProxyPassReverse / http://localhost:8080/
+      ErrorLog ${APACHE_LOG_DIR}/jenkins.thestarter.net-error.log
+      CustomLog ${APACHE_LOG_DIR}/jenkins.thestarter.net-access.log combined
+
+apache_vhosts_extra_param: |
+  ProxyPreserveHost On
+  ProxyPass / http://localhost:8080/
+  ProxyPassReverse / http://localhost:8080/
+  ErrorLog ${APACHE_LOG_DIR}/jenkins.thestarter.net-error.log
+  CustomLog ${APACHE_LOG_DIR}/jenkins.thestarter.net-access.log combined
+
+apache_vhosts_ssl:
+  - {
+    servername: "jenkins.thestarter.net",
+    certificate_file: "/etc/letsencrypt/live/jenkins.thestarter.net/fullchain.pem",
+    certificate_key_file: "/etc/letsencrypt/live/jenkins.thestarter.net/privkey.pem",
+    extra_parameters: "{{apache_vhosts_extra_param}}"
+  }
+
+apache_allow_override: "All"
+apache_options: "-Indexes +FollowSymLinks"
+apache_mods_enabled:
+  - rewrite
+  - headers
+  - proxy
+  - socache_shmcb
+  - http2
+  - ssl
+  - expires
+  - proxy_fcgi
+  - proxy_http
+apache_mods_disabled: []

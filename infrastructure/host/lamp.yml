@@ -20,11 +20,11 @@
   roles:
     - role: geerlingguy.firewall
     - role: geerlingguy.mysql
+    - role: custom_dependencies
     - role: geerlingguy.apache
     - role: geerlingguy.php-versions
     - role: geerlingguy.php
     - role: geerlingguy.php-mysql
-    - role: custom_dependencies
     - role: geerlingguy.composer
     - role: geerlingguy.redis
     - role: geerlingguy.nodejs

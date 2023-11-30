@@ -1,0 +1,66 @@
+pipeline {
+    agent  { label 'docker' }
+    environment {
+        COMPOSE_DOCKER_CLI_BUILD = '1'
+        DOCKER_BUILDKIT = '1'
+        COMPOSE_PROJECT_NAME = 'starter'
+    }
+    stages {
+        stage('Prune Docker data') {
+          steps {
+            sh 'docker system prune -a -f'
+          }
+        }
+        stage('Build Laravel API') {
+            environment {
+                MYSQL_DATABASE = 'starter'
+                MYSQL_USER = 'starter'
+            }
+            steps {
+                echo 'Build stage using Docker Compose'
+                withCredentials([usernamePassword(
+                    credentialsId: 'database-credentials',
+                    usernameVariable: 'MYSQL_ROOT_USER',
+                    passwordVariable: 'MYSQL_ROOT_PASSWORD'
+                )]) {
+                  sh 'docker compose -f devops/build/docker-compose.yml up -d'
+                  // Wait for a moment to give the containers some time to start
+                  sleep(time: 10, unit: 'SECONDS')
+
+                  // Run the API build commands
+                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app cp .env.build .env'
+                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app composer install --optimize-autoloader --no-dev'
+                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan key:generate'
+                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan config:clear'
+                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan view:clear'
+                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan route:clear'
+                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app composer dump-autoload'
+                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan vue-i18n:generate'
+                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan config:cache'
+                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan route:cache'
+
+                  // Run the Database migrations
+                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan migrate'
+
+                  // Run the Frontend build commands
+                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_node npm install'
+                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_node npm run dev'
+
+                }
+
+                sh 'docker compose -f devops/build/docker-compose.yml down'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Test stage'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploy stage'
+                sh 'ansible-playbook -i devops/deploy/inventory devops/deploy/starter.yml --private-key=/var/lib/jenkins/.ssh/jenkins'
+            }
+        }
+    }
+}

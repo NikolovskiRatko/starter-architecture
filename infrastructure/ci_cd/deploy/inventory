@@ -1,8 +1,8 @@
 [web]
-starter ansible_host=64.225.99.211
+starter ansible_host=64.225.99.211 ansible_user=root
 
 [all:vars]
-private_key_file='~/.ssh/id_rsa'
+private_key_file='/var/lib/jenkins/.ssh/jenkins'
 ansible_python_interpreter=/usr/bin/python3
 ansible_connection=ssh
 ansible_become=yes

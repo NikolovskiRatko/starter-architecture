@@ -1,0 +1,26 @@
+---
+jenkins_home: /var/lib/jenkins
+jenkins_hostname: localhost
+jenkins_http_port: 8080
+jenkins_jar_location: /opt/jenkins-cli.jar
+
+# Plugin list can use the plugin name, or a name/version dict.
+jenkins_plugins:
+  - blueocean
+  - workflow-job
+  - github-pullrequest
+  - docker-compose-build-step
+  - ansible
+  - mailer
+  - credentials-binding
+  - configuration-as-code
+  - docker-workflow
+  - ansible
+
+#Jenkins root credentials
+jenkins_admin_username: admin
+jenkins_admin_password: "{{ lookup('file', 'sensitive/admin_password') }}"
+jenkins_admin_password_file: ""
+
+#jenkins_proxy_host: "jenkins.thestarter.net"
+#jenkins_proxy_port: "443"

@@ -1,5 +1,5 @@
 [web]
-starter ansible_host=64.225.99.211
+starter ansible_host=
 
 [all:vars]
 private_key_file='~/.ssh/id_rsa'

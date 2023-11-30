@@ -1,0 +1,76 @@
+---
+- name: Install pip3
+  apt:
+    name:
+      - python3-pip
+    state: present
+
+- name: Install python-jenkins library
+  pip:
+    name: python-jenkins
+    state: present
+
+- name: Install jenkinsapi
+  pip:
+    name: jenkinsapi
+    state: present
+
+#Add Jenkins credentials
+- name: Slurp contents of SSH private file
+  ansible.builtin.slurp:
+    src: "/root/.ssh/id_rsa"
+  register: private_slurpfile
+
+- name: Create SSH credentials using a groovy script
+  jenkins_script:
+    script: "{{ lookup('template', 'templates/create_ssh_credentials.groovy.j2') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+
+- name: Create Username Password credentials for Database using a groovy script
+  jenkins_script:
+    script: "{{ lookup('template', 'templates/create_database_credentials.groovy.j2') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+
+#Add Jenkins server public SSH key to Github account
+- name: Slurp contents of SSH public file
+  ansible.builtin.slurp:
+    src: "/root/.ssh/id_rsa.pub"
+  register: public_slurpfile
+
+- name: Add SSH public key to GitHub account
+  uri:
+    url: "https://api.github.com/user/keys"
+    validate_certs: no
+    method: POST
+    body:
+      title: "JENKINS SERVER"
+      key: "{{ public_slurpfile['content'] | b64decode }}"
+    body_format: json
+    headers:
+      Content-Type: "application/json"
+      Authorization: "token {{ github_access_token }}"
+    status_code:
+      - 201
+      - 422
+
+#Configure Jenkins using the Configuration as Code plugin
+- name: Copy the jenkins.yaml file for the Jenkins Configuration as Code plugin config
+  copy:
+    dest: "{{ jenkins_home }}/jenkins.yaml"
+    src: "jenkins.yaml"
+
+- name: Restart Jenkins if necessary
+  service: name=jenkins state=restarted
+
+#Create Multipipeline jobs for projects
+- name: Create or update Multipipeline Jenkins jobs
+  jenkins_job:
+    name: "{{ item.job_name }}"
+    config: "{{ lookup('template', 'multipipeline_job_config.xml.j2') }}"
+    url: "{{ jenkins_url }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+    state: present
+  loop: "{{ jenkins_jobs }}"

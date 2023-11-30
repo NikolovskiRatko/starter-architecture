@@ -1,0 +1,23 @@
+---
+- name: Stop Jenkins service
+  systemd:
+    name: jenkins
+    state: stopped
+    enabled: no
+
+- name: Uninstall Jenkins package
+  apt:
+    name: jenkins
+    state: absent
+    autoremove: yes
+
+- name: Remove Jenkins APT repository
+  apt_repository:
+    repo: 'deb http://pkg.jenkins.io/debian-stable binary/'
+    state: absent
+    update_cache: yes
+
+- name: Remove Jenkins home directory
+  file:
+    path: /var/lib/jenkins
+    state: absent
