@@ -35,17 +35,19 @@ pipeline {
                   sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan view:clear'
                   sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan route:clear'
                   sh 'docker exec ${COMPOSE_PROJECT_NAME}_app composer dump-autoload'
-                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan vue-i18n:generate'
                   sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan config:cache'
                   sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan route:cache'
 
                   // Run the Database migrations
                   sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan migrate'
 
-                  // Run the Frontend build commands
-                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_node npm install'
-                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_node npm run dev'
+                  // Run the build commands for the Admin Panel Vuejs3 SPA
+                  sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd admin && npm install'"
+                  sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd admin && npm run build'"
 
+                  // Run the build commands for the Public Nuxt3 SSR
+                  sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd public && npm install'"
+                  sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd public && npm run build'"
                 }
 
                 sh 'docker compose -f infrastructure/ci_cd/build/docker-compose.yml down'

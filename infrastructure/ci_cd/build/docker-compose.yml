@@ -10,7 +10,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
-      - ./../../website:/var/www/html
+      - ./../../server/api:/var/www/html
     networks:
       - main
     depends_on:
@@ -27,7 +27,7 @@ services:
     ports:
       - "3030:3030"
     volumes:
-      - ./../../website:/usr/app
+      - ./../../server/client:/usr/app
     networks:
       - main
 

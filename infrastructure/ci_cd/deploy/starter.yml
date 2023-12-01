@@ -1,10 +1,10 @@
 ---
 - hosts: web
   vars:
-    source_directory: "/var/lib/jenkins/workspace/Starter_dev/website"
+    source_directory: "/var/lib/jenkins/workspace/Starter_dev/server"
     base_directory: "/var/www/html/thestarter.net"
     base_deploy_directory: "{{ base_directory }}/releases"
-    current_symlink: "{{ base_directory }}/website"
+    current_symlink: "{{ base_directory }}/server"
     backup_directory: "/var/backups/starter"
 
   tasks:
@@ -38,7 +38,7 @@
 
     - name: Rename existing directory
       command:
-        cmd: "mv {{ current_symlink }} {{backup_directory}}/website.backup_{{ version }}"
+        cmd: "mv {{ current_symlink }} {{backup_directory}}/server.backup_{{ version }}"
         warn: false
       args:
         removes: "{{ current_symlink }}"
