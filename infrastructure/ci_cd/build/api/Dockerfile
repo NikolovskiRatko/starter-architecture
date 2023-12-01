@@ -51,5 +51,4 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) sysvmsg \
     && docker-php-ext-install -j$(nproc) sysvsem \
     && docker-php-ext-install -j$(nproc) sysvshm \
-    && docker-php-ext-install -j$(nproc) xsl \
-    && docker-php-ext-install -j$(nproc) imagick
+    && docker-php-ext-install -j$(nproc) xsl
