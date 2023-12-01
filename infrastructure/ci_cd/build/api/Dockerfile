@@ -2,85 +2,57 @@ FROM php:8.2-apache
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-# Update
-RUN apt-get -y update --fix-missing && \
-    apt-get upgrade -y && \
-    apt-get --no-install-recommends install -y apt-utils && \
-    rm -rf /var/lib/apt/lists/*
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libpng-dev \
+    libicu-dev \
+    libzip-dev \
+    libonig-dev \
+    libxml2-dev \
+    libxslt-dev \
+    libpq-dev \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    libmcrypt-dev \
+    libmemcached-dev \
+    zlib1g-dev \
+    libmagickwand-dev \
+    libmagickcore-dev \
+    libbz2-dev \
+    libgmp-dev \
+    libreadline-dev \
+    libgmp-dev \
+    libreadline-dev \
+    && rm -rf /var/lib/apt/lists/*
 
-
-# Install useful tools and install important libaries
-RUN apt-get -y update && \
-    apt-get -y --no-install-recommends install nano wget \
-        dialog \
-        vim \
-        libpq-dev \
-        libmemcached-dev \
-        curl \
-        htop \
-        libsqlite3-dev \
-        libsqlite3-0 && \
-    apt-get -y --no-install-recommends install default-mysql-client \
-        zlib1g-dev \
-        libzip-dev \
-        libicu-dev && \
-    apt-get -y --no-install-recommends install --fix-missing apt-utils \
-        build-essential \
-        git \
-        curl \
-        libonig-dev && \
-    apt-get -y --no-install-recommends install --fix-missing libcurl4 \
-        libcurl4-openssl-dev \
-        zip \
-        openssl && \
-    rm -rf /var/lib/apt/lists/* && \
-    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-# Install redis
-RUN pecl install redis-5.3.3 && \
-    docker-php-ext-enable redis
-
-# Install imagick
-RUN apt-get update && \
-    apt-get -y --no-install-recommends install --fix-missing libmagickwand-dev && \
-    rm -rf /var/lib/apt/lists/* && \
-    pecl install imagick && \
-    docker-php-ext-enable imagick
-
-# Other PHP8 Extensions
-RUN docker-php-ext-install pdo_mysql && \
-    docker-php-ext-install pdo_sqlite && \
-    docker-php-ext-install mysqli && \
-    docker-php-ext-install curl && \
-    docker-php-ext-install tokenizer && \
-    docker-php-ext-install json && \
-    docker-php-ext-install zip && \
-    docker-php-ext-install -j$(nproc) intl && \
-    docker-php-ext-install mbstring && \
-    docker-php-ext-install gettext && \
-    docker-php-ext-install calendar && \
-    docker-php-ext-enable calendar && \
-    docker-php-ext-install exif
-
-
-# Install Freetype
-RUN apt-get -y update && \
-    apt-get --no-install-recommends install -y libfreetype6-dev \
-libjpeg62-turbo-dev \
-libpng-dev && \
-    rm -rf /var/lib/apt/lists/* && \
-    docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg && \
-    docker-php-ext-install gd
-
-# Enable apache modules
-RUN a2enmod rewrite headers
-RUN a2enmod proxy_http
-RUN a2enmod proxy
-
-# Install Memcached
-RUN curl -L -o /tmp/memcached.tar.gz "https://github.com/php-memcached-dev/php-memcached/archive/refs/tags/v3.1.5.tar.gz" \
-    && mkdir -p /usr/src/php/ext/memcached \
-    && tar -C /usr/src/php/ext/memcached -zxvf /tmp/memcached.tar.gz --strip 1 \
-    && docker-php-ext-configure memcached --disable-memcached-sasl \
-    && docker-php-ext-install memcached \
-    && rm /tmp/memcached.tar.gz
+# Install PHP extensions
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) gd \
+    && docker-php-ext-install -j$(nproc) intl \
+    && docker-php-ext-install -j$(nproc) pdo_mysql \
+    && docker-php-ext-install -j$(nproc) pdo_pgsql \
+    && docker-php-ext-install -j$(nproc) zip \
+    && docker-php-ext-install -j$(nproc) xsl \
+    && docker-php-ext-install -j$(nproc) soap \
+    && docker-php-ext-install -j$(nproc) bcmath \
+    && docker-php-ext-install -j$(nproc) bz2 \
+    && docker-php-ext-install -j$(nproc) calendar \
+    && docker-php-ext-install -j$(nproc) exif \
+    && docker-php-ext-install -j$(nproc) gettext \
+    && docker-php-ext-install -j$(nproc) gmp \
+    && docker-php-ext-install -j$(nproc) mbstring \
+    && docker-php-ext-install -j$(nproc) mysqli \
+    && docker-php-ext-install -j$(nproc) opcache \
+    && docker-php-ext-install -j$(nproc) pcntl \
+    && docker-php-ext-install -j$(nproc) shmop \
+    && docker-php-ext-install -j$(nproc) sockets \
+    && docker-php-ext-install -j$(nproc) sysvmsg \
+    && docker-php-ext-install -j$(nproc) sysvsem \
+    && docker-php-ext-install -j$(nproc) sysvshm \
+    && docker-php-ext-install -j$(nproc) tokenizer \
+    && docker-php-ext-install -j$(nproc) wddx \
+    && docker-php-ext-install -j$(nproc) xmlrpc \
+    && docker-php-ext-install -j$(nproc) xsl \
+    && docker-php-ext-install -j$(nproc) imagick
