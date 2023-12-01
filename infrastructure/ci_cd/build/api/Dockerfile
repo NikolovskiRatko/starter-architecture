@@ -25,7 +25,8 @@ RUN apt-get update && apt-get install -y \
     libreadline-dev \
     libgmp-dev \
     libreadline-dev \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* && \
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install PHP extensions
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
