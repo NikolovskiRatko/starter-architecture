@@ -2,7 +2,7 @@
 import { PropType, provide, computed } from "vue";
 import { portletIsLoadingKey, portletThemeKey } from "./types";
 
-import "./Portlet.scss";
+import "./PortletComponent.scss";
 
 const props = defineProps({
   isBordered: {
