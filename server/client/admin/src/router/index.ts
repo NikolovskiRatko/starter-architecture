@@ -9,7 +9,7 @@ const Error = () =>
   import(
     /* webpackChunkName: "error" */
     /* webpackPrefetch: true */
-    "@/pages/Error/Error.vue"
+    "@/pages/Error/ErrorPage.vue"
   );
 
 const routes = [

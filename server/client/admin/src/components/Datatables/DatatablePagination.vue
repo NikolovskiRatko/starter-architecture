@@ -4,7 +4,7 @@ import type { Ref } from "vue";
 import PaginationLink from "@/components/Datatables/_partials/PaginationLink.vue";
 import { onQueryUpdateKey } from "@/components/Datatables/typings/inject";
 
-import "./Pagination.scss";
+import "./DatatablePagination.scss";
 
 const props = defineProps(["pagination", "page"]);
 const limitOptions = ["10", "25", "50"];

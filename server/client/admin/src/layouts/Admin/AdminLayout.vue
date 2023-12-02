@@ -4,7 +4,7 @@ import { storeToRefs } from "pinia";
 import { useAuth } from "@websanova/vue-auth/src/v3.js";
 import AdminHeader from "@/layouts/Admin/AdminHeader.vue";
 import AdminSidebar from "@/layouts/Admin/AdminSidebar.vue";
-import { Grid, GridItem } from "@/components/Grid";
+import { GridComponent, GridItem } from "@/components/Grid";
 import { useRootStore } from "@/store/root";
 import { layoutConfigKey } from "./types/Admin";
 import "./Admin.scss";
@@ -35,9 +35,9 @@ onMounted(() => {
   <div
     class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right aside--enabled aside--fixed"
   >
-    <Grid direction="horizontal" isRoot>
+    <GridComponent direction="horizontal" isRoot>
       <GridItem className="kt-page" isFluid>
-        <Grid direction="vertical">
+        <GridComponent direction="vertical">
           <AdminSidebar />
           <GridItem isFluid>
             <div
@@ -50,7 +50,7 @@ onMounted(() => {
                 'wrapper-page--aside-minimized': sidebarState.minimized,
               }"
             >
-              <Grid direction="horizontal">
+              <GridComponent direction="horizontal">
                 <GridItem>
                   <AdminHeader />
                 </GridItem>
@@ -59,12 +59,12 @@ onMounted(() => {
                     <router-view :key="$route.fullPath" />
                   </div>
                 </GridItem>
-              </Grid>
+              </GridComponent>
             </div>
           </GridItem>
-        </Grid>
+        </GridComponent>
       </GridItem>
-    </Grid>
+    </GridComponent>
 
     <dialogs-wrapper wrapper-name="default" />
   </div>

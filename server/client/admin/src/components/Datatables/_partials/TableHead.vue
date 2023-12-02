@@ -13,7 +13,7 @@ import { TableRow } from "@/components/Datatables";
 const props = defineProps({
   columns: {
     type: Array as PropType<ColumnObject>,
-    default: [],
+    default: () => [],
   },
   tableInfo: {
     type: Object as PropType<TableInfo>,
@@ -66,7 +66,7 @@ const isArrowVisible = (
       <template v-for="column in columns">
         <th
           v-if="column.sortable && !props.tableInfo.noRecords"
-          :key="column.name"
+          :key="`sortable-${column.name}`"
           :title="$t(column.label)"
           class="kt-datatable__cell kt-datatable__cell--head"
           :class="{
@@ -85,6 +85,7 @@ const isArrowVisible = (
         </th>
         <th
           v-else
+          :key="column.name"
           class="kt-datatable__cell"
           :style="`width:${column.width};`"
           :title="$t(column.label)"

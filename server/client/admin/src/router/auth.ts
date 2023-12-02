@@ -13,7 +13,7 @@ const Login = () =>
   import(
     /* webpackChunkName: "login" */
     /* webpackPrefetch: true */
-    "@/pages/Auth/Login.vue"
+    "@/pages/Auth/LoginPage.vue"
   );
 
 export const authPaths: RouteConfig =

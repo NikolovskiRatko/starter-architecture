@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Portlet } from "@/components";
+import { PortletComponent } from "@/components";
 import {
   PortletBody,
   PortletHeadLabel,
@@ -17,7 +17,7 @@ import buttons from "@/data/buttons";
       class="col-lg-6"
       :key="`column-${column?.[0].title}`"
     >
-      <Portlet v-for="group in column" :key="group.title">
+      <PortletComponent v-for="group in column" :key="group.title">
         <PortletHead>
           <PortletHeadLabel>
             {{ group.title }}
@@ -41,7 +41,7 @@ import buttons from "@/data/buttons";
             ></div>
           </template>
         </PortletBody>
-      </Portlet>
+      </PortletComponent>
     </div>
   </div>
 </template>

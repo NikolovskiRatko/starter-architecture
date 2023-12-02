@@ -15,14 +15,14 @@ const Dashboard = () =>
   import(
     /* webpackChunkName: "dashboard" */
     /* webpackPrefetch: true */
-    "@/pages/Dashboard/Dashboard.vue"
+    "@/pages/MainDashboard/MainDashboard.vue"
   );
 
 const Users = () =>
   import(
     /* webpackChunkName: "users" */
     /* webpackPrefetch: true */
-    "@/pages/Users/Users.vue"
+    "@/pages/Users/UsersList.vue"
   );
 
 const UserForm = () =>
@@ -51,14 +51,14 @@ const Portlets = () =>
   import(
     /* webpackChunkName: "portlets" */
     /* webpackPrefetch: true */
-    "@/pages/Components/Portlets.vue"
+    "@/pages/Components/PortletsPage.vue"
   );
 
 const Buttons = () =>
   import(
     /* webpackChunkName: "buttons" */
     /* webpackPrefetch: true */
-    "@/pages/Components/Buttons.vue"
+    "@/pages/Components/ButtonsPage.vue"
   );
 
 /*INSERT NEW IMPORTS HERE*/

@@ -5,7 +5,7 @@ import { computed, onMounted, ref } from "vue";
 import { storeToRefs } from "pinia";
 import useAuthComp from "@/composables/useAuthComp";
 import { useRootStore } from "@/store/root";
-import BrandComponent from "@/components/Admin/Brand.vue";
+import AsideBrand from "@/components/Admin/AsideBrand.vue";
 import FirstLevelMenuItem from "@/components/Admin/FirstLevelMenuItem.vue";
 
 const { permissionsArray } = useAuthComp();
@@ -78,7 +78,7 @@ onMounted(() => {
     @mouseover="sidebarHover(true)"
     @mouseleave="sidebarHover(false)"
   >
-    <BrandComponent @toggleSidebar="toggleSidebar" />
+    <AsideBrand @toggleSidebar="toggleSidebar" />
 
     <div class="aside__menu-wrapper">
       <div

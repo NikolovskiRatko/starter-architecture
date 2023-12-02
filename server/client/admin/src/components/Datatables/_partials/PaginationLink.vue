@@ -17,7 +17,7 @@ const props = defineProps({
   },
   classModifiers: {
     type: Array as PropType<string[]>,
-    default: [],
+    default: () => [],
   },
 });
 

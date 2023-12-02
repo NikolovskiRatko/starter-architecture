@@ -1,5 +1,5 @@
 <script setup>
-import { Portlet } from "@/components";
+import { PortletComponent } from "@/components";
 import {
   PortletFoot,
   PortletBody,
@@ -16,15 +16,15 @@ const shortLoremIpsum =
 <template>
   <div class="row">
     <div class="col-lg-6">
-      <Portlet>
+      <PortletComponent>
         <PortletHead>
           <PortletHeadLabel>
             Basic Portlet <small>portlet sub title</small>
           </PortletHeadLabel>
         </PortletHead>
         <PortletBody>{{ loremIpsum }}</PortletBody>
-      </Portlet>
-      <Portlet>
+      </PortletComponent>
+      <PortletComponent>
         <PortletHead>
           <PortletHeadLabel :has-icon="true">
             Portlet with toolbar <small>portlet sub title</small>
@@ -42,8 +42,8 @@ const shortLoremIpsum =
           </PortletHeadToolbar>
         </PortletHead>
         <PortletBody>{{ loremIpsum }}</PortletBody>
-      </Portlet>
-      <Portlet :is-bordered="true">
+      </PortletComponent>
+      <PortletComponent :is-bordered="true">
         <PortletHead>
           <PortletHeadLabel>
             Portlet with footer <small>portlet sub title</small>
@@ -61,16 +61,16 @@ const shortLoremIpsum =
             </div>
           </div>
         </PortletFoot>
-      </Portlet>
+      </PortletComponent>
     </div>
     <div class="col-lg-6">
-      <Portlet :theme="'primary'">
+      <PortletComponent :theme="'primary'">
         <PortletHead>
           <PortletHeadLabel> Solid skin </PortletHeadLabel>
         </PortletHead>
         <PortletBody>{{ loremIpsum }}</PortletBody>
-      </Portlet>
-      <Portlet :theme="'warning'">
+      </PortletComponent>
+      <PortletComponent :theme="'warning'">
         <PortletHead>
           <PortletHeadLabel> Solid warning skin </PortletHeadLabel>
         </PortletHead>
@@ -88,8 +88,8 @@ const shortLoremIpsum =
             </div>
           </div>
         </PortletFoot>
-      </Portlet>
-      <Portlet :theme="'success'">
+      </PortletComponent>
+      <PortletComponent :theme="'success'">
         <PortletHead>
           <PortletHeadLabel> Solid warning skin </PortletHeadLabel>
         </PortletHead>
@@ -107,22 +107,22 @@ const shortLoremIpsum =
             </div>
           </div>
         </PortletFoot>
-      </Portlet>
+      </PortletComponent>
     </div>
     <div class="col-xl-4">
-      <Portlet :is-equal-half-height="true">
+      <PortletComponent :is-equal-half-height="true">
         <PortletBody :is-equal-half-height="true">{{
           shortLoremIpsum
         }}</PortletBody>
-      </Portlet>
-      <Portlet :is-equal-half-height="true">
+      </PortletComponent>
+      <PortletComponent :is-equal-half-height="true">
         <PortletBody :is-equal-half-height="true">{{
           shortLoremIpsum
         }}</PortletBody>
-      </Portlet>
+      </PortletComponent>
     </div>
     <div class="col-xl-4">
-      <Portlet :is-equal-height="true">
+      <PortletComponent :is-equal-height="true">
         <PortletHead>
           <PortletHeadLabel> Same Height Portlet </PortletHeadLabel>
         </PortletHead>
@@ -131,10 +131,10 @@ const shortLoremIpsum =
           <br />
           <span>{{ loremIpsum }}</span>
         </PortletBody>
-      </Portlet>
+      </PortletComponent>
     </div>
     <div class="col-xl-4">
-      <Portlet :is-equal-height="true">
+      <PortletComponent :is-equal-height="true">
         <PortletHead>
           <PortletHeadLabel> Same Height Portlet </PortletHeadLabel>
         </PortletHead>
@@ -143,7 +143,7 @@ const shortLoremIpsum =
           <br />
           <span>{{ loremIpsum }}</span>
         </PortletBody>
-      </Portlet>
+      </PortletComponent>
     </div>
   </div>
 </template>

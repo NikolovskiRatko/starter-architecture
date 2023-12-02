@@ -41,7 +41,7 @@ const auth = useAuth();
         :to="{ name: 'edit.user', params: { userId: user.id } }"
         exact=""
       >
-        <i aria-hidden="true" class="la la-pencil" /> 
+        <i aria-hidden="true" class="la la-pencil" />
         {{ $t("buttons.edit") }}
       </router-link>
     </TableColumn>

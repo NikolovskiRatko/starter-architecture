@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, provide } from "vue";
 import {
-  Pagination,
+  DatatablePagination,
   TableHead,
   TableLoader,
   DatatableHeader,
@@ -9,10 +9,10 @@ import {
   TableColumn,
   TableRow,
 } from "@/components/Datatables";
-import { Portlet } from "@/components";
+import { PortletComponent } from "@/components";
 import { PortletBody } from "@/components/Portlet";
 import { TableQuery, onQueryUpdateKey } from "@/components/Datatables/typings";
-import "./Datatable.scss";
+import "./DatatableComponent.scss";
 
 const props = defineProps([
   "tableInfo",
@@ -36,7 +36,7 @@ provide(onQueryUpdateKey, handleUpdateQuery);
 </script>
 
 <template>
-  <Portlet>
+  <PortletComponent>
     <DatatableHeader :lang-key="langKey" :add-route-name="addRouteName" />
     <DatatableFilters />
     <PortletBody :is-unpdadded="true">
@@ -92,10 +92,13 @@ provide(onQueryUpdateKey, handleUpdateQuery);
           </tbody>
         </table>
 
-        <Pagination v-if="!tableInfo.noRecords" :pagination="pagination" />
+        <DatatablePagination
+          v-if="!tableInfo.noRecords"
+          :pagination="pagination"
+        />
 
         <TableLoader />
       </div>
     </PortletBody>
-  </Portlet>
+  </PortletComponent>
 </template>

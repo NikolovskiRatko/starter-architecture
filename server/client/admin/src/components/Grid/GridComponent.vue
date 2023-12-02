@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { PropType } from "vue";
 import { GridDirection } from "./types";
-import "./Grid.scss";
+import "./SkGrid.scss";
 
 const props = defineProps({
   direction: {

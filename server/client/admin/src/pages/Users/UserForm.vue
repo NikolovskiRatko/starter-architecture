@@ -4,7 +4,7 @@ import { cloneDeep } from "lodash";
 import { useRoute } from "vue-router";
 import { useForm } from "@/composables";
 import {
-  Portlet,
+  PortletComponent,
   PortletBody,
   PortletHeadLabel,
   PortletHead,
@@ -83,7 +83,7 @@ onMounted(() => {
   >
     <div class="row">
       <div class="col-12">
-        <Portlet :has-sticky-header="true" :is-loading="loading">
+        <PortletComponent :has-sticky-header="true" :is-loading="loading">
           <PortletHead :size="'lg'">
             <PortletHeadLabel>
               {{ $t("users.basic.information") }}
@@ -268,7 +268,7 @@ onMounted(() => {
               <div class="col-xl-3"></div>
             </div>
           </PortletBody>
-        </Portlet>
+        </PortletComponent>
       </div>
     </div>
     <!--    <unsaved-changes-modal-->

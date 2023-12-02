@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import "./Brand.scss";
+import "./AsideBrand.scss";
 
 const emits = ["toggleSidebar"];
 </script>

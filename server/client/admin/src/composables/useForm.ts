@@ -32,24 +32,24 @@ export function useForm(fetchUri, data) {
     message.value = messageInternal;
   }
 
-  function clearMessage(): void {
-    message.value = "";
-  }
+  // function clearMessage(): void {
+  //   message.value = "";
+  // }
 
   // TODO: All functions that receive form , should probably use this.form instead of the parametar they recieve
-  function removeFormErrors(form, field: string) {
-    // TODO: Implement the clear errors functionality here from the package
-    form.value.errors.clear(field);
-  }
+  // function removeFormErrors(form, field: string) {
+  // TODO: Implement the clear errors functionality here from the package
+  //   form.value.errors.clear(field);
+  // }
 
-  function resetForm(form) {
-    // TODO: Implement the reset value functionality here from the package
-    form.value.reset();
-  }
+  // function resetForm(form) {
+  //   // TODO: Implement the reset value functionality here from the package
+  //   form.value.reset();
+  // }
 
   const initFormFromItem: InitFormFromItem = (
     onInit,
-    resetOnSuccess = true,
+    // resetOnSuccess = true,
   ) => {
     loading.value = true;
     get(fetchUri)
@@ -89,7 +89,7 @@ export function useForm(fetchUri, data) {
       .catch((errorInternal) => {
         error.value = errorInternal;
         console.error("Request failed with:", error);
-        displayErrorMessage(error.message);
+        displayErrorMessage(error.value.message);
       })
       .finally(() => {
         loading.value = false;
@@ -100,12 +100,12 @@ export function useForm(fetchUri, data) {
   function checkEqual(form) {
     let equal: boolean = true;
     for (const key in form.initial) {
-      if (form.hasOwnProperty(key)) {
+      if (form.hasOwn(key)) {
         equal =
           equal &&
           JSON.stringify(form[key]) == JSON.stringify(form.initial[key]);
-        if (!(JSON.stringify(form[key]) == JSON.stringify(form.initial[key]))) {
-        }
+        // if (!(JSON.stringify(form[key]) == JSON.stringify(form.initial[key]))) {
+        // }
       } else {
         console.warn("Missing prop: " + key);
       }
@@ -130,7 +130,7 @@ export function useForm(fetchUri, data) {
 
   function confirmUnsavedChanges() {
     // TODO: Consider removing this complexity for the time being, it seems to have to do something with modals and different routes for a given form
-    form.reset();
+    form.value.reset();
     router.push(routeTo);
     confirmUnsavedChangesModal.value = false;
   }
