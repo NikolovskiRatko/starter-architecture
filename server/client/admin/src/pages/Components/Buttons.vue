@@ -12,21 +12,26 @@ import buttons from "@/data/buttons";
 </script>
 <template>
   <div class="row">
-    <div v-for="column in buttons" class="col-lg-6">
-      <Portlet v-for="group in column">
+    <div
+      v-for="column in buttons"
+      class="col-lg-6"
+      :key="`column-${column?.[0].title}`"
+    >
+      <Portlet v-for="group in column" :key="group.title">
         <PortletHead>
           <PortletHeadLabel>
             {{ group.title }}
           </PortletHeadLabel>
         </PortletHead>
         <PortletBody>
-          <template v-for="section in group.sections">
+          <template v-for="section in group.sections" :key="section.title">
             <SkSection>
               <div class="kt-section__info">{{ section.title }}:</div>
               <div class="kt-section__content kt-section__content--solid">
                 <SkButton
                   v-for="{ label, ...props } in section.buttons"
                   v-bind="props"
+                  :key="label"
                   >{{ label }}</SkButton
                 >
               </div>

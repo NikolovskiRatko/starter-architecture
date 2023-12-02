@@ -21,7 +21,7 @@ class Errors {
    * @param {string} field
    */
   has(field) {
-    let hasError = this.errors.hasOwnProperty(field);
+    let hasError = this.errors.hasOwn(field);
 
     if (!hasError) {
       const errors = Object.keys(this.errors).filter(

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, computed } from "vue";
 
 export default defineComponent({
   name: "DashboardDatatable",
@@ -18,13 +18,10 @@ export default defineComponent({
       <tr>
         <th
           v-for="column in columns"
-          v-if="column.sortable"
           :key="column.name"
           :style="'width:' + column.width + ';'"
+          :class="{ sortable: column.sortable }"
         >
-          {{ $t(column.label) }}
-        </th>
-        <th v-else :style="'width:' + column.width + ';'">
           {{ $t(column.label) }}
         </th>
       </tr>

@@ -25,7 +25,7 @@ export function cloneDeep(object) {
     const clone = [];
 
     for (const key in object) {
-      if (object.hasOwnProperty(key)) {
+      if (object.hasOwn(key)) {
         clone[key] = cloneDeep(object[key]);
       }
     }
@@ -37,7 +37,7 @@ export function cloneDeep(object) {
     const clone = {};
 
     for (const key in object) {
-      if (object.hasOwnProperty(key)) {
+      if (object.hasOwn(key)) {
         clone[key] = cloneDeep(object[key]);
       }
     }

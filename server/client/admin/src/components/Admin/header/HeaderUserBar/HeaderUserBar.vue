@@ -124,8 +124,8 @@ const toggleDropdown = () =>
         </a>
         <div class="kt-notification__custom kt-space-between">
           <a
-            @click.prevent="logout"
             class="btn btn-label btn-label-brand btn-sm btn-bold"
+            @click.prevent="logout"
             >Sign Out</a
           >
           <a

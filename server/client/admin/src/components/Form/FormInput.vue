@@ -43,13 +43,12 @@ const inputValue = computed({
     </label>
     <input
       :id="id"
-      type="text"
       aria-describedby="PLACEHOLDER"
       :value="inputValue"
       :name="id"
       :class="['form-control', { error: form.errors.has(id) }]"
       :disabled="disabled"
-      :type="type"
+      :type="type ?? 'text'"
       @input="(event) => (inputValue = event.target.value)"
     />
   </div>

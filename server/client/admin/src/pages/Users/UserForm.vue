@@ -56,7 +56,7 @@ const avatar = computed(() => {
   const { media } = item.value;
   if (media != undefined) {
     const userAvatar = media.find((o) => o.collection_name === "user_avatars");
-    if (!!userAvatar) {
+    if (userAvatar) {
       return getPhotoPath(userAvatar, 400);
     }
   }

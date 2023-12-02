@@ -56,15 +56,15 @@ class Form {
       resetOnSuccess: true,
     };
 
-    if (options.hasOwnProperty("resetOnSuccess")) {
+    if (options.hasOwn("resetOnSuccess")) {
       this.__options.resetOnSuccess = options.resetOnSuccess;
     }
 
-    if (options.hasOwnProperty("onSuccess")) {
+    if (options.hasOwn("onSuccess")) {
       this.onSuccess = options.onSuccess;
     }
 
-    if (options.hasOwnProperty("onFail")) {
+    if (options.hasOwn("onFail")) {
       this.onFail = options.onFail;
     }
 
@@ -126,7 +126,7 @@ class Form {
     Object.keys(data).forEach((field) => {
       guardAgainstReservedFieldName(field);
 
-      if (this.hasOwnProperty(field)) {
+      if (this.hasOwn(field)) {
         merge(this, { [field]: data[field] });
       }
     });
@@ -237,7 +237,7 @@ class Form {
 
     if (typeof object === "object") {
       for (const key in object) {
-        if (object.hasOwnProperty(key)) {
+        if (object.hasOwn(key)) {
           if (this.hasFilesDeep(object[key])) {
             return true;
           }
@@ -247,7 +247,7 @@ class Form {
 
     if (Array.isArray(object)) {
       for (const key in object) {
-        if (object.hasOwnProperty(key)) {
+        if (object.hasOwn(key)) {
           return this.hasFilesDeep(object[key]);
         }
       }
@@ -261,7 +261,7 @@ class Form {
    *
    * @param {object} data
    */
-  onSuccess(data) {
+  onSuccess() {
     this.successful = true;
 
     if (this.__options.resetOnSuccess) {

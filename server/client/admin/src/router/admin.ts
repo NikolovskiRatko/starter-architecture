@@ -63,7 +63,7 @@ const Buttons = () =>
 
 /*INSERT NEW IMPORTS HERE*/
 
-export let adminPaths: RouteConfig =
+export const adminPaths: RouteConfig =
   //  ADMIN PANEL
   {
     path: "/admin",

@@ -39,15 +39,15 @@ const className = computed(() => {
       : `btn-${theme.value}`,
   );
 
-  if (!!size?.value) {
+  if (size?.value) {
     classes.push(`btn-${size.value}`);
   }
 
-  if (!!state?.value) {
+  if (state?.value) {
     classes.push(state.value);
   }
 
-  if (!!elevate?.value) {
+  if (elevate?.value) {
     classes.push("btn-elevate");
     if (elevate.value === "elevate-air") {
       classes.push("btn-elevate-air");
@@ -58,19 +58,19 @@ const className = computed(() => {
     classes.push("btn-wide");
   }
 
-  if (!!fontSize?.value) {
+  if (fontSize?.value) {
     classes.push(`btn-font-${fontSize.value}`);
   }
 
-  if (!!fontWeight?.value) {
+  if (fontWeight?.value) {
     classes.push(`btn-font-${fontWeight.value}`);
   }
 
-  if (!!textTransform?.value) {
+  if (textTransform?.value) {
     classes.push(`btn-${textTransform.value}`);
   }
 
-  if (!!height?.value) {
+  if (height?.value) {
     classes.push(`btn-${height.value}`);
   }
 

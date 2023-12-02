@@ -106,7 +106,7 @@ const handleNavClick = (page: number | null): void => {
           class="kt-datatable__pager__size form-control selectpicker"
           @change="handleLengthChange"
         >
-          <option v-for="option in limitOptions" :value="option">
+          <option v-for="option in limitOptions" :value="option" :key="option">
             {{ option }}
           </option>
         </select>

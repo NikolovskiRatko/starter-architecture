@@ -6,7 +6,7 @@ const props = defineProps(["route", "loading"]);
 <template>
   <div class="col-md-9">
     <admin-section class="form-controls" :loading="loading">
-      <h4 slot="header">
+      <h4>
         {{ $t("locations.packages.contract_data.subtitle_4") }}
       </h4>
 

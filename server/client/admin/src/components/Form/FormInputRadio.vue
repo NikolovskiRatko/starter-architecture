@@ -75,7 +75,7 @@ function emitValue(value: unknown) {
           'col-lg-8 col-md-10': isInline,
         }"
       >
-        <template v-for="option in options">
+        <template v-for="option in options" :key="option.id">
           <input
             :id="id + 'checkbox-' + option.id"
             :name="id"
