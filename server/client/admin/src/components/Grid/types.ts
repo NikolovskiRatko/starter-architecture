@@ -1,1 +1,1 @@
-export type GridDirection = 'horizontal' | 'vertical';
+export type GridDirection = "horizontal" | "vertical";

@@ -1,132 +1,131 @@
 @mixin kt-grid-generate($mode) {
-	$mode-class: '';
-	$mode-dir: '';
+  $mode-class: "";
+  $mode-dir: "";
 
-	// Grid mode
-	@if ($mode == general) {
-		$mode-class: ":not(.kt-grid--desktop):not(.kt-grid--desktop-and-tablet):not(.kt-grid--tablet):not(.kt-grid--tablet-and-mobile):not(.kt-grid--mobile)";
-	} @else {
-		$mode-class: ".kt-grid--" + $mode;
-		$mode-dir: "-" + $mode;
-	}
+  // Grid mode
+  @if ($mode == general) {
+    $mode-class: ":not(.kt-grid--desktop):not(.kt-grid--desktop-and-tablet):not(.kt-grid--tablet):not(.kt-grid--tablet-and-mobile):not(.kt-grid--mobile)";
+  } @else {
+    $mode-class: ".kt-grid--" + $mode;
+    $mode-dir: "-" + $mode;
+  }
 
-	// Horizontal grid
-	.kt-grid--horizontal#{$mode-dir}#{$mode-class} {
-		display: flex;
-		flex-direction: column;
+  // Horizontal grid
+  .kt-grid--horizontal#{$mode-dir}#{$mode-class} {
+    display: flex;
+    flex-direction: column;
 
-		&.kt-grid--root {
-			flex: 1;
-			-ms-flex: 1 0 0px; // IE10-11 fix
-		}
+    &.kt-grid--root {
+      flex: 1;
+      -ms-flex: 1 0 0px; // IE10-11 fix
+    }
 
-		> .kt-grid__item {
-			flex: none;
+    > .kt-grid__item {
+      flex: none;
 
-			&.kt-grid__item--fluid,
-			&.kt-grid__item--fluid#{$mode-dir} {
-				flex: 1 0 auto;
-				//-ms-flex: 1 0 0px;  // IE10-11 fix
-			}
-		}
+      &.kt-grid__item--fluid,
+      &.kt-grid__item--fluid#{$mode-dir} {
+        flex: 1 0 auto;
+        //-ms-flex: 1 0 0px;  // IE10-11 fix
+      }
+    }
 
-		// flex ordering
-		@for $i from 1 through 12 {
-			> .kt-grid__item.kt-grid__item--order-#{$i}#{$mode-dir} {
-				order: $i;
-			}
-		}
-	}
+    // flex ordering
+    @for $i from 1 through 12 {
+      > .kt-grid__item.kt-grid__item--order-#{$i}#{$mode-dir} {
+        order: $i;
+      }
+    }
+  }
 
-	// Vertical grid
-	.kt-grid--vertical#{$mode-dir}#{$mode-class} {
-		display: flex;
-		flex-direction: row;
+  // Vertical grid
+  .kt-grid--vertical#{$mode-dir}#{$mode-class} {
+    display: flex;
+    flex-direction: row;
 
-		&.kt-grid--root {
-			flex: 1;
-			-ms-flex: 1 0 0px;  // IE10-11 fix
-		}
+    &.kt-grid--root {
+      flex: 1;
+      -ms-flex: 1 0 0px; // IE10-11 fix
+    }
 
-		> .kt-grid__item {
-			flex: 0 0 auto;
+    > .kt-grid__item {
+      flex: 0 0 auto;
 
-			&.kt-grid__item--fluid,
-			&.kt-grid__item--fluid#{$mode-dir} {
-				flex: 1 auto;
-				-ms-flex: 1 0 0px;  // IE10-11 fix
-				min-width: 0;
-			}
-		}
+      &.kt-grid__item--fluid,
+      &.kt-grid__item--fluid#{$mode-dir} {
+        flex: 1 auto;
+        -ms-flex: 1 0 0px; // IE10-11 fix
+        min-width: 0;
+      }
+    }
 
-		// flex ordering
-		@for $i from 1 through 12 {
-			> .kt-grid__item.kt-grid__item--order-#{$i}#{$mode-dir} {
-				order: $i;
-			}
-		}
-	}
+    // flex ordering
+    @for $i from 1 through 12 {
+      > .kt-grid__item.kt-grid__item--order-#{$i}#{$mode-dir} {
+        order: $i;
+      }
+    }
+  }
 
-	// Grid item order
-	.kt-grid {
-		// horizontal items aligment
-		&.kt-grid--center {
-			align-content: center;
-		}
+  // Grid item order
+  .kt-grid {
+    // horizontal items aligment
+    &.kt-grid--center {
+      align-content: center;
+    }
 
-		&.kt-grid--stretch {
-			align-items: stretch;
-		}
+    &.kt-grid--stretch {
+      align-items: stretch;
+    }
 
-		// vertical item alignment
-		> .kt-grid__item {
-			max-width:100%;
+    // vertical item alignment
+    > .kt-grid__item {
+      max-width: 100%;
 
-			&.kt-grid__item--top {
-				align-self: flex-start;
-			}
+      &.kt-grid__item--top {
+        align-self: flex-start;
+      }
 
-			&.kt-grid__item--middle {
-				align-self: center;
-			}
+      &.kt-grid__item--middle {
+        align-self: center;
+      }
 
+      &.kt-grid__item--bottom {
+        align-self: flex-end;
+      }
+    }
 
-			&.kt-grid__item--bottom {
-				align-self: flex-end;
-			}
-		}
-
-		// flex ordering
-		@for $i from 1 through 12 {
-			> .kt-grid__item.kt-grid__item--order-#{$i} {
-				order: $i;
-			}
-		}
-	}
+    // flex ordering
+    @for $i from 1 through 12 {
+      > .kt-grid__item.kt-grid__item--order-#{$i} {
+        order: $i;
+      }
+    }
+  }
 }
 
 @include kt-grid-generate(general);
 
 @include kt-desktop {
-	@include kt-grid-generate(desktop);
+  @include kt-grid-generate(desktop);
 }
 
 @include kt-desktop-xl {
-	@include kt-grid-generate(desktop-xl);
+  @include kt-grid-generate(desktop-xl);
 }
 
 @include kt-desktop-and-tablet {
-	@include kt-grid-generate(desktop-and-tablet);
+  @include kt-grid-generate(desktop-and-tablet);
 }
 
 @include kt-tablet {
-	@include kt-grid-generate(tablet);
+  @include kt-grid-generate(tablet);
 }
 
 @include kt-tablet-and-mobile {
-	@include kt-grid-generate(tablet-and-mobile);
+  @include kt-grid-generate(tablet-and-mobile);
 }
 
 @include kt-mobile {
-	@include kt-grid-generate(mobile);
+  @include kt-grid-generate(mobile);
 }

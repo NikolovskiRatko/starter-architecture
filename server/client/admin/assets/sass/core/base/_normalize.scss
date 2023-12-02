@@ -11,66 +11,68 @@ html {
   text-size-adjust: 100%; // 2
   -ms-text-size-adjust: 100%; // 2
   -webkit-text-size-adjust: 100%; // 2
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 html,
 body {
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
 
-    font-size: kt-get($font-size, size, desktop);
-    font-weight: kt-get($font-size, weight);
-    font-family: #{kt-get($font-families, regular)};
+  font-size: kt-get($font-size, size, desktop);
+  font-weight: kt-get($font-size, weight);
+  font-family: #{kt-get($font-families, regular)};
 
-    -ms-text-size-adjust: 100%; // 2
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  -ms-text-size-adjust: 100%; // 2
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-    a,
-    button {
-        outline: none !important;
-    }
+  a,
+  button {
+    outline: none !important;
+  }
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    color: kt-get($font-color, text);
+  display: flex;
+  flex-direction: column;
+  color: kt-get($font-color, text);
 }
 
 canvas {
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 // Links
 
 a {
-    color: kt-get($font-color, link, default);
-    text-decoration: none;
+  color: kt-get($font-color, link, default);
+  text-decoration: none;
 
-    &:hover {
-        color: kt-get($font-color, link, hover);
-        text-decoration: $link-hover-decoration;
-    }
+  &:hover {
+    color: kt-get($font-color, link, hover);
+    text-decoration: $link-hover-decoration;
+  }
 }
 
 /* set button(top and bottom of the scrollbar) */
-::-webkit-scrollbar-button {display:none}
+::-webkit-scrollbar-button {
+  display: none;
+}
 
 @include kt-tablet {
-    html,
-    body {
-        font-size: kt-get($font-size, size, tablet);
-    }
+  html,
+  body {
+    font-size: kt-get($font-size, size, tablet);
+  }
 }
 
 @include kt-mobile {
-    html,
-    body {
-        font-size: kt-get($font-size, size, mobile);
-    }
+  html,
+  body {
+    font-size: kt-get($font-size, size, mobile);
+  }
 }

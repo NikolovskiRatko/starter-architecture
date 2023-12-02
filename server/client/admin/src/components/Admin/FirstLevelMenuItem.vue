@@ -1,72 +1,82 @@
 <script lang="ts">
-  import { defineComponent, PropType } from 'vue';
-  import { useAuth } from '@websanova/vue-auth/src/v3.js';
-  import SecondLevelMenuItem from '@/components/Admin/SecondLevelMenuItem.vue';
-  import MenuLinkIcon from '@/components/Admin/MenuLinkIcon.vue';
+import { defineComponent, PropType } from "vue";
+import { useAuth } from "@websanova/vue-auth/src/v3.js";
+import SecondLevelMenuItem from "@/components/Admin/SecondLevelMenuItem.vue";
+import MenuLinkIcon from "@/components/Admin/MenuLinkIcon.vue";
 
-  interface Item {
-    label: String;
-    name: String;
-    link: String;
-    expanded: boolean;
-    permission: String;
-    subcategories?: Array<any>;
-  }
+interface Item {
+  label: String;
+  name: String;
+  link: String;
+  expanded: boolean;
+  permission: String;
+  subcategories?: Array<any>;
+}
 
-  export default defineComponent({
-    name: 'FirstLevelMenuItem',
-    components: {
-      SecondLevelMenuItem,
-      MenuLinkIcon
+export default defineComponent({
+  name: "FirstLevelMenuItem",
+  components: {
+    SecondLevelMenuItem,
+    MenuLinkIcon,
+  },
+  props: {
+    item: {
+      type: Object as PropType<Item>,
+      default: () => {},
     },
-    props: {
-      item: {
-        type: Object as PropType<Item>,
-        default: () => {}
-      }
+  },
+  data() {
+    return {
+      isExpanded: false,
+    };
+  },
+  computed: {
+    submenu() {
+      const permissionsArray = this.auth.user().permissions_array;
+      return (
+        this.item.subcategories?.filter((subMenuItem) =>
+          permissionsArray.includes(subMenuItem.permission),
+        ) || []
+      );
     },
-    data() {
-      return {
-        isExpanded: false,
-      }
+  },
+  mounted() {
+    this.setInitialExpanded();
+  },
+  methods: {
+    toggleMenu() {
+      this.isExpanded = !this.isExpanded;
     },
-    computed: {
-      submenu() {
-        const permissionsArray = this.auth.user().permissions_array;
-        return this.item.subcategories?.filter(subMenuItem => permissionsArray.includes(subMenuItem.permission)) || [];
-      }
+    isActiveClass(input) {
+      let path = input.link;
+      let curPath = this.$route.name;
+      return path === curPath;
     },
-    mounted() {
-      this.setInitialExpanded();
-    },
-    methods: {
-      toggleMenu() {
-        this.isExpanded = !this.isExpanded;
-      },
-      isActiveClass(input) {
-        let path = input.link;
-        let curPath = this.$route.name;
-        return path === curPath;
-      },
-      setInitialExpanded() {
-        const currentRoute = this.$route.name;
-        const isSubcategoryActive = this.item.subcategories?.some(menuItem => {
+    setInitialExpanded() {
+      const currentRoute = this.$route.name;
+      const isSubcategoryActive =
+        this.item.subcategories?.some((menuItem) => {
           const firstLevelIsActive = menuItem.link === currentRoute;
           if (firstLevelIsActive) {
             return true;
           } else {
-            return menuItem.subcategories?.some(secondLevelMenuItem => secondLevelMenuItem.link === currentRoute) || false;
+            return (
+              menuItem.subcategories?.some(
+                (secondLevelMenuItem) =>
+                  secondLevelMenuItem.link === currentRoute,
+              ) || false
+            );
           }
         }) || false;
 
-        this.isExpanded = this.item.expanded || isSubcategoryActive;
-      }
+      this.isExpanded = this.item.expanded || isSubcategoryActive;
     },
-    setup() {
-      const auth = useAuth();
-      return { auth }
-    }
-  })
+  },
+  setup() {
+    const auth = useAuth();
+    return { auth };
+  },
+});
 </script>
 
 <template>
@@ -74,15 +84,12 @@
   <li
     class="kt-menu__item"
     :class="{
-      'kt-menu__item--open' : isExpanded,
-      'kt-menu__item--active' : isActiveClass(item),
+      'kt-menu__item--open': isExpanded,
+      'kt-menu__item--active': isActiveClass(item),
     }"
   >
     <template v-if="submenu.length">
-      <span
-        class="kt-menu__link kt-menu__toggle"
-        @click="toggleMenu()"
-      >
+      <span class="kt-menu__link kt-menu__toggle" @click="toggleMenu()">
         <menu-link-icon />
         <span class="kt-menu__link-text">
           {{ $t(item.label) }}
@@ -93,10 +100,7 @@
       <div class="kt-menu__submenu">
         <span class="kt-menu__arrow" />
         <ul class="kt-menu__subnav">
-          <li
-            class="kt-menu__item kt-menu__item--parent"
-            aria-haspopup="true"
-          >
+          <li class="kt-menu__item kt-menu__item--parent" aria-haspopup="true">
             <span class="kt-menu__link">
               <span class="kt-menu__link-text">{{ $t(item.label) }}</span>
             </span>
@@ -110,11 +114,7 @@
       </div>
     </template>
 
-    <router-link
-      v-else
-      :to="{ name: item.link }"
-      class="kt-menu__link"
-    >
+    <router-link v-else :to="{ name: item.link }" class="kt-menu__link">
       <menu-link-icon />
       <span class="kt-menu__link-text">
         {{ $t(item.label) }}

@@ -2,40 +2,38 @@
 // Mixins
 //
 
-
-
 @mixin kt-spinner-size($size) {
-	&:before {
-		width: kt-get($spinner-config, size, $size);
-  		height: kt-get($spinner-config, size, $size);
-  		margin-top: - calc(kt-get($spinner-config, size, $size)/2);
-  	}
+  &:before {
+    width: kt-get($spinner-config, size, $size);
+    height: kt-get($spinner-config, size, $size);
+    margin-top: - calc(kt-get($spinner-config, size, $size) / 2);
+  }
 
-	&.kt-spinner--center {
-		&:before {
-			left: 50%;
-  			margin-left: calc(kt-get($spinner-config, size, $size)/2);
-		}
-	}
+  &.kt-spinner--center {
+    &:before {
+      left: 50%;
+      margin-left: calc(kt-get($spinner-config, size, $size) / 2);
+    }
+  }
 
-	&.kt-spinner--left {
-		&:before {
-			left: 0;
-			right: auto;
-		}
-	}
+  &.kt-spinner--left {
+    &:before {
+      left: 0;
+      right: auto;
+    }
+  }
 
-	&.kt-spinner--right {
-		&:before {
-			left: auto;
-			right: 0;
-		}
-	}
+  &.kt-spinner--right {
+    &:before {
+      left: auto;
+      right: 0;
+    }
+  }
 }
 
 @mixin kt-spinner-skin($color) {
-	&:before {
-    	border: 2px solid $color;
-		border-right: 2px solid transparent;
-    }
+  &:before {
+    border: 2px solid $color;
+    border-right: 2px solid transparent;
+  }
 }

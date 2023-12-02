@@ -2,78 +2,72 @@
 // User Pic
 //
 
-
-
 .kt-userpic {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  @include kt-rounded {
+    border-radius: $border-radius;
+  }
+
+  @include kt-user-pic-size(50px, 1.3rem);
+
+  img {
+    @include kt-rounded {
+      border-radius: $border-radius;
+    }
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
 
     @include kt-rounded {
-        border-radius: $border-radius;
+      border-radius: $border-radius;
+    }
+  }
+
+  @each $name, $color in $state-colors {
+    &.kt-userpic--#{$name} {
+      span {
+        background: rgba(kt-get($color, base), 0.1);
+        color: kt-get($color, base);
+      }
+    }
+  }
+
+  // sizing
+  &.kt-userpic--sm {
+    @include kt-user-pic-size(27px, 0.8rem);
+  }
+
+  &.kt-userpic--lg {
+    @include kt-user-pic-size(65px, 1.3rem);
+  }
+
+  &.kt-userpic--xl {
+    @include kt-user-pic-size(80px, 1.7rem);
+  }
+
+  // circle style
+  &.kt-userpic--circle {
+    @include kt-rounded {
+      border-radius: 50%;
     }
 
-    @include kt-user-pic-size(50px, 1.3rem);
-
     img {
-        @include kt-rounded {
-            border-radius: $border-radius;
-        }
+      @include kt-rounded {
+        border-radius: 50%;
+      }
     }
 
     span {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-
-        @include kt-rounded {
-            border-radius: $border-radius;
-        }
+      @include kt-rounded {
+        border-radius: 50%;
+      }
     }
-
-
-    @each $name, $color in $state-colors {
-        &.kt-userpic--#{$name} {
-            span {
-                background: rgba(kt-get($color, base), 0.1);
-                color: kt-get($color, base);
-            }
-        }
-    }
-
-
-    // sizing
-    &.kt-userpic--sm {
-        @include kt-user-pic-size(27px, 0.8rem);
-    }
-
-    &.kt-userpic--lg {
-        @include kt-user-pic-size(65px, 1.3rem);
-    }
-
-    &.kt-userpic--xl {
-        @include kt-user-pic-size(80px, 1.7rem);
-    }
-
-    // circle style
-    &.kt-userpic--circle {
-        @include kt-rounded {
-            border-radius: 50%;
-        }
-
-        img {
-            @include kt-rounded {
-                border-radius: 50%;
-            }
-        }
-
-        span {
-            @include kt-rounded {
-                border-radius: 50%;
-            }
-        }
-    }
+  }
 }
-
-

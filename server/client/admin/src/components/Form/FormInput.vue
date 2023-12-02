@@ -1,19 +1,26 @@
 <script setup lang="ts">
-  import { inject, computed } from "vue";
+import { inject, computed } from "vue";
 
-  const emit = defineEmits(['update:modelValue']);
-  const props = defineProps(['modelValue', 'id', 'type', 'isInline', 'disabled', 'hasLabel']);
-  const form = inject('form');
-  const labelStart = inject('labelStart');
+const emit = defineEmits(["update:modelValue"]);
+const props = defineProps([
+  "modelValue",
+  "id",
+  "type",
+  "isInline",
+  "disabled",
+  "hasLabel",
+]);
+const form = inject("form");
+const labelStart = inject("labelStart");
 
-  const inputValue = computed({
-    get() {
-      return props.modelValue;
-    },
-    set(newValue) {
-      emit('update:modelValue', newValue);
-    }
-  })
+const inputValue = computed({
+  get() {
+    return props.modelValue;
+  },
+  set(newValue) {
+    emit("update:modelValue", newValue);
+  },
+});
 </script>
 
 <template>
@@ -21,7 +28,7 @@
     class="d-flex"
     :class="{
       'd-inline-flex': isInline,
-      'flex-column': !isInline
+      'flex-column': !isInline,
     }"
   >
     <label
@@ -29,10 +36,10 @@
       :for="id"
       class="text-2"
       :class="{
-        'col-form-label': !isInline
+        'col-form-label': !isInline,
       }"
     >
-      {{ $t(labelStart + '.' + id) }}
+      {{ $t(labelStart + "." + id) }}
     </label>
     <input
       :id="id"
@@ -40,10 +47,10 @@
       aria-describedby="PLACEHOLDER"
       :value="inputValue"
       :name="id"
-      :class="['form-control', {'error':form.errors.has(id)}]"
+      :class="['form-control', { error: form.errors.has(id) }]"
       :disabled="disabled"
       :type="type"
-      @input="(event) => inputValue = event.target.value"
-    >
+      @input="(event) => (inputValue = event.target.value)"
+    />
   </div>
 </template>

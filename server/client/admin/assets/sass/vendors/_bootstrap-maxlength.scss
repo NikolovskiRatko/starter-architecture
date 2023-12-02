@@ -2,22 +2,19 @@
 // Bootstrap Maxlength
 //
 
-
-
-
 // Base
 @mixin kt-bootstrap-maxlength-base() {
- 	.bootstrap-maxlength {
- 		z-index: 1040 !important;
+  .bootstrap-maxlength {
+    z-index: 1040 !important;
 
- 		&.kt-badge {
- 			display: inline-flex !important;
- 		} 		
+    &.kt-badge {
+      display: inline-flex !important;
+    }
 
- 		.modal & {
- 			z-index: 1060 !important;
- 		}
- 	}
+    .modal & {
+      z-index: 1060 !important;
+    }
+  }
 }
 
 // Base

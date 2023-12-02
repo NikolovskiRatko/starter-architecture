@@ -1,26 +1,23 @@
 <script setup lang="ts">
-  import { inject } from "vue";
+import { inject } from "vue";
 
-  const isVisible = inject('isLoading');
-  const props = defineProps({
-    hasNoShadow: {
-      type: Boolean,
-      default: false
-    }
-  });
+const isVisible = inject("isLoading");
+const props = defineProps({
+  hasNoShadow: {
+    type: Boolean,
+    default: false,
+  },
+});
 
-  import './TableLoader.scss';
+import "./TableLoader.scss";
 </script>
 
 <template>
-  <div
-    v-show="isVisible"
-    class="kt-datatable__loader"
-  >
+  <div v-show="isVisible" class="kt-datatable__loader">
     <div
       class="kt-datatable__loader__message"
       :class="{
-        'kt-datatable__loader__message--no-shadow': hasNoShadow
+        'kt-datatable__loader__message--no-shadow': hasNoShadow,
       }"
     >
       Loading

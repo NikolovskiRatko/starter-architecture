@@ -1,12 +1,12 @@
-export type OrderDirection = 'asc' | 'desc';
-export type TableSections = 'head' | 'body' | 'footer';
+export type OrderDirection = "asc" | "desc";
+export type TableSections = "head" | "body" | "footer";
 
 export interface TableInfo {
-    category?: number;
-    source?: string;
-    error?: boolean;
-    errorMessage?: string;
-    noRecords?: boolean;
+  category?: number;
+  source?: string;
+  error?: boolean;
+  errorMessage?: string;
+  noRecords?: boolean;
 }
 
 interface PaginationOptions {

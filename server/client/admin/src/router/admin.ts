@@ -1,154 +1,166 @@
-import { RouteConfig } from 'vue-router'
-import { i18n } from '@/plugins/i18n';
+import { RouteConfig } from "vue-router";
+import { i18n } from "@/plugins/i18n";
 const { t } = i18n.global;
 
 // Layouts
-const AdminLayout = () => import(
+const AdminLayout = () =>
+  import(
     /* webpackChunkName: "admin-layout" */
     /* webpackPrefetch: true */
-    '@/layouts/Admin/AdminLayout.vue'
-    );
+    "@/layouts/Admin/AdminLayout.vue"
+  );
 
 // Pages
-const Dashboard = () => import(
+const Dashboard = () =>
+  import(
     /* webpackChunkName: "dashboard" */
     /* webpackPrefetch: true */
-    '@/pages/Dashboard/Dashboard.vue'
-    );
+    "@/pages/Dashboard/Dashboard.vue"
+  );
 
-const Users = () => import(
+const Users = () =>
+  import(
     /* webpackChunkName: "users" */
     /* webpackPrefetch: true */
-    '@/pages/Users/Users.vue'
-    );
+    "@/pages/Users/Users.vue"
+  );
 
-const UserForm = () => import(
+const UserForm = () =>
+  import(
     /* webpackChunkName: "user-form" */
     /* webpackPrefetch: true */
-    '@/pages/Users/UserForm.vue'
-    );
+    "@/pages/Users/UserForm.vue"
+  );
 
 // Admin Components
-const MyProfile = () => import(
+const MyProfile = () =>
+  import(
     /* webpackChunkName: "my-profile" */
     /* webpackPrefetch: true */
-    '@/pages/Admin/MyProfile.vue'
-    );
+    "@/pages/Admin/MyProfile.vue"
+  );
 
-const NotFound = () => import(
+const NotFound = () =>
+  import(
     /* webpackChunkName: "not-found" */
     /* webpackPrefetch: true */
-    '@/pages/Admin/NotFound.vue'
-    );
+    "@/pages/Admin/NotFound.vue"
+  );
 
-const Portlets = () => import(
+const Portlets = () =>
+  import(
     /* webpackChunkName: "portlets" */
     /* webpackPrefetch: true */
-    '@/pages/Components/Portlets.vue'
-    );
+    "@/pages/Components/Portlets.vue"
+  );
 
-const Buttons = () => import(
+const Buttons = () =>
+  import(
     /* webpackChunkName: "buttons" */
     /* webpackPrefetch: true */
-    '@/pages/Components/Buttons.vue'
-    );
+    "@/pages/Components/Buttons.vue"
+  );
 
 /*INSERT NEW IMPORTS HERE*/
 
 export let adminPaths: RouteConfig =
-//  ADMIN PANEL
-{
-  path: '/admin',
-  component: AdminLayout,
-  meta: {
-    title: t('strings.home', null),
-    auth: {
-      roles: ['read_users']
-    }
-  },
-  children: [
-    {
-      path: "dashboard",
-      name: "dashboard",
-      component: Dashboard,
-      meta: {
-        auth: true,
+  //  ADMIN PANEL
+  {
+    path: "/admin",
+    component: AdminLayout,
+    meta: {
+      title: t("strings.home", null),
+      auth: {
+        roles: ["read_users"],
       },
     },
-    {
-      path: "users",
-      name: "users",
-      component: Users,
-      meta: {
-        auth: {
-          roles: ['read_users']
-        }
+    children: [
+      {
+        path: "dashboard",
+        name: "dashboard",
+        component: Dashboard,
+        meta: {
+          auth: true,
+        },
       },
-    }, {
-      path: 'usersadd',
-      name: 'add.user',
-      component: UserForm,
-      meta: {
-        title: t('users.add', null),
-        auth: {
-          roles: ['write_users']
-        }
-      }
-    }, {
-      path: 'usersedit/:userId/edit',
-      name: 'edit.user',
-      component: UserForm,
-      meta: {
-        title: t('users.edit_user', null),
-        auth: {
-          roles: ['write_users']
-        }
-      }
-    }, {
-      path: 'myprofile',
-      name: 'myprofile',
-      component: MyProfile,
-      meta: {
-        title: t('strings.myprofile', null),
-        auth: {
-          roles: ['read_users']
-        }
-      }
-    },
-    {
-      path: 'components/portlets',
-      name: 'components.portlets',
-      component: Portlets,
-      meta: {
-        title: t('components.portlets.label', null),
-        auth: {
-          roles: ['read_users'],
-          forbiddenRedirect: '/'
-        }
-      }
-    }, {
-      path: 'components/buttons',
-      name: 'components.buttons',
-      component: Buttons,
-      meta: {
-        title: t('components.portlets.label', null),
-        auth: {
-          roles: ['read_users'],
-          forbiddenRedirect: '/'
-        }
-      }
-    },
-    {
-      path:  "/:catchAll(.*)",
-      name: 'adminnotfound',
-      component: NotFound,
-      meta: {
-        title: t('page.not_found', null),
-        auth: {
-          roles: ['write_users']
-        }
-      }
-    },
-    /*INSERT NEW CONFIGURATOR OPTIONS HERE*/
-  ]
-};
+      {
+        path: "users",
+        name: "users",
+        component: Users,
+        meta: {
+          auth: {
+            roles: ["read_users"],
+          },
+        },
+      },
+      {
+        path: "usersadd",
+        name: "add.user",
+        component: UserForm,
+        meta: {
+          title: t("users.add", null),
+          auth: {
+            roles: ["write_users"],
+          },
+        },
+      },
+      {
+        path: "usersedit/:userId/edit",
+        name: "edit.user",
+        component: UserForm,
+        meta: {
+          title: t("users.edit_user", null),
+          auth: {
+            roles: ["write_users"],
+          },
+        },
+      },
+      {
+        path: "myprofile",
+        name: "myprofile",
+        component: MyProfile,
+        meta: {
+          title: t("strings.myprofile", null),
+          auth: {
+            roles: ["read_users"],
+          },
+        },
+      },
+      {
+        path: "components/portlets",
+        name: "components.portlets",
+        component: Portlets,
+        meta: {
+          title: t("components.portlets.label", null),
+          auth: {
+            roles: ["read_users"],
+            forbiddenRedirect: "/",
+          },
+        },
+      },
+      {
+        path: "components/buttons",
+        name: "components.buttons",
+        component: Buttons,
+        meta: {
+          title: t("components.portlets.label", null),
+          auth: {
+            roles: ["read_users"],
+            forbiddenRedirect: "/",
+          },
+        },
+      },
+      {
+        path: "/:catchAll(.*)",
+        name: "adminnotfound",
+        component: NotFound,
+        meta: {
+          title: t("page.not_found", null),
+          auth: {
+            roles: ["write_users"],
+          },
+        },
+      },
+      /*INSERT NEW CONFIGURATOR OPTIONS HERE*/
+    ],
+  };

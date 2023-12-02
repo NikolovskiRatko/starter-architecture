@@ -1,10 +1,16 @@
 <script setup>
-  import { Portlet } from '@/components';
-  import {
-    PortletFoot, PortletBody, PortletHeadLabel, PortletHead, PortletHeadToolbar
-  } from '@/components/Portlet/components';
-  const loremIpsum = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.';
-  const shortLoremIpsum = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum is simply dummy text of the printing.';
+import { Portlet } from "@/components";
+import {
+  PortletFoot,
+  PortletBody,
+  PortletHeadLabel,
+  PortletHead,
+  PortletHeadToolbar,
+} from "@/components/Portlet/components";
+const loremIpsum =
+  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.";
+const shortLoremIpsum =
+  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum is simply dummy text of the printing.";
 </script>
 
 <template>
@@ -46,12 +52,12 @@
         <PortletBody>{{ loremIpsum }}</PortletBody>
         <PortletFoot>
           <div class="row align-items-center">
-            <div class="col-lg-6 m--valign-middle">
-              Portlet footer:
-            </div>
+            <div class="col-lg-6 m--valign-middle">Portlet footer:</div>
             <div class="col-lg-6 kt-align-right">
               <button type="submit" class="btn btn-brand">Submit</button>
-              <span class="kt-margin-left-10">or <a href="#" class="kt-link kt-font-bold">Cancel</a></span>
+              <span class="kt-margin-left-10"
+                >or <a href="#" class="kt-link kt-font-bold">Cancel</a></span
+              >
             </div>
           </div>
         </PortletFoot>
@@ -60,46 +66,44 @@
     <div class="col-lg-6">
       <Portlet :theme="'primary'">
         <PortletHead>
-          <PortletHeadLabel>
-            Solid skin
-          </PortletHeadLabel>
+          <PortletHeadLabel> Solid skin </PortletHeadLabel>
         </PortletHead>
         <PortletBody>{{ loremIpsum }}</PortletBody>
       </Portlet>
       <Portlet :theme="'warning'">
         <PortletHead>
-          <PortletHeadLabel>
-            Solid warning skin
-          </PortletHeadLabel>
+          <PortletHeadLabel> Solid warning skin </PortletHeadLabel>
         </PortletHead>
         <PortletBody>{{ loremIpsum }}</PortletBody>
         <PortletFoot>
           <div class="row align-items-center">
-            <div class="col-lg-6 m--valign-middle">
-              Portlet footer:
-            </div>
+            <div class="col-lg-6 m--valign-middle">Portlet footer:</div>
             <div class="col-lg-6 kt-align-right">
-              <a href="#" class="btn btn-font-light btn-outline-hover-light">Save</a>
-              <a href="#" class="btn btn-font-light btn-outline-hover-light">Cancel</a>
+              <a href="#" class="btn btn-font-light btn-outline-hover-light"
+                >Save</a
+              >
+              <a href="#" class="btn btn-font-light btn-outline-hover-light"
+                >Cancel</a
+              >
             </div>
           </div>
         </PortletFoot>
       </Portlet>
       <Portlet :theme="'success'">
         <PortletHead>
-          <PortletHeadLabel>
-            Solid warning skin
-          </PortletHeadLabel>
+          <PortletHeadLabel> Solid warning skin </PortletHeadLabel>
         </PortletHead>
         <PortletBody>{{ loremIpsum }}</PortletBody>
         <PortletFoot>
           <div class="row align-items-center">
-            <div class="col-lg-6 m--valign-middle">
-              Portlet footer:
-            </div>
+            <div class="col-lg-6 m--valign-middle">Portlet footer:</div>
             <div class="col-lg-6 kt-align-right">
-              <a href="#" class="btn btn-font-light btn-outline-hover-light">Save</a>
-              <a href="#" class="btn btn-font-light btn-outline-hover-light">Cancel</a>
+              <a href="#" class="btn btn-font-light btn-outline-hover-light"
+                >Save</a
+              >
+              <a href="#" class="btn btn-font-light btn-outline-hover-light"
+                >Cancel</a
+              >
             </div>
           </div>
         </PortletFoot>
@@ -107,18 +111,20 @@
     </div>
     <div class="col-xl-4">
       <Portlet :is-equal-half-height="true">
-        <PortletBody :is-equal-half-height="true">{{ shortLoremIpsum }}</PortletBody>
+        <PortletBody :is-equal-half-height="true">{{
+          shortLoremIpsum
+        }}</PortletBody>
       </Portlet>
       <Portlet :is-equal-half-height="true">
-        <PortletBody :is-equal-half-height="true">{{ shortLoremIpsum }}</PortletBody>
+        <PortletBody :is-equal-half-height="true">{{
+          shortLoremIpsum
+        }}</PortletBody>
       </Portlet>
     </div>
     <div class="col-xl-4">
       <Portlet :is-equal-height="true">
         <PortletHead>
-          <PortletHeadLabel>
-            Same Height Portlet
-          </PortletHeadLabel>
+          <PortletHeadLabel> Same Height Portlet </PortletHeadLabel>
         </PortletHead>
         <PortletBody :is-equal-height="true">
           <span>{{ loremIpsum }}</span>
@@ -130,9 +136,7 @@
     <div class="col-xl-4">
       <Portlet :is-equal-height="true">
         <PortletHead>
-          <PortletHeadLabel>
-            Same Height Portlet
-          </PortletHeadLabel>
+          <PortletHeadLabel> Same Height Portlet </PortletHeadLabel>
         </PortletHead>
         <PortletBody :is-equal-height="true">
           <span>{{ shortLoremIpsum }}</span>

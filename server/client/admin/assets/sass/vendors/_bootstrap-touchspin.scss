@@ -2,24 +2,21 @@
 // Bootstrap Timepicker Component
 //
 
-
-
-
 // Base
 .bootstrap-touchspin {
-    .input-group-btn-vertical {
-        .btn {
-            justify-content: center;
-            text-align: center;
+  .input-group-btn-vertical {
+    .btn {
+      justify-content: center;
+      text-align: center;
 
-            &:first-child {
-                border-bottom: 0;
-            }
+      &:first-child {
+        border-bottom: 0;
+      }
 
-            i {
-                padding: 0;
-                font-size: 1rem;
-            }
-        }
+      i {
+        padding: 0;
+        font-size: 1rem;
+      }
     }
+  }
 }

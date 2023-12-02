@@ -1,42 +1,45 @@
 <script setup lang="ts">
-  import { PropType, provide, computed } from "vue";
-  import { portletIsLoadingKey, portletThemeKey } from "./types";
+import { PropType, provide, computed } from "vue";
+import { portletIsLoadingKey, portletThemeKey } from "./types";
 
-  import './Portlet.scss';
+import "./Portlet.scss";
 
-  const props = defineProps({
-    isBordered: {
-      default: false
-    },
-    isUnpadded: {
-      default: false
-    },
-    theme: {
-      type: String as PropType<ComponentThemes>,
-      required: false
-    },
-    isEqualHeight: {
-      default: false
-    },
-    isEqualHalfHeight: {
-      default: false
-    },
-    hasStickyHeader: {
-      default: false
-    },
-    isLoading: {
-      default: false
-    }
-  })
+const props = defineProps({
+  isBordered: {
+    default: false,
+  },
+  isUnpadded: {
+    default: false,
+  },
+  theme: {
+    type: String as PropType<ComponentThemes>,
+    required: false,
+  },
+  isEqualHeight: {
+    default: false,
+  },
+  isEqualHalfHeight: {
+    default: false,
+  },
+  hasStickyHeader: {
+    default: false,
+  },
+  isLoading: {
+    default: false,
+  },
+});
 
-  provide('isUnpadded', props.isUnpadded);
-  provide('hasStickyHeader', props.hasStickyHeader);
-  provide(portletThemeKey, props.theme);
-  provide(portletIsLoadingKey, computed(() => props.isLoading));
+provide("isUnpadded", props.isUnpadded);
+provide("hasStickyHeader", props.hasStickyHeader);
+provide(portletThemeKey, props.theme);
+provide(
+  portletIsLoadingKey,
+  computed(() => props.isLoading),
+);
 
-  const headClassed = {
-    hasNoBorder: false
-  };
+const headClassed = {
+  hasNoBorder: false,
+};
 </script>
 
 <template>
@@ -48,7 +51,7 @@
       'kt-portlet--height-fluid-half': isEqualHalfHeight,
       'kt-portlet--sticky-header': hasStickyHeader,
       'kt-portlet--loading': isLoading,
-      [`kt-portlet--theme-${theme}`]: theme
+      [`kt-portlet--theme-${theme}`]: theme,
     }"
   >
     <slot></slot>

@@ -5,29 +5,29 @@ interface SidebarStates {
 }
 
 export interface BodyClasses {
-    modalOpen: boolean;
-    navMenuOpen: boolean;
-    navSearchActive: boolean;
-    isBodyOverflowing: boolean;
-    scrollBarWidth: number;
+  modalOpen: boolean;
+  navMenuOpen: boolean;
+  navSearchActive: boolean;
+  isBodyOverflowing: boolean;
+  scrollBarWidth: number;
 }
 
 export interface RootState {
-    appName: string;
-    backUrl: string;
-    csrfToken: string;
-    mainMenu: Array<any>;
-    menu: Array<any>;
-    activeClasses: any;
-    homePath: string;
-    frontActiveClass: any;
-    bodyClasses: BodyClasses;
-    sidebarState: SidebarStates;
+  appName: string;
+  backUrl: string;
+  csrfToken: string;
+  mainMenu: Array<any>;
+  menu: Array<any>;
+  activeClasses: any;
+  homePath: string;
+  frontActiveClass: any;
+  bodyClasses: BodyClasses;
+  sidebarState: SidebarStates;
 }
 
 export interface SetActiveClassesPayload {
-    main: string;
-    sub: string;
-    title: string;
-    hasFilters?: string;
+  main: string;
+  sub: string;
+  title: string;
+  hasFilters?: string;
 }

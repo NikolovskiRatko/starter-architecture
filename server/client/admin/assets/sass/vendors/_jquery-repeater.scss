@@ -2,52 +2,49 @@
 // jQuery Repeater
 //
 
+.kt-repeater {
+  .kt-repeater__row {
+    display: flex;
+    flex-wrap: wrap;
 
+    > input {
+      flex: 1;
+    }
 
-.kt-repeater{
-	.kt-repeater__row{
-		display:flex;
-		flex-wrap:wrap;
+    .kt-repeater__close {
+      background-color: transparent;
+      border: none;
+    }
 
-		> input {
-			flex: 1;
-		}
+    .form-text {
+      flex-basis: 100%;
+    }
+  }
 
-		.kt-repeater__close{
-			background-color: transparent;
-			border: none;
-		}
+  .kt-repeater__item {
+    position: relative;
 
-		.form-text {
-			flex-basis: 100%;
-		}
-	}
+    .btn-icon {
+      height: auto;
+    }
 
-	.kt-repeater__item{
-		position:relative;
+    &:first-child {
+      .form-control {
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+      }
 
-		.btn-icon{
-			height: auto;
-		}
+      .input-group-append {
+        display: none;
+      }
+    }
+  }
 
-		&:first-child{
-
-			.form-control{
-				border-top-right-radius: 0.25rem;
-				border-bottom-right-radius: 0.25rem;
-			}
-
-			.input-group-append{
-				display:none;
-			}
-		}
-	}
-
-	.kt-repeater__close {
-		&--align-right{
-			position: absolute;
-			top: 0;
-			right:0;
-		}		
-	}
+  .kt-repeater__close {
+    &--align-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
 }

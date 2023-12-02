@@ -1,22 +1,22 @@
-import { ref, computed, onMounted, watch } from 'vue';
-import type { Ref } from 'vue'
+import { ref, computed, onMounted, watch } from "vue";
+import type { Ref } from "vue";
 import { post, get } from "@/services/HTTP";
-import { useAuth } from '@websanova/vue-auth/src/v3.js';
-import { useRouter } from 'vue-router';
-import { PaginationObject, TableInfo, TableQuery } from './typings';
+import { useAuth } from "@websanova/vue-auth/src/v3.js";
+import { useRouter } from "vue-router";
+import { PaginationObject, TableInfo, TableQuery } from "./typings";
 
 const initTableData: TableInfo = {
   error: false,
-  errorMessage: '',
+  errorMessage: "",
   noRecords: false,
-}
+};
 
 const initQueryData: TableQuery = {
   draw: 1,
   length: 10,
-  search: '',
-  dir: 'asc',
-}
+  search: "",
+  dir: "asc",
+};
 
 const initPagination: PaginationObject = {
   lastPage: 0,
@@ -24,13 +24,16 @@ const initPagination: PaginationObject = {
   total: 0,
   dataLength: 10,
   options: {
-    path: '',
-    pageName: ''
-  }
-}
+    path: "",
+    pageName: "",
+  },
+};
 
 export function useDatatable({
-  endpoint, columns, redirectRoute, sortKey = 'id'
+  endpoint,
+  columns,
+  redirectRoute,
+  sortKey = "id",
 }) {
   const records: Ref<Object[]> = ref([]);
   const loading: Ref<boolean> = ref(true);
@@ -38,7 +41,7 @@ export function useDatatable({
   const pagination: Ref<PaginationObject> = ref(initPagination);
   const query: Ref<TableQuery> = ref({
     ...initQueryData,
-    column: sortKey
+    column: sortKey,
   });
   const auth = useAuth();
 
@@ -49,37 +52,38 @@ export function useDatatable({
   const setQuery = (queryObject: TableQuery) => {
     query.value = {
       ...query.value,
-      ...queryObject
-    }
-  }
+      ...queryObject,
+    };
+  };
 
   const setTableInfo = (newData: TableInfo) => {
     tableInfo.value = {
       ...tableInfo.value,
-      ...newData
-    }
-  }
+      ...newData,
+    };
+  };
 
-  const setDatatableError = (message= '') => setTableInfo({
-    error: true,
-    errorMessage: message
-  })
+  const setDatatableError = (message = "") =>
+    setTableInfo({
+      error: true,
+      errorMessage: message,
+    });
 
   const deleteRow = async (index: number): Promise<void> => {
     // if (!await dialog('general.confirm.delete', true)) {
     //   return;
     // }
-    get(endpoint.value + '/' + index + '/delete')
+    get(endpoint.value + "/" + index + "/delete")
       .then(() => {
         // dialog('strings.front.deleted_successfully', false);
-        console.log('strings.front.deleted_successfully');
+        console.log("strings.front.deleted_successfully");
         getData();
       })
       .catch((error) => {
         // dialog(error.response.data.message, false);
         console.log(error.response.data.message);
       });
-  }
+  };
 
   const getData = async (url?: string) => {
     loading.value = true;
@@ -96,7 +100,7 @@ export function useDatatable({
         data: newRecords,
         pagination: newPagination,
         draw,
-        errors
+        errors,
       } = data;
       loading.value = false;
 
@@ -111,8 +115,8 @@ export function useDatatable({
           if (query.value.draw == draw) {
             pagination.value = newPagination;
             setTableInfo({
-              noRecords: newRecords.length <= 0
-            })
+              noRecords: newRecords.length <= 0,
+            });
           }
           break;
         }
@@ -130,7 +134,7 @@ export function useDatatable({
     }
 
     loading.value = false;
-  }
+  };
 
   // This is unused left just in case it is needed again
   // async changePage(page: number): Promise<void>  {
@@ -142,11 +146,11 @@ export function useDatatable({
 
   watch(query, () => {
     getData();
-  })
+  });
 
   onMounted(() => {
     getData();
-  })
+  });
 
   return {
     records,
@@ -155,6 +159,6 @@ export function useDatatable({
     pagination,
     tableInfo,
     getData,
-    setQuery
+    setQuery,
   };
 }

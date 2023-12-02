@@ -1,19 +1,19 @@
 <script setup lang="ts">
-  import { useSlots } from "vue";
-  import { ContentLoader } from '@/components';
+import { useSlots } from "vue";
+import { ContentLoader } from "@/components";
 
-  import './AdminSection.scss';
+import "./AdminSection.scss";
 
-  const slots = useSlots();
-  const props = defineProps(['loading','sticky','footerAlign']);
-  const hasFooterSlot = () => !!slots.footer;
+const slots = useSlots();
+const props = defineProps(["loading", "sticky", "footerAlign"]);
+const hasFooterSlot = () => !!slots.footer;
 </script>
 
 <template>
   <div
     class="admin-section card"
     :class="{
-      'admin-section--sticky' : sticky,
+      'admin-section--sticky': sticky,
     }"
   >
     <div class="admin-section__header card-header">
@@ -31,9 +31,7 @@
     <div
       v-if="hasFooterSlot()"
       class="admin-section__footer card-footer"
-      :class="[
-        footerAlign ? footerAlign : '',
-      ]"
+      :class="[footerAlign ? footerAlign : '']"
     >
       <slot name="footer" />
     </div>

@@ -106,7 +106,7 @@ $header-item-hover-bg: rgba(#4d5995, 0.06);
 }
 
 @include kt-desktop {
-	.kt-header {
+  .kt-header {
     display: flex;
     justify-content: space-between;
     height: kt-get($header-config, base, desktop, default, height);
@@ -124,77 +124,77 @@ $header-item-hover-bg: rgba(#4d5995, 0.06);
       transition: height 0.3s ease;
     }
 
-		&:not(.kt-subheader--fixed) & {
-			border-bottom: 0;
-			box-shadow: 0px 0px 40px 0px rgba(82,63,105,0.1);
-		}
+    &:not(.kt-subheader--fixed) & {
+      border-bottom: 0;
+      box-shadow: 0px 0px 40px 0px rgba(82, 63, 105, 0.1);
+    }
 
-		// Menu
-		.kt-header-menu {
-			.kt-menu__nav {
-				> .kt-menu__item {
-					> .kt-menu__link {
-						@include kt-rounded {
-							border-radius: $border-radius !important;
-						}
+    // Menu
+    .kt-header-menu {
+      .kt-menu__nav {
+        > .kt-menu__item {
+          > .kt-menu__link {
+            @include kt-rounded {
+              border-radius: $border-radius !important;
+            }
 
-						.kt-menu__link-text {
-							color: #6c7293;
-							font-weight: 500;
-						}
+            .kt-menu__link-text {
+              color: #6c7293;
+              font-weight: 500;
+            }
 
-						.kt-menu__hor-arrow {
-							color: #c8cde8;
-						}
+            .kt-menu__hor-arrow {
+              color: #c8cde8;
+            }
 
-						.kt-menu__hor-icon {
-							color: #c8cde8;
-						}
-					}
+            .kt-menu__hor-icon {
+              color: #c8cde8;
+            }
+          }
 
-					&.kt-menu__item--here,
-					&.kt-menu__item--active,
-					&:hover {
-						> .kt-menu__link {
-							background-color: $header-item-hover-bg;
+          &.kt-menu__item--here,
+          &.kt-menu__item--active,
+          &:hover {
+            > .kt-menu__link {
+              background-color: $header-item-hover-bg;
 
-							.kt-menu__link-text {
-								color: kt-brand-color();
-							}
+              .kt-menu__link-text {
+                color: kt-brand-color();
+              }
 
-							.kt-menu__hor-arrow {
-								color: kt-brand-color();
-							}
+              .kt-menu__hor-arrow {
+                color: kt-brand-color();
+              }
 
-							.kt-menu__hor-icon {
-								color: kt-brand-color();
-							}
-						}
-					}
-				}
-			}
-		}
+              .kt-menu__hor-icon {
+                color: kt-brand-color();
+              }
+            }
+          }
+        }
+      }
+    }
 
     &--sidebar-minimized {
       left: kt-get($aside-config, base, minimize, width);
       transition: kt-get($aside-config, base, minimize, transition);
     }
-	}
+  }
 }
 
 @include kt-tablet-and-mobile {
-	// Topbar
-	.kt-header__topbar {
-		background-color: #ffffff;
-		box-shadow: none;
-	}
+  // Topbar
+  .kt-header__topbar {
+    background-color: #ffffff;
+    box-shadow: none;
+  }
 
-	.kt-header__topbar--mobile-on {
-		.kt-header__topbar {
-			box-shadow: 0px 0px 40px 0px rgba(82,63,105,0.1);
-			border-top: 1px solid kt-base-color(grey, 2);
-		}
-	}
+  .kt-header__topbar--mobile-on {
+    .kt-header__topbar {
+      box-shadow: 0px 0px 40px 0px rgba(82, 63, 105, 0.1);
+      border-top: 1px solid kt-base-color(grey, 2);
+    }
+  }
 }
 
 @include kt-menu-hor-build-skin(kt-get($header-config, menu, desktop), light);

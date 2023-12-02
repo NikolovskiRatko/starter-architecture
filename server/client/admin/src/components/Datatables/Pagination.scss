@@ -11,7 +11,8 @@
 
   @include kt-mobile {
     margin: 0;
-    padding: $table-space-mobile $table-space-mobile calc($table-space-mobile/2) $table-space-mobile;
+    padding: $table-space-mobile $table-space-mobile calc($table-space-mobile/2)
+      $table-space-mobile;
   }
 
   &--top {

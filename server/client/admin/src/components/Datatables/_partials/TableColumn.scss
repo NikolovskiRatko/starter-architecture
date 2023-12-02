@@ -22,7 +22,8 @@
     transition: background 0.3s ease;
     background: $row-hover;
 
-    &:not(#{block}--active) { // Both of these should be regarding the row been hovered or not active
+    &:not(#{block}--active) {
+      // Both of these should be regarding the row been hovered or not active
       transition: background 0.3s ease;
       background: $row-hover;
     }
@@ -131,7 +132,6 @@
   }
 
   &--error {
-
     &#{$block}--header,
     &#{$block}--foot {
       padding-top: 6rem;
@@ -182,9 +182,7 @@
     background: $row-active;
   }
 
-
   &--sorted {
-
     #{$block}--header,
     #{$block}--foot {
       color: $head_cell_sorted_color;

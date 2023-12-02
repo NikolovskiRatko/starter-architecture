@@ -1,20 +1,16 @@
 <script setup lang="ts">
-  import './Brand.scss'
+import "./Brand.scss";
 
-  const emits = ['toggleSidebar'];
+const emits = ["toggleSidebar"];
 </script>
 
 <template>
   <div class="kt-aside__brand">
     <div class="kt-aside__brand-logo">
-        <router-link to="/admin/dashboard"
-                class="kt-menu__link"
-        >
-          <img
-            alt="Logo"
-            src="/build/images/sm_logo_white.png"
-          >
-        </router-link>.
+      <router-link to="/admin/dashboard" class="kt-menu__link">
+        <img alt="Logo" src="/build/images/sm_logo_white.png" />
+      </router-link>
+      .
     </div>
     <div class="kt-aside__brand-tools">
       <button
@@ -31,16 +27,8 @@
             version="1.1"
             class="kt-svg-icon"
           >
-            <g
-              stroke="none"
-              stroke-width="1"
-              fill="none"
-              fill-rule="evenodd"
-            >
-              <polygon
-                id="Shape"
-                points="0 0 24 0 24 24 0 24"
-              />
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <polygon id="Shape" points="0 0 24 0 24 24 0 24" />
               <path
                 id="Path-94"
                 d="M5.29288961,6.70710318 C4.90236532,6.31657888 4.90236532,5.68341391 5.29288961,5.29288961 C5.68341391,4.90236532 6.31657888,4.90236532 6.70710318,5.29288961 L12.7071032,11.2928896 C13.0856821,11.6714686 13.0989277,12.281055 12.7371505,12.675721 L7.23715054,18.675721 C6.86395813,19.08284 6.23139076,19.1103429 5.82427177,18.7371505 C5.41715278,18.3639581 5.38964985,17.7313908 5.76284226,17.3242718 L10.6158586,12.0300721 L5.29288961,6.70710318 Z"
@@ -69,16 +57,8 @@
             version="1.1"
             class="kt-svg-icon"
           >
-            <g
-              stroke="none"
-              stroke-width="1"
-              fill="none"
-              fill-rule="evenodd"
-            >
-              <polygon
-                id="Shape"
-                points="0 0 24 0 24 24 0 24"
-              />
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <polygon id="Shape" points="0 0 24 0 24 24 0 24" />
               <path
                 id="Path-94"
                 d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z"

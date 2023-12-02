@@ -1,4 +1,4 @@
-@import '../config';
+@import "../config";
 
 .kt-portlet__head__label {
   display: flex;
@@ -25,7 +25,7 @@
   &__icon {
     padding-right: 0.75rem;
     font-size: 1.3rem;
-    color:kt-base-color(label, 2);
+    color: kt-base-color(label, 2);
 
     @include solid-skins(portlet-head-label-icon);
   }

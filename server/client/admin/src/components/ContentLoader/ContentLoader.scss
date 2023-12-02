@@ -13,7 +13,7 @@
   z-index: 1;
   @for $i from 1 through 20 {
     &.mh-#{$i*5} {
-      min-height: #{$i*5}rem;
+      min-height: #{$i * 5}rem;
     }
   }
   &.full-cont {
@@ -26,19 +26,21 @@
   }
   &.transparent-loader {
     .loading-overlay {
-      background: rgba(255,255,255,0.5);
+      background: rgba(255, 255, 255, 0.5);
     }
   }
 }
 
 .loading-overlay {
-  transition: visibility 0s ease-in-out 0.5s, opacity 0.5s ease-in-out;
+  transition:
+    visibility 0s ease-in-out 0.5s,
+    opacity 0.5s ease-in-out;
   bottom: 0;
   left: 0;
   position: absolute;
   right: 0;
   top: 0;
-  background: #FFF;
+  background: #fff;
 }
 
 body > .loading-overlay {
@@ -61,7 +63,7 @@ body > .loading-overlay {
   .bounce2,
   .bounce3 {
     animation: 1.4s ease-in-out 0s normal both infinite bouncedelay;
-    background-color: #CCC;
+    background-color: #ccc;
     border-radius: 100%;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
     display: inline-block;
@@ -79,8 +81,14 @@ body > .loading-overlay {
 }
 
 @keyframes bouncedelay {
-  0%, 80%, 100% {transform: scale(0.0);}
-  40% {transform: scale(1.0);}
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
 }
 
 // Mobile Safari Animation Fix

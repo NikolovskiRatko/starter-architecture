@@ -1,8 +1,8 @@
-@import '../config';
+@import "../config";
 
 @mixin head-sizes($device) {
-  $sizes: 'default', 'sm', 'lg', 'xl';
-  $sufix: 'size';
+  $sizes: "default", "sm", "lg", "xl";
+  $sufix: "size";
   $block: &;
 
   @each $size in $sizes {
@@ -21,7 +21,7 @@
   display: flex;
   align-items: stretch;
   justify-content: space-between;
-  position:relative;
+  position: relative;
   padding: 0 kt-get($portlet, space, desktop);
   border-bottom: 1px solid kt-get($portlet, border-color);
 

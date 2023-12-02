@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import './PortletHeadToolbar.scss';
+import "./PortletHeadToolbar.scss";
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 @import "../utils";
 
 .kt-datatable__loader {
-  @include kt-full-absolute-positioned(rgba(255,255,255,0.6));
+  @include kt-full-absolute-positioned(rgba(255, 255, 255, 0.6));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +10,7 @@
     background: #fff;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
     display: inline-block;
-    padding: .8rem 1.3rem;
+    padding: 0.8rem 1.3rem;
     font-size: 1rem;
 
     &--noshadow {
@@ -21,7 +21,8 @@
       border-radius: $border-radius;
     }
 
-    .fa,.la {
+    .fa,
+    .la {
       position: relative;
       top: 2px;
       margin-left: 5px;

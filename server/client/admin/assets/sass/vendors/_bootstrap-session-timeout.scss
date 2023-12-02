@@ -2,18 +2,17 @@
 // Bootstrap Session Timeout
 //
 
-
 #session-timeout-dialog {
-    .modal-header {
-        .close {
-            position: absolute;
-            right: 25px;
-            font-size: 0;
-            top: 1.75rem;
-        }
-
-        .modal-title {
-            flex: 1 auto;
-        }
+  .modal-header {
+    .close {
+      position: absolute;
+      right: 25px;
+      font-size: 0;
+      top: 1.75rem;
     }
+
+    .modal-title {
+      flex: 1 auto;
+    }
+  }
 }

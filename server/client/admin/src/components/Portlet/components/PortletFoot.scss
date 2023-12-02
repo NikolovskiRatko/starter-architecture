@@ -1,11 +1,11 @@
-@import '../config';
+@import "../config";
 
 .kt-portlet__foot {
   padding: kt-get($portlet, space, desktop);
   border-top: 1px solid kt-get($portlet, border-color);
 
   .kt-portlet__foot-wrapper {
-    display:flex;
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
