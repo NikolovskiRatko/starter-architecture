@@ -1,5 +1,5 @@
 //Bootstrap dependencies
-@import 'layers';
+@import "layers";
 
 // Layout
 $aside-default-width: 265px;
@@ -8,8 +8,8 @@ $aside-offcanvas-width: 255px;
 
 // Layout Skins
 $layout-skins: (
-	dark: #1e1e2d,
-	light: #ffffff
+  dark: #1e1e2d,
+  light: #ffffff,
 );
 
 // content bg color

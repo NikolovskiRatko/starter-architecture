@@ -1,61 +1,68 @@
 <script lang="ts">
-  import { defineComponent, PropType } from 'vue';
-  import ThirdLevelMenuItem from '@/components/Admin/ThirdLevelMenuItem.vue';
+import { defineComponent, PropType } from "vue";
+import ThirdLevelMenuItem from "@/components/Admin/ThirdLevelMenuItem.vue";
 
-  interface Item {
-    label: String;
-    name: String;
-    link: String;
-    expanded: boolean;
-    permission: String;
-    subcategories?: Array<any>;
-  }
+interface Item {
+  label: String;
+  name: String;
+  link: String;
+  expanded: boolean;
+  permission: String;
+  subcategories?: Array<any>;
+}
 
-  export default defineComponent({
-    name: 'SecondLevelMenuItem',
-    components: {
-      ThirdLevelMenuItem
+export default defineComponent({
+  name: "SecondLevelMenuItem",
+  components: {
+    ThirdLevelMenuItem,
+  },
+  props: {
+    subitem: {
+      type: Object as PropType<Item>,
+      default: () => {},
     },
-    props: {
-      subitem: {
-        type: Object as PropType<Item>,
-        default: () => {}
-      }
+  },
+  data() {
+    return {
+      isExpanded: false,
+    };
+  },
+  computed: {
+    submenu() {
+      const permissionsArray = this.$auth.user().permissions_array;
+      return (
+        this.subitem.subcategories?.filter((subMenuItem) =>
+          permissionsArray.includes(subMenuItem.permission),
+        ) || []
+      );
     },
-    data() {
-      return {
-        isExpanded: false
-      }
+  },
+  mounted() {
+    const isSubcategoryActive =
+      this.subitem.subcategories?.some(
+        (menuItem) => menuItem.link === this.$route.name,
+      ) || false;
+    this.isExpanded = this.subitem.expanded || isSubcategoryActive;
+  },
+  methods: {
+    toggleMenu() {
+      this.isExpanded = !this.isExpanded;
     },
-    computed: {
-      submenu() {
-        const permissionsArray = this.$auth.user().permissions_array;
-        return this.subitem.subcategories?.filter(subMenuItem => permissionsArray.includes(subMenuItem.permission)) || [];
-      }
+    isActiveClass(input) {
+      let path = input.link;
+      let curPath = this.$route.name;
+      return path === curPath;
     },
-    mounted() {
-      const isSubcategoryActive = this.subitem.subcategories?.some(menuItem => menuItem.link === this.$route.name) || false;
-      this.isExpanded = this.subitem.expanded || isSubcategoryActive;
-    },
-    methods: {
-      toggleMenu() {
-        this.isExpanded = !this.isExpanded;
-      },
-      isActiveClass(input) {
-        let path = input.link;
-        let curPath = this.$route.name;
-        return path === curPath;
-      }
-    }
-  })
+  },
+});
 </script>
 
 <template>
   <li
     class="kt-menu__item kt-menu__item--submenu"
     :class="{
-      'kt-menu__item--open' : isExpanded,
-      'kt-menu__item--active' : isActiveClass(subitem),
+      'kt-menu__item--open': isExpanded,
+      'kt-menu__item--active': isActiveClass(subitem),
     }"
     aria-haspopup="true"
   >
@@ -71,11 +78,11 @@
         <i class="kt-menu__ver-arrow la la-angle-right" />
       </span>
 
-      <div class="kt-menu__submenu ">
+      <div class="kt-menu__submenu">
         <span class="kt-menu__arrow" />
         <ul class="kt-menu__subnav">
           <third-level-menu-item
-            v-for="(subMenuItem,key) in submenu"
+            v-for="(subMenuItem, key) in submenu"
             :key="key"
             :subsubitem="subMenuItem"
           />

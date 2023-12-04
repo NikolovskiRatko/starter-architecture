@@ -1,4 +1,4 @@
-@import '../config';
+@import "../config";
 
 @mixin alignment() {
   &--center {
@@ -74,7 +74,7 @@
 
   @include kt-desktop {
     &--height-fluid,
-    &--height-fluid-half{
+    &--height-fluid-half {
       flex-grow: 1;
     }
   }

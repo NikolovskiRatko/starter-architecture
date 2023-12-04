@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import './AuthBase.scss';
+import "./AuthBase.scss";
 </script>
 
 <template>
@@ -8,7 +8,7 @@
       <div class="auth-base__container">
         <div class="auth-base__logo">
           <a href="#">
-            <img src="build/images/sm_logo.png">
+            <img src="build/images/sm_logo.png" />
           </a>
         </div>
         <router-view />

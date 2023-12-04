@@ -1,1 +1,1 @@
-export type MenuTheme = 'classic';
+export type MenuTheme = "classic";

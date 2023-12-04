@@ -1,9 +1,9 @@
-const createFile = (type: string):File => {
+const createFile = (type: string): File => {
   let file: File = {};
   if (document.documentMode || /Edge/.test(navigator.userAgent)) {
-    file = new Blob([], {type:type});
+    file = new Blob([], { type: type });
   } else {
-    file = new File([], '');
+    file = new File([], "");
   }
   return file;
 };

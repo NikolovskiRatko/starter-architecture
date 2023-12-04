@@ -1,4 +1,4 @@
-import { SubMenu } from '@/components/Admin/Menu/SubMenu/types';
+import { SubMenu } from "@/components/Admin/Menu/SubMenu/types";
 
 export type BadgeType = {
   theme: string;

@@ -3,37 +3,36 @@ $portlet: (
   min-height: (
     default: (
       desktop: 60px,
-      mobile: 50px
+      mobile: 50px,
     ),
     sm: (
       desktop: 50px,
-      mobile: 40px
+      mobile: 40px,
     ),
     lg: (
       desktop: 80px,
-      mobile: 60px
+      mobile: 60px,
     ),
     xl: (
       desktop: 100px,
-      mobile: 80px
-    )
+      mobile: 80px,
+    ),
   ),
   space: (
     desktop: 25px,
-    mobile: 15px
+    mobile: 15px,
   ),
   bottom-space: (
     desktop: 20px,
-    mobile: 20px
+    mobile: 20px,
   ),
   border-color: kt-base-color(grey, 2),
   bg-color: #ffffff,
-  shadow: 0px 0px 30px 0px rgba(82,63,105,0.05)
+  shadow: 0px 0px 30px 0px rgba(82, 63, 105, 0.05),
 );
 
 @mixin solid-skins($template) {
   @each $name, $color in $state-colors {
-
     &--theme-#{$name} {
       @if $template == portlet {
         background: kt-get($color, base);

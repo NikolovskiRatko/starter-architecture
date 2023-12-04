@@ -1,9 +1,9 @@
 <script setup lang="ts">
-  import { useAuth } from '@websanova/vue-auth/src/v3.js';
-  import { TableColumn, TableRow } from '@/components/Datatables'
-  const props = defineProps(['value', 'columns', 'user', 'index']);
-  const isEvenRow = props.index % 2 === 0;
-  const auth = useAuth();
+import { useAuth } from "@websanova/vue-auth/src/v3.js";
+import { TableColumn, TableRow } from "@/components/Datatables";
+const props = defineProps(["value", "columns", "user", "index"]);
+const isEvenRow = props.index % 2 === 0;
+const auth = useAuth();
 </script>
 
 <template>
@@ -28,25 +28,21 @@
 
     <TableColumn :width="columns[4].width">
       <template v-if="user.is_disabled">
-        {{ $t('users.status.disabled') }}
+        {{ $t("users.status.disabled") }}
       </template>
       <template v-else>
-        {{ $t('users.status.enabled') }}
+        {{ $t("users.status.enabled") }}
       </template>
     </TableColumn>
-
 
     <TableColumn :width="columns[5].width">
       <router-link
         v-if="auth.user().permissions_array.includes('write_users')"
-        :to="{ name: 'edit.user', params: { userId: user.id }}"
+        :to="{ name: 'edit.user', params: { userId: user.id } }"
         exact=""
       >
-        <i
-          aria-hidden="true"
-          class="la la-pencil"
-        /> 
-        {{ $t('buttons.edit') }}
+        <i aria-hidden="true" class="la la-pencil" />
+        {{ $t("buttons.edit") }}
       </router-link>
     </TableColumn>
 

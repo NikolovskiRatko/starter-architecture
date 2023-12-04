@@ -1,17 +1,17 @@
 <script setup lang="ts">
-  import { ref, inject } from 'vue';
-  import type { Ref } from 'vue';
-  import { onQueryUpdateKey } from "@/components/Datatables/typings";
-  import { PortletBody } from '@/components/Portlet';
+import { ref, inject } from "vue";
+import type { Ref } from "vue";
+import { onQueryUpdateKey } from "@/components/Datatables/typings";
+import { PortletBody } from "@/components/Portlet";
 
-  const onQueryUpdate = inject(onQueryUpdateKey, () => {});
+const onQueryUpdate = inject(onQueryUpdateKey, () => {});
 
-  const searchValue: Ref<string> = ref('');
-  const handleSearchChange = (event: HTMLInputElementEvent) => {
-    onQueryUpdate({
-      search: event.target.value
-    })
-  }
+const searchValue: Ref<string> = ref("");
+const handleSearchChange = (event: HTMLInputElementEvent) => {
+  onQueryUpdate({
+    search: event.target.value,
+  });
+};
 </script>
 
 <template>
@@ -30,7 +30,7 @@
                   class="form-control"
                   placeholder="Search..."
                   name="search"
-                >
+                />
                 <span class="kt-input-icon__icon kt-input-icon__icon--left">
                   <span>
                     <i class="las la-search" />
@@ -49,27 +49,13 @@
                     id="kt_form_status"
                     class="form-control bootstrap-select"
                   >
-                    <option value="">
-                      All
-                    </option>
-                    <option value="1">
-                      Pending
-                    </option>
-                    <option value="2">
-                      Delivered
-                    </option>
-                    <option value="3">
-                      Canceled
-                    </option>
-                    <option value="4">
-                      Success
-                    </option>
-                    <option value="5">
-                      Info
-                    </option>
-                    <option value="6">
-                      Danger
-                    </option>
+                    <option value="">All</option>
+                    <option value="1">Pending</option>
+                    <option value="2">Delivered</option>
+                    <option value="3">Canceled</option>
+                    <option value="4">Success</option>
+                    <option value="5">Info</option>
+                    <option value="6">Danger</option>
                   </select>
                 </div>
               </div>
@@ -77,13 +63,12 @@
           </div>
         </div>
         <div class="col-xl-4 order-1 order-xl-2 kt-align-right">
-          <a
-            href="#"
-            class="btn btn-default kt-hidden"
-          >
+          <a href="#" class="btn btn-default kt-hidden">
             <i class="la la-cart-plus" /> New Order
           </a>
-          <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg d-xl-none" />
+          <div
+            class="kt-separator kt-separator--border-dashed kt-separator--space-lg d-xl-none"
+          />
         </div>
       </div>
     </div>

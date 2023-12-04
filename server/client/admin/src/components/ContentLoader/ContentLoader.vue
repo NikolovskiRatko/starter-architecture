@@ -1,32 +1,29 @@
 <script setup lang="ts">
-  import { computed } from "vue";
+import { computed } from "vue";
 
-  import './ContentLoader.scss';
+import "./ContentLoader.scss";
 
-  const props = defineProps(['heightClass', 'fullCont', 'transparent']);
-  const extraClass = props.fullCont;
+const props = defineProps(["heightClass", "fullCont", "transparent"]);
+const extraClass = props.fullCont;
 
-  const className = computed(() => {
-    const classNames: Array<string> = [];
-    const { fullCont, transparent } = props;
+const className = computed(() => {
+  const classNames: Array<string> = [];
+  const { fullCont, transparent } = props;
 
-    if (fullCont) {
-      classNames.push('full-cont');
-    }
+  if (fullCont) {
+    classNames.push("full-cont");
+  }
 
-    if (transparent) {
-      classNames.push('transparent-loader');
-    }
+  if (transparent) {
+    classNames.push("transparent-loader");
+  }
 
-    return classNames.join(' ');
-  })
+  return classNames.join(" ");
+});
 </script>
 
 <template>
-  <div
-    class="loading-cont"
-    :class="className"
-  >
+  <div class="loading-cont" :class="className">
     <div class="loading-overlay">
       <div class="bounce-loader">
         <div class="bounce1" />

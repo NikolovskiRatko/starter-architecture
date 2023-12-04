@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import { HeaderUserbar } from "@/components/Admin/header";
-  import './HeaderTopBar.scss';
+import { HeaderUserbar } from "@/components/Admin/header";
+import "./HeaderTopBar.scss";
 </script>
 
 <template>
@@ -28,19 +28,8 @@
             version="1.1"
             class="kt-svg-icon"
           >
-            <g
-              stroke="none"
-              stroke-width="1"
-              fill="none"
-              fill-rule="evenodd"
-            >
-              <rect
-                id="bound"
-                x="0"
-                y="0"
-                width="24"
-                height="24"
-              />
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <rect id="bound" x="0" y="0" width="24" height="24" />
               <path
                 id="Path-2"
                 d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z"
@@ -55,28 +44,32 @@
                 fill-rule="nonzero"
               />
             </g>
-          </svg> </span>
+          </svg>
+        </span>
       </div>
-      <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-lg">
+      <div
+        class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-lg"
+      >
         <div
           id="kt_quick_search_inline"
           class="kt-quick-search kt-quick-search--inline"
         >
-          <form
-            method="get"
-            class="kt-quick-search__form"
-          >
+          <form method="get" class="kt-quick-search__form">
             <div class="input-group">
               <div class="input-group-prepend">
-                <span class="input-group-text"><i class="flaticon2-search-1" /></span>
+                <span class="input-group-text"
+                  ><i class="flaticon2-search-1"
+                /></span>
               </div>
               <input
                 type="text"
                 class="form-control kt-quick-search__input"
                 placeholder="Search..."
-              >
+              />
               <div class="input-group-append">
-                <span class="input-group-text"><i class="la la-close kt-quick-search__close" /></span>
+                <span class="input-group-text"
+                  ><i class="la la-close kt-quick-search__close"
+                /></span>
               </div>
             </div>
           </form>
@@ -112,19 +105,8 @@
             version="1.1"
             class="kt-svg-icon"
           >
-            <g
-              stroke="none"
-              stroke-width="1"
-              fill="none"
-              fill-rule="evenodd"
-            >
-              <rect
-                id="bound"
-                x="0"
-                y="0"
-                width="24"
-                height="24"
-              />
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <rect id="bound" x="0" y="0" width="24" height="24" />
               <path
                 id="Combined-Shape"
                 d="M2.56066017,10.6819805 L4.68198052,8.56066017 C5.26776695,7.97487373 6.21751442,7.97487373 6.80330086,8.56066017 L8.9246212,10.6819805 C9.51040764,11.267767 9.51040764,12.2175144 8.9246212,12.8033009 L6.80330086,14.9246212 C6.21751442,15.5104076 5.26776695,15.5104076 4.68198052,14.9246212 L2.56066017,12.8033009 C1.97487373,12.2175144 1.97487373,11.267767 2.56066017,10.6819805 Z M14.5606602,10.6819805 L16.6819805,8.56066017 C17.267767,7.97487373 18.2175144,7.97487373 18.8033009,8.56066017 L20.9246212,10.6819805 C21.5104076,11.267767 21.5104076,12.2175144 20.9246212,12.8033009 L18.8033009,14.9246212 C18.2175144,15.5104076 17.267767,15.5104076 16.6819805,14.9246212 L14.5606602,12.8033009 C13.9748737,12.2175144 13.9748737,11.267767 14.5606602,10.6819805 Z"
@@ -137,10 +119,13 @@
                 fill="#000000"
               />
             </g>
-          </svg> <span class="kt-pulse__ring" />
+          </svg>
+          <span class="kt-pulse__ring" />
         </span>
       </div>
-      <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
+      <div
+        class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg"
+      >
         <form>
           <!--begin: Head -->
           <div
@@ -148,9 +133,10 @@
             style="background-image: url(./assets/media/misc/bg-1.jpg)"
           >
             <h3 class="kt-head__title">
-              User Notifications
-              &nbsp;
-              <span class="btn btn-success btn-sm btn-bold btn-font-md">23 new</span>
+              User Notifications &nbsp;
+              <span class="btn btn-success btn-sm btn-bold btn-font-md"
+                >23 new</span
+              >
             </h3>
             <ul
               class="nav nav-tabs nav-tabs-line nav-tabs-bold nav-tabs-line-3x nav-tabs-line-success kt-notification-item-padding-x"
@@ -163,7 +149,8 @@
                   href="#topbar_notifications_notifications"
                   role="tab"
                   aria-selected="true"
-                >Alerts</a>
+                  >Alerts</a
+                >
               </li>
               <li class="nav-item">
                 <a
@@ -172,7 +159,8 @@
                   href="#topbar_notifications_events"
                   role="tab"
                   aria-selected="false"
-                >Events</a>
+                  >Events</a
+                >
               </li>
               <li class="nav-item">
                 <a
@@ -181,7 +169,8 @@
                   href="#topbar_notifications_logs"
                   role="tab"
                   aria-selected="false"
-                >Logs</a>
+                  >Logs</a
+                >
               </li>
             </ul>
           </div>
@@ -199,10 +188,7 @@
                 data-height="300"
                 data-mobile-height="200"
               >
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon2-line-chart kt-font-success" />
                   </div>
@@ -210,15 +196,10 @@
                     <div class="kt-notification__item-title">
                       New order has been received
                     </div>
-                    <div class="kt-notification__item-time">
-                      2 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">2 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon2-box-1 kt-font-brand" />
                   </div>
@@ -226,15 +207,10 @@
                     <div class="kt-notification__item-title">
                       New customer is registered
                     </div>
-                    <div class="kt-notification__item-time">
-                      3 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">3 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon2-chart2 kt-font-danger" />
                   </div>
@@ -242,15 +218,10 @@
                     <div class="kt-notification__item-title">
                       Application has been approved
                     </div>
-                    <div class="kt-notification__item-time">
-                      3 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">3 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon2-image-file kt-font-warning" />
                   </div>
@@ -258,15 +229,10 @@
                     <div class="kt-notification__item-title">
                       New file has been uploaded
                     </div>
-                    <div class="kt-notification__item-time">
-                      5 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">5 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon2-bar-chart kt-font-info" />
                   </div>
@@ -274,15 +240,10 @@
                     <div class="kt-notification__item-title">
                       New user feedback received
                     </div>
-                    <div class="kt-notification__item-time">
-                      8 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">8 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon2-pie-chart-2 kt-font-success" />
                   </div>
@@ -290,15 +251,10 @@
                     <div class="kt-notification__item-title">
                       System reboot has been successfully completed
                     </div>
-                    <div class="kt-notification__item-time">
-                      12 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">12 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon2-favourite kt-font-danger" />
                   </div>
@@ -306,9 +262,7 @@
                     <div class="kt-notification__item-title">
                       New order has been placed
                     </div>
-                    <div class="kt-notification__item-time">
-                      15 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">15 hrs ago</div>
                   </div>
                 </a>
                 <a
@@ -322,15 +276,10 @@
                     <div class="kt-notification__item-title">
                       Company meeting canceled
                     </div>
-                    <div class="kt-notification__item-time">
-                      19 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">19 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon2-psd kt-font-success" />
                   </div>
@@ -338,15 +287,10 @@
                     <div class="kt-notification__item-title">
                       New report has been received
                     </div>
-                    <div class="kt-notification__item-time">
-                      23 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">23 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon-download-1 kt-font-danger" />
                   </div>
@@ -354,15 +298,10 @@
                     <div class="kt-notification__item-title">
                       Finance report has been generated
                     </div>
-                    <div class="kt-notification__item-time">
-                      25 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">25 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon-security kt-font-warning" />
                   </div>
@@ -370,15 +309,10 @@
                     <div class="kt-notification__item-title">
                       New customer comment recieved
                     </div>
-                    <div class="kt-notification__item-time">
-                      2 days ago
-                    </div>
+                    <div class="kt-notification__item-time">2 days ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon2-pie-chart kt-font-success" />
                   </div>
@@ -386,9 +320,7 @@
                     <div class="kt-notification__item-title">
                       New customer is registered
                     </div>
-                    <div class="kt-notification__item-time">
-                      3 days ago
-                    </div>
+                    <div class="kt-notification__item-time">3 days ago</div>
                   </div>
                 </a>
               </div>
@@ -404,10 +336,7 @@
                 data-height="300"
                 data-mobile-height="200"
               >
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon2-psd kt-font-success" />
                   </div>
@@ -415,15 +344,10 @@
                     <div class="kt-notification__item-title">
                       New report has been received
                     </div>
-                    <div class="kt-notification__item-time">
-                      23 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">23 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon-download-1 kt-font-danger" />
                   </div>
@@ -431,15 +355,10 @@
                     <div class="kt-notification__item-title">
                       Finance report has been generated
                     </div>
-                    <div class="kt-notification__item-time">
-                      25 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">25 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon2-line-chart kt-font-success" />
                   </div>
@@ -447,15 +366,10 @@
                     <div class="kt-notification__item-title">
                       New order has been received
                     </div>
-                    <div class="kt-notification__item-time">
-                      2 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">2 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon2-box-1 kt-font-brand" />
                   </div>
@@ -463,15 +377,10 @@
                     <div class="kt-notification__item-title">
                       New customer is registered
                     </div>
-                    <div class="kt-notification__item-time">
-                      3 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">3 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon2-chart2 kt-font-danger" />
                   </div>
@@ -479,15 +388,10 @@
                     <div class="kt-notification__item-title">
                       Application has been approved
                     </div>
-                    <div class="kt-notification__item-time">
-                      3 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">3 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon2-image-file kt-font-warning" />
                   </div>
@@ -495,15 +399,10 @@
                     <div class="kt-notification__item-title">
                       New file has been uploaded
                     </div>
-                    <div class="kt-notification__item-time">
-                      5 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">5 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon2-bar-chart kt-font-info" />
                   </div>
@@ -511,15 +410,10 @@
                     <div class="kt-notification__item-title">
                       New user feedback received
                     </div>
-                    <div class="kt-notification__item-time">
-                      8 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">8 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon2-pie-chart-2 kt-font-success" />
                   </div>
@@ -527,15 +421,10 @@
                     <div class="kt-notification__item-title">
                       System reboot has been successfully completed
                     </div>
-                    <div class="kt-notification__item-time">
-                      12 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">12 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon2-favourite kt-font-brand" />
                   </div>
@@ -543,9 +432,7 @@
                     <div class="kt-notification__item-title">
                       New order has been placed
                     </div>
-                    <div class="kt-notification__item-time">
-                      15 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">15 hrs ago</div>
                   </div>
                 </a>
                 <a
@@ -559,15 +446,10 @@
                     <div class="kt-notification__item-title">
                       Company meeting canceled
                     </div>
-                    <div class="kt-notification__item-time">
-                      19 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">19 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon2-psd kt-font-success" />
                   </div>
@@ -575,15 +457,10 @@
                     <div class="kt-notification__item-title">
                       New report has been received
                     </div>
-                    <div class="kt-notification__item-time">
-                      23 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">23 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon-download-1 kt-font-danger" />
                   </div>
@@ -591,15 +468,10 @@
                     <div class="kt-notification__item-title">
                       Finance report has been generated
                     </div>
-                    <div class="kt-notification__item-time">
-                      25 hrs ago
-                    </div>
+                    <div class="kt-notification__item-time">25 hrs ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon-security kt-font-warning" />
                   </div>
@@ -607,15 +479,10 @@
                     <div class="kt-notification__item-title">
                       New customer comment recieved
                     </div>
-                    <div class="kt-notification__item-time">
-                      2 days ago
-                    </div>
+                    <div class="kt-notification__item-time">2 days ago</div>
                   </div>
                 </a>
-                <a
-                  href="#"
-                  class="kt-notification__item"
-                >
+                <a href="#" class="kt-notification__item">
                   <div class="kt-notification__item-icon">
                     <i class="flaticon2-pie-chart kt-font-success" />
                   </div>
@@ -623,9 +490,7 @@
                     <div class="kt-notification__item-title">
                       New customer is registered
                     </div>
-                    <div class="kt-notification__item-time">
-                      3 days ago
-                    </div>
+                    <div class="kt-notification__item-time">3 days ago</div>
                   </div>
                 </a>
               </div>
@@ -635,14 +500,15 @@
               class="tab-pane"
               role="tabpanel"
             >
-              <div
-                class="kt-grid kt-grid--vertical"
-                style="min-height: 200px;"
-              >
-                <div class="kt-grid kt-grid--horizontal kt-grid__item kt-grid__item--fluid kt-grid__item--middle">
-                  <div class="kt-grid__item kt-grid__item--middle kt-align-center">
+              <div class="kt-grid kt-grid--vertical" style="min-height: 200px">
+                <div
+                  class="kt-grid kt-grid--horizontal kt-grid__item kt-grid__item--fluid kt-grid__item--middle"
+                >
+                  <div
+                    class="kt-grid__item kt-grid__item--middle kt-align-center"
+                  >
                     All caught up!
-                    <br>No new notifications.
+                    <br />No new notifications.
                   </div>
                 </div>
               </div>
@@ -672,19 +538,8 @@
             version="1.1"
             class="kt-svg-icon"
           >
-            <g
-              stroke="none"
-              stroke-width="1"
-              fill="none"
-              fill-rule="evenodd"
-            >
-              <rect
-                id="bound"
-                x="0"
-                y="0"
-                width="24"
-                height="24"
-              />
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <rect id="bound" x="0" y="0" width="24" height="24" />
               <rect
                 id="Rectangle-62-Copy"
                 fill="#000000"
@@ -723,9 +578,12 @@
                 rx="1.5"
               />
             </g>
-          </svg> </span>
+          </svg>
+        </span>
       </div>
-      <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
+      <div
+        class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl"
+      >
         <form>
           <!--begin: Head -->
           <div
@@ -735,7 +593,9 @@
             <h3 class="kt-head__title">
               User Quick Actions
               <span class="kt-space-15" />
-              <span class="btn btn-success btn-sm btn-bold btn-font-md">23 tasks pending</span>
+              <span class="btn btn-success btn-sm btn-bold btn-font-md"
+                >23 tasks pending</span
+              >
             </h3>
           </div>
 
@@ -744,10 +604,7 @@
           <!--begin: Grid Nav -->
           <div class="kt-grid-nav kt-grid-nav--skin-light">
             <div class="kt-grid-nav__row">
-              <a
-                href="#"
-                class="kt-grid-nav__item"
-              >
+              <a href="#" class="kt-grid-nav__item">
                 <span class="kt-grid-nav__icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -764,13 +621,7 @@
                       fill="none"
                       fill-rule="evenodd"
                     >
-                      <rect
-                        id="bound"
-                        x="0"
-                        y="0"
-                        width="24"
-                        height="24"
-                      />
+                      <rect id="bound" x="0" y="0" width="24" height="24" />
                       <path
                         id="Combined-Shape"
                         d="M4.3618034,10.2763932 L4.8618034,9.2763932 C4.94649941,9.10700119 5.11963097,9 5.30901699,9 L15.190983,9 C15.4671254,9 15.690983,9.22385763 15.690983,9.5 C15.690983,9.57762255 15.6729105,9.65417908 15.6381966,9.7236068 L15.1381966,10.7236068 C15.0535006,10.8929988 14.880369,11 14.690983,11 L4.80901699,11 C4.53287462,11 4.30901699,10.7761424 4.30901699,10.5 C4.30901699,10.4223775 4.32708954,10.3458209 4.3618034,10.2763932 Z M14.6381966,13.7236068 L14.1381966,14.7236068 C14.0535006,14.8929988 13.880369,15 13.690983,15 L4.80901699,15 C4.53287462,15 4.30901699,14.7761424 4.30901699,14.5 C4.30901699,14.4223775 4.32708954,14.3458209 4.3618034,14.2763932 L4.8618034,13.2763932 C4.94649941,13.1070012 5.11963097,13 5.30901699,13 L14.190983,13 C14.4671254,13 14.690983,13.2238576 14.690983,13.5 C14.690983,13.5776225 14.6729105,13.6541791 14.6381966,13.7236068 Z"
@@ -783,14 +634,12 @@
                         fill="#000000"
                       />
                     </g>
-                  </svg> </span>
+                  </svg>
+                </span>
                 <span class="kt-grid-nav__title">Accounting</span>
                 <span class="kt-grid-nav__desc">eCommerce</span>
               </a>
-              <a
-                href="#"
-                class="kt-grid-nav__item"
-              >
+              <a href="#" class="kt-grid-nav__item">
                 <span class="kt-grid-nav__icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -807,13 +656,7 @@
                       fill="none"
                       fill-rule="evenodd"
                     >
-                      <rect
-                        id="bound"
-                        x="0"
-                        y="0"
-                        width="24"
-                        height="24"
-                      />
+                      <rect id="bound" x="0" y="0" width="24" height="24" />
                       <path
                         id="Combined-Shape"
                         d="M14.8571499,13 C14.9499122,12.7223297 15,12.4263059 15,12.1190476 L15,6.88095238 C15,5.28984632 13.6568542,4 12,4 L11.7272727,4 C10.2210416,4 9,5.17258756 9,6.61904762 L10.0909091,6.61904762 C10.0909091,5.75117158 10.823534,5.04761905 11.7272727,5.04761905 L12,5.04761905 C13.0543618,5.04761905 13.9090909,5.86843034 13.9090909,6.88095238 L13.9090909,12.1190476 C13.9090909,12.4383379 13.8240964,12.7385644 13.6746497,13 L10.3253503,13 C10.1759036,12.7385644 10.0909091,12.4383379 10.0909091,12.1190476 L10.0909091,9.5 C10.0909091,9.06606198 10.4572216,8.71428571 10.9090909,8.71428571 C11.3609602,8.71428571 11.7272727,9.06606198 11.7272727,9.5 L11.7272727,11.3333333 L12.8181818,11.3333333 L12.8181818,9.5 C12.8181818,8.48747796 11.9634527,7.66666667 10.9090909,7.66666667 C9.85472911,7.66666667 9,8.48747796 9,9.5 L9,12.1190476 C9,12.4263059 9.0500878,12.7223297 9.14285008,13 L6,13 C5.44771525,13 5,12.5522847 5,12 L5,3 C5,2.44771525 5.44771525,2 6,2 L18,2 C18.5522847,2 19,2.44771525 19,3 L19,12 C19,12.5522847 18.5522847,13 18,13 L14.8571499,13 Z"
@@ -826,16 +669,14 @@
                         fill="#000000"
                       />
                     </g>
-                  </svg> </span>
+                  </svg>
+                </span>
                 <span class="kt-grid-nav__title">Administration</span>
                 <span class="kt-grid-nav__desc">Console</span>
               </a>
             </div>
             <div class="kt-grid-nav__row">
-              <a
-                href="#"
-                class="kt-grid-nav__item"
-              >
+              <a href="#" class="kt-grid-nav__item">
                 <span class="kt-grid-nav__icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -852,13 +693,7 @@
                       fill="none"
                       fill-rule="evenodd"
                     >
-                      <rect
-                        id="bound"
-                        x="0"
-                        y="0"
-                        width="24"
-                        height="24"
-                      />
+                      <rect id="bound" x="0" y="0" width="24" height="24" />
                       <path
                         id="Combined-Shape"
                         d="M4,9.67471899 L10.880262,13.6470401 C10.9543486,13.689814 11.0320333,13.7207107 11.1111111,13.740321 L11.1111111,21.4444444 L4.49070127,17.526473 C4.18655139,17.3464765 4,17.0193034 4,16.6658832 L4,9.67471899 Z M20,9.56911707 L20,16.6658832 C20,17.0193034 19.8134486,17.3464765 19.5092987,17.526473 L12.8888889,21.4444444 L12.8888889,13.6728275 C12.9050191,13.6647696 12.9210067,13.6561758 12.9368301,13.6470401 L20,9.56911707 Z"
@@ -871,14 +706,12 @@
                         opacity="0.3"
                       />
                     </g>
-                  </svg> </span>
+                  </svg>
+                </span>
                 <span class="kt-grid-nav__title">Projects</span>
                 <span class="kt-grid-nav__desc">Pending Tasks</span>
               </a>
-              <a
-                href="#"
-                class="kt-grid-nav__item"
-              >
+              <a href="#" class="kt-grid-nav__item">
                 <span class="kt-grid-nav__icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -895,10 +728,7 @@
                       fill="none"
                       fill-rule="evenodd"
                     >
-                      <polygon
-                        id="Shape"
-                        points="0 0 24 0 24 24 0 24"
-                      />
+                      <polygon id="Shape" points="0 0 24 0 24 24 0 24" />
                       <path
                         id="Combined-Shape"
                         d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z"
@@ -913,7 +743,8 @@
                         fill-rule="nonzero"
                       />
                     </g>
-                  </svg> </span>
+                  </svg>
+                </span>
                 <span class="kt-grid-nav__title">Customers</span>
                 <span class="kt-grid-nav__desc">Latest cases</span>
               </a>
@@ -945,19 +776,8 @@
             version="1.1"
             class="kt-svg-icon"
           >
-            <g
-              stroke="none"
-              stroke-width="1"
-              fill="none"
-              fill-rule="evenodd"
-            >
-              <rect
-                id="bound"
-                x="0"
-                y="0"
-                width="24"
-                height="24"
-              />
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <rect id="bound" x="0" y="0" width="24" height="24" />
               <path
                 id="Path-30"
                 d="M12,4.56204994 L7.76822128,9.6401844 C7.4146572,10.0644613 6.7840925,10.1217854 6.3598156,9.76822128 C5.9355387,9.4146572 5.87821464,8.7840925 6.23177872,8.3598156 L11.2317787,2.3598156 C11.6315738,1.88006147 12.3684262,1.88006147 12.7682213,2.3598156 L17.7682213,8.3598156 C18.1217854,8.7840925 18.0644613,9.4146572 17.6401844,9.76822128 C17.2159075,10.1217854 16.5853428,10.0644613 16.2317787,9.6401844 L12,4.56204994 Z"
@@ -971,28 +791,27 @@
                 fill="#000000"
               />
             </g>
-          </svg> </span>
+          </svg>
+        </span>
       </div>
-      <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
+      <div
+        class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl"
+      >
         <form>
           <!-- begin:: Mycart -->
           <div class="kt-mycart">
             <div
               class="kt-mycart__head kt-head"
-              style="background-image: url(./assets/media/misc/bg-1.jpg);"
+              style="background-image: url(./assets/media/misc/bg-1.jpg)"
             >
               <div class="kt-mycart__info">
-                <span class="kt-mycart__icon"><i class="flaticon2-shopping-cart-1 kt-font-success" /></span>
-                <h3 class="kt-mycart__title">
-                  My Cart
-                </h3>
+                <span class="kt-mycart__icon"
+                  ><i class="flaticon2-shopping-cart-1 kt-font-success"
+                /></span>
+                <h3 class="kt-mycart__title">My Cart</h3>
               </div>
               <div class="kt-mycart__button">
-                <button
-                  type="button"
-                  class="btn btn-success btn-sm"
-                  style=" "
-                >
+                <button type="button" class="btn btn-success btn-sm" style="">
                   2 Items
                 </button>
               </div>
@@ -1006,12 +825,7 @@
               <div class="kt-mycart__item">
                 <div class="kt-mycart__container">
                   <div class="kt-mycart__info">
-                    <a
-                      href="#"
-                      class="kt-mycart__title"
-                    >
-                      Samsung
-                    </a>
+                    <a href="#" class="kt-mycart__title"> Samsung </a>
                     <span class="kt-mycart__desc">
                       Profile info, Timeline etc
                     </span>
@@ -1019,73 +833,45 @@
                       <span class="kt-mycart__price">$ 450</span>
                       <span class="kt-mycart__text">for</span>
                       <span class="kt-mycart__quantity">7</span>
-                      <a
-                        href="#"
-                        class="btn btn-label-success btn-icon"
-                      >&minus;</a>
-                      <a
-                        href="#"
-                        class="btn btn-label-success btn-icon"
-                      >&plus;</a>
+                      <a href="#" class="btn btn-label-success btn-icon"
+                        >&minus;</a
+                      >
+                      <a href="#" class="btn btn-label-success btn-icon"
+                        >&plus;</a
+                      >
                     </div>
                   </div>
-                  <a
-                    href="#"
-                    class="kt-mycart__pic"
-                  >
-                    <img
-                      src=""
-                      title=""
-                    >
+                  <a href="#" class="kt-mycart__pic">
+                    <img src="" title="" />
                   </a>
                 </div>
               </div>
               <div class="kt-mycart__item">
                 <div class="kt-mycart__container">
                   <div class="kt-mycart__info">
-                    <a
-                      href="#"
-                      class="kt-mycart__title"
-                    >
-                      Panasonic
-                    </a>
-                    <span class="kt-mycart__desc">
-                      For PHoto & Others
-                    </span>
+                    <a href="#" class="kt-mycart__title"> Panasonic </a>
+                    <span class="kt-mycart__desc"> For PHoto & Others </span>
                     <div class="kt-mycart__action">
                       <span class="kt-mycart__price">$ 329</span>
                       <span class="kt-mycart__text">for</span>
                       <span class="kt-mycart__quantity">1</span>
-                      <a
-                        href="#"
-                        class="btn btn-label-success btn-icon"
-                      >&minus;</a>
-                      <a
-                        href="#"
-                        class="btn btn-label-success btn-icon"
-                      >&plus;</a>
+                      <a href="#" class="btn btn-label-success btn-icon"
+                        >&minus;</a
+                      >
+                      <a href="#" class="btn btn-label-success btn-icon"
+                        >&plus;</a
+                      >
                     </div>
                   </div>
-                  <a
-                    href="#"
-                    class="kt-mycart__pic"
-                  >
-                    <img
-                      src=""
-                      title=""
-                    >
+                  <a href="#" class="kt-mycart__pic">
+                    <img src="" title="" />
                   </a>
                 </div>
               </div>
               <div class="kt-mycart__item">
                 <div class="kt-mycart__container">
                   <div class="kt-mycart__info">
-                    <a
-                      href="#"
-                      class="kt-mycart__title"
-                    >
-                      Fujifilm
-                    </a>
+                    <a href="#" class="kt-mycart__title"> Fujifilm </a>
                     <span class="kt-mycart__desc">
                       Profile info, Timeline etc
                     </span>
@@ -1093,62 +879,38 @@
                       <span class="kt-mycart__price">$ 520</span>
                       <span class="kt-mycart__text">for</span>
                       <span class="kt-mycart__quantity">6</span>
-                      <a
-                        href="#"
-                        class="btn btn-label-success btn-icon"
-                      >&minus;</a>
-                      <a
-                        href="#"
-                        class="btn btn-label-success btn-icon"
-                      >&plus;</a>
+                      <a href="#" class="btn btn-label-success btn-icon"
+                        >&minus;</a
+                      >
+                      <a href="#" class="btn btn-label-success btn-icon"
+                        >&plus;</a
+                      >
                     </div>
                   </div>
-                  <a
-                    href="#"
-                    class="kt-mycart__pic"
-                  >
-                    <img
-                      src=""
-                      title=""
-                    >
+                  <a href="#" class="kt-mycart__pic">
+                    <img src="" title="" />
                   </a>
                 </div>
               </div>
               <div class="kt-mycart__item">
                 <div class="kt-mycart__container">
                   <div class="kt-mycart__info">
-                    <a
-                      href="#"
-                      class="kt-mycart__title"
-                    >
-                      Candy Machine
-                    </a>
-                    <span class="kt-mycart__desc">
-                      For PHoto & Others
-                    </span>
+                    <a href="#" class="kt-mycart__title"> Candy Machine </a>
+                    <span class="kt-mycart__desc"> For PHoto & Others </span>
                     <div class="kt-mycart__action">
                       <span class="kt-mycart__price">$ 784</span>
                       <span class="kt-mycart__text">for</span>
                       <span class="kt-mycart__quantity">4</span>
-                      <a
-                        href="#"
-                        class="btn btn-label-success btn-icon"
-                      >&minus;</a>
-                      <a
-                        href="#"
-                        class="btn btn-label-success btn-icon"
-                      >&plus;</a>
+                      <a href="#" class="btn btn-label-success btn-icon"
+                        >&minus;</a
+                      >
+                      <a href="#" class="btn btn-label-success btn-icon"
+                        >&plus;</a
+                      >
                     </div>
                   </div>
-                  <a
-                    href="#"
-                    class="kt-mycart__pic"
-                  >
-                    <img
-                      src=""
-                      title=""
-                      alt=""
-                    >
+                  <a href="#" class="kt-mycart__pic">
+                    <img src="" title="" alt="" />
                   </a>
                 </div>
               </div>
@@ -1167,10 +929,7 @@
                 </div>
               </div>
               <div class="kt-mycart__button kt-align-right">
-                <button
-                  type="button"
-                  class="btn btn-primary btn-sm"
-                >
+                <button type="button" class="btn btn-primary btn-sm">
                   Place Order
                 </button>
               </div>
@@ -1191,10 +950,7 @@
       title="Quick panel"
       data-placement="right"
     >
-      <span
-        id="kt_quick_panel_toggler_btn"
-        class="kt-header__topbar-icon"
-      >
+      <span id="kt_quick_panel_toggler_btn" class="kt-header__topbar-icon">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1204,19 +960,8 @@
           version="1.1"
           class="kt-svg-icon"
         >
-          <g
-            stroke="none"
-            stroke-width="1"
-            fill="none"
-            fill-rule="evenodd"
-          >
-            <rect
-              id="bound"
-              x="0"
-              y="0"
-              width="24"
-              height="24"
-            />
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <rect id="bound" x="0" y="0" width="24" height="24" />
             <rect
               id="Rectangle-7"
               fill="#000000"
@@ -1233,7 +978,8 @@
               opacity="0.3"
             />
           </g>
-        </svg> </span>
+        </svg>
+      </span>
     </div>
 
     <!--end: Quick panel toggler -->
@@ -1246,48 +992,28 @@
         data-offset="10px,0px"
       >
         <span class="kt-header__topbar-icon">
-          <img
-            class=""
-            src=""
-            alt=""
-          >
+          <img class="" src="" alt="" />
         </span>
       </div>
-      <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround">
+      <div
+        class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround"
+      >
         <ul class="kt-nav kt-margin-t-10 kt-margin-b-10">
           <li class="kt-nav__item kt-nav__item--active">
-            <a
-              href="#"
-              class="kt-nav__link"
-            >
-              <span class="kt-nav__link-icon"><img
-                src=""
-                alt=""
-              ></span>
+            <a href="#" class="kt-nav__link">
+              <span class="kt-nav__link-icon"><img src="" alt="" /></span>
               <span class="kt-nav__link-text">English</span>
             </a>
           </li>
           <li class="kt-nav__item">
-            <a
-              href="#"
-              class="kt-nav__link"
-            >
-              <span class="kt-nav__link-icon"><img
-                src=""
-                alt=""
-              ></span>
+            <a href="#" class="kt-nav__link">
+              <span class="kt-nav__link-icon"><img src="" alt="" /></span>
               <span class="kt-nav__link-text">Spanish</span>
             </a>
           </li>
           <li class="kt-nav__item">
-            <a
-              href="#"
-              class="kt-nav__link"
-            >
-              <span class="kt-nav__link-icon"><img
-                src=""
-                alt=""
-              ></span>
+            <a href="#" class="kt-nav__link">
+              <span class="kt-nav__link-icon"><img src="" alt="" /></span>
               <span class="kt-nav__link-text">German</span>
             </a>
           </li>
@@ -1299,5 +1025,5 @@
     <HeaderUserbar />
   </div>
 
-<!-- end:: Header Topbar -->
+  <!-- end:: Header Topbar -->
 </template>

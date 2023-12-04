@@ -8,8 +8,10 @@
   }
 
   &__header {
-
-    h1,h2,h3,h4 {
+    h1,
+    h2,
+    h3,
+    h4 {
       margin-bottom: 0;
     }
   }
@@ -26,7 +28,7 @@
       .col-lg-6,
       .col-sm-6 {
         &:last-child,
-        &:nth-last-of-type(-n+2):not(:nth-child(even)){
+        &:nth-last-of-type(-n + 2):not(:nth-child(even)) {
           .form-group {
             margin-bottom: 0;
           }
@@ -50,7 +52,7 @@
     }
     .subtitle {
       margin-bottom: 1rem;
-      padding-bottom: .5rem;
+      padding-bottom: 0.5rem;
       margin-top: 1rem;
       border-bottom: 1px solid rgba(0, 0, 0, 0.06);
       font-size: 1.2rem;

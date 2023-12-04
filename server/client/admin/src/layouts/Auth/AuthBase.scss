@@ -1,5 +1,5 @@
 .auth-base {
-  background-image: url('@/../assets/images/auth-background.jpg');
+  background-image: url("@/../assets/images/auth-background.jpg");
   background-repeat: no-repeat;
   background-position: center right;
   background-size: cover;
@@ -33,7 +33,7 @@
   &__account-msg {
     font-size: 1rem;
     font-weight: 400;
-    color:kt-base-color(label, 2);
+    color: kt-base-color(label, 2);
   }
 
   &__account-link {

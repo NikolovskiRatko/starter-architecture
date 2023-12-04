@@ -15,7 +15,6 @@
 <!--      default: true-->
 <!--    }) hasLabel;-->
 
-
 <!--    colOneClass: string = '';-->
 <!--    colTwoClass: string = '';-->
 <!--    formGroupClass: string = '';-->

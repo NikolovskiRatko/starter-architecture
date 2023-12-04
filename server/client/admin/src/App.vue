@@ -1,39 +1,46 @@
 <script setup lang="ts">
-    import { computed } from 'vue';
-    import { useRootStore } from '@/store/root';
-    import { useAuth } from '@websanova/vue-auth/src/v3.js';
-    import { isTouchDevice } from "@/utils/userAgentCheck";
-    import '@styles/main.scss'
-    import './App.scss';
+import { computed } from "vue";
+import { useRootStore } from "@/store/root";
+import { useAuth } from "@websanova/vue-auth/src/v3.js";
+import { isTouchDevice } from "@/utils/userAgentCheck";
+import "@styles/main.scss";
+import "./App.scss";
 
-    const auth = useAuth();
-    const rootStore = useRootStore();
-    const touchDevice = isTouchDevice();
+const auth = useAuth();
+const rootStore = useRootStore();
+const touchDevice = isTouchDevice();
 
-    const isAuthLoaded = computed(() => auth.ready());
+const isAuthLoaded = computed(() => auth.ready());
 
-    const bodyStyles = computed(() => {
-        const { isBodyOverflowing, modalOpen, scrollBarWidth, navMenuOpen } = rootStore.bodyClasses;
+const bodyStyles = computed(() => {
+  const { isBodyOverflowing, modalOpen, scrollBarWidth, navMenuOpen } =
+    rootStore.bodyClasses;
 
-        if (isTouchDevice() && isBodyOverflowing) {
-            if (modalOpen || navMenuOpen)  {
-                return `padding-right:${scrollBarWidth}px;`;
-            }
-        }
+  if (isTouchDevice() && isBodyOverflowing) {
+    if (modalOpen || navMenuOpen) {
+      return `padding-right:${scrollBarWidth}px;`;
+    }
+  }
 
-        return '';
-    })
+  return "";
+});
 </script>
 
 <template>
-    <router-view
-            v-show="isAuthLoaded"
-            :style="bodyStyles"
-            :class="['main-wrapper',{
-      'main-wrapper--modal-open':rootStore.bodyClasses.modalOpen,
-      'main-wrapper--dimmed':rootStore.bodyClasses.navMenuOpen,
-      'main-wrapper--nav-search-active':rootStore.bodyClasses.navSearchActive,
-      'main-wrapper--touch-device':touchDevice,
-      'main-wrapper--no-touch-device':!touchDevice}]"
-    /> <!-- Main tag from subview is displayed instead of this-->
+  <router-view
+    v-show="isAuthLoaded"
+    :style="bodyStyles"
+    :class="[
+      'main-wrapper',
+      {
+        'main-wrapper--modal-open': rootStore.bodyClasses.modalOpen,
+        'main-wrapper--dimmed': rootStore.bodyClasses.navMenuOpen,
+        'main-wrapper--nav-search-active':
+          rootStore.bodyClasses.navSearchActive,
+        'main-wrapper--touch-device': touchDevice,
+        'main-wrapper--no-touch-device': !touchDevice,
+      },
+    ]"
+  />
+  <!-- Main tag from subview is displayed instead of this-->
 </template>

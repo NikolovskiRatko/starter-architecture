@@ -1,4 +1,3 @@
-
 .btn {
   background: transparent;
   outline: none !important;
@@ -93,7 +92,7 @@
 
         &:before {
           display: block;
-          content: ' ';
+          content: " ";
           border-left: 1px solid kt-get($color, inverse);
           position: absolute;
           top: 3px;
@@ -116,7 +115,10 @@
   // Outline states
   @each $name, $color in $state-colors {
     &-outline-#{$name} {
-      @include button-outline-variant(kt-get($color, base), kt-get($color, inverse));
+      @include button-outline-variant(
+        kt-get($color, base),
+        kt-get($color, inverse)
+      );
     }
   }
 
@@ -203,7 +205,7 @@
     }
 
     &.btn-#{$name}.btn-elevate {
-      box-shadow: 0px 4px 16px 0px rgba($base-color,0.15);
+      box-shadow: 0px 4px 16px 0px rgba($base-color, 0.15);
 
       .show > &,
       &:focus,
@@ -336,7 +338,13 @@
   //display: inline-flex;
   align-items: center;
 
-  @include kt-icons-size((lineawesome: 1.5rem, fontawesome: 1.2rem, flaticon: 1.2rem));
+  @include kt-icons-size(
+    (
+      lineawesome: 1.5rem,
+      fontawesome: 1.2rem,
+      flaticon: 1.2rem,
+    )
+  );
 
   i {
     padding-right: 0.5rem;
@@ -345,7 +353,13 @@
   }
 
   &.btn-sm {
-    @include kt-icons-size((lineawesome: 1.3rem, fontawesome: 1rem, flaticon: 1rem));
+    @include kt-icons-size(
+      (
+        lineawesome: 1.3rem,
+        fontawesome: 1rem,
+        flaticon: 1rem,
+      )
+    );
 
     i {
       padding-right: 0.35rem;
@@ -353,7 +367,13 @@
   }
 
   &.btn-lg {
-    @include kt-icons-size((lineawesome: 1.7rem, fontawesome: 1.4rem, flaticon: 1.3rem));
+    @include kt-icons-size(
+      (
+        lineawesome: 1.7rem,
+        fontawesome: 1.4rem,
+        flaticon: 1.3rem,
+      )
+    );
 
     i {
       padding-right: 0.75rem;
@@ -448,16 +468,34 @@ input.btn.btn-label {
 
   // Icon sizing
   &.btn-icon-sm {
-    @include kt-icons-size((lineawesome: 1.25rem, fontawesome: 1.15rem, flaticon: 1.15rem));
+    @include kt-icons-size(
+      (
+        lineawesome: 1.25rem,
+        fontawesome: 1.15rem,
+        flaticon: 1.15rem,
+      )
+    );
   }
 
   // Icon sizing
   &.btn-icon-md {
-    @include kt-icons-size((lineawesome: 1.3rem, fontawesome: 1.2rem, flaticon: 1.2rem));
+    @include kt-icons-size(
+      (
+        lineawesome: 1.3rem,
+        fontawesome: 1.2rem,
+        flaticon: 1.2rem,
+      )
+    );
   }
 
   &.btn-icon-lg {
-    @include kt-icons-size((lineawesome: 1.4rem, fontawesome: 1.4rem, flaticon: 1.4rem));
+    @include kt-icons-size(
+      (
+        lineawesome: 1.4rem,
+        fontawesome: 1.4rem,
+        flaticon: 1.4rem,
+      )
+    );
   }
 
   // Icon button states
@@ -568,15 +606,15 @@ input.btn.btn-label {
 }
 
 // Button glow style
-.btn{
+.btn {
   &.btn-glow {
-    box-shadow: 0px 2px 14px 2px rgba(255,255,255,0.1);
+    box-shadow: 0px 2px 14px 2px rgba(255, 255, 255, 0.1);
 
     .show > &,
     &.active,
     &:active,
     &:hover {
-      box-shadow: 0px 2px 14px 2px rgba(255,255,255,0.3);
+      box-shadow: 0px 2px 14px 2px rgba(255, 255, 255, 0.3);
     }
   }
 }

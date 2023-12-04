@@ -6,4 +6,5 @@ export interface LayoutConfig {
   hasSubHeaderFixed?: boolean;
 }
 
-export const layoutConfigKey: InjectionKey<LayoutConfig> = Symbol('layoutConfigKey');
+export const layoutConfigKey: InjectionKey<LayoutConfig> =
+  Symbol("layoutConfigKey");

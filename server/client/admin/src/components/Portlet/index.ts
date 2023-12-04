@@ -1,2 +1,2 @@
-export * from './components';
-export { default as Portlet } from './Portlet.vue';
+export * from "./components";
+export { default as PortletComponent } from "./PortletComponent.vue";

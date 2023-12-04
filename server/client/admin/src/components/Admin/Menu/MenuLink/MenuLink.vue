@@ -1,62 +1,61 @@
 <script setup lang="ts">
-  import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType } from "vue";
 
-  import { briefcaseIcon } from '@/data/navMenu';
+import { briefcaseIcon } from "@/data/navMenu";
 
-  import { BadgeType } from "./types";
-  import { MenuListStyle } from '../Submenu/types';
+import { BadgeType } from "./types";
+import { MenuListStyle } from "../Submenu/types";
 
-  const props = defineProps({
-    label: {
-      type: String,
-      required: true
-    },
-    route: {
-      type: String,
-      required: true
-    },
-    icon: {
-      type: String,
-      required: false,
-      default: ''
-    },
-    listStyle: {
-      type: String as PropType<MenuListStyle> | null,
-      required: false,
-      default: null
-    },
-    hasSubmenu: Boolean,
-    badge: {
-      type: Object as PropType<BadgeType> | null,
-      required: false,
-      default: null
-    }
-  });
-  const emit = defineEmits(['click']);
+const props = defineProps({
+  label: {
+    type: String,
+    required: true,
+  },
+  route: {
+    type: String,
+    required: true,
+  },
+  icon: {
+    type: String,
+    required: false,
+    default: "",
+  },
+  listStyle: {
+    type: String as PropType<MenuListStyle> | null,
+    required: false,
+    default: null,
+  },
+  hasSubmenu: Boolean,
+  badge: {
+    type: Object as PropType<BadgeType> | null,
+    required: false,
+    default: null,
+  },
+});
+const emit = defineEmits(["click"]);
 
-  const svgIcon = briefcaseIcon;
+const svgIcon = briefcaseIcon;
 
-  const handleClick = (event) => {
-    if (props.hasSubmenu) {
-      event.preventDefault();
-      emit('click');
-    }
+const handleClick = (event) => {
+  if (props.hasSubmenu) {
+    event.preventDefault();
+    emit("click");
   }
+};
 </script>
 
 <template>
   <a
     :href="route"
-    :class="['kt-menu__link', {
-      'kt-menu__toggle': hasSubmenu,
-    }]"
+    :class="[
+      'kt-menu__link',
+      {
+        'kt-menu__toggle': hasSubmenu,
+      },
+    ]"
     @click="handleClick"
   >
-    <span
-      v-if="icon"
-      class="kt-menu__link-icon"
-      v-html="svgIcon"
-    />
+    <span v-if="icon" class="kt-menu__link-icon" v-html="svgIcon" />
 
     <i
       v-if="listStyle"
@@ -69,10 +68,7 @@
       {{ label }}
     </span>
 
-    <span
-      v-if="badge"
-      class="kt-menu__link-badge"
-    >
+    <span v-if="badge" class="kt-menu__link-badge">
       <span :class="`kt-badge kt-badge--${badge.theme}`">
         {{ badge.label }}
       </span>

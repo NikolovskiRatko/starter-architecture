@@ -5,7 +5,7 @@
         <th
           v-for="column in columns"
           :key="column.name"
-          :style="'width:'+column.width+';'"
+          :style="'width:' + column.width + ';'"
         >
           {{ $t(column.label) }}
         </th>
@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts">
-  export default {
-    props: ['columns']
-  }
+export default {
+  props: ["columns"],
+};
 </script>
