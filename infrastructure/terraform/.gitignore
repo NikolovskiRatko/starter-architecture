@@ -10,4 +10,3 @@ crash.log
 
 # Ignore adding sensitive variable files
 /terraform.tfvars
-

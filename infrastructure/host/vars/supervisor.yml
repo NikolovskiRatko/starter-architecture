@@ -12,7 +12,7 @@ supervisor_config_path: /etc/supervisor
 # A list of `program`s Supervisor will control.
 supervisor_programs:
  - name: 'starter-queue'
-   command: /usr/bin/php -d memory_limit=1024M /var/www/html/starter/website/artisan queue:work redis --tries=3
+   command: /usr/bin/php -d memory_limit=1024M /var/www/html/thestarter.net/api/artisan queue:work redis --tries=3
    state: present
    configuration: |
      process_name=%(program_name)s_%(process_num)02d
@@ -21,8 +21,8 @@ supervisor_programs:
      user=root
      numprocs=6
      redirect_stderr=true
-     stderr_logfile=/var/www/html/starter/website/storage/logs/media_library_error.log
-     stdout_logfile=/var/www/html/starter/website/storage/logs/media_library.log
+     stderr_logfile=/var/www/html/thestarter.net/api/storage/logs/media_library_error.log
+     stdout_logfile=/var/www/html/thestarter.net/api/storage/logs/media_library.log
  - name: 'pm2'
    command: /usr/bin/node /usr/local/lib/npm/bin/pm2 resurrect
    state: present
