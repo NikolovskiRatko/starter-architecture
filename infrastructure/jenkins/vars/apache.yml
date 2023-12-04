@@ -2,6 +2,7 @@
 apache_create_vhosts: true
 apache_vhosts_filename: "jenkins.thestarter.net.conf"
 apache_vhosts_template: "vhosts.conf.j2"
+apache_ignore_missing_ssl_certificate: false
 apache_vhosts:
   - servername: "jenkins.thestarter.net"
     serveralias: "www.jenkins.thestarter.net"

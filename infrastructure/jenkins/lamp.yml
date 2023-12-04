@@ -26,3 +26,5 @@
     - role: geerlingguy.jenkins
     - role: jenkins_jobs
     - role: geerlingguy.certbot
+    - role: geerlingguy.apache
+

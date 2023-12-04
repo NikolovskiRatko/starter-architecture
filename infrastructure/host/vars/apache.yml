@@ -2,6 +2,7 @@
 apache_create_vhosts: true
 apache_vhosts_filename: "starter.conf"
 apache_vhosts_template: "vhosts.conf.j2"
+apache_ignore_missing_ssl_certificate: false
 apache_vhosts:
    - servername: "thestarter.net"
      serveralias: "www.thestarter.net"

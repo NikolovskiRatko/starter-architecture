@@ -26,13 +26,37 @@
     group: jenkins
     mode: '0700'
 
-- name: Generate SSH key for Jenkins
-  openssh_keypair:
-    path: "/var/lib/jenkins/.ssh/jenkins"
+- name: Ensure jenkins_data/starter directory for Jenkins exists
+  file:
+    path: "/var/jenkins_data/starter"
+    state: directory
     owner: jenkins
     group: jenkins
-    size: 4096
-    type: rsa
+    mode: '0700'
+
+- name: Copy Jenkins private SSH key
+  copy:
+    src: "sensitive/ssh_keys/id_rsa"
+    dest: "/var/lib/jenkins/.ssh/id_rsa"
+    owner: jenkins
+    group: jenkins
+    mode: '0600'
+
+- name: Copy Jenkins public SSH key
+  copy:
+    src: "sensitive/ssh_keys/id_rsa.pub"
+    dest: "/var/lib/jenkins/.ssh/id_rsa.pub"
+    owner: jenkins
+    group: jenkins
+    mode: '0600'
+
+- name: Copy Jenkins SSH private key
+  copy:
+    src: "sensitive/inventory"
+    dest: "/var/jenkins_data/starter/inventory"
+    owner: jenkins
+    group: jenkins
+    mode: '0644'
 
 # Set some settings in ~/.gitconfig
 - name: Setup git name
@@ -46,3 +70,7 @@
     name: user.email
     scope: global
     value: "{{git_email}}"
+
+- name: Add GPG key
+  ansible.builtin.shell:
+    cmd: apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5BA31D57EF5975CA
