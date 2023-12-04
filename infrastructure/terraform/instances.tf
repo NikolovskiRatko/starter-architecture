@@ -44,7 +44,8 @@ resource "null_resource" "provision_jenkins" {
     command = <<EOT
       bash ${path.module}/wait-for-ssh.sh ${digitalocean_droplet.jenkins.ipv4_address}
       ansible-playbook -i ${path.module}/../jenkins/inventory ${path.module}/../jenkins/starter.yml --extra-vars 'starter_ip=${digitalocean_droplet.starter.ipv4_address}' -vvv
-    EOT  }
+    EOT
+  }
 }
 
 # Provision Starter with Ansible (After Starter and Jenkins are created)
