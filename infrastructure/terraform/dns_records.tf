@@ -1,10 +1,10 @@
-# Domain for thestarter.net
+# Domain for host server
 resource "digitalocean_domain" "starter_domain" {
-  name       = "thestarter.net"
+  name       = var.host_domain_name
   ip_address = digitalocean_droplet.starter.ipv4_address
 }
 
-# CNAME record for www.thestarter.net
+# CNAME record for host server
 resource "digitalocean_record" "starter_www_cname" {
   domain = digitalocean_domain.starter_domain.name
   type   = "CNAME"
@@ -13,13 +13,13 @@ resource "digitalocean_record" "starter_www_cname" {
   ttl    = 3600
 }
 
-# Domain for jenkins.thestarter.net
+# Domain for jenkins server
 resource "digitalocean_domain" "jenkins_domain" {
-  name       = "jenkins.thestarter.net"
+  name       = var.jenkins_domain_name
   ip_address = digitalocean_droplet.jenkins.ipv4_address
 }
 
-# CNAME record for www.jenkins.thestarter.net
+# CNAME record for jenkins server
 resource "digitalocean_record" "jenkins_www_cname" {
   domain = digitalocean_domain.jenkins_domain.name
   type   = "CNAME"

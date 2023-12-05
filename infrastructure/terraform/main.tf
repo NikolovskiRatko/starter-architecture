@@ -1,5 +1,8 @@
 variable "do_token" {}
 variable "ssh_key_path" {}
+variable "ssh_private_key_path" {}
+variable "host_domain_name" {}
+variable "jenkins_domain_name" {}
 
 terraform {
   required_providers {

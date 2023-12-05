@@ -15,20 +15,21 @@
     creates: /root/.ssh/id_rsa
 
 # Set some settings in ~/.gitconfig
-- name: setup git name
+- name: Setup git name
   git_config:
     name: user.name
     scope: global
-    value: "ESOF Starter"
-- name: setup git user email
+    value: "{{git_username}}"
+
+- name: Setup git user email
   git_config:
     name: user.email
     scope: global
-    value: esofstarter@gmail.com
+    value: "{{git_email}}"
 
-- name: Ensure /var/www/html/thestarter.net directory for website exists
+- name: Ensure directory for website exists
   file:
-    path: "/var/www/html/thestarter.net"
+    path: "/var/www/html/{{ domain_name }}"
     state: directory
     owner: www-data
     group: www-data
@@ -37,7 +38,7 @@
 - name: Copy .env file
   copy:
     src: "sensitive/.env"
-    dest: "/var/www/html/thestarter.net/.env"
+    dest: "/var/www/html/{{ domain_name }}/.env"
     owner: www-data
     group: www-data
     mode: '0644'

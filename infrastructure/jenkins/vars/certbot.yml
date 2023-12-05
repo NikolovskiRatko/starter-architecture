@@ -14,7 +14,7 @@ certbot_create_method: standalone
 certbot_admin_email: esofstarter@gmail.com
 certbot_certs:
   - domains:
-    - jenkins.thestarter.net
-    - www.jenkins.thestarter.net
+    - "{{ domain_name }}"
+    - "www.{{ domain_name }}"
 certbot_create_standalone_stop_services:
   - apache2

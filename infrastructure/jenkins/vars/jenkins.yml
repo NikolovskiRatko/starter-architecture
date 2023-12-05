@@ -21,6 +21,3 @@ jenkins_plugins:
 jenkins_admin_username: admin
 jenkins_admin_password: "{{ lookup('file', 'sensitive/admin_password') }}"
 jenkins_admin_password_file: ""
-
-#jenkins_proxy_host: "jenkins.thestarter.net"
-#jenkins_proxy_port: "443"

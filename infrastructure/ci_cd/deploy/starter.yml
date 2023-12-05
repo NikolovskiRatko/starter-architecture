@@ -2,7 +2,7 @@
 - hosts: web
   vars:
     source_directory: "/var/lib/jenkins/workspace/Starter_dev/server"
-    base_directory: "/var/www/html/thestarter.net"
+    base_directory: "/var/www/html/kromid.com"
     base_deploy_directory: "{{ base_directory }}/releases"
     current_symlink: "{{ base_directory }}/server"
     backup_directory: "/var/backups/starter"

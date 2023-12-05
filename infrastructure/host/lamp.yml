@@ -16,6 +16,12 @@
   vars:
     - update_apt_cache: yes
     - php_version: '8.1'
+    - domain_name: "{{ lookup('file', 'sensitive/domain_name') }}"
+
+  pre_tasks:
+    - name: Wait for apt to unlock
+      shell: while sudo fuser /var/lib/dpkg/lock >/dev/null 2>&1; do sleep 120; done;
+      tags: always
 
   roles:
     - role: geerlingguy.firewall

@@ -1,27 +1,27 @@
 ---
 apache_create_vhosts: true
-apache_vhosts_filename: "starter.conf"
+apache_vhosts_filename: "{{ domain_name }}.conf"
 apache_vhosts_template: "vhosts.conf.j2"
 apache_ignore_missing_ssl_certificate: false
 apache_vhosts:
-   - servername: "thestarter.net"
-     serveralias: "www.thestarter.net"
-     documentroot: "/var/www/html/thestarter.net/server/api/public"
+   - servername: "{{ domain_name }}"
+     serveralias: "www.{{ domain_name }}"
+     documentroot: "/var/www/html/{{ domain_name }}/server/api/public"
      extra_parameters: |
-      ErrorLog ${APACHE_LOG_DIR}/thestarter.net-error.log
-      CustomLog ${APACHE_LOG_DIR}/thestarter.net-access.log combined
+      ErrorLog ${APACHE_LOG_DIR}/{{ domain_name }}-error.log
+      CustomLog ${APACHE_LOG_DIR}/{{ domain_name }}-access.log combined
 
       RewriteEngine on
-      RewriteCond %{SERVER_NAME} =www.thestarter.net [OR]
-      RewriteCond %{SERVER_NAME} =thestarter.net
+      RewriteCond %{SERVER_NAME} =www.{{ domain_name }} [OR]
+      RewriteCond %{SERVER_NAME} ={{ domain_name }}
       RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
 
 apache_vhosts_ssl:
   - {
-     servername: "thestarter.net",
-     documentroot: "/var/www/html/thestarter.net/server/api/public",
-     certificate_file: "/etc/letsencrypt/live/thestarter.net/fullchain.pem",
-     certificate_key_file: "/etc/letsencrypt/live/thestarter.net/privkey.pem"
+     servername: "{{ domain_name }}",
+     documentroot: "/var/www/html/{{ domain_name }}/server/api/public",
+     certificate_file: "/etc/letsencrypt/live/{{ domain_name }}/fullchain.pem",
+     certificate_key_file: "/etc/letsencrypt/live/{{ domain_name }}/privkey.pem"
   }
 apache_allow_override: "All"
 apache_options: "-Indexes +FollowSymLinks"
