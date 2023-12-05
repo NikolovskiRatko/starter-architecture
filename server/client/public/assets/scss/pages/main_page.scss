@@ -1,0 +1,32 @@
+
+.jumbotron {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    &_background {
+        background: url('~/assets/images/starter_homepage.png');
+        z-index: -1;
+        position: absolute;
+        width: 100vw;
+        height: 110vh;
+        top: 45%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        -o-object-fit: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @media (max-width:1024px) {
+            width: 110vw;
+            height: 100.1vh;
+            top: 50%;
+            left: 45%;
+        }
+
+        @media (max-width: 768px) {
+            width: 136vw;
+            left: 32%;
+        }
+    }
+}

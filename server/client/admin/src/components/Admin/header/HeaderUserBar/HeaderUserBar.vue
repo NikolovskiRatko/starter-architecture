@@ -2,9 +2,15 @@
 import { ref } from "vue";
 import useAuthComp from "@/composables/useAuthComp";
 import "./HeaderUserBar.scss";
+import { useRouter } from "vue-router";
 
 const { logout, user } = useAuthComp();
 const isDropdownVisible = ref(false);
+const router = useRouter();
+
+const goToMyProfile = () => {
+  router.push({ name: "myprofile" });
+};
 
 const toggleDropdown = () =>
   (isDropdownVisible.value = !isDropdownVisible.value);
@@ -65,7 +71,10 @@ const toggleDropdown = () =>
           <div class="kt-notification__item-icon">
             <i class="flaticon2-calendar-3 kt-font-success" />
           </div>
-          <div class="kt-notification__item-details">
+          <div
+            class="kt-notification__item-details"
+            @click.prevent="goToMyProfile"
+          >
             <div class="kt-notification__item-title kt-font-bold">
               My Profile
             </div>
@@ -124,8 +133,8 @@ const toggleDropdown = () =>
         </a>
         <div class="kt-notification__custom kt-space-between">
           <a
-            class="btn btn-label btn-label-brand btn-sm btn-bold"
             @click.prevent="logout"
+            class="btn btn-label btn-label-brand btn-sm btn-bold"
             >Sign Out</a
           >
           <a
