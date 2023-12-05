@@ -242,6 +242,6 @@ export function useForm(fetchUri, data) {
     // onSubmit,
     onSubmitTest,
     initFormFromItem,
-    clearErrors,
+    // clearErrors,
   };
 }
