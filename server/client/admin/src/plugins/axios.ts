@@ -23,7 +23,7 @@ axios.interceptors.response.use(
         name: "dashboard",
       });
     }
-    if(error.response.status == 422){
+    if (error.response.status == 422) {
       // console.log(error.response.)
       return Promise.reject(error.response.data);
     }

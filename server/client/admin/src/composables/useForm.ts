@@ -1,12 +1,11 @@
-import { ref, reactive } from 'vue';
-import type { Ref } from 'vue'
-import { Form } from '@/plugins/form-backend-validation-new';
-import { mergeWith, cloneDeep } from 'lodash';
-import { useRouter, onBeforeRouteLeave } from 'vue-router';
+import { ref, reactive } from "vue";
+import type { Ref } from "vue";
+import { Form } from "@/plugins/form-backend-validation-new";
+import { mergeWith, cloneDeep } from "lodash";
+import { useRouter, onBeforeRouteLeave } from "vue-router";
 import { get, post } from "@/services/HTTP";
-import { InitFormFromItem, OnSubmit } from './types/useForm';
-import {useEventsBus} from '@/composables';
-
+import { InitFormFromItem, OnSubmit } from "./types/useForm";
+import { useEventsBus } from "@/composables";
 
 export function useForm(fetchUri, data) {
   const item = ref(cloneDeep(data));
@@ -14,14 +13,14 @@ export function useForm(fetchUri, data) {
   const messageClass: Ref<String> = ref("");
   // TODO: Implement a new custom Object for Form, similar to the package but simpler //DONE//
   const form = ref(new Form(item.value));
-  const loading: Ref<Boolean> = ref(form.processing);
+  const loading: Ref<Boolean> = ref(form.value.processing);
   const confirmUnsavedChangesModal: Ref<Boolean> = ref(false);
   const skipChangeCheckOnSubmit: Ref<Boolean> = ref(false);
   const routeTo: object = ref({});
   const formattedMessage: Ref<Array<any>> = ref([]);
-  const response: object = ref({});
+  const response: object = ref(form.value.errors);
   const error: object = reactive({});
-  const {emit} = useEventsBus();
+  const { emit } = useEventsBus();
 
   const router = useRouter();
 
@@ -39,21 +38,20 @@ export function useForm(fetchUri, data) {
   //   message.value = "";
   // }
 
-  // TODO: All functions that receive form , should probably use this.form instead of the parametar they recieve
-  function removeFormErrors(form, field: string) {
-    form.value.errors.clear(field);
-  }
+  // // TODO: All functions that receive form , should probably use this.form instead of the parametar they recieve
+  // function removeFormErrors(form, field: string) {
+  //   form.value.errors.clear(field);
+  // }
 
-  function resetForm(form) {
-  //   // TODO: Implement the reset value functionality here from the package
-    form.value.reset();
-  }
+  // function resetForm(form) {
+  //   //   // TODO: Implement the reset value functionality here from the package
+  //   form.value.reset();
+  // }
 
-  function clearErrors(event: Event) {
-    // TODO: Implement clear errors similar to the package
-    form.value.errors.clear(event.target.name);
-  }
-
+  // function clearErrors(event: Event) {
+  //   // TODO: Implement clear errors similar to the package
+  //   form.value.errors.clear(event.target.name);
+  // }
 
   /**
    *
@@ -66,7 +64,10 @@ export function useForm(fetchUri, data) {
    *
    * @beta
    */
-  const initFormFromItem : InitFormFromItem = ( onInit, resetOnSuccess = true ) => {
+  const initFormFromItem: InitFormFromItem = (
+    onInit,
+    resetOnSuccess = true,
+  ) => {
     loading.value = true;
     get(fetchUri)
       .then((response) => {
@@ -98,36 +99,35 @@ export function useForm(fetchUri, data) {
    *
    * @beta
    */
-  const onSubmitTest : OnSubmit = (route, redirectRoute, hasToRedirect) => {
+  const onSubmitTest: OnSubmit = (route, redirectRoute, hasToRedirect) => {
     loading.value = true;
     // TODO: Change this so that it uses the post method from the HTTP service wrapper and the custom Form object as payload
     post(route, form.value.getData())
-        .then((responseInternal) => {
-          // if(!responseInternal.success){
-          //   throw responseInternal;
-          // }
-          response.value = responseInternal;
-          // if (hasToRedirect) {
-          //   skipChangeCheckOnSubmit.value = true;
-          //   router.push({ name: redirectRoute, params: { success: '1' } });
-          // }
-        })
-        .catch((errorInternal) => {
-          console.log(errorInternal)
-          // console.log(errorInternal)
-          // Object.assign(error.value, errorInternal.error.errors);
-          // error.value = errorInternal.error;
+      .then((responseInternal) => {
+        if (!responseInternal.success) {
+          throw responseInternal;
+        }
+        response.value = responseInternal;
+        // if (hasToRedirect) {
+        //   skipChangeCheckOnSubmit.value = true;
+        //   router.push({ name: redirectRoute, params: { success: '1' } });
+        // }
+      })
+      .catch((errorInternal) => {
+        console.log("USEFORM", errorInternal);
+        // Object.assign(error, errorInternal.error.errors);
+        error.value = errorInternal.error.errors;
 
-          // console.log(error.value);
-          // form.value.withErrors(error)
+        console.log(form.value.errors);
+        // form.errors.withErrors(errorInternal.error.errors)
 
-          // console.error('Request failed with:', error);
-          // displayErrorMessage(error.message);
-        })
-        .finally(() => {
-          loading.value = false;
-        });
-  }
+        // console.error('Request failed with:', error);
+        // displayErrorMessage(error.message);
+      })
+      .finally(() => {
+        loading.value = false;
+      });
+  };
 
   // const onSubmit : OnSubmit = (route, redirectRoute, hasToRedirect) => {
   //   loading.value = true;
@@ -167,14 +167,12 @@ export function useForm(fetchUri, data) {
   onBeforeRouteLeave((to, from, next) => {
     if (checkEqual(form) || skipChangeCheckOnSubmit) {
       next();
-    }
-    else {
+    } else {
       next(false);
       routeTo.value = to;
       confirmUnsavedChangesModal.value = true;
     }
   });
-
 
   /**
    * @remarks
@@ -205,7 +203,7 @@ export function useForm(fetchUri, data) {
    */
   function confirmUnsavedChanges() {
     // TODO: Consider removing this complexity for the time being, it seems to have to do something with modals and different routes for a given form
-    form.reset();
+    form.value.reset();
     router.push(routeTo);
     confirmUnsavedChangesModal.value = false;
   }
