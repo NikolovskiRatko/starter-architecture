@@ -10,7 +10,7 @@ axios.defaults.headers = {
 };
 axios.defaults.withCredentials = true;
 axios.defaults.validateStatus = function (status) {
-  return status === 422 || status === 401 || (status >= 200 && status < 300);
+  return status === 401 || (status >= 200 && status < 300);
 };
 axios.interceptors.response.use(
   function (response) {
@@ -22,6 +22,10 @@ axios.interceptors.response.use(
       router.push({
         name: "dashboard",
       });
+    }
+    if(error.response.status == 422){
+      // console.log(error.response.)
+      return Promise.reject(error.response.data);
     }
     return Promise.reject(error);
   },
