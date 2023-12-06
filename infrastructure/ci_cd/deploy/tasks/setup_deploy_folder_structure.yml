@@ -1,0 +1,37 @@
+---
+- name: Ensure releases directory exists
+  file:
+    path: "{{ releases_dir }}"
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: 0711
+
+- name: Ensure persistent directory exists
+  file:
+    path: "{{ persistent_dir }}"
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: 0711
+
+- name: Ensure storage directory exists
+  file:
+    path: "{{ persistent_dir }}/storage"
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: 0711
+
+- name: Copy storage
+  copy:
+    src: storage
+    dest: "{{ persistent_dir }}/"
+
+- include: tasks/set_owner_and_group.yml
+  vars:
+    dir_to_chown: "{{ persistent_dir }}/storage"
+
+- include: tasks/check_that_folder_is_writable.yml
+  vars:
+    dir_to_check: "{{ persistent_dir }}/storage"
