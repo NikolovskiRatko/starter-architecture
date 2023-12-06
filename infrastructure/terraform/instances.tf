@@ -69,7 +69,11 @@ resource "null_resource" "provision_jenkins" {
 
   # Provision with Ansible, passing the Starter IP Address
   provisioner "local-exec" {
-    command = "ansible-playbook -i ${path.module}/../jenkins/inventory ${path.module}/../jenkins/starter.yml --extra-vars 'starter_ip=${digitalocean_droplet.starter.ipv4_address}'"
+    command = <<-EOT
+      ansible-playbook -i ${path.module}/../jenkins/inventory \
+      ${path.module}/../jenkins/starter.yml \
+      --extra-vars '{"starter_ip": "${digitalocean_droplet.starter.ipv4_address}", "is_terraform_run": true}'
+    EOT
   }
 }
 
@@ -78,6 +82,6 @@ resource "null_resource" "provision_starter" {
   depends_on = [digitalocean_droplet.starter, digitalocean_droplet.jenkins]
 
   provisioner "local-exec" {
-    command = "ansible-playbook -i ${path.module}/../host/inventory ${path.module}/../host/starter.yml"
+    command = "ansible-playbook -i ${path.module}/../host/inventory ${path.module}/../host/starter.yml --extra-vars 'is_terraform_run=true'"
   }
 }

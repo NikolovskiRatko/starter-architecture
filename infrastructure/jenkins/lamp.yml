@@ -14,11 +14,13 @@
 
   vars:
     - domain_name: "{{ lookup('file', 'sensitive/domain_name') }}"
+    - is_terraform_run: false
 
   pre_tasks:
     - name: Wait 5 minutes for APT to complete on newly created instances
       ansible.builtin.pause:
         minutes: 5
+      when: is_terraform_run | bool
     - name: Update apt cache.
       apt: update_cache=yes
 
