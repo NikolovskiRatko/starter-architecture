@@ -1,5 +1,5 @@
 ---
-- name: Ensure releases directory exists
+- name: Ensure domain directory exists
   file:
     path: "{{ releases_dir }}"
     state: directory
@@ -25,7 +25,7 @@
 
 - name: Copy storage
   copy:
-    src: storage
+    src: "{{ source_directory }}/api/storage"
     dest: "{{ persistent_dir }}/"
 
 - include_tasks: tasks/set_owner_and_group.yml
