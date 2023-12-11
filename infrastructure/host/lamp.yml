@@ -33,6 +33,7 @@
     - role: geerlingguy.php-versions
     - role: geerlingguy.php
     - role: geerlingguy.php-mysql
+    - role: geerlingguy.php-redis
     - role: geerlingguy.composer
     - role: geerlingguy.redis
     - role: geerlingguy.nodejs

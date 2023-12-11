@@ -27,7 +27,7 @@ services:
     ports:
       - "3030:3030"
     volumes:
-      - ./../../../server/client:/usr/app
+      - ./../../../server:/usr/app
     networks:
       - main
 

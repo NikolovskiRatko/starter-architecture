@@ -32,6 +32,7 @@ pipeline {
                   sh 'docker exec ${COMPOSE_PROJECT_NAME}_app composer install --optimize-autoloader --no-dev'
                   sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan key:generate'
                   sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan config:clear'
+                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan cache:clear'
                   sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan view:clear'
                   sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan route:clear'
                   sh 'docker exec ${COMPOSE_PROJECT_NAME}_app composer dump-autoload'
@@ -42,12 +43,12 @@ pipeline {
                   sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan migrate'
 
                   // Run the build commands for the Admin Panel Vuejs3 SPA
-                  sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd admin && npm install'"
-                  sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd admin && npm run build'"
+                  sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd client/admin && npm install'"
+                  sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd client/admin && npm run build'"
 
                   // Run the build commands for the Public Nuxt3 SSR
-                  sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd public && npm install'"
-                  sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd public && npm run build'"
+                  sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd client/public && npm install'"
+                  sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd client/public && npm run build'"
                 }
 
                 sh 'docker compose -f infrastructure/ci_cd/build/docker-compose.yml down'

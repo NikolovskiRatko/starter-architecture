@@ -8,20 +8,49 @@ apache_vhosts:
      serveralias: "www.{{ domain_name }}"
      documentroot: "/var/www/html/{{ domain_name }}/current/api/public"
      extra_parameters: |
-      ErrorLog ${APACHE_LOG_DIR}/{{ domain_name }}-error.log
-      CustomLog ${APACHE_LOG_DIR}/{{ domain_name }}-access.log combined
+       ProxyPass /index.php !
+       ProxyPass /api !
+       ProxyPass /storage !
+       ProxyPass /login !
+       ProxyPass /admin !
+       ProxyPass /js !
+       ProxyPass /fonts !
+       ProxyPass /images !
+       ProxyPass /css !
+       ProxyPass / http://localhost:3030/
+       ProxyPassReverse / http://localhost:3030/
 
-      RewriteEngine on
-      RewriteCond %{SERVER_NAME} =www.{{ domain_name }} [OR]
-      RewriteCond %{SERVER_NAME} ={{ domain_name }}
-      RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+       ErrorLog ${APACHE_LOG_DIR}/{{ domain_name }}-error.log
+       CustomLog ${APACHE_LOG_DIR}/{{ domain_name }}-access.log combined
+
+       RewriteEngine on
+       RewriteCond %{SERVER_NAME} =www.{{ domain_name }} [OR]
+       RewriteCond %{SERVER_NAME} ={{ domain_name }}
+       RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+
+apache_vhosts_extra_param: |
+  ProxyPass /index.php !
+  ProxyPass /api !
+  ProxyPass /storage !
+  ProxyPass /login !
+  ProxyPass /admin !
+  ProxyPass /js !
+  ProxyPass /fonts !
+  ProxyPass /images !
+  ProxyPass /css !
+  ProxyPass / http://localhost:3030/
+  ProxyPassReverse / http://localhost:3030/
+
+  ErrorLog ${APACHE_LOG_DIR}/{{ domain_name }}-error.log
+  CustomLog ${APACHE_LOG_DIR}/{{ domain_name }}-access.log combined
 
 apache_vhosts_ssl:
   - {
      servername: "{{ domain_name }}",
      documentroot: "/var/www/html/{{ domain_name }}/current/api/public",
      certificate_file: "/etc/letsencrypt/live/{{ domain_name }}/fullchain.pem",
-     certificate_key_file: "/etc/letsencrypt/live/{{ domain_name }}/privkey.pem"
+     certificate_key_file: "/etc/letsencrypt/live/{{ domain_name }}/privkey.pem",
+     extra_parameters: "{{apache_vhosts_extra_param}}"
   }
 apache_allow_override: "All"
 apache_options: "-Indexes +FollowSymLinks"

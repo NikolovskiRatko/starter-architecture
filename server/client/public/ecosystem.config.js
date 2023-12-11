@@ -4,7 +4,7 @@ module.exports = {
       name: 'dev',
       exec_mode: 'cluster',
       instances: '3',
-      cwd: '/var/www/html/starter/server/public/',
+      cwd: '/var/www/html/thestarter.net/current/client/public',
       script: './node_modules/nuxt/bin/nuxt.js',
       args: 'start --hostname localhost --port 3030',
       interpreter_args: '',
