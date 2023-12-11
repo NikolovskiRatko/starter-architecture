@@ -29,7 +29,39 @@
 
 - name: Ensure directory for website exists
   file:
-    path: "/var/www/html/{{ domain_name }}"
+    path: "{{domain_path}}"
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: '0700'
+
+- name: Ensure directory for new releases exists
+  file:
+    path: "{{releases_dir}}"
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: '0700'
+
+- name: Ensure directory for current release exists
+  file:
+    path: "{{current_dir}}"
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: '0700'
+
+- name: Ensure directory for persistent data exists
+  file:
+    path: "{{persistent_dir}}"
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: '0700'
+
+- name: Ensure directory for persistent storage of resources exists
+  file:
+    path: "{{persistent_dir}}/storage"
     state: directory
     owner: www-data
     group: www-data
@@ -38,7 +70,7 @@
 - name: Copy .env file
   copy:
     src: "sensitive/.env"
-    dest: "/var/www/html/{{ domain_name }}/.env"
+    dest: "{{ persistent_dir }}/.env"
     owner: www-data
     group: www-data
     mode: '0644'

@@ -19,7 +19,7 @@
             dir: "{{ new_release_dir }}"
         - include_tasks: tasks/check_that_folder_is_writable.yml
           vars:
-            dir: "{{ new_release_dir }}/api/bootstrap/cache"
+            dir: "{{ new_release_dir }}/server/api/bootstrap/cache"
         - include_tasks: tasks/link_storage.yml
         - include_tasks: tasks/link_env.yml
         - include_tasks: tasks/optimize_app.yml
