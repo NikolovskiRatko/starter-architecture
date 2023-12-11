@@ -29,3 +29,7 @@ migrate_rollback_command: php artisan migrate:rollback --force
 # Backup database before migration
 # spatie/laravel-backup should be installed in your project
 backup_db: false
+
+# Validate your .env file
+# melihovv/laravel-env-validator should be installed in your project
+validate_env: false
