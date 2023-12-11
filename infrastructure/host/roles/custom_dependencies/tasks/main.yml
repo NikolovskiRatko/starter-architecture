@@ -43,14 +43,6 @@
     group: www-data
     mode: '0700'
 
-- name: Ensure directory for current release exists
-  file:
-    path: "{{current_dir}}"
-    state: directory
-    owner: www-data
-    group: www-data
-    mode: '0700'
-
 - name: Ensure directory for persistent data exists
   file:
     path: "{{persistent_dir}}"

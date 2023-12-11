@@ -8,8 +8,5 @@ domain_path: "/var/www/html/{{ domain_name }}"
 # Where releases will be located
 releases_dir: "{{ domain_path }}/releases"
 
-# Where link to current release will be located
-current_dir: "{{ domain_path }}/current"
-
 # Where directory with persistent data will be located
 persistent_dir: "{{ domain_path }}/persistent"

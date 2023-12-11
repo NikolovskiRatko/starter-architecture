@@ -6,7 +6,7 @@ apache_ignore_missing_ssl_certificate: false
 apache_vhosts:
    - servername: "{{ domain_name }}"
      serveralias: "www.{{ domain_name }}"
-     documentroot: "/var/www/html/{{ domain_name }}/current/server/api/public"
+     documentroot: "/var/www/html/{{ domain_name }}/current/api/public"
      extra_parameters: |
       ErrorLog ${APACHE_LOG_DIR}/{{ domain_name }}-error.log
       CustomLog ${APACHE_LOG_DIR}/{{ domain_name }}-access.log combined
@@ -19,7 +19,7 @@ apache_vhosts:
 apache_vhosts_ssl:
   - {
      servername: "{{ domain_name }}",
-     documentroot: "/var/www/html/{{ domain_name }}/current/server/api/public",
+     documentroot: "/var/www/html/{{ domain_name }}/current/api/public",
      certificate_file: "/etc/letsencrypt/live/{{ domain_name }}/fullchain.pem",
      certificate_key_file: "/etc/letsencrypt/live/{{ domain_name }}/privkey.pem"
   }

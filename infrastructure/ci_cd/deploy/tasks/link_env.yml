@@ -2,12 +2,12 @@
 - name: Link .env file
   file:
     src: "{{ persistent_dir }}/.env"
-    dest: "{{ new_release_dir }}/server/api/.env"
+    dest: "{{ new_release_dir }}/api/.env"
     state: link
     force: true
 
 - name: php artisan config:env-validator
   shell: php artisan config:env-validator
   args:
-    chdir: "{{ new_release_dir }}/server/api"
+    chdir: "{{ new_release_dir }}/api"
   when: validate_env
