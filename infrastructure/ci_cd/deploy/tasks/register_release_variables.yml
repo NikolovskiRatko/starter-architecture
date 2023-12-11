@@ -5,8 +5,7 @@
 
 - name: Register release variables
   set_fact:
-    new_release_name: "{{ current_time.stdout }}"
-    new_release_dir: "{{ releases_dir }}/{{ current_time.stdout }}"
+    new_release_dir: "{{ releases_dir }}/{{ current_time }}"
 
 - name: Get all releases dir
   find:
