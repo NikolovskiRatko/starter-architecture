@@ -1,3 +1,3 @@
 ---
 - name: Set correct folders owner and group
-  command: find "{{ dir_to_chown }}" -exec chown "www-data:www-data" {} \;
+  command: find "{{ dir }}" -exec chown "www-data:www-data" {} \;
