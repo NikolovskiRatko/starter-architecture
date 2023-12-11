@@ -1,5 +1,5 @@
 ---
 - name: Mark new release
   copy:
-    content: "{{ new_release_name }}"
+    content: "{{ current_time }}"
     dest: "{{ new_release_dir }}/server/api/public/release-name.txt"
