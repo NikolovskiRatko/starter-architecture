@@ -21,10 +21,10 @@
             dir_to_check: "{{ new_release_dir }}/api/bootstrap/cache"
         - include_tasks: tasks/link_storage.yml
         - include_tasks: tasks/link_env.yml
+        - include_tasks: tasks/bless_new_release.yml
         - include_tasks: tasks/optimize_app.yml
         - include_tasks: tasks/migrate_db.yml
         - include_tasks: tasks/pm2_restart.yml
-        - include_tasks: tasks/bless_new_release.yml
         - include_tasks: tasks/leave_most_recent_releases.yml
       rescue:
         - include_tasks: tasks/rollback.yml

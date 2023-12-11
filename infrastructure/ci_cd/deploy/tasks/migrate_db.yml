@@ -2,12 +2,12 @@
 - name: Backup db
   shell: php artisan backup:run
   args:
-    chdir: "{{ new_release_dir }}/api"
+    chdir: "{{ current_dir }}/api"
   when: backup_db
 
 - name: Run migrations
   shell: "{{ migrate_command | default('php artisan migrate --force') }}"
   args:
-    chdir: "{{ new_release_dir }}/api"
+    chdir: "{{ current_dir }}/api"
   register: migrations_output
   when: migrate
