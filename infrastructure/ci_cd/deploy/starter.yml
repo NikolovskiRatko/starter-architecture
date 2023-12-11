@@ -10,7 +10,6 @@
         - include_tasks: tasks/register_release_variables.yml
         - include_tasks: tasks/create_new_release_dir.yml
         - include_tasks: tasks/copy_build.yml
-        - include_tasks: tasks/mark_release.yml
         - include_tasks: tasks/set_owner_and_group.yml
           vars:
             dir: "{{ new_release_dir }}"
