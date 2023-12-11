@@ -9,3 +9,4 @@
     src: "{{ persistent_dir }}/storage"
     dest: "{{ new_release_dir }}/server/api/public/storage"
     state: link
+    force: true

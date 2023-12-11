@@ -4,6 +4,7 @@
     src: "{{ persistent_dir }}/.env"
     dest: "{{ new_release_dir }}/server/api/.env"
     state: link
+    force: true
 
 - name: php artisan config:env-validator
   shell: php artisan config:env-validator
