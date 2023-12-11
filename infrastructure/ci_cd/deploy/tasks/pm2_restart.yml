@@ -1,10 +1,10 @@
 ---
 - name: pm2 stop
-  shell: pm2 stop ecosystem.config.js --only dev
+  shell: pm2 stop ecosystem.config.cjs --only dev
   args:
     chdir: "{{ new_release_dir }}/client/public"
 
 - name: pm2 start
-  shell: pm2 start ecosystem.config.js --only dev
+  shell: pm2 start ecosystem.config.cjs --only dev
   args:
     chdir: "{{ new_release_dir }}/client/public"
