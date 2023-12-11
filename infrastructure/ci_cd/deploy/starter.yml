@@ -12,13 +12,13 @@
         - include_tasks: tasks/copy_build.yml
         - include_tasks: tasks/set_owner_and_group.yml
           vars:
-            dir: "{{ new_release_dir }}"
+            dir_to_chown: "{{ new_release_dir }}"
         - include_tasks: tasks/set_correct_permissions.yml
           vars:
             dir: "{{ new_release_dir }}"
         - include_tasks: tasks/check_that_folder_is_writable.yml
           vars:
-            dir: "{{ new_release_dir }}/server/api/bootstrap/cache"
+            dir_to_check: "{{ new_release_dir }}/server/api/bootstrap/cache"
         - include_tasks: tasks/link_storage.yml
         - include_tasks: tasks/link_env.yml
         - include_tasks: tasks/optimize_app.yml
