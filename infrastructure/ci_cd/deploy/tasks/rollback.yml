@@ -5,10 +5,10 @@
     chdir: "{{ new_release_dir }}/server/api"
   when: migrate and migrations_output is defined and migrations_output.stdout.find('Nothing to migrate.') == -1
 
-- name: Remove new release
-  file:
-    path: "{{ new_release_dir }}"
-    state: absent
+#- name: Remove new release
+#  file:
+#    path: "{{ new_release_dir }}"
+#    state: absent
 
 - name: Restore latest successful release
   file:
