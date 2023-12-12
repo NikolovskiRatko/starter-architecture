@@ -11,6 +11,7 @@ apache_vhosts:
        ProxyPass /index.php !
        ProxyPass /api !
        ProxyPass /storage !
+       ProxyPass /build !
        ProxyPass /login !
        ProxyPass /admin !
        ProxyPass /js !
@@ -32,6 +33,7 @@ apache_vhosts_extra_param: |
   ProxyPass /index.php !
   ProxyPass /api !
   ProxyPass /storage !
+  ProxyPass /build !
   ProxyPass /login !
   ProxyPass /admin !
   ProxyPass /js !
