@@ -56,7 +56,9 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "@styles/vite-resources.scss";`,
+        additionalData: `
+          @import "@starter-core/dash-ui/src/assets/vite-resources.scss";
+        `,
       },
     },
   },

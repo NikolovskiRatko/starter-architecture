@@ -8,12 +8,12 @@
 @import "config/starter";
 
 // Bootstrap Variables
-@import "../../node_modules/bootstrap/scss/variables";
-@import "bootstrap/variables";
+@import "bootstrap/scss/variables";
+@import "./bootstrap/variables";
 
 @import "./layout/footer/config";
 @import "./layout/header/config";
 @import "./layout/aside/config";
 
 // Configs that are moved to Vue
-@import "../../src/components/Portlet/config";
+@import "../components/Portlet/config";

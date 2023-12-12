@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { PortletComponent } from "@/components";
 import {
+  PortletComponent,
   PortletBody,
   PortletHeadLabel,
   PortletHead,
-} from "@/components/Portlet/components";
+} from "@starter-core/dash-ui/src";
 import SkButton from "@/components/base/SkButton/SkButton.vue";
 import SkSection from "@/components/base/typography/SkSection/SkSection.vue";
 

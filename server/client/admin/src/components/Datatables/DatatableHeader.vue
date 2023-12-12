@@ -6,7 +6,7 @@ import {
   PortletHead,
   PortletHeadLabel,
   PortletHeadToolbar,
-} from "@/components/Portlet/components";
+} from "@starter-core/dash-ui/src";
 import { useAuth } from "@websanova/vue-auth/src/v3.js";
 import SkButton from "@/components/base/SkButton/SkButton.vue";
 
