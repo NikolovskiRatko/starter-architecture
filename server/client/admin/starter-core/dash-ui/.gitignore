@@ -5,4 +5,3 @@ dist-ssr
 *.local
 docs/.vuepress/.cache
 docs/.vuepress/.temp
-types
