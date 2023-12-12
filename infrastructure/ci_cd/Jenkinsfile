@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Prune Docker data') {
           steps {
-            sh 'docker system prune -a -f'
+//             sh 'docker system prune -a -f'
           }
         }
         stage('Build Laravel API') {
