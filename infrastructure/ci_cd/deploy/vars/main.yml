@@ -2,7 +2,7 @@
 source_directory: "/var/lib/jenkins/workspace/Starter_dev/server"
 
 # Domain of your site
-domain: thestarter.net
+domain: kromid.com
 
 # Where site will be located
 domain_path: "/var/www/html/{{ domain }}"
