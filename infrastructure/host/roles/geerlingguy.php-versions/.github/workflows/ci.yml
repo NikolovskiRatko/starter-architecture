@@ -41,31 +41,31 @@ jobs:
     strategy:
       matrix:
         include:
-          # Default PHP version (7.4).
-          - distro: centos8
+          # Default PHP version (8.1).
+          - distro: rockylinux8
             playbook: converge.yml
           - distro: centos7
             playbook: converge.yml
-          - distro: ubuntu1804
+          - distro: ubuntu2204
             playbook: converge.yml
           - distro: debian10
             playbook: converge.yml
 
           # PHP 8.0.
-          - distro: centos8
+          - distro: rockylinux8
             playbook: 8.0.yml
           - distro: ubuntu1804
             playbook: 8.0.yml
           - distro: debian10
             playbook: 8.0.yml
 
-          # PHP 7.3.
-          - distro: centos8
-            playbook: 7.3.yml
+          # PHP 7.4.
+          - distro: rockylinux8
+            playbook: 7.4.yml
           - distro: ubuntu1804
-            playbook: 7.3.yml
+            playbook: 7.4.yml
           - distro: debian10
-            playbook: 7.3.yml
+            playbook: 7.4.yml
 
     steps:
       - name: Check out the codebase.
@@ -79,7 +79,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install test dependencies.
-        run: pip3 install ansible molecule[docker] docker
+        run: pip3 install ansible molecule molecule-plugins[docker] docker
 
       - name: Run Molecule tests.
         run: molecule test

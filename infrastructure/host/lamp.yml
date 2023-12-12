@@ -15,7 +15,7 @@
 
   vars:
     - update_apt_cache: yes
-    - php_version: '8.1'
+    - php_version: '8.2'
     - domain_name: "{{ lookup('file', 'sensitive/domain_name') }}"
     - is_terraform_run: false
 
