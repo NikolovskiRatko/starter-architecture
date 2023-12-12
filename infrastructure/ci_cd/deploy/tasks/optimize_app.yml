@@ -2,29 +2,29 @@
 - name: php artisan clear-compiled
   shell: php artisan clear-compiled
   args:
-    chdir: "{{ current_dir }}/api"
+    chdir: "{{ new_release_dir }}/api"
 
 - name: php artisan optimize
   shell: php artisan optimize
   args:
-    chdir: "{{ current_dir }}/api"
+    chdir: "{{ new_release_dir }}/api"
 
 - name: php artisan config:clear
   shell: php artisan config:clear
   args:
-    chdir: "{{ current_dir }}/api"
+    chdir: "{{ new_release_dir }}/api"
 
 - name: php artisan cache:clear
   shell: php artisan cache:clear
   args:
-    chdir: "{{ current_dir }}/api"
+    chdir: "{{ new_release_dir }}/api"
 
 - name: php artisan view:clear
   shell: php artisan view:clear
   args:
-    chdir: "{{ current_dir }}/api"
+    chdir: "{{ new_release_dir }}/api"
 
 - name: php artisan config:cache
   shell: php artisan config:cache
   args:
-    chdir: "{{ current_dir }}/api"
+    chdir: "{{ new_release_dir }}/api"

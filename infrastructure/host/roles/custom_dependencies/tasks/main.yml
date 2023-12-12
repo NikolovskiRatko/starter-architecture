@@ -53,6 +53,22 @@
 
 - name: Ensure directory for persistent storage of resources exists
   file:
+    path: "{{persistent_dir}}/resources"
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: '0700'
+
+- name: Ensure directory for persistent storage of resources exists
+  file:
+    path: "{{persistent_dir}}/resources/storage"
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: '0700'
+
+- name: Ensure directory for persistent storage of logs
+  file:
     path: "{{persistent_dir}}/storage"
     state: directory
     owner: www-data
