@@ -11,7 +11,7 @@ import {
   PortletHeadLabel,
   PortletHead,
   PortletHeadToolbar,
-} from "@/components/Portlet";
+} from "@starter-core/dash-ui/src";
 import {
   FormDropdown,
   FormInputRadio,

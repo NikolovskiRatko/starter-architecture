@@ -12,6 +12,7 @@
     "format": "prettier .  --write"
   },
   "dependencies": {
+    "@starter-core/dash-ui": "1.0.1",
     "@websanova/vue-auth": "^4.2.1",
     "axios": "^1.4.0",
     "eslint-config-prettier": "^9.1.0",
@@ -28,7 +29,6 @@
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/eslint-config-prettier": "^8.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",
-    "bootstrap": "^5.3.2",
     "eslint": "^8.55.0",
     "eslint-plugin-vue": "^9.19.2",
     "laravel-vite-plugin": "^0.7.8",
@@ -40,5 +40,8 @@
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-static-copy": "^0.17.0",
     "vue-tsc": "^1.0.11"
-  }
+  },
+  "workspaces": [
+    "./starter-core/dash-ui"
+  ]
 }

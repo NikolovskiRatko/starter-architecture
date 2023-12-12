@@ -1,12 +1,12 @@
 <script setup>
-import { PortletComponent } from "@/components";
 import {
+  PortletComponent,
   PortletFoot,
   PortletBody,
   PortletHeadLabel,
   PortletHead,
   PortletHeadToolbar,
-} from "@/components/Portlet/components";
+} from "@starter-core/dash-ui/src";
 const loremIpsum =
   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.";
 const shortLoremIpsum =

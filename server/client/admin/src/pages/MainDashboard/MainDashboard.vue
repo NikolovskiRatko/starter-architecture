@@ -2,6 +2,7 @@
 import { ref, onMounted } from "vue";
 // import { get } from "@/services/HTTP";
 import { useRootStore } from "@/store/root";
+import { ComponentA } from "@starter-core/dash-ui/src";
 
 // const categories = ref([]);
 const isLoading = ref(false);
@@ -25,6 +26,7 @@ onMounted(() => {
 <template>
   <div class="row">
     <div class="col-md-6" />
+    <ComponentA msg="Dimitar" />
     <div class="col-md-6" />
   </div>
 </template>
