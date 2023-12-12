@@ -70,6 +70,4 @@ apache_mods_enabled:
   - expires.load
   - proxy_fcgi.load
   - proxy_http.load
-  - wsgi.conf
-  - wsgi.load
 apache_mods_disabled: []

@@ -8,9 +8,6 @@ apache_conf_path: /etc/apache2
 __apache_packages:
   - apache2
   - apache2-utils
-  - libpcre3-dev
-  - libapache2-mod-php8.2
-  - libapache2-mod-wsgi-py3
 
 apache_ports_configuration_items:
   - regexp: "^Listen "
