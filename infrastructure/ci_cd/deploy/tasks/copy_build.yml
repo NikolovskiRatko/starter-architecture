@@ -6,3 +6,4 @@
     recursive: yes
     rsync_opts:
       - "--exclude=.git"
+      - "--exclude=storage"
