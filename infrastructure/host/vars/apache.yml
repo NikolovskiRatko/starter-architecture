@@ -49,6 +49,7 @@ apache_vhosts_extra_param: |
 apache_vhosts_ssl:
   - {
      servername: "{{ domain_name }}",
+     serveralias: "www.{{ domain_name }}",
      documentroot: "/var/www/html/{{ domain_name }}/current/api/public",
      certificate_file: "/etc/letsencrypt/live/{{ domain_name }}/fullchain.pem",
      certificate_key_file: "/etc/letsencrypt/live/{{ domain_name }}/privkey.pem",
