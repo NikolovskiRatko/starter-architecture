@@ -4,7 +4,7 @@
             
         </div>
         <div class="container-fluid jumbotron_wrapper">
-            <h1 class="offset-md-2">About Us Page 1.1</h1>
+            <h1 class="offset-md-2">About Us Page 1.2</h1>
         </div>
     </div>
 </template>
