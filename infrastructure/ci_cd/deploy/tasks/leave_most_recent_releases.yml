@@ -1,3 +1,7 @@
 ---
 - name: Remove all but the 10 most recent
   shell: ls -dr {{ releases_dir }}/* | tail -n +11 | xargs -d "\n" rm -rf
+
+- name: Intentionally fail a shell command
+    shell: "this_is_an_invalid_command"
+    ignore_errors: yes  # Ignore errors to prevent the playbook from stopping
