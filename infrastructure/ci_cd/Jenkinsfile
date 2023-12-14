@@ -6,6 +6,11 @@ pipeline {
         COMPOSE_PROJECT_NAME = 'starter'
     }
     stages {
+        stage('Prune Docker data') {
+          steps {
+            sh 'docker system prune -a -f'
+          }
+        }
         stage('Build Laravel API') {
             environment {
                 MYSQL_DATABASE = 'starter'
