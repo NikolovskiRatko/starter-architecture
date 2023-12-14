@@ -26,5 +26,17 @@
       when: is_terraform_run | bool
 
   roles:
+    - role: geerlingguy.firewall
+    - role: geerlingguy.mysql
+    - role: custom_dependencies
+    - role: geerlingguy.php-versions
+    - role: geerlingguy.php
+    - role: geerlingguy.php-mysql
+    - role: geerlingguy.php-redis
+    - role: geerlingguy.apache
+    - role: geerlingguy.composer
+    - role: geerlingguy.redis
+    - role: geerlingguy.nodejs
+    - role: geerlingguy.certbot
     - role: geerlingguy.apache
 #    - role: geerlingguy.supervisor

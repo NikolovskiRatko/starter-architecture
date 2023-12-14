@@ -75,7 +75,14 @@ apache_packages:
   - libpcre3-dev
   - libapache2-mod-wsgi-py3
   - libapache2-mod-php8.2
+apache_mods_disabled:
+  - mpm_event.conf
+  - mpm_event.load
 apache_mods_enabled:
+  - mpm_prefork.conf
+  - mpm_prefork.load
+  - php8.2.conf
+  - php8.2.load
   - rewrite.load
   - headers.load
   - proxy.load
@@ -91,4 +98,3 @@ apache_mods_enabled:
   - proxy_http.load
   - wsgi.conf
   - wsgi.load
-apache_mods_disabled: []
