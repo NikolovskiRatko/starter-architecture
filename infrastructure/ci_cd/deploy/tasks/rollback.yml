@@ -17,3 +17,9 @@
     state: link
     force: true
   when: latest_release is defined
+
+- name: Delete PM2 Processes
+  include_tasks: pm2_delete.yml
+
+- name: Start PM2 Processes
+  include_tasks: pm2_start.yml

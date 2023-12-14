@@ -1,0 +1,5 @@
+---
+- name: pm2 delete
+  shell: /usr/local/lib/npm/bin/pm2 delete dev
+  args:
+    chdir: "{{ current_dir }}/client/public"
