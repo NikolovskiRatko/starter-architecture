@@ -29,11 +29,6 @@
   args:
     chdir: "{{ new_release_dir }}/api"
 
-- name: composer dump-autoload
-  shell: composer dump-autoload
-  args:
-    chdir: "{{ new_release_dir }}/api"
-
 - name: php artisan config:cache
   shell: php artisan config:cache
   args:
