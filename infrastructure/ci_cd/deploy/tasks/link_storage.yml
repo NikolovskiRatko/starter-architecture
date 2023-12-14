@@ -4,21 +4,9 @@
     path: "{{ new_release_dir }}/api/public/storage"
     state: absent
 
-- name: Remove new release storage dir
-  file:
-    path: "{{ new_release_dir }}/api/storage"
-    state: absent
-
 - name: Link new release storage directory to persistent/storage
   file:
     src: "{{ persistent_dir }}/resources/storage"
     dest: "{{ new_release_dir }}/api/public/storage"
-    state: link
-    force: true
-
-- name: Link new release storage directory to persistent/resources/storage
-  file:
-    src: "{{ persistent_dir }}/storage"
-    dest: "{{ new_release_dir }}/api/storage"
     state: link
     force: true

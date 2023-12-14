@@ -9,6 +9,7 @@ apache_vhosts:
      documentroot: "/var/www/html/{{ domain_name }}/current/api/public"
      extra_parameters: |
        ProxyPass /index.php !
+       ProxyPass /robots.txt !
        ProxyPass /api !
        ProxyPass /storage !
        ProxyPass /build !
@@ -29,8 +30,11 @@ apache_vhosts:
        RewriteCond %{SERVER_NAME} ={{ domain_name }}
        RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
 
+       AllowEncodedSlashes NoDecode
+
 apache_vhosts_extra_param: |
   ProxyPass /index.php !
+  ProxyPass /robots.txt !
   ProxyPass /api !
   ProxyPass /storage !
   ProxyPass /build !
@@ -46,6 +50,14 @@ apache_vhosts_extra_param: |
   ErrorLog ${APACHE_LOG_DIR}/{{ domain_name }}-error.log
   CustomLog ${APACHE_LOG_DIR}/{{ domain_name }}-access.log combined
 
+  AllowEncodedSlashes NoDecode
+
+  <Proxy *>
+      Order deny,allow
+      Allow from all
+  </Proxy>
+
+
 apache_vhosts_ssl:
   - {
      servername: "{{ domain_name }}",
@@ -56,7 +68,7 @@ apache_vhosts_ssl:
      extra_parameters: "{{apache_vhosts_extra_param}}"
   }
 apache_allow_override: "All"
-apache_options: "-Indexes +FollowSymLinks"
+apache_options: "Indexes FollowSymLinks MultiViews"
 apache_packages:
   - apache2
   - apache2-utils
