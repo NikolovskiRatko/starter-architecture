@@ -46,7 +46,7 @@ const submitForm = async () => {
 <template>
   <div class="auth-login">
     <div class="auth-base__head">
-      <h3 class="auth-base__title">Login 1.6</h3>
+      <h3 class="auth-base__title">Login 1.0</h3>
     </div>
     <form class="kt-form auth-base__form" @submit.prevent="submitForm">
       <div class="input-group">
