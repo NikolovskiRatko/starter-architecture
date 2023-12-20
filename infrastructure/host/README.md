@@ -18,7 +18,7 @@ Installation documentation here ( https://docs.ansible.com/ansible/latest/instal
 also ( https://www.cyberciti.biz/faq/how-to-install-and-configure-latest-version-of-ansible-on-ubuntu-linux/ )
 
 ### 2. Ansible Host
-   An Ansible host is any machine that your Ansible control node is configured to automate. The Ansible Host is essentially a remote Ubuntu 20.04 server that has the Ansible control node’s SSH public key added to the authorized_keys of a system user. This user can be either root or a regular user with sudo privileges.
+   An Ansible host is any machine that your Ansible control node is configured to automate. The Ansible Host is essentially a remote Ubuntu 22.04 server that has the Ansible control node’s SSH public key added to the authorized_keys of a system user. This user can be either root or a regular user with sudo privileges.
 
 ####    1. Edit the inventory file and set the ip address of your Ansible Host.
 
@@ -37,7 +37,7 @@ ansible-playbook -i inventory test.yml
 
 ## Usage
 
-To actually provision a LAMP environment, run the following playbook provided in the Starter Kit ansible folder:
+To actually provision a LAMP environment, run the following playbook provided in the Starter Kit **infrastructure/host** folder:
 ```shell
 ansible-playbook -i inventory starter.yml
 ```

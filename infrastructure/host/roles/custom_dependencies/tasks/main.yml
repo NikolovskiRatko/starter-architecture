@@ -53,7 +53,6 @@
   with_items:
     - "{{persistent_dir}}/resources/storage"
     - "{{persistent_dir}}/storage/app"
-    - "{{persistent_dir}}/storage/app"
     - "{{persistent_dir}}/storage/framework"
     - "{{persistent_dir}}/storage/framework/cache"
     - "{{persistent_dir}}/storage/framework/sessions"
