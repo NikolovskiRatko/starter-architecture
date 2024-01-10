@@ -5,7 +5,8 @@
 
 BRANCH="dev"
 ROOT_DIR=$(cat "$(dirname "$0")/deploy/sensitive/root_dir")
-LOG_FILE="$ROOT_DIR/starter-architecture/basic_infrastructure/ci_cd/logs/deploy.log"
+TIMESTAMP=$(date +"%Y%m%d%H%M%S")  # Generate a timestamp
+LOG_FILE="$ROOT_DIR/starter-architecture/basic_infrastructure/ci_cd/logs/deploy_$TIMESTAMP.log"
 WEBSITE_APP_ROOT="$ROOT_DIR/starter-architecture/server"
 DEV_ENV_ROOT="$ROOT_DIR/starter-architecture/infrastructure/dev_env"
 DEPLOY_ROOT="$ROOT_DIR/starter-architecture/basic_infrastructure/ci_cd/deploy"
