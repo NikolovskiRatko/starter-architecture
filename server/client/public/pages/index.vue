@@ -4,7 +4,7 @@
             
         </div>
         <div class="container-fluid">
-            <h1 class="offset-md-2">Home Page 1.2</h1>
+            <h1 class="offset-md-2">Home Page 1.3</h1>
         </div>
     </div>
 </template>
