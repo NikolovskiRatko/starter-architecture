@@ -2,7 +2,7 @@
 starter ansible_host=${starter_ip} ansible_user=root
 
 [all:vars]
-private_key_file='/var/lib/jenkins/.ssh/id_rsa'
+private_key_file='~/.ssh/id_rsa'
 ansible_python_interpreter=/usr/bin/python3
 ansible_connection=ssh
 ansible_become=yes
