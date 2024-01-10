@@ -1,0 +1,76 @@
+{# Set up VirtualHosts #}
+{% for vhost in apache_vhosts %}
+  <VirtualHost {{ apache_listen_ip }}:{{ apache_listen_port }}>
+    ServerName {{ vhost.servername }}
+    {% if vhost.serveralias is defined %}
+      ServerAlias {{ vhost.serveralias }}
+    {% endif %}
+    {% if vhost.documentroot is defined %}
+      DocumentRoot {{ vhost.documentroot }}
+    {% endif %}
+
+    {% if vhost.serveradmin is defined %}
+      ServerAdmin {{ vhost.serveradmin }}
+    {% endif %}
+
+    {% if vhost.extra_parameters is defined %}
+      {{ vhost.extra_parameters }}
+    {% endif %}
+  </VirtualHost>
+
+{% endfor %}
+
+{# Set up SSL VirtualHosts #}
+{% for vhost in apache_vhosts_ssl %}
+  {% if apache_ignore_missing_ssl_certificate or apache_ssl_certificates.results[loop.index0].stat.exists %}
+    <IfModule mod_ssl.c>
+      <VirtualHost {{ apache_listen_ip }}:{{ apache_listen_port_ssl }}>
+          ServerName {{ vhost.servername }}
+        {% if vhost.serveralias is defined %}
+          ServerAlias {{ vhost.serveralias }}
+        {% endif %}
+        {% if vhost.documentroot is defined %}
+          DocumentRoot {{ vhost.documentroot }}
+        {% endif %}
+
+        SSLProxyEngine on
+        SSLProxyVerify none
+        SSLProxyCheckPeerCN off
+        SSLProxyCheckPeerName off
+        SSLProxyCheckPeerExpire off
+
+        SSLCertificateFile {{ vhost.certificate_file }}
+        SSLCertificateKeyFile {{ vhost.certificate_key_file }}
+
+        {% if vhost.certificate_chain_file is defined %}
+          SSLCertificateChainFile {{ vhost.certificate_chain_file }}
+        {% endif %}
+
+        {% if vhost.serveradmin is defined %}
+          ServerAdmin {{ vhost.serveradmin }}
+        {% endif %}
+
+        {% if vhost.extra_parameters is defined %}
+          {{ vhost.extra_parameters }}
+        {% endif %}
+      </VirtualHost>
+    </IfModule>
+
+  {% endif %}
+{% endfor %}
+
+{% for vhost in apache_vhosts %}
+  {% if vhost.documentroot is defined %}
+    <Directory "{{ vhost.documentroot }}">
+      AllowOverride {{ vhost.allow_override | default(apache_allow_override) }}
+      Options {{ vhost.options | default(apache_options) }}
+      {% if apache_vhosts_version == "2.2" %}
+        Order allow,deny
+        Allow from all
+      {% else %}
+      WSGIPassAuthorization On
+
+      {% endif %}
+    </Directory>
+  {% endif %}
+{% endfor %}

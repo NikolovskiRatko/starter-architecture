@@ -1,0 +1,7 @@
+---
+- name: Create new release directory
+  file:
+    path: "{{ new_release_dir }}"
+    state: directory
+    owner: www-data
+    group: www-data

@@ -1,0 +1,5 @@
+---
+- name: pm2 start
+  shell: /usr/local/lib/npm/bin/pm2 start ecosystem.config.cjs --only dev
+  args:
+    chdir: "{{ current_dir }}/client/public"

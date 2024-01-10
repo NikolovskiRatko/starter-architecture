@@ -1,0 +1,3 @@
+---
+nodejs_version: "18.x"
+nodejs_npm_global_packages: ['pm2']

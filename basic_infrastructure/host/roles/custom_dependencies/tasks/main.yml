@@ -1,0 +1,68 @@
+---
+- name: "Install other dependencies."
+  apt: "name={{ item }} state=present"
+  with_items:
+    - git
+    - curl
+    - unzip
+    - sendmail
+    - acl
+    - moreutils
+
+- name: "ensure SSH key is generated"
+  command: ssh-keygen -t rsa -f /root/.ssh/id_rsa -N ''
+  args:
+    creates: /root/.ssh/id_rsa
+
+# Set some settings in ~/.gitconfig
+- name: Setup git name
+  git_config:
+    name: user.name
+    scope: global
+    value: "{{git_username}}"
+
+- name: Setup git user email
+  git_config:
+    name: user.email
+    scope: global
+    value: "{{git_email}}"
+
+- name: Ensure directory for website exists
+  file:
+    path: "{{domain_path}}"
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: '0700'
+
+- name: Ensure directory for new releases exists
+  file:
+    path: "{{releases_dir}}"
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: '0700'
+
+- name: Ensure storage subdirectories exist
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: '0755'
+  with_items:
+    - "{{persistent_dir}}/resources/storage"
+    - "{{persistent_dir}}/storage/app"
+    - "{{persistent_dir}}/storage/framework"
+    - "{{persistent_dir}}/storage/framework/cache"
+    - "{{persistent_dir}}/storage/framework/sessions"
+    - "{{persistent_dir}}/storage/framework/views"
+    - "{{persistent_dir}}/storage/logs"
+
+- name: Copy .env file
+  copy:
+    src: "sensitive/.env"
+    dest: "{{ persistent_dir }}/.env"
+    owner: www-data
+    group: www-data
+    mode: '0644'

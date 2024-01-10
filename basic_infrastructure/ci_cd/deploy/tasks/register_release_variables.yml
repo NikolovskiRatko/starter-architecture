@@ -1,0 +1,19 @@
+---
+- name: Get current build number
+  set_fact:
+    current_time: "{{ lookup('pipe', 'date +%Y%m%d%H%M') }}"
+
+- name: Register release variables
+  set_fact:
+    new_release_dir: "{{ releases_dir }}/{{ current_time }}"
+
+- name: Get all releases dir
+  find:
+    paths: "{{ releases_dir }}"
+    file_type: directory
+  register: found_releases
+
+- name: Register latest release
+  set_fact:
+    latest_release: "{{ found_releases.files | sort(attribute='path',reverse=true) | first }}"
+  when: found_releases.examined|int > 0

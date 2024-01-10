@@ -1,0 +1,8 @@
+---
+- name: Copy website content to versioned directory
+  synchronize:
+    src: "{{ source_directory }}/"
+    dest: "{{ new_release_dir }}/"
+    recursive: yes
+    rsync_opts:
+      - "--exclude=.git"

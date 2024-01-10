@@ -1,0 +1,8 @@
+---
+- include_tasks: tasks/set_owner_and_group.yml
+  vars:
+    dir_to_chown: "{{ persistent_dir }}/storage"
+
+- include_tasks: tasks/check_that_folder_is_writable.yml
+  vars:
+    dir_to_check: "{{ persistent_dir }}/storage"

@@ -1,0 +1,42 @@
+---
+- hosts: web
+  remote_user: root
+  gather_facts: true
+
+  vars_files:
+    - vars/mysql.yml
+    - vars/apache.yml
+    - vars/php.yml
+    - vars/firewall.yml
+    - vars/nodejs.yml
+    - vars/certbot.yml
+    - vars/composer.yml
+    - vars/supervisor.yml
+
+  vars:
+    - update_apt_cache: yes
+    - php_version: '8.2'
+    - domain_name: "{{ lookup('file', 'sensitive/domain_name') }}"
+    - is_terraform_run: false
+
+  pre_tasks:
+    - name: Wait 5 minutes for APT to complete on newly created instances
+      ansible.builtin.pause:
+        minutes: 5
+      when: is_terraform_run | bool
+
+  roles:
+    - role: geerlingguy.firewall
+    - role: geerlingguy.mysql
+    - role: custom_dependencies
+    - role: geerlingguy.php-versions
+    - role: geerlingguy.php
+    - role: geerlingguy.php-mysql
+    - role: geerlingguy.php-redis
+    - role: geerlingguy.apache
+    - role: geerlingguy.composer
+    - role: geerlingguy.redis
+    - role: geerlingguy.nodejs
+    - role: geerlingguy.certbot
+    - role: geerlingguy.apache
+#    - role: geerlingguy.supervisor

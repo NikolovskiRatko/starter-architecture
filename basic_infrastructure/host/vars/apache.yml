@@ -1,0 +1,100 @@
+---
+apache_create_vhosts: true
+apache_vhosts_filename: "{{ domain_name }}.conf"
+apache_vhosts_template: "vhosts.conf.j2"
+apache_ignore_missing_ssl_certificate: false
+apache_vhosts:
+   - servername: "{{ domain_name }}"
+     serveralias: "www.{{ domain_name }}"
+     documentroot: "/var/www/html/{{ domain_name }}/current/api/public"
+     extra_parameters: |
+       ProxyPass /index.php !
+       ProxyPass /robots.txt !
+       ProxyPass /api !
+       ProxyPass /storage !
+       ProxyPass /build !
+       ProxyPass /login !
+       ProxyPass /admin !
+       ProxyPass /js !
+       ProxyPass /fonts !
+       ProxyPass /images !
+       ProxyPass /css !
+       ProxyPass / http://localhost:3030/
+       ProxyPassReverse / http://localhost:3030/
+
+       ErrorLog ${APACHE_LOG_DIR}/{{ domain_name }}-error.log
+       CustomLog ${APACHE_LOG_DIR}/{{ domain_name }}-access.log combined
+
+       RewriteEngine on
+       RewriteCond %{SERVER_NAME} =www.{{ domain_name }} [OR]
+       RewriteCond %{SERVER_NAME} ={{ domain_name }}
+       RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+
+       AllowEncodedSlashes NoDecode
+
+apache_vhosts_extra_param: |
+  ProxyPass /index.php !
+  ProxyPass /robots.txt !
+  ProxyPass /api !
+  ProxyPass /storage !
+  ProxyPass /build !
+  ProxyPass /login !
+  ProxyPass /admin !
+  ProxyPass /js !
+  ProxyPass /fonts !
+  ProxyPass /images !
+  ProxyPass /css !
+  ProxyPass / http://localhost:3030/
+  ProxyPassReverse / http://localhost:3030/
+
+  ErrorLog ${APACHE_LOG_DIR}/{{ domain_name }}-error.log
+  CustomLog ${APACHE_LOG_DIR}/{{ domain_name }}-access.log combined
+
+  AllowEncodedSlashes NoDecode
+
+  <Proxy *>
+      Order deny,allow
+      Allow from all
+  </Proxy>
+
+
+apache_vhosts_ssl:
+  - {
+     servername: "{{ domain_name }}",
+     serveralias: "www.{{ domain_name }}",
+     documentroot: "/var/www/html/{{ domain_name }}/current/api/public",
+     certificate_file: "/etc/letsencrypt/live/{{ domain_name }}/fullchain.pem",
+     certificate_key_file: "/etc/letsencrypt/live/{{ domain_name }}/privkey.pem",
+     extra_parameters: "{{apache_vhosts_extra_param}}"
+  }
+apache_allow_override: "All"
+apache_options: "Indexes FollowSymLinks MultiViews"
+apache_packages:
+  - apache2
+  - apache2-utils
+  - libpcre3-dev
+  - libapache2-mod-wsgi-py3
+  - libapache2-mod-php8.2
+apache_mods_disabled:
+  - mpm_event.conf
+  - mpm_event.load
+apache_mods_enabled:
+  - mpm_prefork.conf
+  - mpm_prefork.load
+  - php8.2.conf
+  - php8.2.load
+  - rewrite.load
+  - headers.load
+  - proxy.load
+  - proxy.conf
+  - socache_shmcb.load
+  - http2.conf
+  - http2.load
+  - ssl.conf
+  - ssl.load
+  - rewrite.load
+  - expires.load
+  - proxy_fcgi.load
+  - proxy_http.load
+  - wsgi.conf
+  - wsgi.load

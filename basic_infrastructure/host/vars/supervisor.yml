@@ -1,0 +1,53 @@
+---
+# Install a specific version of Supervisor by setting it here (e.g. '3.3.1').
+supervisor_version: '4.2.4'
+
+# Choose whether to use an init script or systemd unit configuration to start
+# Supervisor when it's installed and/or after a system boot.
+supervisor_started: true
+supervisor_enabled: true
+
+supervisor_config_path: /etc/supervisor
+
+# A list of `program`s Supervisor will control.
+supervisor_programs:
+ - name: 'starter-queue'
+   command: "/usr/bin/php -d memory_limit=1024M /var/www/html/{{ domain_name }}/api/artisan queue:work redis --tries=3"
+   state: present
+   configuration: |
+     process_name=%(program_name)s_%(process_num)02d
+     autostart=true
+     autorestart=true
+     user=root
+     numprocs=6
+     redirect_stderr=true
+     stderr_logfile=/var/www/html/{{ domain_name }}/api/storage/logs/media_library_error.log
+     stdout_logfile=/var/www/html/{{ domain_name }}/api/storage/logs/media_library.log
+ - name: 'pm2'
+   command: /usr/bin/node /usr/local/lib/npm/bin/pm2 resurrect
+   state: present
+   configuration: |
+     process_name=%(program_name)s_%(process_num)02d
+     startsecs=0
+     startretries=1
+     autostart=true
+     autorestart=false
+     numprocs=1
+     redirect_stderr=true
+     stderr_logfile=/root/.pm2/pm2_supervisor_error.log
+     stdout_logfile=/root/.pm2/pm2_supervisor.log
+
+supervisor_nodaemon: false
+
+supervisor_log_dir: /var/log/supervisor
+
+supervisor_user: root
+supervisor_password: "{{ lookup('file', 'sensitive/supervisor_password') }}"
+
+supervisor_unix_http_server_enable: true
+supervisor_unix_http_server_socket_path: /var/run/supervisor.sock
+supervisor_unix_http_server_password_protect: true
+
+supervisor_inet_http_server_enable: false
+supervisor_inet_http_server_port: '*:9001'
+supervisor_inet_http_server_password_protect: true

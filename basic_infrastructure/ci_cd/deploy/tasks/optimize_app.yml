@@ -1,0 +1,40 @@
+---
+- name: php artisan clear-compiled
+  shell: php artisan clear-compiled
+  args:
+    chdir: "{{ new_release_dir }}/api"
+
+- name: php artisan optimize
+  shell: php artisan optimize
+  args:
+    chdir: "{{ new_release_dir }}/api"
+
+- name: php artisan config:clear
+  shell: php artisan config:clear
+  args:
+    chdir: "{{ new_release_dir }}/api"
+
+- name: php artisan cache:clear
+  shell: php artisan cache:clear
+  args:
+    chdir: "{{ new_release_dir }}/api"
+
+- name: php artisan view:clear
+  shell: php artisan view:clear
+  args:
+    chdir: "{{ new_release_dir }}/api"
+
+- name: php artisan route:clear
+  shell: php artisan route:clear
+  args:
+    chdir: "{{ new_release_dir }}/api"
+
+- name: php artisan config:cache
+  shell: php artisan config:cache
+  args:
+    chdir: "{{ new_release_dir }}/api"
+
+- name: php artisan route:cache
+  shell: php artisan route:cache
+  args:
+    chdir: "{{ new_release_dir }}/api"
