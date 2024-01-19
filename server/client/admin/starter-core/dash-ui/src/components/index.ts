@@ -1,4 +1,19 @@
-import ComponentA from "./ComponentA.vue";
+import ContentLoader from "./ContentLoader/ContentLoader.vue";
+import {
+  PortletComponent,
+  PortletHead,
+  PortletBody,
+  PortletHeadLabel,
+  PortletHeadToolbar,
+  PortletFoot,
+} from "./Portlet/index";
 
-export * from "./Portlet";
-export { ComponentA };
+export {
+  PortletComponent,
+  PortletHead,
+  PortletBody,
+  PortletHeadLabel,
+  PortletHeadToolbar,
+  PortletFoot,
+  ContentLoader,
+};

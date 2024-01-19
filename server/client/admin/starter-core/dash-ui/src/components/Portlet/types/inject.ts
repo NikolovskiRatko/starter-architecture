@@ -1,6 +1,8 @@
 import type { InjectionKey, ComputedRef } from "vue";
 
 export const portletIsLoadingKey = Symbol() as InjectionKey<
-  ComputedRef<boolean>
+    ComputedRef<boolean>
 >;
-export const portletThemeKey = Symbol() as InjectionKey<ComponentThemes>;
+export const portletThemeKey = Symbol() as InjectionKey<
+    DashUIComponentThemes | undefined
+>;

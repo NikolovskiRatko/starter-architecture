@@ -2,7 +2,6 @@
 import { ref, onMounted } from "vue";
 // import { get } from "@/services/HTTP";
 import { useRootStore } from "@/store/root";
-import { ComponentA } from "@starter-core/dash-ui/src";
 
 // const categories = ref([]);
 const isLoading = ref(false);
@@ -25,9 +24,19 @@ onMounted(() => {
 </script>
 <template>
   <div class="row">
-    <div class="col-md-6" />
-    <ComponentA msg="Dimitar" />
-    <div class="col-md-6" />
+    <div class="col-md-4">
+      <PortletComponent>
+        <PortletHead>
+          <PortletHeadLabel>
+            Content loader
+          </PortletHeadLabel>
+        </PortletHead>
+        <PortletBody>
+          <ContentLoader />
+        </PortletBody>
+      </PortletComponent>
+    </div>
+    <div class="col-md-8" />
   </div>
 </template>
 

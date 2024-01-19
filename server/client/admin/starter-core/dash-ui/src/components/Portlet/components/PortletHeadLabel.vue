@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { inject } from "vue";
-import { briefcaseIcon } from "@/data/navMenu";
+import { briefcaseIcon } from "../constants/svg";
 import { portletThemeKey } from "../types";
 
 import "./PortletHeadLabel.scss";

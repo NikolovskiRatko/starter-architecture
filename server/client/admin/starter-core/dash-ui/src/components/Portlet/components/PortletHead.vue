@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { PropType, inject } from "vue";
-import { PortletHeadSizes } from "@/components/Portlet/types/components";
-import { layoutConfigKey } from "@/layouts/Admin/types/Admin";
-import { portletThemeKey } from "../types";
+import { portletThemeKey, PortletHeadSizes } from "../types";
 
 import "./PortletHead.scss";
 
@@ -20,7 +18,6 @@ const headClassed = {
 const isUnpdaddedPortlet = inject("isUnpadded");
 const theme = inject(portletThemeKey);
 const isSticky = inject("hasStickyHeader");
-const layoutConfig = inject(layoutConfigKey);
 </script>
 
 <template>
@@ -32,7 +29,7 @@ const layoutConfig = inject(layoutConfigKey);
         'kt-portlet__head--noborder': headClassed.hasNoBorder,
         'kt-portlet__head--fit': isUnpdaddedPortlet,
         'kt-portlet__head--sticky': isSticky,
-        'kt-portlet__head--main-header-fixed': layoutConfig.hasFixedHeader,
+        'kt-portlet__head--main-header-fixed': true, //TODO: Pass this through a context or something
         [`kt-portlet__head--theme-${theme}`]: theme,
       },
     ]"

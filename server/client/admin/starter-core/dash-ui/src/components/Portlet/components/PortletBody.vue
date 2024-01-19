@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { inject, PropType } from "vue";
-import { PortletBodyAlignment } from "@/components/Portlet/types";
-import ContentLoader from "@/components/ContentLoader/ContentLoader.vue";
-import { portletThemeKey, portletIsLoadingKey } from "../types";
+import ContentLoader from "../../ContentLoader/ContentLoader.vue";
+import {
+  portletThemeKey,
+  portletIsLoadingKey,
+  PortletBodyAlignment,
+} from "../types";
 
 import "./PortletBody.scss";
 

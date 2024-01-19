@@ -4,13 +4,6 @@ import { cloneDeep } from "lodash";
 import { useRoute } from "vue-router";
 import { useForm } from "@/composables";
 import {
-  PortletComponent,
-  PortletBody,
-  PortletHeadLabel,
-  PortletHead,
-  PortletHeadToolbar,
-} from "@starter-core/dash-ui/src";
-import {
   FormDropdown,
   FormInputRadio,
   FormInput,

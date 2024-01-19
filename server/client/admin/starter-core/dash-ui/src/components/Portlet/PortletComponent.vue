@@ -12,7 +12,7 @@ const props = defineProps({
     default: false,
   },
   theme: {
-    type: String as PropType<ComponentThemes>,
+    type: String as PropType<DashUIComponentThemes>,
     required: false,
   },
   isEqualHeight: {
