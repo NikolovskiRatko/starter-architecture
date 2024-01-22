@@ -13,7 +13,7 @@
     "format": "prettier .  --write"
   },
   "dependencies": {
-    "@starter-core/dash-ui": "1.0.1",
+    "@starter-core/dash-ui": "1.0.2",
     "@websanova/vue-auth": "^4.2.1",
     "axios": "^1.4.0",
     "eslint-config-prettier": "^9.1.0",
@@ -33,7 +33,7 @@
     "eslint": "^8.55.0",
     "eslint-plugin-vue": "^9.19.2",
     "laravel-vite-plugin": "^0.7.8",
-    "prettier": "3.1.0",
+    "prettier": "^3.2.4",
     "sass": "^1.64.0",
     "terser": "^5.24.0",
     "typescript": "^4.9.3",

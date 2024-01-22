@@ -40,6 +40,10 @@ docker-compose up -d
     ```shell
     docker exec -it node /bin/bash
     ```
+    Then in folder within the node container **server/client/admin/starter-core/dash-ui** run the following commands:
+    ```shell
+    npm install && npm run build:production
+    ```
     Then in folder within the node container **server/client/admin** run the following commands:
     ```shell
     npm install && npm run dev

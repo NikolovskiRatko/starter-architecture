@@ -12,6 +12,12 @@ import {
 import { getPhotoPath } from "@/utils/imageProcessing";
 import { user } from "@/utils/Objects";
 import { get } from "@/services/HTTP";
+import {
+  PortletComponent,
+  PortletBody,
+  PortletHead,
+  PortletHeadLabel,
+} from "@starter-core/dash-ui";
 
 const route = useRoute();
 

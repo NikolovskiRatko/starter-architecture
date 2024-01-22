@@ -15,6 +15,13 @@ import { user } from "@/utils/Objects";
 import { get } from "@/services/HTTP";
 import { useRoute } from "vue-router";
 import { getPhotoPath } from "@/utils/imageProcessing";
+import {
+  PortletComponent,
+  PortletBody,
+  PortletHead,
+  PortletHeadToolbar,
+  PortletHeadLabel,
+} from "@starter-core/dash-ui";
 
 const { setBackUrl, setActiveClasses } = useRootStore();
 

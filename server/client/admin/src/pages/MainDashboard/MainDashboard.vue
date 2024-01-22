@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
+import {
+  PortletComponent,
+  PortletBody,
+  PortletHead,
+  PortletHeadLabel,
+  ContentLoader,
+} from "@starter-core/dash-ui";
 // import { get } from "@/services/HTTP";
 import { useRootStore } from "@/store/root";
 
@@ -27,9 +34,7 @@ onMounted(() => {
     <div class="col-md-4">
       <PortletComponent>
         <PortletHead>
-          <PortletHeadLabel>
-            Content loader
-          </PortletHeadLabel>
+          <PortletHeadLabel> Content loader </PortletHeadLabel>
         </PortletHead>
         <PortletBody>
           <ContentLoader />

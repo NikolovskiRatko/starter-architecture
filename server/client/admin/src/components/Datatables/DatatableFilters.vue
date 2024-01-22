@@ -2,6 +2,7 @@
 import { ref, inject } from "vue";
 import type { Ref } from "vue";
 import { onQueryUpdateKey } from "@/components/Datatables/typings";
+import { PortletBody } from "@starter-core/dash-ui";
 
 const onQueryUpdate = inject(onQueryUpdateKey, () => {});
 

@@ -30,18 +30,9 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        "dash-ui": path.resolve(__dirname, "../../src"),
+        "@starter-core/dash-ui": path.resolve(__dirname, "./dist"),
       },
       dedupe: ["vue"], // avoid error when using dependencies that also use Vue
-    },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: `
-            @import "dash-ui/assets/vite-resources.scss";
-          `,
-        },
-      },
     },
   },
 });

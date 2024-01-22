@@ -4,6 +4,11 @@ import type { Ref } from "vue";
 // import { BDropdown, BDropdownItem, BDropdownText } from 'bootstrap-vue';
 import { useAuth } from "@websanova/vue-auth/src/v3.js";
 import SkButton from "@/components/base/SkButton/SkButton.vue";
+import {
+  PortletHead,
+  PortletHeadLabel,
+  PortletHeadToolbar,
+} from "@starter-core/dash-ui";
 
 const props = defineProps([
   "value",

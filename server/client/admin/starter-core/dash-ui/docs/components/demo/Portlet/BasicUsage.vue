@@ -1,3 +1,12 @@
+<script setup>
+import {
+  PortletComponent,
+  PortletBody,
+  PortletHead,
+  PortletHeadLabel,
+  PortletFoot,
+} from "@starter-core/dash-ui";
+</script>
 <template>
   <PortletComponent>
     <PortletHead>

@@ -38,6 +38,7 @@ pipeline {
                   sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan migrate'
 
                   // Run the build commands for the Admin Panel Vuejs3 SPA
+                  sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd client/admin/starter-core/dash-ui && npm install && npm run build:production'"
                   sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd client/admin && npm install'"
                   sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd client/admin && npm run build'"
 

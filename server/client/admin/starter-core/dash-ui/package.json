@@ -1,11 +1,19 @@
 {
   "name": "@starter-core/dash-ui",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
+  "author": "Pashata",
+  "license": "MIT",
   "type": "module",
+  "main": "./dist/dash-ui.umd.js",
+  "module": "./dist/dash-ui.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "rimraf dist && vue-tsc && vite build",
-    "docs:dev": "vitepress dev docs --host 0.0.0.0 --port=3030",
+    "build:package": "vite build",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly && tsc-alias -p tsconfig.json",
+    "build:production": "npm run build:package && npm run build:types",
+    "dev": "vitepress dev docs --host 0.0.0.0 --port=3030",
+    "start": "vitepress serve docs --host 0.0.0.0 --port=3030",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs"
   },
@@ -18,8 +26,9 @@
   "devDependencies": {
     "@types/node": "^20.3.3",
     "@vitejs/plugin-vue": "^4.2.3",
-    "rimraf": "^5.0.1",
+    "@vue/tsconfig": "^0.5.1",
     "sass": "^1.63.6",
+    "tsc-alias": "^1.8.8",
     "typescript": "^4.9.3",
     "vite": "^4.3.9",
     "vitepress": "^0.22.4",
@@ -29,15 +38,14 @@
     "src",
     "dist"
   ],
-  "module": "./dist/dash-ui.es.js",
   "exports": {
     ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/dash-ui.es.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/dash-ui.js",
+      "require": "./dist/dash-ui.umd.js"
     },
-    "./dist/style.css": "./dist/style.css",
-    "./src": "./src/index.ts",
     "./src/assets/main.scss": "./src/assets/main.scss",
-    "./src/assets/vite-resources.scss": "./src/assets/vite-resources.scss"
+    "./src/assets/vite-resources.scss": "./src/assets/vite-resources.scss",
+    "./*": "./dist/*"
   }
 }

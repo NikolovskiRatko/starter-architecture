@@ -4,6 +4,7 @@ import { useRootStore } from "@/store/root";
 import { useAuth } from "@websanova/vue-auth/src/v3.js";
 import { isTouchDevice } from "@/utils/userAgentCheck";
 import "@starter-core/dash-ui/src/assets/main.scss";
+import "@starter-core/dash-ui/index.css";
 import "./App.scss";
 
 const auth = useAuth();

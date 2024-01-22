@@ -48,6 +48,7 @@ run_build(){
   echo -e '\n Run the build commands for the Admin Panel Vuejs3 SPA'
   docker exec node /bin/sh -c 'cd client/admin && npm install'
   docker exec node /bin/sh -c 'cd client/admin && npm run prod'
+  docker exec node /bin/sh -c 'cd client/admin/starter-core/dash-ui && npm install && npm run build:production'
 
   echo -e '\n Run the build commands for the Public Nuxt3 SSR'
   docker exec node /bin/sh -c 'cd client/public && npm install'

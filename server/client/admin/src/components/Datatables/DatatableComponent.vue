@@ -9,6 +9,7 @@ import {
   TableColumn,
   TableRow,
 } from "@/components/Datatables";
+import { PortletComponent, PortletBody } from "@starter-core/dash-ui";
 import { TableQuery, onQueryUpdateKey } from "@/components/Datatables/typings";
 import "./DatatableComponent.scss";
 
