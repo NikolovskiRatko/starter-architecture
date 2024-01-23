@@ -1,5 +1,5 @@
 <script setup>
-import { ContentLoader } from "@starter-core/dash-ui";
+import { ContentLoader } from "../../../../src/index.ts";
 </script>
 
 <template>

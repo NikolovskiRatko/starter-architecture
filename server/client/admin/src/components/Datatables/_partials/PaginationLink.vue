@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { inject, PropType, computed } from "vue";
+import { PropType, computed } from "vue";
 
 import "./PaginationLink.scss";
 

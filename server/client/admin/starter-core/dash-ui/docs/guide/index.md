@@ -28,18 +28,14 @@ export default defineConfig({
 In your `main.ts`, you shall import the libraries and CSS:
 
 ```ts
-import "primevue/resources/themes/saga-blue/theme.css";
-import "primevue/resources/primevue.min.css";
-import "primeicons/primeicons.css";
-import "primeflex/primeflex.css";
-
-import "my-lib/dist/style.css";
+import "@starter-core/dash-ui/src/assets/main.scss";
+import "@starter-core/dash-ui/index.css";
 ```
 
 Import components from this library in your own component:
 
 ```html
 <script setup lang="ts">
-  import { ComponentA, ComponentB } from "my-lib";
+    import { PortletComponent, PortletBody } from "@starter-core/dash-ui";
 </script>
 ```

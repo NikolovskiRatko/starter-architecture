@@ -2,7 +2,6 @@ import DefaultTheme from "vitepress/theme";
 import DemoContainer from "../components/DemoContainer.vue";
 
 import "./custom.css";
-import "../../../dist/index.css";
 
 export default {
   ...DefaultTheme,

@@ -5,7 +5,7 @@ import {
   PortletHead,
   PortletHeadLabel,
   PortletFoot,
-} from "@starter-core/dash-ui";
+} from "../../../../src/index.ts";
 </script>
 <template>
   <PortletComponent>
