@@ -1,8 +1,6 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import { NuxtConfig } from '@nuxt/types';
 
-import testRoutes from './routes/testRoutes';
-
-export default defineNuxtConfig({
+const config: NuxtConfig = {
   devtools: { 
     enabled: true
   },
@@ -25,10 +23,6 @@ export default defineNuxtConfig({
       '2xl': 1536
     },
   },
-  router: {
-    extendRoutes(routes, resolve) {
-      // Merge your custom routes with the existing routes
-      routes.push(...testRoutes);
-    },
-  },
-})
+}
+
+export default config;
