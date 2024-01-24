@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group([
-    'prefix' => 'user',
+    'prefix' => 'product',
 ], function () {
     // CRUD ROUTES
     Route::get('all', [ProductController::class, 'getAll']);

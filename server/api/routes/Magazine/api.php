@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group([
-    'prefix' => 'user',
+    'prefix' => 'magazine',
 ], function () {
     // CRUD ROUTES
     Route::get('all', [MagazineController::class, 'getAll']);

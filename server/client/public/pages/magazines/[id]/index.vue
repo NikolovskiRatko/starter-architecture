@@ -10,6 +10,8 @@
     </div>
     <div class="container-fluid jumbotron_wrapper">
       <h1 class="offset-md-2">Magazine ID: {{ $route.params.id }}</h1>
+      <h1 class="offset-md-2">Route: {{ $route }}</h1>
+
     </div>
   </div>
 </template>
