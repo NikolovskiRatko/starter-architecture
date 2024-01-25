@@ -5,14 +5,13 @@ namespace App\Applications\Magazine\Services;
 use App\Applications\Magazine\Model\Magazine;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Request;
 
 /**
- * Interface MagazineServiceInterface
+ * Interface IMagazineService
  * @package App\Applications\Magazine
  */
 
-interface MagazineServiceInterface
+interface IMagazineService
 {
     /**
      * @return Collection
@@ -26,21 +25,27 @@ interface MagazineServiceInterface
     public function get($id);
 
     /**
-     * @param FormRequest $request
+     * @param array $data
      * @return Magazine
      */
     public function create($request);
 
     /**
-     * @param FormRequest $request
+     * @param array $data
      * @param integer $id
      * @return void
      */
-    public function update($request, $id);
+    public function update($data, $id);
 
     /**
      * @param integer $id
      * @return boolean
      */
     public function delete($id);
+
+    /**
+     * @param FormRequest $request
+     * @return array
+     */
+    public function filterAllowedProperties($request);
 }

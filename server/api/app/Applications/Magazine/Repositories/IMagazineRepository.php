@@ -8,11 +8,11 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 
 /**
- * Interface MagazineRepositoryInterface
+ * Interface IMagazineRepository
  * @package App\Applications\Magazine
  */
 
-interface MagazineRepositoryInterface
+interface IMagazineRepository
 {
     /**
      * @return Collection
@@ -26,17 +26,17 @@ interface MagazineRepositoryInterface
     public function get($id);
 
     /**
-     * @param FormRequest $request
+     * @param array $data
      * @return Magazine
      */
-    public function create($request);
+    public function create($data);
 
     /**
-     * @param FormRequest $request
+     * @param array $data
      * @param integer $id
      * @return void
      */
-    public function update($request, $id);
+    public function update($data, $id);
 
     /**
      * @param integer $id

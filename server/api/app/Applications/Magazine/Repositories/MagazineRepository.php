@@ -2,44 +2,43 @@
 
 namespace App\Applications\Magazine\Repositories;
 
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 use App\Applications\Magazine\Model\Magazine;
 
 
 /**
- * @property Magazine $magazine
+ * @property Magazine $model
  */
-class MagazineRepository implements MagazineRepositoryInterface
+class MagazineRepository implements IMagazineRepository
 {
     public function __construct(
-        Magazine $magazine
+        Magazine $model
     ){
-        $this->magazine = $magazine;
+        $this->model = $model;
     }
 
     public function getAll(){
-        return $this->magazine::all();
+        return $this->model::all();
     }
 
     public function get($id){
-        /** @var Magazine $magazine */
-        $magazine = $this->magazine::findOrFail($id);
-        return $magazine;
+        /** @var Magazine $model */
+        $model = $this->model::findOrFail($id);
+        return $model;
     }
 
-    public function create($input){
+    public function create($data){
         /** @var Magazine */
-        $magazine = $this->magazine->create($input);
-        return $magazine;
+        $model = $this->model->create($data);
+        return $model;
     }
 
-    public function update($magazine, $input){
-        return $magazine->update($input);
+    public function update($data, $id){
+        $model = $this->model::findOrFail($id);
+        return $model->update($data);
     }
 
     public function delete($id){
-        return $this->magazine
+        return $this->model
             ->where('id', $id)
             ->delete();
     }

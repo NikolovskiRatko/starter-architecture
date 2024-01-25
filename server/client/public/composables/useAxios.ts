@@ -1,34 +1,6 @@
 import axios from 'axios';
-import { useRouter } from "vue-router";
 
 export default function useAxios() {
-  const router = useRouter();
-
-  axios.defaults.headers = {
-    "Content-type": "application/json",
-  };
-  axios.defaults.withCredentials = true;
-  axios.defaults.validateStatus = function (status) {
-    return status === 401 || (status >= 200 && status < 300);
-  };
-  axios.interceptors.response.use(
-      function (response) {
-        return response;
-      },
-      function (error) {
-        if (error.response.data.error == "Unauthorized action") {
-          const router = useRouter();
-          router.push({
-            name: "products",
-          });
-        }
-        if (error.response.status == 422) {
-          // console.log(error.response.)
-          return Promise.reject(error.response.data);
-        }
-        return Promise.reject(error);
-      },
-  );
 
   async function getDatatableData(type: string): Promise<Object> {
     try {
@@ -55,9 +27,7 @@ export default function useAxios() {
   async function postForm(
       type: any,
       id: any,
-      data: any,
-      redirect: boolean,
-      redirect_route: string = ''
+      data: any
   ): Promise<Object> {
     try {
       let endpoint = `/api/${type}/create`;
@@ -65,11 +35,8 @@ export default function useAxios() {
         endpoint = `/api/${type}/${id.value}/update/`;
       }
       const response = await axios.post(endpoint, data.value);
-
-      if (redirect) {
-        router.push(redirect_route);
-      }
     } catch (error) {
+        console.log("In Composable:", error);
       // Handle 422 status as success and return validation errors
       if (error.status === 422) {
         // Assuming the validation errors are in the response.data.errors field

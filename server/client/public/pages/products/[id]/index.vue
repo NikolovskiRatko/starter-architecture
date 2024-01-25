@@ -2,13 +2,14 @@
   import { ref, onMounted } from 'vue';
   import { cloneDeep } from 'lodash-es';
   import { useRouter, useRoute } from 'vue-router';
+
   import useAxios from '@/composables/useAxios';
   import { productObject } from '@/composables/data/productObject';
 
   const router = useRouter();
   const route = useRoute();
   const product = ref(cloneDeep(productObject));
-  const validationErrors = ref([]);
+  const validationErrors = ref({});
   const isEdit = ref(false);
   const entryId = ref(route.params.id);
 
@@ -30,11 +31,13 @@
 
   const saveProduct = async () => {
     try {
-      const res = await postForm(type, entryId, product, true, '/products');
-      console.error(res.data);
-      validationErrors.value = res.data;
+      await postForm(type, entryId, product);
+      // router.push(redirect_route);
     } catch (error) {
-      console.error(error);
+      console.log(error);
+      // Handle validation errors
+      validationErrors.value = error.errors;
+      console.log(validationErrors.value);
     }
   };
 </script>
@@ -48,17 +51,20 @@
       <div class="offset-md-2">
         <h1>{{ entryId == 'new' ? 'Add New' : 'Edit' }}</h1>
         <p>
-          <label for="text1">Title</label><br />
+          <label for="text1">Name</label><br />
           <input type="text" id="text1" v-model="product.name" />
         </p>
         <p>
-          <label for="text2">Content</label><br />
+          <label for="text2">Description</label><br />
           <textarea id="text2" v-model="product.description"></textarea>
         </p>
 
-        <button @click="saveProduct">Save</button>
+        <!-- Display validation errors using v-for -->
+        <div v-for="(error, fieldName) in validationErrors" :key="fieldName">
+          <span class="text-red-600">{{ fieldName }}: {{ error[0] }}</span>
+        </div>
 
-        <div v-if="validationErrors">Validation errors: {{validationErrors}}</div>
+        <button @click="saveProduct">Save</button>
       </div>
     </div>
   </div>

@@ -5,14 +5,13 @@ namespace App\Applications\Product\Services;
 use App\Applications\Product\Model\Product;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Request;
 
 /**
- * Interface ProductServiceInterface
+ * Interface IProductService
  * @package App\Applications\Product
  */
 
-interface ProductServiceInterface
+interface IProductService
 {
     /**
      * @return Collection
@@ -26,21 +25,27 @@ interface ProductServiceInterface
     public function get($id);
 
     /**
-     * @param FormRequest $request
+     * @param array $data
      * @return Product
      */
-    public function create($request);
+    public function create($data);
 
     /**
-     * @param FormRequest $request
+     * @param array $data
      * @param integer $id
      * @return void
      */
-    public function update($request, $id);
+    public function update($data, $id);
 
     /**
      * @param integer $id
      * @return boolean
      */
     public function delete($id);
+
+    /**
+     * @param FormRequest $request
+     * @return array
+     */
+    public function filterAllowedProperties($request);
 }

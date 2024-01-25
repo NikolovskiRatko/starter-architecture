@@ -4,15 +4,13 @@ namespace App\Applications\Product\Repositories;
 
 use App\Applications\Product\Model\Product;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Request;
 
 /**
- * Interface ProductRepositoryInterface
+ * Interface IProductRepository
  * @package App\Applications\Product
  */
 
-interface ProductRepositoryInterface
+interface IProductRepository
 {
     /**
      * @return Collection
@@ -26,17 +24,17 @@ interface ProductRepositoryInterface
     public function get($id);
 
     /**
-     * @param FormRequest $request
+     * @param array $data
      * @return Product
      */
-    public function create($request);
+    public function create($data);
 
     /**
-     * @param FormRequest $request
+     * @param array $data
      * @param integer $id
      * @return void
      */
-    public function update($request, $id);
+    public function update($data, $id);
 
     /**
      * @param integer $id

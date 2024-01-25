@@ -2,15 +2,17 @@
 
 namespace App\Applications\Product\Services;
 
-use App\Applications\Product\Repositories\ProductRepositoryInterface;
-
+use App\Applications\Product\Repositories\IProductRepository;
+//TODO:extend from base crud
 /**
- * @property ProductRepositoryInterface $productRepository
+ * @property IProductRepository $productRepository
  */
-class ProductService implements ProductServiceInterface
+class ProductService implements IProductService
 {
+    const ALLOWED_PROPERTIES = ['name', 'description'];
+
     public function __construct(
-        ProductRepositoryInterface $productRepository
+        IProductRepository $productRepository
     ){
         $this->productRepository = $productRepository;
     }
@@ -23,21 +25,23 @@ class ProductService implements ProductServiceInterface
         return $this->productRepository->get($id);
     }
 
-    public function create($request){
-        $request_array = $request->all();
-        $product = $this->productRepository->create($request_array);
-        return $product;
+    public function create($data){
+        return $this->productRepository->create($data);
     }
 
-    public function update($request, $id){
-        $request_array = $request->all();
-        $product_data = $request_array;
-        $product = $this->productRepository->get($id);
-        $this->productRepository->update($product, $product_data);
+    public function update($data, $id){
+        $this->productRepository->update($data, $id);
     }
 
     public function delete($id){
         return $this->productRepository->delete($id);
+    }
+
+    // Filter request data to include only allowed properties
+    public function filterAllowedProperties($request)
+    {
+        $data = $request->toArray();
+        return array_intersect_key($data, array_flip(self::ALLOWED_PROPERTIES));
     }
 }
 

@@ -27,7 +27,6 @@ class MagazineRequest extends ApiFormRequest
         $rules = [
             'title' => 'required',
             'content' => 'required',
-            'expiration_time' => 'required|date',
         ];
 
         return $rules;
@@ -36,8 +35,6 @@ class MagazineRequest extends ApiFormRequest
         return [
             'title.required' => 'Magazine name required',
             'content.required' => 'Content required',
-            'expiration_time.required' => 'Expiration date required',
-            'expiration_time.date' => 'Value must be date',
         ];
     }
 }

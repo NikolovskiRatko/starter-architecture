@@ -27,7 +27,6 @@ class ProductRequest extends ApiFormRequest
         $rules = [
             'name' => 'required',
             'description' => 'required',
-            'expiration_time' => 'required|date',
         ];
 
         return $rules;
@@ -36,8 +35,6 @@ class ProductRequest extends ApiFormRequest
         return [
             'name.required' => 'Product name required',
             'description.required' => 'Description required',
-            'expiration_time.required' => 'Expiration date required',
-            'expiration_time.date' => 'Value must be date',
         ];
     }
 }

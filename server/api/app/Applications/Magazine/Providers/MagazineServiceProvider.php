@@ -3,9 +3,9 @@
 namespace App\Applications\Magazine\Providers;
 
 use App\Applications\Magazine\Repositories\MagazineRepository;
-use App\Applications\Magazine\Repositories\MagazineRepositoryInterface;
+use App\Applications\Magazine\Repositories\IMagazineRepository;
 use App\Applications\Magazine\Services\MagazineService;
-use App\Applications\Magazine\Services\MagazineServiceInterface;
+use App\Applications\Magazine\Services\IMagazineService;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
@@ -43,8 +43,8 @@ class MagazineServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(MagazineRepositoryInterface::class, MagazineRepository::class);
-        $this->app->bind(MagazineServiceInterface::class, MagazineService::class);
+        $this->app->bind(IMagazineRepository::class, MagazineRepository::class);
+        $this->app->bind(IMagazineService::class, MagazineService::class);
     }
 
     public function map()

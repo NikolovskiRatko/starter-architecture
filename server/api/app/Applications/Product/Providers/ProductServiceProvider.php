@@ -3,9 +3,9 @@
 namespace App\Applications\Product\Providers;
 
 use App\Applications\Product\Repositories\ProductRepository;
-use App\Applications\Product\Repositories\ProductRepositoryInterface;
+use App\Applications\Product\Repositories\IProductRepository;
 use App\Applications\Product\Services\ProductService;
-use App\Applications\Product\Services\ProductServiceInterface;
+use App\Applications\Product\Services\IProductService;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
@@ -43,8 +43,8 @@ class ProductServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(ProductRepositoryInterface::class, ProductRepository::class);
-        $this->app->bind(ProductServiceInterface::class, ProductService::class);
+        $this->app->bind(IProductRepository::class, ProductRepository::class);
+        $this->app->bind(IProductService::class, ProductService::class);
     }
 
     public function map()

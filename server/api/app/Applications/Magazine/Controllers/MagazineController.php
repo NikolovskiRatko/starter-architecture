@@ -5,17 +5,17 @@ namespace App\Applications\Magazine\Controllers;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Applications\Magazine\Services\MagazineServiceInterface;
+use App\Applications\Magazine\Services\IMagazineService;
 use App\Applications\Magazine\Requests\MagazineRequest;
-use App\Applications\Magazine\Requests\NewMagazineRequest;
 
 /**
- * @property MagazineServiceInterface $magazineService
+ * @property IMagazineService $magazineService
  */
 class MagazineController extends Controller
 {
+    //TODO: Swagger comment blocks, formatted responses and try catch blocks with custom exceptions handling
     public function __construct(
-        MagazineServiceInterface $magazineService
+        IMagazineService $magazineService
     ){
         $this->magazineService = $magazineService;
     }
@@ -42,11 +42,13 @@ class MagazineController extends Controller
     /**
      * Store magazine and get JSON with a magazine response
      *
-     * @param  NewMagazineRequest  $request
+     * @param  MagazineRequest  $request
      * @return string
      */
-    public function create(NewMagazineRequest $request){
-        return $this->magazineService->create($request)->toJson();
+    public function create(MagazineRequest $request){
+        // TODO: Prepare formatted Response
+        $data = $this->magazineService->filterAllowedProperties($request);
+        return $this->magazineService->create($data)->toJson();
     }
 
     /**
@@ -57,7 +59,8 @@ class MagazineController extends Controller
      * @return void
      */
     public function update(MagazineRequest $request, $id){
-        $this->magazineService->update($request, $id);
+        $data = $this->magazineService->filterAllowedProperties($request);
+        $this->magazineService->update($data, $id);
     }
 
     /**

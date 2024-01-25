@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use App\Applications\Magazine\Controllers\MagazineController;
 use Illuminate\Support\Facades\Route;
 

@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^1.0.6",
+    "@nuxt/devtools": "latest",
     "@nuxt/types": "^2.17.3",
     "axios": "^1.6.5",
     "nuxt": "^3.8.2",
@@ -20,7 +20,8 @@
   },
   "dependencies": {
     "@nuxt/image": "^1.1.0",
+    "@vuepic/vue-datepicker": "^7.4.1",
     "bootstrap": "^5.3.2",
-    "form-backend-validation": "^2.4.0"
+    "vue-axios": "^3.5.2"
   }
 }

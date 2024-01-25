@@ -2,15 +2,18 @@
 
 namespace App\Applications\Magazine\Services;
 
-use App\Applications\Magazine\Repositories\MagazineRepositoryInterface;
+use App\Applications\Magazine\Repositories\IMagazineRepository;
+//TODO:extend from base crud
 
 /**
- * @property MagazineRepositoryInterface $magazineRepository
+ * @property IMagazineRepository $magazineRepository
  */
-class MagazineService implements MagazineServiceInterface
+class MagazineService implements IMagazineService
 {
+    const ALLOWED_PROPERTIES = ['title', 'content'];
+
     public function __construct(
-        MagazineRepositoryInterface $magazineRepository
+        IMagazineRepository $magazineRepository
     ){
         $this->magazineRepository = $magazineRepository;
     }
@@ -23,21 +26,23 @@ class MagazineService implements MagazineServiceInterface
         return $this->magazineRepository->get($id);
     }
 
-    public function create($request){
-        $request_array = $request->all();
-        $magazine = $this->magazineRepository->create($request_array);
-        return $magazine;
+    public function create($data){
+        return $this->magazineRepository->create($data);
     }
 
-    public function update($request, $id){
-        $request_array = $request->all();
-        $magazine_data = $request_array;
-        $magazine = $this->magazineRepository->get($id);
-        $this->magazineRepository->update($magazine, $magazine_data);
+    public function update($data, $id){
+        $this->magazineRepository->update($data, $id);
     }
 
     public function delete($id){
         return $this->magazineRepository->delete($id);
+    }
+
+    // Filter request data to include only allowed properties
+    public function filterAllowedProperties($request)
+    {
+        $data = $request->toArray();
+        return array_intersect_key($data, array_flip(self::ALLOWED_PROPERTIES));
     }
 }
 

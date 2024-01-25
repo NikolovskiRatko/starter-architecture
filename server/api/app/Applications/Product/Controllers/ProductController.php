@@ -5,17 +5,17 @@ namespace App\Applications\Product\Controllers;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Applications\Product\Services\ProductServiceInterface;
+use App\Applications\Product\Services\IProductService;
 use App\Applications\Product\Requests\ProductRequest;
-use App\Applications\Product\Requests\NewProductRequest;
 
 /**
- * @property ProductServiceInterface $productService
+ * @property IProductService $productService
  */
 class ProductController extends Controller
 {
+    //TODO: Swagger comment blocks, formatted responses and try catch blocks with custom exceptions handling
     public function __construct(
-        ProductServiceInterface $productService
+        IProductService $productService
     ){
         $this->productService = $productService;
     }
@@ -46,7 +46,9 @@ class ProductController extends Controller
      * @return string
      */
     public function create(ProductRequest $request){
-        return $this->productService->create($request)->toJson();
+        $data = $this->productService->filterAllowedProperties($request);
+        // TODO: Prepare formatted Response
+        return $this->productService->create($data)->toJson();
     }
 
     /**
@@ -57,7 +59,9 @@ class ProductController extends Controller
      * @return void
      */
     public function update(ProductRequest $request, $id){
-        $this->productService->update($request, $id);
+        $data = $this->productService->filterAllowedProperties($request);
+        $this->productService->update($data, $id);
+        // TODO: Prepare formatted Response
     }
 
     /**
@@ -67,5 +71,6 @@ class ProductController extends Controller
      */
     public function delete($id){
         return $this->productService->delete($id);
+        // TODO: Prepare formatted Response
     }
 }
