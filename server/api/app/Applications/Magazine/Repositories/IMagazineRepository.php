@@ -21,9 +21,10 @@ interface IMagazineRepository
 
     /**
      * @param integer $id
+     * @param array $properties
      * @return Magazine
      */
-    public function get($id);
+    public function get($id, $properties);
 
     /**
      * @param array $data

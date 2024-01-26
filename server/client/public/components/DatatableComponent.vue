@@ -1,7 +1,14 @@
 <script setup>
-  import { ref, defineProps } from 'vue';
+  import { defineProps } from 'vue';
 
-  const { records, type, mainRow } = defineProps(['records', 'type', 'mainRow']);
+  const {
+    records,
+    type,
+    mainRow } =
+  defineProps([
+    'records',
+    'type',
+    'mainRow']);
 </script>
 
 <template>
@@ -15,22 +22,15 @@
       <div class="col col-2">{{ record[mainRow[2].column] }}</div>
       <div class="col col-2">{{ record[mainRow[3].column] }}</div>
       <div class="col col-2">{{ type }}</div>
-
-<!--      <div class="col col-2" v-if="type === 'Product'">-->
-<!--        <router-link style="color: black;"-->
-<!--                     :to="{-->
-<!--            name: 'products-id',-->
-<!--            params: { id: record.id }-->
-<!--          }">Edit {{ type }}</router-link>-->
-<!--      </div>-->
-
-<!--      <div class="col col-2" v-else>-->
-<!--        <router-link style="color: black;"-->
-<!--                     :to="{-->
-<!--            name: 'magazines-id',-->
-<!--            params: { id: record.id }-->
-<!--          }">Edit {{ type }}</router-link>-->
-<!--      </div>-->
+      <div class="col col-2">
+        <router-link style="color: black;"
+                     :to="{
+                        name: type === 'product' ? 'products-id' : 'magazines-id',
+                        params: { id: record.id }
+                      }">
+          Edit {{ type }}
+        </router-link>
+      </div>
     </li>
   </ul>
 </template>
@@ -55,16 +55,16 @@
       box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
     }
     .col-1 {
-      flex-basis: 10%;
+      flex-basis: 5%;
     }
     .col-2 {
-      flex-basis: 40%;
+      flex-basis: 5%;
     }
     .col-3 {
-      flex-basis: 25%;
+      flex-basis: 5%;
     }
     .col-4 {
-      flex-basis: 25%;
+      flex-basis: 5%;
     }
 
     @media all and (max-width: 767px) {

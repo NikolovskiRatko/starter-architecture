@@ -16,12 +16,12 @@ class ProductRepository implements IProductRepository
     }
 
     public function getAll(){
-        return $this->model::all();
+        return $this->model->all();
     }
 
-    public function get($id){
+    public function get($id, $properties){
         /** @var Product $model */
-        $model = $this->model::findOrFail($id);
+        $model = $this->model->where('id', $id)->select(...$properties)->get()->first();
         return $model;
     }
 
@@ -33,7 +33,7 @@ class ProductRepository implements IProductRepository
 
     public function update($data, $id){
         /** @var Product $model */
-        $model = $this->model::findOrFail($id);
+        $model = $this->model->findOrFail($id);
         return $model->update($data);
     }
 

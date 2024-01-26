@@ -15,16 +15,16 @@ class TestTablesCreate extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->nullable();;
             $table->string('description')->nullable();
-            $table->dateTime('expiration_time');
+            $table->dateTime('expiration_time')->nullable();
             $table->timestamps();
         });
         Schema::create('magazines', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
+            $table->string('title')->nullable();;
             $table->string('content')->nullable();
-            $table->dateTime('expiration_time');
+            $table->dateTime('expiration_time')->nullable();
             $table->timestamps();
         });
     }

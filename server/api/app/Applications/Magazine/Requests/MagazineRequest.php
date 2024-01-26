@@ -25,8 +25,8 @@ class MagazineRequest extends ApiFormRequest
     public function rules()
     {
         $rules = [
-            'title' => 'required',
-            'content' => 'required',
+//            'title' => 'required',
+//            'content' => 'required',
         ];
 
         return $rules;

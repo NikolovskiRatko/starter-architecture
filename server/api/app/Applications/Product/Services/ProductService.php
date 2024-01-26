@@ -22,7 +22,7 @@ class ProductService implements IProductService
     }
 
     public function get($id){
-        return $this->productRepository->get($id);
+        return $this->productRepository->get($id, self::ALLOWED_PROPERTIES);
     }
 
     public function create($data){
@@ -41,7 +41,9 @@ class ProductService implements IProductService
     public function filterAllowedProperties($request)
     {
         $data = $request->toArray();
-        return array_intersect_key($data, array_flip(self::ALLOWED_PROPERTIES));
+        $data = array_intersect_key($data, array_flip(self::ALLOWED_PROPERTIES));
+        $data['expiration_date'] = now()->addDay()->setHour(23)->setMinute(59)->setSecond(59);
+        return $data;
     }
 }
 

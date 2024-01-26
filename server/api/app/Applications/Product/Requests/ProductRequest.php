@@ -25,8 +25,8 @@ class ProductRequest extends ApiFormRequest
     public function rules()
     {
         $rules = [
-            'name' => 'required',
-            'description' => 'required',
+//            'name' => 'required',
+//            'description' => 'required',
         ];
 
         return $rules;

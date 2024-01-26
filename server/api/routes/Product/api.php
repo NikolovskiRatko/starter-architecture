@@ -19,6 +19,6 @@ Route::group([
     Route::get('all', [ProductController::class, 'getAll']);
     Route::post('create', [ProductController::class, 'create']);
     Route::get('{id}/get', [ProductController::class, 'get']);
-    Route::post('{id}/update', [ProductController::class, 'update']);
-    Route::get('{id}/delete', [ProductController::class, 'delete']);
+    Route::put('{id}/update', [ProductController::class, 'update']);
+    Route::delete('{id}/delete', [ProductController::class, 'delete']);
 });

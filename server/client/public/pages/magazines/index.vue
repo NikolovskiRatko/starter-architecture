@@ -1,13 +1,14 @@
 <script setup>
+  import { ref } from 'vue';
+  import { cloneDeep } from 'lodash-es';
+  import { magazineColumns } from '@/composables/data/magazineColumns';
+  const type = ref('magazine');
+  const modelColumns = ref(cloneDeep(magazineColumns));
 </script>
 
 <template>
-  <div class="jumbotron">
-    <div class="jumbotron_background">
-
-    </div>
-    <div class="container-fluid jumbotron_wrapper">
-      <h1 class="offset-md-2">Magazines</h1>
-    </div>
-  </div>
+  <BasicDisplayComponent
+          v-if="modelColumns.length > 0"
+          :type=type
+          :modelColumns="modelColumns" />
 </template>

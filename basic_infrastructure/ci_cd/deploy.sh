@@ -3,7 +3,7 @@
 #  @description:  Pull and Deploy from branch
 #
 
-BRANCH="dev"
+BRANCH="test"
 ROOT_DIR=$(cat "$(dirname "$0")/deploy/sensitive/root_dir")
 TIMESTAMP=$(date +"%Y%m%d%H%M%S")  # Generate a timestamp
 LOG_FILE="$ROOT_DIR/starter-architecture/basic_infrastructure/ci_cd/logs/deploy_$TIMESTAMP.log"

@@ -1,6 +1,12 @@
 <script setup>
-  const route = useRoute()
-  console.log(route.params) // { id: '123' }
+  import { ref } from 'vue';
+  import { cloneDeep } from 'lodash-es';
+  import { magazineObject } from '@/composables/data/magazineObject';
+  import { magazinePropertyArray } from '@/composables/data/magazinePropertyArray';
+
+  const model = ref(cloneDeep(magazineObject));
+  const propertyArray = ref(cloneDeep(magazinePropertyArray));
+  const type = 'magazine';
 </script>
 
 <template>
@@ -8,10 +14,9 @@
     <div class="jumbotron_background">
 
     </div>
-    <div class="container-fluid jumbotron_wrapper">
-      <h1 class="offset-md-2">Magazine ID: {{ $route.params.id }}</h1>
-      <h1 class="offset-md-2">Route: {{ $route }}</h1>
-
-    </div>
+    <BasicDataFormComponent v-if="propertyArray.length > 0"
+                            :model=model
+                            :type=type
+                            :propertyArray="propertyArray" />
   </div>
 </template>

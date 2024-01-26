@@ -19,9 +19,10 @@ interface IProductRepository
 
     /**
      * @param integer $id
+     * @param array $properties
      * @return Product
      */
-    public function get($id);
+    public function get($id, $properties);
 
     /**
      * @param array $data

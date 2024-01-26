@@ -23,7 +23,7 @@ class MagazineService implements IMagazineService
     }
 
     public function get($id){
-        return $this->magazineRepository->get($id);
+        return $this->magazineRepository->get($id, self::ALLOWED_PROPERTIES);
     }
 
     public function create($data){
@@ -42,7 +42,9 @@ class MagazineService implements IMagazineService
     public function filterAllowedProperties($request)
     {
         $data = $request->toArray();
-        return array_intersect_key($data, array_flip(self::ALLOWED_PROPERTIES));
+        $data = array_intersect_key($data, array_flip(self::ALLOWED_PROPERTIES));
+        $data['expiration_date'] = now()->addDay()->setHour(23)->setMinute(59)->setSecond(59);
+        return $data;
     }
 }
 

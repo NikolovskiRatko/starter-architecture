@@ -23,10 +23,10 @@ class ProductController extends Controller
     /**
      * Get a JSON with all the products
      *
-     * @return Collection
+     * @return string
      */
     public function getAll(){
-        return $this->productService->getAll();
+        return $this->productService->getAll()->toJson();
     }
 
     /**
