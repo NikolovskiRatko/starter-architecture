@@ -3,6 +3,7 @@
 namespace App\Applications\Magazine\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Magazine extends Model
 {
@@ -16,4 +17,9 @@ class Magazine extends Model
         'content',
         'expiration_time'
     ];
+
+    public function getUpdatedAtAttribute($value)
+    {
+        return Carbon::parse($value)->format('Y-m-d H:i:s');
+    }
 }
