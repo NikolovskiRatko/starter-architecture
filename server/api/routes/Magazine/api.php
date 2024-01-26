@@ -19,6 +19,6 @@ Route::group([
     Route::get('all', [MagazineController::class, 'getAll']);
     Route::post('create', [MagazineController::class, 'create']);
     Route::get('{id}/get', [MagazineController::class, 'get']);
-    Route::post('{id}/update', [MagazineController::class, 'update']);
-    Route::get('{id}/delete', [MagazineController::class, 'delete']);
+    Route::put('{id}/update', [MagazineController::class, 'update']);
+    Route::delete('{id}/delete', [MagazineController::class, 'delete']);
 });

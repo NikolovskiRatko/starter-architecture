@@ -23,10 +23,11 @@ class MagazineController extends Controller
     /**
      * Get a JSON with all the magazines
      *
-     * @return Collection
+     * @return string
      */
     public function getAll(){
-        return $this->magazineService->getAll();
+        $data = $this->magazineService->getAll();
+        return response()->json(['data' => $data]);
     }
 
     /**

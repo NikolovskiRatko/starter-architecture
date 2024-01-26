@@ -26,7 +26,8 @@ class ProductController extends Controller
      * @return string
      */
     public function getAll(){
-        return $this->productService->getAll()->toJson();
+        $data = $this->productService->getAll();
+        return response()->json(['data' => $data]);
     }
 
     /**

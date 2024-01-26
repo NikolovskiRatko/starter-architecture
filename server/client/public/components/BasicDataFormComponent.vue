@@ -20,6 +20,13 @@
     'type',
     'propertyArray']);
 
+  const modelProxy = computed({
+    get: () => model.value,
+    set: (newValue) => {
+      model.value = { ...model.value, ...newValue };
+    },
+  });
+
   onMounted(async () => {
     isEdit.value = route.params.id !== 'new';
     if (isEdit.value) {
@@ -31,7 +38,6 @@
     try {
       const response = await getItem(type, route.params.id);
       model.value = response;
-      console.log(response);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -39,7 +45,7 @@
 
   const saveModel = async () => {
     try {
-      await postForm(type, itemId, model);
+      await postForm(type, itemId, modelProxy);
       router.push(`/${type}s`);
     } catch (error) {
       console.log(error);
@@ -60,7 +66,10 @@
         <h1>{{ itemId == 'new' ? 'Add New' : 'Edit' }} {{type}}</h1>
         <p v-for="(property, key) in propertyArray" :key="key">
           <label :for="key">{{ property }}</label><br />
-          <input type="text" :id="key" v-model="model[property]" />
+          <input v-if="modelProxy"
+                  type="text"
+                  :id="key"
+                  v-model="modelProxy[property]" />
         </p>
 
         <!-- Display validation errors using v-for -->

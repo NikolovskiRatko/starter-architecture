@@ -18,7 +18,7 @@
     async function fetchData() {
         try {
             const response = await getAll(type);
-            model.value = response;
+            model.value = response.data;
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -31,16 +31,16 @@
         <div class="jumbotron_background">
 
         </div>
-        <div class="container-fluid">
+        <div class="container">
             <h1>{{type}}</h1>
-            <h5 class="add_new-button">
+            <h2 class="add_new-button">
                 <router-link
                         :to="{
                             name: `${type}s-id`,
                             params: { id: 'new' } }">
                     Add New {{type}}
                 </router-link>
-            </h5>
+            </h2>
             <DatatableComponent
                     v-if="model.length > 0"
                     :records=model
@@ -72,6 +72,11 @@
         small {
             font-size: 0.5em;
         }
+    }
+    h1 {
+        color: white;
+        text-align: center;
+        font-weight: 700;
     }
     .add_new-button {
         & > a {

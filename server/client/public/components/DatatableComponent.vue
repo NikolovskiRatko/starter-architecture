@@ -17,15 +17,15 @@
       <div v-for="(data, index) in mainRow" :key="index" :class="['col', data.width ]">{{ data.name }}</div>
     </li>
     <li v-for="(record, index) in records" :key="index" class="table-row">
-      <div class="col col-1">{{ record[mainRow[0].column] }}</div>
-      <div class="col col-2">{{ record[mainRow[1].column] }}</div>
-      <div class="col col-2">{{ record[mainRow[2].column] }}</div>
-      <div class="col col-2">{{ record[mainRow[3].column] }}</div>
-      <div class="col col-2">{{ type }}</div>
-      <div class="col col-2">
+      <div :class="['col', mainRow[0].width ]">{{ record[mainRow[0].column] }}</div>
+      <div :class="['col', mainRow[1].width ]">{{ record[mainRow[1].column] }}</div>
+      <div :class="['col', mainRow[2].width ]">{{ record[mainRow[2].column] }}</div>
+      <div :class="['col', mainRow[3].width ]">{{ record[mainRow[3].column] }}</div>
+      <div :class="['col', mainRow[4].width ]">{{ type }}</div>
+      <div :class="['col', mainRow[5].width ]">
         <router-link style="color: black;"
                      :to="{
-                        name: type === 'product' ? 'products-id' : 'magazines-id',
+                        name: `${type}s-id`,
                         params: { id: record.id }
                       }">
           Edit {{ type }}
@@ -58,13 +58,13 @@
       flex-basis: 5%;
     }
     .col-2 {
-      flex-basis: 5%;
+      flex-basis: 10%;
     }
     .col-3 {
-      flex-basis: 5%;
+      flex-basis: 20%;
     }
     .col-4 {
-      flex-basis: 5%;
+      flex-basis: 30%;
     }
 
     @media all and (max-width: 767px) {
