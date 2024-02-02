@@ -1,0 +1,173 @@
+$header-desktop-config: kt-get($header-config, menu, desktop);
+$header-tablet-mobile-config: kt-get($header-config, menu, tablet-and-mobile);
+
+$submenu-desktop-config: kt-get($header-desktop-config, build, layout, item, submenu);
+$submenu-tablet-mobile-config: kt-get($header-tablet-mobile-config, build, layout, default, item, submenu);
+
+$submenu-desktop-skin-config: kt-get($header-desktop-config, build, skins, light, item, submenu);
+
+.kt-menu__submenu {
+    $block: &;
+
+    &--horizontal {
+        @include kt-fix-animation-lags();
+        display: none;
+        position: absolute;
+        top: 100%;
+
+        margin: 0 auto;
+        left: auto;
+        right: auto;
+        background-color: kt-get($submenu-desktop-skin-config, self, bg-color);
+        box-shadow: kt-get($submenu-desktop-skin-config, self, box-shadow);
+
+        padding: kt-get(
+            $submenu-desktop-config,
+            self,
+            padding,
+            megamenu
+        );
+
+        width: kt-get(
+            $submenu-desktop-config,
+            self,
+            width,
+            classic
+        );
+
+        .kt-menu__scroll {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .kt-menu__subnav {
+            list-style: none !important;
+            padding: 0;
+            margin: 0;
+        }
+
+        &#{$block}--visible {
+            $baseClass: kt-get($header-desktop-config, base, class);
+            display: block;
+            animation:
+              #{$baseClass}-submenu-fade-in 0.3s ease 1,
+              #{$baseClass}-submenu-move-down 0.3s ease-out 1;
+
+            // ie8-11 versions hack
+            @include kt-hack-ie {
+              animation: none;
+            }
+
+            > .kt-menu__subnav > .kt-menu__item.kt-menu__item--hover {
+                > .kt-menu__submenu {
+                  display: block;
+                  animation:
+                    #{$baseClass}-submenu-fade-in 0.3s ease 1,
+                    #{$baseClass}-submenu-move-up 0.3s ease-out 1;
+
+                  // ie8-11 versions hack
+                  @include kt-hack-ie {
+                    animation: none;
+                  }
+                }
+              }
+        }
+
+        &#{$block}--full {
+            margin: 0 auto;
+            width: auto;
+        }
+
+        // fixed width options
+        &#{$block}--fixed {
+            left: auto;
+            right: auto;
+            width: auto;
+        }
+
+        // alignment right
+        &#{$block}--right {
+            right: auto;
+            left: 100%;
+
+            &#{$block}--pull {
+                margin-right: -40px;
+            }
+        }
+
+        // alignment left
+        &#{$block}--left {
+            right: auto;
+            left: 0;
+
+            &#{$block}--pull {
+                margin-left: -40px;
+            }
+        }
+
+        // alignment center
+        &#{$block}--center {
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+        }
+
+
+        @include kt-desktop {
+            z-index: kt-get($submenu-desktop-config, self, zindex);
+            @include kt-rounded {
+                border-radius: kt-get($submenu-desktop-config, self, border-radius);
+            }
+            @include kt-attr(margin,kt-get($submenu-desktop-config, self, margin));
+            @include kt-attr(padding,kt-get($submenu-desktop-config, self, padding, classic));
+
+            // full width
+            &#{$block}--full {
+                left: kt-get($submenu-desktop-config, self, width, full, offset);
+                right: kt-get($submenu-desktop-config, self, width, full, offset);
+            }
+        }
+
+        @include kt-desktop-and-tablet {
+            z-index: kt-get($submenu-tablet-mobile-config, self, zindex);
+            @include kt-rounded {
+                border-radius: kt-get($header-tablet-mobile-config, build, layout, item, submenu, self, border-radius);
+            }
+            @include kt-attr(margin, kt-get($submenu-tablet-mobile-config, self, margin));
+            @include kt-attr(padding, kt-get($submenu-tablet-mobile-config, self, padding, classic));
+
+            // full width
+            &#{$block}--full {
+                left: kt-get($submenu-tablet-mobile-config, self, width, full, offset);
+                right: kt-get($submenu-tablet-mobile-config, self, width, full, offset);
+            }
+        }
+    }
+
+    &--vertical {
+        display: none;
+        float: none;
+        margin: 0;
+        padding: 0;
+
+        &#{$block}--visible {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+        }
+    }
+}
+
+.kt-menu__subnav {
+    &--vertical {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 0;
+        margin: 0;
+        list-style: none !important;
+    }
+}

@@ -11,9 +11,9 @@
 @import "bootstrap/scss/variables";
 @import "./bootstrap/variables";
 
-@import "./layout/footer/config";
-@import "./layout/header/config";
-@import "./layout/aside/config";
-
 // Configs that are moved to Vue
 @import "../components/Portlet/config";
+@import "../components/Menu/config";
+
+@import "./layout/footer/config";
+@import "./layout/aside/config";

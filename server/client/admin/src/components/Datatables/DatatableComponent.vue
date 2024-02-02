@@ -1,37 +1,40 @@
 <script setup lang="ts">
-import { computed, provide } from "vue";
-import {
-  DatatablePagination,
-  TableHead,
-  TableLoader,
-  DatatableHeader,
-  DatatableFilters,
-  TableColumn,
-  TableRow,
-} from "@/components/Datatables";
-import { PortletComponent, PortletBody } from "@starter-core/dash-ui";
-import { TableQuery, onQueryUpdateKey } from "@/components/Datatables/typings";
-import "./DatatableComponent.scss";
+  import { computed, provide } from "vue";
+  import {
+    DatatablePagination,
+    TableHead,
+    TableLoader,
+    DatatableHeader,
+    DatatableFilters,
+    TableColumn,
+    TableRow,
+  } from "@/components/Datatables";
+  import { PortletComponent, PortletBody } from "@starter-core/dash-ui";
+  import {
+    TableQuery,
+    onQueryUpdateKey,
+  } from "@/components/Datatables/typings";
+  import "./DatatableComponent.scss";
 
-const props = defineProps([
-  "tableInfo",
-  "query",
-  "loading",
-  "columns",
-  "pagination",
-  "langKey", //TODO: Find better solution to avoid duplications in translations
-  "addRouteName", //TODO: Send all these as single object to be used by Datatable
-]);
+  const props = defineProps([
+    "tableInfo",
+    "query",
+    "loading",
+    "columns",
+    "pagination",
+    "langKey", //TODO: Find better solution to avoid duplications in translations
+    "addRouteName", //TODO: Send all these as single object to be used by Datatable
+  ]);
 
-const emit = defineEmits(["onQueryUpdate"]);
+  const emit = defineEmits(["onQueryUpdate"]);
 
-const handleUpdateQuery = (query: TableQuery) => emit("onQueryUpdate", query);
-const hasError = computed(() => !!props.tableInfo.error);
-const isLoading = computed(() => props.loading);
+  const handleUpdateQuery = (query: TableQuery) => emit("onQueryUpdate", query);
+  const hasError = computed(() => !!props.tableInfo.error);
+  const isLoading = computed(() => props.loading);
 
-provide("hasError", hasError);
-provide("isLoading", isLoading);
-provide(onQueryUpdateKey, handleUpdateQuery);
+  provide("hasError", hasError);
+  provide("isLoading", isLoading);
+  provide(onQueryUpdateKey, handleUpdateQuery);
 </script>
 
 <template>

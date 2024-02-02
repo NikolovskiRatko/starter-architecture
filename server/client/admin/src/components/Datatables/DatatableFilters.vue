@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { ref, inject } from "vue";
-import type { Ref } from "vue";
-import { onQueryUpdateKey } from "@/components/Datatables/typings";
-import { PortletBody } from "@starter-core/dash-ui";
+  import { ref, inject } from "vue";
+  import type { Ref } from "vue";
+  import { onQueryUpdateKey } from "@/components/Datatables/typings";
+  import { PortletBody } from "@starter-core/dash-ui";
 
-const onQueryUpdate = inject(onQueryUpdateKey, () => {});
+  const onQueryUpdate = inject(onQueryUpdateKey, () => {});
 
-const searchValue: Ref<string> = ref("");
-const handleSearchChange = (event: HTMLInputElementEvent) => {
-  onQueryUpdate({
-    search: event.target.value,
-  });
-};
+  const searchValue: Ref<string> = ref("");
+  const handleSearchChange = (event: HTMLInputElementEvent) => {
+    onQueryUpdate({
+      search: event.target.value,
+    });
+  };
 </script>
 
 <template>

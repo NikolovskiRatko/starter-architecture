@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts">
-export default {
-  props: ["columns"],
-};
+  export default {
+    props: ["columns"],
+  };
 </script>

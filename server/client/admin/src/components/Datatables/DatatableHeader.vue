@@ -1,40 +1,40 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import type { Ref } from "vue";
-// import { BDropdown, BDropdownItem, BDropdownText } from 'bootstrap-vue';
-import { useAuth } from "@websanova/vue-auth/src/v3.js";
-import SkButton from "@/components/base/SkButton/SkButton.vue";
-import {
-  PortletHead,
-  PortletHeadLabel,
-  PortletHeadToolbar,
-} from "@starter-core/dash-ui";
+  // import { ref } from "vue";
+  // import type { Ref } from "vue";
+  // import { BDropdown, BDropdownItem, BDropdownText } from 'bootstrap-vue';
+  import { useAuth } from "@websanova/vue-auth/src/v3.js";
+  import SkButton from "@/components/base/SkButton/SkButton.vue";
+  import {
+    PortletHead,
+    PortletHeadLabel,
+    PortletHeadToolbar,
+  } from "@starter-core/dash-ui";
 
-const props = defineProps([
-  "value",
-  "addRouteName",
-  "langKey",
-  "draggableAddNewEnable",
-]);
-const exportGeneration: Ref<boolean> = ref(false);
-const auth = useAuth();
+  const props = defineProps([
+    "value",
+    "addRouteName",
+    "langKey",
+    "draggableAddNewEnable",
+  ]);
+  // const exportGeneration: Ref<boolean> = ref(false);
+  const auth = useAuth();
 
-// const generateCsv = async () => {
-//   exportGeneration.value = true;
-//   axios.post(props.endpoint, props.value)
-//     .then((response) => {
-//       console.log(response);
-//       var hiddenElement = document.createElement('a'),
-//         blob = new Blob([response.data], { type: "octet/stream" }),
-//         url = window.URL.createObjectURL(blob);
-//       hiddenElement.href = url;
-//       var d = new Date();
-//       hiddenElement.download = this.export_file+'_export_'+d.getFullYear()+'_'+(d.getMonth() < 9 ? '0'+(d.getMonth()+1): +(d.getMonth()+1))+'_'+(d.getDate() < 10 ? '0'+d.getDate(): d.getDate())+'.csv';
-//       hiddenElement.click();
-//       window.URL.revokeObjectURL(url);
-//       this.exportGeneration = false;
-//     });
-// }
+  // const generateCsv = async () => {
+  //   exportGeneration.value = true;
+  //   axios.post(props.endpoint, props.value)
+  //     .then((response) => {
+  //       console.log(response);
+  //       var hiddenElement = document.createElement('a'),
+  //         blob = new Blob([response.data], { type: "octet/stream" }),
+  //         url = window.URL.createObjectURL(blob);
+  //       hiddenElement.href = url;
+  //       var d = new Date();
+  //       hiddenElement.download = this.export_file+'_export_'+d.getFullYear()+'_'+(d.getMonth() < 9 ? '0'+(d.getMonth()+1): +(d.getMonth()+1))+'_'+(d.getDate() < 10 ? '0'+d.getDate(): d.getDate())+'.csv';
+  //       hiddenElement.click();
+  //       window.URL.revokeObjectURL(url);
+  //       this.exportGeneration = false;
+  //     });
+  // }
 </script>
 
 <template>

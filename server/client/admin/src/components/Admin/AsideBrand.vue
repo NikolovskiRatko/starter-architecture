@@ -1,16 +1,29 @@
 <script setup lang="ts">
-import "./AsideBrand.scss";
+  import { computed } from "vue";
+  import { storeToRefs } from "pinia";
+  import { useRootStore } from "@/store/root";
+  import "./AsideBrand.scss";
 
-const emits = ["toggleSidebar"];
+  const rootStore = useRootStore();
+  const { sidebarState } = storeToRefs(rootStore);
+
+  const isLogoVisible = computed(
+    () =>
+      !sidebarState.value.minimized ||
+      (sidebarState.value.minimized && sidebarState.value.minimizeHover),
+  );
 </script>
 
 <template>
   <div class="kt-aside__brand">
     <div class="kt-aside__brand-logo">
-      <router-link to="/admin/dashboard" class="kt-menu__link">
-        <img alt="Logo" src="/build/images/sm_logo_white.png" />
+      <router-link to="/admin/dashboard">
+        <img
+          v-if="isLogoVisible"
+          alt="Logo"
+          src="/build/images/sm_logo_white.png"
+        />
       </router-link>
-      .
     </div>
     <div class="kt-aside__brand-tools">
       <button

@@ -1,0 +1,130 @@
+@import './animations';
+// Desktop Mode
+
+$header-desktop-config: kt-get($header-config, menu, desktop);
+$header-desktop-tablet-config: kt-get($header-config, menu, tablet-and-mobile);
+
+.kt-header-menu {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+
+  @include kt-desktop {
+    margin: kt-get($header-desktop-config, build, layout, self, margin);
+  }
+
+  @include kt-desktop-and-tablet {
+    margin: kt-get($header-desktop-tablet-config, build, layout, self, margin);
+  }
+}
+
+// Header Menu Mobile Offcanvas
+@include kt-offcanvas-build(
+  kt-header-menu-wrapper,
+  tablet-and-mobile,
+  kt-get($header-config, menu, offcanvas-mobile)
+);
+
+.kt-menu__nav {
+  $block: &;
+
+  @include kt-desktop {
+
+    &--horizontal {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: stretch;
+
+      > .kt-menu__item {
+        &:first-child {
+          padding-left: 0;
+        }
+
+        > .kt-menu__submenu {
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+        }
+      }
+
+      // Layouts
+      &--layout-default {
+        > .kt-menu__item {
+          > .kt-menu__link {
+            padding: 0.65rem 1.1rem;
+
+            @include kt-not-rounded {
+              border-radius: 0 !important;
+            }
+          }
+        }
+      }
+
+      &--layout-tab {
+        > .kt-menu__item {
+          margin: 0 1rem;
+          align-items: stretch;
+
+          > .kt-menu__link {
+            align-items: stretch;
+            background-color: transparent !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            border-bottom: 1px solid transparent;
+            margin-bottom: -1px;
+          }
+
+          &:first-child {
+            margin-left: 0 !important;
+          }
+
+          &.kt-menu__item--active {
+            > .kt-menu__link {
+              background-color: transparent !important;
+              border-bottom: 1px solid kt-brand-color() !important;
+            }
+          }
+        }
+      }
+    }
+
+    &--vertical {
+      $vertical-base: kt-get($header-desktop-config, base);
+      $vertica-layout: kt-get($header-desktop-config, build, layout);
+
+      margin: 0;
+      list-style: none;
+      padding: 15px 0;
+      background-color: kt-get($layout-skins, dark);
+
+      .kt-menu__scroll {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      &#{$block}--minimized {
+        //padding: kt-get($layout, minimize, self, padding);
+      }
+    }
+  }
+}
+
+/*
+ * Most likely what's under this line should be in another component
+ */
+.kt-header-menu-wrapper--aside-enabled {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  .kt-header-logo {
+    padding: 0 kt-get($page-padding, desktop);
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+  }
+}

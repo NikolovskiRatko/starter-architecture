@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import { computed } from "vue";
+  import { computed } from "vue";
 
-const props = defineProps([
-  "form",
-  "value",
-  "id",
-  "isInline",
-  "label",
-  "isDisabled",
-  "options",
-]);
-const emit = defineEmits(["update:modelValue"]);
-const colOneClass = props.isInline ? "col-12" : "col-lg-4 col-md-2";
-const colTwoClass =
-  props.isInline || !!props.label ? "col-12" : "col-lg-8 col-md-10";
-const labelClass = props.isInline ? "text-2" : "col-form-label text-2";
-const formGroupClass = props.isInline
-  ? "form-group"
-  : "form-group form-group-inline";
+  const props = defineProps([
+    "form",
+    "value",
+    "id",
+    "isInline",
+    "label",
+    "isDisabled",
+    "options",
+  ]);
+  const emit = defineEmits(["update:modelValue"]);
+  const colOneClass = props.isInline ? "col-12" : "col-lg-4 col-md-2";
+  const colTwoClass =
+    props.isInline || !!props.label ? "col-12" : "col-lg-8 col-md-10";
+  const labelClass = props.isInline ? "text-2" : "col-form-label text-2";
+  const formGroupClass = props.isInline
+    ? "form-group"
+    : "form-group form-group-inline";
 
-const hasError = computed(() => props?.form?.errors?.has(props.id));
+  const hasError = computed(() => props?.form?.errors?.has(props.id));
 
-const emitValue = (value) => {
-  emit("update:modelValue", value);
-};
+  const emitValue = (value) => {
+    emit("update:modelValue", value);
+  };
 </script>
 
 <template>

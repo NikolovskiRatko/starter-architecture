@@ -1,19 +1,19 @@
 <script setup>
-import { ref } from "vue";
-import useAuthComp from "@/composables/useAuthComp";
-import "./HeaderUserBar.scss";
-import { useRouter } from "vue-router";
+  import { ref } from "vue";
+  import useAuthComp from "@/composables/useAuthComp";
+  import "./HeaderUserBar.scss";
+  import { useRouter } from "vue-router";
 
-const { logout, user } = useAuthComp();
-const isDropdownVisible = ref(false);
-const router = useRouter();
+  const { logout, user } = useAuthComp();
+  const isDropdownVisible = ref(false);
+  const router = useRouter();
 
-const goToMyProfile = () => {
-  router.push({ name: "myprofile" });
-};
+  const goToMyProfile = () => {
+    router.push({ name: "myprofile" });
+  };
 
-const toggleDropdown = () =>
-  (isDropdownVisible.value = !isDropdownVisible.value);
+  const toggleDropdown = () =>
+    (isDropdownVisible.value = !isDropdownVisible.value);
 </script>
 <template>
   <div

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { inject } from "vue";
-import { portletThemeKey } from "../types";
+import { portletThemeKey } from "../constants";
 
 import "./PortletFoot.scss";
 

@@ -1,75 +1,79 @@
 <script lang="ts" setup>
-import { ref, provide, computed, onMounted } from "vue";
-import { cloneDeep } from "lodash";
-import { useRoute } from "vue-router";
-import { useForm } from "@/composables";
-import {
-  FormDropdown,
-  FormInputRadio,
-  FormInput,
-  CustomForm,
-} from "@/components/Form";
-import { getPhotoPath } from "@/utils/imageProcessing";
-import { user } from "@/utils/Objects";
-import { get } from "@/services/HTTP";
-import {
-  PortletComponent,
-  PortletBody,
-  PortletHead,
-  PortletHeadLabel,
-} from "@starter-core/dash-ui";
+  import { ref, provide, computed, onMounted } from "vue";
+  import { cloneDeep } from "lodash";
+  import { useRoute } from "vue-router";
+  import { useForm } from "@/composables";
+  import {
+    FormDropdown,
+    FormInputRadio,
+    FormInput,
+    CustomForm,
+  } from "@/components/Form";
+  import { getPhotoPath } from "@/utils/imageProcessing";
+  import { user } from "@/utils/Objects";
+  import { get } from "@/services/HTTP";
+  import {
+    PortletComponent,
+    PortletBody,
+    PortletHead,
+    PortletHeadLabel,
+  } from "@starter-core/dash-ui";
 
-const route = useRoute();
+  const route = useRoute();
 
-const item = ref(cloneDeep(user));
-const edit = route.name == "edit.user";
-const id = Number(route.params.userId);
-const fetchUri = `/user/${id}/get`;
-const roles = ref([]);
-const {
-  form,
-  messageClass,
-  message,
-  loading,
-  onSubmit,
-  initFormFromItem,
-  clearErrors,
-} = useForm(fetchUri, user);
+  const item = ref(cloneDeep(user));
+  const edit = route.name == "edit.user";
+  const id = Number(route.params.userId);
+  const fetchUri = `/user/${id}/get`;
+  const roles = ref([]);
+  const {
+    form,
+    messageClass,
+    message,
+    loading,
+    onSubmit,
+    initFormFromItem,
+    clearErrors,
+  } = useForm(fetchUri, user);
 
-provide("form", form.value);
-provide("labelStart", "user");
+  provide("form", form.value);
+  provide("labelStart", "user");
 
-const postUri = computed(() => (edit ? `/user/${id}/update` : "/user/create"));
-const redirectRoute = "users";
+  const postUri = computed(() =>
+    edit ? `/user/${id}/update` : "/user/create",
+  );
+  const redirectRoute = "users";
 
-const fetchRoles = async () => {
-  try {
-    const response = await get("user/roles/get");
-    roles.value = response.data;
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-const avatar = computed(() => {
-  const { media } = item.value;
-  if (media != undefined) {
-    const userAvatar = media.find((o) => o.collection_name === "user_avatars");
-    if (userAvatar) {
-      return getPhotoPath(userAvatar, 400);
+  const fetchRoles = async () => {
+    try {
+      const response = await get("user/roles/get");
+      roles.value = response.data;
+    } catch (error) {
+      console.error(error);
     }
-  }
-  return "";
-});
+  };
 
-const beforeSubmit = (hasToRedirect = true) => {
-  onSubmit(postUri.value, redirectRoute.value, hasToRedirect);
-};
+  const avatar = computed(() => {
+    const { media } = item.value;
+    if (media != undefined) {
+      const userAvatar = media.find(
+        (o) => o.collection_name === "user_avatars",
+      );
+      if (userAvatar) {
+        return getPhotoPath(userAvatar, 400);
+      }
+    }
+    return "";
+  });
 
-onMounted(() => {
-  initFormFromItem();
-  fetchRoles();
-});
+  const beforeSubmit = (hasToRedirect = true) => {
+    onSubmit(postUri.value, redirectRoute.value, hasToRedirect);
+  };
+
+  onMounted(() => {
+    initFormFromItem();
+    fetchRoles();
+  });
 </script>
 
 <template>

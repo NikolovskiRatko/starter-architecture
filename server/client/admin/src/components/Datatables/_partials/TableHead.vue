@@ -1,58 +1,58 @@
 <script setup lang="ts">
-import { PropType, inject } from "vue";
-import {
-  ColumnName,
-  ColumnObject,
-  OrderDirection,
-  TableInfo,
-  TableQuery,
-  onQueryUpdateKey,
-} from "@/components/Datatables/typings";
-import { TableRow } from "@/components/Datatables";
+  import { PropType, inject } from "vue";
+  import {
+    ColumnName,
+    ColumnObject,
+    OrderDirection,
+    TableInfo,
+    TableQuery,
+    onQueryUpdateKey,
+  } from "@/components/Datatables/typings";
+  import { TableRow } from "@/components/Datatables";
 
-const props = defineProps({
-  columns: {
-    type: Array as PropType<ColumnObject>,
-    default: () => [],
-  },
-  tableInfo: {
-    type: Object as PropType<TableInfo>,
-    required: true,
-  },
-  query: {
-    type: Object as PropType<TableQuery>,
-    required: true,
-  },
-});
+  const props = defineProps({
+    columns: {
+      type: Array as PropType<ColumnObject>,
+      default: () => [],
+    },
+    tableInfo: {
+      type: Object as PropType<TableInfo>,
+      required: true,
+    },
+    query: {
+      type: Object as PropType<TableQuery>,
+      required: true,
+    },
+  });
 
-const isLoading = inject("isLoading");
-const onQueryUpdate = inject(onQueryUpdateKey, () => {});
+  const isLoading = inject("isLoading");
+  const onQueryUpdate = inject(onQueryUpdateKey, () => {});
 
-const triggerSort = (columnName: ColumnName) => {
-  const getOrderDirection = (): OrderDirection => {
-    const { column, dir } = props.query;
-    if (column !== columnName) {
-      return "desc";
-    }
-    return dir === "desc" ? "asc" : "desc";
+  const triggerSort = (columnName: ColumnName) => {
+    const getOrderDirection = (): OrderDirection => {
+      const { column, dir } = props.query;
+      if (column !== columnName) {
+        return "desc";
+      }
+      return dir === "desc" ? "asc" : "desc";
+    };
+
+    onQueryUpdate({
+      column: columnName,
+      dir: getOrderDirection(),
+    });
   };
 
-  onQueryUpdate({
-    column: columnName,
-    dir: getOrderDirection(),
-  });
-};
-
-const isArrowVisible = (
-  direction: OrderDirection,
-  column: ColumnObject,
-): boolean => {
-  const { sortable, name } = column;
-  const {
-    query: { dir, column: sortKey },
-  } = props;
-  return !!(sortable && name === sortKey && dir === direction);
-};
+  const isArrowVisible = (
+    direction: OrderDirection,
+    column: ColumnObject,
+  ): boolean => {
+    const { sortable, name } = column;
+    const {
+      query: { dir, column: sortKey },
+    } = props;
+    return !!(sortable && name === sortKey && dir === direction);
+  };
 </script>
 
 <template>

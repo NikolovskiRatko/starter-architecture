@@ -1,45 +1,45 @@
 <script setup lang="ts">
-import { ref, computed, inject } from "vue";
-import type { Ref } from "vue";
-import PaginationLink from "@/components/Datatables/_partials/PaginationLink.vue";
-import { onQueryUpdateKey } from "@/components/Datatables/typings/inject";
+  import { ref, computed, inject } from "vue";
+  import type { Ref } from "vue";
+  import PaginationLink from "@/components/Datatables/_partials/PaginationLink.vue";
+  import { onQueryUpdateKey } from "@/components/Datatables/typings/inject";
 
-import "./DatatablePagination.scss";
+  import "./DatatablePagination.scss";
 
-const props = defineProps(["pagination", "page"]);
-const limitOptions = ["10", "25", "50"];
-const selectedLength: Ref<string> = ref(limitOptions[0]);
+  const props = defineProps(["pagination", "page"]);
+  const limitOptions = ["10", "25", "50"];
+  const selectedLength: Ref<string> = ref(limitOptions[0]);
 
-const arrowNavigation = computed(() => {
-  const { currentPage, lastPage, dataLength, total } = props.pagination;
-  const from = currentPage * dataLength - dataLength + 1;
-  const to = Math.min(from + dataLength - 1, total);
-  return {
-    firstPage: props.pagination.currentPage > 1 ? 1 : null,
-    previousPage: currentPage > 1 ? currentPage - 1 : null,
-    lastPage: currentPage < lastPage ? lastPage : null,
-    nextPage: currentPage < lastPage ? currentPage + 1 : null,
-    from,
-    to,
-  };
-});
-
-const onQueryUpdate = inject(onQueryUpdateKey, () => {});
-const isLoading = inject("isLoading");
-
-const handleLengthChange = (event: HTMLInputElementEvent) => {
-  onQueryUpdate({
-    length: Number(event.target.value),
+  const arrowNavigation = computed(() => {
+    const { currentPage, lastPage, dataLength, total } = props.pagination;
+    const from = currentPage * dataLength - dataLength + 1;
+    const to = Math.min(from + dataLength - 1, total);
+    return {
+      firstPage: props.pagination.currentPage > 1 ? 1 : null,
+      previousPage: currentPage > 1 ? currentPage - 1 : null,
+      lastPage: currentPage < lastPage ? lastPage : null,
+      nextPage: currentPage < lastPage ? currentPage + 1 : null,
+      from,
+      to,
+    };
   });
-};
 
-const handleNavClick = (page: number | null): void => {
-  if (!!page && page !== props.pagination.currentPage) {
+  const onQueryUpdate = inject(onQueryUpdateKey, () => {});
+  const isLoading = inject("isLoading");
+
+  const handleLengthChange = (event: HTMLInputElementEvent) => {
     onQueryUpdate({
-      page: Number(page),
+      length: Number(event.target.value),
     });
-  }
-};
+  };
+
+  const handleNavClick = (page: number | null): void => {
+    if (!!page && page !== props.pagination.currentPage) {
+      onQueryUpdate({
+        page: Number(page),
+      });
+    }
+  };
 </script>
 
 <template>

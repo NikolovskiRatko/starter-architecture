@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { PropType, inject } from "vue";
-import { portletThemeKey, PortletHeadSizes } from "../types";
+import { inject, type PropType } from "vue";
+import type { PortletHeadSizes } from "../types";
+import { portletThemeKey } from '../constants';
 
 import "./PortletHead.scss";
 

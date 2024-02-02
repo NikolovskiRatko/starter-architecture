@@ -6,6 +6,12 @@ $header-topbar-item-size-mobile: 34px;
 $header-topbar-item-svg-size-mobile: 30px;
 $header-topbar-user-avatar-size-mobile: 30px;
 
+$header-top-bar-config: (
+  height: (
+    mobile: 50px,
+  ),
+);
+
 .kt-header__topbar {
   display: flex;
   align-items: stretch;
@@ -163,8 +169,8 @@ $header-topbar-user-avatar-size-mobile: 30px;
     background-color: #2b2a35;
     box-shadow: 0px 1px 9px -3px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    margin-top: -(kt-get($header-config, topbar, height, mobile));
-    height: kt-get($header-config, topbar, height, mobile);
+    margin-top: -(kt-get($header-top-bar-config, height, mobile));
+    height: kt-get($header-top-bar-config, height, mobile);
     position: absolute;
     left: 0;
     right: 0;

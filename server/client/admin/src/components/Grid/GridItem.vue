@@ -1,14 +1,14 @@
 <script setup>
-const props = defineProps({
-  isFluid: {
-    type: Boolean,
-    default: false,
-  },
-  className: {
-    type: String,
-    default: "",
-  },
-});
+  const props = defineProps({
+    isFluid: {
+      type: Boolean,
+      default: false,
+    },
+    className: {
+      type: String,
+      default: "",
+    },
+  });
 </script>
 <template>
   <div

@@ -1,26 +1,26 @@
 <script setup lang="ts">
-import { inject, computed } from "vue";
+  import { inject, computed } from "vue";
 
-const emit = defineEmits(["update:modelValue"]);
-const props = defineProps([
-  "modelValue",
-  "id",
-  "type",
-  "isInline",
-  "disabled",
-  "hasLabel",
-]);
-const form = inject("form");
-const labelStart = inject("labelStart");
+  const emit = defineEmits(["update:modelValue"]);
+  const props = defineProps([
+    "modelValue",
+    "id",
+    "type",
+    "isInline",
+    "disabled",
+    "hasLabel",
+  ]);
+  const form = inject("form");
+  const labelStart = inject("labelStart");
 
-const inputValue = computed({
-  get() {
-    return props.modelValue;
-  },
-  set(newValue) {
-    emit("update:modelValue", newValue);
-  },
-});
+  const inputValue = computed({
+    get() {
+      return props.modelValue;
+    },
+    set(newValue) {
+      emit("update:modelValue", newValue);
+    },
+  });
 </script>
 
 <template>

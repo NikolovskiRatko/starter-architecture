@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { AdminSection } from "@/components/Form/index";
-const props = defineProps(["route", "loading"]);
+  import { AdminSection } from "@/components/Form/index";
+  const props = defineProps(["route", "loading"]);
 </script>
 
 <template>

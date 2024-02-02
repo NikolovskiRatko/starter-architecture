@@ -1,46 +1,46 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+  import { defineComponent } from "vue";
 
-export default defineComponent({
-  name: "ResultsPagination",
-  props: {
-    pagination: {
-      type: Object,
-      default: null,
+  export default defineComponent({
+    name: "ResultsPagination",
+    props: {
+      pagination: {
+        type: Object,
+        default: null,
+      },
+      length: {
+        type: Number,
+        default: 1,
+      },
+      page: {
+        type: Number,
+        default: 1,
+      },
     },
-    length: {
-      type: Number,
-      default: 1,
+    data() {
+      return {
+        selectedLength: this.$props.length,
+        selectedPage: this.$props.page,
+      };
     },
-    page: {
-      type: Number,
-      default: 1,
+    computed: {
+      pages() {
+        const lastPage = Number(this.pagination.lastPage);
+        const allPages = Array.from(Array(lastPage).keys());
+        return allPages.filter((page) => {
+          return (
+            page > this.pagination.currentPage - 5 &&
+            page < this.pagination.currentPage + 5
+          );
+        });
+      },
     },
-  },
-  data() {
-    return {
-      selectedLength: this.$props.length,
-      selectedPage: this.$props.page,
-    };
-  },
-  computed: {
-    pages() {
-      const lastPage = Number(this.pagination.lastPage);
-      const allPages = Array.from(Array(lastPage).keys());
-      return allPages.filter((page) => {
-        return (
-          page > this.pagination.currentPage - 5 &&
-          page < this.pagination.currentPage + 5
-        );
-      });
+    watch: {
+      page(newVal) {
+        this.selectedPage = newVal;
+      },
     },
-  },
-  watch: {
-    page(newVal) {
-      this.selectedPage = newVal;
-    },
-  },
-});
+  });
 </script>
 
 <template>

@@ -1,89 +1,91 @@
 <script setup lang="ts">
-import { computed, onMounted, provide, ref } from "vue";
-// import AdminUserForm from '../../../features/Admin/UsersCrud/_components/MyProfileForm.vue';
-import { useRootStore } from "@/store/root";
-import { cloneDeep } from "lodash";
-import { useForm } from "@/composables";
-import { useEventsBus } from "@/composables";
-import {
-  FormDropdown,
-  FormInputRadio,
-  FormInput,
-  CustomForm,
-} from "@/components/Form";
-import { user } from "@/utils/Objects";
-import { get } from "@/services/HTTP";
-import { useRoute } from "vue-router";
-import { getPhotoPath } from "@/utils/imageProcessing";
-import {
-  PortletComponent,
-  PortletBody,
-  PortletHead,
-  PortletHeadToolbar,
-  PortletHeadLabel,
-} from "@starter-core/dash-ui";
+  import { computed, onMounted, provide, ref } from "vue";
+  // import AdminUserForm from '../../../features/Admin/UsersCrud/_components/MyProfileForm.vue';
+  import { useRootStore } from "@/store/root";
+  import { cloneDeep } from "lodash";
+  import { useForm } from "@/composables";
+  import { useEventsBus } from "@/composables";
+  import {
+    FormDropdown,
+    FormInputRadio,
+    FormInput,
+    CustomForm,
+  } from "@/components/Form";
+  import { user } from "@/utils/Objects";
+  import { get } from "@/services/HTTP";
+  import { useRoute } from "vue-router";
+  import { getPhotoPath } from "@/utils/imageProcessing";
+  import {
+    PortletComponent,
+    PortletBody,
+    PortletHead,
+    PortletHeadToolbar,
+    PortletHeadLabel,
+  } from "@starter-core/dash-ui";
 
-const { setBackUrl, setActiveClasses } = useRootStore();
+  const { setBackUrl, setActiveClasses } = useRootStore();
 
-onMounted(() => {
-  setActiveClasses({
-    main: "/users",
-    sub: "edit.user",
-    title: "users.myprofile",
+  onMounted(() => {
+    setActiveClasses({
+      main: "/users",
+      sub: "edit.user",
+      title: "users.myprofile",
+    });
+    initFormFromItem();
+    fetchRoles();
+    // Not 100% sure but probably this is used for the same purpose as redirect route and should be removed
+    setBackUrl("/");
   });
-  initFormFromItem();
-  fetchRoles();
-  // Not 100% sure but probably this is used for the same purpose as redirect route and should be removed
-  setBackUrl("/");
-});
 
-const route = useRoute();
+  const route = useRoute();
 
-const item = ref(cloneDeep(user));
-// const edit = route.name == 'edit.user';
-const id = 1; //Number(route.params.userId);
-const fetchUri = `/user/${id}/get`;
-const roles = ref([]);
-const {
-  form,
-  messageClass,
-  message,
-  loading,
-  onSubmitTest,
-  initFormFromItem,
-  // clearErrors
-} = useForm(fetchUri, user);
+  const item = ref(cloneDeep(user));
+  // const edit = route.name == 'edit.user';
+  const id = 1; //Number(route.params.userId);
+  const fetchUri = `/user/${id}/get`;
+  const roles = ref([]);
+  const {
+    form,
+    messageClass,
+    message,
+    loading,
+    onSubmitTest,
+    initFormFromItem,
+    // clearErrors
+  } = useForm(fetchUri, user);
 
-provide("form", form.value);
-provide("labelStart", "user");
+  provide("form", form.value);
+  provide("labelStart", "user");
 
-// const postUri = computed(() => edit ? `/user/${id}/update` : '/user/create');
-const postUri = `/user/${id}/update`;
-const redirectRoute = "users";
+  // const postUri = computed(() => edit ? `/user/${id}/update` : '/user/create');
+  const postUri = `/user/${id}/update`;
+  const redirectRoute = "users";
 
-const fetchRoles = async () => {
-  try {
-    const response = await get("user/roles/get");
-    roles.value = response.data;
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-const avatar = computed(() => {
-  const { media } = item.value;
-  if (media != undefined) {
-    const userAvatar = media.find((o) => o.collection_name === "user_avatars");
-    if (userAvatar) {
-      return getPhotoPath(userAvatar, 400);
+  const fetchRoles = async () => {
+    try {
+      const response = await get("user/roles/get");
+      roles.value = response.data;
+    } catch (error) {
+      console.error(error);
     }
-  }
-  return "";
-});
+  };
 
-const beforeSubmit = (hasToRedirect = true) => {
-  onSubmitTest(postUri, redirectRoute.value, hasToRedirect);
-};
+  const avatar = computed(() => {
+    const { media } = item.value;
+    if (media != undefined) {
+      const userAvatar = media.find(
+        (o) => o.collection_name === "user_avatars",
+      );
+      if (userAvatar) {
+        return getPhotoPath(userAvatar, 400);
+      }
+    }
+    return "";
+  });
+
+  const beforeSubmit = (hasToRedirect = true) => {
+    onSubmitTest(postUri, redirectRoute.value, hasToRedirect);
+  };
 </script>
 
 <template>

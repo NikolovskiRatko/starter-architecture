@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useAuth } from "@websanova/vue-auth/src/v3.js";
-import { TableColumn, TableRow } from "@/components/Datatables";
-const props = defineProps(["value", "columns", "user", "index"]);
-const isEvenRow = props.index % 2 === 0;
-const auth = useAuth();
+  import { useAuth } from "@websanova/vue-auth/src/v3.js";
+  import { TableColumn, TableRow } from "@/components/Datatables";
+  const props = defineProps(["value", "columns", "user", "index"]);
+  const isEvenRow = props.index % 2 === 0;
+  const auth = useAuth();
 </script>
 
 <template>

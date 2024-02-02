@@ -23,6 +23,7 @@ export default defineConfig({
         children: [
           { text: "Content loader", link: "/components/content-loader" },
           { text: "Portlet", link: "/components/portlet" },
+          { text: "Menu", link: "/components/menu" },
         ],
       },
     ],

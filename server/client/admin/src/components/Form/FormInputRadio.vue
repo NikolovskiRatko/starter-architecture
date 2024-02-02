@@ -1,48 +1,48 @@
 <script lang="ts" setup>
-import { inject } from "vue";
+  import { inject } from "vue";
 
-interface FormInputRadioProps {
-  value: any;
-  id: string;
-  label?: string;
-  options: Array<any>;
-  isInline?: boolean;
-  disabled?: boolean;
-}
+  interface FormInputRadioProps {
+    value: any;
+    id: string;
+    label?: string;
+    options: Array<any>;
+    isInline?: boolean;
+    disabled?: boolean;
+  }
 
-const props: FormInputRadioProps = defineProps({
-  value: {
-    type: String,
-    required: true,
-  },
-  id: {
-    type: String,
-    required: true,
-  },
-  label: {
-    type: String,
-  },
-  options: {
-    type: Array,
-    required: true,
-  },
-  isInline: {
-    type: Boolean,
-    default: false,
-  },
-  disabled: {
-    type: Boolean,
-    default: false,
-  },
-});
+  const props: FormInputRadioProps = defineProps({
+    value: {
+      type: String,
+      required: true,
+    },
+    id: {
+      type: String,
+      required: true,
+    },
+    label: {
+      type: String,
+    },
+    options: {
+      type: Array,
+      required: true,
+    },
+    isInline: {
+      type: Boolean,
+      default: false,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+  });
 
-const form = inject("form");
+  const form = inject("form");
 
-const emit = defineEmits(["update:modelValue"]);
+  const emit = defineEmits(["update:modelValue"]);
 
-function emitValue(value: unknown) {
-  emit("update:modelValue", value);
-}
+  function emitValue(value: unknown) {
+    emit("update:modelValue", value);
+  }
 </script>
 
 <template>

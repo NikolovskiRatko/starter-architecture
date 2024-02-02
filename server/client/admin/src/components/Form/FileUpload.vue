@@ -1,76 +1,77 @@
 <script lang="ts">
-import { defineComponent, ref, watch } from "vue";
-import { useEventsBus } from "@/composables";
+  import { defineComponent, ref, watch } from "vue";
+  import { useEventsBus } from "@/composables";
 
-export default defineComponent({
-  name: "FileUpload",
-  props: {
-    value: {},
-    id: {},
-    label: {},
-    form: {},
-    isInline: {},
-    disabled: {},
-    placeholderImage: {},
-    componentType: { default: "full" },
-  },
-  setup(props) {
-    const colOneClass = ref("");
-    const colTwoClass = ref("");
-    const formGroupClass = ref("");
-    const inputClass = ref("form-control");
-    const labelClass = ref("");
-    const url = ref(null);
-    const { emit } = useEventsBus();
+  export default defineComponent({
+    name: "FileUpload",
+    props: {
+      value: {},
+      id: {},
+      label: {},
+      form: {},
+      isInline: {},
+      disabled: {},
+      placeholderImage: {},
+      componentType: { default: "full" },
+    },
+    setup(props) {
+      const colOneClass = ref("");
+      const colTwoClass = ref("");
+      const formGroupClass = ref("");
+      const inputClass = ref("form-control");
+      const labelClass = ref("");
+      const url = ref(null);
+      const { emit } = useEventsBus();
 
-    const updateInputClass = () => {
-      if (props.form.errors.has(props.id)) {
-        inputClass.value = "form-control error";
-      } else {
-        inputClass.value = "form-control";
-      }
-    };
+      const updateInputClass = () => {
+        if (props.form.errors.has(props.id)) {
+          inputClass.value = "form-control error";
+        } else {
+          inputClass.value = "form-control";
+        }
+      };
 
-    const onFileChange = (file) => {
-      // const file = e.target.files[0];
-    };
+      const onFileChange = (file) => {
+        // const file = e.target.files[0];
+      };
 
-    const emitValue = () => {
-      const file = $refs.photo_file.files[0];
-      url.value = URL.createObjectURL(file);
-      // emit('input', file);
-    };
+      const emitValue = () => {
+        const file = $refs.photo_file.files[0];
+        url.value = URL.createObjectURL(file);
+        // emit('input', file);
+      };
 
-    watch(() => props.form.errors, updateInputClass);
+      watch(() => props.form.errors, updateInputClass);
 
-    const setClasses = () => {
-      if (!props.isInline || typeof props.isInline === "undefined") {
-        colOneClass.value = "col-12";
-        colTwoClass.value = "col-12";
-        formGroupClass.value = "form-group form-file-upload";
-        labelClass.value = "text-2";
-      } else {
-        colOneClass.value = "col-lg-4 col-md-2";
-        colTwoClass.value = "col-lg-8 col-md-10";
-        formGroupClass.value = "form-group form-file-upload form-group-inline";
-        labelClass.value = "col-form-label text-2";
-      }
-    };
+      const setClasses = () => {
+        if (!props.isInline || typeof props.isInline === "undefined") {
+          colOneClass.value = "col-12";
+          colTwoClass.value = "col-12";
+          formGroupClass.value = "form-group form-file-upload";
+          labelClass.value = "text-2";
+        } else {
+          colOneClass.value = "col-lg-4 col-md-2";
+          colTwoClass.value = "col-lg-8 col-md-10";
+          formGroupClass.value =
+            "form-group form-file-upload form-group-inline";
+          labelClass.value = "col-form-label text-2";
+        }
+      };
 
-    setClasses();
+      setClasses();
 
-    return {
-      colOneClass,
-      colTwoClass,
-      formGroupClass,
-      inputClass,
-      labelClass,
-      url,
-      onFileChange,
-      emitValue,
-    };
-  },
-});
+      return {
+        colOneClass,
+        colTwoClass,
+        formGroupClass,
+        inputClass,
+        labelClass,
+        url,
+        onFileChange,
+        emitValue,
+      };
+    },
+  });
 </script>
 
 <template>

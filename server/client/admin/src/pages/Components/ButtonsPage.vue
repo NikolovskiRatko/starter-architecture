@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import SkButton from "@/components/base/SkButton/SkButton.vue";
-import SkSection from "@/components/base/typography/SkSection/SkSection.vue";
-import {
-  PortletComponent,
-  PortletBody,
-  PortletHead,
-  PortletHeadLabel,
-} from "@starter-core/dash-ui";
+  import SkButton from "@/components/base/SkButton/SkButton.vue";
+  import SkSection from "@/components/base/typography/SkSection/SkSection.vue";
+  import {
+    PortletComponent,
+    PortletBody,
+    PortletHead,
+    PortletHeadLabel,
+  } from "@starter-core/dash-ui";
 
-import buttons from "@/data/buttons";
+  import buttons from "@/data/buttons";
 </script>
 <template>
   <div class="row">

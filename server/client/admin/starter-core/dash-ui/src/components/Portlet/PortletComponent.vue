@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { provide, computed } from "vue";
 import type { PropType } from "vue";
-import { portletIsLoadingKey, portletThemeKey } from "./types";
+import { portletIsLoadingKey, portletThemeKey } from "./constants";
 
 import "./PortletComponent.scss";
 

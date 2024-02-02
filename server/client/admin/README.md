@@ -5,10 +5,13 @@ Nuxt is a framework for server-side rendering (SSR) Vue.js applications. It simp
 ## Development Server
 
 For the Vuejs Admin Panel SPA start the app container by running:
+
 ```shell
 docker exec -it node /bin/bash
 ```
+
 Then in folder within the node container **server/client/admin** run the following commands:
+
 ```shell
 npm install && npm run dev && npm run dev
 ```

@@ -1,0 +1,45 @@
+  // Horizontal Menu Hoverable Submenu Animations
+  @keyframes #{kt-get(kt-get($header-config, menu, desktop), base, class)}-submenu-fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes #{kt-get(kt-get($header-config, menu, desktop), base, class)}-submenu-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes #{kt-get(kt-get($header-config, menu, desktop), base, class)}-submenu-move-up {
+    from {
+      margin-top: kt-get(
+        kt-get($header-config, menu, desktop),
+        build,
+        layout,
+        item,
+        submenu,
+        self,
+        animation,
+        offset
+      );
+    }
+    to {
+      margin-top: 0;
+    }
+  }
+
+  @keyframes #{kt-get(kt-get($header-config, menu, desktop), base, class)}-submenu-move-down {
+    from {
+      margin-top: -(kt-get(kt-get($header-config, menu, desktop), build, layout, item, submenu, self, animation, offset));
+    }
+    to {
+      margin-top: 0;
+    }
+  }

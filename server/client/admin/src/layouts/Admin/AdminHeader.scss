@@ -196,5 +196,3 @@ $header-item-hover-bg: rgba(#4d5995, 0.06);
     }
   }
 }
-
-@include kt-menu-hor-build-skin(kt-get($header-config, menu, desktop), light);
