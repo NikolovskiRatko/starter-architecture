@@ -2,7 +2,7 @@
   import { computed, toRefs } from "vue";
   import { SkLink } from "../index";
   import type { SkButtonProps, SkButtonEmits } from "./types";
-  import { briefcaseIcon } from "@/data/navMenu";
+  import { IconBinocular } from "@starter-core/icons";
   import "./SkButton.scss";
 
   const emit = defineEmits<SkButtonEmits>();
@@ -87,7 +87,7 @@
 </script>
 <template>
   <SkLink v-if="type === 'link'" :class="className" v-bind="linkProps">
-    <span v-if="!!icon" v-html="briefcaseIcon" />
+    <IconBinocular v-if="!!icon" />
     <slot />
   </SkLink>
   <button
@@ -96,7 +96,7 @@
     :class="className"
     @click="(event) => emit('click', event)"
   >
-    <span v-if="!!icon" v-html="briefcaseIcon" />
+    <IconBinocular v-if="!!icon" />
     <slot />
   </button>
 </template>
