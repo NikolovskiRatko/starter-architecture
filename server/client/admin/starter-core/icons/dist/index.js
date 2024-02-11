@@ -1,0 +1,11 @@
+export { default as IconAirpods } from './admin/IconAirpods.vue';
+export { default as IconAndroid } from './admin/IconAndroid.vue';
+export { default as IconBatterycharging } from './admin/IconBatterycharging.vue';
+export { default as IconBatteryempty } from './admin/IconBatteryempty.vue';
+export { default as IconBatteryfull } from './admin/IconBatteryfull.vue';
+export { default as IconBatteryhalf } from './admin/IconBatteryhalf.vue';
+export { default as IconBluetooth } from './admin/IconBluetooth.vue';
+export { default as IconCPU1 } from './admin/IconCPU1.vue';
+export { default as IconCamera } from './admin/IconCamera.vue';
+export { default as IconCardboardvr } from './admin/IconCardboardvr.vue';
+export { default as IconCassete } from './admin/IconCassete.vue';
