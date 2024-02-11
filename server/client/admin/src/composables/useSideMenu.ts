@@ -52,7 +52,9 @@ export default function useSideMenu() {
         )
         .map(({ label, link, subcategories }) => ({
           label: t(label),
-          route: link,
+          route: {
+            name: link,
+          },
           icon: briefcaseIcon,
           ...(subcategories && {
             submenu: {
@@ -64,7 +66,9 @@ export default function useSideMenu() {
                 )
                 .map(({ label, link }) => ({
                   label: t(label),
-                  route: link,
+                  route: {
+                    name: link,
+                  },
                 })),
             },
           }),

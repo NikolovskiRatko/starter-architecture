@@ -7,13 +7,13 @@
     PortletHeadLabel,
     ContentLoader,
   } from "@starter-core/dash-ui";
+  import { IconAirpods as Icon } from "@starter-core/icons";
   // import { get } from "@/services/HTTP";
   import { useRootStore } from "@/store/root";
 
   // const categories = ref([]);
   const isLoading = ref(false);
   const { setActiveClasses } = useRootStore();
-
   onMounted(() => {
     isLoading.value = true;
     setActiveClasses({
@@ -34,7 +34,10 @@
     <div class="col-md-4">
       <PortletComponent>
         <PortletHead>
-          <PortletHeadLabel> Content loader </PortletHeadLabel>
+          <PortletHeadLabel>
+            Content loader
+            <Icon size="32" />
+          </PortletHeadLabel>
         </PortletHead>
         <PortletBody>
           <ContentLoader />

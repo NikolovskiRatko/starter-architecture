@@ -1,9 +1,14 @@
 <script setup lang="ts">
 import { computed } from "vue";
-
 import "./ContentLoader.scss";
 
-const props = defineProps(["heightClass", "fullCont", "transparent"]);
+interface ContentLoaderProps {
+  heightClass: string;
+  fullCont?: boolean;
+  transparent?: boolean;
+}
+
+const props = defineProps<ContentLoaderProps>();
 const extraClass = props.fullCont;
 
 const className = computed(() => {

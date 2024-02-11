@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@starter-core/dash-ui": "1.0.2",
+    "@starter-core/icons": "^1.0.1",
     "@websanova/vue-auth": "^4.2.1",
     "axios": "^1.4.0",
     "eslint-config-prettier": "^9.1.0",
@@ -43,6 +44,7 @@
     "vue-tsc": "^1.0.11"
   },
   "workspaces": [
-    "./starter-core/dash-ui"
+    "./starter-core/dash-ui",
+    "./starter-core/icons"
   ]
 }
