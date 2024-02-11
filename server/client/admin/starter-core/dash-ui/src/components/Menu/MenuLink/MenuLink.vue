@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { inject, computed, type PropType } from "vue";
+  import { inject, computed, type PropType, VueElement } from "vue";
   import type { MenuListStyle } from "../SubMenu/types";
   import { isMenuMinimizedKey, menuTypeKey } from "../constants";
   import type { BadgeType } from "./types";
@@ -15,7 +15,7 @@
       required: true,
     },
     icon: {
-      type: String,
+      type: VueElement,
       required: false,
       default: "",
     },
@@ -93,8 +93,9 @@
           'kt-menu__link-icon--active': props.isActive,
         },
       ]"
-      v-html="icon"
-    />
+    >
+      <component :is="icon" />
+    </span>
 
     <i
       v-if="listStyle && !isMinimized"

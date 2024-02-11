@@ -1,3 +1,4 @@
+import type { VueElement } from 'vue';
 import type { SubMenu } from "../SubMenu/types";
 
 export type BadgeType = {
@@ -8,7 +9,7 @@ export type BadgeType = {
 export interface MenuItem {
   label: string;
   route: string;
-  icon?: string;
+  icon?: VueElement;
   badge?: BadgeType;
   submenu?: SubMenu;
 }

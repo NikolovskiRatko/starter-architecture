@@ -9,6 +9,7 @@
     PortletHeadLabel,
     PortletHeadToolbar,
   } from "@starter-core/dash-ui";
+  import { IconUser } from "@starter-core/icons";
 
   const props = defineProps([
     "value",
@@ -39,7 +40,7 @@
 
 <template>
   <PortletHead :size="'lg'">
-    <PortletHeadLabel :has-icon="true">
+    <PortletHeadLabel :icon="IconUser">
       Datatable header
       <small>This is a subtitle</small>
     </PortletHeadLabel>

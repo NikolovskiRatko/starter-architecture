@@ -4,7 +4,7 @@ import { useI18n } from "vue-i18n";
 import useAuthComp from "@/composables/useAuthComp";
 import { useRootStore } from "@/store/root";
 import type { NavMenuDataInterface } from "@starter-core/dash-ui/dist/components/Menu/NavMenu/types";
-import { briefcaseIcon } from "@/data/navMenu";
+import { IconLayout4blocks, IconUser } from "@starter-core/icons";
 
 export default function useSideMenu() {
   const { permissionsArray } = useAuthComp();
@@ -55,7 +55,7 @@ export default function useSideMenu() {
           route: {
             name: link,
           },
-          icon: briefcaseIcon,
+          icon: link === "dashboard" ? IconLayout4blocks : IconUser,
           ...(subcategories && {
             submenu: {
               listStyle: "icons",
