@@ -1,9 +1,11 @@
 <script setup lang="ts">
   import { computed, toRefs } from "vue";
-  import type { DashButtonProps, DashButtonEmits } from "./types";
+  import type { DashButtonProps } from "./types";
   import "./DashButton.scss";
 
-  const emit = defineEmits<DashButtonEmits>();
+  const emit = defineEmits<{
+    click: [event: MouseEvent]
+  }>();
 
   const props = withDefaults(defineProps<DashButtonProps>(), {
     type: "button",

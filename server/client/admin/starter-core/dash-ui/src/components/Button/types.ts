@@ -12,13 +12,6 @@ type DashButtonTextTransform = "uppercase" | "lowercase";
 type DashButtonHeight = "tall" | "taller" | "tallest";
 type DashButtonElevate = "elevate" | "elevate-air";
 
-export interface DashButtonEmits {
-  (
-    e: "click",
-    event: MouseEvent,
-  ): void;
-}
-
 export interface DashButtonProps {
   className?: string;
   type?: DashButtonType;

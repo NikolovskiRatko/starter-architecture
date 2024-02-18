@@ -1,12 +1,8 @@
 <script setup lang="ts">
-  import { computed, toRefs } from "vue";
-  import { RouterLink, type RouterLinkProps } from "vue-router";
-  import type { DashButtonProps } from "../Button/types";
+  import { computed } from "vue";
+  import { RouterLink } from "vue-router";
+  import type { DashLinkProps } from './types';
   import DashButton from '../Button/DashButton.vue';
-
-  export interface DashLinkProps extends DashButtonProps {
-    to: string | RouterLinkProps;
-  }
 
   const props = withDefaults(defineProps<DashLinkProps>(), {
     to: ""
