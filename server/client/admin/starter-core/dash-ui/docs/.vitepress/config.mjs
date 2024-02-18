@@ -10,17 +10,17 @@ export default defineConfig({
   title: "Dash UI",
   description: "Just playing around.",
   themeConfig: {
-    sidebar: [
+    nav: [
       {
         text: "Introduction",
-        children: [
+        items: [
           { text: "What is My Lib?", link: "/" },
           { text: "Getting Started", link: "/guide/" },
         ],
       },
       {
         text: "Components",
-        children: [
+        items: [
           { text: "Content loader", link: "/components/content-loader" },
           { text: "Portlet", link: "/components/portlet" },
           { text: "Menu", link: "/components/menu" },
