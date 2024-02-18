@@ -1,4 +1,6 @@
 import ContentLoader from "./ContentLoader/ContentLoader.vue";
+import DashButton from "./Button/DashButton.vue";
+import DashLink from "./Link/DashLink.vue";
 import {
   PortletComponent,
   PortletHead,
@@ -16,4 +18,6 @@ export {
   PortletHeadToolbar,
   PortletFoot,
   ContentLoader,
+  DashButton,
+  DashLink
 };

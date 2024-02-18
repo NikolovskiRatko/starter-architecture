@@ -17,7 +17,10 @@
     PortletBody,
     PortletHead,
     PortletHeadLabel,
+    DashButton,
+    DashLink,
   } from "@starter-core/dash-ui";
+  import { IconSave, IconArrowleft } from "@starter-core/icons";
 
   const route = useRoute();
 
@@ -92,27 +95,13 @@
               {{ $t("users.basic.information") }}
             </PortletHeadLabel>
             <PortletHeadToolbar>
-              <router-link
-                :loading="loading"
-                :to="`/admin/users`"
-                exact=""
-                class="btn btn-clean kt-margin-r-10"
-              >
-                <i class="la la-arrow-left"></i>
-                <span class="kt-hidden-mobile">{{ $t("buttons.cancel") }}</span>
-              </router-link>
+              <DashLink to="/admin/users" :icon="IconArrowleft">
+                {{ $t("buttons.cancel") }}
+              </DashLink>
               <div class="btn-group">
-                <button type="submit" :loading="loading" class="btn btn-brand">
-                  <i class="la la-save mr-1" />
+                <DashButton :icon="IconSave" :loading="loading">
                   {{ $t("buttons.save") }}
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-brand dropdown-toggle dropdown-toggle-split"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                ></button>
+                </DashButton>
                 <div class="dropdown-menu dropdown-menu-right">
                   <ul class="kt-nav">
                     <li class="kt-nav__item">

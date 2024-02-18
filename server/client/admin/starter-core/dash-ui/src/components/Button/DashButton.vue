@@ -1,18 +1,18 @@
 <script setup lang="ts">
   import { computed, toRefs } from "vue";
-  import { SkLink } from "../index";
-  import type { SkButtonProps, SkButtonEmits } from "./types";
-  import { IconBinocular } from "@starter-core/icons";
-  import "./SkButton.scss";
+  import type { DashButtonProps, DashButtonEmits } from "./types";
+  import "./DashButton.scss";
 
-  const emit = defineEmits<SkButtonEmits>();
+  const emit = defineEmits<DashButtonEmits>();
 
-  const props = withDefaults(defineProps<SkButtonProps>(), {
+  const props = withDefaults(defineProps<DashButtonProps>(), {
     type: "button",
     theme: "primary",
     isWide: false,
     isPill: false,
+    isSquare: false
   });
+
   const {
     type,
     size,
@@ -22,16 +22,21 @@
     theme,
     state,
     height,
-    linkProps,
+    href,
     themeMod,
     elevate,
     icon,
     isWide,
     isPill,
+    isSquare
   } = toRefs(props);
 
-  const className = computed(() => {
+  const buttonClass = computed(() => {
     const classes = ["btn"];
+
+    if (props.className) {
+      classes.push(props.className)
+    }
 
     classes.push(
       themeMod?.value
@@ -78,6 +83,10 @@
       classes.push("btn-pill");
     }
 
+    if (isSquare.value) {
+      classes.push("btn-square")
+    }
+
     return classes.join(" ");
   });
 
@@ -86,17 +95,22 @@
   );
 </script>
 <template>
-  <SkLink v-if="type === 'link'" :class="className" v-bind="linkProps">
-    <IconBinocular v-if="!!icon" />
+  <a
+      v-if="!!href"
+     :href="href"
+     :class="buttonClass"
+     @click="(event) => emit('click', event)"
+  >
+    <component :is="icon"></component>
     <slot />
-  </SkLink>
+  </a>
   <button
     v-else
     :type="buttonType"
-    :class="className"
+    :class="buttonClass"
     @click="(event) => emit('click', event)"
   >
-    <IconBinocular v-if="!!icon" />
+    <component :is="icon"></component>
     <slot />
   </button>
 </template>

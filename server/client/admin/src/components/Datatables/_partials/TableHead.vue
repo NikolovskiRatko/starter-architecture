@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { PropType, inject } from "vue";
+  import { useI18n } from "vue-i18n";
   import {
     ColumnName,
     ColumnObject,
@@ -24,6 +25,7 @@
       required: true,
     },
   });
+  const { t } = useI18n();
 
   const isLoading = inject("isLoading");
   const onQueryUpdate = inject(onQueryUpdateKey, () => {});
@@ -67,7 +69,7 @@
         <th
           v-if="column.sortable && !props.tableInfo.noRecords"
           :key="`sortable-${column.name}`"
-          :title="$t(column.label)"
+          :title="t(column.label)"
           class="kt-datatable__cell kt-datatable__cell--head"
           :class="{
             'kt-datatable__cell--sort': column.sortable,
@@ -75,7 +77,7 @@
           :style="`width:${column.width};`"
         >
           <span @click="triggerSort(column.name)">
-            {{ $t(column.label) }}
+            {{ t(column.label) }}
             <i
               v-show="isArrowVisible('desc', column)"
               class="la la-arrow-down"
@@ -88,10 +90,10 @@
           :key="column.name"
           class="kt-datatable__cell"
           :style="`width:${column.width};`"
-          :title="$t(column.label)"
+          :title="t(column.label)"
         >
           <span>
-            {{ $t(column.label) }}
+            {{ t(column.label) }}
           </span>
         </th>
       </template>

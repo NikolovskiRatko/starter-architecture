@@ -1,6 +1,8 @@
 <script setup lang="ts">
   import { useAuth } from "@websanova/vue-auth/src/v3.js";
   import { TableColumn, TableRow } from "@/components/Datatables";
+  import { IconTrash, IconEdit } from "@starter-core/icons";
+  import { DashButton, DashLink } from "@starter-core/dash-ui";
   const props = defineProps(["value", "columns", "user", "index"]);
   const isEvenRow = props.index % 2 === 0;
   const auth = useAuth();
@@ -36,23 +38,24 @@
     </TableColumn>
 
     <TableColumn :width="columns[5].width">
-      <router-link
+      <dash-link
         v-if="auth.user().permissions_array.includes('write_users')"
         :to="{ name: 'edit.user', params: { userId: user.id } }"
-        exact=""
+        theme="primary"
+        theme-mod="outline-hover"
+        :icon="IconEdit"
       >
-        <i aria-hidden="true" class="la la-pencil" />
         {{ $t("buttons.edit") }}
-      </router-link>
+      </dash-link>
     </TableColumn>
 
     <TableColumn :width="columns[6].width">
-      <i
+      <DashButton
         v-if="auth.user().permissions_array.includes('delete_users')"
-        variant="link"
-        aria-hidden="true"
-        class="la la-trash"
-        @click="deleteUser(user, user.id)"
+        :icon="IconTrash"
+        theme="danger"
+        onclick="deleteUser(user, user.id)"
+        is-pill
       />
     </TableColumn>
   </TableRow>

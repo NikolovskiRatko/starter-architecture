@@ -24,6 +24,7 @@ export default defineConfig({
           { text: "Content loader", link: "/components/content-loader" },
           { text: "Portlet", link: "/components/portlet" },
           { text: "Menu", link: "/components/menu" },
+          { text: "Button", link: "/components/button" },
         ],
       },
     ],
@@ -42,7 +43,7 @@ export default defineConfig({
           @import "@/assets/vite-resources.scss";
         `,
         },
-      }
-    }
+      },
+    },
   },
 });

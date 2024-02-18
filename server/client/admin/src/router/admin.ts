@@ -54,13 +54,6 @@ const Portlets = () =>
     "@/pages/Components/PortletsPage.vue"
   );
 
-const Buttons = () =>
-  import(
-    /* webpackChunkName: "buttons" */
-    /* webpackPrefetch: true */
-    "@/pages/Components/ButtonsPage.vue"
-  );
-
 /*INSERT NEW IMPORTS HERE*/
 
 export const adminPaths: RouteConfig =
@@ -130,18 +123,6 @@ export const adminPaths: RouteConfig =
         path: "components/portlets",
         name: "components.portlets",
         component: Portlets,
-        meta: {
-          title: t("components.portlets.label", null),
-          auth: {
-            roles: ["read_users"],
-            forbiddenRedirect: "/",
-          },
-        },
-      },
-      {
-        path: "components/buttons",
-        name: "components.buttons",
-        component: Buttons,
         meta: {
           title: t("components.portlets.label", null),
           auth: {
