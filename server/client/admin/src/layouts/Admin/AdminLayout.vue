@@ -16,7 +16,6 @@
   };
 
   const rootStore = useRootStore();
-  const { setMenu } = rootStore;
   const { sidebarState } = storeToRefs(rootStore);
   const auth = useAuth();
 
