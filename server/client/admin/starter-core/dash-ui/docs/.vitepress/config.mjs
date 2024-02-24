@@ -25,6 +25,7 @@ export default defineConfig({
           { text: "Portlet", link: "/components/portlet" },
           { text: "Menu", link: "/components/menu" },
           { text: "Button", link: "/components/button" },
+          { text: "Form", link: "/components/form" },
         ],
       },
     ],

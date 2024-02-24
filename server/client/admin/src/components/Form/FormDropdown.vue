@@ -1,16 +1,14 @@
 <script setup lang="ts">
-  import { computed } from "vue";
+  import { toRefs } from "vue";
+  import type { FormDropdownProps } from "./types";
 
-  const props = defineProps([
-    "form",
-    "value",
-    "id",
-    "isInline",
-    "label",
-    "isDisabled",
-    "options",
-  ]);
-  const emit = defineEmits(["update:modelValue"]);
+  const props = defineProps<FormDropdownProps>();
+  const emit = defineEmits<{
+    "update:modelValue": [value: string];
+  }>();
+  const { label, id } = props;
+  const { modelValue, errors, isDisabled, options } = toRefs(props);
+
   const colOneClass = props.isInline ? "col-12" : "col-lg-4 col-md-2";
   const colTwoClass =
     props.isInline || !!props.label ? "col-12" : "col-lg-8 col-md-10";
@@ -18,19 +16,13 @@
   const formGroupClass = props.isInline
     ? "form-group"
     : "form-group form-group-inline";
-
-  const hasError = computed(() => props?.form?.errors?.has(props.id));
-
-  const emitValue = (value) => {
-    emit("update:modelValue", value);
-  };
 </script>
 
 <template>
   <div :class="formGroupClass">
     <div class="form-row">
-      <div v-if="label !== undefined" :class="colOneClass">
-        <label :for="id" :class="labelClass">{{ $t(label) }}</label>
+      <div v-if="label" :class="colOneClass">
+        <label :for="id" :class="labelClass">{{ label }}</label>
       </div>
       <div :class="colTwoClass">
         <select
@@ -38,28 +30,35 @@
           :name="id"
           class="form-control"
           :class="{
-            error: hasError,
+            error: errors?.length,
           }"
-          :value="value"
+          :value="modelValue"
           :disabled="isDisabled"
-          @input="emitValue($event.target.value)"
+          @input="
+            (event: Event) => {
+              emit(
+                'update:modelValue',
+                (event.target as HTMLInputElement).value,
+              );
+            }
+          "
         >
           <option value="">Select an Option</option>
           <option
             v-for="option in options"
             :key="option.id"
-            :selected="option.name == value ? 'selected' : ''"
+            :selected="option.name == modelValue"
             :value="option.name"
           >
             {{ option.name }}
           </option>
         </select>
         <div
-          v-if="typeof form != 'undefined' && form.errors.has(id)"
+          v-if="errors?.length"
           class="invalid-feedback"
         >
-          <span v-for="error in form.errors.errors[id]" :key="error">
-            {{ $t(error) }}
+          <span v-for="error in errors" :key="error">
+            {{ error }}
           </span>
         </div>
       </div>

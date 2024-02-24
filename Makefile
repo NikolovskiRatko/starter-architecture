@@ -1,4 +1,6 @@
 # DOCKER TASKS
+starter: ## Start docker containers
+	docker compose -f ./infrastructure/dev_env/docker-compose.yml up
 
 starter-node-shell: ## Run node container
 	docker exec -it node /bin/bash

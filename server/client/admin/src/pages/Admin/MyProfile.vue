@@ -5,12 +5,7 @@
   import { cloneDeep } from "lodash";
   import { useForm } from "@/composables";
   import { useEventsBus } from "@/composables";
-  import {
-    FormDropdown,
-    FormInputRadio,
-    FormInput,
-    CustomForm,
-  } from "@/components/Form";
+  import { FormDropdown, CustomForm } from "@/components/Form";
   import { user } from "@/utils/Objects";
   import { get } from "@/services/HTTP";
   import { useRoute } from "vue-router";
@@ -21,6 +16,8 @@
     PortletHead,
     PortletHeadToolbar,
     PortletHeadLabel,
+    FormInput,
+    FormInputRadio,
   } from "@starter-core/dash-ui";
 
   const { setBackUrl, setActiveClasses } = useRootStore();

@@ -1,0 +1,41 @@
+$input-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+$radio-base-color: kt-base-color(grey, 1);
+
+$form-config: (
+  font-size: 1rem,
+  label: (
+    padding-y: calc(0.65rem + 1px),
+  ),
+  input: (
+    padding-y: .65rem,
+    padding-x: 1rem,
+    font-weight: 400,
+    transition: $input-transition,
+    color: (
+      focus: tint-color($primary, 50%),
+    )
+  ),
+  radio: (
+    self: (
+      transition: all 0.3s ease,
+      size: 18px,
+      tick: 6px,
+    ),
+
+    outline: (
+      border: (
+        default: darken($radio-base-color, 12%),
+        checked: darken($radio-base-color, 15%),
+      ),
+      tick: darken($radio-base-color, 18%),
+    ),
+
+    solid: (
+      bg: (
+        default: darken($radio-base-color, 6%),
+        checked: darken($radio-base-color, 8%),
+      ),
+      tick: darken($radio-base-color, 30%),
+    ),
+  )
+)
