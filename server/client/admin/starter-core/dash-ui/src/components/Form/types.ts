@@ -27,3 +27,13 @@ export interface FormInputRadioProps {
   isDisabled?: boolean;
   error?: string;
 }
+
+export interface FormDropdownProps {
+  isDisabled?: boolean;
+  isInline?: boolean;
+  options: Array<any>;
+  id: string;
+  modelValue: any;
+  label?: string;
+  errors?: string[];
+}

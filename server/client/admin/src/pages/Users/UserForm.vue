@@ -4,7 +4,7 @@
   import { useI18n } from "vue-i18n";
   import { useRoute } from "vue-router";
   import { useForm } from "@/composables";
-  import { FormDropdown, CustomForm } from "@/components/Form";
+  import { CustomForm } from "@/components/Form";
   import { getPhotoPath } from "@/utils/imageProcessing";
   import { user } from "@/utils/Objects";
   import { get } from "@/services/HTTP";
@@ -18,6 +18,7 @@
     DashLink,
     FormInput,
     FormInputRadio,
+    FormDropdown
   } from "@starter-core/dash-ui";
   import { IconSave, IconArrowleft, IconMail } from "@starter-core/icons";
 
@@ -123,6 +124,7 @@
                       v-model="form.role"
                       :options="roles"
                       :label="t('users.roles.label')"
+                      is-inline
                     />
                     <form-input-radio
                       id="enabled"

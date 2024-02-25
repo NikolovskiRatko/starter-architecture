@@ -1,6 +1,6 @@
 <script setup>
   import Icon from "../components/Icon.vue";
-  import { FormInput, FormInputRadio } from "../../../../src/index.ts";
+  import { FormInput, FormInputRadio, FormDropdown } from "../../../../src/index.ts";
 </script>
 
 <template>
@@ -22,6 +22,16 @@
       { id: 1, name: 'Disabled' },
     ]"
     helper-text="This is fucking helper text"
+    is-inline
+  />
+  <FormDropdown
+    id="role"
+    label="User role"
+    :options="[
+      { id: 0, name: 'Administrator'},
+      { id: 1, name: 'Moderator'},
+      { id: 2, name: 'Editor'}
+    ]"
     is-inline
   />
 </template>
