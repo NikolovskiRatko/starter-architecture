@@ -18,7 +18,8 @@
     DashLink,
     FormInput,
     FormInputRadio,
-    FormDropdown
+    FormDropdown,
+    FormSwitch,
   } from "@starter-core/dash-ui";
   import { IconSave, IconArrowleft, IconMail } from "@starter-core/icons";
 
@@ -126,17 +127,13 @@
                       :label="t('users.roles.label')"
                       is-inline
                     />
-                    <form-input-radio
+                    <form-switch
                       id="enabled"
+                      theme="danger"
+                      type="outline"
                       :label="t('users.status.label')"
                       v-model="form.is_disabled"
-                      :options="[
-                        { id: 0, name: 'Enabled' },
-                        { id: 1, name: 'Disabled' },
-                      ]"
-                      type="bold"
-                      :error="getErrors('enabled')"
-                      is-inline
+                      :helper-text="`Is user ${form.is_disabled ? 'disabled' : 'enabled'}`"
                     />
                   </div>
                 </div>

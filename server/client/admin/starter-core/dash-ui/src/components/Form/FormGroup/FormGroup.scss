@@ -1,3 +1,5 @@
+$label-config: kt-get($form-config, label);
+
 .form-group {
     display: flex;
     flex-direction: column;
@@ -7,6 +9,14 @@
 
     &--inline {
         flex-direction: row;
+    }
+
+    &__label {
+        display: block;
+        font-size: kt-get($form-config, 'font-size');
+        font-weight: $font-weight-normal;
+        padding-top: kt-get($label-config, 'padding-y');
+        padding-bottom: kt-get($label-config, 'padding-y');
     }
 
     &__column {

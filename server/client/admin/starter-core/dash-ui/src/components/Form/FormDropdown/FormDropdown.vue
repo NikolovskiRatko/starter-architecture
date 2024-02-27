@@ -6,20 +6,18 @@
 
   const props = defineProps<FormDropdownProps>();
   const emit = defineEmits<{
-    "update:modelValue": [value: string];
+    "update:modelValue": [value: number];
   }>();
   const { label, id, isInline } = props;
   const { modelValue, errors, isDisabled, options } = toRefs(props);
 </script>
 
 <template>
-  <form-group :is-inline="isInline" class-name="form-dropdown">
-    <template v-slot:columnLeft>
-      <label v-if="label" :for="id" class="form-dropdown__label">{{
-        label
-      }}</label>
+  <form-group :is-inline="isInline" class-name="form-dropdown" :id="id">
+    <template v-slot:label>
+      {{ label }}
     </template>
-    <template v-slot:columnRight>
+    <template v-slot:input>
       <select
         :id="id"
         :name="id"
@@ -33,7 +31,10 @@
         :disabled="isDisabled"
         @input="
           (event: Event) => {
-            emit('update:modelValue', (event.target as HTMLInputElement).value);
+            emit(
+              'update:modelValue',
+              Number((event.target as HTMLInputElement).value),
+            );
           }
         "
       >
@@ -41,8 +42,8 @@
         <option
           v-for="option in options"
           :key="option.id"
-          :selected="option.name == modelValue"
-          :value="option.name"
+          :selected="option.id == modelValue"
+          :value="option.id"
         >
           {{ option.name }}
         </option>

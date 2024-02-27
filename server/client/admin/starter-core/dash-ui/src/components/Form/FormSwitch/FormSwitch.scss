@@ -1,0 +1,209 @@
+$switch-sizes: 'sm', 'md', 'lg';
+$switch-size-config: (
+    sm: (
+        margin: 10px 0 2px,
+        width: 38px,
+        height: 24px,
+        line-height: 20px,
+        space: 2px,
+        checked-tick-pos: 16px,
+        icon-font-size: 0.8em
+    ),
+    md: (
+        margin: 8px 0 2px,
+        width: 54px,
+        height: 30px,
+        line-height: 26px,
+        space: 3px,
+        checked-tick-pos: 26px,
+        icon-font-size: 0.9em
+    ),
+    lg: (
+        margin: 2px 0,
+        width: 72px,
+        height: 40px,
+        line-height: 34px,
+        space: 3px,
+        checked-tick-pos: 34px,
+        icon-font-size: 1em
+    )
+);
+
+// Component Size
+@mixin kt-switch-size($size) {
+    $block: &;
+
+    &--#{$size} {
+        $size-config: kt-get($switch-size-config, $size);
+
+        line-height: kt-get($size-config, 'line-height');
+        margin: kt-get($size-config, margin);
+        height: kt-get($size-config, height);
+        width: kt-get($size-config, width) + kt-get($size-config, space);
+        border-radius: calc(kt-get($size-config, height) / 2);
+    
+        &:before,
+        &:after {
+            width: kt-get($size-config, width);
+            border-radius: calc(kt-get($size-config, height) / 2);
+        }
+    
+        &:after {
+            height: kt-get($size-config, height) - 2 * kt-get($size-config, space);
+            width: kt-get($size-config, height) - 2 * kt-get($size-config, space);
+            line-height: kt-get($size-config, 'line-height');
+            top: kt-get($size-config, space);
+            bottom: kt-get($size-config, space);
+            margin-left: kt-get($size-config, space);
+            font-size: kt-get($size-config, 'icon-font-size');
+            text-align: center;
+            vertical-align: middle;
+        }
+    
+        &#{$block}--checked:after {
+            margin-left: kt-get($size-config, 'checked-tick-pos');
+        }
+    }
+}
+
+// Component Skin
+@mixin kt-switch-skin() {
+    $base-color: #e8ebf1;
+  
+    .d-form-switch {
+        &__handle {
+            $switchHandleBlock: &;
+
+            &:before {
+                background-color: $base-color;
+            }
+            &:after {
+                color: lighten($base-color, 5%);
+                background-color: #ffffff;
+            }
+
+            &--checked {
+                &:before {
+                    background-color: $base-color;
+                    //box-shadow: 0px 3px 20px 0px rgba($base-color, 0.41);
+                }
+                &:after {
+                    background-color: kt-state-color(brand, base);
+                    color: kt-state-color(brand, inverse);
+                    //box-shadow: 0px 3px 20px 0px rgba($base-color, 0.41);
+                }
+            }
+
+            &--disabled {
+                cursor: not-allowed;
+                
+                &:before, &:after {
+                    cursor: not-allowed;
+                    opacity: 0.7;
+                }
+            }
+
+            @each $name, $color in $state-colors {
+                // Solid themes
+                &--#{$name}#{$switchHandleBlock}--solid {
+                    &:before {
+                        background-color: kt-get($color, base);
+                    }
+                    &:after {
+                        color: kt-get($color, base);
+                        background-color: kt-get($color, inverse);
+                        opacity: 0.4;
+                    }
+
+                    &#{$switchHandleBlock}--checked {
+                        &:before {
+                            background-color: kt-get($color, base);
+                        }
+                        &:after {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                // Outline themes
+                &--#{$name}#{$switchHandleBlock}--outline {
+                    &:before {
+                        border: 2px solid darken($base-color, 3%);
+                        background-color: $base-color;
+                    }
+                    &:after {
+                        color: kt-get($color, inverse);
+                        background-color: kt-get($color, panel);
+                    }
+                    &#{$switchHandleBlock}--checked {
+                        &:before {
+                            background-color: kt-get($color, inverse);
+                        }
+                        &:after {
+                            background-color: kt-get($color, base);
+                            opacity: 1;
+                        }
+                    }
+                }
+            }            
+        }
+    }
+}
+
+.d-form-switch {
+    
+    &__switch {
+        display: flex;
+        font-size: 1rem;
+        align-items: center;
+    }
+
+    &__input {
+        &:empty {
+            margin-left: -999px;
+            height: 0;
+            width: 0;
+            overflow: hidden;
+            position: absolute;
+            opacity: 0;
+        }
+    }
+
+    &__handle {
+        display: inline-block;
+        position: relative;
+        float: left;
+        width: 1px;
+        text-indent: 0;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        &:before,
+        &:after {
+            position: absolute;
+            display: block;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            content: " ";
+            -webkit-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+        }
+  
+        @each $size in $switch-sizes {
+            @include kt-switch-size($size);
+        }
+    }
+
+    &__helper-text {
+        margin-top: 0.25rem;
+        margin-left: 0.25rem;
+        font-size: 0.85rem;
+        color: kt-get($base-colors, label, 2);
+    }
+}
+
+@include kt-switch-skin();

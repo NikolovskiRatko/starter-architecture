@@ -2,14 +2,17 @@
   import type { FormGroupProps } from "../types";
   import "./FormGroup.scss";
 
-  const { isInline, className } = withDefaults(defineProps<FormGroupProps>(), {
-    isInline: false,
-    className: "",
-  });
+  const { isInline, className, id } = withDefaults(
+    defineProps<FormGroupProps>(),
+    {
+      isInline: false,
+      className: "",
+    },
+  );
 
   const slots = defineSlots<{
-    columnLeft: () => void;
-    columnRight: () => void;
+    label: () => void;
+    input: () => void;
   }>();
 </script>
 <template>
@@ -28,7 +31,9 @@
         'form-group__column--inline': isInline,
       }"
     >
-      <slot name="columnLeft"></slot>
+      <label class="form-group__label" :for="id">
+        <slot name="label"></slot>
+      </label>
     </div>
     <div
       class="form-group__column form-group__column--right"
@@ -36,7 +41,7 @@
         'form-group__column--inline': isInline,
       }"
     >
-      <slot name="columnRight"></slot>
+      <slot name="input"></slot>
     </div>
   </div>
 </template>

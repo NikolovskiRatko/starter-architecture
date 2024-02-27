@@ -41,13 +41,11 @@
 </script>
 
 <template>
-  <FormGroup :is-inline="isInline" class-name="form-input">
-    <template v-slot:columnLeft>
-      <label v-if="label" :for="id" class="form-input__label">
-        {{ label }}
-      </label>
+  <FormGroup :is-inline="isInline" class-name="form-input" :id="id">
+    <template v-slot:label>
+      {{ label }}
     </template>
-    <template v-slot:columnRight>
+    <template v-slot:input>
       <div
         v-if="isFormGroup"
         class="form-input__group"

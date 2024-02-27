@@ -19,13 +19,11 @@
 </script>
 
 <template>
-  <FormGroup class-name="form-input-radio" :is-inline="isInline">
-    <template v-slot:columnLeft>
-      <label v-if="label" class="form-input-radio__label">
-        {{ label }}
-      </label>
+  <FormGroup class-name="form-input-radio" :is-inline="isInline" :id="id">
+    <template v-slot:label>
+      {{ label }}
     </template>
-    <template v-slot:columnRight>
+    <template v-slot:input>
       <div
         :class="[
           'form-input-radio__group',

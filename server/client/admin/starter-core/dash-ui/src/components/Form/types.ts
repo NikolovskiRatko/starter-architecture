@@ -10,6 +10,7 @@ export interface FormInputProps {
 }
 
 export interface FormGroupProps {
+  id: string;
   isInline?: boolean;
   className?: string;
 }
@@ -17,7 +18,7 @@ export interface FormGroupProps {
 export interface FormInputRadioProps {
   modelValue: any;
   id: string;
-  label?: string;
+  label: string;
   helperText?: string;
   type?: "default" | "bold" | "solid";
   direction?: "horizontal" | "vertical";
@@ -36,4 +37,15 @@ export interface FormDropdownProps {
   modelValue: any;
   label?: string;
   errors?: string[];
+}
+
+export interface FormSwitchProps {
+  id: string;
+  modelValue: any;
+  label: string;
+  theme?: DashUIComponentThemes;
+  isDisabled?: boolean;
+  type?: 'solid' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
+  helperText?: string;
 }

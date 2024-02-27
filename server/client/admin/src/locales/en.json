@@ -18,7 +18,7 @@
   "users": {
     "user_status": "User status",
     "status": {
-      "label": "Status",
+      "label": "Disable user",
       "enabled": "Enabled"
     },
     "roles": {

@@ -1,17 +1,8 @@
-$label-config: kt-get($form-config, label);
 $input-config: kt-get($form-config, input);
 $color-config: kt-get($starter-config, color);
 $border-config: kt-get($starter-config, border);
 
 .form-input {
-
-  &__label {
-    display: block;
-    font-size: kt-get($form-config, 'font-size');
-    font-weight: $font-weight-normal;
-    padding-top: kt-get($label-config, 'padding-y');
-    padding-bottom: kt-get($label-config, 'padding-y');
-  }
 
   &__input {
     width: 100%;

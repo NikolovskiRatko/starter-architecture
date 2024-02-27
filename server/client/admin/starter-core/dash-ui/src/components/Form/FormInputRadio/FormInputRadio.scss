@@ -1,5 +1,4 @@
 $radio-config: kt-get($form-config, radio);
-$label-config: kt-get($form-config, label);
 
 @mixin kt-radio-theme(
   $theme,
@@ -49,14 +48,6 @@ $label-config: kt-get($form-config, label);
 
 .form-input-radio {
   $formInputBlock: &;
-
-  &__label {
-    display: block;
-    font-size: kt-get($form-config, 'font-size');
-    font-weight: $font-weight-normal;
-    padding-top: kt-get($label-config, 'padding-y');
-    padding-bottom: kt-get($label-config, 'padding-y');
-  }
 
   &__group {
     $groupBlock: &;
