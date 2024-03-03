@@ -29,6 +29,11 @@ $border-config: kt-get($starter-config, border);
       }
     }
 
+    &--error,
+    &--error:focus {
+      border-color: kt-get($input-config, color, error);
+    }
+
     &--inline {
       flex: 1;
     }
@@ -39,12 +44,6 @@ $border-config: kt-get($starter-config, border);
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-  }
-
-  &__helper-text {
-    margin-top: 0.25rem;
-    font-size: 0.85rem;
-    color: kt-get($base-colors, label, 2);
   }
 
   &__attachment {

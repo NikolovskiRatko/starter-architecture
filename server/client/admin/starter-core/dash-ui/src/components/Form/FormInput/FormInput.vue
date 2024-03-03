@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { h, toRefs, useSlots } from "vue";
   import FormGroup from "../FormGroup/FormGroup.vue";
+  import FormHelperText from "../FormHelperText/FormHelperText.vue";
   import type { FormInputProps } from "../types";
   import "./FormInput.scss";
 
@@ -16,18 +17,17 @@
   }>();
   const props = defineProps<FormInputProps>();
 
-  const { id, label, isInline, type } = props;
-  const { modelValue, hasError, disabled, helperText } = toRefs(props);
+  const { name, label, isInline, type } = props;
+  const { modelValue, disabled, helperText, error } = toRefs(props);
 
   const renderInput = () => {
     return h("input", {
-      id,
       value: modelValue.value,
-      name: id,
+      name,
       class: [
         "form-input__input",
         {
-          "form-input__input--error": hasError.value,
+          "form-input__input--error": error.value,
           "form-input__input--inline": isInline,
         },
       ],
@@ -41,7 +41,7 @@
 </script>
 
 <template>
-  <FormGroup :is-inline="isInline" class-name="form-input" :id="id">
+  <FormGroup :is-inline="isInline" class-name="form-input" :id="name">
     <template v-slot:label>
       {{ label }}
     </template>
@@ -62,9 +62,7 @@
         </div>
       </div>
       <renderInput v-else />
-      <span v-if="helperText" class="form-input__helper-text">{{
-        helperText
-      }}</span>
+      <FormHelperText :text="helperText" :error="error" />
     </template>
   </FormGroup>
 </template>

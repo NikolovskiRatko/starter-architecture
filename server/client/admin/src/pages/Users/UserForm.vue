@@ -1,13 +1,11 @@
 <script lang="ts" setup>
-  import { ref, provide, computed, onMounted } from "vue";
-  import { cloneDeep } from "lodash";
+  import { computed, watch } from "vue";
+  import { useForm } from "vee-validate";
   import { useI18n } from "vue-i18n";
   import { useRoute } from "vue-router";
-  import { useForm } from "@/composables";
-  import { CustomForm } from "@/components/Form";
-  import { getPhotoPath } from "@/utils/imageProcessing";
-  import { user } from "@/utils/Objects";
-  import { get } from "@/services/HTTP";
+  import type { UserFormItem } from "@/types/userformitem";
+  import { useUserRoles } from "@/composables/vue-query/useUserRoles";
+  // import { getPhotoPath } from "@/utils/imageProcessing;
   import {
     PortletComponent,
     PortletBody,
@@ -17,96 +15,92 @@
     DashButton,
     DashLink,
     FormInput,
-    FormInputRadio,
     FormDropdown,
     FormSwitch,
   } from "@starter-core/dash-ui";
   import { IconSave, IconArrowleft, IconMail } from "@starter-core/icons";
+  import { useUsersForm } from "./useUsersForm";
 
   const route = useRoute();
   const { t } = useI18n();
 
-  const item = ref(cloneDeep(user));
-  const edit = route.name == "edit.user";
-  const id = Number(route.params.userId);
-  const fetchUri = `/user/${id}/get`;
-  const roles = ref([]);
-  const {
-    form,
-    messageClass,
-    message,
-    loading,
-    onSubmit,
-    initFormFromItem,
-    clearErrors,
-  } = useForm(fetchUri, user);
+  const { handleSubmit, errors, setValues, defineField } =
+    useForm<UserFormItem>({
+      validationSchema: {
+        last_name(value: string) {
+          if (value?.length >= 5) return true;
+          return "Name needs to be at least 5 characters.";
+        },
+      },
+    });
 
-  provide("form", form.value);
-  provide("labelStart", "user");
-
+  const id = String(route.params.userId);
   const postUri = computed(() =>
-    edit ? `/user/${id}/update` : "/user/create",
+    route.name == "edit.user" ? `/user/${id}/update` : "/user/create",
   );
-  const redirectRoute = "users";
 
-  const fetchRoles = async () => {
-    try {
-      const response = await get("user/roles/get");
-      roles.value = response.data;
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const avatar = computed(() => {
-    const { media } = item.value;
-    if (media != undefined) {
-      const userAvatar = media.find(
-        (o) => o.collection_name === "user_avatars",
-      );
-      if (userAvatar) {
-        return getPhotoPath(userAvatar, 400);
-      }
-    }
-    return "";
+  const {
+    isLoading,
+    data: formData,
+    saveUser,
+  } = useUsersForm({
+    id: String(route.params.userId),
+    postUrl: postUri.value,
+    getUrl: `/user/${id}/get`,
   });
 
-  const beforeSubmit = (hasToRedirect = true) => {
-    onSubmit(postUri.value, redirectRoute.value, hasToRedirect);
-  };
+  const { isLoading: isFetchingRoles, data: roles } = useUserRoles();
 
-  const getErrors = (key: string) => {
-    if (form.value.errors.has(key)) {
-      return form.value.errors[key];
-    }
-  };
+  // const avatar = computed(() => {
+  //   const { media } = formData.value;
+  //   if (media != undefined) {
+  //     const userAvatar = media.find(
+  //       (o) => o.collection_name === "user_avatars",
+  //     );
+  //     if (userAvatar) {
+  //       return getPhotoPath(userAvatar, 400);
+  //     }
+  //   }
+  //   return "";
+  // });
 
-  onMounted(() => {
-    initFormFromItem();
-    fetchRoles();
+  const submitHandler = handleSubmit((values) => {
+    saveUser(values);
   });
+
+  watch(() => {
+    if (formData.value) {
+      setValues(formData.value);
+    }
+  }, [formData.value]);
+
+  const [lastName] = defineField("last_name");
+  const [firstName] = defineField("first_name");
+  const [email] = defineField("email");
+  const [isDisabled] = defineField("is_disabled");
+  const [role] = defineField("role");
+  const [password] = defineField("password");
 </script>
 
 <template>
-  <CustomForm
+  <form
     class="container-fluid"
     autocomplete="off"
     enctype="multipart/form-data"
-    @beforeSubmit="beforeSubmit"
-    @keydown="form.errors.clear($event.target.name)"
+    @submit.prevent="submitHandler"
   >
     <div class="row">
       <div class="col-12">
-        <PortletComponent :has-sticky-header="true" :is-loading="loading">
+        <PortletComponent :has-sticky-header="true" :is-loading="isLoading">
           <PortletHead size="lg">
             <PortletHeadLabel>
               {{ t("users.basic.information") }}
             </PortletHeadLabel>
             <PortletHeadToolbar>
               <DashLink to="/admin/users" :icon="IconArrowleft">
-                {{ t("buttons.cancel") }}
+                {{ t("buttons.back") }}
               </DashLink>
-              <DashButton :icon="IconSave" :loading="loading">
+              <DashButton type="submit" :icon="IconSave" :loading="isLoading">
                 {{ t("buttons.save") }}
               </DashButton>
             </PortletHeadToolbar>
@@ -120,20 +114,20 @@
                       {{ t("users.user_status") }}:
                     </h3>
                     <form-dropdown
+                      v-if="!isFetchingRoles"
+                      v-model="role"
                       id="role"
-                      :errors="getErrors('role')"
-                      v-model="form.role"
                       :options="roles"
                       :label="t('users.roles.label')"
                       is-inline
                     />
                     <form-switch
+                      v-model="isDisabled"
                       id="enabled"
                       theme="danger"
                       type="outline"
                       :label="t('users.status.label')"
-                      v-model="form.is_disabled"
-                      :helper-text="`Is user ${form.is_disabled ? 'disabled' : 'enabled'}`"
+                      :helper-text="`User is  ${isDisabled ? 'disabled' : 'enabled'}`"
                     />
                   </div>
                 </div>
@@ -147,36 +141,34 @@
                     <h3 class="kt-section__title kt-section__title-lg">
                       Customer Info:
                     </h3>
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                       <label class="col-3 col-form-label">{{
                         t("users.avatar")
                       }}</label>
                       <div class="col-9">
                         <file-upload
                           id="uploaded_file"
-                          v-model="form.uploaded_file"
+                          v-model="image"
                           :placeholder-image="avatar"
-                          :form="form"
                         />
                       </div>
-                    </div>
+                    </div> -->
                     <form-input
-                      v-model="form.last_name"
-                      id="last-name"
+                      v-model="lastName"
+                      name="last-name"
                       :label="t('users.last_name.label')"
-                      :has-error="form.errors.has('last-name')"
+                      :error="errors.last_name"
                       is-inline
                     />
                     <form-input
-                      v-model="form.first_name"
-                      id="first-name"
+                      v-model="firstName"
+                      name="first-name"
                       :label="t('users.first_name.label')"
-                      :has-error="form.errors.has('first-name')"
                       is-inline
                     />
                     <form-input
-                      id="email"
-                      v-model="form.email"
+                      v-model="email"
+                      name="email"
                       :label="t('users.email.label')"
                       helper-text="We'll never share your email with anyone else."
                       is-inline
@@ -198,19 +190,19 @@
                       {{ t("users.password.new_password") }}:
                     </h3>
                     <form-input
-                      id="password"
+                      name="password"
                       type="password"
                       :label="t('users.password.label')"
-                      v-model="form.password"
+                      v-model="password"
                       is-inline
                     />
-                    <form-input
+                    <!-- <form-input
                       id="confirm-password"
                       type="password"
                       :label="t('users.password.confirm')"
                       v-model="form.password_confirmation"
                       is-inline
-                    />
+                    /> -->
                   </div>
                 </div>
               </div>
@@ -219,10 +211,5 @@
         </PortletComponent>
       </div>
     </div>
-    <!--    <unsaved-changes-modal-->
-    <!--      v-if="confirmUnsavedChangesModal"-->
-    <!--      @confirm-unsaved-changes="confirmUnsavedChanges"-->
-    <!--      @cancel-unsaved-changes="cancelUnsavedChanges"-->
-    <!--    />-->
-  </CustomForm>
+  </form>
 </template>

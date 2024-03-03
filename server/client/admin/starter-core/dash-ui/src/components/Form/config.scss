@@ -13,6 +13,7 @@ $form-config: (
     transition: $input-transition,
     color: (
       focus: tint-color($primary, 50%),
+      error: kt-get($state-colors, danger, base)
     )
   ),
   radio: (

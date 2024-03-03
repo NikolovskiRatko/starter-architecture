@@ -70,6 +70,6 @@ class User extends Authenticatable
     }
 
     public function getRoleAttribute(){
-        return $this->roles()->pluck('name')->first();
+        return $this->roles()->first()->id;
     }
 }

@@ -46,7 +46,8 @@
   "buttons": {
     "edit": "Edit",
     "cancel": "Cancel",
-    "save": "Save"
+    "save": "Save",
+    "back": "Back"
   },
   "strings": {
     "actions": "Actions",

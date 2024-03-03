@@ -1,12 +1,12 @@
 export interface FormInputProps {
-  id: string;
+  name: string;
+  error?: string;
   type?: "text" | "password";
   label?: string;
   helperText?: string;
   modelValue?: string;
   isInline?: boolean;
   disabled?: boolean;
-  hasError?: boolean;
 }
 
 export interface FormGroupProps {
