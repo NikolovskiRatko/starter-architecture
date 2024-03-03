@@ -97,7 +97,7 @@
               {{ t("users.basic.information") }}
             </PortletHeadLabel>
             <PortletHeadToolbar>
-              <DashLink to="/admin/users" :icon="IconArrowleft">
+              <DashLink to="/admin/users" :icon="IconArrowleft" theme="clean">
                 {{ t("buttons.back") }}
               </DashLink>
               <DashButton type="submit" :icon="IconSave" :loading="isLoading">
