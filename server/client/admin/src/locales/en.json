@@ -52,5 +52,8 @@
   "strings": {
     "actions": "Actions",
     "delete": "Delete"
+  },
+  "pages": {
+    "title": "Pages"
   }
 }

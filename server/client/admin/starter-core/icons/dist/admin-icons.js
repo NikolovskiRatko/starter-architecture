@@ -60,7 +60,7 @@ const d = /* @__PURE__ */ t(
   for (const [r, s] of e)
     o[r] = s;
   return o;
-}, io = /* @__PURE__ */ h(u, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconATM.vue"]]), f = /* @__PURE__ */ t(
+}, bs = /* @__PURE__ */ h(u, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconATM.vue"]]), f = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -88,9 +88,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), w = [
+), L = [
   f
-], L = /* @__PURE__ */ i({
+], w = /* @__PURE__ */ i({
   __name: "IconActivecall",
   props: {
     size: { type: String, required: !1 }
@@ -108,12 +108,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...w],
+      [...L],
       16
       /* FULL_PROPS */
     ));
   }
-}), lo = /* @__PURE__ */ h(L, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconActivecall.vue"]]), g = /* @__PURE__ */ t(
+}), Ds = /* @__PURE__ */ h(w, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconActivecall.vue"]]), g = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -162,7 +162,7 @@ const d = /* @__PURE__ */ t(
       /* FULL_PROPS */
     ));
   }
-}), co = /* @__PURE__ */ h(v, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAdduser.vue"]]), y = /* @__PURE__ */ t(
+}), Fs = /* @__PURE__ */ h(v, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAdduser.vue"]]), y = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -209,7 +209,7 @@ const d = /* @__PURE__ */ t(
       /* FULL_PROPS */
     ));
   }
-}), ao = /* @__PURE__ */ h($, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAddresscard.vue"]]), I = /* @__PURE__ */ t(
+}), Ts = /* @__PURE__ */ h($, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAddresscard.vue"]]), I = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -261,7 +261,7 @@ const d = /* @__PURE__ */ t(
       /* FULL_PROPS */
     ));
   }
-}), po = /* @__PURE__ */ h(M, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAdressbook1.vue"]]), Z = /* @__PURE__ */ t(
+}), Rs = /* @__PURE__ */ h(M, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAdressbook1.vue"]]), Z = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -313,10 +313,38 @@ const d = /* @__PURE__ */ t(
       /* FULL_PROPS */
     ));
   }
-}), ho = /* @__PURE__ */ h(S, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAdressbook2.vue"]]), B = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M17,12.9170416 L17,20.5 C17,21.3284271 16.3284271,22 15.5,22 C14.6715729,22 14,21.3284271 14,20.5 L14,11.472213 C14.8261591,12.2116454 15.8584259,12.7255217 17,12.9170416 Z" fill="#000000" opacity="0.3"></path><path d="M10,11.472213 L10,20.5 C10,21.3284271 9.32842712,22 8.5,22 C7.67157288,22 7,21.3284271 7,20.5 L7,12.9170416 C8.14157414,12.7255217 9.17384092,12.2116454 10,11.472213 Z" fill="#000000" opacity="0.3"></path><path d="M18,12 C15.2385763,12 13,9.76142375 13,7 C13,4.23857625 15.2385763,2 18,2 C20.7614237,2 23,4.23857625 23,7 C23,9.76142375 20.7614237,12 18,12 Z M14.75,6.5 C14.3357864,6.5 14,6.83578644 14,7.25 C14,7.66421356 14.3357864,8 14.75,8 L15.25,8 C15.6642136,8 16,7.66421356 16,7.25 C16,6.83578644 15.6642136,6.5 15.25,6.5 L14.75,6.5 Z M21,5 C20.4477153,5 20,5.44771525 20,6 L20,8 C20,8.55228475 20.4477153,9 21,9 C21.5522847,9 22,8.55228475 22,8 L22,6 C22,5.44771525 21.5522847,5 21,5 Z" fill="#000000"></path><path d="M6,12 C3.23857625,12 1,9.76142375 1,7 C1,4.23857625 3.23857625,2 6,2 C8.76142375,2 11,4.23857625 11,7 C11,9.76142375 8.76142375,12 6,12 Z M8.75,6.5 C8.33578644,6.5 8,6.83578644 8,7.25 C8,7.66421356 8.33578644,8 8.75,8 L9.25,8 C9.66421356,8 10,7.66421356 10,7.25 C10,6.83578644 9.66421356,6.5 9.25,6.5 L8.75,6.5 Z M3,5 C2.44771525,5 2,5.44771525 2,6 L2,8 C2,8.55228475 2.44771525,9 3,9 C3.55228475,9 4,8.55228475 4,8 L4,6 C4,5.44771525 3.55228475,5 3,5 Z" fill="#000000"></path></g>', 1), q = [
+}), Gs = /* @__PURE__ */ h(S, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAdressbook2.vue"]]), B = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M10.1573188,15.7101991 C10.7319317,15.871464 11.3373672,15.9576401 11.9626774,15.9576401 C12.5879876,15.9576401 13.1934231,15.871464 13.768036,15.7101991 L14.2784001,17.0884863 C14.2961491,17.1364191 14.3052407,17.1871941 14.3052407,17.2383863 C14.3052407,17.4741652 14.1165055,17.6653018 13.8836889,17.6653018 L12.805781,17.6381197 C12.8616756,18.8258731 13.2941654,19.508499 14.4169144,19.8875104 C14.8586529,20.0366301 15.0973861,20.5201716 14.95014,20.9675305 C14.8028938,21.4148895 14.3254274,21.6566602 13.8836889,21.5075406 C12.072317,20.8960676 11.1784281,19.5883144 11.1216188,17.6653018 L10.041666,17.6653018 C9.99111686,17.6653018 9.94097984,17.6560945 9.89364924,17.6381197 C9.67565622,17.5553322 9.56520732,17.309253 9.6469547,17.0884863 L10.1573188,15.7101991 Z",
+      fill: "#000000",
+      "fill-rule": "nonzero"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M12,16 C8.13400675,16 5,12.8659932 5,9 C5,5.13400675 8.13400675,2 12,2 C15.8659932,2 19,5.13400675 19,9 C19,12.8659932 15.8659932,16 12,16 Z M8.81595773,8.80077353 C8.79067542,8.43921955 8.47708263,8.16661749 8.11552864,8.19189981 C7.75397465,8.21718213 7.4813726,8.53077492 7.50665492,8.89232891 C7.62279197,10.5531661 8.39667037,11.8635466 9.79502238,12.7671393 C10.099435,12.9638458 10.5056723,12.8765328 10.7023788,12.5721203 C10.8990854,12.2677077 10.8117724,11.8614704 10.5073598,11.6647638 C9.4559885,10.9853845 8.90327706,10.0494981 8.81595773,8.80077353 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    })
+  ],
+  -1
+  /* HOISTED */
+), q = [
   B
 ], A = /* @__PURE__ */ i({
-  __name: "IconAirpods",
+  __name: "IconAirballon",
   props: {
     size: { type: String, required: !1 }
   },
@@ -338,7 +366,57 @@ const d = /* @__PURE__ */ t(
       /* FULL_PROPS */
     ));
   }
-}), Co = /* @__PURE__ */ h(A, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAirpods.vue"]]), b = /* @__PURE__ */ t(
+}), Us = /* @__PURE__ */ h(A, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAirballon.vue"]]), b = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M17,12.9170416 L17,20.5 C17,21.3284271 16.3284271,22 15.5,22 C14.6715729,22 14,21.3284271 14,20.5 L14,11.472213 C14.8261591,12.2116454 15.8584259,12.7255217 17,12.9170416 Z" fill="#000000" opacity="0.3"></path><path d="M10,11.472213 L10,20.5 C10,21.3284271 9.32842712,22 8.5,22 C7.67157288,22 7,21.3284271 7,20.5 L7,12.9170416 C8.14157414,12.7255217 9.17384092,12.2116454 10,11.472213 Z" fill="#000000" opacity="0.3"></path><path d="M18,12 C15.2385763,12 13,9.76142375 13,7 C13,4.23857625 15.2385763,2 18,2 C20.7614237,2 23,4.23857625 23,7 C23,9.76142375 20.7614237,12 18,12 Z M14.75,6.5 C14.3357864,6.5 14,6.83578644 14,7.25 C14,7.66421356 14.3357864,8 14.75,8 L15.25,8 C15.6642136,8 16,7.66421356 16,7.25 C16,6.83578644 15.6642136,6.5 15.25,6.5 L14.75,6.5 Z M21,5 C20.4477153,5 20,5.44771525 20,6 L20,8 C20,8.55228475 20.4477153,9 21,9 C21.5522847,9 22,8.55228475 22,8 L22,6 C22,5.44771525 21.5522847,5 21,5 Z" fill="#000000"></path><path d="M6,12 C3.23857625,12 1,9.76142375 1,7 C1,4.23857625 3.23857625,2 6,2 C8.76142375,2 11,4.23857625 11,7 C11,9.76142375 8.76142375,12 6,12 Z M8.75,6.5 C8.33578644,6.5 8,6.83578644 8,7.25 C8,7.66421356 8.33578644,8 8.75,8 L9.25,8 C9.66421356,8 10,7.66421356 10,7.25 C10,6.83578644 9.66421356,6.5 9.25,6.5 L8.75,6.5 Z M3,5 C2.44771525,5 2,5.44771525 2,6 L2,8 C2,8.55228475 2.44771525,9 3,9 C3.55228475,9 4,8.55228475 4,8 L4,6 C4,5.44771525 3.55228475,5 3,5 Z" fill="#000000"></path></g>', 1), D = [
+  b
+], F = /* @__PURE__ */ i({
+  __name: "IconAirpods",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...D],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Ps = /* @__PURE__ */ h(F, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAirpods.vue"]]), T = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M7.14319965,19.3575259 C7.67122143,19.7615175 8.25104409,20.1012165 8.87097532,20.3649307 L7.89205065,22.0604779 C7.61590828,22.5387706 7.00431787,22.7026457 6.52602525,22.4265033 C6.04773263,22.150361 5.88385747,21.5387706 6.15999985,21.0604779 L7.14319965,19.3575259 Z M15.1367085,20.3616573 C15.756345,20.0972995 16.3358198,19.7569961 16.8634386,19.3524415 L17.8320512,21.0301278 C18.1081936,21.5084204 17.9443184,22.1200108 17.4660258,22.3961532 C16.9877332,22.6722956 16.3761428,22.5084204 16.1000004,22.0301278 L15.1367085,20.3616573 Z" fill="#000000"></path><path d="M12,21 C7.581722,21 4,17.418278 4,13 C4,8.581722 7.581722,5 12,5 C16.418278,5 20,8.581722 20,13 C20,17.418278 16.418278,21 12,21 Z M19.068812,3.25407593 L20.8181344,5.00339833 C21.4039208,5.58918477 21.4039208,6.53893224 20.8181344,7.12471868 C20.2323479,7.71050512 19.2826005,7.71050512 18.696814,7.12471868 L16.9474916,5.37539627 C16.3617052,4.78960984 16.3617052,3.83986237 16.9474916,3.25407593 C17.5332781,2.66828949 18.4830255,2.66828949 19.068812,3.25407593 Z M5.29862906,2.88207799 C5.8844155,2.29629155 6.83416297,2.29629155 7.41994941,2.88207799 C8.00573585,3.46786443 8.00573585,4.4176119 7.41994941,5.00339833 L5.29862906,7.12471868 C4.71284263,7.71050512 3.76309516,7.71050512 3.17730872,7.12471868 C2.59152228,6.53893224 2.59152228,5.58918477 3.17730872,5.00339833 L5.29862906,2.88207799 Z" fill="#000000" opacity="0.3"></path><path d="M11.9630156,7.5 L12.0475062,7.5 C12.3043819,7.5 12.5194647,7.69464724 12.5450248,7.95024814 L13,12.5 L16.2480695,14.3560397 C16.403857,14.4450611 16.5,14.6107328 16.5,14.7901613 L16.5,15 C16.5,15.2109164 16.3290185,15.3818979 16.1181021,15.3818979 C16.0841582,15.3818979 16.0503659,15.3773725 16.0176181,15.3684413 L11.3986612,14.1087258 C11.1672824,14.0456225 11.0132986,13.8271186 11.0316926,13.5879956 L11.4644883,7.96165175 C11.4845267,7.70115317 11.7017474,7.5 11.9630156,7.5 Z" fill="#000000"></path></g>', 1), R = [
+  T
+], G = /* @__PURE__ */ i({
+  __name: "IconAlarmclock",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...R],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Ws = /* @__PURE__ */ h(G, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAlarmclock.vue"]]), U = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -366,9 +444,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), D = [
-  b
-], R = /* @__PURE__ */ i({
+), P = [
+  U
+], W = /* @__PURE__ */ i({
   __name: "IconAndroid",
   props: {
     size: { type: String, required: !1 }
@@ -386,12 +464,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...D],
+      [...P],
       16
       /* FULL_PROPS */
     ));
   }
-}), _o = /* @__PURE__ */ h(R, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAndroid.vue"]]), T = /* @__PURE__ */ t(
+}), Es = /* @__PURE__ */ h(W, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAndroid.vue"]]), E = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -417,9 +495,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), U = [
-  T
-], G = /* @__PURE__ */ i({
+), O = [
+  E
+], H = /* @__PURE__ */ i({
   __name: "IconAngledoubledown",
   props: {
     size: { type: String, required: !1 }
@@ -437,12 +515,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...U],
+      [...O],
       16
       /* FULL_PROPS */
     ));
   }
-}), uo = /* @__PURE__ */ h(G, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAngledoubledown.vue"]]), P = /* @__PURE__ */ t(
+}), Os = /* @__PURE__ */ h(H, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAngledoubledown.vue"]]), N = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -468,9 +546,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), O = [
-  P
-], W = /* @__PURE__ */ i({
+), V = [
+  N
+], j = /* @__PURE__ */ i({
   __name: "IconAngledoubleleft",
   props: {
     size: { type: String, required: !1 }
@@ -488,12 +566,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...O],
+      [...V],
       16
       /* FULL_PROPS */
     ));
   }
-}), fo = /* @__PURE__ */ h(W, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAngledoubleleft.vue"]]), E = /* @__PURE__ */ t(
+}), Hs = /* @__PURE__ */ h(j, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAngledoubleleft.vue"]]), K = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -518,9 +596,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), F = [
-  E
-], H = /* @__PURE__ */ i({
+), Q = [
+  K
+], J = /* @__PURE__ */ i({
   __name: "IconAngledoubleright",
   props: {
     size: { type: String, required: !1 }
@@ -538,12 +616,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...F],
+      [...Q],
       16
       /* FULL_PROPS */
     ));
   }
-}), wo = /* @__PURE__ */ h(H, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAngledoubleright.vue"]]), N = /* @__PURE__ */ t(
+}), Ns = /* @__PURE__ */ h(J, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAngledoubleright.vue"]]), X = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -569,98 +647,10 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Q = [
-  N
-], V = /* @__PURE__ */ i({
-  __name: "IconAngledoubleup",
-  props: {
-    size: { type: String, required: !1 }
-  },
-  setup(n) {
-    const { size: e } = n, o = l(() => ({
-      width: e ? `${e}px` : "16px",
-      height: e ? `${e}px` : "16px"
-    }));
-    return (r, s) => (c(), a(
-      "svg",
-      p({
-        xmlns: "http://www.w3.org/2000/svg",
-        style: o.value,
-        viewBox: "0 0 24 24",
-        fill: "currentColor"
-      }, r.rest),
-      [...Q],
-      16
-      /* FULL_PROPS */
-    ));
-  }
-}), Lo = /* @__PURE__ */ h(V, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAngledoubleup.vue"]]), j = /* @__PURE__ */ t(
-  "g",
-  {
-    stroke: "none",
-    "stroke-width": "1",
-    fill: "none",
-    "fill-rule": "evenodd"
-  },
-  [
-    /* @__PURE__ */ t("polygon", { points: "0 0 24 0 24 24 0 24" }),
-    /* @__PURE__ */ t("path", {
-      d: "M6.70710678,15.7071068 C6.31658249,16.0976311 5.68341751,16.0976311 5.29289322,15.7071068 C4.90236893,15.3165825 4.90236893,14.6834175 5.29289322,14.2928932 L11.2928932,8.29289322 C11.6714722,7.91431428 12.2810586,7.90106866 12.6757246,8.26284586 L18.6757246,13.7628459 C19.0828436,14.1360383 19.1103465,14.7686056 18.7371541,15.1757246 C18.3639617,15.5828436 17.7313944,15.6103465 17.3242754,15.2371541 L12.0300757,10.3841378 L6.70710678,15.7071068 Z",
-      fill: "#000000",
-      "fill-rule": "nonzero",
-      transform: "translate(12.000003, 11.999999) rotate(-180.000000) translate(-12.000003, -11.999999) "
-    })
-  ],
-  -1
-  /* HOISTED */
-), J = [
-  j
-], K = /* @__PURE__ */ i({
-  __name: "IconAngledown",
-  props: {
-    size: { type: String, required: !1 }
-  },
-  setup(n) {
-    const { size: e } = n, o = l(() => ({
-      width: e ? `${e}px` : "16px",
-      height: e ? `${e}px` : "16px"
-    }));
-    return (r, s) => (c(), a(
-      "svg",
-      p({
-        xmlns: "http://www.w3.org/2000/svg",
-        style: o.value,
-        viewBox: "0 0 24 24",
-        fill: "currentColor"
-      }, r.rest),
-      [...J],
-      16
-      /* FULL_PROPS */
-    ));
-  }
-}), go = /* @__PURE__ */ h(K, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAngledown.vue"]]), X = /* @__PURE__ */ t(
-  "g",
-  {
-    stroke: "none",
-    "stroke-width": "1",
-    fill: "none",
-    "fill-rule": "evenodd"
-  },
-  [
-    /* @__PURE__ */ t("polygon", { points: "0 0 24 0 24 24 0 24" }),
-    /* @__PURE__ */ t("path", {
-      d: "M6.70710678,15.7071068 C6.31658249,16.0976311 5.68341751,16.0976311 5.29289322,15.7071068 C4.90236893,15.3165825 4.90236893,14.6834175 5.29289322,14.2928932 L11.2928932,8.29289322 C11.6714722,7.91431428 12.2810586,7.90106866 12.6757246,8.26284586 L18.6757246,13.7628459 C19.0828436,14.1360383 19.1103465,14.7686056 18.7371541,15.1757246 C18.3639617,15.5828436 17.7313944,15.6103465 17.3242754,15.2371541 L12.0300757,10.3841378 L6.70710678,15.7071068 Z",
-      fill: "#000000",
-      "fill-rule": "nonzero",
-      transform: "translate(12.000003, 11.999999) scale(-1, 1) rotate(-270.000000) translate(-12.000003, -11.999999) "
-    })
-  ],
-  -1
-  /* HOISTED */
 ), Y = [
   X
 ], e1 = /* @__PURE__ */ i({
-  __name: "IconAngleleft",
+  __name: "IconAngledoubleup",
   props: {
     size: { type: String, required: !1 }
   },
@@ -682,7 +672,7 @@ const d = /* @__PURE__ */ t(
       /* FULL_PROPS */
     ));
   }
-}), xo = /* @__PURE__ */ h(e1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAngleleft.vue"]]), t1 = /* @__PURE__ */ t(
+}), Vs = /* @__PURE__ */ h(e1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAngledoubleup.vue"]]), t1 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -696,7 +686,7 @@ const d = /* @__PURE__ */ t(
       d: "M6.70710678,15.7071068 C6.31658249,16.0976311 5.68341751,16.0976311 5.29289322,15.7071068 C4.90236893,15.3165825 4.90236893,14.6834175 5.29289322,14.2928932 L11.2928932,8.29289322 C11.6714722,7.91431428 12.2810586,7.90106866 12.6757246,8.26284586 L18.6757246,13.7628459 C19.0828436,14.1360383 19.1103465,14.7686056 18.7371541,15.1757246 C18.3639617,15.5828436 17.7313944,15.6103465 17.3242754,15.2371541 L12.0300757,10.3841378 L6.70710678,15.7071068 Z",
       fill: "#000000",
       "fill-rule": "nonzero",
-      transform: "translate(12.000003, 11.999999) rotate(-270.000000) translate(-12.000003, -11.999999) "
+      transform: "translate(12.000003, 11.999999) rotate(-180.000000) translate(-12.000003, -11.999999) "
     })
   ],
   -1
@@ -704,7 +694,7 @@ const d = /* @__PURE__ */ t(
 ), n1 = [
   t1
 ], o1 = /* @__PURE__ */ i({
-  __name: "IconAngleright",
+  __name: "IconAngledown",
   props: {
     size: { type: String, required: !1 }
   },
@@ -726,7 +716,7 @@ const d = /* @__PURE__ */ t(
       /* FULL_PROPS */
     ));
   }
-}), vo = /* @__PURE__ */ h(o1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAngleright.vue"]]), r1 = /* @__PURE__ */ t(
+}), js = /* @__PURE__ */ h(o1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAngledown.vue"]]), r1 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -739,7 +729,8 @@ const d = /* @__PURE__ */ t(
     /* @__PURE__ */ t("path", {
       d: "M6.70710678,15.7071068 C6.31658249,16.0976311 5.68341751,16.0976311 5.29289322,15.7071068 C4.90236893,15.3165825 4.90236893,14.6834175 5.29289322,14.2928932 L11.2928932,8.29289322 C11.6714722,7.91431428 12.2810586,7.90106866 12.6757246,8.26284586 L18.6757246,13.7628459 C19.0828436,14.1360383 19.1103465,14.7686056 18.7371541,15.1757246 C18.3639617,15.5828436 17.7313944,15.6103465 17.3242754,15.2371541 L12.0300757,10.3841378 L6.70710678,15.7071068 Z",
       fill: "#000000",
-      "fill-rule": "nonzero"
+      "fill-rule": "nonzero",
+      transform: "translate(12.000003, 11.999999) scale(-1, 1) rotate(-270.000000) translate(-12.000003, -11.999999) "
     })
   ],
   -1
@@ -747,7 +738,7 @@ const d = /* @__PURE__ */ t(
 ), s1 = [
   r1
 ], i1 = /* @__PURE__ */ i({
-  __name: "IconAngleup",
+  __name: "IconAngleleft",
   props: {
     size: { type: String, required: !1 }
   },
@@ -769,7 +760,7 @@ const d = /* @__PURE__ */ t(
       /* FULL_PROPS */
     ));
   }
-}), yo = /* @__PURE__ */ h(i1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAngleup.vue"]]), l1 = /* @__PURE__ */ t(
+}), Ks = /* @__PURE__ */ h(i1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAngleleft.vue"]]), l1 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -778,15 +769,12 @@ const d = /* @__PURE__ */ t(
     "fill-rule": "evenodd"
   },
   [
-    /* @__PURE__ */ t("rect", {
-      x: "0",
-      y: "0",
-      width: "24",
-      height: "24"
-    }),
+    /* @__PURE__ */ t("polygon", { points: "0 0 24 0 24 24 0 24" }),
     /* @__PURE__ */ t("path", {
-      d: "M4.5,3 L19.5,3 C20.3284271,3 21,3.67157288 21,4.5 L21,19.5 C21,20.3284271 20.3284271,21 19.5,21 L4.5,21 C3.67157288,21 3,20.3284271 3,19.5 L3,4.5 C3,3.67157288 3.67157288,3 4.5,3 Z M8,5 C7.44771525,5 7,5.44771525 7,6 C7,6.55228475 7.44771525,7 8,7 L16,7 C16.5522847,7 17,6.55228475 17,6 C17,5.44771525 16.5522847,5 16,5 L8,5 Z",
-      fill: "#000000"
+      d: "M6.70710678,15.7071068 C6.31658249,16.0976311 5.68341751,16.0976311 5.29289322,15.7071068 C4.90236893,15.3165825 4.90236893,14.6834175 5.29289322,14.2928932 L11.2928932,8.29289322 C11.6714722,7.91431428 12.2810586,7.90106866 12.6757246,8.26284586 L18.6757246,13.7628459 C19.0828436,14.1360383 19.1103465,14.7686056 18.7371541,15.1757246 C18.3639617,15.5828436 17.7313944,15.6103465 17.3242754,15.2371541 L12.0300757,10.3841378 L6.70710678,15.7071068 Z",
+      fill: "#000000",
+      "fill-rule": "nonzero",
+      transform: "translate(12.000003, 11.999999) rotate(-270.000000) translate(-12.000003, -11.999999) "
     })
   ],
   -1
@@ -794,7 +782,7 @@ const d = /* @__PURE__ */ t(
 ), c1 = [
   l1
 ], a1 = /* @__PURE__ */ i({
-  __name: "IconArchive",
+  __name: "IconAngleright",
   props: {
     size: { type: String, required: !1 }
   },
@@ -816,7 +804,148 @@ const d = /* @__PURE__ */ t(
       /* FULL_PROPS */
     ));
   }
-}), mo = /* @__PURE__ */ h(a1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArchive.vue"]]), p1 = /* @__PURE__ */ t(
+}), Qs = /* @__PURE__ */ h(a1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAngleright.vue"]]), p1 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("polygon", { points: "0 0 24 0 24 24 0 24" }),
+    /* @__PURE__ */ t("path", {
+      d: "M6.70710678,15.7071068 C6.31658249,16.0976311 5.68341751,16.0976311 5.29289322,15.7071068 C4.90236893,15.3165825 4.90236893,14.6834175 5.29289322,14.2928932 L11.2928932,8.29289322 C11.6714722,7.91431428 12.2810586,7.90106866 12.6757246,8.26284586 L18.6757246,13.7628459 C19.0828436,14.1360383 19.1103465,14.7686056 18.7371541,15.1757246 C18.3639617,15.5828436 17.7313944,15.6103465 17.3242754,15.2371541 L12.0300757,10.3841378 L6.70710678,15.7071068 Z",
+      fill: "#000000",
+      "fill-rule": "nonzero"
+    })
+  ],
+  -1
+  /* HOISTED */
+), h1 = [
+  p1
+], C1 = /* @__PURE__ */ i({
+  __name: "IconAngleup",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...h1],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Js = /* @__PURE__ */ h(C1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAngleup.vue"]]), d1 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M4.5,3 L19.5,3 C20.3284271,3 21,3.67157288 21,4.5 L21,19.5 C21,20.3284271 20.3284271,21 19.5,21 L4.5,21 C3.67157288,21 3,20.3284271 3,19.5 L3,4.5 C3,3.67157288 3.67157288,3 4.5,3 Z M8,5 C7.44771525,5 7,5.44771525 7,6 C7,6.55228475 7.44771525,7 8,7 L16,7 C16.5522847,7 17,6.55228475 17,6 C17,5.44771525 16.5522847,5 16,5 L8,5 Z",
+      fill: "#000000"
+    })
+  ],
+  -1
+  /* HOISTED */
+), _1 = [
+  d1
+], u1 = /* @__PURE__ */ i({
+  __name: "IconArchive",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [..._1],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Xs = /* @__PURE__ */ h(u1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArchive.vue"]]), f1 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("path", {
+      d: "M20,8 L18.173913,8 C17.0693435,8 16.173913,8.8954305 16.173913,10 L16.173913,12 C16.173913,12.5522847 15.7261978,13 15.173913,13 L8.86956522,13 C8.31728047,13 7.86956522,12.5522847 7.86956522,12 L7.86956522,10 C7.86956522,8.8954305 6.97413472,8 5.86956522,8 L4,8 L4,6 C4,4.34314575 5.34314575,3 7,3 L17,3 C18.6568542,3 20,4.34314575 20,6 L20,8 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M6.15999985,21.0604779 L8.15999985,17.5963763 C8.43614222,17.1180837 9.04773263,16.9542085 9.52602525,17.2303509 C10.0043179,17.5064933 10.168193,18.1180837 9.89205065,18.5963763 L7.89205065,22.0604779 C7.61590828,22.5387706 7.00431787,22.7026457 6.52602525,22.4265033 C6.04773263,22.150361 5.88385747,21.5387706 6.15999985,21.0604779 Z M17.8320512,21.0301278 C18.1081936,21.5084204 17.9443184,22.1200108 17.4660258,22.3961532 C16.9877332,22.6722956 16.3761428,22.5084204 16.1000004,22.0301278 L14.1000004,18.5660262 C13.823858,18.0877335 13.9877332,17.4761431 14.4660258,17.2000008 C14.9443184,16.9238584 15.5559088,17.0877335 15.8320512,17.5660262 L17.8320512,21.0301278 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M20,10 L20,15 C20,16.6568542 18.6568542,18 17,18 L7,18 C5.34314575,18 4,16.6568542 4,15 L4,10 L5.86956522,10 L5.86956522,12 C5.86956522,13.6568542 7.21271097,15 8.86956522,15 L15.173913,15 C16.8307673,15 18.173913,13.6568542 18.173913,12 L18.173913,10 L20,10 Z",
+      fill: "#000000"
+    })
+  ],
+  -1
+  /* HOISTED */
+), L1 = [
+  f1
+], w1 = /* @__PURE__ */ i({
+  __name: "IconArmchair",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...L1],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Ys = /* @__PURE__ */ h(w1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArmchair.vue"]]), g1 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -844,85 +973,10 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), h1 = [
-  p1
-], C1 = /* @__PURE__ */ i({
-  __name: "IconArrowdown",
-  props: {
-    size: { type: String, required: !1 }
-  },
-  setup(n) {
-    const { size: e } = n, o = l(() => ({
-      width: e ? `${e}px` : "16px",
-      height: e ? `${e}px` : "16px"
-    }));
-    return (r, s) => (c(), a(
-      "svg",
-      p({
-        xmlns: "http://www.w3.org/2000/svg",
-        style: o.value,
-        viewBox: "0 0 24 24",
-        fill: "currentColor"
-      }, r.rest),
-      [...h1],
-      16
-      /* FULL_PROPS */
-    ));
-  }
-}), $o = /* @__PURE__ */ h(C1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowdown.vue"]]), d1 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" x="11" y="3" width="2" height="14" rx="1"></rect><path d="M6.70710678,10.7071068 C6.31658249,11.0976311 5.68341751,11.0976311 5.29289322,10.7071068 C4.90236893,10.3165825 4.90236893,9.68341751 5.29289322,9.29289322 L11.2928932,3.29289322 C11.6714722,2.91431428 12.2810586,2.90106866 12.6757246,3.26284586 L18.6757246,8.76284586 C19.0828436,9.13603827 19.1103465,9.76860564 18.7371541,10.1757246 C18.3639617,10.5828436 17.7313944,10.6103465 17.3242754,10.2371541 L12.0300757,5.38413782 L6.70710678,10.7071068 Z" fill="#000000" fill-rule="nonzero"></path><rect fill="#000000" opacity="0.3" x="3" y="19" width="18" height="2" rx="1"></rect></g>', 1), _1 = [
-  d1
-], u1 = /* @__PURE__ */ i({
-  __name: "IconArrowfrombottom",
-  props: {
-    size: { type: String, required: !1 }
-  },
-  setup(n) {
-    const { size: e } = n, o = l(() => ({
-      width: e ? `${e}px` : "16px",
-      height: e ? `${e}px` : "16px"
-    }));
-    return (r, s) => (c(), a(
-      "svg",
-      p({
-        xmlns: "http://www.w3.org/2000/svg",
-        style: o.value,
-        viewBox: "0 0 24 24",
-        fill: "currentColor"
-      }, r.rest),
-      [..._1],
-      16
-      /* FULL_PROPS */
-    ));
-  }
-}), Io = /* @__PURE__ */ h(u1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowfrombottom.vue"]]), f1 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" transform="translate(14.000000, 12.000000) rotate(-90.000000) translate(-14.000000, -12.000000) " x="13" y="5" width="2" height="14" rx="1"></rect><rect fill="#000000" opacity="0.3" x="3" y="3" width="2" height="18" rx="1"></rect><path d="M11.7071032,15.7071045 C11.3165789,16.0976288 10.6834139,16.0976288 10.2928896,15.7071045 C9.90236532,15.3165802 9.90236532,14.6834152 10.2928896,14.2928909 L16.2928896,8.29289093 C16.6714686,7.914312 17.281055,7.90106637 17.675721,8.26284357 L23.675721,13.7628436 C24.08284,14.136036 24.1103429,14.7686034 23.7371505,15.1757223 C23.3639581,15.5828413 22.7313908,15.6103443 22.3242718,15.2371519 L17.0300721,10.3841355 L11.7071032,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(16.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-16.999999, -11.999997) "></path></g>', 1), w1 = [
-  f1
-], L1 = /* @__PURE__ */ i({
-  __name: "IconArrowfromleft",
-  props: {
-    size: { type: String, required: !1 }
-  },
-  setup(n) {
-    const { size: e } = n, o = l(() => ({
-      width: e ? `${e}px` : "16px",
-      height: e ? `${e}px` : "16px"
-    }));
-    return (r, s) => (c(), a(
-      "svg",
-      p({
-        xmlns: "http://www.w3.org/2000/svg",
-        style: o.value,
-        viewBox: "0 0 24 24",
-        fill: "currentColor"
-      }, r.rest),
-      [...w1],
-      16
-      /* FULL_PROPS */
-    ));
-  }
-}), zo = /* @__PURE__ */ h(L1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowfromleft.vue"]]), g1 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" transform="translate(10.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-10.000000, -12.000000) " x="9" y="5" width="2" height="14" rx="1"></rect><rect fill="#000000" opacity="0.3" x="19" y="3" width="2" height="18" rx="1"></rect><path d="M1.7071045,15.7071045 C1.3165802,16.0976288 0.683415225,16.0976288 0.292890933,15.7071045 C-0.0976333589,15.3165802 -0.0976333589,14.6834152 0.292890933,14.2928909 L6.29289093,8.29289093 C6.67146987,7.914312 7.28105631,7.90106637 7.67572234,8.26284357 L13.6757223,13.7628436 C14.0828413,14.136036 14.1103443,14.7686034 13.7371519,15.1757223 C13.3639594,15.5828413 12.7313921,15.6103443 12.3242731,15.2371519 L7.03007346,10.3841355 L1.7071045,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(7.000001, 11.999997) scale(-1, -1) rotate(90.000000) translate(-7.000001, -11.999997) "></path></g>', 1), x1 = [
+), x1 = [
   g1
 ], v1 = /* @__PURE__ */ i({
-  __name: "IconArrowfromright",
+  __name: "IconArrowdown",
   props: {
     size: { type: String, required: !1 }
   },
@@ -944,10 +998,10 @@ const d = /* @__PURE__ */ t(
       /* FULL_PROPS */
     ));
   }
-}), Mo = /* @__PURE__ */ h(v1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowfromright.vue"]]), y1 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" x="11" y="7" width="2" height="14" rx="1"></rect><path d="M6.70710678,20.7071068 C6.31658249,21.0976311 5.68341751,21.0976311 5.29289322,20.7071068 C4.90236893,20.3165825 4.90236893,19.6834175 5.29289322,19.2928932 L11.2928932,13.2928932 C11.6714722,12.9143143 12.2810586,12.9010687 12.6757246,13.2628459 L18.6757246,18.7628459 C19.0828436,19.1360383 19.1103465,19.7686056 18.7371541,20.1757246 C18.3639617,20.5828436 17.7313944,20.6103465 17.3242754,20.2371541 L12.0300757,15.3841378 L6.70710678,20.7071068 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000003, 16.999999) scale(1, -1) translate(-12.000003, -16.999999) "></path><rect fill="#000000" opacity="0.3" x="3" y="3" width="18" height="2" rx="1"></rect></g>', 1), m1 = [
+}), ei = /* @__PURE__ */ h(v1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowdown.vue"]]), y1 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" x="11" y="3" width="2" height="14" rx="1"></rect><path d="M6.70710678,10.7071068 C6.31658249,11.0976311 5.68341751,11.0976311 5.29289322,10.7071068 C4.90236893,10.3165825 4.90236893,9.68341751 5.29289322,9.29289322 L11.2928932,3.29289322 C11.6714722,2.91431428 12.2810586,2.90106866 12.6757246,3.26284586 L18.6757246,8.76284586 C19.0828436,9.13603827 19.1103465,9.76860564 18.7371541,10.1757246 C18.3639617,10.5828436 17.7313944,10.6103465 17.3242754,10.2371541 L12.0300757,5.38413782 L6.70710678,10.7071068 Z" fill="#000000" fill-rule="nonzero"></path><rect fill="#000000" opacity="0.3" x="3" y="19" width="18" height="2" rx="1"></rect></g>', 1), m1 = [
   y1
 ], $1 = /* @__PURE__ */ i({
-  __name: "IconArrowfromtop",
+  __name: "IconArrowfrombottom",
   props: {
     size: { type: String, required: !1 }
   },
@@ -969,7 +1023,82 @@ const d = /* @__PURE__ */ t(
       /* FULL_PROPS */
     ));
   }
-}), Zo = /* @__PURE__ */ h($1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowfromtop.vue"]]), I1 = /* @__PURE__ */ t(
+}), ti = /* @__PURE__ */ h($1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowfrombottom.vue"]]), I1 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" transform="translate(14.000000, 12.000000) rotate(-90.000000) translate(-14.000000, -12.000000) " x="13" y="5" width="2" height="14" rx="1"></rect><rect fill="#000000" opacity="0.3" x="3" y="3" width="2" height="18" rx="1"></rect><path d="M11.7071032,15.7071045 C11.3165789,16.0976288 10.6834139,16.0976288 10.2928896,15.7071045 C9.90236532,15.3165802 9.90236532,14.6834152 10.2928896,14.2928909 L16.2928896,8.29289093 C16.6714686,7.914312 17.281055,7.90106637 17.675721,8.26284357 L23.675721,13.7628436 C24.08284,14.136036 24.1103429,14.7686034 23.7371505,15.1757223 C23.3639581,15.5828413 22.7313908,15.6103443 22.3242718,15.2371519 L17.0300721,10.3841355 L11.7071032,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(16.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-16.999999, -11.999997) "></path></g>', 1), z1 = [
+  I1
+], M1 = /* @__PURE__ */ i({
+  __name: "IconArrowfromleft",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...z1],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), ni = /* @__PURE__ */ h(M1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowfromleft.vue"]]), Z1 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" transform="translate(10.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-10.000000, -12.000000) " x="9" y="5" width="2" height="14" rx="1"></rect><rect fill="#000000" opacity="0.3" x="19" y="3" width="2" height="18" rx="1"></rect><path d="M1.7071045,15.7071045 C1.3165802,16.0976288 0.683415225,16.0976288 0.292890933,15.7071045 C-0.0976333589,15.3165802 -0.0976333589,14.6834152 0.292890933,14.2928909 L6.29289093,8.29289093 C6.67146987,7.914312 7.28105631,7.90106637 7.67572234,8.26284357 L13.6757223,13.7628436 C14.0828413,14.136036 14.1103443,14.7686034 13.7371519,15.1757223 C13.3639594,15.5828413 12.7313921,15.6103443 12.3242731,15.2371519 L7.03007346,10.3841355 L1.7071045,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(7.000001, 11.999997) scale(-1, -1) rotate(90.000000) translate(-7.000001, -11.999997) "></path></g>', 1), k1 = [
+  Z1
+], S1 = /* @__PURE__ */ i({
+  __name: "IconArrowfromright",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...k1],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), oi = /* @__PURE__ */ h(S1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowfromright.vue"]]), B1 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" x="11" y="7" width="2" height="14" rx="1"></rect><path d="M6.70710678,20.7071068 C6.31658249,21.0976311 5.68341751,21.0976311 5.29289322,20.7071068 C4.90236893,20.3165825 4.90236893,19.6834175 5.29289322,19.2928932 L11.2928932,13.2928932 C11.6714722,12.9143143 12.2810586,12.9010687 12.6757246,13.2628459 L18.6757246,18.7628459 C19.0828436,19.1360383 19.1103465,19.7686056 18.7371541,20.1757246 C18.3639617,20.5828436 17.7313944,20.6103465 17.3242754,20.2371541 L12.0300757,15.3841378 L6.70710678,20.7071068 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000003, 16.999999) scale(1, -1) translate(-12.000003, -16.999999) "></path><rect fill="#000000" opacity="0.3" x="3" y="3" width="18" height="2" rx="1"></rect></g>', 1), q1 = [
+  B1
+], A1 = /* @__PURE__ */ i({
+  __name: "IconArrowfromtop",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...q1],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), ri = /* @__PURE__ */ h(A1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowfromtop.vue"]]), b1 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -998,9 +1127,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), z1 = [
-  I1
-], M1 = /* @__PURE__ */ i({
+), D1 = [
+  b1
+], F1 = /* @__PURE__ */ i({
   __name: "IconArrowleft",
   props: {
     size: { type: String, required: !1 }
@@ -1018,12 +1147,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...z1],
+      [...D1],
       16
       /* FULL_PROPS */
     ));
   }
-}), ko = /* @__PURE__ */ h(M1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowleft.vue"]]), Z1 = /* @__PURE__ */ t(
+}), si = /* @__PURE__ */ h(F1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowleft.vue"]]), T1 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -1052,9 +1181,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), k1 = [
-  Z1
-], S1 = /* @__PURE__ */ i({
+), R1 = [
+  T1
+], G1 = /* @__PURE__ */ i({
   __name: "IconArrowright",
   props: {
     size: { type: String, required: !1 }
@@ -1072,14 +1201,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...k1],
+      [...R1],
       16
       /* FULL_PROPS */
     ));
   }
-}), So = /* @__PURE__ */ h(S1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowright.vue"]]), B1 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" x="11" y="3" width="2" height="14" rx="1"></rect><path d="M6.70710678,16.7071068 C6.31658249,17.0976311 5.68341751,17.0976311 5.29289322,16.7071068 C4.90236893,16.3165825 4.90236893,15.6834175 5.29289322,15.2928932 L11.2928932,9.29289322 C11.6714722,8.91431428 12.2810586,8.90106866 12.6757246,9.26284586 L18.6757246,14.7628459 C19.0828436,15.1360383 19.1103465,15.7686056 18.7371541,16.1757246 C18.3639617,16.5828436 17.7313944,16.6103465 17.3242754,16.2371541 L12.0300757,11.3841378 L6.70710678,16.7071068 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000003, 12.999999) scale(1, -1) translate(-12.000003, -12.999999) "></path><rect fill="#000000" opacity="0.3" x="3" y="19" width="18" height="2" rx="1"></rect></g>', 1), q1 = [
-  B1
-], A1 = /* @__PURE__ */ i({
+}), ii = /* @__PURE__ */ h(G1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowright.vue"]]), U1 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" x="11" y="3" width="2" height="14" rx="1"></rect><path d="M6.70710678,16.7071068 C6.31658249,17.0976311 5.68341751,17.0976311 5.29289322,16.7071068 C4.90236893,16.3165825 4.90236893,15.6834175 5.29289322,15.2928932 L11.2928932,9.29289322 C11.6714722,8.91431428 12.2810586,8.90106866 12.6757246,9.26284586 L18.6757246,14.7628459 C19.0828436,15.1360383 19.1103465,15.7686056 18.7371541,16.1757246 C18.3639617,16.5828436 17.7313944,16.6103465 17.3242754,16.2371541 L12.0300757,11.3841378 L6.70710678,16.7071068 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000003, 12.999999) scale(1, -1) translate(-12.000003, -12.999999) "></path><rect fill="#000000" opacity="0.3" x="3" y="19" width="18" height="2" rx="1"></rect></g>', 1), P1 = [
+  U1
+], W1 = /* @__PURE__ */ i({
   __name: "IconArrowtobottom",
   props: {
     size: { type: String, required: !1 }
@@ -1097,65 +1226,15 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...q1],
+      [...P1],
       16
       /* FULL_PROPS */
     ));
   }
-}), Bo = /* @__PURE__ */ h(A1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowtobottom.vue"]]), b1 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" transform="translate(14.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-14.000000, -12.000000) " x="13" y="5" width="2" height="14" rx="1"></rect><rect fill="#000000" opacity="0.3" x="3" y="3" width="2" height="18" rx="1"></rect><path d="M5.7071045,15.7071045 C5.3165802,16.0976288 4.68341522,16.0976288 4.29289093,15.7071045 C3.90236664,15.3165802 3.90236664,14.6834152 4.29289093,14.2928909 L10.2928909,8.29289093 C10.6714699,7.914312 11.2810563,7.90106637 11.6757223,8.26284357 L17.6757223,13.7628436 C18.0828413,14.136036 18.1103443,14.7686034 17.7371519,15.1757223 C17.3639594,15.5828413 16.7313921,15.6103443 16.3242731,15.2371519 L11.0300735,10.3841355 L5.7071045,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(11.000001, 11.999997) scale(-1, -1) rotate(90.000000) translate(-11.000001, -11.999997) "></path></g>', 1), D1 = [
-  b1
-], R1 = /* @__PURE__ */ i({
+}), li = /* @__PURE__ */ h(W1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowtobottom.vue"]]), E1 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" transform="translate(14.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-14.000000, -12.000000) " x="13" y="5" width="2" height="14" rx="1"></rect><rect fill="#000000" opacity="0.3" x="3" y="3" width="2" height="18" rx="1"></rect><path d="M5.7071045,15.7071045 C5.3165802,16.0976288 4.68341522,16.0976288 4.29289093,15.7071045 C3.90236664,15.3165802 3.90236664,14.6834152 4.29289093,14.2928909 L10.2928909,8.29289093 C10.6714699,7.914312 11.2810563,7.90106637 11.6757223,8.26284357 L17.6757223,13.7628436 C18.0828413,14.136036 18.1103443,14.7686034 17.7371519,15.1757223 C17.3639594,15.5828413 16.7313921,15.6103443 16.3242731,15.2371519 L11.0300735,10.3841355 L5.7071045,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(11.000001, 11.999997) scale(-1, -1) rotate(90.000000) translate(-11.000001, -11.999997) "></path></g>', 1), O1 = [
+  E1
+], H1 = /* @__PURE__ */ i({
   __name: "IconArrowtoleft",
-  props: {
-    size: { type: String, required: !1 }
-  },
-  setup(n) {
-    const { size: e } = n, o = l(() => ({
-      width: e ? `${e}px` : "16px",
-      height: e ? `${e}px` : "16px"
-    }));
-    return (r, s) => (c(), a(
-      "svg",
-      p({
-        xmlns: "http://www.w3.org/2000/svg",
-        style: o.value,
-        viewBox: "0 0 24 24",
-        fill: "currentColor"
-      }, r.rest),
-      [...D1],
-      16
-      /* FULL_PROPS */
-    ));
-  }
-}), qo = /* @__PURE__ */ h(R1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowtoleft.vue"]]), T1 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" transform="translate(10.000000, 12.000000) rotate(-90.000000) translate(-10.000000, -12.000000) " x="9" y="5" width="2" height="14" rx="1"></rect><rect fill="#000000" opacity="0.3" x="19" y="3" width="2" height="18" rx="1"></rect><path d="M7.70710318,15.7071045 C7.31657888,16.0976288 6.68341391,16.0976288 6.29288961,15.7071045 C5.90236532,15.3165802 5.90236532,14.6834152 6.29288961,14.2928909 L12.2928896,8.29289093 C12.6714686,7.914312 13.281055,7.90106637 13.675721,8.26284357 L19.675721,13.7628436 C20.08284,14.136036 20.1103429,14.7686034 19.7371505,15.1757223 C19.3639581,15.5828413 18.7313908,15.6103443 18.3242718,15.2371519 L13.0300721,10.3841355 L7.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-12.999999, -11.999997) "></path></g>', 1), U1 = [
-  T1
-], G1 = /* @__PURE__ */ i({
-  __name: "IconArrowtoright",
-  props: {
-    size: { type: String, required: !1 }
-  },
-  setup(n) {
-    const { size: e } = n, o = l(() => ({
-      width: e ? `${e}px` : "16px",
-      height: e ? `${e}px` : "16px"
-    }));
-    return (r, s) => (c(), a(
-      "svg",
-      p({
-        xmlns: "http://www.w3.org/2000/svg",
-        style: o.value,
-        viewBox: "0 0 24 24",
-        fill: "currentColor"
-      }, r.rest),
-      [...U1],
-      16
-      /* FULL_PROPS */
-    ));
-  }
-}), Ao = /* @__PURE__ */ h(G1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowtoright.vue"]]), P1 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" x="11" y="7" width="2" height="14" rx="1"></rect><path d="M6.70710678,14.7071068 C6.31658249,15.0976311 5.68341751,15.0976311 5.29289322,14.7071068 C4.90236893,14.3165825 4.90236893,13.6834175 5.29289322,13.2928932 L11.2928932,7.29289322 C11.6714722,6.91431428 12.2810586,6.90106866 12.6757246,7.26284586 L18.6757246,12.7628459 C19.0828436,13.1360383 19.1103465,13.7686056 18.7371541,14.1757246 C18.3639617,14.5828436 17.7313944,14.6103465 17.3242754,14.2371541 L12.0300757,9.38413782 L6.70710678,14.7071068 Z" fill="#000000" fill-rule="nonzero"></path><rect fill="#000000" opacity="0.3" x="3" y="3" width="18" height="2" rx="1"></rect></g>', 1), O1 = [
-  P1
-], W1 = /* @__PURE__ */ i({
-  __name: "IconArrowtoup",
   props: {
     size: { type: String, required: !1 }
   },
@@ -1177,7 +1256,57 @@ const d = /* @__PURE__ */ t(
       /* FULL_PROPS */
     ));
   }
-}), bo = /* @__PURE__ */ h(W1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowtoup.vue"]]), E1 = /* @__PURE__ */ t(
+}), ci = /* @__PURE__ */ h(H1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowtoleft.vue"]]), N1 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" transform="translate(10.000000, 12.000000) rotate(-90.000000) translate(-10.000000, -12.000000) " x="9" y="5" width="2" height="14" rx="1"></rect><rect fill="#000000" opacity="0.3" x="19" y="3" width="2" height="18" rx="1"></rect><path d="M7.70710318,15.7071045 C7.31657888,16.0976288 6.68341391,16.0976288 6.29288961,15.7071045 C5.90236532,15.3165802 5.90236532,14.6834152 6.29288961,14.2928909 L12.2928896,8.29289093 C12.6714686,7.914312 13.281055,7.90106637 13.675721,8.26284357 L19.675721,13.7628436 C20.08284,14.136036 20.1103429,14.7686034 19.7371505,15.1757223 C19.3639581,15.5828413 18.7313908,15.6103443 18.3242718,15.2371519 L13.0300721,10.3841355 L7.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-12.999999, -11.999997) "></path></g>', 1), V1 = [
+  N1
+], j1 = /* @__PURE__ */ i({
+  __name: "IconArrowtoright",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...V1],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), ai = /* @__PURE__ */ h(j1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowtoright.vue"]]), K1 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" x="11" y="7" width="2" height="14" rx="1"></rect><path d="M6.70710678,14.7071068 C6.31658249,15.0976311 5.68341751,15.0976311 5.29289322,14.7071068 C4.90236893,14.3165825 4.90236893,13.6834175 5.29289322,13.2928932 L11.2928932,7.29289322 C11.6714722,6.91431428 12.2810586,6.90106866 12.6757246,7.26284586 L18.6757246,12.7628459 C19.0828436,13.1360383 19.1103465,13.7686056 18.7371541,14.1757246 C18.3639617,14.5828436 17.7313944,14.6103465 17.3242754,14.2371541 L12.0300757,9.38413782 L6.70710678,14.7071068 Z" fill="#000000" fill-rule="nonzero"></path><rect fill="#000000" opacity="0.3" x="3" y="3" width="18" height="2" rx="1"></rect></g>', 1), Q1 = [
+  K1
+], J1 = /* @__PURE__ */ i({
+  __name: "IconArrowtoup",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...Q1],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), pi = /* @__PURE__ */ h(J1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowtoup.vue"]]), X1 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -1204,9 +1333,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), F1 = [
-  E1
-], H1 = /* @__PURE__ */ i({
+), Y1 = [
+  X1
+], e2 = /* @__PURE__ */ i({
   __name: "IconArrowup",
   props: {
     size: { type: String, required: !1 }
@@ -1224,14 +1353,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...F1],
+      [...Y1],
       16
       /* FULL_PROPS */
     ));
   }
-}), Do = /* @__PURE__ */ h(H1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowup.vue"]]), N1 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-360.000000) translate(-12.000000, -12.000000) " x="7" y="11" width="10" height="2" rx="1"></rect><path d="M13.7071045,15.7071104 C13.3165802,16.0976347 12.6834152,16.0976347 12.2928909,15.7071104 C11.9023666,15.3165861 11.9023666,14.6834211 12.2928909,14.2928968 L18.2928909,8.29289682 C18.6714699,7.91431789 19.2810563,7.90107226 19.6757223,8.26284946 L25.6757223,13.7628495 C26.0828413,14.1360419 26.1103443,14.7686092 25.7371519,15.1757282 C25.3639594,15.5828472 24.7313921,15.6103502 24.3242731,15.2371577 L19.0300735,10.3841414 L13.7071045,15.7071104 Z" fill="#000000" fill-rule="nonzero" transform="translate(19.000001, 12.000003) rotate(-270.000000) translate(-19.000001, -12.000003) "></path><path d="M-0.292895505,15.7071104 C-0.683419796,16.0976347 -1.31658478,16.0976347 -1.70710907,15.7071104 C-2.09763336,15.3165861 -2.09763336,14.6834211 -1.70710907,14.2928968 L4.29289093,8.29289682 C4.67146987,7.91431789 5.28105631,7.90107226 5.67572234,8.26284946 L11.6757223,13.7628495 C12.0828413,14.1360419 12.1103443,14.7686092 11.7371519,15.1757282 C11.3639594,15.5828472 10.7313921,15.6103502 10.3242731,15.2371577 L5.03007346,10.3841414 L-0.292895505,15.7071104 Z" fill="#000000" fill-rule="nonzero" transform="translate(5.000001, 12.000003) rotate(-450.000000) translate(-5.000001, -12.000003) "></path></g>', 1), Q1 = [
-  N1
-], V1 = /* @__PURE__ */ i({
+}), hi = /* @__PURE__ */ h(e2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowup.vue"]]), t2 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-360.000000) translate(-12.000000, -12.000000) " x="7" y="11" width="10" height="2" rx="1"></rect><path d="M13.7071045,15.7071104 C13.3165802,16.0976347 12.6834152,16.0976347 12.2928909,15.7071104 C11.9023666,15.3165861 11.9023666,14.6834211 12.2928909,14.2928968 L18.2928909,8.29289682 C18.6714699,7.91431789 19.2810563,7.90107226 19.6757223,8.26284946 L25.6757223,13.7628495 C26.0828413,14.1360419 26.1103443,14.7686092 25.7371519,15.1757282 C25.3639594,15.5828472 24.7313921,15.6103502 24.3242731,15.2371577 L19.0300735,10.3841414 L13.7071045,15.7071104 Z" fill="#000000" fill-rule="nonzero" transform="translate(19.000001, 12.000003) rotate(-270.000000) translate(-19.000001, -12.000003) "></path><path d="M-0.292895505,15.7071104 C-0.683419796,16.0976347 -1.31658478,16.0976347 -1.70710907,15.7071104 C-2.09763336,15.3165861 -2.09763336,14.6834211 -1.70710907,14.2928968 L4.29289093,8.29289682 C4.67146987,7.91431789 5.28105631,7.90107226 5.67572234,8.26284946 L11.6757223,13.7628495 C12.0828413,14.1360419 12.1103443,14.7686092 11.7371519,15.1757282 C11.3639594,15.5828472 10.7313921,15.6103502 10.3242731,15.2371577 L5.03007346,10.3841414 L-0.292895505,15.7071104 Z" fill="#000000" fill-rule="nonzero" transform="translate(5.000001, 12.000003) rotate(-450.000000) translate(-5.000001, -12.000003) "></path></g>', 1), n2 = [
+  t2
+], o2 = /* @__PURE__ */ i({
   __name: "IconArrowsh",
   props: {
     size: { type: String, required: !1 }
@@ -1249,14 +1378,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Q1],
+      [...n2],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ro = /* @__PURE__ */ h(V1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowsh.vue"]]), j1 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) " x="7" y="11" width="10" height="2" rx="1"></rect><path d="M6.70710678,8.70710678 C6.31658249,9.09763107 5.68341751,9.09763107 5.29289322,8.70710678 C4.90236893,8.31658249 4.90236893,7.68341751 5.29289322,7.29289322 L11.2928932,1.29289322 C11.6714722,0.914314282 12.2810586,0.90106866 12.6757246,1.26284586 L18.6757246,6.76284586 C19.0828436,7.13603827 19.1103465,7.76860564 18.7371541,8.17572463 C18.3639617,8.58284362 17.7313944,8.61034655 17.3242754,8.23715414 L12.0300757,3.38413782 L6.70710678,8.70710678 Z" fill="#000000" fill-rule="nonzero"></path><path d="M6.70710678,22.7071068 C6.31658249,23.0976311 5.68341751,23.0976311 5.29289322,22.7071068 C4.90236893,22.3165825 4.90236893,21.6834175 5.29289322,21.2928932 L11.2928932,15.2928932 C11.6714722,14.9143143 12.2810586,14.9010687 12.6757246,15.2628459 L18.6757246,20.7628459 C19.0828436,21.1360383 19.1103465,21.7686056 18.7371541,22.1757246 C18.3639617,22.5828436 17.7313944,22.6103465 17.3242754,22.2371541 L12.0300757,17.3841378 L6.70710678,22.7071068 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000003, 18.999999) rotate(-180.000000) translate(-12.000003, -18.999999) "></path></g>', 1), J1 = [
-  j1
-], K1 = /* @__PURE__ */ i({
+}), Ci = /* @__PURE__ */ h(o2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowsh.vue"]]), r2 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) " x="7" y="11" width="10" height="2" rx="1"></rect><path d="M6.70710678,8.70710678 C6.31658249,9.09763107 5.68341751,9.09763107 5.29289322,8.70710678 C4.90236893,8.31658249 4.90236893,7.68341751 5.29289322,7.29289322 L11.2928932,1.29289322 C11.6714722,0.914314282 12.2810586,0.90106866 12.6757246,1.26284586 L18.6757246,6.76284586 C19.0828436,7.13603827 19.1103465,7.76860564 18.7371541,8.17572463 C18.3639617,8.58284362 17.7313944,8.61034655 17.3242754,8.23715414 L12.0300757,3.38413782 L6.70710678,8.70710678 Z" fill="#000000" fill-rule="nonzero"></path><path d="M6.70710678,22.7071068 C6.31658249,23.0976311 5.68341751,23.0976311 5.29289322,22.7071068 C4.90236893,22.3165825 4.90236893,21.6834175 5.29289322,21.2928932 L11.2928932,15.2928932 C11.6714722,14.9143143 12.2810586,14.9010687 12.6757246,15.2628459 L18.6757246,20.7628459 C19.0828436,21.1360383 19.1103465,21.7686056 18.7371541,22.1757246 C18.3639617,22.5828436 17.7313944,22.6103465 17.3242754,22.2371541 L12.0300757,17.3841378 L6.70710678,22.7071068 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000003, 18.999999) rotate(-180.000000) translate(-12.000003, -18.999999) "></path></g>', 1), s2 = [
+  r2
+], i2 = /* @__PURE__ */ i({
   __name: "IconArrowsv",
   props: {
     size: { type: String, required: !1 }
@@ -1274,12 +1403,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...J1],
+      [...s2],
       16
       /* FULL_PROPS */
     ));
   }
-}), To = /* @__PURE__ */ h(K1, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowsv.vue"]]), X1 = /* @__PURE__ */ t(
+}), di = /* @__PURE__ */ h(i2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconArrowsv.vue"]]), l2 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -1308,9 +1437,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Y1 = [
-  X1
-], e2 = /* @__PURE__ */ i({
+), c2 = [
+  l2
+], a2 = /* @__PURE__ */ i({
   __name: "IconAttachment1",
   props: {
     size: { type: String, required: !1 }
@@ -1328,14 +1457,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Y1],
+      [...c2],
       16
       /* FULL_PROPS */
     ));
   }
-}), Uo = /* @__PURE__ */ h(e2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAttachment1.vue"]]), t2 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M11.7573593,15.2426407 L8.75735931,15.2426407 C8.20507456,15.2426407 7.75735931,15.6903559 7.75735931,16.2426407 C7.75735931,16.7949254 8.20507456,17.2426407 8.75735931,17.2426407 L11.7573593,17.2426407 L11.7573593,18.2426407 C11.7573593,19.3472102 10.8619288,20.2426407 9.75735931,20.2426407 L5.75735931,20.2426407 C4.65278981,20.2426407 3.75735931,19.3472102 3.75735931,18.2426407 L3.75735931,14.2426407 C3.75735931,13.1380712 4.65278981,12.2426407 5.75735931,12.2426407 L9.75735931,12.2426407 C10.8619288,12.2426407 11.7573593,13.1380712 11.7573593,14.2426407 L11.7573593,15.2426407 Z" fill="#000000" opacity="0.3" transform="translate(7.757359, 16.242641) rotate(-45.000000) translate(-7.757359, -16.242641) "></path><path d="M12.2426407,8.75735931 L15.2426407,8.75735931 C15.7949254,8.75735931 16.2426407,8.30964406 16.2426407,7.75735931 C16.2426407,7.20507456 15.7949254,6.75735931 15.2426407,6.75735931 L12.2426407,6.75735931 L12.2426407,5.75735931 C12.2426407,4.65278981 13.1380712,3.75735931 14.2426407,3.75735931 L18.2426407,3.75735931 C19.3472102,3.75735931 20.2426407,4.65278981 20.2426407,5.75735931 L20.2426407,9.75735931 C20.2426407,10.8619288 19.3472102,11.7573593 18.2426407,11.7573593 L14.2426407,11.7573593 C13.1380712,11.7573593 12.2426407,10.8619288 12.2426407,9.75735931 L12.2426407,8.75735931 Z" fill="#000000" transform="translate(16.242641, 7.757359) rotate(-45.000000) translate(-16.242641, -7.757359) "></path><path d="M5.89339828,3.42893219 C6.44568303,3.42893219 6.89339828,3.87664744 6.89339828,4.42893219 L6.89339828,6.42893219 C6.89339828,6.98121694 6.44568303,7.42893219 5.89339828,7.42893219 C5.34111353,7.42893219 4.89339828,6.98121694 4.89339828,6.42893219 L4.89339828,4.42893219 C4.89339828,3.87664744 5.34111353,3.42893219 5.89339828,3.42893219 Z M11.4289322,5.13603897 C11.8194565,5.52656326 11.8194565,6.15972824 11.4289322,6.55025253 L10.0147186,7.96446609 C9.62419433,8.35499039 8.99102936,8.35499039 8.60050506,7.96446609 C8.20998077,7.5739418 8.20998077,6.94077682 8.60050506,6.55025253 L10.0147186,5.13603897 C10.4052429,4.74551468 11.0384079,4.74551468 11.4289322,5.13603897 Z M0.600505063,5.13603897 C0.991029355,4.74551468 1.62419433,4.74551468 2.01471863,5.13603897 L3.42893219,6.55025253 C3.81945648,6.94077682 3.81945648,7.5739418 3.42893219,7.96446609 C3.0384079,8.35499039 2.40524292,8.35499039 2.01471863,7.96446609 L0.600505063,6.55025253 C0.209980772,6.15972824 0.209980772,5.52656326 0.600505063,5.13603897 Z" fill="#000000" opacity="0.3" transform="translate(6.014719, 5.843146) rotate(-45.000000) translate(-6.014719, -5.843146) "></path><path d="M17.9142136,15.4497475 C18.4664983,15.4497475 18.9142136,15.8974627 18.9142136,16.4497475 L18.9142136,18.4497475 C18.9142136,19.0020322 18.4664983,19.4497475 17.9142136,19.4497475 C17.3619288,19.4497475 16.9142136,19.0020322 16.9142136,18.4497475 L16.9142136,16.4497475 C16.9142136,15.8974627 17.3619288,15.4497475 17.9142136,15.4497475 Z M23.4497475,17.1568542 C23.8402718,17.5473785 23.8402718,18.1805435 23.4497475,18.5710678 L22.0355339,19.9852814 C21.6450096,20.3758057 21.0118446,20.3758057 20.6213203,19.9852814 C20.2307961,19.5947571 20.2307961,18.9615921 20.6213203,18.5710678 L22.0355339,17.1568542 C22.4260582,16.76633 23.0592232,16.76633 23.4497475,17.1568542 Z M12.6213203,17.1568542 C13.0118446,16.76633 13.6450096,16.76633 14.0355339,17.1568542 L15.4497475,18.5710678 C15.8402718,18.9615921 15.8402718,19.5947571 15.4497475,19.9852814 C15.0592232,20.3758057 14.4260582,20.3758057 14.0355339,19.9852814 L12.6213203,18.5710678 C12.2307961,18.1805435 12.2307961,17.5473785 12.6213203,17.1568542 Z" fill="#000000" opacity="0.3" transform="translate(18.035534, 17.863961) scale(1, -1) rotate(45.000000) translate(-18.035534, -17.863961) "></path></g>', 1), n2 = [
-  t2
-], o2 = /* @__PURE__ */ i({
+}), _i = /* @__PURE__ */ h(a2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAttachment1.vue"]]), p2 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M11.7573593,15.2426407 L8.75735931,15.2426407 C8.20507456,15.2426407 7.75735931,15.6903559 7.75735931,16.2426407 C7.75735931,16.7949254 8.20507456,17.2426407 8.75735931,17.2426407 L11.7573593,17.2426407 L11.7573593,18.2426407 C11.7573593,19.3472102 10.8619288,20.2426407 9.75735931,20.2426407 L5.75735931,20.2426407 C4.65278981,20.2426407 3.75735931,19.3472102 3.75735931,18.2426407 L3.75735931,14.2426407 C3.75735931,13.1380712 4.65278981,12.2426407 5.75735931,12.2426407 L9.75735931,12.2426407 C10.8619288,12.2426407 11.7573593,13.1380712 11.7573593,14.2426407 L11.7573593,15.2426407 Z" fill="#000000" opacity="0.3" transform="translate(7.757359, 16.242641) rotate(-45.000000) translate(-7.757359, -16.242641) "></path><path d="M12.2426407,8.75735931 L15.2426407,8.75735931 C15.7949254,8.75735931 16.2426407,8.30964406 16.2426407,7.75735931 C16.2426407,7.20507456 15.7949254,6.75735931 15.2426407,6.75735931 L12.2426407,6.75735931 L12.2426407,5.75735931 C12.2426407,4.65278981 13.1380712,3.75735931 14.2426407,3.75735931 L18.2426407,3.75735931 C19.3472102,3.75735931 20.2426407,4.65278981 20.2426407,5.75735931 L20.2426407,9.75735931 C20.2426407,10.8619288 19.3472102,11.7573593 18.2426407,11.7573593 L14.2426407,11.7573593 C13.1380712,11.7573593 12.2426407,10.8619288 12.2426407,9.75735931 L12.2426407,8.75735931 Z" fill="#000000" transform="translate(16.242641, 7.757359) rotate(-45.000000) translate(-16.242641, -7.757359) "></path><path d="M5.89339828,3.42893219 C6.44568303,3.42893219 6.89339828,3.87664744 6.89339828,4.42893219 L6.89339828,6.42893219 C6.89339828,6.98121694 6.44568303,7.42893219 5.89339828,7.42893219 C5.34111353,7.42893219 4.89339828,6.98121694 4.89339828,6.42893219 L4.89339828,4.42893219 C4.89339828,3.87664744 5.34111353,3.42893219 5.89339828,3.42893219 Z M11.4289322,5.13603897 C11.8194565,5.52656326 11.8194565,6.15972824 11.4289322,6.55025253 L10.0147186,7.96446609 C9.62419433,8.35499039 8.99102936,8.35499039 8.60050506,7.96446609 C8.20998077,7.5739418 8.20998077,6.94077682 8.60050506,6.55025253 L10.0147186,5.13603897 C10.4052429,4.74551468 11.0384079,4.74551468 11.4289322,5.13603897 Z M0.600505063,5.13603897 C0.991029355,4.74551468 1.62419433,4.74551468 2.01471863,5.13603897 L3.42893219,6.55025253 C3.81945648,6.94077682 3.81945648,7.5739418 3.42893219,7.96446609 C3.0384079,8.35499039 2.40524292,8.35499039 2.01471863,7.96446609 L0.600505063,6.55025253 C0.209980772,6.15972824 0.209980772,5.52656326 0.600505063,5.13603897 Z" fill="#000000" opacity="0.3" transform="translate(6.014719, 5.843146) rotate(-45.000000) translate(-6.014719, -5.843146) "></path><path d="M17.9142136,15.4497475 C18.4664983,15.4497475 18.9142136,15.8974627 18.9142136,16.4497475 L18.9142136,18.4497475 C18.9142136,19.0020322 18.4664983,19.4497475 17.9142136,19.4497475 C17.3619288,19.4497475 16.9142136,19.0020322 16.9142136,18.4497475 L16.9142136,16.4497475 C16.9142136,15.8974627 17.3619288,15.4497475 17.9142136,15.4497475 Z M23.4497475,17.1568542 C23.8402718,17.5473785 23.8402718,18.1805435 23.4497475,18.5710678 L22.0355339,19.9852814 C21.6450096,20.3758057 21.0118446,20.3758057 20.6213203,19.9852814 C20.2307961,19.5947571 20.2307961,18.9615921 20.6213203,18.5710678 L22.0355339,17.1568542 C22.4260582,16.76633 23.0592232,16.76633 23.4497475,17.1568542 Z M12.6213203,17.1568542 C13.0118446,16.76633 13.6450096,16.76633 14.0355339,17.1568542 L15.4497475,18.5710678 C15.8402718,18.9615921 15.8402718,19.5947571 15.4497475,19.9852814 C15.0592232,20.3758057 14.4260582,20.3758057 14.0355339,19.9852814 L12.6213203,18.5710678 C12.2307961,18.1805435 12.2307961,17.5473785 12.6213203,17.1568542 Z" fill="#000000" opacity="0.3" transform="translate(18.035534, 17.863961) scale(1, -1) rotate(45.000000) translate(-18.035534, -17.863961) "></path></g>', 1), h2 = [
+  p2
+], C2 = /* @__PURE__ */ i({
   __name: "IconAttachment2",
   props: {
     size: { type: String, required: !1 }
@@ -1353,12 +1482,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...n2],
+      [...h2],
       16
       /* FULL_PROPS */
     ));
   }
-}), Go = /* @__PURE__ */ h(o2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAttachment2.vue"]]), r2 = /* @__PURE__ */ t(
+}), ui = /* @__PURE__ */ h(C2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconAttachment2.vue"]]), d2 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -1385,9 +1514,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), s2 = [
-  r2
-], i2 = /* @__PURE__ */ i({
+), _2 = [
+  d2
+], u2 = /* @__PURE__ */ i({
   __name: "IconBackspace",
   props: {
     size: { type: String, required: !1 }
@@ -1405,12 +1534,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...s2],
+      [..._2],
       16
       /* FULL_PROPS */
     ));
   }
-}), Po = /* @__PURE__ */ h(i2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBackspace.vue"]]), l2 = /* @__PURE__ */ t(
+}), fi = /* @__PURE__ */ h(u2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBackspace.vue"]]), f2 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -1438,9 +1567,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), c2 = [
-  l2
-], a2 = /* @__PURE__ */ i({
+), L2 = [
+  f2
+], w2 = /* @__PURE__ */ i({
   __name: "IconBag1",
   props: {
     size: { type: String, required: !1 }
@@ -1458,12 +1587,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...c2],
+      [...L2],
       16
       /* FULL_PROPS */
     ));
   }
-}), Oo = /* @__PURE__ */ h(a2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBag1.vue"]]), p2 = /* @__PURE__ */ t(
+}), Li = /* @__PURE__ */ h(w2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBag1.vue"]]), g2 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -1490,9 +1619,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), h2 = [
-  p2
-], C2 = /* @__PURE__ */ i({
+), x2 = [
+  g2
+], v2 = /* @__PURE__ */ i({
   __name: "IconBag2",
   props: {
     size: { type: String, required: !1 }
@@ -1510,12 +1639,65 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...h2],
+      [...x2],
       16
       /* FULL_PROPS */
     ));
   }
-}), Wo = /* @__PURE__ */ h(C2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBag2.vue"]]), d2 = /* @__PURE__ */ t(
+}), wi = /* @__PURE__ */ h(v2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBag2.vue"]]), y2 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M11.9998486,2 L11.9998486,2 C14.2980964,2 16.399092,3.29848669 17.4268996,5.35410197 L20.7498486,12 C22.4565024,15.4133075 21.0729862,19.5638561 17.6596787,21.2705098 C16.7002112,21.7502436 15.642226,22 14.5695087,22 L9.43018852,22 C5.61399476,22 2.52035847,18.9063637 2.52035847,15.0901699 C2.52035847,14.0174527 2.77011491,12.9594675 3.24984864,12 L6.57279765,5.35410197 C7.60060529,3.29848669 9.70160089,2 11.9998486,2 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M6.43734864,16.5 L7.56234864,15 C9.07526374,16.1346863 10.5494335,16.6875 11.9998486,16.6875 C13.4502637,16.6875 14.9244335,16.1346863 16.4373486,15 L17.5623486,16.5 C15.7419304,17.8653137 13.8827669,18.5625 11.9998486,18.5625 C10.1169304,18.5625 8.25776686,17.8653137 6.43734864,16.5 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    })
+  ],
+  -1
+  /* HOISTED */
+), m2 = [
+  y2
+], $2 = /* @__PURE__ */ i({
+  __name: "IconBagchair",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...m2],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), gi = /* @__PURE__ */ h($2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBagchair.vue"]]), I2 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -1546,9 +1728,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), _2 = [
-  d2
-], u2 = /* @__PURE__ */ i({
+), z2 = [
+  I2
+], M2 = /* @__PURE__ */ i({
   __name: "IconBarcoderead",
   props: {
     size: { type: String, required: !1 }
@@ -1566,14 +1748,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [..._2],
+      [...z2],
       16
       /* FULL_PROPS */
     ));
   }
-}), Eo = /* @__PURE__ */ h(u2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBarcoderead.vue"]]), f2 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M15,9 L13,9 L13,5 L15,5 L15,9 Z M15,15 L15,20 L13,20 L13,15 L15,15 Z M5,9 L2,9 L2,6 C2,5.44771525 2.44771525,5 3,5 L5,5 L5,9 Z M5,15 L5,20 L3,20 C2.44771525,20 2,19.5522847 2,19 L2,15 L5,15 Z M18,9 L16,9 L16,5 L18,5 L18,9 Z M18,15 L18,20 L16,20 L16,15 L18,15 Z M22,9 L20,9 L20,5 L21,5 C21.5522847,5 22,5.44771525 22,6 L22,9 Z M22,15 L22,19 C22,19.5522847 21.5522847,20 21,20 L20,20 L20,15 L22,15 Z" fill="#000000"></path><path d="M9,9 L7,9 L7,5 L9,5 L9,9 Z M9,15 L9,20 L7,20 L7,15 L9,15 Z" fill="#000000" opacity="0.3"></path><rect fill="#000000" opacity="0.3" x="0" y="11" width="24" height="2" rx="1"></rect></g>', 1), w2 = [
-  f2
-], L2 = /* @__PURE__ */ i({
+}), xi = /* @__PURE__ */ h(M2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBarcoderead.vue"]]), Z2 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M15,9 L13,9 L13,5 L15,5 L15,9 Z M15,15 L15,20 L13,20 L13,15 L15,15 Z M5,9 L2,9 L2,6 C2,5.44771525 2.44771525,5 3,5 L5,5 L5,9 Z M5,15 L5,20 L3,20 C2.44771525,20 2,19.5522847 2,19 L2,15 L5,15 Z M18,9 L16,9 L16,5 L18,5 L18,9 Z M18,15 L18,20 L16,20 L16,15 L18,15 Z M22,9 L20,9 L20,5 L21,5 C21.5522847,5 22,5.44771525 22,6 L22,9 Z M22,15 L22,19 C22,19.5522847 21.5522847,20 21,20 L20,20 L20,15 L22,15 Z" fill="#000000"></path><path d="M9,9 L7,9 L7,5 L9,5 L9,9 Z M9,15 L9,20 L7,20 L7,15 L9,15 Z" fill="#000000" opacity="0.3"></path><rect fill="#000000" opacity="0.3" x="0" y="11" width="24" height="2" rx="1"></rect></g>', 1), k2 = [
+  Z2
+], S2 = /* @__PURE__ */ i({
   __name: "IconBarcodescan",
   props: {
     size: { type: String, required: !1 }
@@ -1591,12 +1773,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...w2],
+      [...k2],
       16
       /* FULL_PROPS */
     ));
   }
-}), Fo = /* @__PURE__ */ h(L2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBarcodescan.vue"]]), g2 = /* @__PURE__ */ t(
+}), vi = /* @__PURE__ */ h(S2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBarcodescan.vue"]]), B2 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -1623,9 +1805,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), x2 = [
-  g2
-], v2 = /* @__PURE__ */ i({
+), q2 = [
+  B2
+], A2 = /* @__PURE__ */ i({
   __name: "IconBarcode",
   props: {
     size: { type: String, required: !1 }
@@ -1643,14 +1825,67 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...x2],
+      [...q2],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ho = /* @__PURE__ */ h(v2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBarcode.vue"]]), y2 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M4,9 L4,15 L17,15 L17,9 L4,9 Z M4,7 L17,7 C18.1045695,7 19,7.8954305 19,9 L19,15 C19,16.1045695 18.1045695,17 17,17 L4,17 C2.8954305,17 2,16.1045695 2,15 L2,9 C2,7.8954305 2.8954305,7 4,7 Z" fill="#000000" fill-rule="nonzero"></path><path d="M10.3561738,14.0547828 L11.7400488,12.324939 C11.8090507,12.2386866 11.7950664,12.1128281 11.708814,12.0438262 C11.6733514,12.0154562 11.6292893,12 11.583875,12 L11,12 L11,10.1605551 C11,10.0500982 10.9104569,9.96055513 10.8,9.96055513 C10.7331294,9.96055513 10.6706831,9.99397535 10.6335899,10.0496151 L9.20729336,12.18906 C9.14602287,12.2809657 9.17085764,12.4051396 9.26276338,12.4664101 C9.29561688,12.4883124 9.33421842,12.5 9.37370342,12.5 L10,12.5 L10,13.9298438 C10,14.0403007 10.0895431,14.1298438 10.2,14.1298438 C10.2607567,14.1298438 10.3182193,14.1022258 10.3561738,14.0547828 Z" fill="#000000" opacity="0.3"></path><path d="M20,10 L21,10 C21.5522847,10 22,10.4477153 22,11 L22,13 C22,13.5522847 21.5522847,14 21,14 L20,14 L20,10 Z" fill="#000000" opacity="0.3"></path></g>', 1), m2 = [
-  y2
-], $2 = /* @__PURE__ */ i({
+}), yi = /* @__PURE__ */ h(A2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBarcode.vue"]]), b2 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("path", {
+      d: "M6,10 C6,10.5522847 5.55228475,11 5,11 C4.44771525,11 4,10.5522847 4,10 L4,6 C4,4.34314575 5.34314575,3 7,3 C8.65685425,3 10,4.34314575 10,6 C10,6.55228475 9.55228475,7 9,7 C8.44771525,7 8,6.55228475 8,6 C8,5.44771525 7.55228475,5 7,5 C6.44771525,5 6,5.44771525 6,6 L6,10 Z",
+      fill: "#000000",
+      "fill-rule": "nonzero",
+      opacity: "0.3"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M6,20 L4,20 C4,17.2385763 6.23857625,16 9,16 L15,16 C17.7614237,16 20,17.2385763 20,20 L18,20 C18,18.3431458 16.6568542,18 15,18 L9,18 C7.34314575,18 6,18.3431458 6,20 Z",
+      fill: "#000000",
+      "fill-rule": "nonzero",
+      opacity: "0.3"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M2,9 L23,9 L22.4942047,13.5521576 C22.2128532,16.084321 20.0725321,18 17.524786,18 L7.47521397,18 C4.92746788,18 2.78714678,16.084321 2.50579529,13.5521576 L2,9 Z M19.25,11.5 C19.25,12.9305987 18.694479,14.0416408 17.55,14.9 C17.2186292,15.1485281 17.1514719,15.6186292 17.4,15.95 C17.6485281,16.2813708 18.1186292,16.3485281 18.45,16.1 C19.9721877,14.9583592 20.75,13.4027346 20.75,11.5 C20.75,11.0857864 20.4142136,10.75 20,10.75 C19.5857864,10.75 19.25,11.0857864 19.25,11.5 Z",
+      fill: "#000000"
+    })
+  ],
+  -1
+  /* HOISTED */
+), D2 = [
+  b2
+], F2 = /* @__PURE__ */ i({
+  __name: "IconBath",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...D2],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), mi = /* @__PURE__ */ h(F2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBath.vue"]]), T2 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M4,9 L4,15 L17,15 L17,9 L4,9 Z M4,7 L17,7 C18.1045695,7 19,7.8954305 19,9 L19,15 C19,16.1045695 18.1045695,17 17,17 L4,17 C2.8954305,17 2,16.1045695 2,15 L2,9 C2,7.8954305 2.8954305,7 4,7 Z" fill="#000000" fill-rule="nonzero"></path><path d="M10.3561738,14.0547828 L11.7400488,12.324939 C11.8090507,12.2386866 11.7950664,12.1128281 11.708814,12.0438262 C11.6733514,12.0154562 11.6292893,12 11.583875,12 L11,12 L11,10.1605551 C11,10.0500982 10.9104569,9.96055513 10.8,9.96055513 C10.7331294,9.96055513 10.6706831,9.99397535 10.6335899,10.0496151 L9.20729336,12.18906 C9.14602287,12.2809657 9.17085764,12.4051396 9.26276338,12.4664101 C9.29561688,12.4883124 9.33421842,12.5 9.37370342,12.5 L10,12.5 L10,13.9298438 C10,14.0403007 10.0895431,14.1298438 10.2,14.1298438 C10.2607567,14.1298438 10.3182193,14.1022258 10.3561738,14.0547828 Z" fill="#000000" opacity="0.3"></path><path d="M20,10 L21,10 C21.5522847,10 22,10.4477153 22,11 L22,13 C22,13.5522847 21.5522847,14 21,14 L20,14 L20,10 Z" fill="#000000" opacity="0.3"></path></g>', 1), R2 = [
+  T2
+], G2 = /* @__PURE__ */ i({
   __name: "IconBatterycharging",
   props: {
     size: { type: String, required: !1 }
@@ -1668,12 +1903,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...m2],
+      [...R2],
       16
       /* FULL_PROPS */
     ));
   }
-}), No = /* @__PURE__ */ h($2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBatterycharging.vue"]]), I2 = /* @__PURE__ */ t(
+}), $i = /* @__PURE__ */ h(G2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBatterycharging.vue"]]), U2 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -1701,9 +1936,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), z2 = [
-  I2
-], M2 = /* @__PURE__ */ i({
+), P2 = [
+  U2
+], W2 = /* @__PURE__ */ i({
   __name: "IconBatteryempty",
   props: {
     size: { type: String, required: !1 }
@@ -1721,12 +1956,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...z2],
+      [...P2],
       16
       /* FULL_PROPS */
     ));
   }
-}), Qo = /* @__PURE__ */ h(M2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBatteryempty.vue"]]), Z2 = /* @__PURE__ */ t(
+}), Ii = /* @__PURE__ */ h(W2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBatteryempty.vue"]]), E2 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -1757,9 +1992,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), k2 = [
-  Z2
-], S2 = /* @__PURE__ */ i({
+), O2 = [
+  E2
+], H2 = /* @__PURE__ */ i({
   __name: "IconBatteryfull",
   props: {
     size: { type: String, required: !1 }
@@ -1777,12 +2012,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...k2],
+      [...O2],
       16
       /* FULL_PROPS */
     ));
   }
-}), Vo = /* @__PURE__ */ h(S2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBatteryfull.vue"]]), B2 = /* @__PURE__ */ t(
+}), zi = /* @__PURE__ */ h(H2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBatteryfull.vue"]]), N2 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -1810,9 +2045,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), q2 = [
-  B2
-], A2 = /* @__PURE__ */ i({
+), V2 = [
+  N2
+], j2 = /* @__PURE__ */ i({
   __name: "IconBatteryhalf",
   props: {
     size: { type: String, required: !1 }
@@ -1830,12 +2065,37 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...q2],
+      [...V2],
       16
       /* FULL_PROPS */
     ));
   }
-}), jo = /* @__PURE__ */ h(A2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBatteryhalf.vue"]]), b2 = /* @__PURE__ */ t(
+}), Mi = /* @__PURE__ */ h(j2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBatteryhalf.vue"]]), K2 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M4,22 L2,22 C2,19.2385763 4.23857625,18 7,18 L17,18 C19.7614237,18 22,19.2385763 22,22 L20,22 C20,20.3431458 18.6568542,20 17,20 L7,20 C5.34314575,20 4,20.3431458 4,22 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path><rect fill="#000000" x="1" y="14" width="22" height="6" rx="1"></rect><path d="M13,13 L11,13 L11,12 C11,11.4477153 10.5522847,11 10,11 L6,11 C5.44771525,11 5,11.4477153 5,12 L5,13 L4,13 C3.44771525,13 3,12.5522847 3,12 L3,8 C3,6.8954305 3.8954305,6 5,6 L19,6 C20.1045695,6 21,6.8954305 21,8 L21,12 C21,12.5522847 20.5522847,13 20,13 L19,13 L19,12 C19,11.4477153 18.5522847,11 18,11 L14,11 C13.4477153,11 13,11.4477153 13,12 L13,13 Z" fill="#000000" opacity="0.3"></path></g>', 1), Q2 = [
+  K2
+], J2 = /* @__PURE__ */ i({
+  __name: "IconBed",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...Q2],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Zi = /* @__PURE__ */ h(J2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBed.vue"]]), X2 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -1857,9 +2117,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), D2 = [
-  b2
-], R2 = /* @__PURE__ */ i({
+), Y2 = [
+  X2
+], e0 = /* @__PURE__ */ i({
   __name: "IconBinocular",
   props: {
     size: { type: String, required: !1 }
@@ -1877,14 +2137,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...D2],
+      [...Y2],
       16
       /* FULL_PROPS */
     ));
   }
-}), Jo = /* @__PURE__ */ h(R2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBinocular.vue"]]), T2 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="11" y="2" width="2" height="5" rx="1"></rect><rect fill="#000000" opacity="0.3" x="11" y="16" width="2" height="5" rx="1"></rect><path d="M17.875,14.086 C17.875,14.8206703 17.7293348,15.4381642 17.438,15.9385 C17.1466652,16.4388358 16.7603357,16.8409985 16.279,17.145 C15.7976643,17.4490015 15.2498364,17.6674993 14.6355,17.8005 C14.0211636,17.9335007 13.3910032,18 12.745,18 L7,18 L7,4.548 L12.745,4.548 C13.2643359,4.548 13.7963306,4.60183279 14.341,4.7095 C14.8856694,4.8171672 15.3796644,5.00083204 15.823,5.2605 C16.2663356,5.52016796 16.6273319,5.87166445 16.906,6.315 C17.1846681,6.75833555 17.324,7.32199658 17.324,8.006 C17.324,8.75333707 17.1213354,9.3708309 16.716,9.8585 C16.3106646,10.3461691 15.77867,10.6976656 15.12,10.913 C15.5000019,11.0143337 15.8578317,11.1314991 16.1935,11.3025 C16.5291683,11.4735009 16.8204988,11.6919987 17.0675,11.958 C17.3145012,12.2240013 17.5108326,12.5343316 17.6565,12.889 C17.8021674,13.2436684 17.875,13.6426645 17.875,14.086 Z M14.189,8.443 C14.189,7.98699772 14.0148351,7.65450105 13.6665,7.4455 C13.3181649,7.23649896 12.8020034,7.132 12.118,7.132 L10.522,7.132 L10.522,9.906 L12.27,9.906 C12.878003,9.906 13.3498317,9.78250124 13.6855,9.5355 C14.0211683,9.28849877 14.189,8.92433574 14.189,8.443 Z M14.626,13.782 C14.626,13.2246639 14.4170021,12.8383344 13.999,12.623 C13.5809979,12.4076656 13.0236701,12.3 12.327,12.3 L10.522,12.3 L10.522,15.378 L12.346,15.378 C12.5993346,15.378 12.8621653,15.3558336 13.1345,15.3115 C13.4068347,15.2671664 13.6538322,15.1880006 13.8755,15.074 C14.0971678,14.9599994 14.277666,14.798501 14.417,14.5895 C14.556334,14.380499 14.626,14.111335 14.626,13.782 Z" fill="#000000"></path></g>', 1), U2 = [
-  T2
-], G2 = /* @__PURE__ */ i({
+}), ki = /* @__PURE__ */ h(e0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBinocular.vue"]]), t0 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="11" y="2" width="2" height="5" rx="1"></rect><rect fill="#000000" opacity="0.3" x="11" y="16" width="2" height="5" rx="1"></rect><path d="M17.875,14.086 C17.875,14.8206703 17.7293348,15.4381642 17.438,15.9385 C17.1466652,16.4388358 16.7603357,16.8409985 16.279,17.145 C15.7976643,17.4490015 15.2498364,17.6674993 14.6355,17.8005 C14.0211636,17.9335007 13.3910032,18 12.745,18 L7,18 L7,4.548 L12.745,4.548 C13.2643359,4.548 13.7963306,4.60183279 14.341,4.7095 C14.8856694,4.8171672 15.3796644,5.00083204 15.823,5.2605 C16.2663356,5.52016796 16.6273319,5.87166445 16.906,6.315 C17.1846681,6.75833555 17.324,7.32199658 17.324,8.006 C17.324,8.75333707 17.1213354,9.3708309 16.716,9.8585 C16.3106646,10.3461691 15.77867,10.6976656 15.12,10.913 C15.5000019,11.0143337 15.8578317,11.1314991 16.1935,11.3025 C16.5291683,11.4735009 16.8204988,11.6919987 17.0675,11.958 C17.3145012,12.2240013 17.5108326,12.5343316 17.6565,12.889 C17.8021674,13.2436684 17.875,13.6426645 17.875,14.086 Z M14.189,8.443 C14.189,7.98699772 14.0148351,7.65450105 13.6665,7.4455 C13.3181649,7.23649896 12.8020034,7.132 12.118,7.132 L10.522,7.132 L10.522,9.906 L12.27,9.906 C12.878003,9.906 13.3498317,9.78250124 13.6855,9.5355 C14.0211683,9.28849877 14.189,8.92433574 14.189,8.443 Z M14.626,13.782 C14.626,13.2246639 14.4170021,12.8383344 13.999,12.623 C13.5809979,12.4076656 13.0236701,12.3 12.327,12.3 L10.522,12.3 L10.522,15.378 L12.346,15.378 C12.5993346,15.378 12.8621653,15.3558336 13.1345,15.3115 C13.4068347,15.2671664 13.6538322,15.1880006 13.8755,15.074 C14.0971678,14.9599994 14.277666,14.798501 14.417,14.5895 C14.556334,14.380499 14.626,14.111335 14.626,13.782 Z" fill="#000000"></path></g>', 1), n0 = [
+  t0
+], o0 = /* @__PURE__ */ i({
   __name: "IconBitcoin",
   props: {
     size: { type: String, required: !1 }
@@ -1902,12 +2162,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...U2],
+      [...n0],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ko = /* @__PURE__ */ h(G2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBitcoin.vue"]]), P2 = /* @__PURE__ */ t(
+}), Si = /* @__PURE__ */ h(o0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBitcoin.vue"]]), r0 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -1936,9 +2196,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), O2 = [
-  P2
-], W2 = /* @__PURE__ */ i({
+), s0 = [
+  r0
+], i0 = /* @__PURE__ */ i({
   __name: "IconBluetooth",
   props: {
     size: { type: String, required: !1 }
@@ -1956,12 +2216,89 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...O2],
+      [...s0],
       16
       /* FULL_PROPS */
     ));
   }
-}), Xo = /* @__PURE__ */ h(W2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBluetooth.vue"]]), E2 = /* @__PURE__ */ t(
+}), Bi = /* @__PURE__ */ h(i0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBluetooth.vue"]]), l0 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M13.6855025,18.7082217 C15.9113859,17.8189707 18.682885,17.2495635 22,17 C22,16.9325178 22,13.1012863 22,5.50630526 L21.9999762,5.50630526 C21.9999762,5.23017604 21.7761292,5.00632908 21.5,5.00632908 C21.4957817,5.00632908 21.4915635,5.00638247 21.4873465,5.00648922 C18.658231,5.07811173 15.8291155,5.74261533 13,7 C13,7.04449645 13,10.79246 13,18.2438906 L12.9999854,18.2438906 C12.9999854,18.520041 13.2238496,18.7439052 13.5,18.7439052 C13.5635398,18.7439052 13.6264972,18.7317946 13.6855025,18.7082217 Z",
+      fill: "#000000"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M10.3144829,18.7082217 C8.08859955,17.8189707 5.31710038,17.2495635 1.99998542,17 C1.99998542,16.9325178 1.99998542,13.1012863 1.99998542,5.50630526 L2.00000925,5.50630526 C2.00000925,5.23017604 2.22385621,5.00632908 2.49998542,5.00632908 C2.50420375,5.00632908 2.5084219,5.00638247 2.51263888,5.00648922 C5.34175439,5.07811173 8.17086991,5.74261533 10.9999854,7 C10.9999854,7.04449645 10.9999854,10.79246 10.9999854,18.2438906 L11,18.2438906 C11,18.520041 10.7761358,18.7439052 10.4999854,18.7439052 C10.4364457,18.7439052 10.3734882,18.7317946 10.3144829,18.7082217 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    })
+  ],
+  -1
+  /* HOISTED */
+), c0 = [
+  l0
+], a0 = /* @__PURE__ */ i({
+  __name: "IconBookopen",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...c0],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), qi = /* @__PURE__ */ h(a0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBookopen.vue"]]), p0 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><mask fill="white"><use xlink:href="#path-1"></use></mask><use fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use></g>', 1), h0 = [
+  p0
+], C0 = /* @__PURE__ */ i({
+  __name: "IconBook",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...h0],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Ai = /* @__PURE__ */ h(C0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBook.vue"]]), d0 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -1983,9 +2320,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), F2 = [
-  E2
-], H2 = /* @__PURE__ */ i({
+), _0 = [
+  d0
+], u0 = /* @__PURE__ */ i({
   __name: "IconBookmark",
   props: {
     size: { type: String, required: !1 }
@@ -2003,12 +2340,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...F2],
+      [..._0],
       16
       /* FULL_PROPS */
     ));
   }
-}), Yo = /* @__PURE__ */ h(H2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBookmark.vue"]]), N2 = /* @__PURE__ */ t(
+}), bi = /* @__PURE__ */ h(u0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBookmark.vue"]]), f0 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -2035,9 +2372,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Q2 = [
-  N2
-], V2 = /* @__PURE__ */ i({
+), L0 = [
+  f0
+], w0 = /* @__PURE__ */ i({
   __name: "IconBox1",
   props: {
     size: { type: String, required: !1 }
@@ -2055,12 +2392,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Q2],
+      [...L0],
       16
       /* FULL_PROPS */
     ));
   }
-}), er = /* @__PURE__ */ h(V2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBox1.vue"]]), j2 = /* @__PURE__ */ t(
+}), Di = /* @__PURE__ */ h(w0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBox1.vue"]]), g0 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -2087,9 +2424,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), J2 = [
-  j2
-], K2 = /* @__PURE__ */ i({
+), x0 = [
+  g0
+], v0 = /* @__PURE__ */ i({
   __name: "IconBox2",
   props: {
     size: { type: String, required: !1 }
@@ -2107,12 +2444,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...J2],
+      [...x0],
       16
       /* FULL_PROPS */
     ));
   }
-}), tr = /* @__PURE__ */ h(K2, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBox2.vue"]]), X2 = /* @__PURE__ */ t(
+}), Fi = /* @__PURE__ */ h(v0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBox2.vue"]]), y0 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -2139,9 +2476,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Y2 = [
-  X2
-], e0 = /* @__PURE__ */ i({
+), m0 = [
+  y0
+], $0 = /* @__PURE__ */ i({
   __name: "IconBox3",
   props: {
     size: { type: String, required: !1 }
@@ -2159,12 +2496,196 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Y2],
+      [...m0],
       16
       /* FULL_PROPS */
     ));
   }
-}), nr = /* @__PURE__ */ h(e0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBox3.vue"]]), t0 = /* @__PURE__ */ t(
+}), Ti = /* @__PURE__ */ h($0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBox3.vue"]]), I0 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M4,7 L20,7 L20,19.5 C20,20.3284271 19.3284271,21 18.5,21 L5.5,21 C4.67157288,21 4,20.3284271 4,19.5 L4,7 Z M10,10 C9.44771525,10 9,10.4477153 9,11 C9,11.5522847 9.44771525,12 10,12 L14,12 C14.5522847,12 15,11.5522847 15,11 C15,10.4477153 14.5522847,10 14,10 L10,10 Z",
+      fill: "#000000"
+    }),
+    /* @__PURE__ */ t("rect", {
+      fill: "#000000",
+      opacity: "0.3",
+      x: "2",
+      y: "3",
+      width: "20",
+      height: "4",
+      rx: "1"
+    })
+  ],
+  -1
+  /* HOISTED */
+), z0 = [
+  I0
+], M0 = /* @__PURE__ */ i({
+  __name: "IconBox",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...z0],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Ri = /* @__PURE__ */ h(M0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBox.vue"]]), Z0 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M10.5278225,22.5278225 L8.79765312,20.7976531 L9.99546268,18.4463973 L7.35584531,19.3558453 L5.04895282,17.0489528 L8.15438502,11.6366281 L2.74206034,14.7420603 L1.30025253,13.3002525 L9.26548692,8.03126375 C11.3411817,6.65819522 14.1285885,7.15099488 15.6076701,9.15253022 C17.1660799,11.2614147 17.1219524,14.1519817 15.4998952,16.212313 L10.5278225,22.5278225 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M22.4246212,4.91054166 L18.4071175,8.92804534 C17.6260689,9.70909393 16.359739,9.70909393 15.5786904,8.92804534 C14.7976418,8.14699676 14.7976418,6.8806668 15.5786904,6.09961822 L19.6029298,2.0753788 C19.7817428,2.41498256 19.9878937,2.74436937 20.2214305,3.06039796 C20.8190224,3.86907629 21.5791361,4.49033747 22.4246212,4.91054166 Z",
+      fill: "#000000",
+      transform: "translate(18.708763, 5.794605) rotate(-180.000000) translate(-18.708763, -5.794605) "
+    })
+  ],
+  -1
+  /* HOISTED */
+), k0 = [
+  Z0
+], S0 = /* @__PURE__ */ i({
+  __name: "IconBroom",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...k0],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Gi = /* @__PURE__ */ h(S0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBroom.vue"]]), B0 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M13.5,21 L13.5,18 C13.5,17.4477153 13.0522847,17 12.5,17 L11.5,17 C10.9477153,17 10.5,17.4477153 10.5,18 L10.5,21 L5,21 L5,4 C5,2.8954305 5.8954305,2 7,2 L17,2 C18.1045695,2 19,2.8954305 19,4 L19,21 L13.5,21 Z M9,4 C8.44771525,4 8,4.44771525 8,5 L8,6 C8,6.55228475 8.44771525,7 9,7 L10,7 C10.5522847,7 11,6.55228475 11,6 L11,5 C11,4.44771525 10.5522847,4 10,4 L9,4 Z M14,4 C13.4477153,4 13,4.44771525 13,5 L13,6 C13,6.55228475 13.4477153,7 14,7 L15,7 C15.5522847,7 16,6.55228475 16,6 L16,5 C16,4.44771525 15.5522847,4 15,4 L14,4 Z M9,8 C8.44771525,8 8,8.44771525 8,9 L8,10 C8,10.5522847 8.44771525,11 9,11 L10,11 C10.5522847,11 11,10.5522847 11,10 L11,9 C11,8.44771525 10.5522847,8 10,8 L9,8 Z M9,12 C8.44771525,12 8,12.4477153 8,13 L8,14 C8,14.5522847 8.44771525,15 9,15 L10,15 C10.5522847,15 11,14.5522847 11,14 L11,13 C11,12.4477153 10.5522847,12 10,12 L9,12 Z M14,12 C13.4477153,12 13,12.4477153 13,13 L13,14 C13,14.5522847 13.4477153,15 14,15 L15,15 C15.5522847,15 16,14.5522847 16,14 L16,13 C16,12.4477153 15.5522847,12 15,12 L14,12 Z" fill="#000000"></path><rect fill="#FFFFFF" x="13" y="8" width="3" height="3" rx="1"></rect><path d="M4,21 L20,21 C20.5522847,21 21,21.4477153 21,22 L21,22.4 C21,22.7313708 20.7313708,23 20.4,23 L3.6,23 C3.26862915,23 3,22.7313708 3,22.4 L3,22 C3,21.4477153 3.44771525,21 4,21 Z" fill="#000000" opacity="0.3"></path></g>', 1), q0 = [
+  B0
+], A0 = /* @__PURE__ */ i({
+  __name: "IconBuilding",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...q0],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Ui = /* @__PURE__ */ h(A0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBuilding.vue"]]), b0 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" opacity="0.3" cx="12" cy="9" r="8"></circle><path d="M14.5297296,11 L9.46184488,11 L11.9758349,17.4645458 L14.5297296,11 Z M10.5679953,19.3624463 L6.53815512,9 L17.4702704,9 L13.3744964,19.3674279 L11.9759405,18.814912 L10.5679953,19.3624463 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path><path d="M10,22 L14,22 L14,22 C14,23.1045695 13.1045695,24 12,24 L12,24 C10.8954305,24 10,23.1045695 10,22 Z" fill="#000000" opacity="0.3"></path><path d="M9,20 C8.44771525,20 8,19.5522847 8,19 C8,18.4477153 8.44771525,18 9,18 C8.44771525,18 8,17.5522847 8,17 C8,16.4477153 8.44771525,16 9,16 L15,16 C15.5522847,16 16,16.4477153 16,17 C16,17.5522847 15.5522847,18 15,18 C15.5522847,18 16,18.4477153 16,19 C16,19.5522847 15.5522847,20 15,20 C15.5522847,20 16,20.4477153 16,21 C16,21.5522847 15.5522847,22 15,22 L9,22 C8.44771525,22 8,21.5522847 8,21 C8,20.4477153 8.44771525,20 9,20 Z" fill="#000000"></path></g>', 1), D0 = [
+  b0
+], F0 = /* @__PURE__ */ i({
+  __name: "IconBulb1",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...D0],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Pi = /* @__PURE__ */ h(F0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBulb1.vue"]]), T0 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M5.11245763,2.03825554 C7.06198789,1.34608518 9.35774462,1 11.9997278,1 C14.6417901,1 16.9376995,1.34610591 18.8874558,2.03831773 L18.8874591,2.0383083 C19.9283802,2.40786109 20.4726317,3.55127609 20.103079,4.59219718 C20.0677743,4.69163999 20.0246549,4.78813275 19.9741245,4.88077171 L15,14 L9,14 L4.02583562,4.88068072 C3.49691243,3.91098821 3.85422657,2.69612015 4.82391908,2.16719696 C4.91654682,2.11667273 5.01302748,2.07355769 5.11245763,2.03825554 Z" fill="#000000" opacity="0.3"></path><path d="M10,20 L14,20 L14,20 C14,21.1045695 13.1045695,22 12,22 L12,22 C10.8954305,22 10,21.1045695 10,20 Z" fill="#000000" opacity="0.3"></path><path d="M13,10 L13,18 C13,18.5522847 12.5522847,19 12,19 C11.4477153,19 11,18.5522847 11,18 L11,10 L10.5,10 C10.2238576,10 10,9.77614237 10,9.5 C10,9.22385763 10.2238576,9 10.5,9 L13.5,9 C13.7761424,9 14,9.22385763 14,9.5 C14,9.77614237 13.7761424,10 13.5,10 L13,10 Z" fill="#000000" opacity="0.3"></path><path d="M9,18 C8.44771525,18 8,17.5522847 8,17 C8,16.4477153 8.44771525,16 9,16 C8.44771525,16 8,15.5522847 8,15 C8,14.4477153 8.44771525,14 9,14 L15,14 C15.5522847,14 16,14.4477153 16,15 C16,15.5522847 15.5522847,16 15,16 C15.5522847,16 16,16.4477153 16,17 C16,17.5522847 15.5522847,18 15,18 C15.5522847,18 16,18.4477153 16,19 C16,19.5522847 15.5522847,20 15,20 L9,20 C8.44771525,20 8,19.5522847 8,19 C8,18.4477153 8.44771525,18 9,18 Z" fill="#000000"></path></g>', 1), R0 = [
+  T0
+], G0 = /* @__PURE__ */ i({
+  __name: "IconBulb2",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...R0],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Wi = /* @__PURE__ */ h(G0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconBulb2.vue"]]), U0 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -2187,9 +2708,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), n0 = [
-  t0
-], o0 = /* @__PURE__ */ i({
+), P0 = [
+  U0
+], W0 = /* @__PURE__ */ i({
   __name: "IconCMD",
   props: {
     size: { type: String, required: !1 }
@@ -2207,14 +2728,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...n0],
+      [...P0],
       16
       /* FULL_PROPS */
     ));
   }
-}), or = /* @__PURE__ */ h(o0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCMD.vue"]]), r0 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="4" y="4" width="16" height="16" rx="2"></rect><rect fill="#000000" opacity="0.3" x="9" y="9" width="6" height="6"></rect><path d="M20,7 L21,7 C21.5522847,7 22,7.44771525 22,8 L22,8 C22,8.55228475 21.5522847,9 21,9 L20,9 L20,7 Z" fill="#000000"></path><path d="M20,11 L21,11 C21.5522847,11 22,11.4477153 22,12 L22,12 C22,12.5522847 21.5522847,13 21,13 L20,13 L20,11 Z" fill="#000000"></path><path d="M20,15 L21,15 C21.5522847,15 22,15.4477153 22,16 L22,16 C22,16.5522847 21.5522847,17 21,17 L20,17 L20,15 Z" fill="#000000"></path><path d="M3,7 L4,7 L4,9 L3,9 C2.44771525,9 2,8.55228475 2,8 L2,8 C2,7.44771525 2.44771525,7 3,7 Z" fill="#000000"></path><path d="M3,11 L4,11 L4,13 L3,13 C2.44771525,13 2,12.5522847 2,12 L2,12 C2,11.4477153 2.44771525,11 3,11 Z" fill="#000000"></path><path d="M3,15 L4,15 L4,17 L3,17 C2.44771525,17 2,16.5522847 2,16 L2,16 C2,15.4477153 2.44771525,15 3,15 Z" fill="#000000"></path></g>', 1), s0 = [
-  r0
-], i0 = /* @__PURE__ */ i({
+}), Ei = /* @__PURE__ */ h(W0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCMD.vue"]]), E0 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="4" y="4" width="16" height="16" rx="2"></rect><rect fill="#000000" opacity="0.3" x="9" y="9" width="6" height="6"></rect><path d="M20,7 L21,7 C21.5522847,7 22,7.44771525 22,8 L22,8 C22,8.55228475 21.5522847,9 21,9 L20,9 L20,7 Z" fill="#000000"></path><path d="M20,11 L21,11 C21.5522847,11 22,11.4477153 22,12 L22,12 C22,12.5522847 21.5522847,13 21,13 L20,13 L20,11 Z" fill="#000000"></path><path d="M20,15 L21,15 C21.5522847,15 22,15.4477153 22,16 L22,16 C22,16.5522847 21.5522847,17 21,17 L20,17 L20,15 Z" fill="#000000"></path><path d="M3,7 L4,7 L4,9 L3,9 C2.44771525,9 2,8.55228475 2,8 L2,8 C2,7.44771525 2.44771525,7 3,7 Z" fill="#000000"></path><path d="M3,11 L4,11 L4,13 L3,13 C2.44771525,13 2,12.5522847 2,12 L2,12 C2,11.4477153 2.44771525,11 3,11 Z" fill="#000000"></path><path d="M3,15 L4,15 L4,17 L3,17 C2.44771525,17 2,16.5522847 2,16 L2,16 C2,15.4477153 2.44771525,15 3,15 Z" fill="#000000"></path></g>', 1), O0 = [
+  E0
+], H0 = /* @__PURE__ */ i({
   __name: "IconCPU1",
   props: {
     size: { type: String, required: !1 }
@@ -2232,12 +2753,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...s0],
+      [...O0],
       16
       /* FULL_PROPS */
     ));
   }
-}), rr = /* @__PURE__ */ h(i0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCPU1.vue"]]), l0 = /* @__PURE__ */ t(
+}), Oi = /* @__PURE__ */ h(H0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCPU1.vue"]]), N0 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -2267,9 +2788,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), c0 = [
-  l0
-], a0 = /* @__PURE__ */ i({
+), V0 = [
+  N0
+], j0 = /* @__PURE__ */ i({
   __name: "IconCalculator",
   props: {
     size: { type: String, required: !1 }
@@ -2287,12 +2808,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...c0],
+      [...V0],
       16
       /* FULL_PROPS */
     ));
   }
-}), sr = /* @__PURE__ */ h(a0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCalculator.vue"]]), p0 = /* @__PURE__ */ t(
+}), Hi = /* @__PURE__ */ h(j0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCalculator.vue"]]), K0 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -2314,9 +2835,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), h0 = [
-  p0
-], C0 = /* @__PURE__ */ i({
+), Q0 = [
+  K0
+], J0 = /* @__PURE__ */ i({
   __name: "IconCall1",
   props: {
     size: { type: String, required: !1 }
@@ -2334,12 +2855,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...h0],
+      [...Q0],
       16
       /* FULL_PROPS */
     ));
   }
-}), ir = /* @__PURE__ */ h(C0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCall1.vue"]]), d0 = /* @__PURE__ */ t(
+}), Ni = /* @__PURE__ */ h(J0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCall1.vue"]]), X0 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -2361,9 +2882,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), _0 = [
-  d0
-], u0 = /* @__PURE__ */ i({
+), Y0 = [
+  X0
+], e5 = /* @__PURE__ */ i({
   __name: "IconCall",
   props: {
     size: { type: String, required: !1 }
@@ -2381,14 +2902,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [..._0],
+      [...Y0],
       16
       /* FULL_PROPS */
     ));
   }
-}), lr = /* @__PURE__ */ h(u0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCall.vue"]]), f0 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M5,7 L19,7 C20.1045695,7 21,7.8954305 21,9 L21,17 C21,18.1045695 20.1045695,19 19,19 L5,19 C3.8954305,19 3,18.1045695 3,17 L3,9 C3,7.8954305 3.8954305,7 5,7 Z M12,17 C14.209139,17 16,15.209139 16,13 C16,10.790861 14.209139,9 12,9 C9.790861,9 8,10.790861 8,13 C8,15.209139 9.790861,17 12,17 Z" fill="#000000"></path><rect fill="#000000" opacity="0.3" x="9" y="4" width="6" height="2" rx="1"></rect><circle fill="#000000" opacity="0.3" cx="12" cy="13" r="2"></circle></g>', 1), w0 = [
-  f0
-], L0 = /* @__PURE__ */ i({
+}), Vi = /* @__PURE__ */ h(e5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCall.vue"]]), t5 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M5,7 L19,7 C20.1045695,7 21,7.8954305 21,9 L21,17 C21,18.1045695 20.1045695,19 19,19 L5,19 C3.8954305,19 3,18.1045695 3,17 L3,9 C3,7.8954305 3.8954305,7 5,7 Z M12,17 C14.209139,17 16,15.209139 16,13 C16,10.790861 14.209139,9 12,9 C9.790861,9 8,10.790861 8,13 C8,15.209139 9.790861,17 12,17 Z" fill="#000000"></path><rect fill="#000000" opacity="0.3" x="9" y="4" width="6" height="2" rx="1"></rect><circle fill="#000000" opacity="0.3" cx="12" cy="13" r="2"></circle></g>', 1), n5 = [
+  t5
+], o5 = /* @__PURE__ */ i({
   __name: "IconCamera",
   props: {
     size: { type: String, required: !1 }
@@ -2406,12 +2927,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...w0],
+      [...n5],
       16
       /* FULL_PROPS */
     ));
   }
-}), cr = /* @__PURE__ */ h(L0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCamera.vue"]]), g0 = /* @__PURE__ */ t(
+}), ji = /* @__PURE__ */ h(o5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCamera.vue"]]), r5 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -2438,9 +2959,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), x0 = [
-  g0
-], v0 = /* @__PURE__ */ i({
+), s5 = [
+  r5
+], i5 = /* @__PURE__ */ i({
   __name: "IconCardboardvr",
   props: {
     size: { type: String, required: !1 }
@@ -2458,12 +2979,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...x0],
+      [...s5],
       16
       /* FULL_PROPS */
     ));
   }
-}), ar = /* @__PURE__ */ h(v0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCardboardvr.vue"]]), y0 = /* @__PURE__ */ t(
+}), Ki = /* @__PURE__ */ h(i5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCardboardvr.vue"]]), l5 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -2490,9 +3011,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), m0 = [
-  y0
-], $0 = /* @__PURE__ */ i({
+), c5 = [
+  l5
+], a5 = /* @__PURE__ */ i({
   __name: "IconCart1",
   props: {
     size: { type: String, required: !1 }
@@ -2510,12 +3031,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...m0],
+      [...c5],
       16
       /* FULL_PROPS */
     ));
   }
-}), pr = /* @__PURE__ */ h($0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCart1.vue"]]), I0 = /* @__PURE__ */ t(
+}), Qi = /* @__PURE__ */ h(a5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCart1.vue"]]), p5 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -2543,9 +3064,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), z0 = [
-  I0
-], M0 = /* @__PURE__ */ i({
+), h5 = [
+  p5
+], C5 = /* @__PURE__ */ i({
   __name: "IconCart2",
   props: {
     size: { type: String, required: !1 }
@@ -2563,12 +3084,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...z0],
+      [...h5],
       16
       /* FULL_PROPS */
     ));
   }
-}), hr = /* @__PURE__ */ h(M0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCart2.vue"]]), Z0 = /* @__PURE__ */ t(
+}), Ji = /* @__PURE__ */ h(C5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCart2.vue"]]), d5 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -2596,9 +3117,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), k0 = [
-  Z0
-], S0 = /* @__PURE__ */ i({
+), _5 = [
+  d5
+], u5 = /* @__PURE__ */ i({
   __name: "IconCart3",
   props: {
     size: { type: String, required: !1 }
@@ -2616,14 +3137,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...k0],
+      [..._5],
       16
       /* FULL_PROPS */
     ));
   }
-}), Cr = /* @__PURE__ */ h(S0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCart3.vue"]]), B0 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="5" y="15" width="14" height="2" rx="1"></rect><path d="M6.5,15 C7.88071187,15 9,13.8807119 9,12.5 C9,11.1192881 7.88071187,10 6.5,10 C5.11928813,10 4,11.1192881 4,12.5 C4,13.8807119 5.11928813,15 6.5,15 Z M6.5,17 C4.01471863,17 2,14.9852814 2,12.5 C2,10.0147186 4.01471863,8 6.5,8 C8.98528137,8 11,10.0147186 11,12.5 C11,14.9852814 8.98528137,17 6.5,17 Z" fill="#000000" fill-rule="nonzero"></path><path d="M17.5,15 C18.8807119,15 20,13.8807119 20,12.5 C20,11.1192881 18.8807119,10 17.5,10 C16.1192881,10 15,11.1192881 15,12.5 C15,13.8807119 16.1192881,15 17.5,15 Z M17.5,17 C15.0147186,17 13,14.9852814 13,12.5 C13,10.0147186 15.0147186,8 17.5,8 C19.9852814,8 22,10.0147186 22,12.5 C22,14.9852814 19.9852814,17 17.5,17 Z" fill="#000000" fill-rule="nonzero"></path></g>', 1), q0 = [
-  B0
-], A0 = /* @__PURE__ */ i({
+}), Xi = /* @__PURE__ */ h(u5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCart3.vue"]]), f5 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="5" y="15" width="14" height="2" rx="1"></rect><path d="M6.5,15 C7.88071187,15 9,13.8807119 9,12.5 C9,11.1192881 7.88071187,10 6.5,10 C5.11928813,10 4,11.1192881 4,12.5 C4,13.8807119 5.11928813,15 6.5,15 Z M6.5,17 C4.01471863,17 2,14.9852814 2,12.5 C2,10.0147186 4.01471863,8 6.5,8 C8.98528137,8 11,10.0147186 11,12.5 C11,14.9852814 8.98528137,17 6.5,17 Z" fill="#000000" fill-rule="nonzero"></path><path d="M17.5,15 C18.8807119,15 20,13.8807119 20,12.5 C20,11.1192881 18.8807119,10 17.5,10 C16.1192881,10 15,11.1192881 15,12.5 C15,13.8807119 16.1192881,15 17.5,15 Z M17.5,17 C15.0147186,17 13,14.9852814 13,12.5 C13,10.0147186 15.0147186,8 17.5,8 C19.9852814,8 22,10.0147186 22,12.5 C22,14.9852814 19.9852814,17 17.5,17 Z" fill="#000000" fill-rule="nonzero"></path></g>', 1), L5 = [
+  f5
+], w5 = /* @__PURE__ */ i({
   __name: "IconCassete",
   props: {
     size: { type: String, required: !1 }
@@ -2641,14 +3162,118 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...q0],
+      [...L5],
       16
       /* FULL_PROPS */
     ));
   }
-}), dr = /* @__PURE__ */ h(A0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCassete.vue"]]), b0 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="12" y="4" width="3" height="13" rx="1.5"></rect><rect fill="#000000" opacity="0.3" x="7" y="9" width="3" height="8" rx="1.5"></rect><path d="M5,19 L20,19 C20.5522847,19 21,19.4477153 21,20 C21,20.5522847 20.5522847,21 20,21 L4,21 C3.44771525,21 3,20.5522847 3,20 L3,4 C3,3.44771525 3.44771525,3 4,3 C4.55228475,3 5,3.44771525 5,4 L5,19 Z" fill="#000000" fill-rule="nonzero"></path><rect fill="#000000" opacity="0.3" x="17" y="11" width="3" height="6" rx="1.5"></rect></g>', 1), D0 = [
-  b0
-], R0 = /* @__PURE__ */ i({
+}), Yi = /* @__PURE__ */ h(w5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCassete.vue"]]), g5 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M12,2 C13.8385982,2 15.5193947,3.03878936 16.3416408,4.68328157 L19,10 C20.365323,12.730646 19.25851,16.0510849 16.527864,17.4164079 C15.7602901,17.8001948 14.9139019,18 14.0557281,18 L9.94427191,18 C6.8913169,18 4.41640786,15.525091 4.41640786,12.472136 C4.41640786,11.6139622 4.61621302,10.767574 5,10 L7.65835921,4.68328157 C8.48060532,3.03878936 10.1614018,2 12,2 Z M7.55,13.6 C9.00633458,14.6922509 10.4936654,15.25 12,15.25 C13.5063346,15.25 14.9936654,14.6922509 16.45,13.6 L15.55,12.4 C14.3396679,13.3077491 13.1603321,13.75 12,13.75 C10.8396679,13.75 9.66033208,13.3077491 8.45,12.4 L7.55,13.6 Z",
+      fill: "#000000"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M6.15999985,21.0604779 L8.15999985,17.5963763 C8.43614222,17.1180837 9.04773263,16.9542085 9.52602525,17.2303509 C10.0043179,17.5064933 10.168193,18.1180837 9.89205065,18.5963763 L7.89205065,22.0604779 C7.61590828,22.5387706 7.00431787,22.7026457 6.52602525,22.4265033 C6.04773263,22.150361 5.88385747,21.5387706 6.15999985,21.0604779 Z M17.8320512,21.0301278 C18.1081936,21.5084204 17.9443184,22.1200108 17.4660258,22.3961532 C16.9877332,22.6722956 16.3761428,22.5084204 16.1000004,22.0301278 L14.1000004,18.5660262 C13.823858,18.0877335 13.9877332,17.4761431 14.4660258,17.2000008 C14.9443184,16.9238584 15.5559088,17.0877335 15.8320512,17.5660262 L17.8320512,21.0301278 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    })
+  ],
+  -1
+  /* HOISTED */
+), x5 = [
+  g5
+], v5 = /* @__PURE__ */ i({
+  __name: "IconChair1",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...x5],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), el = /* @__PURE__ */ h(v5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChair1.vue"]]), y5 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M6.54246133,21.5014597 L8.1406184,15.5370564 C8.28356021,15.0035903 8.83189716,14.6870078 9.36536327,14.8299496 C9.89882937,14.9728914 10.2154119,15.5212284 10.07247,16.0546945 L8.47431299,22.0190978 C8.33137118,22.5525639 7.78303422,22.8691464 7.24956812,22.7262046 C6.71610201,22.5832628 6.39951952,22.0349258 6.54246133,21.5014597 Z M17.4495897,21.4711096 C17.5925315,22.0045757 17.275949,22.5529126 16.7424829,22.6958545 C16.2090168,22.8387963 15.6606799,22.5222138 15.517738,21.9887477 L14.2148496,17.126302 C14.0719078,16.5928359 14.3884903,16.0444989 14.9219564,15.9015571 C15.4554225,15.7586153 16.0037595,16.0751978 16.1467013,16.6086639 L17.4495897,21.4711096 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M7.36092084,1 L16.6390792,1 C17.7436487,1 18.6390792,1.8954305 18.6390792,3 C18.6390792,3.11016172 18.6299775,3.22013512 18.611867,3.32879797 L17.0696334,12.5821995 C17.0294511,12.8232935 16.820856,13 16.5764365,13 L7.42356354,13 C7.17914397,13 6.97054891,12.8232935 6.93036658,12.5821995 L5.388133,3.32879797 C5.20654289,2.23925733 5.94258223,1.20880226 7.03212287,1.02721215 C7.14078572,1.00910168 7.25075912,1 7.36092084,1 Z M5.5,14 L18.5,14 C19.3284271,14 20,14.6715729 20,15.5 C20,16.3284271 19.3284271,17 18.5,17 L5.5,17 C4.67157288,17 4,16.3284271 4,15.5 C4,14.6715729 4.67157288,14 5.5,14 Z",
+      fill: "#000000"
+    })
+  ],
+  -1
+  /* HOISTED */
+), m5 = [
+  y5
+], $5 = /* @__PURE__ */ i({
+  __name: "IconChair2",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...m5],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), tl = /* @__PURE__ */ h($5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChair2.vue"]]), I5 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="12" y="4" width="3" height="13" rx="1.5"></rect><rect fill="#000000" opacity="0.3" x="7" y="9" width="3" height="8" rx="1.5"></rect><path d="M5,19 L20,19 C20.5522847,19 21,19.4477153 21,20 C21,20.5522847 20.5522847,21 20,21 L4,21 C3.44771525,21 3,20.5522847 3,20 L3,4 C3,3.44771525 3.44771525,3 4,3 C4.55228475,3 5,3.44771525 5,4 L5,19 Z" fill="#000000" fill-rule="nonzero"></path><rect fill="#000000" opacity="0.3" x="17" y="11" width="3" height="6" rx="1.5"></rect></g>', 1), z5 = [
+  I5
+], M5 = /* @__PURE__ */ i({
   __name: "IconChartbar1",
   props: {
     size: { type: String, required: !1 }
@@ -2666,14 +3291,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...D0],
+      [...z5],
       16
       /* FULL_PROPS */
     ));
   }
-}), _r = /* @__PURE__ */ h(R0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChartbar1.vue"]]), T0 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="17" y="4" width="3" height="13" rx="1.5"></rect><rect fill="#000000" opacity="0.3" x="12" y="9" width="3" height="8" rx="1.5"></rect><path d="M5,19 L20,19 C20.5522847,19 21,19.4477153 21,20 C21,20.5522847 20.5522847,21 20,21 L4,21 C3.44771525,21 3,20.5522847 3,20 L3,4 C3,3.44771525 3.44771525,3 4,3 C4.55228475,3 5,3.44771525 5,4 L5,19 Z" fill="#000000" fill-rule="nonzero"></path><rect fill="#000000" opacity="0.3" x="7" y="11" width="3" height="6" rx="1.5"></rect></g>', 1), U0 = [
-  T0
-], G0 = /* @__PURE__ */ i({
+}), nl = /* @__PURE__ */ h(M5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChartbar1.vue"]]), Z5 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="17" y="4" width="3" height="13" rx="1.5"></rect><rect fill="#000000" opacity="0.3" x="12" y="9" width="3" height="8" rx="1.5"></rect><path d="M5,19 L20,19 C20.5522847,19 21,19.4477153 21,20 C21,20.5522847 20.5522847,21 20,21 L4,21 C3.44771525,21 3,20.5522847 3,20 L3,4 C3,3.44771525 3.44771525,3 4,3 C4.55228475,3 5,3.44771525 5,4 L5,19 Z" fill="#000000" fill-rule="nonzero"></path><rect fill="#000000" opacity="0.3" x="7" y="11" width="3" height="6" rx="1.5"></rect></g>', 1), k5 = [
+  Z5
+], S5 = /* @__PURE__ */ i({
   __name: "IconChartbar2",
   props: {
     size: { type: String, required: !1 }
@@ -2691,14 +3316,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...U0],
+      [...k5],
       16
       /* FULL_PROPS */
     ));
   }
-}), ur = /* @__PURE__ */ h(G0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChartbar2.vue"]]), P0 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="7" y="4" width="3" height="13" rx="1.5"></rect><rect fill="#000000" opacity="0.3" x="12" y="9" width="3" height="8" rx="1.5"></rect><path d="M5,19 L20,19 C20.5522847,19 21,19.4477153 21,20 C21,20.5522847 20.5522847,21 20,21 L4,21 C3.44771525,21 3,20.5522847 3,20 L3,4 C3,3.44771525 3.44771525,3 4,3 C4.55228475,3 5,3.44771525 5,4 L5,19 Z" fill="#000000" fill-rule="nonzero"></path><rect fill="#000000" opacity="0.3" x="17" y="11" width="3" height="6" rx="1.5"></rect></g>', 1), O0 = [
-  P0
-], W0 = /* @__PURE__ */ i({
+}), ol = /* @__PURE__ */ h(S5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChartbar2.vue"]]), B5 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="7" y="4" width="3" height="13" rx="1.5"></rect><rect fill="#000000" opacity="0.3" x="12" y="9" width="3" height="8" rx="1.5"></rect><path d="M5,19 L20,19 C20.5522847,19 21,19.4477153 21,20 C21,20.5522847 20.5522847,21 20,21 L4,21 C3.44771525,21 3,20.5522847 3,20 L3,4 C3,3.44771525 3.44771525,3 4,3 C4.55228475,3 5,3.44771525 5,4 L5,19 Z" fill="#000000" fill-rule="nonzero"></path><rect fill="#000000" opacity="0.3" x="17" y="11" width="3" height="6" rx="1.5"></rect></g>', 1), q5 = [
+  B5
+], A5 = /* @__PURE__ */ i({
   __name: "IconChartbar3",
   props: {
     size: { type: String, required: !1 }
@@ -2716,12 +3341,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...O0],
+      [...q5],
       16
       /* FULL_PROPS */
     ));
   }
-}), fr = /* @__PURE__ */ h(W0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChartbar3.vue"]]), E0 = /* @__PURE__ */ t(
+}), rl = /* @__PURE__ */ h(A5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChartbar3.vue"]]), b5 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -2750,9 +3375,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), F0 = [
-  E0
-], H0 = /* @__PURE__ */ i({
+), D5 = [
+  b5
+], F5 = /* @__PURE__ */ i({
   __name: "IconChartline1",
   props: {
     size: { type: String, required: !1 }
@@ -2770,12 +3395,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...F0],
+      [...D5],
       16
       /* FULL_PROPS */
     ));
   }
-}), wr = /* @__PURE__ */ h(H0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChartline1.vue"]]), N0 = /* @__PURE__ */ t(
+}), sl = /* @__PURE__ */ h(F5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChartline1.vue"]]), T5 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -2805,9 +3430,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Q0 = [
-  N0
-], V0 = /* @__PURE__ */ i({
+), R5 = [
+  T5
+], G5 = /* @__PURE__ */ i({
   __name: "IconChartline2",
   props: {
     size: { type: String, required: !1 }
@@ -2825,12 +3450,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Q0],
+      [...R5],
       16
       /* FULL_PROPS */
     ));
   }
-}), Lr = /* @__PURE__ */ h(V0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChartline2.vue"]]), j0 = /* @__PURE__ */ t(
+}), il = /* @__PURE__ */ h(G5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChartline2.vue"]]), U5 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -2857,9 +3482,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), J0 = [
-  j0
-], K0 = /* @__PURE__ */ i({
+), P5 = [
+  U5
+], W5 = /* @__PURE__ */ i({
   __name: "IconChartpie",
   props: {
     size: { type: String, required: !1 }
@@ -2877,12 +3502,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...J0],
+      [...P5],
       16
       /* FULL_PROPS */
     ));
   }
-}), gr = /* @__PURE__ */ h(K0, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChartpie.vue"]]), X0 = /* @__PURE__ */ t(
+}), ll = /* @__PURE__ */ h(W5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChartpie.vue"]]), E5 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -2909,9 +3534,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Y0 = [
-  X0
-], e5 = /* @__PURE__ */ i({
+), O5 = [
+  E5
+], H5 = /* @__PURE__ */ i({
   __name: "IconChat1",
   props: {
     size: { type: String, required: !1 }
@@ -2929,12 +3554,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Y0],
+      [...O5],
       16
       /* FULL_PROPS */
     ));
   }
-}), xr = /* @__PURE__ */ h(e5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChat1.vue"]]), t5 = /* @__PURE__ */ t(
+}), cl = /* @__PURE__ */ h(H5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChat1.vue"]]), N5 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -2961,9 +3586,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), n5 = [
-  t5
-], o5 = /* @__PURE__ */ i({
+), V5 = [
+  N5
+], j5 = /* @__PURE__ */ i({
   __name: "IconChat2",
   props: {
     size: { type: String, required: !1 }
@@ -2981,12 +3606,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...n5],
+      [...V5],
       16
       /* FULL_PROPS */
     ));
   }
-}), vr = /* @__PURE__ */ h(o5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChat2.vue"]]), r5 = /* @__PURE__ */ t(
+}), al = /* @__PURE__ */ h(j5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChat2.vue"]]), K5 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -3008,9 +3633,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), s5 = [
-  r5
-], i5 = /* @__PURE__ */ i({
+), Q5 = [
+  K5
+], J5 = /* @__PURE__ */ i({
   __name: "IconChat4",
   props: {
     size: { type: String, required: !1 }
@@ -3028,12 +3653,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...s5],
+      [...Q5],
       16
       /* FULL_PROPS */
     ));
   }
-}), yr = /* @__PURE__ */ h(i5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChat4.vue"]]), l5 = /* @__PURE__ */ t(
+}), pl = /* @__PURE__ */ h(J5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChat4.vue"]]), X5 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -3061,9 +3686,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), c5 = [
-  l5
-], a5 = /* @__PURE__ */ i({
+), Y5 = [
+  X5
+], e4 = /* @__PURE__ */ i({
   __name: "IconChat5",
   props: {
     size: { type: String, required: !1 }
@@ -3081,12 +3706,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...c5],
+      [...Y5],
       16
       /* FULL_PROPS */
     ));
   }
-}), mr = /* @__PURE__ */ h(a5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChat5.vue"]]), p5 = /* @__PURE__ */ t(
+}), hl = /* @__PURE__ */ h(e4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChat5.vue"]]), t4 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -3114,9 +3739,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), h5 = [
-  p5
-], C5 = /* @__PURE__ */ i({
+), n4 = [
+  t4
+], o4 = /* @__PURE__ */ i({
   __name: "IconChat6",
   props: {
     size: { type: String, required: !1 }
@@ -3134,12 +3759,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...h5],
+      [...n4],
       16
       /* FULL_PROPS */
     ));
   }
-}), $r = /* @__PURE__ */ h(C5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChat6.vue"]]), d5 = /* @__PURE__ */ t(
+}), Cl = /* @__PURE__ */ h(o4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChat6.vue"]]), r4 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -3167,9 +3792,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), _5 = [
-  d5
-], u5 = /* @__PURE__ */ i({
+), s4 = [
+  r4
+], i4 = /* @__PURE__ */ i({
   __name: "IconChatcheck",
   props: {
     size: { type: String, required: !1 }
@@ -3187,12 +3812,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [..._5],
+      [...s4],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ir = /* @__PURE__ */ h(u5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChatcheck.vue"]]), f5 = /* @__PURE__ */ t(
+}), dl = /* @__PURE__ */ h(i4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChatcheck.vue"]]), l4 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -3219,9 +3844,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), w5 = [
-  f5
-], L5 = /* @__PURE__ */ i({
+), c4 = [
+  l4
+], a4 = /* @__PURE__ */ i({
   __name: "IconChaterror",
   props: {
     size: { type: String, required: !1 }
@@ -3239,12 +3864,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...w5],
+      [...c4],
       16
       /* FULL_PROPS */
     ));
   }
-}), zr = /* @__PURE__ */ h(L5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChaterror.vue"]]), g5 = /* @__PURE__ */ t(
+}), _l = /* @__PURE__ */ h(a4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChaterror.vue"]]), p4 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -3271,9 +3896,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), x5 = [
-  g5
-], v5 = /* @__PURE__ */ i({
+), h4 = [
+  p4
+], C4 = /* @__PURE__ */ i({
   __name: "IconChatlocked",
   props: {
     size: { type: String, required: !1 }
@@ -3291,12 +3916,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...x5],
+      [...h4],
       16
       /* FULL_PROPS */
     ));
   }
-}), Mr = /* @__PURE__ */ h(v5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChatlocked.vue"]]), y5 = /* @__PURE__ */ t(
+}), ul = /* @__PURE__ */ h(C4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChatlocked.vue"]]), d4 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -3323,9 +3948,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), m5 = [
-  y5
-], $5 = /* @__PURE__ */ i({
+), _4 = [
+  d4
+], u4 = /* @__PURE__ */ i({
   __name: "IconChatsmile",
   props: {
     size: { type: String, required: !1 }
@@ -3343,12 +3968,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...m5],
+      [..._4],
       16
       /* FULL_PROPS */
     ));
   }
-}), Zr = /* @__PURE__ */ h($5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChatsmile.vue"]]), I5 = /* @__PURE__ */ t(
+}), fl = /* @__PURE__ */ h(u4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconChatsmile.vue"]]), f4 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -3367,9 +3992,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), z5 = [
-  I5
-], M5 = /* @__PURE__ */ i({
+), L4 = [
+  f4
+], w4 = /* @__PURE__ */ i({
   __name: "IconCheck",
   props: {
     size: { type: String, required: !1 }
@@ -3387,12 +4012,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...z5],
+      [...L4],
       16
       /* FULL_PROPS */
     ));
   }
-}), kr = /* @__PURE__ */ h(M5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCheck.vue"]]), Z5 = /* @__PURE__ */ t(
+}), Ll = /* @__PURE__ */ h(w4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCheck.vue"]]), g4 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -3416,9 +4041,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), k5 = [
-  Z5
-], S5 = /* @__PURE__ */ i({
+), x4 = [
+  g4
+], v4 = /* @__PURE__ */ i({
   __name: "IconClip",
   props: {
     size: { type: String, required: !1 }
@@ -3436,14 +4061,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...k5],
+      [...x4],
       16
       /* FULL_PROPS */
     ));
   }
-}), Sr = /* @__PURE__ */ h(S5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconClip.vue"]]), B5 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z" fill="#000000" opacity="0.3"></path><path d="M10.875,15.75 C10.6354167,15.75 10.3958333,15.6541667 10.2041667,15.4625 L8.2875,13.5458333 C7.90416667,13.1625 7.90416667,12.5875 8.2875,12.2041667 C8.67083333,11.8208333 9.29375,11.8208333 9.62916667,12.2041667 L10.875,13.45 L14.0375,10.2875 C14.4208333,9.90416667 14.9958333,9.90416667 15.3791667,10.2875 C15.7625,10.6708333 15.7625,11.2458333 15.3791667,11.6291667 L11.5458333,15.4625 C11.3541667,15.6541667 11.1145833,15.75 10.875,15.75 Z" fill="#000000"></path><path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z" fill="#000000"></path></g>', 1), q5 = [
-  B5
-], A5 = /* @__PURE__ */ i({
+}), wl = /* @__PURE__ */ h(v4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconClip.vue"]]), y4 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z" fill="#000000" opacity="0.3"></path><path d="M10.875,15.75 C10.6354167,15.75 10.3958333,15.6541667 10.2041667,15.4625 L8.2875,13.5458333 C7.90416667,13.1625 7.90416667,12.5875 8.2875,12.2041667 C8.67083333,11.8208333 9.29375,11.8208333 9.62916667,12.2041667 L10.875,13.45 L14.0375,10.2875 C14.4208333,9.90416667 14.9958333,9.90416667 15.3791667,10.2875 C15.7625,10.6708333 15.7625,11.2458333 15.3791667,11.6291667 L11.5458333,15.4625 C11.3541667,15.6541667 11.1145833,15.75 10.875,15.75 Z" fill="#000000"></path><path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z" fill="#000000"></path></g>', 1), m4 = [
+  y4
+], $4 = /* @__PURE__ */ i({
   __name: "IconClipboardcheck",
   props: {
     size: { type: String, required: !1 }
@@ -3461,14 +4086,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...q5],
+      [...m4],
       16
       /* FULL_PROPS */
     ));
   }
-}), Br = /* @__PURE__ */ h(A5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconClipboardcheck.vue"]]), b5 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z" fill="#000000" opacity="0.3"></path><path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z" fill="#000000"></path><rect fill="#000000" opacity="0.3" x="10" y="9" width="7" height="2" rx="1"></rect><rect fill="#000000" opacity="0.3" x="7" y="9" width="2" height="2" rx="1"></rect><rect fill="#000000" opacity="0.3" x="7" y="13" width="2" height="2" rx="1"></rect><rect fill="#000000" opacity="0.3" x="10" y="13" width="7" height="2" rx="1"></rect><rect fill="#000000" opacity="0.3" x="7" y="17" width="2" height="2" rx="1"></rect><rect fill="#000000" opacity="0.3" x="10" y="17" width="7" height="2" rx="1"></rect></g>', 1), D5 = [
-  b5
-], R5 = /* @__PURE__ */ i({
+}), gl = /* @__PURE__ */ h($4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconClipboardcheck.vue"]]), I4 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z" fill="#000000" opacity="0.3"></path><path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z" fill="#000000"></path><rect fill="#000000" opacity="0.3" x="10" y="9" width="7" height="2" rx="1"></rect><rect fill="#000000" opacity="0.3" x="7" y="9" width="2" height="2" rx="1"></rect><rect fill="#000000" opacity="0.3" x="7" y="13" width="2" height="2" rx="1"></rect><rect fill="#000000" opacity="0.3" x="10" y="13" width="7" height="2" rx="1"></rect><rect fill="#000000" opacity="0.3" x="7" y="17" width="2" height="2" rx="1"></rect><rect fill="#000000" opacity="0.3" x="10" y="17" width="7" height="2" rx="1"></rect></g>', 1), z4 = [
+  I4
+], M4 = /* @__PURE__ */ i({
   __name: "IconClipboardlist",
   props: {
     size: { type: String, required: !1 }
@@ -3486,14 +4111,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...D5],
+      [...z4],
       16
       /* FULL_PROPS */
     ));
   }
-}), qr = /* @__PURE__ */ h(R5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconClipboardlist.vue"]]), T5 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z" fill="#000000" opacity="0.3"></path><path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z" fill="#000000"></path><rect fill="#000000" opacity="0.3" x="7" y="10" width="5" height="2" rx="1"></rect><rect fill="#000000" opacity="0.3" x="7" y="14" width="9" height="2" rx="1"></rect></g>', 1), U5 = [
-  T5
-], G5 = /* @__PURE__ */ i({
+}), xl = /* @__PURE__ */ h(M4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconClipboardlist.vue"]]), Z4 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z" fill="#000000" opacity="0.3"></path><path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z" fill="#000000"></path><rect fill="#000000" opacity="0.3" x="7" y="10" width="5" height="2" rx="1"></rect><rect fill="#000000" opacity="0.3" x="7" y="14" width="9" height="2" rx="1"></rect></g>', 1), k4 = [
+  Z4
+], S4 = /* @__PURE__ */ i({
   __name: "IconClipboard",
   props: {
     size: { type: String, required: !1 }
@@ -3511,12 +4136,64 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...U5],
+      [...k4],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ar = /* @__PURE__ */ h(G5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconClipboard.vue"]]), P5 = /* @__PURE__ */ t(
+}), vl = /* @__PURE__ */ h(S4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconClipboard.vue"]]), B4 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M12,22 C7.02943725,22 3,17.9705627 3,13 C3,8.02943725 7.02943725,4 12,4 C16.9705627,4 21,8.02943725 21,13 C21,17.9705627 16.9705627,22 12,22 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M11.9630156,7.5 L12.0475062,7.5 C12.3043819,7.5 12.5194647,7.69464724 12.5450248,7.95024814 L13,12.5 L16.2480695,14.3560397 C16.403857,14.4450611 16.5,14.6107328 16.5,14.7901613 L16.5,15 C16.5,15.2109164 16.3290185,15.3818979 16.1181021,15.3818979 C16.0841582,15.3818979 16.0503659,15.3773725 16.0176181,15.3684413 L11.3986612,14.1087258 C11.1672824,14.0456225 11.0132986,13.8271186 11.0316926,13.5879956 L11.4644883,7.96165175 C11.4845267,7.70115317 11.7017474,7.5 11.9630156,7.5 Z",
+      fill: "#000000"
+    })
+  ],
+  -1
+  /* HOISTED */
+), q4 = [
+  B4
+], A4 = /* @__PURE__ */ i({
+  __name: "IconClock",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...q4],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), yl = /* @__PURE__ */ h(A4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconClock.vue"]]), b4 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -3549,9 +4226,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), O5 = [
-  P5
-], W5 = /* @__PURE__ */ i({
+), D4 = [
+  b4
+], F4 = /* @__PURE__ */ i({
   __name: "IconClose",
   props: {
     size: { type: String, required: !1 }
@@ -3569,12 +4246,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...O5],
+      [...D4],
       16
       /* FULL_PROPS */
     ));
   }
-}), br = /* @__PURE__ */ h(W5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconClose.vue"]]), E5 = /* @__PURE__ */ t(
+}), ml = /* @__PURE__ */ h(F4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconClose.vue"]]), T4 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -3607,9 +4284,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), F5 = [
-  E5
-], H5 = /* @__PURE__ */ i({
+), R4 = [
+  T4
+], G4 = /* @__PURE__ */ i({
   __name: "IconCode",
   props: {
     size: { type: String, required: !1 }
@@ -3627,12 +4304,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...F5],
+      [...R4],
       16
       /* FULL_PROPS */
     ));
   }
-}), Dr = /* @__PURE__ */ h(H5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCode.vue"]]), N5 = /* @__PURE__ */ t(
+}), $l = /* @__PURE__ */ h(G4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCode.vue"]]), U4 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -3660,9 +4337,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Q5 = [
-  N5
-], V5 = /* @__PURE__ */ i({
+), P4 = [
+  U4
+], W4 = /* @__PURE__ */ i({
   __name: "IconCommit",
   props: {
     size: { type: String, required: !1 }
@@ -3680,12 +4357,116 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Q5],
+      [...P4],
       16
       /* FULL_PROPS */
     ));
   }
-}), Rr = /* @__PURE__ */ h(V5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCommit.vue"]]), j5 = /* @__PURE__ */ t(
+}), Il = /* @__PURE__ */ h(W4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCommit.vue"]]), E4 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M5.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L5.5,11 C4.67157288,11 4,10.3284271 4,9.5 L4,5.5 C4,4.67157288 4.67157288,4 5.5,4 Z M11,6 C10.4477153,6 10,6.44771525 10,7 C10,7.55228475 10.4477153,8 11,8 L13,8 C13.5522847,8 14,7.55228475 14,7 C14,6.44771525 13.5522847,6 13,6 L11,6 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M5.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M11,15 C10.4477153,15 10,15.4477153 10,16 C10,16.5522847 10.4477153,17 11,17 L13,17 C13.5522847,17 14,16.5522847 14,16 C14,15.4477153 13.5522847,15 13,15 L11,15 Z",
+      fill: "#000000"
+    })
+  ],
+  -1
+  /* HOISTED */
+), O4 = [
+  E4
+], H4 = /* @__PURE__ */ i({
+  __name: "IconCommode1",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...O4],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), zl = /* @__PURE__ */ h(H4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCommode1.vue"]]), N4 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M5.5,2 L18.5,2 C19.3284271,2 20,2.67157288 20,3.5 L20,6.5 C20,7.32842712 19.3284271,8 18.5,8 L5.5,8 C4.67157288,8 4,7.32842712 4,6.5 L4,3.5 C4,2.67157288 4.67157288,2 5.5,2 Z M11,4 C10.4477153,4 10,4.44771525 10,5 C10,5.55228475 10.4477153,6 11,6 L13,6 C13.5522847,6 14,5.55228475 14,5 C14,4.44771525 13.5522847,4 13,4 L11,4 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M5.5,9 L18.5,9 C19.3284271,9 20,9.67157288 20,10.5 L20,13.5 C20,14.3284271 19.3284271,15 18.5,15 L5.5,15 C4.67157288,15 4,14.3284271 4,13.5 L4,10.5 C4,9.67157288 4.67157288,9 5.5,9 Z M11,11 C10.4477153,11 10,11.4477153 10,12 C10,12.5522847 10.4477153,13 11,13 L13,13 C13.5522847,13 14,12.5522847 14,12 C14,11.4477153 13.5522847,11 13,11 L11,11 Z M5.5,16 L18.5,16 C19.3284271,16 20,16.6715729 20,17.5 L20,20.5 C20,21.3284271 19.3284271,22 18.5,22 L5.5,22 C4.67157288,22 4,21.3284271 4,20.5 L4,17.5 C4,16.6715729 4.67157288,16 5.5,16 Z M11,18 C10.4477153,18 10,18.4477153 10,19 C10,19.5522847 10.4477153,20 11,20 L13,20 C13.5522847,20 14,19.5522847 14,19 C14,18.4477153 13.5522847,18 13,18 L11,18 Z",
+      fill: "#000000"
+    })
+  ],
+  -1
+  /* HOISTED */
+), V4 = [
+  N4
+], j4 = /* @__PURE__ */ i({
+  __name: "IconCommode2",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...V4],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Ml = /* @__PURE__ */ h(j4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCommode2.vue"]]), K4 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -3712,9 +4493,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), J5 = [
-  j5
-], K5 = /* @__PURE__ */ i({
+), Q4 = [
+  K4
+], J4 = /* @__PURE__ */ i({
   __name: "IconCompiling",
   props: {
     size: { type: String, required: !1 }
@@ -3732,12 +4513,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...J5],
+      [...Q4],
       16
       /* FULL_PROPS */
     ));
   }
-}), Tr = /* @__PURE__ */ h(K5, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCompiling.vue"]]), X5 = /* @__PURE__ */ t(
+}), Zl = /* @__PURE__ */ h(J4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCompiling.vue"]]), X4 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -3767,9 +4548,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Y5 = [
-  X5
-], e4 = /* @__PURE__ */ i({
+), Y4 = [
+  X4
+], e7 = /* @__PURE__ */ i({
   __name: "IconContact1",
   props: {
     size: { type: String, required: !1 }
@@ -3787,12 +4568,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Y5],
+      [...Y4],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ur = /* @__PURE__ */ h(e4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconContact1.vue"]]), t4 = /* @__PURE__ */ t(
+}), kl = /* @__PURE__ */ h(e7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconContact1.vue"]]), t7 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -3815,9 +4596,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), n4 = [
-  t4
-], o4 = /* @__PURE__ */ i({
+), n7 = [
+  t7
+], o7 = /* @__PURE__ */ i({
   __name: "IconControl",
   props: {
     size: { type: String, required: !1 }
@@ -3835,14 +4616,66 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...n4],
+      [...n7],
       16
       /* FULL_PROPS */
     ));
   }
-}), Gr = /* @__PURE__ */ h(o4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconControl.vue"]]), r4 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="2" y="5" width="20" height="14" rx="2"></rect><rect fill="#000000" x="2" y="8" width="20" height="3"></rect><rect fill="#000000" opacity="0.3" x="16" y="14" width="4" height="2" rx="1"></rect></g>', 1), s4 = [
-  r4
-], i4 = /* @__PURE__ */ i({
+}), Sl = /* @__PURE__ */ h(o7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconControl.vue"]]), r7 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("path", {
+      d: "M6,20 L4,20 C4,17.2385763 6.23857625,16 9,16 L15,16 C17.7614237,16 20,17.2385763 20,20 L18,20 C18,18.3431458 16.6568542,18 15,18 L9,18 C7.34314575,18 6,18.3431458 6,20 Z",
+      fill: "#000000",
+      "fill-rule": "nonzero",
+      opacity: "0.3"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M23,8 L21.173913,8 C20.0693435,8 19.173913,8.8954305 19.173913,10 L19.173913,12 C19.173913,12.5522847 18.7261978,13 18.173913,13 L5.86956522,13 C5.31728047,13 4.86956522,12.5522847 4.86956522,12 L4.86956522,10 C4.86956522,8.8954305 3.97413472,8 2.86956522,8 L1,8 C1,6.34314575 2.34314575,5 4,5 L20,5 C21.6568542,5 23,6.34314575 23,8 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M23,10 L23,15 C23,16.6568542 21.6568542,18 20,18 L4,18 C2.34314575,18 1,16.6568542 1,15 L1,10 L2.86956522,10 L2.86956522,12 C2.86956522,13.6568542 4.21271097,15 5.86956522,15 L18.173913,15 C19.8307673,15 21.173913,13.6568542 21.173913,12 L21.173913,10 L23,10 Z",
+      fill: "#000000"
+    })
+  ],
+  -1
+  /* HOISTED */
+), s7 = [
+  r7
+], i7 = /* @__PURE__ */ i({
+  __name: "IconCouch",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...s7],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Bl = /* @__PURE__ */ h(i7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCouch.vue"]]), l7 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="2" y="5" width="20" height="14" rx="2"></rect><rect fill="#000000" x="2" y="8" width="20" height="3"></rect><rect fill="#000000" opacity="0.3" x="16" y="14" width="4" height="2" rx="1"></rect></g>', 1), c7 = [
+  l7
+], a7 = /* @__PURE__ */ i({
   __name: "IconCreditcard",
   props: {
     size: { type: String, required: !1 }
@@ -3860,12 +4693,65 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...s4],
+      [...c7],
       16
       /* FULL_PROPS */
     ));
   }
-}), Pr = /* @__PURE__ */ h(i4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCreditcard.vue"]]), l4 = /* @__PURE__ */ t(
+}), ql = /* @__PURE__ */ h(a7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCreditcard.vue"]]), p7 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M3.5,3 L9.5,3 C10.3284271,3 11,3.67157288 11,4.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L3.5,20 C2.67157288,20 2,19.3284271 2,18.5 L2,4.5 C2,3.67157288 2.67157288,3 3.5,3 Z M9,9 C8.44771525,9 8,9.44771525 8,10 L8,12 C8,12.5522847 8.44771525,13 9,13 C9.55228475,13 10,12.5522847 10,12 L10,10 C10,9.44771525 9.55228475,9 9,9 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M14.5,3 L20.5,3 C21.3284271,3 22,3.67157288 22,4.5 L22,18.5 C22,19.3284271 21.3284271,20 20.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,4.5 C13,3.67157288 13.6715729,3 14.5,3 Z M20,9 C19.4477153,9 19,9.44771525 19,10 L19,12 C19,12.5522847 19.4477153,13 20,13 C20.5522847,13 21,12.5522847 21,12 L21,10 C21,9.44771525 20.5522847,9 20,9 Z",
+      fill: "#000000",
+      transform: "translate(17.500000, 11.500000) scale(-1, 1) translate(-17.500000, -11.500000) "
+    })
+  ],
+  -1
+  /* HOISTED */
+), h7 = [
+  p7
+], C7 = /* @__PURE__ */ i({
+  __name: "IconCupboard",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...h7],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Al = /* @__PURE__ */ h(C7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCupboard.vue"]]), d7 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -3887,9 +4773,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), c4 = [
-  l4
-], a4 = /* @__PURE__ */ i({
+), _7 = [
+  d7
+], u7 = /* @__PURE__ */ i({
   __name: "IconCursor",
   props: {
     size: { type: String, required: !1 }
@@ -3907,12 +4793,117 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...c4],
+      [..._7],
       16
       /* FULL_PROPS */
     ));
   }
-}), Or = /* @__PURE__ */ h(a4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCursor.vue"]]), p4 = /* @__PURE__ */ t(
+}), bl = /* @__PURE__ */ h(u7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCursor.vue"]]), f7 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M3,4 C3,3.44771525 3.44771525,3 4,3 L11,3 L11,5 C11,9.418278 7.418278,13 3,13 L3,4 Z M21,4 L21,13 C16.581722,13 13,9.418278 13,5 L13,3 L20,3 C20.5522847,3 21,3.44771525 21,4 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M4,21 C3.44771525,21 3,20.5522847 3,20 L3,13 C6.3137085,13 9,15.6862915 9,19 L9,21 L4,21 Z M20,21 L15,21 L15,19 C15,15.6862915 17.6862915,13 21,13 L21,20 C21,20.5522847 20.5522847,21 20,21 Z",
+      fill: "#000000"
+    })
+  ],
+  -1
+  /* HOISTED */
+), L7 = [
+  f7
+], w7 = /* @__PURE__ */ i({
+  __name: "IconCurtains",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...L7],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Dl = /* @__PURE__ */ h(w7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconCurtains.vue"]]), g7 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M21.9819854,8.18909235 C21.930842,8.45576237 21.7720053,8.7029872 21.5144958,8.85749293 L16.5144958,11.8574929 C16.3590804,11.9507422 16.1812439,12 16,12 L8,12 C7.81875605,12 7.64091965,11.9507422 7.48550424,11.8574929 L2.48550424,8.85749293 C2.2279947,8.7029872 2.069158,8.45576237 2.01801457,8.18909235 L1.01941932,3.19611614 C0.911107374,2.65455638 1.26232411,2.12773127 1.80388386,2.01941932 C2.34544362,1.91110737 2.87226873,2.26232411 2.98058068,2.80388386 L3.61413433,5.97165211 L6.29289322,3.29289322 C6.68341751,2.90236893 7.31658249,2.90236893 7.70710678,3.29289322 C8.09763107,3.68341751 8.09763107,4.31658249 7.70710678,4.70710678 L4.61275246,7.8014611 L8.27698396,10 L15.723016,10 L19.3872475,7.8014611 L16.2928932,4.70710678 C15.9023689,4.31658249 15.9023689,3.68341751 16.2928932,3.29289322 C16.6834175,2.90236893 17.3165825,2.90236893 17.7071068,3.29289322 L20.3858657,5.97165211 L21.0194193,2.80388386 C21.1277313,2.26232411 21.6545564,1.91110737 22.1961161,2.01941932 C22.7376759,2.12773127 23.0888926,2.65455638 22.9805807,3.19611614 L21.9819854,8.18909235 Z M15.0527864,8.89442719 C14.5588079,8.64743794 14.3585836,8.0467649 14.6055728,7.5527864 C14.8525621,7.05880791 15.4532351,6.85858356 15.9472136,7.10557281 L18.9472136,8.60557281 C19.6529974,8.95846471 19.6911351,9.95150933 19.0144958,10.3574929 L16.5144958,11.8574929 C16.3590804,11.9507422 16.1812439,12 16,12 L8,12 C7.81875605,12 7.64091965,11.9507422 7.48550424,11.8574929 L4.98550424,10.3574929 C4.33816525,9.96908953 4.33816525,9.03091047 4.98550424,8.64250707 L7.48550424,7.14250707 C7.95908451,6.85835891 8.57334477,7.01192398 8.85749293,7.48550424 C9.14164109,7.95908451 8.98807602,8.57334477 8.51449576,8.85749293 L7.44365063,9.5 L8.27698396,10 L15.723016,10 L16.4234324,9.57975019 L15.0527864,8.89442719 Z",
+      fill: "#000000",
+      "fill-rule": "nonzero",
+      opacity: "0.3"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M9.85539998,10 L14.1446,10 C15.2491695,10 16.1446,10.8954305 16.1446,12 C16.1446,12.233105 16.1038489,12.4644155 16.0241869,12.6834861 L13.3417431,20.0602066 C13.1365752,20.6244182 12.600357,21 12,21 L12,21 C11.399643,21 10.8634248,20.6244182 10.6582569,20.0602066 L7.97581314,12.6834861 C7.59833417,11.645419 8.13384671,10.4978921 9.17191386,10.1204132 C9.39098444,10.0407511 9.62229495,10 9.85539998,10 Z",
+      fill: "#000000"
+    })
+  ],
+  -1
+  /* HOISTED */
+), x7 = [
+  g7
+], v7 = /* @__PURE__ */ i({
+  __name: "IconDeer",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...x7],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Fl = /* @__PURE__ */ h(v7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDeer.vue"]]), y7 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -3936,9 +4927,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), h4 = [
-  p4
-], C4 = /* @__PURE__ */ i({
+), m7 = [
+  y7
+], $7 = /* @__PURE__ */ i({
   __name: "IconDeleteuser",
   props: {
     size: { type: String, required: !1 }
@@ -3956,14 +4947,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...h4],
+      [...m7],
       16
       /* FULL_PROPS */
     ));
   }
-}), Wr = /* @__PURE__ */ h(C4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDeleteuser.vue"]]), d4 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="4" y="4" width="4" height="4" rx="2"></rect><rect fill="#000000" x="4" y="10" width="4" height="4" rx="2"></rect><rect fill="#000000" x="10" y="4" width="4" height="4" rx="2"></rect><rect fill="#000000" x="10" y="10" width="4" height="4" rx="2"></rect><rect fill="#000000" x="16" y="4" width="4" height="4" rx="2"></rect><rect fill="#000000" x="16" y="10" width="4" height="4" rx="2"></rect><rect fill="#000000" x="4" y="16" width="4" height="4" rx="2"></rect><rect fill="#000000" x="10" y="16" width="4" height="4" rx="2"></rect><rect fill="#000000" x="16" y="16" width="4" height="4" rx="2"></rect></g>', 1), _4 = [
-  d4
-], u4 = /* @__PURE__ */ i({
+}), Tl = /* @__PURE__ */ h($7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDeleteuser.vue"]]), I7 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="4" y="4" width="4" height="4" rx="2"></rect><rect fill="#000000" x="4" y="10" width="4" height="4" rx="2"></rect><rect fill="#000000" x="10" y="4" width="4" height="4" rx="2"></rect><rect fill="#000000" x="10" y="10" width="4" height="4" rx="2"></rect><rect fill="#000000" x="16" y="4" width="4" height="4" rx="2"></rect><rect fill="#000000" x="16" y="10" width="4" height="4" rx="2"></rect><rect fill="#000000" x="4" y="16" width="4" height="4" rx="2"></rect><rect fill="#000000" x="10" y="16" width="4" height="4" rx="2"></rect><rect fill="#000000" x="16" y="16" width="4" height="4" rx="2"></rect></g>', 1), z7 = [
+  I7
+], M7 = /* @__PURE__ */ i({
   __name: "IconDialnumbers",
   props: {
     size: { type: String, required: !1 }
@@ -3981,12 +4972,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [..._4],
+      [...z7],
       16
       /* FULL_PROPS */
     ));
   }
-}), Er = /* @__PURE__ */ h(u4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDialnumbers.vue"]]), f4 = /* @__PURE__ */ t(
+}), Rl = /* @__PURE__ */ h(M7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDialnumbers.vue"]]), Z7 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -4019,9 +5010,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), w4 = [
-  f4
-], L4 = /* @__PURE__ */ i({
+), k7 = [
+  Z7
+], S7 = /* @__PURE__ */ i({
   __name: "IconDislike",
   props: {
     size: { type: String, required: !1 }
@@ -4039,14 +5030,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...w4],
+      [...k7],
       16
       /* FULL_PROPS */
     ));
   }
-}), Fr = /* @__PURE__ */ h(L4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDislike.vue"]]), g4 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="11.5" y="2" width="2" height="4" rx="1"></rect><rect fill="#000000" opacity="0.3" x="11.5" y="16" width="2" height="5" rx="1"></rect><path d="M15.493,8.044 C15.2143319,7.68933156 14.8501689,7.40750104 14.4005,7.1985 C13.9508311,6.98949895 13.5170021,6.885 13.099,6.885 C12.8836656,6.885 12.6651678,6.90399981 12.4435,6.942 C12.2218322,6.98000019 12.0223342,7.05283279 11.845,7.1605 C11.6676658,7.2681672 11.5188339,7.40749914 11.3985,7.5785 C11.2781661,7.74950085 11.218,7.96799867 11.218,8.234 C11.218,8.46200114 11.2654995,8.65199924 11.3605,8.804 C11.4555005,8.95600076 11.5948324,9.08899943 11.7785,9.203 C11.9621676,9.31700057 12.1806654,9.42149952 12.434,9.5165 C12.6873346,9.61150047 12.9723317,9.70966616 13.289,9.811 C13.7450023,9.96300076 14.2199975,10.1308324 14.714,10.3145 C15.2080025,10.4981676 15.6576646,10.7419985 16.063,11.046 C16.4683354,11.3500015 16.8039987,11.7268311 17.07,12.1765 C17.3360013,12.6261689 17.469,13.1866633 17.469,13.858 C17.469,14.6306705 17.3265014,15.2988305 17.0415,15.8625 C16.7564986,16.4261695 16.3733357,16.8916648 15.892,17.259 C15.4106643,17.6263352 14.8596698,17.8986658 14.239,18.076 C13.6183302,18.2533342 12.97867,18.342 12.32,18.342 C11.3573285,18.342 10.4263378,18.1741683 9.527,17.8385 C8.62766217,17.5028317 7.88033631,17.0246698 7.285,16.404 L9.413,14.238 C9.74233498,14.6433354 10.176164,14.9821653 10.7145,15.2545 C11.252836,15.5268347 11.7879973,15.663 12.32,15.663 C12.5606679,15.663 12.7949989,15.6376669 13.023,15.587 C13.2510011,15.5363331 13.4504991,15.4540006 13.6215,15.34 C13.7925009,15.2259994 13.9286662,15.0740009 14.03,14.884 C14.1313338,14.693999 14.182,14.4660013 14.182,14.2 C14.182,13.9466654 14.1186673,13.7313342 13.992,13.554 C13.8653327,13.3766658 13.6848345,13.2151674 13.4505,13.0695 C13.2161655,12.9238326 12.9248351,12.7908339 12.5765,12.6705 C12.2281649,12.5501661 11.8323355,12.420334 11.389,12.281 C10.9583312,12.141666 10.5371687,11.9770009 10.1255,11.787 C9.71383127,11.596999 9.34650161,11.3531682 9.0235,11.0555 C8.70049838,10.7578318 8.44083431,10.3968355 8.2445,9.9725 C8.04816568,9.54816454 7.95,9.03200304 7.95,8.424 C7.95,7.67666293 8.10199848,7.03700266 8.406,6.505 C8.71000152,5.97299734 9.10899753,5.53600171 9.603,5.194 C10.0970025,4.85199829 10.6543302,4.60183412 11.275,4.4435 C11.8956698,4.28516587 12.5226635,4.206 13.156,4.206 C13.9160038,4.206 14.6918294,4.34533194 15.4835,4.624 C16.2751706,4.90266806 16.9686637,5.31433061 17.564,5.859 L15.493,8.044 Z" fill="#000000"></path></g>', 1), x4 = [
-  g4
-], v4 = /* @__PURE__ */ i({
+}), Gl = /* @__PURE__ */ h(S7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDislike.vue"]]), B7 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="11.5" y="2" width="2" height="4" rx="1"></rect><rect fill="#000000" opacity="0.3" x="11.5" y="16" width="2" height="5" rx="1"></rect><path d="M15.493,8.044 C15.2143319,7.68933156 14.8501689,7.40750104 14.4005,7.1985 C13.9508311,6.98949895 13.5170021,6.885 13.099,6.885 C12.8836656,6.885 12.6651678,6.90399981 12.4435,6.942 C12.2218322,6.98000019 12.0223342,7.05283279 11.845,7.1605 C11.6676658,7.2681672 11.5188339,7.40749914 11.3985,7.5785 C11.2781661,7.74950085 11.218,7.96799867 11.218,8.234 C11.218,8.46200114 11.2654995,8.65199924 11.3605,8.804 C11.4555005,8.95600076 11.5948324,9.08899943 11.7785,9.203 C11.9621676,9.31700057 12.1806654,9.42149952 12.434,9.5165 C12.6873346,9.61150047 12.9723317,9.70966616 13.289,9.811 C13.7450023,9.96300076 14.2199975,10.1308324 14.714,10.3145 C15.2080025,10.4981676 15.6576646,10.7419985 16.063,11.046 C16.4683354,11.3500015 16.8039987,11.7268311 17.07,12.1765 C17.3360013,12.6261689 17.469,13.1866633 17.469,13.858 C17.469,14.6306705 17.3265014,15.2988305 17.0415,15.8625 C16.7564986,16.4261695 16.3733357,16.8916648 15.892,17.259 C15.4106643,17.6263352 14.8596698,17.8986658 14.239,18.076 C13.6183302,18.2533342 12.97867,18.342 12.32,18.342 C11.3573285,18.342 10.4263378,18.1741683 9.527,17.8385 C8.62766217,17.5028317 7.88033631,17.0246698 7.285,16.404 L9.413,14.238 C9.74233498,14.6433354 10.176164,14.9821653 10.7145,15.2545 C11.252836,15.5268347 11.7879973,15.663 12.32,15.663 C12.5606679,15.663 12.7949989,15.6376669 13.023,15.587 C13.2510011,15.5363331 13.4504991,15.4540006 13.6215,15.34 C13.7925009,15.2259994 13.9286662,15.0740009 14.03,14.884 C14.1313338,14.693999 14.182,14.4660013 14.182,14.2 C14.182,13.9466654 14.1186673,13.7313342 13.992,13.554 C13.8653327,13.3766658 13.6848345,13.2151674 13.4505,13.0695 C13.2161655,12.9238326 12.9248351,12.7908339 12.5765,12.6705 C12.2281649,12.5501661 11.8323355,12.420334 11.389,12.281 C10.9583312,12.141666 10.5371687,11.9770009 10.1255,11.787 C9.71383127,11.596999 9.34650161,11.3531682 9.0235,11.0555 C8.70049838,10.7578318 8.44083431,10.3968355 8.2445,9.9725 C8.04816568,9.54816454 7.95,9.03200304 7.95,8.424 C7.95,7.67666293 8.10199848,7.03700266 8.406,6.505 C8.71000152,5.97299734 9.10899753,5.53600171 9.603,5.194 C10.0970025,4.85199829 10.6543302,4.60183412 11.275,4.4435 C11.8956698,4.28516587 12.5226635,4.206 13.156,4.206 C13.9160038,4.206 14.6918294,4.34533194 15.4835,4.624 C16.2751706,4.90266806 16.9686637,5.31433061 17.564,5.859 L15.493,8.044 Z" fill="#000000"></path></g>', 1), q7 = [
+  B7
+], A7 = /* @__PURE__ */ i({
   __name: "IconDollar",
   props: {
     size: { type: String, required: !1 }
@@ -4064,12 +5055,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...x4],
+      [...q7],
       16
       /* FULL_PROPS */
     ));
   }
-}), Hr = /* @__PURE__ */ h(v4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDollar.vue"]]), y4 = /* @__PURE__ */ t(
+}), Ul = /* @__PURE__ */ h(A7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDollar.vue"]]), b7 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -4099,9 +5090,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), m4 = [
-  y4
-], $4 = /* @__PURE__ */ i({
+), D7 = [
+  b7
+], F7 = /* @__PURE__ */ i({
   __name: "IconDonecircle",
   props: {
     size: { type: String, required: !1 }
@@ -4119,12 +5110,66 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...m4],
+      [...D7],
       16
       /* FULL_PROPS */
     ));
   }
-}), Nr = /* @__PURE__ */ h($4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDonecircle.vue"]]), I4 = /* @__PURE__ */ t(
+}), Pl = /* @__PURE__ */ h(F7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDonecircle.vue"]]), T7 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      opacity: "0.300000012",
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("polygon", {
+      fill: "#000000",
+      "fill-rule": "nonzero",
+      opacity: "0.3",
+      points: "7 4.89473684 7 21 5 21 5 3 11 3 11 4.89473684"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M10.1782982,2.24743315 L18.1782982,3.6970464 C18.6540619,3.78325557 19,4.19751166 19,4.68102291 L19,19.3190064 C19,19.8025177 18.6540619,20.2167738 18.1782982,20.3029829 L10.1782982,21.7525962 C9.63486295,21.8510675 9.11449486,21.4903531 9.0160235,20.9469179 C9.00536265,20.8880837 9,20.8284119 9,20.7686197 L9,3.23140966 C9,2.67912491 9.44771525,2.23140966 10,2.23140966 C10.0597922,2.23140966 10.119464,2.2367723 10.1782982,2.24743315 Z M11.9166667,12.9060229 C12.6070226,12.9060229 13.1666667,12.2975724 13.1666667,11.5470105 C13.1666667,10.7964487 12.6070226,10.1879981 11.9166667,10.1879981 C11.2263107,10.1879981 10.6666667,10.7964487 10.6666667,11.5470105 C10.6666667,12.2975724 11.2263107,12.9060229 11.9166667,12.9060229 Z",
+      fill: "#000000"
+    })
+  ],
+  -1
+  /* HOISTED */
+), R7 = [
+  T7
+], G7 = /* @__PURE__ */ i({
+  __name: "IconDooropen",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...R7],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Wl = /* @__PURE__ */ h(G7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDooropen.vue"]]), U7 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -4150,9 +5195,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), z4 = [
-  I4
-], M4 = /* @__PURE__ */ i({
+), P7 = [
+  U7
+], W7 = /* @__PURE__ */ i({
   __name: "IconDoublecheck",
   props: {
     size: { type: String, required: !1 }
@@ -4170,12 +5215,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...z4],
+      [...P7],
       16
       /* FULL_PROPS */
     ));
   }
-}), Qr = /* @__PURE__ */ h(M4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDoublecheck.vue"]]), Z4 = /* @__PURE__ */ t(
+}), El = /* @__PURE__ */ h(W7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDoublecheck.vue"]]), E7 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -4203,9 +5248,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), k4 = [
-  Z4
-], S4 = /* @__PURE__ */ i({
+), O7 = [
+  E7
+], H7 = /* @__PURE__ */ i({
   __name: "IconDown2",
   props: {
     size: { type: String, required: !1 }
@@ -4223,12 +5268,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...k4],
+      [...O7],
       16
       /* FULL_PROPS */
     ));
   }
-}), Vr = /* @__PURE__ */ h(S4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDown2.vue"]]), B4 = /* @__PURE__ */ t(
+}), Ol = /* @__PURE__ */ h(H7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDown2.vue"]]), N7 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -4256,9 +5301,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), q4 = [
-  B4
-], A4 = /* @__PURE__ */ i({
+), V7 = [
+  N7
+], j7 = /* @__PURE__ */ i({
   __name: "IconDownleft",
   props: {
     size: { type: String, required: !1 }
@@ -4276,12 +5321,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...q4],
+      [...V7],
       16
       /* FULL_PROPS */
     ));
   }
-}), jr = /* @__PURE__ */ h(A4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDownleft.vue"]]), b4 = /* @__PURE__ */ t(
+}), Hl = /* @__PURE__ */ h(j7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDownleft.vue"]]), K7 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -4309,9 +5354,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), D4 = [
-  b4
-], R4 = /* @__PURE__ */ i({
+), Q7 = [
+  K7
+], J7 = /* @__PURE__ */ i({
   __name: "IconDownright",
   props: {
     size: { type: String, required: !1 }
@@ -4329,12 +5374,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...D4],
+      [...Q7],
       16
       /* FULL_PROPS */
     ));
   }
-}), Jr = /* @__PURE__ */ h(R4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDownright.vue"]]), T4 = /* @__PURE__ */ t(
+}), Nl = /* @__PURE__ */ h(J7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDownright.vue"]]), X7 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -4362,9 +5407,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), U4 = [
-  T4
-], G4 = /* @__PURE__ */ i({
+), Y7 = [
+  X7
+], e6 = /* @__PURE__ */ i({
   __name: "IconDuplicate",
   props: {
     size: { type: String, required: !1 }
@@ -4382,12 +5427,67 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...U4],
+      [...Y7],
       16
       /* FULL_PROPS */
     ));
   }
-}), Kr = /* @__PURE__ */ h(G4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDuplicate.vue"]]), P4 = /* @__PURE__ */ t(
+}), Vl = /* @__PURE__ */ h(e6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconDuplicate.vue"]]), t6 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("circle", {
+      fill: "#000000",
+      opacity: "0.3",
+      cx: "12",
+      cy: "12",
+      r: "9"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M11.7357634,20.9961946 C6.88740052,20.8563914 3,16.8821712 3,12 C3,11.9168367 3.00112797,11.8339369 3.00336944,11.751315 C3.66233009,11.8143341 4.85636818,11.9573854 4.91262842,12.4204038 C4.9904938,13.0609191 4.91262842,13.8615942 5.45804656,14.101772 C6.00346469,14.3419498 6.15931561,13.1409372 6.6267482,13.4612567 C7.09418079,13.7815761 8.34086797,14.0899175 8.34086797,14.6562185 C8.34086797,15.222396 8.10715168,16.1034596 8.34086797,16.2636193 C8.57458427,16.423779 9.5089688,17.54465 9.50920913,17.7048097 C9.50956962,17.8649694 9.83857487,18.6793513 9.74040201,18.9906563 C9.65905192,19.2487394 9.24857641,20.0501554 8.85059781,20.4145589 C9.75315358,20.7620621 10.7235846,20.9657742 11.7357634,20.9960544 L11.7357634,20.9961946 Z M8.28272988,3.80112099 C9.4158415,3.28656421 10.6744554,3 12,3 C15.5114513,3 18.5532143,5.01097452 20.0364482,7.94408274 C20.069657,8.72412177 20.0638332,9.39135321 20.2361262,9.6327358 C21.1131932,10.8600506 18.0995147,11.7043158 18.5573343,13.5605384 C18.7589671,14.3794892 16.5527814,14.1196773 16.0139722,14.886394 C15.4748026,15.6527403 14.1574598,15.137809 13.8520064,14.9904917 C13.546553,14.8431744 12.3766497,15.3341497 12.4789081,14.4995164 C12.5805657,13.664636 13.2922889,13.6156126 14.0555619,13.2719546 C14.8184743,12.928667 15.9189236,11.7871741 15.3781918,11.6380045 C12.8323064,10.9362407 11.963771,8.47852395 11.963771,8.47852395 C11.8110443,8.44901109 11.8493762,6.74109366 11.1883616,6.69207022 C10.5267462,6.64279981 10.170464,6.88841096 9.20435656,6.69207022 C8.23764828,6.49572949 8.44144409,5.85743687 8.2887174,4.48255778 C8.25453994,4.17415686 8.25619136,3.95717082 8.28272988,3.80112099 Z M20.9991771,11.8770357 C20.9997251,11.9179585 21,11.9589471 21,12 C21,16.9406923 17.0188468,20.9515364 12.0895088,20.9995641 C16.970233,20.9503326 20.9337111,16.888438 20.9991771,11.8770357 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    })
+  ],
+  -1
+  /* HOISTED */
+), n6 = [
+  t6
+], o6 = /* @__PURE__ */ i({
+  __name: "IconEarth",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...n6],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), jl = /* @__PURE__ */ h(o6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconEarth.vue"]]), r6 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -4411,9 +5511,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), O4 = [
-  P4
-], W4 = /* @__PURE__ */ i({
+), s6 = [
+  r6
+], i6 = /* @__PURE__ */ i({
   __name: "IconEdit",
   props: {
     size: { type: String, required: !1 }
@@ -4431,12 +5531,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...O4],
+      [...s6],
       16
       /* FULL_PROPS */
     ));
   }
-}), Xr = /* @__PURE__ */ h(W4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconEdit.vue"]]), E4 = /* @__PURE__ */ t(
+}), Kl = /* @__PURE__ */ h(i6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconEdit.vue"]]), l6 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -4465,9 +5565,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), F4 = [
-  E4
-], H4 = /* @__PURE__ */ i({
+), c6 = [
+  l6
+], a6 = /* @__PURE__ */ i({
   __name: "IconErrorcircle",
   props: {
     size: { type: String, required: !1 }
@@ -4485,12 +5585,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...F4],
+      [...c6],
       16
       /* FULL_PROPS */
     ));
   }
-}), Yr = /* @__PURE__ */ h(H4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconErrorcircle.vue"]]), N4 = /* @__PURE__ */ t(
+}), Ql = /* @__PURE__ */ h(a6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconErrorcircle.vue"]]), p6 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -4517,9 +5617,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Q4 = [
-  N4
-], V4 = /* @__PURE__ */ i({
+), h6 = [
+  p6
+], C6 = /* @__PURE__ */ i({
   __name: "IconEuro",
   props: {
     size: { type: String, required: !1 }
@@ -4537,14 +5637,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Q4],
+      [...h6],
       16
       /* FULL_PROPS */
     ));
   }
-}), es = /* @__PURE__ */ h(V4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconEuro.vue"]]), j4 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" transform="translate(13.000000, 6.000000) rotate(-450.000000) translate(-13.000000, -6.000000) " x="12" y="8.8817842e-16" width="2" height="12" rx="1"></rect><path d="M9.79289322,3.79289322 C10.1834175,3.40236893 10.8165825,3.40236893 11.2071068,3.79289322 C11.5976311,4.18341751 11.5976311,4.81658249 11.2071068,5.20710678 L8.20710678,8.20710678 C7.81658249,8.59763107 7.18341751,8.59763107 6.79289322,8.20710678 L3.79289322,5.20710678 C3.40236893,4.81658249 3.40236893,4.18341751 3.79289322,3.79289322 C4.18341751,3.40236893 4.81658249,3.40236893 5.20710678,3.79289322 L7.5,6.08578644 L9.79289322,3.79289322 Z" fill="#000000" fill-rule="nonzero" transform="translate(7.500000, 6.000000) rotate(-270.000000) translate(-7.500000, -6.000000) "></path><rect fill="#000000" opacity="0.3" transform="translate(11.000000, 18.000000) scale(1, -1) rotate(90.000000) translate(-11.000000, -18.000000) " x="10" y="12" width="2" height="12" rx="1"></rect><path d="M18.7928932,15.7928932 C19.1834175,15.4023689 19.8165825,15.4023689 20.2071068,15.7928932 C20.5976311,16.1834175 20.5976311,16.8165825 20.2071068,17.2071068 L17.2071068,20.2071068 C16.8165825,20.5976311 16.1834175,20.5976311 15.7928932,20.2071068 L12.7928932,17.2071068 C12.4023689,16.8165825 12.4023689,16.1834175 12.7928932,15.7928932 C13.1834175,15.4023689 13.8165825,15.4023689 14.2071068,15.7928932 L16.5,18.0857864 L18.7928932,15.7928932 Z" fill="#000000" fill-rule="nonzero" transform="translate(16.500000, 18.000000) scale(1, -1) rotate(270.000000) translate(-16.500000, -18.000000) "></path></g>', 1), J4 = [
-  j4
-], K4 = /* @__PURE__ */ i({
+}), Jl = /* @__PURE__ */ h(C6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconEuro.vue"]]), d6 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" transform="translate(13.000000, 6.000000) rotate(-450.000000) translate(-13.000000, -6.000000) " x="12" y="8.8817842e-16" width="2" height="12" rx="1"></rect><path d="M9.79289322,3.79289322 C10.1834175,3.40236893 10.8165825,3.40236893 11.2071068,3.79289322 C11.5976311,4.18341751 11.5976311,4.81658249 11.2071068,5.20710678 L8.20710678,8.20710678 C7.81658249,8.59763107 7.18341751,8.59763107 6.79289322,8.20710678 L3.79289322,5.20710678 C3.40236893,4.81658249 3.40236893,4.18341751 3.79289322,3.79289322 C4.18341751,3.40236893 4.81658249,3.40236893 5.20710678,3.79289322 L7.5,6.08578644 L9.79289322,3.79289322 Z" fill="#000000" fill-rule="nonzero" transform="translate(7.500000, 6.000000) rotate(-270.000000) translate(-7.500000, -6.000000) "></path><rect fill="#000000" opacity="0.3" transform="translate(11.000000, 18.000000) scale(1, -1) rotate(90.000000) translate(-11.000000, -18.000000) " x="10" y="12" width="2" height="12" rx="1"></rect><path d="M18.7928932,15.7928932 C19.1834175,15.4023689 19.8165825,15.4023689 20.2071068,15.7928932 C20.5976311,16.1834175 20.5976311,16.8165825 20.2071068,17.2071068 L17.2071068,20.2071068 C16.8165825,20.5976311 16.1834175,20.5976311 15.7928932,20.2071068 L12.7928932,17.2071068 C12.4023689,16.8165825 12.4023689,16.1834175 12.7928932,15.7928932 C13.1834175,15.4023689 13.8165825,15.4023689 14.2071068,15.7928932 L16.5,18.0857864 L18.7928932,15.7928932 Z" fill="#000000" fill-rule="nonzero" transform="translate(16.500000, 18.000000) scale(1, -1) rotate(270.000000) translate(-16.500000, -18.000000) "></path></g>', 1), _6 = [
+  d6
+], u6 = /* @__PURE__ */ i({
   __name: "IconExchange",
   props: {
     size: { type: String, required: !1 }
@@ -4562,12 +5662,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...J4],
+      [..._6],
       16
       /* FULL_PROPS */
     ));
   }
-}), ts = /* @__PURE__ */ h(K4, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconExchange.vue"]]), X4 = /* @__PURE__ */ t(
+}), Xl = /* @__PURE__ */ h(u6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconExchange.vue"]]), f6 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -4591,9 +5691,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Y4 = [
-  X4
-], e7 = /* @__PURE__ */ i({
+), L6 = [
+  f6
+], w6 = /* @__PURE__ */ i({
   __name: "IconExpandarrows",
   props: {
     size: { type: String, required: !1 }
@@ -4611,12 +5711,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Y4],
+      [...L6],
       16
       /* FULL_PROPS */
     ));
   }
-}), ns = /* @__PURE__ */ h(e7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconExpandarrows.vue"]]), t7 = /* @__PURE__ */ t(
+}), Yl = /* @__PURE__ */ h(w6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconExpandarrows.vue"]]), g6 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -4638,9 +5738,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), n7 = [
-  t7
-], o7 = /* @__PURE__ */ i({
+), x6 = [
+  g6
+], v6 = /* @__PURE__ */ i({
   __name: "IconFire",
   props: {
     size: { type: String, required: !1 }
@@ -4658,12 +5758,64 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...n7],
+      [...x6],
       16
       /* FULL_PROPS */
     ));
   }
-}), os = /* @__PURE__ */ h(o7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconFire.vue"]]), r7 = /* @__PURE__ */ t(
+}), ec = /* @__PURE__ */ h(v6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconFire.vue"]]), y6 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M17,20 L17,12 C17,9.23857625 14.7614237,7 12,7 C9.23857625,7 7,9.23857625 7,12 L7,20 L5,20 C3.8954305,20 3,19.1045695 3,18 L3,6 C3,4.8954305 3.8954305,4 5,4 L19,4 C20.1045695,4 21,4.8954305 21,6 L21,18 C21,19.1045695 20.1045695,20 19,20 L17,20 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M12.9717525,11.7005668 C12.8097937,13.3201542 12.3239175,14.1866868 11.5141238,14.3001646 C11.5141238,14.3001646 12.2429381,11.4576287 11.2711857,10 C11.2711857,10 11.1681401,11.5618236 10.126941,13.4359819 C9.63887975,14.3144921 9.08474261,14.9067082 9.08474261,16.0734529 C9.08474261,17.7393714 10.7908674,18.6003292 12.002779,18.6003292 C13.2146906,18.6003292 14.9152574,18.0172577 14.9152574,15.9765075 C14.9152574,15.1373628 14.2674224,13.7120493 12.9717525,11.7005668 Z",
+      fill: "#000000"
+    })
+  ],
+  -1
+  /* HOISTED */
+), m6 = [
+  y6
+], $6 = /* @__PURE__ */ i({
+  __name: "IconFireplace",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...m6],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), tc = /* @__PURE__ */ h($6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconFireplace.vue"]]), I6 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -4690,9 +5842,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), s7 = [
-  r7
-], i7 = /* @__PURE__ */ i({
+), z6 = [
+  I6
+], M6 = /* @__PURE__ */ i({
   __name: "IconFlag",
   props: {
     size: { type: String, required: !1 }
@@ -4710,12 +5862,139 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...s7],
+      [...z6],
       16
       /* FULL_PROPS */
     ));
   }
-}), rs = /* @__PURE__ */ h(i7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconFlag.vue"]]), l7 = /* @__PURE__ */ t(
+}), nc = /* @__PURE__ */ h(M6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconFlag.vue"]]), Z6 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M6,10 L6,6 L18,6 L18,10 C16,11.5197922 15,12.8531255 15,14 L15,18 L15,20 C15,21.1045695 14.1045695,22 13,22 L11,22 C9.8954305,22 9,21.1045695 9,20 L9,18 L9,14 C9,12.3333333 8,11 6,10 Z M12,11 C10.8954305,11 10,11.8954305 10,13 L10,15 C10,16.1045695 10.8954305,17 12,17 C13.1045695,17 14,16.1045695 14,15 L14,13 C14,11.8954305 13.1045695,11 12,11 Z M12,14 C11.4477153,14 11,13.5522847 11,13 C11,12.4477153 11.4477153,12 12,12 C12.5522847,12 13,12.4477153 13,13 C13,13.5522847 12.5522847,14 12,14 Z",
+      fill: "#000000"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M7,2 L17,2 C17.5522847,2 18,2.44771525 18,3 L18,4 L6,4 L6,3 C6,2.44771525 6.44771525,2 7,2 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    })
+  ],
+  -1
+  /* HOISTED */
+), k6 = [
+  Z6
+], S6 = /* @__PURE__ */ i({
+  __name: "IconFlashlight",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...k6],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), oc = /* @__PURE__ */ h(S6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconFlashlight.vue"]]), B6 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><path d="M9,1 C4.92361111,7.82926829 4.92361111,12.8292683 9,16 C12.9097222,12.8292683 12.9097222,7.82926829 9,1 Z" fill="#000000" opacity="0.3" transform="translate(8.937500, 8.500000) scale(-1, 1) rotate(-330.000000) translate(-8.937500, -8.500000) "></path><path d="M15,1 C10.9236111,7.82926829 10.9236111,12.8292683 15,16 C18.9097222,12.8292683 18.9097222,7.82926829 15,1 Z" fill="#000000" opacity="0.3" transform="translate(14.937500, 8.500000) rotate(-330.000000) translate(-14.937500, -8.500000) "></path><path d="M12,1 C7.92361111,7.82926829 7.92361111,12.8292683 12,16 C15.9097222,12.8292683 15.9097222,7.82926829 12,1 Z" fill="#000000" opacity="0.3"></path><path d="M6.34403065,13 L17.6559693,13 C18.2082541,13 18.6559693,13.4477153 18.6559693,14 C18.6559693,14.0973246 18.6417616,14.1941279 18.6137956,14.2873479 L16.4275913,21.5746958 C16.1738009,22.4206637 15.3951551,23 14.5119387,23 L9.4880613,23 C8.60484486,23 7.82619911,22.4206637 7.57240873,21.5746958 L5.38620437,14.2873479 C5.22750651,13.758355 5.52768992,13.2008716 6.05668277,13.0421737 C6.14990279,13.0142077 6.24670609,13 6.34403065,13 Z" fill="#000000"></path></g>', 1), q6 = [
+  B6
+], A6 = /* @__PURE__ */ i({
+  __name: "IconFlower1",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...q6],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), rc = /* @__PURE__ */ h(A6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconFlower1.vue"]]), b6 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><circle fill="#000000" opacity="0.3" cx="15" cy="17" r="5"></circle><circle fill="#000000" opacity="0.3" cx="9" cy="17" r="5"></circle><circle fill="#000000" opacity="0.3" cx="7" cy="11" r="5"></circle><circle fill="#000000" opacity="0.3" cx="17" cy="11" r="5"></circle><circle fill="#000000" opacity="0.3" cx="12" cy="7" r="5"></circle></g>', 1), D6 = [
+  b6
+], F6 = /* @__PURE__ */ i({
+  __name: "IconFlower2",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...D6],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), sc = /* @__PURE__ */ h(F6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconFlower2.vue"]]), T6 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><path d="M1.4152146,4.84010415 C11.1782334,10.3362599 14.7076452,16.4493804 12.0034499,23.1794656 C5.02500006,22.0396582 1.4955883,15.9265377 1.4152146,4.84010415 Z" fill="#000000" opacity="0.3"></path><path d="M22.5950046,4.84010415 C12.8319858,10.3362599 9.30257403,16.4493804 12.0067693,23.1794656 C18.9852192,22.0396582 22.5146309,15.9265377 22.5950046,4.84010415 Z" fill="#000000" opacity="0.3"></path><path d="M12.0002081,2 C6.29326368,11.6413199 6.29326368,18.7001435 12.0002081,23.1764706 C17.4738192,18.7001435 17.4738192,11.6413199 12.0002081,2 Z" fill="#000000" opacity="0.3"></path></g>', 1), R6 = [
+  T6
+], G6 = /* @__PURE__ */ i({
+  __name: "IconFlower3",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...R6],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), ic = /* @__PURE__ */ h(G6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconFlower3.vue"]]), U6 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -4737,9 +6016,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), c7 = [
-  l7
-], a7 = /* @__PURE__ */ i({
+), P6 = [
+  U6
+], W6 = /* @__PURE__ */ i({
   __name: "IconFolder",
   props: {
     size: { type: String, required: !1 }
@@ -4757,12 +6036,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...c7],
+      [...P6],
       16
       /* FULL_PROPS */
     ));
   }
-}), ss = /* @__PURE__ */ h(a7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconFolder.vue"]]), p7 = /* @__PURE__ */ t(
+}), lc = /* @__PURE__ */ h(W6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconFolder.vue"]]), E6 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -4786,9 +6065,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), h7 = [
-  p7
-], C7 = /* @__PURE__ */ i({
+), O6 = [
+  E6
+], H6 = /* @__PURE__ */ i({
   __name: "IconForward",
   props: {
     size: { type: String, required: !1 }
@@ -4806,12 +6085,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...h7],
+      [...O6],
       16
       /* FULL_PROPS */
     ));
   }
-}), is = /* @__PURE__ */ h(C7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconForward.vue"]]), d7 = /* @__PURE__ */ t(
+}), cc = /* @__PURE__ */ h(H6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconForward.vue"]]), N6 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -4839,9 +6118,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), _7 = [
-  d7
-], u7 = /* @__PURE__ */ i({
+), V6 = [
+  N6
+], j6 = /* @__PURE__ */ i({
   __name: "IconGift",
   props: {
     size: { type: String, required: !1 }
@@ -4859,14 +6138,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [..._7],
+      [...V6],
       16
       /* FULL_PROPS */
     ));
   }
-}), ls = /* @__PURE__ */ h(u7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconGift.vue"]]), f7 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="11" y="8" width="2" height="9" rx="1"></rect><path d="M12,21 C13.1045695,21 14,20.1045695 14,19 C14,17.8954305 13.1045695,17 12,17 C10.8954305,17 10,17.8954305 10,19 C10,20.1045695 10.8954305,21 12,21 Z M12,23 C9.790861,23 8,21.209139 8,19 C8,16.790861 9.790861,15 12,15 C14.209139,15 16,16.790861 16,19 C16,21.209139 14.209139,23 12,23 Z" fill="#000000" fill-rule="nonzero"></path><path d="M12,7 C13.1045695,7 14,6.1045695 14,5 C14,3.8954305 13.1045695,3 12,3 C10.8954305,3 10,3.8954305 10,5 C10,6.1045695 10.8954305,7 12,7 Z M12,9 C9.790861,9 8,7.209139 8,5 C8,2.790861 9.790861,1 12,1 C14.209139,1 16,2.790861 16,5 C16,7.209139 14.209139,9 12,9 Z" fill="#000000" fill-rule="nonzero"></path></g>', 1), w7 = [
-  f7
-], L7 = /* @__PURE__ */ i({
+}), ac = /* @__PURE__ */ h(j6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconGift.vue"]]), K6 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="11" y="8" width="2" height="9" rx="1"></rect><path d="M12,21 C13.1045695,21 14,20.1045695 14,19 C14,17.8954305 13.1045695,17 12,17 C10.8954305,17 10,17.8954305 10,19 C10,20.1045695 10.8954305,21 12,21 Z M12,23 C9.790861,23 8,21.209139 8,19 C8,16.790861 9.790861,15 12,15 C14.209139,15 16,16.790861 16,19 C16,21.209139 14.209139,23 12,23 Z" fill="#000000" fill-rule="nonzero"></path><path d="M12,7 C13.1045695,7 14,6.1045695 14,5 C14,3.8954305 13.1045695,3 12,3 C10.8954305,3 10,3.8954305 10,5 C10,6.1045695 10.8954305,7 12,7 Z M12,9 C9.790861,9 8,7.209139 8,5 C8,2.790861 9.790861,1 12,1 C14.209139,1 16,2.790861 16,5 C16,7.209139 14.209139,9 12,9 Z" fill="#000000" fill-rule="nonzero"></path></g>', 1), Q6 = [
+  K6
+], J6 = /* @__PURE__ */ i({
   __name: "IconGit1",
   props: {
     size: { type: String, required: !1 }
@@ -4884,14 +6163,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...w7],
+      [...Q6],
       16
       /* FULL_PROPS */
     ));
   }
-}), cs = /* @__PURE__ */ h(L7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconGit1.vue"]]), g7 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="5" y="8" width="2" height="8" rx="1"></rect><path d="M6,21 C7.1045695,21 8,20.1045695 8,19 C8,17.8954305 7.1045695,17 6,17 C4.8954305,17 4,17.8954305 4,19 C4,20.1045695 4.8954305,21 6,21 Z M6,23 C3.790861,23 2,21.209139 2,19 C2,16.790861 3.790861,15 6,15 C8.209139,15 10,16.790861 10,19 C10,21.209139 8.209139,23 6,23 Z" fill="#000000" fill-rule="nonzero"></path><rect fill="#000000" opacity="0.3" x="17" y="8" width="2" height="8" rx="1"></rect><path d="M18,21 C19.1045695,21 20,20.1045695 20,19 C20,17.8954305 19.1045695,17 18,17 C16.8954305,17 16,17.8954305 16,19 C16,20.1045695 16.8954305,21 18,21 Z M18,23 C15.790861,23 14,21.209139 14,19 C14,16.790861 15.790861,15 18,15 C20.209139,15 22,16.790861 22,19 C22,21.209139 20.209139,23 18,23 Z" fill="#000000" fill-rule="nonzero"></path><path d="M6,7 C7.1045695,7 8,6.1045695 8,5 C8,3.8954305 7.1045695,3 6,3 C4.8954305,3 4,3.8954305 4,5 C4,6.1045695 4.8954305,7 6,7 Z M6,9 C3.790861,9 2,7.209139 2,5 C2,2.790861 3.790861,1 6,1 C8.209139,1 10,2.790861 10,5 C10,7.209139 8.209139,9 6,9 Z" fill="#000000" fill-rule="nonzero"></path><path d="M18,7 C19.1045695,7 20,6.1045695 20,5 C20,3.8954305 19.1045695,3 18,3 C16.8954305,3 16,3.8954305 16,5 C16,6.1045695 16.8954305,7 18,7 Z M18,9 C15.790861,9 14,7.209139 14,5 C14,2.790861 15.790861,1 18,1 C20.209139,1 22,2.790861 22,5 C22,7.209139 20.209139,9 18,9 Z" fill="#000000" fill-rule="nonzero"></path></g>', 1), x7 = [
-  g7
-], v7 = /* @__PURE__ */ i({
+}), pc = /* @__PURE__ */ h(J6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconGit1.vue"]]), X6 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" x="5" y="8" width="2" height="8" rx="1"></rect><path d="M6,21 C7.1045695,21 8,20.1045695 8,19 C8,17.8954305 7.1045695,17 6,17 C4.8954305,17 4,17.8954305 4,19 C4,20.1045695 4.8954305,21 6,21 Z M6,23 C3.790861,23 2,21.209139 2,19 C2,16.790861 3.790861,15 6,15 C8.209139,15 10,16.790861 10,19 C10,21.209139 8.209139,23 6,23 Z" fill="#000000" fill-rule="nonzero"></path><rect fill="#000000" opacity="0.3" x="17" y="8" width="2" height="8" rx="1"></rect><path d="M18,21 C19.1045695,21 20,20.1045695 20,19 C20,17.8954305 19.1045695,17 18,17 C16.8954305,17 16,17.8954305 16,19 C16,20.1045695 16.8954305,21 18,21 Z M18,23 C15.790861,23 14,21.209139 14,19 C14,16.790861 15.790861,15 18,15 C20.209139,15 22,16.790861 22,19 C22,21.209139 20.209139,23 18,23 Z" fill="#000000" fill-rule="nonzero"></path><path d="M6,7 C7.1045695,7 8,6.1045695 8,5 C8,3.8954305 7.1045695,3 6,3 C4.8954305,3 4,3.8954305 4,5 C4,6.1045695 4.8954305,7 6,7 Z M6,9 C3.790861,9 2,7.209139 2,5 C2,2.790861 3.790861,1 6,1 C8.209139,1 10,2.790861 10,5 C10,7.209139 8.209139,9 6,9 Z" fill="#000000" fill-rule="nonzero"></path><path d="M18,7 C19.1045695,7 20,6.1045695 20,5 C20,3.8954305 19.1045695,3 18,3 C16.8954305,3 16,3.8954305 16,5 C16,6.1045695 16.8954305,7 18,7 Z M18,9 C15.790861,9 14,7.209139 14,5 C14,2.790861 15.790861,1 18,1 C20.209139,1 22,2.790861 22,5 C22,7.209139 20.209139,9 18,9 Z" fill="#000000" fill-rule="nonzero"></path></g>', 1), Y6 = [
+  X6
+], e3 = /* @__PURE__ */ i({
   __name: "IconGit2",
   props: {
     size: { type: String, required: !1 }
@@ -4909,14 +6188,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...x7],
+      [...Y6],
       16
       /* FULL_PROPS */
     ));
   }
-}), as = /* @__PURE__ */ h(v7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconGit2.vue"]]), y7 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M7,11 L15,11 C16.1045695,11 17,10.1045695 17,9 L17,8 L19,8 L19,9 C19,11.209139 17.209139,13 15,13 L7,13 L7,15 C7,15.5522847 6.55228475,16 6,16 C5.44771525,16 5,15.5522847 5,15 L5,9 C5,8.44771525 5.44771525,8 6,8 C6.55228475,8 7,8.44771525 7,9 L7,11 Z" fill="#000000" opacity="0.3"></path><path d="M6,21 C7.1045695,21 8,20.1045695 8,19 C8,17.8954305 7.1045695,17 6,17 C4.8954305,17 4,17.8954305 4,19 C4,20.1045695 4.8954305,21 6,21 Z M6,23 C3.790861,23 2,21.209139 2,19 C2,16.790861 3.790861,15 6,15 C8.209139,15 10,16.790861 10,19 C10,21.209139 8.209139,23 6,23 Z" fill="#000000" fill-rule="nonzero"></path><path d="M18,7 C19.1045695,7 20,6.1045695 20,5 C20,3.8954305 19.1045695,3 18,3 C16.8954305,3 16,3.8954305 16,5 C16,6.1045695 16.8954305,7 18,7 Z M18,9 C15.790861,9 14,7.209139 14,5 C14,2.790861 15.790861,1 18,1 C20.209139,1 22,2.790861 22,5 C22,7.209139 20.209139,9 18,9 Z" fill="#000000" fill-rule="nonzero"></path><path d="M6,7 C7.1045695,7 8,6.1045695 8,5 C8,3.8954305 7.1045695,3 6,3 C4.8954305,3 4,3.8954305 4,5 C4,6.1045695 4.8954305,7 6,7 Z M6,9 C3.790861,9 2,7.209139 2,5 C2,2.790861 3.790861,1 6,1 C8.209139,1 10,2.790861 10,5 C10,7.209139 8.209139,9 6,9 Z" fill="#000000" fill-rule="nonzero"></path></g>', 1), m7 = [
-  y7
-], $7 = /* @__PURE__ */ i({
+}), hc = /* @__PURE__ */ h(e3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconGit2.vue"]]), t3 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M7,11 L15,11 C16.1045695,11 17,10.1045695 17,9 L17,8 L19,8 L19,9 C19,11.209139 17.209139,13 15,13 L7,13 L7,15 C7,15.5522847 6.55228475,16 6,16 C5.44771525,16 5,15.5522847 5,15 L5,9 C5,8.44771525 5.44771525,8 6,8 C6.55228475,8 7,8.44771525 7,9 L7,11 Z" fill="#000000" opacity="0.3"></path><path d="M6,21 C7.1045695,21 8,20.1045695 8,19 C8,17.8954305 7.1045695,17 6,17 C4.8954305,17 4,17.8954305 4,19 C4,20.1045695 4.8954305,21 6,21 Z M6,23 C3.790861,23 2,21.209139 2,19 C2,16.790861 3.790861,15 6,15 C8.209139,15 10,16.790861 10,19 C10,21.209139 8.209139,23 6,23 Z" fill="#000000" fill-rule="nonzero"></path><path d="M18,7 C19.1045695,7 20,6.1045695 20,5 C20,3.8954305 19.1045695,3 18,3 C16.8954305,3 16,3.8954305 16,5 C16,6.1045695 16.8954305,7 18,7 Z M18,9 C15.790861,9 14,7.209139 14,5 C14,2.790861 15.790861,1 18,1 C20.209139,1 22,2.790861 22,5 C22,7.209139 20.209139,9 18,9 Z" fill="#000000" fill-rule="nonzero"></path><path d="M6,7 C7.1045695,7 8,6.1045695 8,5 C8,3.8954305 7.1045695,3 6,3 C4.8954305,3 4,3.8954305 4,5 C4,6.1045695 4.8954305,7 6,7 Z M6,9 C3.790861,9 2,7.209139 2,5 C2,2.790861 3.790861,1 6,1 C8.209139,1 10,2.790861 10,5 C10,7.209139 8.209139,9 6,9 Z" fill="#000000" fill-rule="nonzero"></path></g>', 1), n3 = [
+  t3
+], o3 = /* @__PURE__ */ i({
   __name: "IconGit3",
   props: {
     size: { type: String, required: !1 }
@@ -4934,14 +6213,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...m7],
+      [...n3],
       16
       /* FULL_PROPS */
     ));
   }
-}), ps = /* @__PURE__ */ h($7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconGit3.vue"]]), I7 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M6,7 C7.1045695,7 8,6.1045695 8,5 C8,3.8954305 7.1045695,3 6,3 C4.8954305,3 4,3.8954305 4,5 C4,6.1045695 4.8954305,7 6,7 Z M6,9 C3.790861,9 2,7.209139 2,5 C2,2.790861 3.790861,1 6,1 C8.209139,1 10,2.790861 10,5 C10,7.209139 8.209139,9 6,9 Z" fill="#000000" fill-rule="nonzero"></path><path d="M7,11.4648712 L7,17 C7,18.1045695 7.8954305,19 9,19 L15,19 L15,21 L9,21 C6.790861,21 5,19.209139 5,17 L5,8 L5,7 L7,7 L7,8 C7,9.1045695 7.8954305,10 9,10 L15,10 L15,12 L9,12 C8.27142571,12 7.58834673,11.8052114 7,11.4648712 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path><path d="M18,22 C19.1045695,22 20,21.1045695 20,20 C20,18.8954305 19.1045695,18 18,18 C16.8954305,18 16,18.8954305 16,20 C16,21.1045695 16.8954305,22 18,22 Z M18,24 C15.790861,24 14,22.209139 14,20 C14,17.790861 15.790861,16 18,16 C20.209139,16 22,17.790861 22,20 C22,22.209139 20.209139,24 18,24 Z" fill="#000000" fill-rule="nonzero"></path><path d="M18,13 C19.1045695,13 20,12.1045695 20,11 C20,9.8954305 19.1045695,9 18,9 C16.8954305,9 16,9.8954305 16,11 C16,12.1045695 16.8954305,13 18,13 Z M18,15 C15.790861,15 14,13.209139 14,11 C14,8.790861 15.790861,7 18,7 C20.209139,7 22,8.790861 22,11 C22,13.209139 20.209139,15 18,15 Z" fill="#000000" fill-rule="nonzero"></path></g>', 1), z7 = [
-  I7
-], M7 = /* @__PURE__ */ i({
+}), Cc = /* @__PURE__ */ h(o3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconGit3.vue"]]), r3 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M6,7 C7.1045695,7 8,6.1045695 8,5 C8,3.8954305 7.1045695,3 6,3 C4.8954305,3 4,3.8954305 4,5 C4,6.1045695 4.8954305,7 6,7 Z M6,9 C3.790861,9 2,7.209139 2,5 C2,2.790861 3.790861,1 6,1 C8.209139,1 10,2.790861 10,5 C10,7.209139 8.209139,9 6,9 Z" fill="#000000" fill-rule="nonzero"></path><path d="M7,11.4648712 L7,17 C7,18.1045695 7.8954305,19 9,19 L15,19 L15,21 L9,21 C6.790861,21 5,19.209139 5,17 L5,8 L5,7 L7,7 L7,8 C7,9.1045695 7.8954305,10 9,10 L15,10 L15,12 L9,12 C8.27142571,12 7.58834673,11.8052114 7,11.4648712 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path><path d="M18,22 C19.1045695,22 20,21.1045695 20,20 C20,18.8954305 19.1045695,18 18,18 C16.8954305,18 16,18.8954305 16,20 C16,21.1045695 16.8954305,22 18,22 Z M18,24 C15.790861,24 14,22.209139 14,20 C14,17.790861 15.790861,16 18,16 C20.209139,16 22,17.790861 22,20 C22,22.209139 20.209139,24 18,24 Z" fill="#000000" fill-rule="nonzero"></path><path d="M18,13 C19.1045695,13 20,12.1045695 20,11 C20,9.8954305 19.1045695,9 18,9 C16.8954305,9 16,9.8954305 16,11 C16,12.1045695 16.8954305,13 18,13 Z M18,15 C15.790861,15 14,13.209139 14,11 C14,8.790861 15.790861,7 18,7 C20.209139,7 22,8.790861 22,11 C22,13.209139 20.209139,15 18,15 Z" fill="#000000" fill-rule="nonzero"></path></g>', 1), s3 = [
+  r3
+], i3 = /* @__PURE__ */ i({
   __name: "IconGit4",
   props: {
     size: { type: String, required: !1 }
@@ -4959,12 +6238,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...z7],
+      [...s3],
       16
       /* FULL_PROPS */
     ));
   }
-}), hs = /* @__PURE__ */ h(M7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconGit4.vue"]]), Z7 = /* @__PURE__ */ t(
+}), dc = /* @__PURE__ */ h(i3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconGit4.vue"]]), l3 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -4993,9 +6272,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), k7 = [
-  Z7
-], S7 = /* @__PURE__ */ i({
+), c3 = [
+  l3
+], a3 = /* @__PURE__ */ i({
   __name: "IconGithub",
   props: {
     size: { type: String, required: !1 }
@@ -5013,12 +6292,67 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...k7],
+      [...c3],
       16
       /* FULL_PROPS */
     ));
   }
-}), Cs = /* @__PURE__ */ h(S7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconGithub.vue"]]), B7 = /* @__PURE__ */ t(
+}), _c = /* @__PURE__ */ h(a3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconGithub.vue"]]), p3 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M13,18.9450712 L13,20 L14,20 C15.1045695,20 16,20.8954305 16,22 L8,22 C8,20.8954305 8.8954305,20 10,20 L11,20 L11,18.9448245 C9.02872877,18.7261967 7.20827378,17.866394 5.79372555,16.5182701 L4.73856106,17.6741866 C4.36621808,18.0820826 3.73370941,18.110904 3.32581341,17.7385611 C2.9179174,17.3662181 2.88909597,16.7337094 3.26143894,16.3258134 L5.04940685,14.367122 C5.46150313,13.9156769 6.17860937,13.9363085 6.56406875,14.4106998 C7.88623094,16.037907 9.86320756,17 12,17 C15.8659932,17 19,13.8659932 19,10 C19,7.73468744 17.9175842,5.65198725 16.1214335,4.34123851 C15.6753081,4.01567657 15.5775721,3.39010038 15.903134,2.94397499 C16.228696,2.49784959 16.8542722,2.4001136 17.3003976,2.72567554 C19.6071362,4.40902808 21,7.08906798 21,10 C21,14.6325537 17.4999505,18.4476269 13,18.9450712 Z",
+      fill: "#000000",
+      "fill-rule": "nonzero"
+    }),
+    /* @__PURE__ */ t("circle", {
+      fill: "#000000",
+      opacity: "0.3",
+      cx: "12",
+      cy: "10",
+      r: "6"
+    })
+  ],
+  -1
+  /* HOISTED */
+), h3 = [
+  p3
+], C3 = /* @__PURE__ */ i({
+  __name: "IconGlobe",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...h3],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), uc = /* @__PURE__ */ h(C3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconGlobe.vue"]]), d3 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -5045,9 +6379,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), q7 = [
-  B7
-], A7 = /* @__PURE__ */ i({
+), _3 = [
+  d3
+], u3 = /* @__PURE__ */ i({
   __name: "IconGroupchat",
   props: {
     size: { type: String, required: !1 }
@@ -5065,12 +6399,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...q7],
+      [..._3],
       16
       /* FULL_PROPS */
     ));
   }
-}), ds = /* @__PURE__ */ h(A7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconGroupchat.vue"]]), b7 = /* @__PURE__ */ t(
+}), fc = /* @__PURE__ */ h(u3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconGroupchat.vue"]]), f3 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -5094,9 +6428,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), D7 = [
-  b7
-], R7 = /* @__PURE__ */ i({
+), L3 = [
+  f3
+], w3 = /* @__PURE__ */ i({
   __name: "IconGroup",
   props: {
     size: { type: String, required: !1 }
@@ -5114,12 +6448,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...D7],
+      [...L3],
       16
       /* FULL_PROPS */
     ));
   }
-}), _s = /* @__PURE__ */ h(R7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconGroup.vue"]]), T7 = /* @__PURE__ */ t(
+}), Lc = /* @__PURE__ */ h(w3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconGroup.vue"]]), g3 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -5143,9 +6477,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), U7 = [
-  T7
-], G7 = /* @__PURE__ */ i({
+), x3 = [
+  g3
+], v3 = /* @__PURE__ */ i({
   __name: "IconHalfheart",
   props: {
     size: { type: String, required: !1 }
@@ -5163,12 +6497,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...U7],
+      [...x3],
       16
       /* FULL_PROPS */
     ));
   }
-}), us = /* @__PURE__ */ h(G7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconHalfheart.vue"]]), P7 = /* @__PURE__ */ t(
+}), wc = /* @__PURE__ */ h(v3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconHalfheart.vue"]]), y3 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -5190,9 +6524,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), O7 = [
-  P7
-], W7 = /* @__PURE__ */ i({
+), m3 = [
+  y3
+], $3 = /* @__PURE__ */ i({
   __name: "IconHalfstar",
   props: {
     size: { type: String, required: !1 }
@@ -5210,12 +6544,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...O7],
+      [...m3],
       16
       /* FULL_PROPS */
     ));
   }
-}), fs = /* @__PURE__ */ h(W7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconHalfstar.vue"]]), E7 = /* @__PURE__ */ t(
+}), gc = /* @__PURE__ */ h($3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconHalfstar.vue"]]), I3 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -5233,9 +6567,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), F7 = [
-  E7
-], H7 = /* @__PURE__ */ i({
+), z3 = [
+  I3
+], M3 = /* @__PURE__ */ i({
   __name: "IconHeart",
   props: {
     size: { type: String, required: !1 }
@@ -5253,14 +6587,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...F7],
+      [...z3],
       16
       /* FULL_PROPS */
     ));
   }
-}), ws = /* @__PURE__ */ h(H7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconHeart.vue"]]), N7 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M19.2078777,9.84836149 C20.3303823,11.0178941 21,12 21,12 C21,12 16.9090909,18 12,18 C11.6893441,18 11.3879033,17.9864845 11.0955026,17.9607365 L19.2078777,9.84836149 Z" fill="#000000" fill-rule="nonzero"></path><path d="M14.5051465,6.49485351 L12,9 C10.3431458,9 9,10.3431458 9,12 L5.52661464,15.4733854 C3.75006453,13.8334911 3,12 3,12 C3,12 5.45454545,6 12,6 C12.8665422,6 13.7075911,6.18695134 14.5051465,6.49485351 Z" fill="#000000" fill-rule="nonzero"></path><rect fill="#000000" opacity="0.3" transform="translate(12.524621, 12.424621) rotate(-45.000000) translate(-12.524621, -12.424621) " x="3.02462111" y="11.4246212" width="19" height="2"></rect></g>', 1), Q7 = [
-  N7
-], V7 = /* @__PURE__ */ i({
+}), xc = /* @__PURE__ */ h(M3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconHeart.vue"]]), Z3 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M19.2078777,9.84836149 C20.3303823,11.0178941 21,12 21,12 C21,12 16.9090909,18 12,18 C11.6893441,18 11.3879033,17.9864845 11.0955026,17.9607365 L19.2078777,9.84836149 Z" fill="#000000" fill-rule="nonzero"></path><path d="M14.5051465,6.49485351 L12,9 C10.3431458,9 9,10.3431458 9,12 L5.52661464,15.4733854 C3.75006453,13.8334911 3,12 3,12 C3,12 5.45454545,6 12,6 C12.8665422,6 13.7075911,6.18695134 14.5051465,6.49485351 Z" fill="#000000" fill-rule="nonzero"></path><rect fill="#000000" opacity="0.3" transform="translate(12.524621, 12.424621) rotate(-45.000000) translate(-12.524621, -12.424621) " x="3.02462111" y="11.4246212" width="19" height="2"></rect></g>', 1), k3 = [
+  Z3
+], S3 = /* @__PURE__ */ i({
   __name: "IconHidden",
   props: {
     size: { type: String, required: !1 }
@@ -5278,14 +6612,114 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Q7],
+      [...k3],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ls = /* @__PURE__ */ h(V7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconHidden.vue"]]), j7 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M22,17 L22,21 C22,22.1045695 21.1045695,23 20,23 L4,23 C2.8954305,23 2,22.1045695 2,21 L2,17 L6.27924078,17 L6.82339262,18.6324555 C7.09562072,19.4491398 7.8598984,20 8.72075922,20 L15.381966,20 C16.1395101,20 16.8320364,19.5719952 17.1708204,18.8944272 L18.118034,17 L22,17 Z" fill="#000000"></path><path d="M2.5625,15 L5.92654389,9.01947752 C6.2807805,8.38972356 6.94714834,8 7.66969497,8 L16.330305,8 C17.0528517,8 17.7192195,8.38972356 18.0734561,9.01947752 L21.4375,15 L18.118034,15 C17.3604899,15 16.6679636,15.4280048 16.3291796,16.1055728 L15.381966,18 L8.72075922,18 L8.17660738,16.3675445 C7.90437928,15.5508602 7.1401016,15 6.27924078,15 L2.5625,15 Z" fill="#000000" opacity="0.3"></path><path d="M11.1288761,0.733697713 L11.1288761,2.69017121 L9.12120481,2.69017121 C8.84506244,2.69017121 8.62120481,2.91402884 8.62120481,3.19017121 L8.62120481,4.21346991 C8.62120481,4.48961229 8.84506244,4.71346991 9.12120481,4.71346991 L11.1288761,4.71346991 L11.1288761,6.66994341 C11.1288761,6.94608579 11.3527337,7.16994341 11.6288761,7.16994341 C11.7471877,7.16994341 11.8616664,7.12798964 11.951961,7.05154023 L15.4576222,4.08341738 C15.6683723,3.90498251 15.6945689,3.58948575 15.5161341,3.37873564 C15.4982803,3.35764848 15.4787093,3.33807751 15.4576222,3.32022374 L11.951961,0.352100892 C11.7412109,0.173666017 11.4257142,0.199862688 11.2472793,0.410612793 C11.1708299,0.500907473 11.1288761,0.615386087 11.1288761,0.733697713 Z" fill="#000000" fill-rule="nonzero" transform="translate(11.959697, 3.661508) rotate(-270.000000) translate(-11.959697, -3.661508) "></path></g>', 1), J7 = [
-  j7
-], K7 = /* @__PURE__ */ i({
+}), vc = /* @__PURE__ */ h(S3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconHidden.vue"]]), B3 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M3.95709826,8.41510662 L11.47855,3.81866389 C11.7986624,3.62303967 12.2013376,3.62303967 12.52145,3.81866389 L20.0429,8.41510557 C20.6374094,8.77841684 21,9.42493654 21,10.1216692 L21,19.0000642 C21,20.1046337 20.1045695,21.0000642 19,21.0000642 L4.99998155,21.0000673 C3.89541205,21.0000673 2.99998155,20.1046368 2.99998155,19.0000673 C2.99998155,19.0000663 2.99998155,19.0000652 2.99998155,19.0000642 L2.99999828,10.1216672 C2.99999935,9.42493561 3.36258984,8.77841732 3.95709826,8.41510662 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M13.8,12 C13.1562,12 12.4033,12.7298529 12,13.2 C11.5967,12.7298529 10.8438,12 10.2,12 C9.0604,12 8.4,12.8888719 8.4,14.0201635 C8.4,15.2733878 9.6,16.6 12,18 C14.4,16.6 15.6,15.3 15.6,14.1 C15.6,12.9687084 14.9396,12 13.8,12 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    })
+  ],
+  -1
+  /* HOISTED */
+), q3 = [
+  B3
+], A3 = /* @__PURE__ */ i({
+  __name: "IconHomeheart",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...q3],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), yc = /* @__PURE__ */ h(A3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconHomeheart.vue"]]), b3 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M3.95709826,8.41510662 L11.47855,3.81866389 C11.7986624,3.62303967 12.2013376,3.62303967 12.52145,3.81866389 L20.0429,8.41510557 C20.6374094,8.77841684 21,9.42493654 21,10.1216692 L21,19.0000642 C21,20.1046337 20.1045695,21.0000642 19,21.0000642 L4.99998155,21.0000673 C3.89541205,21.0000673 2.99998155,20.1046368 2.99998155,19.0000673 L2.99999828,10.1216672 C2.99999935,9.42493561 3.36258984,8.77841732 3.95709826,8.41510662 Z M10,13 C9.44771525,13 9,13.4477153 9,14 L9,17 C9,17.5522847 9.44771525,18 10,18 L14,18 C14.5522847,18 15,17.5522847 15,17 L15,14 C15,13.4477153 14.5522847,13 14,13 L10,13 Z",
+      fill: "#000000"
+    })
+  ],
+  -1
+  /* HOISTED */
+), D3 = [
+  b3
+], F3 = /* @__PURE__ */ i({
+  __name: "IconHome",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...D3],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), mc = /* @__PURE__ */ h(F3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconHome.vue"]]), T3 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M22,17 L22,21 C22,22.1045695 21.1045695,23 20,23 L4,23 C2.8954305,23 2,22.1045695 2,21 L2,17 L6.27924078,17 L6.82339262,18.6324555 C7.09562072,19.4491398 7.8598984,20 8.72075922,20 L15.381966,20 C16.1395101,20 16.8320364,19.5719952 17.1708204,18.8944272 L18.118034,17 L22,17 Z" fill="#000000"></path><path d="M2.5625,15 L5.92654389,9.01947752 C6.2807805,8.38972356 6.94714834,8 7.66969497,8 L16.330305,8 C17.0528517,8 17.7192195,8.38972356 18.0734561,9.01947752 L21.4375,15 L18.118034,15 C17.3604899,15 16.6679636,15.4280048 16.3291796,16.1055728 L15.381966,18 L8.72075922,18 L8.17660738,16.3675445 C7.90437928,15.5508602 7.1401016,15 6.27924078,15 L2.5625,15 Z" fill="#000000" opacity="0.3"></path><path d="M11.1288761,0.733697713 L11.1288761,2.69017121 L9.12120481,2.69017121 C8.84506244,2.69017121 8.62120481,2.91402884 8.62120481,3.19017121 L8.62120481,4.21346991 C8.62120481,4.48961229 8.84506244,4.71346991 9.12120481,4.71346991 L11.1288761,4.71346991 L11.1288761,6.66994341 C11.1288761,6.94608579 11.3527337,7.16994341 11.6288761,7.16994341 C11.7471877,7.16994341 11.8616664,7.12798964 11.951961,7.05154023 L15.4576222,4.08341738 C15.6683723,3.90498251 15.6945689,3.58948575 15.5161341,3.37873564 C15.4982803,3.35764848 15.4787093,3.33807751 15.4576222,3.32022374 L11.951961,0.352100892 C11.7412109,0.173666017 11.4257142,0.199862688 11.2472793,0.410612793 C11.1708299,0.500907473 11.1288761,0.615386087 11.1288761,0.733697713 Z" fill="#000000" fill-rule="nonzero" transform="translate(11.959697, 3.661508) rotate(-270.000000) translate(-11.959697, -3.661508) "></path></g>', 1), R3 = [
+  T3
+], G3 = /* @__PURE__ */ i({
   __name: "IconIncomingbox",
   props: {
     size: { type: String, required: !1 }
@@ -5303,12 +6737,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...J7],
+      [...R3],
       16
       /* FULL_PROPS */
     ));
   }
-}), gs = /* @__PURE__ */ h(K7, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconIncomingbox.vue"]]), X7 = /* @__PURE__ */ t(
+}), $c = /* @__PURE__ */ h(G3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconIncomingbox.vue"]]), U3 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -5336,9 +6770,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Y7 = [
-  X7
-], e6 = /* @__PURE__ */ i({
+), P3 = [
+  U3
+], W3 = /* @__PURE__ */ i({
   __name: "IconIncomingcall",
   props: {
     size: { type: String, required: !1 }
@@ -5356,12 +6790,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Y7],
+      [...P3],
       16
       /* FULL_PROPS */
     ));
   }
-}), xs = /* @__PURE__ */ h(e6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconIncomingcall.vue"]]), t6 = /* @__PURE__ */ t(
+}), Ic = /* @__PURE__ */ h(W3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconIncomingcall.vue"]]), E3 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -5390,9 +6824,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), n6 = [
-  t6
-], o6 = /* @__PURE__ */ i({
+), O3 = [
+  E3
+], H3 = /* @__PURE__ */ i({
   __name: "IconIncomingmail",
   props: {
     size: { type: String, required: !1 }
@@ -5410,14 +6844,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...n6],
+      [...O3],
       16
       /* FULL_PROPS */
     ));
   }
-}), vs = /* @__PURE__ */ h(o6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconIncomingmail.vue"]]), r6 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10"></circle><rect fill="#000000" x="11" y="10" width="2" height="7" rx="1"></rect><rect fill="#000000" x="11" y="7" width="2" height="2" rx="1"></rect></g>', 1), s6 = [
-  r6
-], i6 = /* @__PURE__ */ i({
+}), zc = /* @__PURE__ */ h(H3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconIncomingmail.vue"]]), N3 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10"></circle><rect fill="#000000" x="11" y="10" width="2" height="7" rx="1"></rect><rect fill="#000000" x="11" y="7" width="2" height="2" rx="1"></rect></g>', 1), V3 = [
+  N3
+], j3 = /* @__PURE__ */ i({
   __name: "IconInfocircle",
   props: {
     size: { type: String, required: !1 }
@@ -5435,12 +6869,168 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...s6],
+      [...V3],
       16
       /* FULL_PROPS */
     ));
   }
-}), ys = /* @__PURE__ */ h(i6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconInfocircle.vue"]]), l6 = /* @__PURE__ */ t(
+}), Mc = /* @__PURE__ */ h(j3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconInfocircle.vue"]]), K3 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("polygon", {
+      fill: "#000000",
+      opacity: "0.3",
+      transform: "translate(8.885842, 16.114158) rotate(-315.000000) translate(-8.885842, -16.114158) ",
+      points: "6.89784488 10.6187476 6.76452164 19.4882481 8.88584198 21.6095684 11.0071623 19.4882481 9.59294876 18.0740345 10.9659914 16.7009919 9.55177787 15.2867783 11.0071623 13.8313939 10.8837471 10.6187476"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M15.9852814,14.9852814 C12.6715729,14.9852814 9.98528137,12.2989899 9.98528137,8.98528137 C9.98528137,5.67157288 12.6715729,2.98528137 15.9852814,2.98528137 C19.2989899,2.98528137 21.9852814,5.67157288 21.9852814,8.98528137 C21.9852814,12.2989899 19.2989899,14.9852814 15.9852814,14.9852814 Z M16.1776695,9.07106781 C17.0060967,9.07106781 17.6776695,8.39949494 17.6776695,7.57106781 C17.6776695,6.74264069 17.0060967,6.07106781 16.1776695,6.07106781 C15.3492424,6.07106781 14.6776695,6.74264069 14.6776695,7.57106781 C14.6776695,8.39949494 15.3492424,9.07106781 16.1776695,9.07106781 Z",
+      fill: "#000000",
+      transform: "translate(15.985281, 8.985281) rotate(-315.000000) translate(-15.985281, -8.985281) "
+    })
+  ],
+  -1
+  /* HOISTED */
+), Q3 = [
+  K3
+], J3 = /* @__PURE__ */ i({
+  __name: "IconKey",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...Q3],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Zc = /* @__PURE__ */ h(J3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconKey.vue"]]), X3 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M7,5 L17,5 C17.5522847,5 18,5.44771525 18,6 C18,6.55228475 17.5522847,7 17,7 L7,7 C6.44771525,7 6,6.55228475 6,6 C6,5.44771525 6.44771525,5 7,5 Z M7,9 L17,9 C17.5522847,9 18,9.44771525 18,10 C18,10.5522847 17.5522847,11 17,11 L7,11 C6.44771525,11 6,10.5522847 6,10 C6,9.44771525 6.44771525,9 7,9 Z M7,13 L17,13 C17.5522847,13 18,13.4477153 18,14 C18,14.5522847 17.5522847,15 17,15 L7,15 C6.44771525,15 6,14.5522847 6,14 C6,13.4477153 6.44771525,13 7,13 Z M7,17 L17,17 C17.5522847,17 18,17.4477153 18,18 C18,18.5522847 17.5522847,19 17,19 L7,19 C6.44771525,19 6,18.5522847 6,18 C6,17.4477153 6.44771525,17 7,17 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M5.5,2 C6.32842712,2 7,2.67157288 7,3.5 L7,20.5 C7,21.3284271 6.32842712,22 5.5,22 C4.67157288,22 4,21.3284271 4,20.5 L4,3.5 C4,2.67157288 4.67157288,2 5.5,2 Z M18.5,2 C19.3284271,2 20,2.67157288 20,3.5 L20,20.5 C20,21.3284271 19.3284271,22 18.5,22 C17.6715729,22 17,21.3284271 17,20.5 L17,3.5 C17,2.67157288 17.6715729,2 18.5,2 Z",
+      fill: "#000000"
+    })
+  ],
+  -1
+  /* HOISTED */
+), Y3 = [
+  X3
+], e8 = /* @__PURE__ */ i({
+  __name: "IconLadder",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...Y3],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), kc = /* @__PURE__ */ h(e8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLadder.vue"]]), t8 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M10,19 L14,19 C15.1045695,19 16,19.8954305 16,21 L8,21 L8,21 C8,19.8954305 8.8954305,19 10,19 Z" fill="#000000"></path><rect fill="#000000" opacity="0.3" x="11" y="12" width="2" height="6" rx="1"></rect><rect fill="#FFFFFF" transform="translate(16.612973, 8.673634) rotate(-15.000000) translate(-16.612973, -8.673634) " x="15.6129734" y="6.17363361" width="2" height="5" rx="1"></rect><path d="M7.44151844,4 L16.5584816,4 C17.4193424,4 18.1836201,4.55086019 18.4558482,5.36754447 L21,13 L3,13 L5.54415184,5.36754447 C5.81637994,4.55086019 6.58065762,4 7.44151844,4 Z" fill="#000000"></path></g>', 1), n8 = [
+  t8
+], o8 = /* @__PURE__ */ i({
+  __name: "IconLamp1",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...n8],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Sc = /* @__PURE__ */ h(o8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLamp1.vue"]]), r8 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M12,2 C12.5522847,2 13,2.44771525 13,3 L13,11 C13,11.5522847 12.5522847,12 12,12 C11.4477153,12 11,11.5522847 11,11 L11,3 C11,2.44771525 11.4477153,2 12,2 Z" fill="#000000" opacity="0.3"></path><path d="M8.12601749,19 L15.8739825,19 C15.4299397,20.7252272 13.8638394,22 12,22 C10.1361606,22 8.57006028,20.7252272 8.12601749,19 Z" fill="#000000" opacity="0.3"></path><path d="M12,8 L12,8 C16.9705627,8 21,12.0294373 21,17 L3,17 L3,17 C3,12.0294373 7.02943725,8 12,8 Z" fill="#000000"></path></g>', 1), s8 = [
+  r8
+], i8 = /* @__PURE__ */ i({
+  __name: "IconLamp2",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...s8],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Bc = /* @__PURE__ */ h(i8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLamp2.vue"]]), l8 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -5471,9 +7061,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), c6 = [
-  l6
-], a6 = /* @__PURE__ */ i({
+), c8 = [
+  l8
+], a8 = /* @__PURE__ */ i({
   __name: "IconLayout3d",
   props: {
     size: { type: String, required: !1 }
@@ -5491,12 +7081,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...c6],
+      [...c8],
       16
       /* FULL_PROPS */
     ));
   }
-}), ms = /* @__PURE__ */ h(a6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayout3d.vue"]]), p6 = /* @__PURE__ */ t(
+}), qc = /* @__PURE__ */ h(a8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayout3d.vue"]]), p8 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -5527,9 +7117,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), h6 = [
-  p6
-], C6 = /* @__PURE__ */ i({
+), h8 = [
+  p8
+], C8 = /* @__PURE__ */ i({
   __name: "IconLayout4blocks",
   props: {
     size: { type: String, required: !1 }
@@ -5547,12 +7137,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...h6],
+      [...h8],
       16
       /* FULL_PROPS */
     ));
   }
-}), $s = /* @__PURE__ */ h(C6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayout4blocks.vue"]]), d6 = /* @__PURE__ */ t(
+}), Ac = /* @__PURE__ */ h(C8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayout4blocks.vue"]]), d8 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -5579,9 +7169,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), _6 = [
-  d6
-], u6 = /* @__PURE__ */ i({
+), _8 = [
+  d8
+], u8 = /* @__PURE__ */ i({
   __name: "IconLayoutarrange",
   props: {
     size: { type: String, required: !1 }
@@ -5599,12 +7189,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [..._6],
+      [..._8],
       16
       /* FULL_PROPS */
     ));
   }
-}), Is = /* @__PURE__ */ h(u6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayoutarrange.vue"]]), f6 = /* @__PURE__ */ t(
+}), bc = /* @__PURE__ */ h(u8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayoutarrange.vue"]]), f8 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -5635,9 +7225,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), w6 = [
-  f6
-], L6 = /* @__PURE__ */ i({
+), L8 = [
+  f8
+], w8 = /* @__PURE__ */ i({
   __name: "IconLayoutgrid",
   props: {
     size: { type: String, required: !1 }
@@ -5655,12 +7245,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...w6],
+      [...L8],
       16
       /* FULL_PROPS */
     ));
   }
-}), zs = /* @__PURE__ */ h(L6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayoutgrid.vue"]]), g6 = /* @__PURE__ */ t(
+}), Dc = /* @__PURE__ */ h(w8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayoutgrid.vue"]]), g8 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -5695,9 +7285,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), x6 = [
-  g6
-], v6 = /* @__PURE__ */ i({
+), x8 = [
+  g8
+], v8 = /* @__PURE__ */ i({
   __name: "IconLayouthorizontal",
   props: {
     size: { type: String, required: !1 }
@@ -5715,12 +7305,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...x6],
+      [...x8],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ms = /* @__PURE__ */ h(v6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayouthorizontal.vue"]]), y6 = /* @__PURE__ */ t(
+}), Fc = /* @__PURE__ */ h(v8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayouthorizontal.vue"]]), y8 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -5755,9 +7345,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), m6 = [
-  y6
-], $6 = /* @__PURE__ */ i({
+), m8 = [
+  y8
+], $8 = /* @__PURE__ */ i({
   __name: "IconLayoutleftpanel1",
   props: {
     size: { type: String, required: !1 }
@@ -5775,12 +7365,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...m6],
+      [...m8],
       16
       /* FULL_PROPS */
     ));
   }
-}), Zs = /* @__PURE__ */ h($6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayoutleftpanel1.vue"]]), I6 = /* @__PURE__ */ t(
+}), Tc = /* @__PURE__ */ h($8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayoutleftpanel1.vue"]]), I8 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -5811,9 +7401,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), z6 = [
-  I6
-], M6 = /* @__PURE__ */ i({
+), z8 = [
+  I8
+], M8 = /* @__PURE__ */ i({
   __name: "IconLayoutleftpanel2",
   props: {
     size: { type: String, required: !1 }
@@ -5831,12 +7421,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...z6],
+      [...z8],
       16
       /* FULL_PROPS */
     ));
   }
-}), ks = /* @__PURE__ */ h(M6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayoutleftpanel2.vue"]]), Z6 = /* @__PURE__ */ t(
+}), Rc = /* @__PURE__ */ h(M8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayoutleftpanel2.vue"]]), Z8 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -5871,9 +7461,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), k6 = [
-  Z6
-], S6 = /* @__PURE__ */ i({
+), k8 = [
+  Z8
+], S8 = /* @__PURE__ */ i({
   __name: "IconLayoutrightpanel1",
   props: {
     size: { type: String, required: !1 }
@@ -5891,12 +7481,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...k6],
+      [...k8],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ss = /* @__PURE__ */ h(S6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayoutrightpanel1.vue"]]), B6 = /* @__PURE__ */ t(
+}), Gc = /* @__PURE__ */ h(S8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayoutrightpanel1.vue"]]), B8 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -5927,9 +7517,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), q6 = [
-  B6
-], A6 = /* @__PURE__ */ i({
+), q8 = [
+  B8
+], A8 = /* @__PURE__ */ i({
   __name: "IconLayoutrightpanel2",
   props: {
     size: { type: String, required: !1 }
@@ -5947,12 +7537,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...q6],
+      [...q8],
       16
       /* FULL_PROPS */
     ));
   }
-}), Bs = /* @__PURE__ */ h(A6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayoutrightpanel2.vue"]]), b6 = /* @__PURE__ */ t(
+}), Uc = /* @__PURE__ */ h(A8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayoutrightpanel2.vue"]]), b8 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -5983,9 +7573,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), D6 = [
-  b6
-], R6 = /* @__PURE__ */ i({
+), D8 = [
+  b8
+], F8 = /* @__PURE__ */ i({
   __name: "IconLayouttoppanel1",
   props: {
     size: { type: String, required: !1 }
@@ -6003,12 +7593,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...D6],
+      [...D8],
       16
       /* FULL_PROPS */
     ));
   }
-}), qs = /* @__PURE__ */ h(R6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayouttoppanel1.vue"]]), T6 = /* @__PURE__ */ t(
+}), Pc = /* @__PURE__ */ h(F8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayouttoppanel1.vue"]]), T8 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -6039,9 +7629,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), U6 = [
-  T6
-], G6 = /* @__PURE__ */ i({
+), R8 = [
+  T8
+], G8 = /* @__PURE__ */ i({
   __name: "IconLayouttoppanel2",
   props: {
     size: { type: String, required: !1 }
@@ -6059,12 +7649,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...U6],
+      [...R8],
       16
       /* FULL_PROPS */
     ));
   }
-}), As = /* @__PURE__ */ h(G6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayouttoppanel2.vue"]]), P6 = /* @__PURE__ */ t(
+}), Wc = /* @__PURE__ */ h(G8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayouttoppanel2.vue"]]), U8 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -6095,9 +7685,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), O6 = [
-  P6
-], W6 = /* @__PURE__ */ i({
+), P8 = [
+  U8
+], W8 = /* @__PURE__ */ i({
   __name: "IconLayouttoppanel3",
   props: {
     size: { type: String, required: !1 }
@@ -6115,12 +7705,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...O6],
+      [...P8],
       16
       /* FULL_PROPS */
     ));
   }
-}), bs = /* @__PURE__ */ h(W6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayouttoppanel3.vue"]]), E6 = /* @__PURE__ */ t(
+}), Ec = /* @__PURE__ */ h(W8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayouttoppanel3.vue"]]), E8 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -6151,9 +7741,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), F6 = [
-  E6
-], H6 = /* @__PURE__ */ i({
+), O8 = [
+  E8
+], H8 = /* @__PURE__ */ i({
   __name: "IconLayouttoppanel4",
   props: {
     size: { type: String, required: !1 }
@@ -6171,12 +7761,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...F6],
+      [...O8],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ds = /* @__PURE__ */ h(H6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayouttoppanel4.vue"]]), N6 = /* @__PURE__ */ t(
+}), Oc = /* @__PURE__ */ h(H8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayouttoppanel4.vue"]]), N8 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -6207,9 +7797,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Q6 = [
-  N6
-], V6 = /* @__PURE__ */ i({
+), V8 = [
+  N8
+], j8 = /* @__PURE__ */ i({
   __name: "IconLayouttoppanel5",
   props: {
     size: { type: String, required: !1 }
@@ -6227,12 +7817,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Q6],
+      [...V8],
       16
       /* FULL_PROPS */
     ));
   }
-}), Rs = /* @__PURE__ */ h(V6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayouttoppanel5.vue"]]), j6 = /* @__PURE__ */ t(
+}), Hc = /* @__PURE__ */ h(j8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayouttoppanel5.vue"]]), K8 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -6267,9 +7857,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), J6 = [
-  j6
-], K6 = /* @__PURE__ */ i({
+), Q8 = [
+  K8
+], J8 = /* @__PURE__ */ i({
   __name: "IconLayouttoppanel6",
   props: {
     size: { type: String, required: !1 }
@@ -6287,12 +7877,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...J6],
+      [...Q8],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ts = /* @__PURE__ */ h(K6, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayouttoppanel6.vue"]]), X6 = /* @__PURE__ */ t(
+}), Nc = /* @__PURE__ */ h(J8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayouttoppanel6.vue"]]), X8 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -6327,9 +7917,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Y6 = [
-  X6
-], e3 = /* @__PURE__ */ i({
+), Y8 = [
+  X8
+], e9 = /* @__PURE__ */ i({
   __name: "IconLayoutvertical",
   props: {
     size: { type: String, required: !1 }
@@ -6347,12 +7937,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Y6],
+      [...Y8],
       16
       /* FULL_PROPS */
     ));
   }
-}), Us = /* @__PURE__ */ h(e3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayoutvertical.vue"]]), t3 = /* @__PURE__ */ t(
+}), Vc = /* @__PURE__ */ h(e9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLayoutvertical.vue"]]), t9 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -6378,9 +7968,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), n3 = [
-  t3
-], o3 = /* @__PURE__ */ i({
+), n9 = [
+  t9
+], o9 = /* @__PURE__ */ i({
   __name: "IconLeft3",
   props: {
     size: { type: String, required: !1 }
@@ -6398,12 +7988,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...n3],
+      [...n9],
       16
       /* FULL_PROPS */
     ));
   }
-}), Gs = /* @__PURE__ */ h(o3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLeft3.vue"]]), r3 = /* @__PURE__ */ t(
+}), jc = /* @__PURE__ */ h(o9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLeft3.vue"]]), r9 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -6432,9 +8022,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), s3 = [
-  r3
-], i3 = /* @__PURE__ */ i({
+), s9 = [
+  r9
+], i9 = /* @__PURE__ */ i({
   __name: "IconLeft2",
   props: {
     size: { type: String, required: !1 }
@@ -6452,12 +8042,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...s3],
+      [...s9],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ps = /* @__PURE__ */ h(i3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLeft2.vue"]]), l3 = /* @__PURE__ */ t(
+}), Kc = /* @__PURE__ */ h(i9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLeft2.vue"]]), l9 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -6488,9 +8078,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), c3 = [
-  l3
-], a3 = /* @__PURE__ */ i({
+), c9 = [
+  l9
+], a9 = /* @__PURE__ */ i({
   __name: "IconLeftcircle",
   props: {
     size: { type: String, required: !1 }
@@ -6508,12 +8098,69 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...c3],
+      [...c9],
       16
       /* FULL_PROPS */
     ));
   }
-}), Os = /* @__PURE__ */ h(a3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLeftcircle.vue"]]), p3 = /* @__PURE__ */ t(
+}), Qc = /* @__PURE__ */ h(a9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLeftcircle.vue"]]), p9 = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M5,3 L6,3 C6.55228475,3 7,3.44771525 7,4 L7,20 C7,20.5522847 6.55228475,21 6,21 L5,21 C4.44771525,21 4,20.5522847 4,20 L4,4 C4,3.44771525 4.44771525,3 5,3 Z M10,3 L11,3 C11.5522847,3 12,3.44771525 12,4 L12,20 C12,20.5522847 11.5522847,21 11,21 L10,21 C9.44771525,21 9,20.5522847 9,20 L9,4 C9,3.44771525 9.44771525,3 10,3 Z",
+      fill: "#000000"
+    }),
+    /* @__PURE__ */ t("rect", {
+      fill: "#000000",
+      opacity: "0.3",
+      transform: "translate(17.825568, 11.945519) rotate(-19.000000) translate(-17.825568, -11.945519) ",
+      x: "16.3255682",
+      y: "2.94551858",
+      width: "3",
+      height: "18",
+      rx: "1"
+    })
+  ],
+  -1
+  /* HOISTED */
+), h9 = [
+  p9
+], C9 = /* @__PURE__ */ i({
+  __name: "IconLibrary",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...h9],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Jc = /* @__PURE__ */ h(C9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLibrary.vue"]]), d9 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -6544,9 +8191,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), h3 = [
-  p3
-], C3 = /* @__PURE__ */ i({
+), _9 = [
+  d9
+], u9 = /* @__PURE__ */ i({
   __name: "IconLike",
   props: {
     size: { type: String, required: !1 }
@@ -6564,14 +8211,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...h3],
+      [..._9],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ws = /* @__PURE__ */ h(C3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLike.vue"]]), d3 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M8,4 C8.55228475,4 9,4.44771525 9,5 L9,17 L18,17 C18.5522847,17 19,17.4477153 19,18 C19,18.5522847 18.5522847,19 18,19 L9,19 C8.44771525,19 8,18.5522847 8,18 C7.44771525,18 7,17.5522847 7,17 L7,6 L5,6 C4.44771525,6 4,5.55228475 4,5 C4,4.44771525 4.44771525,4 5,4 L8,4 Z" fill="#000000" opacity="0.3"></path><rect fill="#000000" opacity="0.3" x="11" y="7" width="8" height="8" rx="4"></rect><circle fill="#000000" cx="8" cy="18" r="3"></circle></g>', 1), _3 = [
-  d3
-], u3 = /* @__PURE__ */ i({
+}), Xc = /* @__PURE__ */ h(u9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLike.vue"]]), f9 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M8,4 C8.55228475,4 9,4.44771525 9,5 L9,17 L18,17 C18.5522847,17 19,17.4477153 19,18 C19,18.5522847 18.5522847,19 18,19 L9,19 C8.44771525,19 8,18.5522847 8,18 C7.44771525,18 7,17.5522847 7,17 L7,6 L5,6 C4.44771525,6 4,5.55228475 4,5 C4,4.44771525 4.44771525,4 5,4 L8,4 Z" fill="#000000" opacity="0.3"></path><rect fill="#000000" opacity="0.3" x="11" y="7" width="8" height="8" rx="4"></rect><circle fill="#000000" cx="8" cy="18" r="3"></circle></g>', 1), L9 = [
+  f9
+], w9 = /* @__PURE__ */ i({
   __name: "IconLoader",
   props: {
     size: { type: String, required: !1 }
@@ -6589,12 +8236,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [..._3],
+      [...L9],
       16
       /* FULL_PROPS */
     ));
   }
-}), Es = /* @__PURE__ */ h(u3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLoader.vue"]]), f3 = /* @__PURE__ */ t(
+}), Yc = /* @__PURE__ */ h(w9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLoader.vue"]]), g9 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -6616,9 +8263,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), w3 = [
-  f3
-], L3 = /* @__PURE__ */ i({
+), x9 = [
+  g9
+], v9 = /* @__PURE__ */ i({
   __name: "IconLoading",
   props: {
     size: { type: String, required: !1 }
@@ -6636,12 +8283,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...w3],
+      [...x9],
       16
       /* FULL_PROPS */
     ));
   }
-}), Fs = /* @__PURE__ */ h(L3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLoading.vue"]]), g3 = /* @__PURE__ */ t(
+}), ea = /* @__PURE__ */ h(v9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLoading.vue"]]), y9 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -6670,9 +8317,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), x3 = [
-  g3
-], v3 = /* @__PURE__ */ i({
+), m9 = [
+  y9
+], $9 = /* @__PURE__ */ i({
   __name: "IconLockcircle",
   props: {
     size: { type: String, required: !1 }
@@ -6690,12 +8337,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...x3],
+      [...m9],
       16
       /* FULL_PROPS */
     ));
   }
-}), Hs = /* @__PURE__ */ h(v3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLockcircle.vue"]]), y3 = /* @__PURE__ */ t(
+}), ta = /* @__PURE__ */ h($9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLockcircle.vue"]]), I9 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -6722,9 +8369,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), m3 = [
-  y3
-], $3 = /* @__PURE__ */ i({
+), z9 = [
+  I9
+], M9 = /* @__PURE__ */ i({
   __name: "IconLockoverturning",
   props: {
     size: { type: String, required: !1 }
@@ -6742,12 +8389,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...m3],
+      [...z9],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ns = /* @__PURE__ */ h($3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLockoverturning.vue"]]), I3 = /* @__PURE__ */ t(
+}), na = /* @__PURE__ */ h(M9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLockoverturning.vue"]]), Z9 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -6767,9 +8414,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), z3 = [
-  I3
-], M3 = /* @__PURE__ */ i({
+), k9 = [
+  Z9
+], S9 = /* @__PURE__ */ i({
   __name: "IconLock",
   props: {
     size: { type: String, required: !1 }
@@ -6787,12 +8434,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...z3],
+      [...k9],
       16
       /* FULL_PROPS */
     ));
   }
-}), Qs = /* @__PURE__ */ h(M3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLock.vue"]]), Z3 = /* @__PURE__ */ t(
+}), oa = /* @__PURE__ */ h(S9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconLock.vue"]]), B9 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -6820,9 +8467,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), k3 = [
-  Z3
-], S3 = /* @__PURE__ */ i({
+), q9 = [
+  B9
+], A9 = /* @__PURE__ */ i({
   __name: "IconMC",
   props: {
     size: { type: String, required: !1 }
@@ -6840,12 +8487,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...k3],
+      [...q9],
       16
       /* FULL_PROPS */
     ));
   }
-}), Vs = /* @__PURE__ */ h(S3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMC.vue"]]), B3 = /* @__PURE__ */ t(
+}), ra = /* @__PURE__ */ h(A9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMC.vue"]]), b9 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -6867,9 +8514,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), q3 = [
-  B3
-], A3 = /* @__PURE__ */ i({
+), D9 = [
+  b9
+], F9 = /* @__PURE__ */ i({
   __name: "IconMailat",
   props: {
     size: { type: String, required: !1 }
@@ -6887,12 +8534,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...q3],
+      [...D9],
       16
       /* FULL_PROPS */
     ));
   }
-}), js = /* @__PURE__ */ h(A3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMailat.vue"]]), b3 = /* @__PURE__ */ t(
+}), sa = /* @__PURE__ */ h(F9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMailat.vue"]]), T9 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -6919,9 +8566,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), D3 = [
-  b3
-], R3 = /* @__PURE__ */ i({
+), R9 = [
+  T9
+], G9 = /* @__PURE__ */ i({
   __name: "IconMailattachment",
   props: {
     size: { type: String, required: !1 }
@@ -6939,64 +8586,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...D3],
+      [...R9],
       16
       /* FULL_PROPS */
     ));
   }
-}), Js = /* @__PURE__ */ h(R3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMailattachment.vue"]]), T3 = /* @__PURE__ */ t(
-  "g",
-  {
-    stroke: "none",
-    "stroke-width": "1",
-    fill: "none",
-    "fill-rule": "evenodd"
-  },
-  [
-    /* @__PURE__ */ t("rect", {
-      x: "0",
-      y: "0",
-      width: "24",
-      height: "24"
-    }),
-    /* @__PURE__ */ t("path", {
-      d: "M22,15 L22,19 C22,20.1045695 21.1045695,21 20,21 L4,21 C2.8954305,21 2,20.1045695 2,19 L2,15 L6.27924078,15 L6.82339262,16.6324555 C7.09562072,17.4491398 7.8598984,18 8.72075922,18 L15.381966,18 C16.1395101,18 16.8320364,17.5719952 17.1708204,16.8944272 L18.118034,15 L22,15 Z",
-      fill: "#000000"
-    }),
-    /* @__PURE__ */ t("path", {
-      d: "M2.5625,13 L5.92654389,7.01947752 C6.2807805,6.38972356 6.94714834,6 7.66969497,6 L16.330305,6 C17.0528517,6 17.7192195,6.38972356 18.0734561,7.01947752 L21.4375,13 L18.118034,13 C17.3604899,13 16.6679636,13.4280048 16.3291796,14.1055728 L15.381966,16 L8.72075922,16 L8.17660738,14.3675445 C7.90437928,13.5508602 7.1401016,13 6.27924078,13 L2.5625,13 Z",
-      fill: "#000000",
-      opacity: "0.3"
-    })
-  ],
-  -1
-  /* HOISTED */
-), U3 = [
-  T3
-], G3 = /* @__PURE__ */ i({
-  __name: "IconMailbox",
-  props: {
-    size: { type: String, required: !1 }
-  },
-  setup(n) {
-    const { size: e } = n, o = l(() => ({
-      width: e ? `${e}px` : "16px",
-      height: e ? `${e}px` : "16px"
-    }));
-    return (r, s) => (c(), a(
-      "svg",
-      p({
-        xmlns: "http://www.w3.org/2000/svg",
-        style: o.value,
-        viewBox: "0 0 24 24",
-        fill: "currentColor"
-      }, r.rest),
-      [...U3],
-      16
-      /* FULL_PROPS */
-    ));
-  }
-}), Ks = /* @__PURE__ */ h(G3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMailbox.vue"]]), P3 = /* @__PURE__ */ t(
+}), ia = /* @__PURE__ */ h(G9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMailattachment.vue"]]), U9 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -7023,9 +8618,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), O3 = [
-  P3
-], W3 = /* @__PURE__ */ i({
+), P9 = [
+  U9
+], W9 = /* @__PURE__ */ i({
   __name: "IconMailerror",
   props: {
     size: { type: String, required: !1 }
@@ -7043,12 +8638,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...O3],
+      [...P9],
       16
       /* FULL_PROPS */
     ));
   }
-}), Xs = /* @__PURE__ */ h(W3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMailerror.vue"]]), E3 = /* @__PURE__ */ t(
+}), la = /* @__PURE__ */ h(W9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMailerror.vue"]]), E9 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -7075,9 +8670,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), F3 = [
-  E3
-], H3 = /* @__PURE__ */ i({
+), O9 = [
+  E9
+], H9 = /* @__PURE__ */ i({
   __name: "IconMailheart",
   props: {
     size: { type: String, required: !1 }
@@ -7095,12 +8690,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...F3],
+      [...O9],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ys = /* @__PURE__ */ h(H3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMailheart.vue"]]), N3 = /* @__PURE__ */ t(
+}), ca = /* @__PURE__ */ h(H9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMailheart.vue"]]), N9 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -7127,9 +8722,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Q3 = [
-  N3
-], V3 = /* @__PURE__ */ i({
+), V9 = [
+  N9
+], j9 = /* @__PURE__ */ i({
   __name: "IconMaillocked",
   props: {
     size: { type: String, required: !1 }
@@ -7147,12 +8742,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Q3],
+      [...V9],
       16
       /* FULL_PROPS */
     ));
   }
-}), ei = /* @__PURE__ */ h(V3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMaillocked.vue"]]), j3 = /* @__PURE__ */ t(
+}), aa = /* @__PURE__ */ h(j9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMaillocked.vue"]]), K9 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -7181,9 +8776,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), J3 = [
-  j3
-], K3 = /* @__PURE__ */ i({
+), Q9 = [
+  K9
+], J9 = /* @__PURE__ */ i({
   __name: "IconMailnotification",
   props: {
     size: { type: String, required: !1 }
@@ -7201,12 +8796,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...J3],
+      [...Q9],
       16
       /* FULL_PROPS */
     ));
   }
-}), ti = /* @__PURE__ */ h(K3, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMailnotification.vue"]]), X3 = /* @__PURE__ */ t(
+}), pa = /* @__PURE__ */ h(J9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMailnotification.vue"]]), X9 = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -7233,9 +8828,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Y3 = [
-  X3
-], e8 = /* @__PURE__ */ i({
+), Y9 = [
+  X9
+], ee = /* @__PURE__ */ i({
   __name: "IconMailopened",
   props: {
     size: { type: String, required: !1 }
@@ -7253,12 +8848,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Y3],
+      [...Y9],
       16
       /* FULL_PROPS */
     ));
   }
-}), ni = /* @__PURE__ */ h(e8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMailopened.vue"]]), t8 = /* @__PURE__ */ t(
+}), ha = /* @__PURE__ */ h(ee, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMailopened.vue"]]), te = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -7285,9 +8880,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), n8 = [
-  t8
-], o8 = /* @__PURE__ */ i({
+), ne = [
+  te
+], oe = /* @__PURE__ */ i({
   __name: "IconMailunocked",
   props: {
     size: { type: String, required: !1 }
@@ -7305,12 +8900,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...n8],
+      [...ne],
       16
       /* FULL_PROPS */
     ));
   }
-}), oi = /* @__PURE__ */ h(o8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMailunocked.vue"]]), r8 = /* @__PURE__ */ t(
+}), Ca = /* @__PURE__ */ h(oe, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMailunocked.vue"]]), re = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -7332,9 +8927,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), s8 = [
-  r8
-], i8 = /* @__PURE__ */ i({
+), se = [
+  re
+], ie = /* @__PURE__ */ i({
   __name: "IconMail",
   props: {
     size: { type: String, required: !1 }
@@ -7352,12 +8947,116 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...s8],
+      [...se],
       16
       /* FULL_PROPS */
     ));
   }
-}), ri = /* @__PURE__ */ h(i8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMail.vue"]]), l8 = /* @__PURE__ */ t(
+}), da = /* @__PURE__ */ h(ie, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMail.vue"]]), le = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M8,6 L20.5,6 C21.3284271,6 22,6.67157288 22,7.5 C22,8.32842712 21.3284271,9 20.5,9 L8,9 L8,19.5 C8,20.3284271 7.32842712,21 6.5,21 C5.67157288,21 5,20.3284271 5,19.5 L5,9 L3.5,9 C2.67157288,9 2,8.32842712 2,7.5 C2,6.67157288 2.67157288,6 3.5,6 L5,6 L5,4.5 C5,3.67157288 5.67157288,3 6.5,3 C7.32842712,3 8,3.67157288 8,4.5 L8,6 Z",
+      fill: "#000000"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M10,11 L20.5,11 C21.3284271,11 22,11.6715729 22,12.5 L22,15 C22,17.209139 20.209139,19 18,19 L11.5,19 C10.6715729,19 10,18.3284271 10,17.5 L10,11 Z M20,12 C19.4477153,12 19,12.4477153 19,13 L19,16 C19,16.5522847 19.4477153,17 20,17 C20.5522847,17 21,16.5522847 21,16 L21,13 C21,12.4477153 20.5522847,12 20,12 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    })
+  ],
+  -1
+  /* HOISTED */
+), ce = [
+  le
+], ae = /* @__PURE__ */ i({
+  __name: "IconMailbox",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...ce],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), _a = /* @__PURE__ */ h(ae, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMailbox.vue"]]), pe = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M22,15 L22,19 C22,20.1045695 21.1045695,21 20,21 L4,21 C2.8954305,21 2,20.1045695 2,19 L2,15 L6.27924078,15 L6.82339262,16.6324555 C7.09562072,17.4491398 7.8598984,18 8.72075922,18 L15.381966,18 C16.1395101,18 16.8320364,17.5719952 17.1708204,16.8944272 L18.118034,15 L22,15 Z",
+      fill: "#000000"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M2.5625,13 L5.92654389,7.01947752 C6.2807805,6.38972356 6.94714834,6 7.66969497,6 L16.330305,6 C17.0528517,6 17.7192195,6.38972356 18.0734561,7.01947752 L21.4375,13 L18.118034,13 C17.3604899,13 16.6679636,13.4280048 16.3291796,14.1055728 L15.381966,16 L8.72075922,16 L8.17660738,14.3675445 C7.90437928,13.5508602 7.1401016,13 6.27924078,13 L2.5625,13 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    })
+  ],
+  -1
+  /* HOISTED */
+), he = [
+  pe
+], Ce = /* @__PURE__ */ i({
+  __name: "IconMailbox1",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...he],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), ua = /* @__PURE__ */ h(Ce, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMailbox1.vue"]]), de = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -7377,9 +9076,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), c8 = [
-  l8
-], a8 = /* @__PURE__ */ i({
+), _e = [
+  de
+], ue = /* @__PURE__ */ i({
   __name: "IconMinuscopy",
   props: {
     size: { type: String, required: !1 }
@@ -7397,12 +9096,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...c8],
+      [..._e],
       16
       /* FULL_PROPS */
     ));
   }
-}), si = /* @__PURE__ */ h(a8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMinuscopy.vue"]]), p8 = /* @__PURE__ */ t(
+}), fa = /* @__PURE__ */ h(ue, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMinuscopy.vue"]]), fe = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -7435,9 +9134,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), h8 = [
-  p8
-], C8 = /* @__PURE__ */ i({
+), Le = [
+  fe
+], we = /* @__PURE__ */ i({
   __name: "IconMinus",
   props: {
     size: { type: String, required: !1 }
@@ -7455,12 +9154,65 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...h8],
+      [...Le],
       16
       /* FULL_PROPS */
     ));
   }
-}), ii = /* @__PURE__ */ h(C8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMinus.vue"]]), d8 = /* @__PURE__ */ t(
+}), La = /* @__PURE__ */ h(we, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMinus.vue"]]), ge = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M13,17.0484323 L13,18 L14,18 C15.1045695,18 16,18.8954305 16,20 L8,20 C8,18.8954305 8.8954305,18 10,18 L11,18 L11,17.0482312 C6.89844817,16.5925472 3.58685702,13.3691811 3.07555009,9.22038742 C3.00799634,8.67224972 3.3975866,8.17313318 3.94572429,8.10557943 C4.49386199,8.03802567 4.99297853,8.42761593 5.06053229,8.97575363 C5.4896663,12.4577884 8.46049164,15.1035129 12.0008191,15.1035129 C15.577644,15.1035129 18.5681939,12.4043008 18.9524872,8.87772126 C19.0123158,8.32868667 19.505897,7.93210686 20.0549316,7.99193546 C20.6039661,8.05176407 21.000546,8.54534521 20.9407173,9.09437981 C20.4824216,13.3000638 17.1471597,16.5885839 13,17.0484323 Z",
+      fill: "#000000",
+      "fill-rule": "nonzero"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M12,14 C8.6862915,14 6,11.3137085 6,8 C6,4.6862915 8.6862915,2 12,2 C15.3137085,2 18,4.6862915 18,8 C18,11.3137085 15.3137085,14 12,14 Z M8.81595773,7.80077353 C8.79067542,7.43921955 8.47708263,7.16661749 8.11552864,7.19189981 C7.75397465,7.21718213 7.4813726,7.53077492 7.50665492,7.89232891 C7.62279197,9.55316612 8.39667037,10.8635466 9.79502238,11.7671393 C10.099435,11.9638458 10.5056723,11.8765328 10.7023788,11.5721203 C10.8990854,11.2677077 10.8117724,10.8614704 10.5073598,10.6647638 C9.4559885,9.98538454 8.90327706,9.04949813 8.81595773,7.80077353 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    })
+  ],
+  -1
+  /* HOISTED */
+), xe = [
+  ge
+], ve = /* @__PURE__ */ i({
+  __name: "IconMirror",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...xe],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), wa = /* @__PURE__ */ h(ve, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMirror.vue"]]), ye = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -7487,9 +9239,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), _8 = [
-  d8
-], u8 = /* @__PURE__ */ i({
+), me = [
+  ye
+], $e = /* @__PURE__ */ i({
   __name: "IconMissedcall",
   props: {
     size: { type: String, required: !1 }
@@ -7507,12 +9259,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [..._8],
+      [...me],
       16
       /* FULL_PROPS */
     ));
   }
-}), li = /* @__PURE__ */ h(u8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMissedcall.vue"]]), f8 = /* @__PURE__ */ t(
+}), ga = /* @__PURE__ */ h($e, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMissedcall.vue"]]), Ie = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -7540,9 +9292,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), w8 = [
-  f8
-], L8 = /* @__PURE__ */ i({
+), ze = [
+  Ie
+], Me = /* @__PURE__ */ i({
   __name: "IconMoney",
   props: {
     size: { type: String, required: !1 }
@@ -7560,12 +9312,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...w8],
+      [...ze],
       16
       /* FULL_PROPS */
     ));
   }
-}), ci = /* @__PURE__ */ h(L8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMoney.vue"]]), g8 = /* @__PURE__ */ t(
+}), xa = /* @__PURE__ */ h(Me, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconMoney.vue"]]), Ze = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -7594,9 +9346,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), x8 = [
-  g8
-], v8 = /* @__PURE__ */ i({
+), ke = [
+  Ze
+], Se = /* @__PURE__ */ i({
   __name: "IconNotification2",
   props: {
     size: { type: String, required: !1 }
@@ -7614,12 +9366,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...x8],
+      [...ke],
       16
       /* FULL_PROPS */
     ));
   }
-}), ai = /* @__PURE__ */ h(v8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconNotification2.vue"]]), y8 = /* @__PURE__ */ t(
+}), va = /* @__PURE__ */ h(Se, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconNotification2.vue"]]), Be = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -7644,9 +9396,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), m8 = [
-  y8
-], $8 = /* @__PURE__ */ i({
+), qe = [
+  Be
+], Ae = /* @__PURE__ */ i({
   __name: "IconNotifications1",
   props: {
     size: { type: String, required: !1 }
@@ -7664,12 +9416,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...m8],
+      [...qe],
       16
       /* FULL_PROPS */
     ));
   }
-}), pi = /* @__PURE__ */ h($8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconNotifications1.vue"]]), I8 = /* @__PURE__ */ t(
+}), ya = /* @__PURE__ */ h(Ae, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconNotifications1.vue"]]), be = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -7701,9 +9453,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), z8 = [
-  I8
-], M8 = /* @__PURE__ */ i({
+), De = [
+  be
+], Fe = /* @__PURE__ */ i({
   __name: "IconOption",
   props: {
     size: { type: String, required: !1 }
@@ -7721,14 +9473,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...z8],
+      [...De],
       16
       /* FULL_PROPS */
     ));
   }
-}), hi = /* @__PURE__ */ h(M8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconOption.vue"]]), Z8 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="12" cy="5" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="19" r="2"></circle></g>', 1), k8 = [
-  Z8
-], S8 = /* @__PURE__ */ i({
+}), ma = /* @__PURE__ */ h(Fe, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconOption.vue"]]), Te = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="12" cy="5" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="19" r="2"></circle></g>', 1), Re = [
+  Te
+], Ge = /* @__PURE__ */ i({
   __name: "IconOther1",
   props: {
     size: { type: String, required: !1 }
@@ -7746,14 +9498,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...k8],
+      [...Re],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ci = /* @__PURE__ */ h(S8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconOther1.vue"]]), B8 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g>', 1), q8 = [
-  B8
-], A8 = /* @__PURE__ */ i({
+}), $a = /* @__PURE__ */ h(Ge, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconOther1.vue"]]), Ue = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g>', 1), Pe = [
+  Ue
+], We = /* @__PURE__ */ i({
   __name: "IconOther2",
   props: {
     size: { type: String, required: !1 }
@@ -7771,14 +9523,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...q8],
+      [...Pe],
       16
       /* FULL_PROPS */
     ));
   }
-}), di = /* @__PURE__ */ h(A8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconOther2.vue"]]), b8 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M22,17 L22,21 C22,22.1045695 21.1045695,23 20,23 L4,23 C2.8954305,23 2,22.1045695 2,21 L2,17 L6.27924078,17 L6.82339262,18.6324555 C7.09562072,19.4491398 7.8598984,20 8.72075922,20 L15.381966,20 C16.1395101,20 16.8320364,19.5719952 17.1708204,18.8944272 L18.118034,17 L22,17 Z" fill="#000000"></path><path d="M2.5625,15 L5.92654389,9.01947752 C6.2807805,8.38972356 6.94714834,8 7.66969497,8 L16.330305,8 C17.0528517,8 17.7192195,8.38972356 18.0734561,9.01947752 L21.4375,15 L18.118034,15 C17.3604899,15 16.6679636,15.4280048 16.3291796,16.1055728 L15.381966,18 L8.72075922,18 L8.17660738,16.3675445 C7.90437928,15.5508602 7.1401016,15 6.27924078,15 L2.5625,15 Z" fill="#000000" opacity="0.3"></path><path d="M11.1288761,0.733697713 L11.1288761,2.69017121 L9.12120481,2.69017121 C8.84506244,2.69017121 8.62120481,2.91402884 8.62120481,3.19017121 L8.62120481,4.21346991 C8.62120481,4.48961229 8.84506244,4.71346991 9.12120481,4.71346991 L11.1288761,4.71346991 L11.1288761,6.66994341 C11.1288761,6.94608579 11.3527337,7.16994341 11.6288761,7.16994341 C11.7471877,7.16994341 11.8616664,7.12798964 11.951961,7.05154023 L15.4576222,4.08341738 C15.6683723,3.90498251 15.6945689,3.58948575 15.5161341,3.37873564 C15.4982803,3.35764848 15.4787093,3.33807751 15.4576222,3.32022374 L11.951961,0.352100892 C11.7412109,0.173666017 11.4257142,0.199862688 11.2472793,0.410612793 C11.1708299,0.500907473 11.1288761,0.615386087 11.1288761,0.733697713 Z" fill="#000000" fill-rule="nonzero" transform="translate(11.959697, 3.661508) rotate(-90.000000) translate(-11.959697, -3.661508) "></path></g>', 1), D8 = [
-  b8
-], R8 = /* @__PURE__ */ i({
+}), Ia = /* @__PURE__ */ h(We, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconOther2.vue"]]), Ee = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M22,17 L22,21 C22,22.1045695 21.1045695,23 20,23 L4,23 C2.8954305,23 2,22.1045695 2,21 L2,17 L6.27924078,17 L6.82339262,18.6324555 C7.09562072,19.4491398 7.8598984,20 8.72075922,20 L15.381966,20 C16.1395101,20 16.8320364,19.5719952 17.1708204,18.8944272 L18.118034,17 L22,17 Z" fill="#000000"></path><path d="M2.5625,15 L5.92654389,9.01947752 C6.2807805,8.38972356 6.94714834,8 7.66969497,8 L16.330305,8 C17.0528517,8 17.7192195,8.38972356 18.0734561,9.01947752 L21.4375,15 L18.118034,15 C17.3604899,15 16.6679636,15.4280048 16.3291796,16.1055728 L15.381966,18 L8.72075922,18 L8.17660738,16.3675445 C7.90437928,15.5508602 7.1401016,15 6.27924078,15 L2.5625,15 Z" fill="#000000" opacity="0.3"></path><path d="M11.1288761,0.733697713 L11.1288761,2.69017121 L9.12120481,2.69017121 C8.84506244,2.69017121 8.62120481,2.91402884 8.62120481,3.19017121 L8.62120481,4.21346991 C8.62120481,4.48961229 8.84506244,4.71346991 9.12120481,4.71346991 L11.1288761,4.71346991 L11.1288761,6.66994341 C11.1288761,6.94608579 11.3527337,7.16994341 11.6288761,7.16994341 C11.7471877,7.16994341 11.8616664,7.12798964 11.951961,7.05154023 L15.4576222,4.08341738 C15.6683723,3.90498251 15.6945689,3.58948575 15.5161341,3.37873564 C15.4982803,3.35764848 15.4787093,3.33807751 15.4576222,3.32022374 L11.951961,0.352100892 C11.7412109,0.173666017 11.4257142,0.199862688 11.2472793,0.410612793 C11.1708299,0.500907473 11.1288761,0.615386087 11.1288761,0.733697713 Z" fill="#000000" fill-rule="nonzero" transform="translate(11.959697, 3.661508) rotate(-90.000000) translate(-11.959697, -3.661508) "></path></g>', 1), Oe = [
+  Ee
+], He = /* @__PURE__ */ i({
   __name: "IconOutgoingbox",
   props: {
     size: { type: String, required: !1 }
@@ -7796,12 +9548,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...D8],
+      [...Oe],
       16
       /* FULL_PROPS */
     ));
   }
-}), _i = /* @__PURE__ */ h(R8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconOutgoingbox.vue"]]), T8 = /* @__PURE__ */ t(
+}), za = /* @__PURE__ */ h(He, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconOutgoingbox.vue"]]), Ne = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -7829,9 +9581,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), U8 = [
-  T8
-], G8 = /* @__PURE__ */ i({
+), Ve = [
+  Ne
+], je = /* @__PURE__ */ i({
   __name: "IconOutgoingcall",
   props: {
     size: { type: String, required: !1 }
@@ -7849,12 +9601,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...U8],
+      [...Ve],
       16
       /* FULL_PROPS */
     ));
   }
-}), ui = /* @__PURE__ */ h(G8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconOutgoingcall.vue"]]), P8 = /* @__PURE__ */ t(
+}), Ma = /* @__PURE__ */ h(je, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconOutgoingcall.vue"]]), Ke = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -7883,9 +9635,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), O8 = [
-  P8
-], W8 = /* @__PURE__ */ i({
+), Qe = [
+  Ke
+], Je = /* @__PURE__ */ i({
   __name: "IconOutgoingmail",
   props: {
     size: { type: String, required: !1 }
@@ -7903,12 +9655,37 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...O8],
+      [...Qe],
       16
       /* FULL_PROPS */
     ));
   }
-}), fi = /* @__PURE__ */ h(W8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconOutgoingmail.vue"]]), E8 = /* @__PURE__ */ t(
+}), Za = /* @__PURE__ */ h(Je, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconOutgoingmail.vue"]]), Xe = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" x="2" y="4" width="20" height="16" rx="2"></rect><polygon fill="#000000" opacity="0.3" points="4 20 10.5 11 17 20"></polygon><polygon fill="#000000" points="11 20 15.5 14 20 20"></polygon><circle fill="#000000" opacity="0.3" cx="18.5" cy="8.5" r="1.5"></circle></g>', 1), Ye = [
+  Xe
+], et = /* @__PURE__ */ i({
+  __name: "IconPicture",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...Ye],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), ka = /* @__PURE__ */ h(et, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconPicture.vue"]]), tt = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -7938,9 +9715,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), F8 = [
-  E8
-], H8 = /* @__PURE__ */ i({
+), nt = [
+  tt
+], ot = /* @__PURE__ */ i({
   __name: "IconPluscopy",
   props: {
     size: { type: String, required: !1 }
@@ -7958,12 +9735,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...F8],
+      [...nt],
       16
       /* FULL_PROPS */
     ));
   }
-}), wi = /* @__PURE__ */ h(H8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconPluscopy.vue"]]), N8 = /* @__PURE__ */ t(
+}), Sa = /* @__PURE__ */ h(ot, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconPluscopy.vue"]]), rt = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -7992,9 +9769,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Q8 = [
-  N8
-], V8 = /* @__PURE__ */ i({
+), st = [
+  rt
+], it = /* @__PURE__ */ i({
   __name: "IconPlus",
   props: {
     size: { type: String, required: !1 }
@@ -8012,12 +9789,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Q8],
+      [...st],
       16
       /* FULL_PROPS */
     ));
   }
-}), Li = /* @__PURE__ */ h(V8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconPlus.vue"]]), j8 = /* @__PURE__ */ t(
+}), Ba = /* @__PURE__ */ h(it, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconPlus.vue"]]), lt = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -8044,9 +9821,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), J8 = [
-  j8
-], K8 = /* @__PURE__ */ i({
+), ct = [
+  lt
+], at = /* @__PURE__ */ i({
   __name: "IconPound",
   props: {
     size: { type: String, required: !1 }
@@ -8064,12 +9841,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...J8],
+      [...ct],
       16
       /* FULL_PROPS */
     ));
   }
-}), gi = /* @__PURE__ */ h(K8, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconPound.vue"]]), X8 = /* @__PURE__ */ t(
+}), qa = /* @__PURE__ */ h(at, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconPound.vue"]]), pt = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -8088,9 +9865,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Y8 = [
-  X8
-], e9 = /* @__PURE__ */ i({
+), ht = [
+  pt
+], Ct = /* @__PURE__ */ i({
   __name: "IconPrice1",
   props: {
     size: { type: String, required: !1 }
@@ -8108,14 +9885,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Y8],
+      [...ht],
       16
       /* FULL_PROPS */
     ));
   }
-}), xi = /* @__PURE__ */ h(e9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconPrice1.vue"]]), t9 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><g transform="translate(12.500000, 12.000000) rotate(-315.000000) translate(-12.500000, -12.000000) translate(6.000000, 1.000000)" fill="#000000" opacity="0.3"><path d="M0.353553391,7.14644661 L3.35355339,7.14644661 C3.4100716,7.14644661 3.46549471,7.14175791 3.51945496,7.13274826 C3.92739876,8.3050906 5.04222146,9.14644661 6.35355339,9.14644661 C8.01040764,9.14644661 9.35355339,7.80330086 9.35355339,6.14644661 C9.35355339,4.48959236 8.01040764,3.14644661 6.35355339,3.14644661 C5.04222146,3.14644661 3.92739876,3.98780262 3.51945496,5.16014496 C3.46549471,5.15113531 3.4100716,5.14644661 3.35355339,5.14644661 L0.436511831,5.14644661 C0.912589923,2.30873327 3.3805571,0.146446609 6.35355339,0.146446609 C9.66726189,0.146446609 12.3535534,2.83273811 12.3535534,6.14644661 L12.3535534,19.1464466 C12.3535534,20.2510161 11.4581229,21.1464466 10.3535534,21.1464466 L2.35355339,21.1464466 C1.24898389,21.1464466 0.353553391,20.2510161 0.353553391,19.1464466 L0.353553391,7.14644661 Z" transform="translate(6.353553, 10.646447) rotate(-360.000000) translate(-6.353553, -10.646447) "></path><rect x="2.35355339" y="13.1464466" width="8" height="2" rx="1"></rect><rect x="3.35355339" y="17.1464466" width="6" height="2" rx="1"></rect></g></g>', 1), n9 = [
-  t9
-], o9 = /* @__PURE__ */ i({
+}), Aa = /* @__PURE__ */ h(Ct, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconPrice1.vue"]]), dt = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><g transform="translate(12.500000, 12.000000) rotate(-315.000000) translate(-12.500000, -12.000000) translate(6.000000, 1.000000)" fill="#000000" opacity="0.3"><path d="M0.353553391,7.14644661 L3.35355339,7.14644661 C3.4100716,7.14644661 3.46549471,7.14175791 3.51945496,7.13274826 C3.92739876,8.3050906 5.04222146,9.14644661 6.35355339,9.14644661 C8.01040764,9.14644661 9.35355339,7.80330086 9.35355339,6.14644661 C9.35355339,4.48959236 8.01040764,3.14644661 6.35355339,3.14644661 C5.04222146,3.14644661 3.92739876,3.98780262 3.51945496,5.16014496 C3.46549471,5.15113531 3.4100716,5.14644661 3.35355339,5.14644661 L0.436511831,5.14644661 C0.912589923,2.30873327 3.3805571,0.146446609 6.35355339,0.146446609 C9.66726189,0.146446609 12.3535534,2.83273811 12.3535534,6.14644661 L12.3535534,19.1464466 C12.3535534,20.2510161 11.4581229,21.1464466 10.3535534,21.1464466 L2.35355339,21.1464466 C1.24898389,21.1464466 0.353553391,20.2510161 0.353553391,19.1464466 L0.353553391,7.14644661 Z" transform="translate(6.353553, 10.646447) rotate(-360.000000) translate(-6.353553, -10.646447) "></path><rect x="2.35355339" y="13.1464466" width="8" height="2" rx="1"></rect><rect x="3.35355339" y="17.1464466" width="6" height="2" rx="1"></rect></g></g>', 1), _t = [
+  dt
+], ut = /* @__PURE__ */ i({
   __name: "IconPrice2",
   props: {
     size: { type: String, required: !1 }
@@ -8133,12 +9910,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...n9],
+      [..._t],
       16
       /* FULL_PROPS */
     ));
   }
-}), vi = /* @__PURE__ */ h(o9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconPrice2.vue"]]), r9 = /* @__PURE__ */ t(
+}), ba = /* @__PURE__ */ h(ut, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconPrice2.vue"]]), ft = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -8161,9 +9938,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), s9 = [
-  r9
-], i9 = /* @__PURE__ */ i({
+), Lt = [
+  ft
+], wt = /* @__PURE__ */ i({
   __name: "IconPuzzle",
   props: {
     size: { type: String, required: !1 }
@@ -8181,12 +9958,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...s9],
+      [...Lt],
       16
       /* FULL_PROPS */
     ));
   }
-}), yi = /* @__PURE__ */ h(i9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconPuzzle.vue"]]), l9 = /* @__PURE__ */ t(
+}), Da = /* @__PURE__ */ h(wt, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconPuzzle.vue"]]), gt = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -8215,9 +9992,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), c9 = [
-  l9
-], a9 = /* @__PURE__ */ i({
+), xt = [
+  gt
+], vt = /* @__PURE__ */ i({
   __name: "IconQuestioncircle",
   props: {
     size: { type: String, required: !1 }
@@ -8235,14 +10012,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...c9],
+      [...xt],
       16
       /* FULL_PROPS */
     ));
   }
-}), mi = /* @__PURE__ */ h(a9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconQuestioncircle.vue"]]), p9 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="6" cy="18" r="3"></circle><path d="M16.5,21 L13.5,21 C13.5,15.2010101 8.79898987,10.5 3,10.5 L3,7.5 C10.4558441,7.5 16.5,13.5441559 16.5,21 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path><path d="M22.5,21 L19.5,21 C19.5,12.163444 11.836556,4.5 3,4.5 L3,1.5 C13.4934102,1.5 22.5,10.5065898 22.5,21 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path></g>', 1), h9 = [
-  p9
-], C9 = /* @__PURE__ */ i({
+}), Fa = /* @__PURE__ */ h(vt, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconQuestioncircle.vue"]]), yt = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="6" cy="18" r="3"></circle><path d="M16.5,21 L13.5,21 C13.5,15.2010101 8.79898987,10.5 3,10.5 L3,7.5 C10.4558441,7.5 16.5,13.5441559 16.5,21 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path><path d="M22.5,21 L19.5,21 C19.5,12.163444 11.836556,4.5 3,4.5 L3,1.5 C13.4934102,1.5 22.5,10.5065898 22.5,21 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path></g>', 1), mt = [
+  yt
+], $t = /* @__PURE__ */ i({
   __name: "IconRSS",
   props: {
     size: { type: String, required: !1 }
@@ -8260,12 +10037,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...h9],
+      [...mt],
       16
       /* FULL_PROPS */
     ));
   }
-}), $i = /* @__PURE__ */ h(C9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconRSS.vue"]]), d9 = /* @__PURE__ */ t(
+}), Ta = /* @__PURE__ */ h($t, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconRSS.vue"]]), It = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -8293,9 +10070,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), _9 = [
-  d9
-], u9 = /* @__PURE__ */ i({
+), zt = [
+  It
+], Mt = /* @__PURE__ */ i({
   __name: "IconReadedmail",
   props: {
     size: { type: String, required: !1 }
@@ -8313,12 +10090,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [..._9],
+      [...zt],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ii = /* @__PURE__ */ h(u9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconReadedmail.vue"]]), f9 = /* @__PURE__ */ t(
+}), Ra = /* @__PURE__ */ h(Mt, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconReadedmail.vue"]]), Zt = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -8347,9 +10124,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), w9 = [
-  f9
-], L9 = /* @__PURE__ */ i({
+), kt = [
+  Zt
+], St = /* @__PURE__ */ i({
   __name: "IconReplyall",
   props: {
     size: { type: String, required: !1 }
@@ -8367,12 +10144,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...w9],
+      [...kt],
       16
       /* FULL_PROPS */
     ));
   }
-}), zi = /* @__PURE__ */ h(L9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconReplyall.vue"]]), g9 = /* @__PURE__ */ t(
+}), Ga = /* @__PURE__ */ h(St, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconReplyall.vue"]]), Bt = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -8395,9 +10172,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), x9 = [
-  g9
-], v9 = /* @__PURE__ */ i({
+), qt = [
+  Bt
+], At = /* @__PURE__ */ i({
   __name: "IconReply",
   props: {
     size: { type: String, required: !1 }
@@ -8415,12 +10192,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...x9],
+      [...qt],
       16
       /* FULL_PROPS */
     ));
   }
-}), Mi = /* @__PURE__ */ h(v9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconReply.vue"]]), y9 = /* @__PURE__ */ t(
+}), Ua = /* @__PURE__ */ h(At, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconReply.vue"]]), bt = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -8445,9 +10222,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), m9 = [
-  y9
-], $9 = /* @__PURE__ */ i({
+), Dt = [
+  bt
+], Ft = /* @__PURE__ */ i({
   __name: "IconRight3",
   props: {
     size: { type: String, required: !1 }
@@ -8465,12 +10242,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...m9],
+      [...Dt],
       16
       /* FULL_PROPS */
     ));
   }
-}), Zi = /* @__PURE__ */ h($9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconRight3.vue"]]), I9 = /* @__PURE__ */ t(
+}), Pa = /* @__PURE__ */ h(Ft, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconRight3.vue"]]), Tt = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -8499,9 +10276,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), z9 = [
-  I9
-], M9 = /* @__PURE__ */ i({
+), Rt = [
+  Tt
+], Gt = /* @__PURE__ */ i({
   __name: "IconRight2",
   props: {
     size: { type: String, required: !1 }
@@ -8519,12 +10296,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...z9],
+      [...Rt],
       16
       /* FULL_PROPS */
     ));
   }
-}), ki = /* @__PURE__ */ h(M9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconRight2.vue"]]), Z9 = /* @__PURE__ */ t(
+}), Wa = /* @__PURE__ */ h(Gt, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconRight2.vue"]]), Ut = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -8555,9 +10332,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), k9 = [
-  Z9
-], S9 = /* @__PURE__ */ i({
+), Pt = [
+  Ut
+], Wt = /* @__PURE__ */ i({
   __name: "IconRightcircle",
   props: {
     size: { type: String, required: !1 }
@@ -8575,12 +10352,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...k9],
+      [...Pt],
       16
       /* FULL_PROPS */
     ));
   }
-}), Si = /* @__PURE__ */ h(S9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconRightcircle.vue"]]), B9 = /* @__PURE__ */ t(
+}), Ea = /* @__PURE__ */ h(Wt, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconRightcircle.vue"]]), Et = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -8603,9 +10380,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), q9 = [
-  B9
-], A9 = /* @__PURE__ */ i({
+), Ot = [
+  Et
+], Ht = /* @__PURE__ */ i({
   __name: "IconRight",
   props: {
     size: { type: String, required: !1 }
@@ -8623,12 +10400,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...q9],
+      [...Ot],
       16
       /* FULL_PROPS */
     ));
   }
-}), Bi = /* @__PURE__ */ h(A9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconRight.vue"]]), b9 = /* @__PURE__ */ t(
+}), Oa = /* @__PURE__ */ h(Ht, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconRight.vue"]]), Nt = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -8655,9 +10432,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), D9 = [
-  b9
-], R9 = /* @__PURE__ */ i({
+), Vt = [
+  Nt
+], jt = /* @__PURE__ */ i({
   __name: "IconRouble",
   props: {
     size: { type: String, required: !1 }
@@ -8675,14 +10452,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...D9],
+      [...Vt],
       16
       /* FULL_PROPS */
     ));
   }
-}), qi = /* @__PURE__ */ h(R9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconRouble.vue"]]), T9 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><path d="M8,7 C7.44771525,7 7,6.55228475 7,6 C7,5.44771525 7.44771525,5 8,5 L16,5 C18.209139,5 20,6.790861 20,9 C20,11.209139 18.209139,13 16,13 L8,13 C6.8954305,13 6,13.8954305 6,15 C6,16.1045695 6.8954305,17 8,17 L17,17 C17.5522847,17 18,17.4477153 18,18 C18,18.5522847 17.5522847,19 17,19 L8,19 C5.790861,19 4,17.209139 4,15 C4,12.790861 5.790861,11 8,11 L16,11 C17.1045695,11 18,10.1045695 18,9 C18,7.8954305 17.1045695,7 16,7 L8,7 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path><path d="M9.79289322,3.79289322 C10.1834175,3.40236893 10.8165825,3.40236893 11.2071068,3.79289322 C11.5976311,4.18341751 11.5976311,4.81658249 11.2071068,5.20710678 L8.20710678,8.20710678 C7.81658249,8.59763107 7.18341751,8.59763107 6.79289322,8.20710678 L3.79289322,5.20710678 C3.40236893,4.81658249 3.40236893,4.18341751 3.79289322,3.79289322 C4.18341751,3.40236893 4.81658249,3.40236893 5.20710678,3.79289322 L7.5,6.08578644 L9.79289322,3.79289322 Z" fill="#000000" fill-rule="nonzero" transform="translate(7.500000, 6.000000) rotate(-270.000000) translate(-7.500000, -6.000000) "></path><path d="M18.7928932,15.7928932 C19.1834175,15.4023689 19.8165825,15.4023689 20.2071068,15.7928932 C20.5976311,16.1834175 20.5976311,16.8165825 20.2071068,17.2071068 L17.2071068,20.2071068 C16.8165825,20.5976311 16.1834175,20.5976311 15.7928932,20.2071068 L12.7928932,17.2071068 C12.4023689,16.8165825 12.4023689,16.1834175 12.7928932,15.7928932 C13.1834175,15.4023689 13.8165825,15.4023689 14.2071068,15.7928932 L16.5,18.0857864 L18.7928932,15.7928932 Z" fill="#000000" fill-rule="nonzero" transform="translate(16.500000, 18.000000) scale(1, -1) rotate(270.000000) translate(-16.500000, -18.000000) "></path></g>', 1), U9 = [
-  T9
-], G9 = /* @__PURE__ */ i({
+}), Ha = /* @__PURE__ */ h(jt, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconRouble.vue"]]), Kt = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><path d="M8,7 C7.44771525,7 7,6.55228475 7,6 C7,5.44771525 7.44771525,5 8,5 L16,5 C18.209139,5 20,6.790861 20,9 C20,11.209139 18.209139,13 16,13 L8,13 C6.8954305,13 6,13.8954305 6,15 C6,16.1045695 6.8954305,17 8,17 L17,17 C17.5522847,17 18,17.4477153 18,18 C18,18.5522847 17.5522847,19 17,19 L8,19 C5.790861,19 4,17.209139 4,15 C4,12.790861 5.790861,11 8,11 L16,11 C17.1045695,11 18,10.1045695 18,9 C18,7.8954305 17.1045695,7 16,7 L8,7 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path><path d="M9.79289322,3.79289322 C10.1834175,3.40236893 10.8165825,3.40236893 11.2071068,3.79289322 C11.5976311,4.18341751 11.5976311,4.81658249 11.2071068,5.20710678 L8.20710678,8.20710678 C7.81658249,8.59763107 7.18341751,8.59763107 6.79289322,8.20710678 L3.79289322,5.20710678 C3.40236893,4.81658249 3.40236893,4.18341751 3.79289322,3.79289322 C4.18341751,3.40236893 4.81658249,3.40236893 5.20710678,3.79289322 L7.5,6.08578644 L9.79289322,3.79289322 Z" fill="#000000" fill-rule="nonzero" transform="translate(7.500000, 6.000000) rotate(-270.000000) translate(-7.500000, -6.000000) "></path><path d="M18.7928932,15.7928932 C19.1834175,15.4023689 19.8165825,15.4023689 20.2071068,15.7928932 C20.5976311,16.1834175 20.5976311,16.8165825 20.2071068,17.2071068 L17.2071068,20.2071068 C16.8165825,20.5976311 16.1834175,20.5976311 15.7928932,20.2071068 L12.7928932,17.2071068 C12.4023689,16.8165825 12.4023689,16.1834175 12.7928932,15.7928932 C13.1834175,15.4023689 13.8165825,15.4023689 14.2071068,15.7928932 L16.5,18.0857864 L18.7928932,15.7928932 Z" fill="#000000" fill-rule="nonzero" transform="translate(16.500000, 18.000000) scale(1, -1) rotate(270.000000) translate(-16.500000, -18.000000) "></path></g>', 1), Qt = [
+  Kt
+], Jt = /* @__PURE__ */ i({
   __name: "IconRoute",
   props: {
     size: { type: String, required: !1 }
@@ -8700,12 +10477,60 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...U9],
+      [...Qt],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ai = /* @__PURE__ */ h(G9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconRoute.vue"]]), P9 = /* @__PURE__ */ t(
+}), Na = /* @__PURE__ */ h(Jt, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconRoute.vue"]]), Xt = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M15,7 L15,8 C15,8.55228475 15.4477153,9 16,9 C16.5522847,9 17,8.55228475 17,8 L17,7 L19,7 L19,10 C19,10.5522847 19.4477153,11 20,11 C20.5522847,11 21,10.5522847 21,10 L21,7 C22.1045695,7 23,7.8954305 23,9 L23,15 C23,16.1045695 22.1045695,17 21,17 L3,17 C1.8954305,17 1,16.1045695 1,15 L1,9 C1,7.8954305 1.8954305,7 3,7 L3,10 C3,10.5522847 3.44771525,11 4,11 C4.55228475,11 5,10.5522847 5,10 L5,7 L7,7 L7,8 C7,8.55228475 7.44771525,9 8,9 C8.55228475,9 9,8.55228475 9,8 L9,7 L11,7 L11,10 C11,10.5522847 11.4477153,11 12,11 C12.5522847,11 13,10.5522847 13,10 L13,7 L15,7 Z",
+      fill: "#000000",
+      transform: "translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) "
+    })
+  ],
+  -1
+  /* HOISTED */
+), Yt = [
+  Xt
+], en = /* @__PURE__ */ i({
+  __name: "IconRuller",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...Yt],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Va = /* @__PURE__ */ h(en, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconRuller.vue"]]), tn = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -8737,9 +10562,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), O9 = [
-  P9
-], W9 = /* @__PURE__ */ i({
+), nn = [
+  tn
+], on = /* @__PURE__ */ i({
   __name: "IconSad",
   props: {
     size: { type: String, required: !1 }
@@ -8757,12 +10582,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...O9],
+      [...nn],
       16
       /* FULL_PROPS */
     ));
   }
-}), bi = /* @__PURE__ */ h(W9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSad.vue"]]), E9 = /* @__PURE__ */ t(
+}), ja = /* @__PURE__ */ h(on, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSad.vue"]]), rn = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -8789,9 +10614,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), F9 = [
-  E9
-], H9 = /* @__PURE__ */ i({
+), sn = [
+  rn
+], ln = /* @__PURE__ */ i({
   __name: "IconSafechat",
   props: {
     size: { type: String, required: !1 }
@@ -8809,12 +10634,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...F9],
+      [...sn],
       16
       /* FULL_PROPS */
     ));
   }
-}), Di = /* @__PURE__ */ h(H9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSafechat.vue"]]), N9 = /* @__PURE__ */ t(
+}), Ka = /* @__PURE__ */ h(ln, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSafechat.vue"]]), cn = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -8841,9 +10666,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Q9 = [
-  N9
-], V9 = /* @__PURE__ */ i({
+), an = [
+  cn
+], pn = /* @__PURE__ */ i({
   __name: "IconSafe",
   props: {
     size: { type: String, required: !1 }
@@ -8861,12 +10686,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Q9],
+      [...an],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ri = /* @__PURE__ */ h(V9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSafe.vue"]]), j9 = /* @__PURE__ */ t(
+}), Qa = /* @__PURE__ */ h(pn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSafe.vue"]]), hn = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -8894,9 +10719,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), J9 = [
-  j9
-], K9 = /* @__PURE__ */ i({
+), Cn = [
+  hn
+], dn = /* @__PURE__ */ i({
   __name: "IconSale1",
   props: {
     size: { type: String, required: !1 }
@@ -8914,14 +10739,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...J9],
+      [...Cn],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ti = /* @__PURE__ */ h(K9, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSale1.vue"]]), X9 = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><polygon fill="#000000" opacity="0.3" points="12 20.0218549 8.47346039 21.7286168 6.86905972 18.1543453 3.07048824 17.1949849 4.13894342 13.4256452 1.84573388 10.2490577 5.08710286 8.04836581 5.3722735 4.14091196 9.2698837 4.53859595 12 1.72861679 14.7301163 4.53859595 18.6277265 4.14091196 18.9128971 8.04836581 22.1542661 10.2490577 19.8610566 13.4256452 20.9295118 17.1949849 17.1309403 18.1543453 15.5265396 21.7286168"></polygon><polygon fill="#000000" points="14.0890818 8.60255815 8.36079737 14.7014391 9.70868621 16.049328 15.4369707 9.950447"></polygon><path d="M10.8543431,9.1753866 C10.8543431,10.1252593 10.085524,10.8938719 9.13585777,10.8938719 C8.18793881,10.8938719 7.41737243,10.1252593 7.41737243,9.1753866 C7.41737243,8.22551387 8.18793881,7.45690126 9.13585777,7.45690126 C10.085524,7.45690126 10.8543431,8.22551387 10.8543431,9.1753866" fill="#000000" opacity="0.3"></path><path d="M14.8641422,16.6221564 C13.9162233,16.6221564 13.1456569,15.8535438 13.1456569,14.9036711 C13.1456569,13.9520555 13.9162233,13.1851857 14.8641422,13.1851857 C15.8138085,13.1851857 16.5826276,13.9520555 16.5826276,14.9036711 C16.5826276,15.8535438 15.8138085,16.6221564 14.8641422,16.6221564 Z" fill="#000000" opacity="0.3"></path></g>', 1), Y9 = [
-  X9
-], ee = /* @__PURE__ */ i({
+}), Ja = /* @__PURE__ */ h(dn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSale1.vue"]]), _n = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><polygon fill="#000000" opacity="0.3" points="12 20.0218549 8.47346039 21.7286168 6.86905972 18.1543453 3.07048824 17.1949849 4.13894342 13.4256452 1.84573388 10.2490577 5.08710286 8.04836581 5.3722735 4.14091196 9.2698837 4.53859595 12 1.72861679 14.7301163 4.53859595 18.6277265 4.14091196 18.9128971 8.04836581 22.1542661 10.2490577 19.8610566 13.4256452 20.9295118 17.1949849 17.1309403 18.1543453 15.5265396 21.7286168"></polygon><polygon fill="#000000" points="14.0890818 8.60255815 8.36079737 14.7014391 9.70868621 16.049328 15.4369707 9.950447"></polygon><path d="M10.8543431,9.1753866 C10.8543431,10.1252593 10.085524,10.8938719 9.13585777,10.8938719 C8.18793881,10.8938719 7.41737243,10.1252593 7.41737243,9.1753866 C7.41737243,8.22551387 8.18793881,7.45690126 9.13585777,7.45690126 C10.085524,7.45690126 10.8543431,8.22551387 10.8543431,9.1753866" fill="#000000" opacity="0.3"></path><path d="M14.8641422,16.6221564 C13.9162233,16.6221564 13.1456569,15.8535438 13.1456569,14.9036711 C13.1456569,13.9520555 13.9162233,13.1851857 14.8641422,13.1851857 C15.8138085,13.1851857 16.5826276,13.9520555 16.5826276,14.9036711 C16.5826276,15.8535438 15.8138085,16.6221564 14.8641422,16.6221564 Z" fill="#000000" opacity="0.3"></path></g>', 1), un = [
+  _n
+], fn = /* @__PURE__ */ i({
   __name: "IconSale2",
   props: {
     size: { type: String, required: !1 }
@@ -8939,12 +10764,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Y9],
+      [...un],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ui = /* @__PURE__ */ h(ee, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSale2.vue"]]), te = /* @__PURE__ */ t(
+}), Xa = /* @__PURE__ */ h(fn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSale2.vue"]]), Ln = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -8971,9 +10796,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), ne = [
-  te
-], oe = /* @__PURE__ */ i({
+), wn = [
+  Ln
+], gn = /* @__PURE__ */ i({
   __name: "IconSave",
   props: {
     size: { type: String, required: !1 }
@@ -8991,12 +10816,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...ne],
+      [...wn],
       16
       /* FULL_PROPS */
     ));
   }
-}), Gi = /* @__PURE__ */ h(oe, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSave.vue"]]), re = /* @__PURE__ */ t(
+}), Ya = /* @__PURE__ */ h(gn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSave.vue"]]), xn = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -9019,9 +10844,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), se = [
-  re
-], ie = /* @__PURE__ */ i({
+), vn = [
+  xn
+], yn = /* @__PURE__ */ i({
   __name: "IconScale",
   props: {
     size: { type: String, required: !1 }
@@ -9039,12 +10864,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...se],
+      [...vn],
       16
       /* FULL_PROPS */
     ));
   }
-}), Pi = /* @__PURE__ */ h(ie, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconScale.vue"]]), le = /* @__PURE__ */ t(
+}), ep = /* @__PURE__ */ h(yn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconScale.vue"]]), mn = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -9073,9 +10898,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), ce = [
-  le
-], ae = /* @__PURE__ */ i({
+), $n = [
+  mn
+], In = /* @__PURE__ */ i({
   __name: "IconScissors",
   props: {
     size: { type: String, required: !1 }
@@ -9093,12 +10918,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...ce],
+      [...$n],
       16
       /* FULL_PROPS */
     ));
   }
-}), Oi = /* @__PURE__ */ h(ae, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconScissors.vue"]]), pe = /* @__PURE__ */ t(
+}), tp = /* @__PURE__ */ h(In, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconScissors.vue"]]), zn = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -9127,9 +10952,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), he = [
-  pe
-], Ce = /* @__PURE__ */ i({
+), Mn = [
+  zn
+], Zn = /* @__PURE__ */ i({
   __name: "IconSearch",
   props: {
     size: { type: String, required: !1 }
@@ -9147,12 +10972,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...he],
+      [...Mn],
       16
       /* FULL_PROPS */
     ));
   }
-}), Wi = /* @__PURE__ */ h(Ce, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSearch.vue"]]), de = /* @__PURE__ */ t(
+}), np = /* @__PURE__ */ h(Zn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSearch.vue"]]), kn = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -9174,9 +10999,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), _e = [
-  de
-], ue = /* @__PURE__ */ i({
+), Sn = [
+  kn
+], Bn = /* @__PURE__ */ i({
   __name: "IconSend",
   props: {
     size: { type: String, required: !1 }
@@ -9194,12 +11019,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [..._e],
+      [...Sn],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ei = /* @__PURE__ */ h(ue, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSend.vue"]]), fe = /* @__PURE__ */ t(
+}), op = /* @__PURE__ */ h(Bn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSend.vue"]]), qn = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -9226,9 +11051,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), we = [
-  fe
-], Le = /* @__PURE__ */ i({
+), An = [
+  qn
+], bn = /* @__PURE__ */ i({
   __name: "IconSendingmail",
   props: {
     size: { type: String, required: !1 }
@@ -9246,12 +11071,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...we],
+      [...An],
       16
       /* FULL_PROPS */
     ));
   }
-}), Fi = /* @__PURE__ */ h(Le, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSendingmail.vue"]]), ge = /* @__PURE__ */ t(
+}), rp = /* @__PURE__ */ h(bn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSendingmail.vue"]]), Dn = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -9278,9 +11103,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), xe = [
-  ge
-], ve = /* @__PURE__ */ i({
+), Fn = [
+  Dn
+], Tn = /* @__PURE__ */ i({
   __name: "IconSending",
   props: {
     size: { type: String, required: !1 }
@@ -9298,12 +11123,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...xe],
+      [...Fn],
       16
       /* FULL_PROPS */
     ));
   }
-}), Hi = /* @__PURE__ */ h(ve, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSending.vue"]]), ye = /* @__PURE__ */ t(
+}), sp = /* @__PURE__ */ h(Tn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSending.vue"]]), Rn = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -9336,9 +11161,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), me = [
-  ye
-], $e = /* @__PURE__ */ i({
+), Gn = [
+  Rn
+], Un = /* @__PURE__ */ i({
   __name: "IconSettings3",
   props: {
     size: { type: String, required: !1 }
@@ -9356,12 +11181,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...me],
+      [...Gn],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ni = /* @__PURE__ */ h($e, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSettings3.vue"]]), Ie = /* @__PURE__ */ t(
+}), ip = /* @__PURE__ */ h(Un, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSettings3.vue"]]), Pn = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -9389,9 +11214,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), ze = [
-  Ie
-], Me = /* @__PURE__ */ i({
+), Wn = [
+  Pn
+], En = /* @__PURE__ */ i({
   __name: "IconSettings4",
   props: {
     size: { type: String, required: !1 }
@@ -9409,12 +11234,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...ze],
+      [...Wn],
       16
       /* FULL_PROPS */
     ));
   }
-}), Qi = /* @__PURE__ */ h(Me, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSettings4.vue"]]), Ze = /* @__PURE__ */ t(
+}), lp = /* @__PURE__ */ h(En, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSettings4.vue"]]), On = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -9441,9 +11266,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), ke = [
-  Ze
-], Se = /* @__PURE__ */ i({
+), Hn = [
+  On
+], Nn = /* @__PURE__ */ i({
   __name: "IconSettings1",
   props: {
     size: { type: String, required: !1 }
@@ -9461,12 +11286,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...ke],
+      [...Hn],
       16
       /* FULL_PROPS */
     ));
   }
-}), Vi = /* @__PURE__ */ h(Se, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSettings1.vue"]]), Be = /* @__PURE__ */ t(
+}), cp = /* @__PURE__ */ h(Nn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSettings1.vue"]]), Vn = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -9488,9 +11313,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), qe = [
-  Be
-], Ae = /* @__PURE__ */ i({
+), jn = [
+  Vn
+], Kn = /* @__PURE__ */ i({
   __name: "IconSettings2",
   props: {
     size: { type: String, required: !1 }
@@ -9508,12 +11333,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...qe],
+      [...jn],
       16
       /* FULL_PROPS */
     ));
   }
-}), ji = /* @__PURE__ */ h(Ae, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSettings2.vue"]]), be = /* @__PURE__ */ t(
+}), ap = /* @__PURE__ */ h(Kn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSettings2.vue"]]), Qn = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -9541,9 +11366,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), De = [
-  be
-], Re = /* @__PURE__ */ i({
+), Jn = [
+  Qn
+], Xn = /* @__PURE__ */ i({
   __name: "IconSettings",
   props: {
     size: { type: String, required: !1 }
@@ -9561,12 +11386,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...De],
+      [...Jn],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ji = /* @__PURE__ */ h(Re, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSettings.vue"]]), Te = /* @__PURE__ */ t(
+}), pp = /* @__PURE__ */ h(Xn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSettings.vue"]]), Yn = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -9596,9 +11421,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Ue = [
-  Te
-], Ge = /* @__PURE__ */ i({
+), eo = [
+  Yn
+], to = /* @__PURE__ */ i({
   __name: "IconShare",
   props: {
     size: { type: String, required: !1 }
@@ -9616,12 +11441,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Ue],
+      [...eo],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ki = /* @__PURE__ */ h(Ge, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconShare.vue"]]), Pe = /* @__PURE__ */ t(
+}), hp = /* @__PURE__ */ h(to, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconShare.vue"]]), no = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -9648,9 +11473,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Oe = [
-  Pe
-], We = /* @__PURE__ */ i({
+), oo = [
+  no
+], ro = /* @__PURE__ */ i({
   __name: "IconShieldcheck",
   props: {
     size: { type: String, required: !1 }
@@ -9668,12 +11493,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Oe],
+      [...oo],
       16
       /* FULL_PROPS */
     ));
   }
-}), Xi = /* @__PURE__ */ h(We, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconShieldcheck.vue"]]), Ee = /* @__PURE__ */ t(
+}), Cp = /* @__PURE__ */ h(ro, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconShieldcheck.vue"]]), so = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -9700,9 +11525,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Fe = [
-  Ee
-], He = /* @__PURE__ */ i({
+), io = [
+  so
+], lo = /* @__PURE__ */ i({
   __name: "IconShielddisabled",
   props: {
     size: { type: String, required: !1 }
@@ -9720,12 +11545,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Fe],
+      [...io],
       16
       /* FULL_PROPS */
     ));
   }
-}), Yi = /* @__PURE__ */ h(He, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconShielddisabled.vue"]]), Ne = /* @__PURE__ */ t(
+}), dp = /* @__PURE__ */ h(lo, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconShielddisabled.vue"]]), co = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -9752,9 +11577,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Qe = [
-  Ne
-], Ve = /* @__PURE__ */ i({
+), ao = [
+  co
+], po = /* @__PURE__ */ i({
   __name: "IconShieldprotected",
   props: {
     size: { type: String, required: !1 }
@@ -9772,12 +11597,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Qe],
+      [...ao],
       16
       /* FULL_PROPS */
     ));
   }
-}), el = /* @__PURE__ */ h(Ve, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconShieldprotected.vue"]]), je = /* @__PURE__ */ t(
+}), _p = /* @__PURE__ */ h(po, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconShieldprotected.vue"]]), ho = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -9805,9 +11630,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Je = [
-  je
-], Ke = /* @__PURE__ */ i({
+), Co = [
+  ho
+], _o = /* @__PURE__ */ i({
   __name: "IconShieldthunder",
   props: {
     size: { type: String, required: !1 }
@@ -9825,14 +11650,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Je],
+      [...Co],
       16
       /* FULL_PROPS */
     ));
   }
-}), tl = /* @__PURE__ */ h(Ke, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconShieldthunder.vue"]]), Xe = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z" fill="#000000" opacity="0.3"></path><path d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z" fill="#000000" opacity="0.3"></path><path d="M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 C14.5228466,17 11.463736,17 7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z" fill="#000000" opacity="0.3"></path></g>', 1), Ye = [
-  Xe
-], et = /* @__PURE__ */ i({
+}), up = /* @__PURE__ */ h(_o, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconShieldthunder.vue"]]), uo = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z" fill="#000000" opacity="0.3"></path><path d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z" fill="#000000" opacity="0.3"></path><path d="M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 C14.5228466,17 11.463736,17 7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z" fill="#000000" opacity="0.3"></path></g>', 1), fo = [
+  uo
+], Lo = /* @__PURE__ */ i({
   __name: "IconShielduser",
   props: {
     size: { type: String, required: !1 }
@@ -9850,12 +11675,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Ye],
+      [...fo],
       16
       /* FULL_PROPS */
     ));
   }
-}), nl = /* @__PURE__ */ h(et, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconShielduser.vue"]]), tt = /* @__PURE__ */ t(
+}), fp = /* @__PURE__ */ h(Lo, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconShielduser.vue"]]), wo = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -9879,9 +11704,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), nt = [
-  tt
-], ot = /* @__PURE__ */ i({
+), go = [
+  wo
+], xo = /* @__PURE__ */ i({
   __name: "IconShift",
   props: {
     size: { type: String, required: !1 }
@@ -9899,14 +11724,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...nt],
+      [...go],
       16
       /* FULL_PROPS */
     ));
   }
-}), ol = /* @__PURE__ */ h(ot, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconShift.vue"]]), rt = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" transform="translate(9.000000, 12.000000) rotate(-270.000000) translate(-9.000000, -12.000000) " x="8" y="6" width="2" height="12" rx="1"></rect><path d="M20,7.00607258 C19.4477153,7.00607258 19,6.55855153 19,6.00650634 C19,5.45446114 19.4477153,5.00694009 20,5.00694009 L21,5.00694009 C23.209139,5.00694009 25,6.7970243 25,9.00520507 L25,15.001735 C25,17.2099158 23.209139,19 21,19 L9,19 C6.790861,19 5,17.2099158 5,15.001735 L5,8.99826498 C5,6.7900842 6.790861,5 9,5 L10.0000048,5 C10.5522896,5 11.0000048,5.44752105 11.0000048,5.99956624 C11.0000048,6.55161144 10.5522896,6.99913249 10.0000048,6.99913249 L9,6.99913249 C7.8954305,6.99913249 7,7.89417459 7,8.99826498 L7,15.001735 C7,16.1058254 7.8954305,17.0008675 9,17.0008675 L21,17.0008675 C22.1045695,17.0008675 23,16.1058254 23,15.001735 L23,9.00520507 C23,7.90111468 22.1045695,7.00607258 21,7.00607258 L20,7.00607258 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" transform="translate(15.000000, 12.000000) rotate(-90.000000) translate(-15.000000, -12.000000) "></path><path d="M16.7928932,9.79289322 C17.1834175,9.40236893 17.8165825,9.40236893 18.2071068,9.79289322 C18.5976311,10.1834175 18.5976311,10.8165825 18.2071068,11.2071068 L15.2071068,14.2071068 C14.8165825,14.5976311 14.1834175,14.5976311 13.7928932,14.2071068 L10.7928932,11.2071068 C10.4023689,10.8165825 10.4023689,10.1834175 10.7928932,9.79289322 C11.1834175,9.40236893 11.8165825,9.40236893 12.2071068,9.79289322 L14.5,12.0857864 L16.7928932,9.79289322 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.500000, 12.000000) rotate(-90.000000) translate(-14.500000, -12.000000) "></path></g>', 1), st = [
-  rt
-], it = /* @__PURE__ */ i({
+}), Lp = /* @__PURE__ */ h(xo, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconShift.vue"]]), vo = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#000000" opacity="0.3" transform="translate(9.000000, 12.000000) rotate(-270.000000) translate(-9.000000, -12.000000) " x="8" y="6" width="2" height="12" rx="1"></rect><path d="M20,7.00607258 C19.4477153,7.00607258 19,6.55855153 19,6.00650634 C19,5.45446114 19.4477153,5.00694009 20,5.00694009 L21,5.00694009 C23.209139,5.00694009 25,6.7970243 25,9.00520507 L25,15.001735 C25,17.2099158 23.209139,19 21,19 L9,19 C6.790861,19 5,17.2099158 5,15.001735 L5,8.99826498 C5,6.7900842 6.790861,5 9,5 L10.0000048,5 C10.5522896,5 11.0000048,5.44752105 11.0000048,5.99956624 C11.0000048,6.55161144 10.5522896,6.99913249 10.0000048,6.99913249 L9,6.99913249 C7.8954305,6.99913249 7,7.89417459 7,8.99826498 L7,15.001735 C7,16.1058254 7.8954305,17.0008675 9,17.0008675 L21,17.0008675 C22.1045695,17.0008675 23,16.1058254 23,15.001735 L23,9.00520507 C23,7.90111468 22.1045695,7.00607258 21,7.00607258 L20,7.00607258 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" transform="translate(15.000000, 12.000000) rotate(-90.000000) translate(-15.000000, -12.000000) "></path><path d="M16.7928932,9.79289322 C17.1834175,9.40236893 17.8165825,9.40236893 18.2071068,9.79289322 C18.5976311,10.1834175 18.5976311,10.8165825 18.2071068,11.2071068 L15.2071068,14.2071068 C14.8165825,14.5976311 14.1834175,14.5976311 13.7928932,14.2071068 L10.7928932,11.2071068 C10.4023689,10.8165825 10.4023689,10.1834175 10.7928932,9.79289322 C11.1834175,9.40236893 11.8165825,9.40236893 12.2071068,9.79289322 L14.5,12.0857864 L16.7928932,9.79289322 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.500000, 12.000000) rotate(-90.000000) translate(-14.500000, -12.000000) "></path></g>', 1), yo = [
+  vo
+], mo = /* @__PURE__ */ i({
   __name: "IconSignin",
   props: {
     size: { type: String, required: !1 }
@@ -9924,14 +11749,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...st],
+      [...yo],
       16
       /* FULL_PROPS */
     ));
   }
-}), rl = /* @__PURE__ */ h(it, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSignin.vue"]]), lt = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M14.0069431,7.00607258 C13.4546584,7.00607258 13.0069431,6.55855153 13.0069431,6.00650634 C13.0069431,5.45446114 13.4546584,5.00694009 14.0069431,5.00694009 L15.0069431,5.00694009 C17.2160821,5.00694009 19.0069431,6.7970243 19.0069431,9.00520507 L19.0069431,15.001735 C19.0069431,17.2099158 17.2160821,19 15.0069431,19 L3.00694311,19 C0.797804106,19 -0.993056895,17.2099158 -0.993056895,15.001735 L-0.993056895,8.99826498 C-0.993056895,6.7900842 0.797804106,5 3.00694311,5 L4.00694793,5 C4.55923268,5 5.00694793,5.44752105 5.00694793,5.99956624 C5.00694793,6.55161144 4.55923268,6.99913249 4.00694793,6.99913249 L3.00694311,6.99913249 C1.90237361,6.99913249 1.00694311,7.89417459 1.00694311,8.99826498 L1.00694311,15.001735 C1.00694311,16.1058254 1.90237361,17.0008675 3.00694311,17.0008675 L15.0069431,17.0008675 C16.1115126,17.0008675 17.0069431,16.1058254 17.0069431,15.001735 L17.0069431,9.00520507 C17.0069431,7.90111468 16.1115126,7.00607258 15.0069431,7.00607258 L14.0069431,7.00607258 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" transform="translate(9.006943, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-9.006943, -12.000000) "></path><rect fill="#000000" opacity="0.3" transform="translate(14.000000, 12.000000) rotate(-270.000000) translate(-14.000000, -12.000000) " x="13" y="6" width="2" height="12" rx="1"></rect><path d="M21.7928932,9.79289322 C22.1834175,9.40236893 22.8165825,9.40236893 23.2071068,9.79289322 C23.5976311,10.1834175 23.5976311,10.8165825 23.2071068,11.2071068 L20.2071068,14.2071068 C19.8165825,14.5976311 19.1834175,14.5976311 18.7928932,14.2071068 L15.7928932,11.2071068 C15.4023689,10.8165825 15.4023689,10.1834175 15.7928932,9.79289322 C16.1834175,9.40236893 16.8165825,9.40236893 17.2071068,9.79289322 L19.5,12.0857864 L21.7928932,9.79289322 Z" fill="#000000" fill-rule="nonzero" transform="translate(19.500000, 12.000000) rotate(-90.000000) translate(-19.500000, -12.000000) "></path></g>', 1), ct = [
-  lt
-], at = /* @__PURE__ */ i({
+}), wp = /* @__PURE__ */ h(mo, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSignin.vue"]]), $o = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M14.0069431,7.00607258 C13.4546584,7.00607258 13.0069431,6.55855153 13.0069431,6.00650634 C13.0069431,5.45446114 13.4546584,5.00694009 14.0069431,5.00694009 L15.0069431,5.00694009 C17.2160821,5.00694009 19.0069431,6.7970243 19.0069431,9.00520507 L19.0069431,15.001735 C19.0069431,17.2099158 17.2160821,19 15.0069431,19 L3.00694311,19 C0.797804106,19 -0.993056895,17.2099158 -0.993056895,15.001735 L-0.993056895,8.99826498 C-0.993056895,6.7900842 0.797804106,5 3.00694311,5 L4.00694793,5 C4.55923268,5 5.00694793,5.44752105 5.00694793,5.99956624 C5.00694793,6.55161144 4.55923268,6.99913249 4.00694793,6.99913249 L3.00694311,6.99913249 C1.90237361,6.99913249 1.00694311,7.89417459 1.00694311,8.99826498 L1.00694311,15.001735 C1.00694311,16.1058254 1.90237361,17.0008675 3.00694311,17.0008675 L15.0069431,17.0008675 C16.1115126,17.0008675 17.0069431,16.1058254 17.0069431,15.001735 L17.0069431,9.00520507 C17.0069431,7.90111468 16.1115126,7.00607258 15.0069431,7.00607258 L14.0069431,7.00607258 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" transform="translate(9.006943, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-9.006943, -12.000000) "></path><rect fill="#000000" opacity="0.3" transform="translate(14.000000, 12.000000) rotate(-270.000000) translate(-14.000000, -12.000000) " x="13" y="6" width="2" height="12" rx="1"></rect><path d="M21.7928932,9.79289322 C22.1834175,9.40236893 22.8165825,9.40236893 23.2071068,9.79289322 C23.5976311,10.1834175 23.5976311,10.8165825 23.2071068,11.2071068 L20.2071068,14.2071068 C19.8165825,14.5976311 19.1834175,14.5976311 18.7928932,14.2071068 L15.7928932,11.2071068 C15.4023689,10.8165825 15.4023689,10.1834175 15.7928932,9.79289322 C16.1834175,9.40236893 16.8165825,9.40236893 17.2071068,9.79289322 L19.5,12.0857864 L21.7928932,9.79289322 Z" fill="#000000" fill-rule="nonzero" transform="translate(19.500000, 12.000000) rotate(-90.000000) translate(-19.500000, -12.000000) "></path></g>', 1), Io = [
+  $o
+], zo = /* @__PURE__ */ i({
   __name: "IconSignout",
   props: {
     size: { type: String, required: !1 }
@@ -9949,12 +11774,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...ct],
+      [...Io],
       16
       /* FULL_PROPS */
     ));
   }
-}), sl = /* @__PURE__ */ h(at, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSignout.vue"]]), pt = /* @__PURE__ */ t(
+}), gp = /* @__PURE__ */ h(zo, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSignout.vue"]]), Mo = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -9982,9 +11807,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), ht = [
-  pt
-], Ct = /* @__PURE__ */ i({
+), Zo = [
+  Mo
+], ko = /* @__PURE__ */ i({
   __name: "IconSize",
   props: {
     size: { type: String, required: !1 }
@@ -10002,12 +11827,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...ht],
+      [...Zo],
       16
       /* FULL_PROPS */
     ));
   }
-}), il = /* @__PURE__ */ h(Ct, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSize.vue"]]), dt = /* @__PURE__ */ t(
+}), xp = /* @__PURE__ */ h(ko, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSize.vue"]]), So = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -10038,9 +11863,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), _t = [
-  dt
-], ut = /* @__PURE__ */ i({
+), Bo = [
+  So
+], qo = /* @__PURE__ */ i({
   __name: "IconSmile",
   props: {
     size: { type: String, required: !1 }
@@ -10058,12 +11883,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [..._t],
+      [...Bo],
       16
       /* FULL_PROPS */
     ));
   }
-}), ll = /* @__PURE__ */ h(ut, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSmile.vue"]]), ft = /* @__PURE__ */ t(
+}), vp = /* @__PURE__ */ h(qo, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSmile.vue"]]), Ao = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -10091,9 +11916,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), wt = [
-  ft
-], Lt = /* @__PURE__ */ i({
+), bo = [
+  Ao
+], Do = /* @__PURE__ */ i({
   __name: "IconSnoozedmail",
   props: {
     size: { type: String, required: !1 }
@@ -10111,12 +11936,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...wt],
+      [...bo],
       16
       /* FULL_PROPS */
     ));
   }
-}), cl = /* @__PURE__ */ h(Lt, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSnoozedmail.vue"]]), gt = /* @__PURE__ */ t(
+}), yp = /* @__PURE__ */ h(Do, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSnoozedmail.vue"]]), Fo = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -10147,9 +11972,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), xt = [
-  gt
-], vt = /* @__PURE__ */ i({
+), To = [
+  Fo
+], Ro = /* @__PURE__ */ i({
   __name: "IconSort1",
   props: {
     size: { type: String, required: !1 }
@@ -10167,12 +11992,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...xt],
+      [...To],
       16
       /* FULL_PROPS */
     ));
   }
-}), al = /* @__PURE__ */ h(vt, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSort1.vue"]]), yt = /* @__PURE__ */ t(
+}), mp = /* @__PURE__ */ h(Ro, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSort1.vue"]]), Go = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -10194,9 +12019,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), mt = [
-  yt
-], $t = /* @__PURE__ */ i({
+), Uo = [
+  Go
+], Po = /* @__PURE__ */ i({
   __name: "IconSort2",
   props: {
     size: { type: String, required: !1 }
@@ -10214,12 +12039,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...mt],
+      [...Uo],
       16
       /* FULL_PROPS */
     ));
   }
-}), pl = /* @__PURE__ */ h($t, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSort2.vue"]]), It = /* @__PURE__ */ t(
+}), $p = /* @__PURE__ */ h(Po, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSort2.vue"]]), Wo = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -10241,9 +12066,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), zt = [
-  It
-], Mt = /* @__PURE__ */ i({
+), Eo = [
+  Wo
+], Oo = /* @__PURE__ */ i({
   __name: "IconSort3",
   props: {
     size: { type: String, required: !1 }
@@ -10261,12 +12086,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...zt],
+      [...Eo],
       16
       /* FULL_PROPS */
     ));
   }
-}), hl = /* @__PURE__ */ h(Mt, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSort3.vue"]]), Zt = /* @__PURE__ */ t(
+}), Ip = /* @__PURE__ */ h(Oo, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSort3.vue"]]), Ho = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -10288,9 +12113,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), kt = [
-  Zt
-], St = /* @__PURE__ */ i({
+), No = [
+  Ho
+], Vo = /* @__PURE__ */ i({
   __name: "IconSpam",
   props: {
     size: { type: String, required: !1 }
@@ -10308,12 +12133,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...kt],
+      [...No],
       16
       /* FULL_PROPS */
     ));
   }
-}), Cl = /* @__PURE__ */ h(St, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSpam.vue"]]), Bt = /* @__PURE__ */ t(
+}), zp = /* @__PURE__ */ h(Vo, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSpam.vue"]]), jo = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -10340,9 +12165,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), qt = [
-  Bt
-], At = /* @__PURE__ */ i({
+), Ko = [
+  jo
+], Qo = /* @__PURE__ */ i({
   __name: "IconSpy",
   props: {
     size: { type: String, required: !1 }
@@ -10360,12 +12185,60 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...qt],
+      [...Ko],
       16
       /* FULL_PROPS */
     ));
   }
-}), dl = /* @__PURE__ */ h(At, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSpy.vue"]]), bt = /* @__PURE__ */ t(
+}), Mp = /* @__PURE__ */ h(Qo, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconSpy.vue"]]), Jo = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M21,5.5 L21,17.5 C21,18.3284271 20.3284271,19 19.5,19 L4.5,19 C3.67157288,19 3,18.3284271 3,17.5 L3,14.5 C3,13.6715729 3.67157288,13 4.5,13 L9,13 L9,9.5 C9,8.67157288 9.67157288,8 10.5,8 L15,8 L15,5.5 C15,4.67157288 15.6715729,4 16.5,4 L19.5,4 C20.3284271,4 21,4.67157288 21,5.5 Z",
+      fill: "#000000",
+      "fill-rule": "nonzero"
+    })
+  ],
+  -1
+  /* HOISTED */
+), Xo = [
+  Jo
+], Yo = /* @__PURE__ */ i({
+  __name: "IconStairs",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...Xo],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Zp = /* @__PURE__ */ h(Yo, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconStairs.vue"]]), er = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -10382,9 +12255,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Dt = [
-  bt
-], Rt = /* @__PURE__ */ i({
+), tr = [
+  er
+], nr = /* @__PURE__ */ i({
   __name: "IconStar",
   props: {
     size: { type: String, required: !1 }
@@ -10402,12 +12275,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Dt],
+      [...tr],
       16
       /* FULL_PROPS */
     ));
   }
-}), _l = /* @__PURE__ */ h(Rt, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconStar.vue"]]), Tt = /* @__PURE__ */ t(
+}), kp = /* @__PURE__ */ h(nr, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconStar.vue"]]), or = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -10431,9 +12304,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Ut = [
-  Tt
-], Gt = /* @__PURE__ */ i({
+), rr = [
+  or
+], sr = /* @__PURE__ */ i({
   __name: "IconStop",
   props: {
     size: { type: String, required: !1 }
@@ -10451,12 +12324,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Ut],
+      [...rr],
       16
       /* FULL_PROPS */
     ));
   }
-}), ul = /* @__PURE__ */ h(Gt, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconStop.vue"]]), Pt = /* @__PURE__ */ t(
+}), Sp = /* @__PURE__ */ h(sr, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconStop.vue"]]), ir = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -10484,9 +12357,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Ot = [
-  Pt
-], Wt = /* @__PURE__ */ i({
+), lr = [
+  ir
+], cr = /* @__PURE__ */ i({
   __name: "IconTerminal",
   props: {
     size: { type: String, required: !1 }
@@ -10504,12 +12377,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Ot],
+      [...lr],
       16
       /* FULL_PROPS */
     ));
   }
-}), fl = /* @__PURE__ */ h(Wt, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconTerminal.vue"]]), Et = /* @__PURE__ */ t(
+}), Bp = /* @__PURE__ */ h(cr, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconTerminal.vue"]]), ar = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -10537,9 +12410,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Ft = [
-  Et
-], Ht = /* @__PURE__ */ i({
+), pr = [
+  ar
+], hr = /* @__PURE__ */ i({
   __name: "IconThumbtack",
   props: {
     size: { type: String, required: !1 }
@@ -10557,12 +12430,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Ft],
+      [...pr],
       16
       /* FULL_PROPS */
     ));
   }
-}), wl = /* @__PURE__ */ h(Ht, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconThumbtack.vue"]]), Nt = /* @__PURE__ */ t(
+}), qp = /* @__PURE__ */ h(hr, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconThumbtack.vue"]]), Cr = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -10591,9 +12464,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Qt = [
-  Nt
-], Vt = /* @__PURE__ */ i({
+), dr = [
+  Cr
+], _r = /* @__PURE__ */ i({
   __name: "IconThundercircle",
   props: {
     size: { type: String, required: !1 }
@@ -10611,12 +12484,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Qt],
+      [...dr],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ll = /* @__PURE__ */ h(Vt, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconThundercircle.vue"]]), jt = /* @__PURE__ */ t(
+}), Ap = /* @__PURE__ */ h(_r, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconThundercircle.vue"]]), ur = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -10643,9 +12516,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Jt = [
-  jt
-], Kt = /* @__PURE__ */ i({
+), fr = [
+  ur
+], Lr = /* @__PURE__ */ i({
   __name: "IconThundermove",
   props: {
     size: { type: String, required: !1 }
@@ -10663,12 +12536,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Jt],
+      [...fr],
       16
       /* FULL_PROPS */
     ));
   }
-}), gl = /* @__PURE__ */ h(Kt, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconThundermove.vue"]]), Xt = /* @__PURE__ */ t(
+}), bp = /* @__PURE__ */ h(Lr, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconThundermove.vue"]]), wr = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -10690,9 +12563,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Yt = [
-  Xt
-], en = /* @__PURE__ */ i({
+), gr = [
+  wr
+], xr = /* @__PURE__ */ i({
   __name: "IconThunder",
   props: {
     size: { type: String, required: !1 }
@@ -10710,12 +12583,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Yt],
+      [...gr],
       16
       /* FULL_PROPS */
     ));
   }
-}), xl = /* @__PURE__ */ h(en, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconThunder.vue"]]), tn = /* @__PURE__ */ t(
+}), Dp = /* @__PURE__ */ h(xr, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconThunder.vue"]]), vr = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -10739,9 +12612,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), nn = [
-  tn
-], on = /* @__PURE__ */ i({
+), yr = [
+  vr
+], mr = /* @__PURE__ */ i({
   __name: "IconTicket",
   props: {
     size: { type: String, required: !1 }
@@ -10759,12 +12632,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...nn],
+      [...yr],
       16
       /* FULL_PROPS */
     ));
   }
-}), vl = /* @__PURE__ */ h(on, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconTicket.vue"]]), rn = /* @__PURE__ */ t(
+}), Fp = /* @__PURE__ */ h(mr, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconTicket.vue"]]), $r = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -10791,9 +12664,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), sn = [
-  rn
-], ln = /* @__PURE__ */ i({
+), Ir = [
+  $r
+], zr = /* @__PURE__ */ i({
   __name: "IconTimeschedule",
   props: {
     size: { type: String, required: !1 }
@@ -10811,12 +12684,139 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...sn],
+      [...Ir],
       16
       /* FULL_PROPS */
     ));
   }
-}), yl = /* @__PURE__ */ h(ln, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconTimeschedule.vue"]]), cn = /* @__PURE__ */ t(
+}), Tp = /* @__PURE__ */ h(zr, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconTimeschedule.vue"]]), Mr = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M12,21 C7.581722,21 4,17.418278 4,13 C4,8.581722 7.581722,5 12,5 C16.418278,5 20,8.581722 20,13 C20,17.418278 16.418278,21 12,21 Z" fill="#000000" opacity="0.3"></path><path d="M13,5.06189375 C12.6724058,5.02104333 12.3386603,5 12,5 C11.6613397,5 11.3275942,5.02104333 11,5.06189375 L11,4 L10,4 C9.44771525,4 9,3.55228475 9,3 C9,2.44771525 9.44771525,2 10,2 L14,2 C14.5522847,2 15,2.44771525 15,3 C15,3.55228475 14.5522847,4 14,4 L13,4 L13,5.06189375 Z" fill="#000000"></path><path d="M16.7099142,6.53272645 L17.5355339,5.70710678 C17.9260582,5.31658249 18.5592232,5.31658249 18.9497475,5.70710678 C19.3402718,6.09763107 19.3402718,6.73079605 18.9497475,7.12132034 L18.1671361,7.90393167 C17.7407802,7.38854954 17.251061,6.92750259 16.7099142,6.53272645 Z" fill="#000000"></path><path d="M11.9630156,7.5 L12.0369844,7.5 C12.2982526,7.5 12.5154733,7.70115317 12.5355117,7.96165175 L12.9585886,13.4616518 C12.9797677,13.7369807 12.7737386,13.9773481 12.4984096,13.9985272 C12.4856504,13.9995087 12.4728582,14 12.4600614,14 L11.5399386,14 C11.2637963,14 11.0399386,13.7761424 11.0399386,13.5 C11.0399386,13.4872031 11.0404299,13.4744109 11.0414114,13.4616518 L11.4644883,7.96165175 C11.4845267,7.70115317 11.7017474,7.5 11.9630156,7.5 Z" fill="#000000"></path></g>', 1), Zr = [
+  Mr
+], kr = /* @__PURE__ */ i({
+  __name: "IconTimer",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...Zr],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Rp = /* @__PURE__ */ h(kr, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconTimer.vue"]]), Sr = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      fill: "#000000",
+      opacity: "0.3",
+      x: "6",
+      y: "1",
+      width: "12",
+      height: "4",
+      rx: "1"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M17.8608177,12.8865418 C17.9519649,13.4062346 18,13.9461053 18,14.5 C18,18.6421356 15.3137085,22 12,22 C8.6862915,22 6,18.6421356 6,14.5 C6,13.9461053 6.04803512,13.4062346 6.13918227,12.8865418 L6.78100868,7.75193053 C6.90611589,6.75107289 7.7569179,6 8.76556444,6 L15.2344356,6 C16.2430821,6 17.0938841,6.75107289 17.2189913,7.75193053 L17.8608177,12.8865418 Z M12,20 C14.209139,20 16,17.7614237 16,15 C16,12.2385763 14.209139,10 12,10 C9.790861,10 8,12.2385763 8,15 C8,17.7614237 9.790861,20 12,20 Z",
+      fill: "#000000"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M11,14 L13,14 C13.2761424,14 13.5,14.2238576 13.5,14.5 L13.5,15.5 C13.5,16.3284271 12.8284271,17 12,17 L12,17 C11.1715729,17 10.5,16.3284271 10.5,15.5 L10.5,14.5 C10.5,14.2238576 10.7238576,14 11,14 Z",
+      fill: "#000000",
+      opacity: "0.3"
+    })
+  ],
+  -1
+  /* HOISTED */
+), Br = [
+  Sr
+], qr = /* @__PURE__ */ i({
+  __name: "IconToilet",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...Br],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Gp = /* @__PURE__ */ h(qr, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconToilet.vue"]]), Ar = /* @__PURE__ */ t(
+  "g",
+  {
+    stroke: "none",
+    "stroke-width": "1",
+    fill: "none",
+    "fill-rule": "evenodd"
+  },
+  [
+    /* @__PURE__ */ t("rect", {
+      x: "0",
+      y: "0",
+      width: "24",
+      height: "24"
+    }),
+    /* @__PURE__ */ t("path", {
+      d: "M18,16 L9,16 C8.44771525,16 8,15.5522847 8,15 C8,14.4477153 8.44771525,14 9,14 L17,14 C17.5522847,14 18,13.5522847 18,13 C18,12.4477153 17.5522847,12 17,12 L9,12 C7.34314575,12 6,13.3431458 6,15 C6,16.6568542 7.34314575,18 9,18 L19.5,18 C21,18 21,18.5 21,19 C21,19.5 21,20 19.5,20 L7,20 C4.790861,20 3,18.209139 3,16 L3,8 C3,5.790861 4.790861,4 7,4 L17,4 C19.209139,4 21,5.790861 21,8 L21,13.0000005 C21,14.6568542 19.6568542,16 18,16 Z",
+      fill: "#000000"
+    })
+  ],
+  -1
+  /* HOISTED */
+), br = [
+  Ar
+], Dr = /* @__PURE__ */ i({
+  __name: "IconTowel",
+  props: {
+    size: { type: String, required: !1 }
+  },
+  setup(n) {
+    const { size: e } = n, o = l(() => ({
+      width: e ? `${e}px` : "16px",
+      height: e ? `${e}px` : "16px"
+    }));
+    return (r, s) => (c(), a(
+      "svg",
+      p({
+        xmlns: "http://www.w3.org/2000/svg",
+        style: o.value,
+        viewBox: "0 0 24 24",
+        fill: "currentColor"
+      }, r.rest),
+      [...br],
+      16
+      /* FULL_PROPS */
+    ));
+  }
+}), Up = /* @__PURE__ */ h(Dr, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconTowel.vue"]]), Fr = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -10844,9 +12844,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), an = [
-  cn
-], pn = /* @__PURE__ */ i({
+), Tr = [
+  Fr
+], Rr = /* @__PURE__ */ i({
   __name: "IconTrash",
   props: {
     size: { type: String, required: !1 }
@@ -10864,12 +12864,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...an],
+      [...Tr],
       16
       /* FULL_PROPS */
     ));
   }
-}), ml = /* @__PURE__ */ h(pn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconTrash.vue"]]), hn = /* @__PURE__ */ t(
+}), Pp = /* @__PURE__ */ h(Rr, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconTrash.vue"]]), Gr = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -10889,9 +12889,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Cn = [
-  hn
-], dn = /* @__PURE__ */ i({
+), Ur = [
+  Gr
+], Pr = /* @__PURE__ */ i({
   __name: "IconUnlock",
   props: {
     size: { type: String, required: !1 }
@@ -10909,12 +12909,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Cn],
+      [...Ur],
       16
       /* FULL_PROPS */
     ));
   }
-}), $l = /* @__PURE__ */ h(dn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconUnlock.vue"]]), _n = /* @__PURE__ */ t(
+}), Wp = /* @__PURE__ */ h(Pr, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconUnlock.vue"]]), Wr = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -10941,9 +12941,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), un = [
-  _n
-], fn = /* @__PURE__ */ i({
+), Er = [
+  Wr
+], Or = /* @__PURE__ */ i({
   __name: "IconUp2",
   props: {
     size: { type: String, required: !1 }
@@ -10961,14 +12961,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...un],
+      [...Er],
       16
       /* FULL_PROPS */
     ));
   }
-}), Il = /* @__PURE__ */ h(fn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconUp2.vue"]]), wn = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" transform="translate(6.000000, 11.000000) rotate(-180.000000) translate(-6.000000, -11.000000) " x="5" y="5" width="2" height="12" rx="1"></rect><path d="M8.29289322,14.2928932 C8.68341751,13.9023689 9.31658249,13.9023689 9.70710678,14.2928932 C10.0976311,14.6834175 10.0976311,15.3165825 9.70710678,15.7071068 L6.70710678,18.7071068 C6.31658249,19.0976311 5.68341751,19.0976311 5.29289322,18.7071068 L2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 C2.68341751,13.9023689 3.31658249,13.9023689 3.70710678,14.2928932 L6,16.5857864 L8.29289322,14.2928932 Z" fill="#000000" fill-rule="nonzero"></path><rect fill="#000000" opacity="0.3" transform="translate(18.000000, 13.000000) scale(1, -1) rotate(-180.000000) translate(-18.000000, -13.000000) " x="17" y="7" width="2" height="12" rx="1"></rect><path d="M20.2928932,5.29289322 C20.6834175,4.90236893 21.3165825,4.90236893 21.7071068,5.29289322 C22.0976311,5.68341751 22.0976311,6.31658249 21.7071068,6.70710678 L18.7071068,9.70710678 C18.3165825,10.0976311 17.6834175,10.0976311 17.2928932,9.70710678 L14.2928932,6.70710678 C13.9023689,6.31658249 13.9023689,5.68341751 14.2928932,5.29289322 C14.6834175,4.90236893 15.3165825,4.90236893 15.7071068,5.29289322 L18,7.58578644 L20.2928932,5.29289322 Z" fill="#000000" fill-rule="nonzero" transform="translate(18.000000, 7.500000) scale(1, -1) translate(-18.000000, -7.500000) "></path></g>', 1), Ln = [
-  wn
-], gn = /* @__PURE__ */ i({
+}), Ep = /* @__PURE__ */ h(Or, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconUp2.vue"]]), Hr = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"></polygon><rect fill="#000000" opacity="0.3" transform="translate(6.000000, 11.000000) rotate(-180.000000) translate(-6.000000, -11.000000) " x="5" y="5" width="2" height="12" rx="1"></rect><path d="M8.29289322,14.2928932 C8.68341751,13.9023689 9.31658249,13.9023689 9.70710678,14.2928932 C10.0976311,14.6834175 10.0976311,15.3165825 9.70710678,15.7071068 L6.70710678,18.7071068 C6.31658249,19.0976311 5.68341751,19.0976311 5.29289322,18.7071068 L2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 C2.68341751,13.9023689 3.31658249,13.9023689 3.70710678,14.2928932 L6,16.5857864 L8.29289322,14.2928932 Z" fill="#000000" fill-rule="nonzero"></path><rect fill="#000000" opacity="0.3" transform="translate(18.000000, 13.000000) scale(1, -1) rotate(-180.000000) translate(-18.000000, -13.000000) " x="17" y="7" width="2" height="12" rx="1"></rect><path d="M20.2928932,5.29289322 C20.6834175,4.90236893 21.3165825,4.90236893 21.7071068,5.29289322 C22.0976311,5.68341751 22.0976311,6.31658249 21.7071068,6.70710678 L18.7071068,9.70710678 C18.3165825,10.0976311 17.6834175,10.0976311 17.2928932,9.70710678 L14.2928932,6.70710678 C13.9023689,6.31658249 13.9023689,5.68341751 14.2928932,5.29289322 C14.6834175,4.90236893 15.3165825,4.90236893 15.7071068,5.29289322 L18,7.58578644 L20.2928932,5.29289322 Z" fill="#000000" fill-rule="nonzero" transform="translate(18.000000, 7.500000) scale(1, -1) translate(-18.000000, -7.500000) "></path></g>', 1), Nr = [
+  Hr
+], Vr = /* @__PURE__ */ i({
   __name: "IconUpdown",
   props: {
     size: { type: String, required: !1 }
@@ -10986,12 +12986,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Ln],
+      [...Nr],
       16
       /* FULL_PROPS */
     ));
   }
-}), zl = /* @__PURE__ */ h(gn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconUpdown.vue"]]), xn = /* @__PURE__ */ t(
+}), Op = /* @__PURE__ */ h(Vr, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconUpdown.vue"]]), jr = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -11019,9 +13019,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), vn = [
-  xn
-], yn = /* @__PURE__ */ i({
+), Kr = [
+  jr
+], Qr = /* @__PURE__ */ i({
   __name: "IconUpleft",
   props: {
     size: { type: String, required: !1 }
@@ -11039,12 +13039,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...vn],
+      [...Kr],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ml = /* @__PURE__ */ h(yn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconUpleft.vue"]]), mn = /* @__PURE__ */ t(
+}), Hp = /* @__PURE__ */ h(Qr, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconUpleft.vue"]]), Jr = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -11072,9 +13072,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), $n = [
-  mn
-], In = /* @__PURE__ */ i({
+), Xr = [
+  Jr
+], Yr = /* @__PURE__ */ i({
   __name: "IconUpright",
   props: {
     size: { type: String, required: !1 }
@@ -11092,12 +13092,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...$n],
+      [...Xr],
       16
       /* FULL_PROPS */
     ));
   }
-}), Zl = /* @__PURE__ */ h(In, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconUpright.vue"]]), zn = /* @__PURE__ */ t(
+}), Np = /* @__PURE__ */ h(Yr, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconUpright.vue"]]), es = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -11120,9 +13120,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Mn = [
-  zn
-], Zn = /* @__PURE__ */ i({
+), ts = [
+  es
+], ns = /* @__PURE__ */ i({
   __name: "IconUpdate",
   props: {
     size: { type: String, required: !1 }
@@ -11140,12 +13140,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Mn],
+      [...ts],
       16
       /* FULL_PROPS */
     ));
   }
-}), kl = /* @__PURE__ */ h(Zn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconUpdate.vue"]]), kn = /* @__PURE__ */ t(
+}), Vp = /* @__PURE__ */ h(ns, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconUpdate.vue"]]), os = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -11172,9 +13172,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Sn = [
-  kn
-], Bn = /* @__PURE__ */ i({
+), rs = [
+  os
+], ss = /* @__PURE__ */ i({
   __name: "IconUrgentmail",
   props: {
     size: { type: String, required: !1 }
@@ -11192,12 +13192,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Sn],
+      [...rs],
       16
       /* FULL_PROPS */
     ));
   }
-}), Sl = /* @__PURE__ */ h(Bn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconUrgentmail.vue"]]), qn = /* @__PURE__ */ t(
+}), jp = /* @__PURE__ */ h(ss, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconUrgentmail.vue"]]), is = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -11221,9 +13221,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), An = [
-  qn
-], bn = /* @__PURE__ */ i({
+), ls = [
+  is
+], cs = /* @__PURE__ */ i({
   __name: "IconUser",
   props: {
     size: { type: String, required: !1 }
@@ -11241,12 +13241,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...An],
+      [...ls],
       16
       /* FULL_PROPS */
     ));
   }
-}), Bl = /* @__PURE__ */ h(bn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconUser.vue"]]), Dn = /* @__PURE__ */ t(
+}), Kp = /* @__PURE__ */ h(cs, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconUser.vue"]]), as = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -11275,9 +13275,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Rn = [
-  Dn
-], Tn = /* @__PURE__ */ i({
+), ps = [
+  as
+], hs = /* @__PURE__ */ i({
   __name: "IconVisible",
   props: {
     size: { type: String, required: !1 }
@@ -11295,12 +13295,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Rn],
+      [...ps],
       16
       /* FULL_PROPS */
     ));
   }
-}), ql = /* @__PURE__ */ h(Tn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconVisible.vue"]]), Un = /* @__PURE__ */ t(
+}), Qp = /* @__PURE__ */ h(hs, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconVisible.vue"]]), Cs = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -11324,9 +13324,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Gn = [
-  Un
-], Pn = /* @__PURE__ */ i({
+), ds = [
+  Cs
+], _s = /* @__PURE__ */ i({
   __name: "IconWaiting",
   props: {
     size: { type: String, required: !1 }
@@ -11344,12 +13344,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Gn],
+      [...ds],
       16
       /* FULL_PROPS */
     ));
   }
-}), Al = /* @__PURE__ */ h(Pn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconWaiting.vue"]]), On = /* @__PURE__ */ t(
+}), Jp = /* @__PURE__ */ h(_s, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconWaiting.vue"]]), us = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -11380,9 +13380,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), Wn = [
-  On
-], En = /* @__PURE__ */ i({
+), fs = [
+  us
+], Ls = /* @__PURE__ */ i({
   __name: "IconWallet2",
   props: {
     size: { type: String, required: !1 }
@@ -11400,14 +13400,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Wn],
+      [...fs],
       16
       /* FULL_PROPS */
     ));
   }
-}), bl = /* @__PURE__ */ h(En, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconWallet2.vue"]]), Fn = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M4,4 L20,4 C21.1045695,4 22,4.8954305 22,6 L22,18 C22,19.1045695 21.1045695,20 20,20 L4,20 C2.8954305,20 2,19.1045695 2,18 L2,6 C2,4.8954305 2.8954305,4 4,4 Z" fill="#000000" opacity="0.3"></path><path d="M18.5,11 L5.5,11 C4.67157288,11 4,11.6715729 4,12.5 L4,13 L8.58578644,13 C8.85100293,13 9.10535684,13.1053568 9.29289322,13.2928932 L10.2928932,14.2928932 C10.7456461,14.7456461 11.3597108,15 12,15 C12.6402892,15 13.2543539,14.7456461 13.7071068,14.2928932 L14.7071068,13.2928932 C14.8946432,13.1053568 15.1489971,13 15.4142136,13 L20,13 L20,12.5 C20,11.6715729 19.3284271,11 18.5,11 Z" fill="#000000"></path><path d="M5.5,6 C4.67157288,6 4,6.67157288 4,7.5 L4,8 L20,8 L20,7.5 C20,6.67157288 19.3284271,6 18.5,6 L5.5,6 Z" fill="#000000"></path></g>', 1), Hn = [
-  Fn
-], Nn = /* @__PURE__ */ i({
+}), Xp = /* @__PURE__ */ h(Ls, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconWallet2.vue"]]), ws = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M4,4 L20,4 C21.1045695,4 22,4.8954305 22,6 L22,18 C22,19.1045695 21.1045695,20 20,20 L4,20 C2.8954305,20 2,19.1045695 2,18 L2,6 C2,4.8954305 2.8954305,4 4,4 Z" fill="#000000" opacity="0.3"></path><path d="M18.5,11 L5.5,11 C4.67157288,11 4,11.6715729 4,12.5 L4,13 L8.58578644,13 C8.85100293,13 9.10535684,13.1053568 9.29289322,13.2928932 L10.2928932,14.2928932 C10.7456461,14.7456461 11.3597108,15 12,15 C12.6402892,15 13.2543539,14.7456461 13.7071068,14.2928932 L14.7071068,13.2928932 C14.8946432,13.1053568 15.1489971,13 15.4142136,13 L20,13 L20,12.5 C20,11.6715729 19.3284271,11 18.5,11 Z" fill="#000000"></path><path d="M5.5,6 C4.67157288,6 4,6.67157288 4,7.5 L4,8 L20,8 L20,7.5 C20,6.67157288 19.3284271,6 18.5,6 L5.5,6 Z" fill="#000000"></path></g>', 1), gs = [
+  ws
+], xs = /* @__PURE__ */ i({
   __name: "IconWallet3",
   props: {
     size: { type: String, required: !1 }
@@ -11425,14 +13425,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Hn],
+      [...gs],
       16
       /* FULL_PROPS */
     ));
   }
-}), Dl = /* @__PURE__ */ h(Nn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconWallet3.vue"]]), Qn = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" opacity="0.3" cx="20.5" cy="12.5" r="1.5"></circle><rect fill="#000000" opacity="0.3" transform="translate(12.000000, 6.500000) rotate(-15.000000) translate(-12.000000, -6.500000) " x="3" y="3" width="18" height="7" rx="1"></rect><path d="M22,9.33681558 C21.5453723,9.12084552 21.0367986,9 20.5,9 C18.5670034,9 17,10.5670034 17,12.5 C17,14.4329966 18.5670034,16 20.5,16 C21.0367986,16 21.5453723,15.8791545 22,15.6631844 L22,18 C22,19.1045695 21.1045695,20 20,20 L4,20 C2.8954305,20 2,19.1045695 2,18 L2,6 C2,4.8954305 2.8954305,4 4,4 L20,4 C21.1045695,4 22,4.8954305 22,6 L22,9.33681558 Z" fill="#000000"></path></g>', 1), Vn = [
-  Qn
-], jn = /* @__PURE__ */ i({
+}), Yp = /* @__PURE__ */ h(xs, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconWallet3.vue"]]), vs = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" opacity="0.3" cx="20.5" cy="12.5" r="1.5"></circle><rect fill="#000000" opacity="0.3" transform="translate(12.000000, 6.500000) rotate(-15.000000) translate(-12.000000, -6.500000) " x="3" y="3" width="18" height="7" rx="1"></rect><path d="M22,9.33681558 C21.5453723,9.12084552 21.0367986,9 20.5,9 C18.5670034,9 17,10.5670034 17,12.5 C17,14.4329966 18.5670034,16 20.5,16 C21.0367986,16 21.5453723,15.8791545 22,15.6631844 L22,18 C22,19.1045695 21.1045695,20 20,20 L4,20 C2.8954305,20 2,19.1045695 2,18 L2,6 C2,4.8954305 2.8954305,4 4,4 L20,4 C21.1045695,4 22,4.8954305 22,6 L22,9.33681558 Z" fill="#000000"></path></g>', 1), ys = [
+  vs
+], ms = /* @__PURE__ */ i({
   __name: "IconWallet",
   props: {
     size: { type: String, required: !1 }
@@ -11450,14 +13450,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Vn],
+      [...ys],
       16
       /* FULL_PROPS */
     ));
   }
-}), Rl = /* @__PURE__ */ h(jn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconWallet.vue"]]), Jn = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10"></circle><rect fill="#000000" x="11" y="7" width="2" height="8" rx="1"></rect><rect fill="#000000" x="11" y="16" width="2" height="2" rx="1"></rect></g>', 1), Kn = [
-  Jn
-], Xn = /* @__PURE__ */ i({
+}), eh = /* @__PURE__ */ h(ms, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconWallet.vue"]]), $s = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10"></circle><rect fill="#000000" x="11" y="7" width="2" height="8" rx="1"></rect><rect fill="#000000" x="11" y="16" width="2" height="2" rx="1"></rect></g>', 1), Is = [
+  $s
+], zs = /* @__PURE__ */ i({
   __name: "IconWarning1circle",
   props: {
     size: { type: String, required: !1 }
@@ -11475,14 +13475,14 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...Kn],
+      [...Is],
       16
       /* FULL_PROPS */
     ));
   }
-}), Tl = /* @__PURE__ */ h(Xn, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconWarning1circle.vue"]]), Yn = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M11.1669899,4.49941818 L2.82535718,19.5143571 C2.557144,19.9971408 2.7310878,20.6059441 3.21387153,20.8741573 C3.36242953,20.9566895 3.52957021,21 3.69951446,21 L21.2169432,21 C21.7692279,21 22.2169432,20.5522847 22.2169432,20 C22.2169432,19.8159952 22.1661743,19.6355579 22.070225,19.47855 L12.894429,4.4636111 C12.6064401,3.99235656 11.9909517,3.84379039 11.5196972,4.13177928 C11.3723594,4.22181902 11.2508468,4.34847583 11.1669899,4.49941818 Z" fill="#000000" opacity="0.3"></path><rect fill="#000000" x="11" y="9" width="2" height="7" rx="1"></rect><rect fill="#000000" x="11" y="17" width="2" height="2" rx="1"></rect></g>', 1), eo = [
-  Yn
-], to = /* @__PURE__ */ i({
+}), th = /* @__PURE__ */ h(zs, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconWarning1circle.vue"]]), Ms = /* @__PURE__ */ C('<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M11.1669899,4.49941818 L2.82535718,19.5143571 C2.557144,19.9971408 2.7310878,20.6059441 3.21387153,20.8741573 C3.36242953,20.9566895 3.52957021,21 3.69951446,21 L21.2169432,21 C21.7692279,21 22.2169432,20.5522847 22.2169432,20 C22.2169432,19.8159952 22.1661743,19.6355579 22.070225,19.47855 L12.894429,4.4636111 C12.6064401,3.99235656 11.9909517,3.84379039 11.5196972,4.13177928 C11.3723594,4.22181902 11.2508468,4.34847583 11.1669899,4.49941818 Z" fill="#000000" opacity="0.3"></path><rect fill="#000000" x="11" y="9" width="2" height="7" rx="1"></rect><rect fill="#000000" x="11" y="17" width="2" height="2" rx="1"></rect></g>', 1), Zs = [
+  Ms
+], ks = /* @__PURE__ */ i({
   __name: "IconWarning2",
   props: {
     size: { type: String, required: !1 }
@@ -11500,12 +13500,12 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...eo],
+      [...Zs],
       16
       /* FULL_PROPS */
     ));
   }
-}), Ul = /* @__PURE__ */ h(to, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconWarning2.vue"]]), no = /* @__PURE__ */ t(
+}), nh = /* @__PURE__ */ h(ks, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconWarning2.vue"]]), Ss = /* @__PURE__ */ t(
   "g",
   {
     stroke: "none",
@@ -11535,9 +13535,9 @@ const d = /* @__PURE__ */ t(
   ],
   -1
   /* HOISTED */
-), oo = [
-  no
-], ro = /* @__PURE__ */ i({
+), Bs = [
+  Ss
+], qs = /* @__PURE__ */ i({
   __name: "IconWrite",
   props: {
     size: { type: String, required: !1 }
@@ -11555,260 +13555,305 @@ const d = /* @__PURE__ */ t(
         viewBox: "0 0 24 24",
         fill: "currentColor"
       }, r.rest),
-      [...oo],
+      [...Bs],
       16
       /* FULL_PROPS */
     ));
   }
-}), Gl = /* @__PURE__ */ h(ro, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconWrite.vue"]]);
+}), oh = /* @__PURE__ */ h(qs, [["__file", "/usr/app/client/admin/starter-core/icons/src/admin/IconWrite.vue"]]);
 export {
-  io as IconATM,
-  lo as IconActivecall,
-  ao as IconAddresscard,
-  co as IconAdduser,
-  po as IconAdressbook1,
-  ho as IconAdressbook2,
-  Co as IconAirpods,
-  _o as IconAndroid,
-  uo as IconAngledoubledown,
-  fo as IconAngledoubleleft,
-  wo as IconAngledoubleright,
-  Lo as IconAngledoubleup,
-  go as IconAngledown,
-  xo as IconAngleleft,
-  vo as IconAngleright,
-  yo as IconAngleup,
-  mo as IconArchive,
-  $o as IconArrowdown,
-  Io as IconArrowfrombottom,
-  zo as IconArrowfromleft,
-  Mo as IconArrowfromright,
-  Zo as IconArrowfromtop,
-  ko as IconArrowleft,
-  So as IconArrowright,
-  Ro as IconArrowsh,
-  To as IconArrowsv,
-  Bo as IconArrowtobottom,
-  qo as IconArrowtoleft,
-  Ao as IconArrowtoright,
-  bo as IconArrowtoup,
-  Do as IconArrowup,
-  Uo as IconAttachment1,
-  Go as IconAttachment2,
-  Po as IconBackspace,
-  Oo as IconBag1,
-  Wo as IconBag2,
-  Ho as IconBarcode,
-  Eo as IconBarcoderead,
-  Fo as IconBarcodescan,
-  No as IconBatterycharging,
-  Qo as IconBatteryempty,
-  Vo as IconBatteryfull,
-  jo as IconBatteryhalf,
-  Jo as IconBinocular,
-  Ko as IconBitcoin,
-  Xo as IconBluetooth,
-  Yo as IconBookmark,
-  er as IconBox1,
-  tr as IconBox2,
-  nr as IconBox3,
-  or as IconCMD,
-  rr as IconCPU1,
-  sr as IconCalculator,
-  lr as IconCall,
-  ir as IconCall1,
-  cr as IconCamera,
-  ar as IconCardboardvr,
-  pr as IconCart1,
-  hr as IconCart2,
-  Cr as IconCart3,
-  dr as IconCassete,
-  _r as IconChartbar1,
-  ur as IconChartbar2,
-  fr as IconChartbar3,
-  wr as IconChartline1,
-  Lr as IconChartline2,
-  gr as IconChartpie,
-  xr as IconChat1,
-  vr as IconChat2,
-  yr as IconChat4,
-  mr as IconChat5,
-  $r as IconChat6,
-  Ir as IconChatcheck,
-  zr as IconChaterror,
-  Mr as IconChatlocked,
-  Zr as IconChatsmile,
-  kr as IconCheck,
-  Sr as IconClip,
-  Ar as IconClipboard,
-  Br as IconClipboardcheck,
-  qr as IconClipboardlist,
-  br as IconClose,
-  Dr as IconCode,
-  Rr as IconCommit,
-  Tr as IconCompiling,
-  Ur as IconContact1,
-  Gr as IconControl,
-  Pr as IconCreditcard,
-  Or as IconCursor,
-  Wr as IconDeleteuser,
-  Er as IconDialnumbers,
-  Fr as IconDislike,
-  Hr as IconDollar,
-  Nr as IconDonecircle,
-  Qr as IconDoublecheck,
-  Vr as IconDown2,
-  jr as IconDownleft,
-  Jr as IconDownright,
-  Kr as IconDuplicate,
-  Xr as IconEdit,
-  Yr as IconErrorcircle,
-  es as IconEuro,
-  ts as IconExchange,
-  ns as IconExpandarrows,
-  os as IconFire,
-  rs as IconFlag,
-  ss as IconFolder,
-  is as IconForward,
-  ls as IconGift,
-  cs as IconGit1,
-  as as IconGit2,
-  ps as IconGit3,
-  hs as IconGit4,
-  Cs as IconGithub,
-  _s as IconGroup,
-  ds as IconGroupchat,
-  us as IconHalfheart,
-  fs as IconHalfstar,
-  ws as IconHeart,
-  Ls as IconHidden,
-  gs as IconIncomingbox,
-  xs as IconIncomingcall,
-  vs as IconIncomingmail,
-  ys as IconInfocircle,
-  ms as IconLayout3d,
-  $s as IconLayout4blocks,
-  Is as IconLayoutarrange,
-  zs as IconLayoutgrid,
-  Ms as IconLayouthorizontal,
-  Zs as IconLayoutleftpanel1,
-  ks as IconLayoutleftpanel2,
-  Ss as IconLayoutrightpanel1,
-  Bs as IconLayoutrightpanel2,
-  qs as IconLayouttoppanel1,
-  As as IconLayouttoppanel2,
-  bs as IconLayouttoppanel3,
-  Ds as IconLayouttoppanel4,
-  Rs as IconLayouttoppanel5,
-  Ts as IconLayouttoppanel6,
-  Us as IconLayoutvertical,
-  Ps as IconLeft2,
-  Gs as IconLeft3,
-  Os as IconLeftcircle,
-  Ws as IconLike,
-  Es as IconLoader,
-  Fs as IconLoading,
-  Qs as IconLock,
-  Hs as IconLockcircle,
-  Ns as IconLockoverturning,
-  Vs as IconMC,
-  ri as IconMail,
-  js as IconMailat,
-  Js as IconMailattachment,
-  Ks as IconMailbox,
-  Xs as IconMailerror,
-  Ys as IconMailheart,
-  ei as IconMaillocked,
-  ti as IconMailnotification,
-  ni as IconMailopened,
-  oi as IconMailunocked,
-  ii as IconMinus,
-  si as IconMinuscopy,
-  li as IconMissedcall,
-  ci as IconMoney,
-  ai as IconNotification2,
-  pi as IconNotifications1,
-  hi as IconOption,
-  Ci as IconOther1,
-  di as IconOther2,
-  _i as IconOutgoingbox,
-  ui as IconOutgoingcall,
-  fi as IconOutgoingmail,
-  Li as IconPlus,
-  wi as IconPluscopy,
-  gi as IconPound,
-  xi as IconPrice1,
-  vi as IconPrice2,
-  yi as IconPuzzle,
-  mi as IconQuestioncircle,
-  $i as IconRSS,
-  Ii as IconReadedmail,
-  Mi as IconReply,
-  zi as IconReplyall,
-  Bi as IconRight,
-  ki as IconRight2,
-  Zi as IconRight3,
-  Si as IconRightcircle,
-  qi as IconRouble,
-  Ai as IconRoute,
-  bi as IconSad,
-  Ri as IconSafe,
-  Di as IconSafechat,
-  Ti as IconSale1,
-  Ui as IconSale2,
-  Gi as IconSave,
-  Pi as IconScale,
-  Oi as IconScissors,
-  Wi as IconSearch,
-  Ei as IconSend,
-  Hi as IconSending,
-  Fi as IconSendingmail,
-  Ji as IconSettings,
-  Vi as IconSettings1,
-  ji as IconSettings2,
-  Ni as IconSettings3,
-  Qi as IconSettings4,
-  Ki as IconShare,
-  Xi as IconShieldcheck,
-  Yi as IconShielddisabled,
-  el as IconShieldprotected,
-  tl as IconShieldthunder,
-  nl as IconShielduser,
-  ol as IconShift,
-  rl as IconSignin,
-  sl as IconSignout,
-  il as IconSize,
-  ll as IconSmile,
-  cl as IconSnoozedmail,
-  al as IconSort1,
-  pl as IconSort2,
-  hl as IconSort3,
-  Cl as IconSpam,
-  dl as IconSpy,
-  _l as IconStar,
-  ul as IconStop,
-  fl as IconTerminal,
-  wl as IconThumbtack,
-  xl as IconThunder,
-  Ll as IconThundercircle,
-  gl as IconThundermove,
-  vl as IconTicket,
-  yl as IconTimeschedule,
-  ml as IconTrash,
-  $l as IconUnlock,
-  Il as IconUp2,
-  kl as IconUpdate,
-  zl as IconUpdown,
-  Ml as IconUpleft,
-  Zl as IconUpright,
-  Sl as IconUrgentmail,
-  Bl as IconUser,
-  ql as IconVisible,
-  Al as IconWaiting,
-  Rl as IconWallet,
-  bl as IconWallet2,
-  Dl as IconWallet3,
-  Tl as IconWarning1circle,
-  Ul as IconWarning2,
-  Gl as IconWrite
+  bs as IconATM,
+  Ds as IconActivecall,
+  Ts as IconAddresscard,
+  Fs as IconAdduser,
+  Rs as IconAdressbook1,
+  Gs as IconAdressbook2,
+  Us as IconAirballon,
+  Ps as IconAirpods,
+  Ws as IconAlarmclock,
+  Es as IconAndroid,
+  Os as IconAngledoubledown,
+  Hs as IconAngledoubleleft,
+  Ns as IconAngledoubleright,
+  Vs as IconAngledoubleup,
+  js as IconAngledown,
+  Ks as IconAngleleft,
+  Qs as IconAngleright,
+  Js as IconAngleup,
+  Xs as IconArchive,
+  Ys as IconArmchair,
+  ei as IconArrowdown,
+  ti as IconArrowfrombottom,
+  ni as IconArrowfromleft,
+  oi as IconArrowfromright,
+  ri as IconArrowfromtop,
+  si as IconArrowleft,
+  ii as IconArrowright,
+  Ci as IconArrowsh,
+  di as IconArrowsv,
+  li as IconArrowtobottom,
+  ci as IconArrowtoleft,
+  ai as IconArrowtoright,
+  pi as IconArrowtoup,
+  hi as IconArrowup,
+  _i as IconAttachment1,
+  ui as IconAttachment2,
+  fi as IconBackspace,
+  Li as IconBag1,
+  wi as IconBag2,
+  gi as IconBagchair,
+  yi as IconBarcode,
+  xi as IconBarcoderead,
+  vi as IconBarcodescan,
+  mi as IconBath,
+  $i as IconBatterycharging,
+  Ii as IconBatteryempty,
+  zi as IconBatteryfull,
+  Mi as IconBatteryhalf,
+  Zi as IconBed,
+  ki as IconBinocular,
+  Si as IconBitcoin,
+  Bi as IconBluetooth,
+  Ai as IconBook,
+  bi as IconBookmark,
+  qi as IconBookopen,
+  Ri as IconBox,
+  Di as IconBox1,
+  Fi as IconBox2,
+  Ti as IconBox3,
+  Gi as IconBroom,
+  Ui as IconBuilding,
+  Pi as IconBulb1,
+  Wi as IconBulb2,
+  Ei as IconCMD,
+  Oi as IconCPU1,
+  Hi as IconCalculator,
+  Vi as IconCall,
+  Ni as IconCall1,
+  ji as IconCamera,
+  Ki as IconCardboardvr,
+  Qi as IconCart1,
+  Ji as IconCart2,
+  Xi as IconCart3,
+  Yi as IconCassete,
+  el as IconChair1,
+  tl as IconChair2,
+  nl as IconChartbar1,
+  ol as IconChartbar2,
+  rl as IconChartbar3,
+  sl as IconChartline1,
+  il as IconChartline2,
+  ll as IconChartpie,
+  cl as IconChat1,
+  al as IconChat2,
+  pl as IconChat4,
+  hl as IconChat5,
+  Cl as IconChat6,
+  dl as IconChatcheck,
+  _l as IconChaterror,
+  ul as IconChatlocked,
+  fl as IconChatsmile,
+  Ll as IconCheck,
+  wl as IconClip,
+  vl as IconClipboard,
+  gl as IconClipboardcheck,
+  xl as IconClipboardlist,
+  yl as IconClock,
+  ml as IconClose,
+  $l as IconCode,
+  Il as IconCommit,
+  zl as IconCommode1,
+  Ml as IconCommode2,
+  Zl as IconCompiling,
+  kl as IconContact1,
+  Sl as IconControl,
+  Bl as IconCouch,
+  ql as IconCreditcard,
+  Al as IconCupboard,
+  bl as IconCursor,
+  Dl as IconCurtains,
+  Fl as IconDeer,
+  Tl as IconDeleteuser,
+  Rl as IconDialnumbers,
+  Gl as IconDislike,
+  Ul as IconDollar,
+  Pl as IconDonecircle,
+  Wl as IconDooropen,
+  El as IconDoublecheck,
+  Ol as IconDown2,
+  Hl as IconDownleft,
+  Nl as IconDownright,
+  Vl as IconDuplicate,
+  jl as IconEarth,
+  Kl as IconEdit,
+  Ql as IconErrorcircle,
+  Jl as IconEuro,
+  Xl as IconExchange,
+  Yl as IconExpandarrows,
+  ec as IconFire,
+  tc as IconFireplace,
+  nc as IconFlag,
+  oc as IconFlashlight,
+  rc as IconFlower1,
+  sc as IconFlower2,
+  ic as IconFlower3,
+  lc as IconFolder,
+  cc as IconForward,
+  ac as IconGift,
+  pc as IconGit1,
+  hc as IconGit2,
+  Cc as IconGit3,
+  dc as IconGit4,
+  _c as IconGithub,
+  uc as IconGlobe,
+  Lc as IconGroup,
+  fc as IconGroupchat,
+  wc as IconHalfheart,
+  gc as IconHalfstar,
+  xc as IconHeart,
+  vc as IconHidden,
+  mc as IconHome,
+  yc as IconHomeheart,
+  $c as IconIncomingbox,
+  Ic as IconIncomingcall,
+  zc as IconIncomingmail,
+  Mc as IconInfocircle,
+  Zc as IconKey,
+  kc as IconLadder,
+  Sc as IconLamp1,
+  Bc as IconLamp2,
+  qc as IconLayout3d,
+  Ac as IconLayout4blocks,
+  bc as IconLayoutarrange,
+  Dc as IconLayoutgrid,
+  Fc as IconLayouthorizontal,
+  Tc as IconLayoutleftpanel1,
+  Rc as IconLayoutleftpanel2,
+  Gc as IconLayoutrightpanel1,
+  Uc as IconLayoutrightpanel2,
+  Pc as IconLayouttoppanel1,
+  Wc as IconLayouttoppanel2,
+  Ec as IconLayouttoppanel3,
+  Oc as IconLayouttoppanel4,
+  Hc as IconLayouttoppanel5,
+  Nc as IconLayouttoppanel6,
+  Vc as IconLayoutvertical,
+  Kc as IconLeft2,
+  jc as IconLeft3,
+  Qc as IconLeftcircle,
+  Jc as IconLibrary,
+  Xc as IconLike,
+  Yc as IconLoader,
+  ea as IconLoading,
+  oa as IconLock,
+  ta as IconLockcircle,
+  na as IconLockoverturning,
+  ra as IconMC,
+  da as IconMail,
+  sa as IconMailat,
+  ia as IconMailattachment,
+  _a as IconMailbox,
+  ua as IconMailbox1,
+  la as IconMailerror,
+  ca as IconMailheart,
+  aa as IconMaillocked,
+  pa as IconMailnotification,
+  ha as IconMailopened,
+  Ca as IconMailunocked,
+  La as IconMinus,
+  fa as IconMinuscopy,
+  wa as IconMirror,
+  ga as IconMissedcall,
+  xa as IconMoney,
+  va as IconNotification2,
+  ya as IconNotifications1,
+  ma as IconOption,
+  $a as IconOther1,
+  Ia as IconOther2,
+  za as IconOutgoingbox,
+  Ma as IconOutgoingcall,
+  Za as IconOutgoingmail,
+  ka as IconPicture,
+  Ba as IconPlus,
+  Sa as IconPluscopy,
+  qa as IconPound,
+  Aa as IconPrice1,
+  ba as IconPrice2,
+  Da as IconPuzzle,
+  Fa as IconQuestioncircle,
+  Ta as IconRSS,
+  Ra as IconReadedmail,
+  Ua as IconReply,
+  Ga as IconReplyall,
+  Oa as IconRight,
+  Wa as IconRight2,
+  Pa as IconRight3,
+  Ea as IconRightcircle,
+  Ha as IconRouble,
+  Na as IconRoute,
+  Va as IconRuller,
+  ja as IconSad,
+  Qa as IconSafe,
+  Ka as IconSafechat,
+  Ja as IconSale1,
+  Xa as IconSale2,
+  Ya as IconSave,
+  ep as IconScale,
+  tp as IconScissors,
+  np as IconSearch,
+  op as IconSend,
+  sp as IconSending,
+  rp as IconSendingmail,
+  pp as IconSettings,
+  cp as IconSettings1,
+  ap as IconSettings2,
+  ip as IconSettings3,
+  lp as IconSettings4,
+  hp as IconShare,
+  Cp as IconShieldcheck,
+  dp as IconShielddisabled,
+  _p as IconShieldprotected,
+  up as IconShieldthunder,
+  fp as IconShielduser,
+  Lp as IconShift,
+  wp as IconSignin,
+  gp as IconSignout,
+  xp as IconSize,
+  vp as IconSmile,
+  yp as IconSnoozedmail,
+  mp as IconSort1,
+  $p as IconSort2,
+  Ip as IconSort3,
+  zp as IconSpam,
+  Mp as IconSpy,
+  Zp as IconStairs,
+  kp as IconStar,
+  Sp as IconStop,
+  Bp as IconTerminal,
+  qp as IconThumbtack,
+  Dp as IconThunder,
+  Ap as IconThundercircle,
+  bp as IconThundermove,
+  Fp as IconTicket,
+  Rp as IconTimer,
+  Tp as IconTimeschedule,
+  Gp as IconToilet,
+  Up as IconTowel,
+  Pp as IconTrash,
+  Wp as IconUnlock,
+  Ep as IconUp2,
+  Vp as IconUpdate,
+  Op as IconUpdown,
+  Hp as IconUpleft,
+  Np as IconUpright,
+  jp as IconUrgentmail,
+  Kp as IconUser,
+  Qp as IconVisible,
+  Jp as IconWaiting,
+  eh as IconWallet,
+  Xp as IconWallet2,
+  Yp as IconWallet3,
+  th as IconWarning1circle,
+  nh as IconWarning2,
+  oh as IconWrite
 };
