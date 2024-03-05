@@ -55,6 +55,9 @@ pipeline {
             }
         }
         stage('Deploy') {
+            when {
+                branch 'test'
+            }
             steps {
                 echo 'Deploy stage'
                 sh 'ansible-playbook -i /var/jenkins_data/starter/inventory infrastructure/ci_cd/deploy/starter.yml --private-key=/var/lib/jenkins/.ssh/id_rsa'
