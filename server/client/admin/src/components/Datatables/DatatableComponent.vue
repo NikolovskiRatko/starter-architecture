@@ -1,11 +1,8 @@
 <script setup lang="ts">
   import { computed, provide } from "vue";
   import {
-    DatatablePagination,
     TableHead,
     TableLoader,
-    DatatableHeader,
-    DatatableFilters,
     TableColumn,
     TableRow,
   } from "@/components/Datatables";
@@ -16,15 +13,13 @@
   } from "@/components/Datatables/typings";
   import "./DatatableComponent.scss";
 
-  const props = defineProps([
-    "tableInfo",
-    "query",
-    "loading",
-    "columns",
-    "pagination",
-    "langKey", //TODO: Find better solution to avoid duplications in translations
-    "addRouteName", //TODO: Send all these as single object to be used by Datatable
-  ]);
+  const props = defineProps(["tableInfo", "query", "loading", "columns"]);
+
+  defineSlots<{
+    default: () => void;
+    header: () => void;
+    pagination: () => void;
+  }>();
 
   const emit = defineEmits(["onQueryUpdate"]);
 
@@ -39,8 +34,7 @@
 
 <template>
   <PortletComponent>
-    <DatatableHeader :lang-key="langKey" :add-route-name="addRouteName" />
-    <DatatableFilters />
+    <slot name="header"></slot>
     <PortletBody :is-unpdadded="true">
       <div
         class="kt-datatable kt-datatable--default kt-datatable--brand"
@@ -90,14 +84,11 @@
               </TableColumn>
             </TableRow>
 
-            <slot />
+            <slot name="default"></slot>
           </tbody>
         </table>
 
-        <DatatablePagination
-          v-if="!tableInfo.noRecords"
-          :pagination="pagination"
-        />
+        <slot name="pagination"></slot>
 
         <TableLoader />
       </div>

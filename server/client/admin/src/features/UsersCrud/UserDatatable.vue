@@ -2,7 +2,13 @@
   // import { ref } from "vue";
   // import type { Ref } from "vue";
   import UsersTableRow from "@/features/UsersCrud/UsersTableRow.vue";
-  import { useDatatable, DatatableComponent } from "@/components/Datatables";
+  import {
+    useDatatable,
+    DatatableComponent,
+    DatatablePagination,
+    DatatableFilters,
+    DatatableHeader
+  } from "@/components/Datatables";
   import { useRootStore } from "@/store/root";
   // import { get, post } from "@/services/HTTP";
 
@@ -62,15 +68,26 @@
     :columns="columns"
     lang-key="users"
     add-route-name="add.user"
-    :pagination="pagination"
     @onQueryUpdate="setQuery"
   >
-    <users-table-row
-      v-for="(user, index) in records.data"
-      :index="index"
-      :key="user.id"
-      :columns="columns"
-      :user="user"
-    />
+    <template #header>
+      <DatatableHeader lang-key="users" add-route-name="add.user" />
+      <DatatableFilters />
+    </template>
+    <template #default>
+      <users-table-row
+        v-for="(user, index) in records.data"
+        :index="index"
+        :key="user.id"
+        :columns="columns"
+        :user="user"
+      />
+    </template>
+    <template #pagination>
+      <DatatablePagination
+        v-if="!tableInfo.noRecords"
+        :pagination="pagination"
+      />
+    </template>
   </DatatableComponent>
 </template>
