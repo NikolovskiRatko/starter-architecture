@@ -12,46 +12,96 @@ pipeline {
                 MYSQL_USER = 'starter'
             }
             steps {
-                echo 'Build stage using Docker Compose'
-                withCredentials([usernamePassword(
-                    credentialsId: 'database-credentials',
-                    usernameVariable: 'MYSQL_ROOT_USER',
-                    passwordVariable: 'MYSQL_ROOT_PASSWORD'
-                )]) {
-                  sh 'docker compose -f infrastructure/ci_cd/build/docker-compose.yml up -d'
-                  // Wait for a moment to give the containers some time to start
-                  sleep(time: 10, unit: 'SECONDS')
+                timestamps {
+                    echo 'Build stage using Docker Compose'
+                    withCredentials([usernamePassword(
+                        credentialsId: 'database-credentials',
+                        usernameVariable: 'MYSQL_ROOT_USER',
+                        passwordVariable: 'MYSQL_ROOT_PASSWORD'
+                    )]) {
+                      sh 'docker compose -f infrastructure/ci_cd/build/docker-compose.yml up -d'
+                      // Wait for a moment to give the containers some time to start
+                      sleep(time: 10, unit: 'SECONDS')
 
-                  // Run the API build commands
-                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app cp .env.build .env'
-                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app composer install --optimize-autoloader --no-dev'
-                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan key:generate'
-                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan config:clear'
-                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan cache:clear'
-                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan view:clear'
-                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan route:clear'
-                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app composer dump-autoload'
-                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan config:cache'
-                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan route:cache'
-
-                  // Run the Database migrations
-                  sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan migrate'
-
-                  // Run the build commands for the Admin Panel Vuejs3 SPA
-                  sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd client/admin && npm install'"
-                  sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd client/admin && npm run build'"
-
-                  // Run the build commands for the Public Nuxt3 SSR
-                  sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd client/public && npm install'"
-                  sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd client/public && npm run build'"
+                      // Run the API build commands
+                      sh 'docker exec ${COMPOSE_PROJECT_NAME}_app cp .env.build .env'
+                      sh 'docker exec ${COMPOSE_PROJECT_NAME}_app composer install --optimize-autoloader --no-dev'
+                      sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan key:generate'
+                      sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan config:clear'
+                      sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan cache:clear'
+                      sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan view:clear'
+                      sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan route:clear'
+                      sh 'docker exec ${COMPOSE_PROJECT_NAME}_app composer dump-autoload'
+                      sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan config:cache'
+                      sh 'docker exec ${COMPOSE_PROJECT_NAME}_app php artisan route:cache'
+                    }
                 }
-
-                sh 'docker compose -f infrastructure/ci_cd/build/docker-compose.yml down'
+            }
+        }
+        stage('Migrate DB') {
+            steps {
+                timestamps {
+                    // Run the Database migrations
+                    echo 'TODO: Migrate DB!'
+//                sh "docker exec ${COMPOSE_PROJECT_NAME}_app php artisan migrate --force"
+                }
+            }
+        }
+        stage('Static analysis of API') {
+            steps {
+                timestamps {
+                  // Run the Larastan
+//                   sh "docker exec ${COMPOSE_PROJECT_NAME}_app ./vendor/bin/phpstan analyse --memory-limit=2G"
+                }
+            }
+        }
+        stage('Build User Interface') {
+            parallel {
+                stage('Build Admin Panel Vuejs2 SPA') {
+                    steps {
+                        timestamps {
+                            // Run the build commands for the Admin Panel Vuejs3 SPA
+                            sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd client/admin && npm install'"
+                            sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd client/admin && npm run build'"
+                        }
+                    }
+                }
+                stage('Build Public Nuxt3 SSR') {
+                    steps {
+                        timestamps {
+                            // Run the build commands for the Public Nuxt3 SSR
+                            sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd client/public && npm install'"
+                            sh "docker exec ${COMPOSE_PROJECT_NAME}_node /bin/sh -c 'cd client/public && npm run build'"
+                        }
+                    }
+                }
             }
         }
         stage('Test') {
+            parallel {
+                stage('Test API') {
+                    steps {
+                        timestamps {
+                            echo 'Test API stage'
+        //                sh "docker exec ${COMPOSE_PROJECT_NAME}_app composer test"
+                        }
+                    }
+                }
+                stage('Test UI') {
+                    steps {
+                        timestamps {
+                            echo 'Test UI stage'
+        //                sh "docker exec ${COMPOSE_PROJECT_NAME}_app composer test"
+                        }
+                    }
+                }
+            }
+        }
+        stage('Docker Down') {
             steps {
-                echo 'Test stage'
+                timestamps {
+                    sh 'docker compose -f infrastructure/ci_cd/build/docker-compose.yml down'
+                }
             }
         }
         stage('Deploy') {
@@ -59,8 +109,12 @@ pipeline {
                 branch 'test'
             }
             steps {
-                echo 'Deploy stage'
-                sh 'ansible-playbook -i /var/jenkins_data/starter/inventory infrastructure/ci_cd/deploy/starter.yml --private-key=/var/lib/jenkins/.ssh/id_rsa'
+                timestamps {
+                    echo 'Deploy stage'
+                    ansiColor('xterm') {
+                        sh 'time ansible-playbook -i /var/jenkins_data/starter/inventory infrastructure/ci_cd/deploy/starter.yml --private-key=/var/lib/jenkins/.ssh/id_rsa'
+                    }
+                }
             }
         }
     }
