@@ -109,6 +109,7 @@ pipeline {
             steps {
                 timestamps {
                     sh 'docker compose -f infrastructure/ci_cd/build/docker-compose.yml down'
+                    sh 'docker stop $(docker ps -a -q)'
                 }
             }
         }
