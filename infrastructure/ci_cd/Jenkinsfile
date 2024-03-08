@@ -103,7 +103,8 @@ pipeline {
         stage('Docker Down') {
             steps {
                 timestamps {
-                    sh 'docker compose -f infrastructure/ci_cd/build/docker-compose.yml down'
+                // Do not destroy docker containers so that multiple builds can run when triggering PR builds
+//                     sh 'docker compose -f infrastructure/ci_cd/build/docker-compose.yml down'
                 }
             }
         }
