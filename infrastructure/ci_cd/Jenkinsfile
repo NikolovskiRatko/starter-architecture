@@ -1,12 +1,7 @@
 pipeline {
     agent  { label 'docker' }
-    // Throttle a declarative pipeline via options
     options {
-        throttleJobProperty(
-            categories: ['pr_builds'],
-            throttleEnabled: true,
-            throttleOption: 'category',
-        )
+      disableConcurrentBuilds()
     }
     environment {
         COMPOSE_DOCKER_CLI_BUILD = '1'
