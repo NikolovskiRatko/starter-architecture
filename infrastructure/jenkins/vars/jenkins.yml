@@ -17,6 +17,7 @@ jenkins_plugins:
   - docker-workflow
   - ansible
   - throttle-concurrents
+  - ws-cleanup
 
 #Jenkins root credentials
 jenkins_admin_username: admin
