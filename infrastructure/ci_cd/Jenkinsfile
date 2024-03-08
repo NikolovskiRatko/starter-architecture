@@ -1,5 +1,12 @@
 pipeline {
     agent  { label 'docker' }
+    options {
+        throttleJobProperty(
+            categories: ['pr_builds'],
+            throttleEnabled: true,
+            throttleOption: 'category',
+        )
+    }
     environment {
         COMPOSE_DOCKER_CLI_BUILD = '1'
         DOCKER_BUILDKIT = '1'

@@ -16,6 +16,7 @@ jenkins_plugins:
   - configuration-as-code
   - docker-workflow
   - ansible
+  - throttle-concurrents
 
 #Jenkins root credentials
 jenkins_admin_username: admin
