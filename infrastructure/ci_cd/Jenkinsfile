@@ -50,7 +50,7 @@ pipeline {
             steps {
                 timestamps {
                     // Run the Database migrations
-                    echo 'TODO: Migrate DB!!'
+                    echo 'TODO: Migrate DB'
 //                sh "docker exec ${COMPOSE_PROJECT_NAME}_app php artisan migrate --force"
                 }
             }
