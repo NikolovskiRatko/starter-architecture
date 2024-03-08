@@ -50,7 +50,7 @@ pipeline {
         stage('Static analysis of API') {
             steps {
                 timestamps {
-                  // Run the Larastan
+                  // Run the Larastan!
 //                   sh "docker exec ${COMPOSE_PROJECT_NAME}_app ./vendor/bin/phpstan analyse --memory-limit=2G"
                 }
             }
