@@ -82,7 +82,7 @@ pipeline {
                 stage('Test API') {
                     steps {
                         timestamps {
-                            echo 'Test API stage'
+                            echo 'Test API stage!'
         //                sh "docker exec ${COMPOSE_PROJECT_NAME}_app composer test"
                         }
                     }
