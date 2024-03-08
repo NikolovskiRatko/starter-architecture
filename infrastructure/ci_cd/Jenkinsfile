@@ -1,5 +1,13 @@
 pipeline {
     agent  { label 'docker' }
+    // Throttle a declarative pipeline via options
+    options {
+        throttleJobProperty(
+            categories: ['pr_builds'],
+            throttleEnabled: true,
+            throttleOption: 'category',
+        )
+    }
     environment {
         COMPOSE_DOCKER_CLI_BUILD = '1'
         DOCKER_BUILDKIT = '1'
@@ -82,7 +90,7 @@ pipeline {
                 stage('Test API') {
                     steps {
                         timestamps {
-                            echo 'Test API stage!'
+                            echo 'Test API stage'
         //                sh "docker exec ${COMPOSE_PROJECT_NAME}_app composer test"
                         }
                     }
