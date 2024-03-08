@@ -105,14 +105,6 @@ pipeline {
                 }
             }
         }
-        stage('Docker Down') {
-            steps {
-                timestamps {
-                    sh 'docker compose -f infrastructure/ci_cd/build/docker-compose.yml down'
-                    sh 'docker stop $(docker ps -a -q)'
-                }
-            }
-        }
         stage('Deploy') {
             when {
                 branch 'test'
@@ -129,6 +121,13 @@ pipeline {
     }
     post {
         always {
+            try {
+                sh 'docker compose -f infrastructure/ci_cd/build/docker-compose.yml down'
+                sh 'docker stop $(docker ps -a -q)'
+            } catch (Exception e) {
+                // Log any exceptions but don't stop the pipeline
+                echo "Failed to stop Docker containers: ${e.message}"
+            }
             cleanWs()
         }
     }
