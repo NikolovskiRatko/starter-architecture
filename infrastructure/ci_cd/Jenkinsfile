@@ -50,7 +50,7 @@ pipeline {
                 }
             }
         }
-        stage('Static analysis of API') {
+        stage('Static analysis of API!') {
             steps {
                 timestamps {
                   // Run the Larastan!
