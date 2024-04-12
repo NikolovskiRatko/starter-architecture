@@ -10,12 +10,6 @@
         - include_tasks: tasks/register_release_variables.yml
         - include_tasks: tasks/create_new_release_dir.yml
         - include_tasks: tasks/copy_build.yml
-        - include_tasks: tasks/set_owner_and_group.yml
-          vars:
-            dir_to_chown: "{{ new_release_dir }}"
-        - include_tasks: tasks/set_correct_permissions.yml
-          vars:
-            dir: "{{ new_release_dir }}"
         - include_tasks: tasks/check_that_folder_is_writable.yml
           vars:
             dir_to_check: "{{ new_release_dir }}/api/bootstrap/cache"
@@ -23,9 +17,10 @@
         - include_tasks: tasks/link_env.yml
         - include_tasks: tasks/optimize_app.yml
         - include_tasks: tasks/migrate_db.yml
-        - include_tasks: tasks/pm2_delete.yml
         - include_tasks: tasks/bless_new_release.yml
-        - include_tasks: tasks/pm2_start.yml
+        - include_tasks: tasks/pm2_reload.yml
         - include_tasks: tasks/leave_most_recent_releases.yml
+        - include_tasks: tasks/flush_redis.yml
+        - include_tasks: tasks/restart_queues.yml
       rescue:
         - include_tasks: tasks/rollback.yml

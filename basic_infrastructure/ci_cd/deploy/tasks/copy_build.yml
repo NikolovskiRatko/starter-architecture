@@ -7,3 +7,5 @@
     rsync_opts:
       - "--exclude=.git"
       - "--exclude=api/public/hot"
+      - "--chmod=F0640,D0771" # provide here the permission
+      - "--chown=www-data:www-data" # provide here the owner and group

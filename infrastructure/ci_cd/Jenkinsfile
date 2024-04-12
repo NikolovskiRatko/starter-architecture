@@ -11,13 +11,13 @@ pipeline {
     environment {
         COMPOSE_DOCKER_CLI_BUILD = '1'
         DOCKER_BUILDKIT = '1'
-        COMPOSE_PROJECT_NAME = 'starter'
+        COMPOSE_PROJECT_NAME = 'zoltr'
     }
     stages {
         stage('Build Laravel API') {
             environment {
-                MYSQL_DATABASE = 'starter'
-                MYSQL_USER = 'starter'
+                MYSQL_DATABASE = 'zoltr'
+                MYSQL_USER = 'zoltr'
             }
             steps {
                 timestamps {

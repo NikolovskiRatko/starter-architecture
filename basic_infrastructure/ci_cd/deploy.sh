@@ -3,7 +3,7 @@
 #  @description:  Pull and Deploy from branch
 #
 
-BRANCH="test"
+BRANCH="zoltr"
 ROOT_DIR=$(cat "$(dirname "$0")/deploy/sensitive/root_dir")
 TIMESTAMP=$(date +"%Y%m%d%H%M%S")  # Generate a timestamp
 LOG_FILE="$ROOT_DIR/starter-architecture/basic_infrastructure/ci_cd/logs/deploy_$TIMESTAMP.log"
@@ -32,18 +32,18 @@ run_build(){
   sleep 10
 
   echo -e '\n Build API'
-  docker exec app /bin/sh -c 'cd starter/api composer install --optimize-autoloader --no-dev'
-  docker exec app /bin/sh -c 'cd starter/api php artisan key:generate'
-  docker exec app /bin/sh -c 'cd starter/api php artisan config:clear'
-  docker exec app /bin/sh -c 'cd starter/api php artisan cache:clear'
-  docker exec app /bin/sh -c 'cd starter/api php artisan view:clear'
-  docker exec app /bin/sh -c 'cd starter/api php artisan route:clear'
-  docker exec app /bin/sh -c 'cd starter/api composer dump-autoload'
-  docker exec app /bin/sh -c 'cd starter/api php artisan config:cache'
-  docker exec app /bin/sh -c 'cd starter/api php artisan route:cache'
+  docker exec app /bin/sh -c 'cd zoltr/api composer install --optimize-autoloader --no-dev'
+  docker exec app /bin/sh -c 'cd zoltr/api php artisan key:generate'
+  docker exec app /bin/sh -c 'cd zoltr/api php artisan config:clear'
+  docker exec app /bin/sh -c 'cd zoltr/api php artisan cache:clear'
+  docker exec app /bin/sh -c 'cd zoltr/api php artisan view:clear'
+  docker exec app /bin/sh -c 'cd zoltr/api php artisan route:clear'
+  docker exec app /bin/sh -c 'cd zoltr/api composer dump-autoload'
+  docker exec app /bin/sh -c 'cd zoltr/api php artisan config:cache'
+  docker exec app /bin/sh -c 'cd zoltr/api php artisan route:cache'
 
   echo -e '\n Run database migrations'
-  docker exec app 'cd starter/api php artisan migrate'
+  docker exec app 'cd zoltr/api php artisan migrate'
 
   echo -e '\n Run the build commands for the Admin Panel Vuejs3 SPA'
   docker exec node /bin/sh -c 'cd client/admin && npm install'

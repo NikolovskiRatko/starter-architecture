@@ -60,6 +60,7 @@ services:
     ports:
       - "5173:5173"
       - "3030:3030"
+      - "3060:3060"
     networks:
       - main
     volumes:

@@ -2,4 +2,4 @@ FROM node:18
 
 WORKDIR /usr/app
 
-EXPOSE 3030
+EXPOSE 3060
