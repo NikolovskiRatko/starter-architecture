@@ -4,10 +4,6 @@ import "./PortletHeadToolbar.scss";
 
 <template>
   <div class="kt-portlet__head__toolbar">
-    <div class="kt-portlet__head__toolbar__wrapper">
-      <div class="kt-portlet__head-actions">
-        <slot></slot>
-      </div>
-    </div>
+    <slot></slot>
   </div>
 </template>

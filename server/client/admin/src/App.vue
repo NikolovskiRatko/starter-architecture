@@ -1,29 +1,30 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { useRootStore } from "@/store/root";
-import { useAuth } from "@websanova/vue-auth/src/v3.js";
-import { isTouchDevice } from "@/utils/userAgentCheck";
-import "@starter-core/dash-ui/src/assets/main.scss";
-import "./App.scss";
+  import { computed } from "vue";
+  import { useRootStore } from "@/store/root";
+  import { useAuth } from "@websanova/vue-auth/src/v3.js";
+  import { isTouchDevice } from "@/utils/userAgentCheck";
+  import "@starter-core/dash-ui/src/assets/main.scss";
+  import "@starter-core/dash-ui/index.css";
+  import "./App.scss";
 
-const auth = useAuth();
-const rootStore = useRootStore();
-const touchDevice = isTouchDevice();
+  const auth = useAuth();
+  const rootStore = useRootStore();
+  const touchDevice = isTouchDevice();
 
-const isAuthLoaded = computed(() => auth.ready());
+  const isAuthLoaded = computed(() => auth.ready());
 
-const bodyStyles = computed(() => {
-  const { isBodyOverflowing, modalOpen, scrollBarWidth, navMenuOpen } =
-    rootStore.bodyClasses;
+  const bodyStyles = computed(() => {
+    const { isBodyOverflowing, modalOpen, scrollBarWidth, navMenuOpen } =
+      rootStore.bodyClasses;
 
-  if (isTouchDevice() && isBodyOverflowing) {
-    if (modalOpen || navMenuOpen) {
-      return `padding-right:${scrollBarWidth}px;`;
+    if (isTouchDevice() && isBodyOverflowing) {
+      if (modalOpen || navMenuOpen) {
+        return `padding-right:${scrollBarWidth}px;`;
+      }
     }
-  }
 
-  return "";
-});
+    return "";
+  });
 </script>
 
 <template>

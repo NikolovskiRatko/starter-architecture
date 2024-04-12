@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import "./AdminHeader.scss";
+  import { storeToRefs } from "pinia";
+  import { navMenu as navMenuData } from "@/data/navMenu";
+  import { HeaderTopBar } from "@/components/Admin";
+  import { NavMenu } from "@starter-core/dash-ui";
+  import { useRootStore } from "@/store/root";
+  import "./AdminHeader.scss";
 
-import { storeToRefs } from "pinia";
-import { navMenu as navMenuData } from "@/data/navMenu";
-import { NavMenu, HeaderTopBar } from "@/components/Admin";
-import { useRootStore } from "@/store/root";
+  const rootStore = useRootStore();
+  const { sidebarState } = storeToRefs(rootStore);
 
-const rootStore = useRootStore();
-const { sidebarState } = storeToRefs(rootStore);
-
-// activeTopSubmenu
-// setActiveTopSubmenu
+  // activeTopSubmenu
+  // setActiveTopSubmenu
 </script>
 <template>
   <div
@@ -30,7 +30,7 @@ const { sidebarState } = storeToRefs(rootStore);
         id="kt_header_menu"
         class="kt-header-menu kt-header-menu-mobile kt-header-menu--layout-default"
       >
-        <NavMenu :data="navMenuData" />
+        <NavMenu :data="navMenuData" type="horizontal" />
       </div>
     </div>
     <HeaderTopBar />

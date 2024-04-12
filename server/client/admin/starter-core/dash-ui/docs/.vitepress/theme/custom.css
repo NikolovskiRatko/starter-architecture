@@ -1,0 +1,6 @@
+.demo-container {
+  border: 1px solid lightgrey;
+  background-color: #f6f6f7;
+  border-radius: 5px;
+  padding: 10px 20px;
+}

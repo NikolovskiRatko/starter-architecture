@@ -1,0 +1,577 @@
+$header-item-icon-color: #c8cad5;
+$header-item-hover-bg: rgba(#4d5995, 0.06);
+
+$desktop-config: kt-get($header-config, menu, desktop);
+$skin-config: kt-get($desktop-config, build, skins, light);
+$item-skin: kt-get($skin-config, item);
+
+$dark-skin-config: kt-get($desktop-config, build, skins, dark);
+$dark-item-skin: kt-get($skin-config, item);
+
+$item-submenu-padding-left: 30px;
+$item-submenu-section-indent: 15px;
+
+.kt-menu__link {
+    $block: &;
+    background-color: kt-get($item-skin, link, self, bg-color, default);
+    @include kt-rounded {
+      border-radius: $border-radius !important;
+    }
+
+    .kt-menu__hor-icon {
+      color: kt-get($item-skin, link, icon, font-color, default);
+
+      // Due-tone icon
+      svg {
+        @include kt-svg-icon-color(
+          kt-get($item-skin, link, icon, font-color, default)
+        );
+      }
+    }
+
+    .kt-menu__link-bullet {
+      &.kt-menu__link-bullet--dot {
+        > span {
+          background-color: kt-get($item-skin, link, bullet, dot, bg-color, default);
+        }
+      }
+
+      &.kt-menu__link-bullet--line {
+        > span {
+          background-color: kt-get(
+            $item-skin,
+            link,
+            bullet,
+            line,
+            bg-color,
+            default
+          );
+        }
+      }
+    }
+
+    // primary link
+    //TODO: Figure out what's a Primary link
+    > .kt-menu__link {
+      > .kt-menu__link-text {
+        width: auto;
+      }
+    }
+
+    &--horizontal {
+      display: flex;
+      text-decoration: none;
+      position: relative;
+      vertical-align: middle;
+      align-items: stretch;
+      outline: none !important;
+      text-decoration: none;
+      cursor: pointer;
+
+      .kt-menu__link-badge {
+        display: flex;
+        align-items: center;
+        line-height: 0;
+        white-space: nowrap;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+
+    &--vertical {
+      overflow: hidden;
+    }
+
+    &--active {
+      background-color: kt-get($item-skin, link, self, bg-color, active);
+
+        // link bullet
+        .kt-menu__link-bullet {
+          &.kt-menu__link-bullet--dot {
+            > span {
+              background-color: kt-get(
+                $item-skin,
+                link,
+                bullet,
+                dot,
+                bg-color,
+                active
+              );
+            }
+          }
+
+          &.kt-menu__link-bullet--line {
+            > span {
+              background-color: kt-get(
+                $item-skin,
+                link,
+                bullet,
+                line,
+                bg-color,
+                active
+              );
+            }
+          }
+        }
+    }
+
+    &--here {
+      // link bg color
+      background-color: kt-get($item-skin, link, self, bg-color, here);
+
+      // link bullet
+      .kt-menu__link-bullet {
+        &.kt-menu__link-bullet--dot {
+          > span {
+            background-color: kt-get($item-skin, link, bullet, dot, bg-color, here);
+          }
+        }
+
+        &.kt-menu__link-bullet--line {
+          > span {
+            background-color: kt-get($item-skin, link, bullet, line, bg-color, here);
+          }
+        }
+      }
+    }
+
+    &--hover:not(#{$block}--hover):not(#{$block}--active) {
+      // link bg color
+      background-color: kt-get($item-skin, link, self, bg-color, hover);
+
+      // link icon
+      .kt-menu__link-icon {
+        color: kt-get($item-skin, link, icon, font-color, hover);
+
+        // Due-tone icon
+        svg {
+          @include kt-svg-icon-color(
+            kt-get($item-skin, link, icon, font-color, hover)
+          );
+        }
+      }
+
+      // link bullet
+      .kt-menu__link-bullet {
+        &.kt-menu__link-bullet--dot {
+          > span {
+            background-color: kt-get($item-skin, link, bullet, dot, bg-color, hover);
+          }
+        }
+
+        &.kt-menu__link-bullet--line {
+          > span {
+            background-color: kt-get(
+              $item-skin,
+              link,
+              bullet,
+              line,
+              bg-color,
+              hover
+            );
+          }
+        }
+      }
+
+      // link arrow icon
+      > .kt-menu__link-arrow--horizontal {
+        color: kt-get($item-skin, link, arrow, font-color, hover);
+      }
+    }
+}
+
+.kt-menu__link-text {
+  $block: &;
+
+  @if kt-has($item-skin, link, text, font-weight) {
+    font-weight: kt-get($item, link, text, font-weight);
+  }
+
+  @include kt-desktop {
+    font-weight: kt-get($item-skin, link, text, font-weight);
+    font-size: kt-get($item-skin, link, text, font-size);
+    text-transform: kt-get($item-skin, link, text, font-transform);
+
+    @if kt-has($item-skin, link, text, padding) {
+      padding: kt-get($item-skin, link, text, padding);
+    }
+  }
+
+  &:hover,
+  &--hover,
+  &--here {
+    color: kt-brand-color();
+  }
+
+  &--here {
+    color: kt-get($item-skin, link, text, font-color, here);
+  }
+
+  &--hover:not(#{$block}--hover):not(#{$block}--active) {
+    color: kt-get($item-skin, link, text, font-color, hover);
+  }
+
+  &--horizontal {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0;
+    color: kt-get($item-skin, link, text, font-color, default);
+
+    &#{$block}--active {
+      color: kt-get($item-skin, link, text, font-color, active);
+    }
+  }
+
+  &--vertical {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    font-weight: kt-get($item-skin, link, text, font-weight);
+    font-size: kt-get($item-skin, link, text, font-size);
+    text-transform: kt-get($item-skin, link, text, font-transform);
+    @include kt-attr(color, kt-get($item-skin, link, text, font-color, default));
+    white-space: nowrap;
+
+    &#{$block}--active,
+    &#{$block}--hover,
+    &:hover {
+      color: #ffffff
+    }
+
+    &#{$block}--minimized {
+      opacity: 0;
+    }
+  }
+}
+
+.kt-menu__link-icon {
+  $block: &;
+  $item: kt-get($desktop-config, build, layout, item, submenu, item);
+
+  display: flex;
+  align-items: center;
+
+  @include kt-desktop {
+    font-size: kt-get($item, link, icon, font-size);
+    width: kt-get($item, link, icon, width);
+    padding: kt-get($item, link, icon, padding);
+    line-height: 0;
+
+    // duo-tone svg icon
+    svg {
+      @include kt-attr(height, kt-get($item, link, icon, svg-width));
+      @include kt-attr(width, kt-get($item, link, icon, svg-width));
+      margin-left: -2px;
+    }
+  }
+
+  &--active {
+    color: kt-get($item-skin, link, icon, font-color, active);
+
+    // Due-tone icon
+    svg {
+      @include kt-svg-icon-color(
+                      kt-get($item-skin, link, icon, font-color, active)
+      );
+    }
+  }
+
+  &--vertical {
+    display: flex;
+    align-items: center;
+    line-height: 0;
+    text-align: kt-get($item, link, icon, align);
+    flex: 0 0 kt-get($item, link, icon, width);
+    font-size: kt-get($item, link, icon, font-size);
+    @include kt-attr(color, kt-get($item, link, icon, font-color, default));
+
+    svg {
+      @include kt-attr(height, kt-get($item, link, icon, svg-width));
+      @include kt-attr(width, kt-get($item, link, icon, svg-width));
+      margin-left: -2px;
+      @include kt-svg-icon-color(#494b74);
+    }
+
+    &#{$block}--active,
+    &#{$block}--hover,
+    &:hover {
+      @include kt-attr(color, kt-get($item, link, icon, font-color, open));
+
+      // Due-tone icon
+      svg {
+        @include kt-svg-icon-color(#5d78ff);
+      }
+    }
+  }
+
+  &--here {
+    color: kt-get($item-skin, link, icon, font-color, here);
+
+    // Due-tone icon
+    svg {
+      @include kt-svg-icon-color(
+                      kt-get($item-skin, link, icon, font-color, here)
+      );
+    }
+  }
+}
+
+.kt-menu__link-arrow {
+  $block: &;
+  $arrow-config: kt-get($item-skin, link, arrow);
+
+  &--horizontal {
+    display: flex;
+    align-items: center;
+    color: kt-get($arrow-config, font-color, default);
+
+    @include kt-desktop {
+      font-size: kt-get($arrow-config, font-size);
+      width: kt-get($arrow-config, width);
+      justify-content: flex-end;
+
+      @if kt-has($arrow-config, padding) {
+        padding: kt-get($arrow-config, padding);
+      }
+    }
+
+    &#{$block}--active {
+      color: kt-get($arrow-config, font-color, active);
+    }
+
+    &#{$block}--here {
+      color: kt-get($arrow-config, font-color, here);
+    }
+  }
+
+  &--vertical {
+    display: flex !important; //TODO: Remove !important when drop line-awesome
+    align-items: center;
+    justify-content: flex-end;
+    line-height: 0 !important;
+    text-align: kt-get($arrow-config, align);
+    flex: 0 0 kt-get($arrow-config, width);
+    font-size: kt-get($arrow-config, font-size);
+    @include kt-attr(color, kt-get($arrow-config, font-color, default));
+
+    &:before {
+      display: inline-block;
+      transition: kt-get($arrow-config, transition);
+      -webkit-transform: translate3d(0, 0, 0);
+
+      [direction="rtl"] & {
+        content: "#{kt-get($action-icons, left)}" !important;
+      }
+    }
+
+    &#{$block}--active {
+      @include kt-attr(color, kt-get($arrow-config, font-color, open));
+
+      &:before {
+        transition: kt-get($arrow-config, transition);
+        transform: rotateZ(90deg) #{"/*rtl:ignore*/"};
+
+        [direction="rtl"] & {
+          transform: rotateZ(-90deg) #{"/*rtl:ignore*/"};
+        }
+      }
+    }
+
+    &#{$block}--here {
+      @include kt-attr(color, kt-get($arrow-config, font-color, here));
+    }
+  }
+}
+
+@include kt-desktop {
+  $item: kt-get($desktop-config, build, layout, item, submenu, item);
+
+  .kt-menu__link {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    @include kt-attr(padding, kt-get($item, link, self, padding));
+    @include kt-attr(margin, kt-get($item, link, self, margin));
+
+    &:hover {
+      transition: all 0.3s ease;
+    }
+
+    // link bullet
+    .kt-menu__link-bullet {
+      width: kt-get($item, link, bullet, self, width);
+
+      @if kt-has($item, link, bullet, padding) {
+        padding: kt-get($item, link, bullet, padding);
+      }
+
+      > span {
+        vertical-align: middle;
+        display: inline-block;
+      }
+
+      &.kt-menu__link-bullet--dot {
+        > span {
+          width: kt-get($item, link, bullet, dot, size);
+          height: kt-get($item, link, bullet, dot, size);
+          border-radius: 100%;
+        }
+      }
+
+      &.kt-menu__link-bullet--line {
+        > span {
+          width: kt-get($item, link, bullet, line, width);
+          height: kt-get($item, link, bullet, line, height);
+        }
+      }
+    }
+
+    // link badge
+    .kt-menu__link-badge {
+      padding: kt-get($item, link, badge, padding);
+      justify-content: kt-get($item, link, badge, align);
+    }
+
+    // link border radius
+    @include kt-rounded {
+      @include kt-attr(border-radius, kt-get($item, link, self, border-radius));
+    }
+
+    // menu root level "here" arrow
+    .kt-menu__item-here {
+      display: none;
+    }
+
+    &:hover,
+    &--here,
+    &--active {
+      background-color: $header-item-hover-bg;
+
+      .kt-menu__link-arrow--horizontal {
+        color: kt-brand-color();
+      }
+
+      .kt-menu__hor-icon {
+        color: kt-brand-color();
+      }
+    }
+  }
+
+  .kt-menu__link {
+    $block: &;
+
+    &--vertical {
+      display: flex;
+      flex-grow: 1;
+      align-items: stretch;
+      margin: 0;
+      padding: 9px 25px;
+      text-decoration: none;
+      position: relative;
+      outline: none;
+      height: kt-get($item, link, self, height);
+      @include kt-attr(margin, kt-get($item, link, self, margin));
+
+      @include kt-rounded {
+        @include kt-attr(border-radius, kt-get($item, link, self, border-radius));
+      }
+
+      &:hover {
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .kt-menu__link-badge {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        padding: kt-get($item, link, badge, padding);
+        text-align: kt-get($item, link, badge, align);
+      }
+
+      // menu item link's icon part
+      .kt-menu__link-bullet {
+        display: flex;
+        align-items: center;
+        line-height: 0;
+        vertical-align: middle;
+        text-align: left;
+        flex: 0 0 kt-get($item, link, bullet, self, width);
+
+        > span {
+          vertical-align: middle;
+          display: inline-block;
+        }
+
+        &--dot {
+          > span {
+            width: kt-get($item, link, bullet, dot, size);
+            height: kt-get($item, link, bullet, dot, size);
+            border-radius: 100%;
+            @include kt-attr(
+              background-color,
+              kt-get($item, link, bullet, dot, bg-color, default)
+            );
+          }
+        }
+
+        &--line {
+          > span {
+            width: kt-get($item, link, bullet, line, width);
+            height: kt-get($item, link, bullet, line, height);
+            @include kt-attr(
+              background-color,
+              kt-get($item, link, bullet, line, bg-color, default)
+            );
+          }
+        }
+      }
+
+      &#{$block}--active {
+        @include kt-attr(
+          background-color,
+          kt-get($item, link, self, bg-color, open)
+        );
+
+        .kt-menu__link-bullet {
+          &--dot {
+            > span {
+              @include kt-attr(
+                              background-color,
+                              kt-get($item, link, bullet, dot, bg-color, open)
+              );
+            }
+          }
+          &--line {
+            > span {
+              @include kt-attr(
+                              background-color,
+                              kt-get($item, link, bullet, line, bg-color, open)
+              );
+            }
+          }
+        }
+      }
+
+      &#{$block}--level-2 {
+        padding: kt-get($item, link, padding);
+        padding-left: $item-submenu-padding-left +
+                  (1 * $item-submenu-section-indent);
+      }
+
+      &#{$block}--level-3 {
+        padding: kt-get($item, link, padding);
+        padding-left: $item-submenu-padding-left +
+                  (2 * $item-submenu-section-indent);
+      }
+
+      &#{$block}--minimized {
+        height: kt-get($item, link, self, height);
+      }
+    }
+  }
+}

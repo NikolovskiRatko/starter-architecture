@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import "./AuthBase.scss";
+  import "./AuthBase.scss";
 </script>
 
 <template>

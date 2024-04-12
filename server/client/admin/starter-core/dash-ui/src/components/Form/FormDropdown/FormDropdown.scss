@@ -1,0 +1,46 @@
+$label-config: kt-get($form-config, label);
+$input-config: kt-get($form-config, input);
+$color-config: kt-get($starter-config, color);
+$border-config: kt-get($starter-config, border);
+
+.form-dropdown {
+
+    &__input {
+        display: block;
+        width: 100%;
+        padding: kt-get($input-config, 'padding-y') kt-get($input-config, 'padding-x');
+        font-size: kt-get($form-config, 'font-size');
+        font-weight: kt-get($input-config, 'font-weight');
+        line-height: kt-get($starter-config, 'line-height', base);
+        color: kt-get($color-config, body, text);
+        background-color: kt-get($color-config, body, background);
+        background-clip: padding-box;
+        border: kt-get($border-config, value);
+        border-radius: kt-get($border-config, radius);
+    
+        transition: kt-get($input-config, transition);
+
+        &:focus {
+            color: kt-get($color-config, body, color);
+            background-color: kt-get($color-config, body, background);
+            border-color: kt-get($input-config, color, focus);
+            outline: 0;
+      
+            @if ($enable-shadows) {
+              box-shadow: kt-get($starter-config, 'focus-ring-box-shadow');
+            }
+        }
+    }
+
+    &__label {
+        display: block;
+        font-size: kt-get($form-config, 'font-size');
+        font-weight: $font-weight-normal;
+        padding-top: kt-get($label-config, 'padding-y');
+        padding-bottom: kt-get($label-config, 'padding-y');
+    }
+
+    &__error {
+        color: kt-get($state-colors, danger, base);
+    }
+}

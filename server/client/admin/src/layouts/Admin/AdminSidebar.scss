@@ -93,9 +93,6 @@
   }
 }
 
-// Build Aside Menu Skin
-@include kt-menu-ver-build-skin(kt-get($aside-config, menu), dark);
-
 // Aside close button
 .aside-close {
   background-color: rgba(#fff, 0.2);
@@ -151,7 +148,6 @@
   }
 }
 
-@include kt-menu-ver-build-layout(kt-get($aside-config, menu));
 @include kt-offcanvas-build(
   kt-aside,
   tablet-and-mobile,

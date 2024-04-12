@@ -1,34 +1,33 @@
 <script setup lang="ts">
-import { onMounted, provide } from "vue";
-import { storeToRefs } from "pinia";
-import { useAuth } from "@websanova/vue-auth/src/v3.js";
-import AdminHeader from "@/layouts/Admin/AdminHeader.vue";
-import AdminSidebar from "@/layouts/Admin/AdminSidebar.vue";
-import { GridComponent, GridItem } from "@/components/Grid";
-import { useRootStore } from "@/store/root";
-import { layoutConfigKey } from "./types/Admin";
-import "./Admin.scss";
+  import { onMounted, provide } from "vue";
+  import { storeToRefs } from "pinia";
+  import { useAuth } from "@websanova/vue-auth/src/v3.js";
+  import AdminHeader from "@/layouts/Admin/AdminHeader.vue";
+  import AdminSidebar from "@/layouts/Admin/AdminSidebar.vue";
+  import { GridComponent, GridItem } from "@/components/Grid";
+  import { useRootStore } from "@/store/root";
+  import { layoutConfigKey } from "./types/Admin";
+  import "./Admin.scss";
 
-const layoutConfig = {
-  hasFixedHeader: true,
-  hasSubHeader: false,
-  hasSubHeaderFixed: false,
-};
+  const layoutConfig = {
+    hasFixedHeader: true,
+    hasSubHeader: false,
+    hasSubHeaderFixed: false,
+  };
 
-const rootStore = useRootStore();
-const { setMenu } = rootStore;
-const { sidebarState } = storeToRefs(rootStore);
-const auth = useAuth();
+  const rootStore = useRootStore();
+  const { sidebarState } = storeToRefs(rootStore);
+  const auth = useAuth();
 
-provide(layoutConfigKey, layoutConfig);
+  provide(layoutConfigKey, layoutConfig);
 
-onMounted(() => {
-  auth.load().then(async () => {
-    if (auth.check()) {
-      await rootStore.setData();
-    }
+  onMounted(() => {
+    auth.load().then(async () => {
+      if (auth.check()) {
+        await rootStore.setData();
+      }
+    });
   });
-});
 </script>
 
 <template>

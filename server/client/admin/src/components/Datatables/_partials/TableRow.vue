@@ -1,26 +1,26 @@
 <script setup lang="ts">
-import { inject, ref, provide, PropType } from "vue";
-import { TableSections } from "../typings";
+  import { inject, ref, provide, PropType } from "vue";
+  import { TableSections } from "../typings";
 
-import "./TableRow.scss";
+  import "./TableRow.scss";
 
-const props = defineProps({
-  section: {
-    type: String as PropType<TableSections>,
-    default: "body",
-  },
-  isEven: {
-    default: false,
-  },
-});
+  const props = defineProps({
+    section: {
+      type: String as PropType<TableSections>,
+      default: "body",
+    },
+    isEven: {
+      default: false,
+    },
+  });
 
-provide("isEvenRow", props.isEven);
+  provide("isEvenRow", props.isEven);
 
-const isHovering = ref(false);
-const isLoading = inject("isLoading");
-const toggleHover = () => {
-  isHovering.value = !isHovering.value;
-};
+  const isHovering = ref(false);
+  const isLoading = inject("isLoading");
+  const toggleHover = () => {
+    isHovering.value = !isHovering.value;
+  };
 </script>
 
 <template>

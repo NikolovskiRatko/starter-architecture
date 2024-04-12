@@ -5,3 +5,4 @@ dist-ssr
 *.local
 docs/.vuepress/.cache
 docs/.vuepress/.temp
+docs/.vitepress/cache/*

@@ -1,30 +1,27 @@
 <script setup lang="ts">
-import { inject } from "vue";
-import { briefcaseIcon } from "@/data/navMenu";
-import { portletThemeKey } from "../types";
+  import { inject, type VueElement } from "vue";
+  import { portletThemeKey } from "../constants";
+  import "./PortletHeadLabel.scss";
 
-import "./PortletHeadLabel.scss";
+  interface PortletHeadLabelProps {
+    icon?: VueElement;
+  }
 
-const svgIcon = briefcaseIcon;
-
-const props = defineProps({
-  hasIcon: {
-    default: false,
-  },
-});
-const theme = inject(portletThemeKey);
+  const { icon } = defineProps<PortletHeadLabelProps>();
+  const theme = inject(portletThemeKey);
 </script>
 
 <template>
   <div class="kt-portlet__head__label">
     <span
-      v-if="hasIcon"
-      v-html="svgIcon"
+      v-if="icon"
       class="kt-portlet__head__label__icon"
       :class="{
         [`kt-portlet__head__label__icon--theme-${theme}`]: theme,
       }"
-    />
+    >
+      <component :is="icon"></component>
+    </span>
     <h3
       class="kt-portlet__head__label__title"
       :class="{

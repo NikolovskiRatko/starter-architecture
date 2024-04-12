@@ -1,45 +1,51 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import type { Ref } from "vue";
-// import { BDropdown, BDropdownItem, BDropdownText } from 'bootstrap-vue';
-import {
-  PortletHead,
-  PortletHeadLabel,
-  PortletHeadToolbar,
-} from "@starter-core/dash-ui/src";
-import { useAuth } from "@websanova/vue-auth/src/v3.js";
-import SkButton from "@/components/base/SkButton/SkButton.vue";
+  import { computed } from "vue";
+  // import type { Ref } from "vue";
+  // import { BDropdown, BDropdownItem, BDropdownText } from 'bootstrap-vue';
+  import { useAuth } from "@websanova/vue-auth/src/v3.js";
 
-const props = defineProps([
-  "value",
-  "addRouteName",
-  "langKey",
-  "draggableAddNewEnable",
-]);
-const exportGeneration: Ref<boolean> = ref(false);
-const auth = useAuth();
+  import {
+    PortletHead,
+    PortletHeadLabel,
+    PortletHeadToolbar,
+    DashButton,
+    DashLink,
+  } from "@starter-core/dash-ui";
+  import { IconUser, IconAdduser } from "@starter-core/icons";
 
-// const generateCsv = async () => {
-//   exportGeneration.value = true;
-//   axios.post(props.endpoint, props.value)
-//     .then((response) => {
-//       console.log(response);
-//       var hiddenElement = document.createElement('a'),
-//         blob = new Blob([response.data], { type: "octet/stream" }),
-//         url = window.URL.createObjectURL(blob);
-//       hiddenElement.href = url;
-//       var d = new Date();
-//       hiddenElement.download = this.export_file+'_export_'+d.getFullYear()+'_'+(d.getMonth() < 9 ? '0'+(d.getMonth()+1): +(d.getMonth()+1))+'_'+(d.getDate() < 10 ? '0'+d.getDate(): d.getDate())+'.csv';
-//       hiddenElement.click();
-//       window.URL.revokeObjectURL(url);
-//       this.exportGeneration = false;
-//     });
-// }
+  const props = defineProps([
+    "value",
+    "addRouteName",
+    "langKey",
+    "draggableAddNewEnable",
+  ]);
+  // const exportGeneration: Ref<boolean> = ref(false);
+  const auth = useAuth();
+  const isUserAllowedToCreate = computed(() =>
+    auth.user().permissions_array.includes("write_users"),
+  );
+
+  // const generateCsv = async () => {
+  //   exportGeneration.value = true;
+  //   axios.post(props.endpoint, props.value)
+  //     .then((response) => {
+  //       console.log(response);
+  //       var hiddenElement = document.createElement('a'),
+  //         blob = new Blob([response.data], { type: "octet/stream" }),
+  //         url = window.URL.createObjectURL(blob);
+  //       hiddenElement.href = url;
+  //       var d = new Date();
+  //       hiddenElement.download = this.export_file+'_export_'+d.getFullYear()+'_'+(d.getMonth() < 9 ? '0'+(d.getMonth()+1): +(d.getMonth()+1))+'_'+(d.getDate() < 10 ? '0'+d.getDate(): d.getDate())+'.csv';
+  //       hiddenElement.click();
+  //       window.URL.revokeObjectURL(url);
+  //       this.exportGeneration = false;
+  //     });
+  // }
 </script>
 
 <template>
   <PortletHead :size="'lg'">
-    <PortletHeadLabel :has-icon="true">
+    <PortletHeadLabel :icon="IconUser">
       Datatable header
       <small>This is a subtitle</small>
     </PortletHeadLabel>
@@ -96,25 +102,21 @@ const auth = useAuth();
       <!--            <span class="kt-nav__link-text">Excel</span>-->
       <!--          </b-dropdown-item>-->
       <!--        </b-dropdown>-->
-      <SkButton
-        v-if="
-          auth.user().permissions_array.includes('write_users') &&
-          props.addRouteName
-        "
-        type="link"
-        theme="brand"
-        :linkProps="{
-          to: { name: 'dashboard' },
-        }"
+      <dash-link
+        v-if="isUserAllowedToCreate && props.addRouteName"
+        :to="{ name: 'dashboard' }"
+        :icon="IconAdduser"
+        theme="secondary"
       >
-        <i class="la la-plus" />
         {{ $t("admin." + langKey + ".add") }}
-      </SkButton>
-      <SkButton v-if="draggableAddNewEnable" @click="$emit('add-new')">
-        <i class="la la-plus" />
-        <!--{{ $t('admin.'+langKey+'.add') }}-->
-        Add new
-      </SkButton>
+      </dash-link>
+      <dash-button
+        v-if="draggableAddNewEnable"
+        @click="$emit('add-new')"
+        :icon="IconAdduser"
+      >
+        {{ $t("admin." + langKey + ".add") }}
+      </dash-button>
     </PortletHeadToolbar>
   </PortletHead>
 </template>

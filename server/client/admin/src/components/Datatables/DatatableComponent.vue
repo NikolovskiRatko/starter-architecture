@@ -1,43 +1,40 @@
 <script setup lang="ts">
-import { computed, provide } from "vue";
-import {
-  DatatablePagination,
-  TableHead,
-  TableLoader,
-  DatatableHeader,
-  DatatableFilters,
-  TableColumn,
-  TableRow,
-} from "@/components/Datatables";
-import { PortletBody, PortletComponent } from "@starter-core/dash-ui/src";
-import { TableQuery, onQueryUpdateKey } from "@/components/Datatables/typings";
-import "./DatatableComponent.scss";
+  import { computed, provide } from "vue";
+  import {
+    TableHead,
+    TableLoader,
+    TableColumn,
+    TableRow,
+  } from "@/components/Datatables";
+  import { PortletComponent, PortletBody } from "@starter-core/dash-ui";
+  import {
+    TableQuery,
+    onQueryUpdateKey,
+  } from "@/components/Datatables/typings";
+  import "./DatatableComponent.scss";
 
-const props = defineProps([
-  "tableInfo",
-  "query",
-  "loading",
-  "columns",
-  "pagination",
-  "langKey", //TODO: Find better solution to avoid duplications in translations
-  "addRouteName", //TODO: Send all these as single object to be used by Datatable
-]);
+  const props = defineProps(["tableInfo", "query", "loading", "columns"]);
 
-const emit = defineEmits(["onQueryUpdate"]);
+  defineSlots<{
+    default: () => void;
+    header: () => void;
+    pagination: () => void;
+  }>();
 
-const handleUpdateQuery = (query: TableQuery) => emit("onQueryUpdate", query);
-const hasError = computed(() => !!props.tableInfo.error);
-const isLoading = computed(() => props.loading);
+  const emit = defineEmits(["onQueryUpdate"]);
 
-provide("hasError", hasError);
-provide("isLoading", isLoading);
-provide(onQueryUpdateKey, handleUpdateQuery);
+  const handleUpdateQuery = (query: TableQuery) => emit("onQueryUpdate", query);
+  const hasError = computed(() => !!props.tableInfo.error);
+  const isLoading = computed(() => props.loading);
+
+  provide("hasError", hasError);
+  provide("isLoading", isLoading);
+  provide(onQueryUpdateKey, handleUpdateQuery);
 </script>
 
 <template>
   <PortletComponent>
-    <DatatableHeader :lang-key="langKey" :add-route-name="addRouteName" />
-    <DatatableFilters />
+    <slot name="header"></slot>
     <PortletBody :is-unpdadded="true">
       <div
         class="kt-datatable kt-datatable--default kt-datatable--brand"
@@ -87,14 +84,11 @@ provide(onQueryUpdateKey, handleUpdateQuery);
               </TableColumn>
             </TableRow>
 
-            <slot />
+            <slot name="default"></slot>
           </tbody>
         </table>
 
-        <DatatablePagination
-          v-if="!tableInfo.noRecords"
-          :pagination="pagination"
-        />
+        <slot name="pagination"></slot>
 
         <TableLoader />
       </div>

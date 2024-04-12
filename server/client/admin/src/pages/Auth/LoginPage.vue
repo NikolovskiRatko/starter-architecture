@@ -1,46 +1,46 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { useRouter } from "vue-router";
-import useAuthComp from "@/composables/useAuthComp";
+  import { ref } from "vue";
+  import { useRouter } from "vue-router";
+  import useAuthComp from "@/composables/useAuthComp";
 
-const form = ref({ email: "", password: "" });
-const formErrors = ref({ email: "", password: "" });
-const authError = ref(false);
-const staySignedIn = ref(true);
+  const form = ref({ email: "", password: "" });
+  const formErrors = ref({ email: "", password: "" });
+  const authError = ref(false);
+  const staySignedIn = ref(true);
 
-const router = useRouter();
-const { login } = useAuthComp();
+  const router = useRouter();
+  const { login } = useAuthComp();
 
-const validateForm = () => {
-  let isValid = true;
-  formErrors.value.email = "";
-  formErrors.value.password = "";
+  const validateForm = () => {
+    let isValid = true;
+    formErrors.value.email = "";
+    formErrors.value.password = "";
 
-  if (!form.value.email) {
-    formErrors.value.email = "Email is required";
-    isValid = false;
-  }
-  if (!form.value.password) {
-    formErrors.value.password = "Password is required";
-    isValid = false;
-  }
+    if (!form.value.email) {
+      formErrors.value.email = "Email is required";
+      isValid = false;
+    }
+    if (!form.value.password) {
+      formErrors.value.password = "Password is required";
+      isValid = false;
+    }
 
-  return isValid;
-};
+    return isValid;
+  };
 
-const submitForm = async () => {
-  if (!validateForm()) return;
+  const submitForm = async () => {
+    if (!validateForm()) return;
 
-  login({
-    data: form.value,
-    redirect: false,
-    remember: false,
-    staySignedIn: staySignedIn.value,
-  }).catch((error) => {
-    authError.value = true;
-    console.log(error);
-  });
-};
+    login({
+      data: form.value,
+      redirect: false,
+      remember: false,
+      staySignedIn: staySignedIn.value,
+    }).catch((error) => {
+      authError.value = true;
+      console.log(error);
+    });
+  };
 </script>
 
 <template>

@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { inject } from "vue";
+  import { inject } from "vue";
 
-const isVisible = inject("isLoading");
-const props = defineProps({
-  hasNoShadow: {
-    type: Boolean,
-    default: false,
-  },
-});
+  const isVisible = inject("isLoading");
+  const props = defineProps({
+    hasNoShadow: {
+      type: Boolean,
+      default: false,
+    },
+  });
 
-import "./TableLoader.scss";
+  import "./TableLoader.scss";
 </script>
 
 <template>

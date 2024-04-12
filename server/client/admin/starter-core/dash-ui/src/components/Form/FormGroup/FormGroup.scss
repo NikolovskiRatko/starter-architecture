@@ -1,0 +1,43 @@
+$label-config: kt-get($form-config, label);
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+
+    &--inline {
+        flex-direction: row;
+    }
+
+    &__label {
+        display: block;
+        font-size: kt-get($form-config, 'font-size');
+        font-weight: $font-weight-normal;
+        padding-top: kt-get($label-config, 'padding-y');
+        padding-bottom: kt-get($label-config, 'padding-y');
+    }
+
+    &__column {
+        $columnBlock: &;
+        
+        &--left {
+            width: 100%;
+
+            &#{$columnBlock} {
+                flex: 0 0 16.66667%;
+                max-width: 16.66667%;
+            }
+        }
+
+        &--right {
+            width: 100%;
+
+            &#{$columnBlock} {
+                flex: 0 0 83.33333%;
+                max-width: 83.33333%;
+            }
+        }
+    }
+}

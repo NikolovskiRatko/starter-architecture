@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { PropType, provide, computed } from "vue";
-import { portletIsLoadingKey, portletThemeKey } from "./types";
+import { provide, computed } from "vue";
+import type { PropType } from "vue";
+import { portletIsLoadingKey, portletThemeKey } from "./constants";
 
 import "./PortletComponent.scss";
 
@@ -12,7 +13,7 @@ const props = defineProps({
     default: false,
   },
   theme: {
-    type: String as PropType<ComponentThemes>,
+    type: String as PropType<DashUIComponentThemes>,
     required: false,
   },
   isEqualHeight: {
@@ -46,12 +47,12 @@ const headClassed = {
   <div
     class="kt-portlet kt-portlet--mobile"
     :class="{
-      'kt-portlet--bordered': isBordered,
-      'kt-portlet--height-fluid': isEqualHeight,
-      'kt-portlet--height-fluid-half': isEqualHalfHeight,
-      'kt-portlet--sticky-header': hasStickyHeader,
-      'kt-portlet--loading': isLoading,
-      [`kt-portlet--theme-${theme}`]: theme,
+      'kt-portlet--bordered': props.isBordered,
+      'kt-portlet--height-fluid': props.isEqualHeight,
+      'kt-portlet--height-fluid-half': props.isEqualHalfHeight,
+      'kt-portlet--sticky-header': props.hasStickyHeader,
+      'kt-portlet--loading': props.isLoading,
+      [`kt-portlet--theme-${props.theme}`]: props.theme,
     }"
   >
     <slot></slot>

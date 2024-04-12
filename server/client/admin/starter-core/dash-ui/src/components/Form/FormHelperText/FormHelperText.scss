@@ -1,0 +1,17 @@
+$input-config: kt-get($form-config, input);
+
+.form-helper-text {
+    display: flex;
+    flex-direction: column;
+
+    &__text {
+        margin-top: 0.25rem;
+        font-size: 0.85rem;
+        color: kt-get($base-colors, label, 2);
+    }
+
+    &__error {
+        font-size: 0.85rem;
+        color: kt-get($input-config, color, error);
+    }
+}

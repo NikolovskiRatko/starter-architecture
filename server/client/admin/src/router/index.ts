@@ -28,7 +28,7 @@ const router: Router = createRouter({
   routes,
 });
 
-router.afterEach((to, from) => {
+router.afterEach((to) => {
   const { setFrontActiveClass } = useRootStore();
 
   setTimeout(() => {

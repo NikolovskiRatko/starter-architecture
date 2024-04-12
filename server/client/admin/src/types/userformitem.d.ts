@@ -1,4 +1,4 @@
-declare interface UserFormItem {
+export interface UserFormItem {
   id?: number;
   email?: string;
   first_name?: string;

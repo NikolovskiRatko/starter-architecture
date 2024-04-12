@@ -1,9 +1,0 @@
-//
-// Header Menu light Skin
-//
-
-// Include header config
-@import "../../config";
-
-// Build Header Menu Skin
-@include kt-menu-hor-build-skin(kt-get($header-config, menu, desktop), light);

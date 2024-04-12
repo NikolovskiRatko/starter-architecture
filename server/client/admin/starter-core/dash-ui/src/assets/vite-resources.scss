@@ -4,16 +4,16 @@
 // Include global config
 @import "config/framework";
 
+// Bootstrap Variables
+@import "./bootstrap/variables";
+
 // Include starter config (that overrides the above global config)
 @import "config/starter";
 
-// Bootstrap Variables
-@import "bootstrap/scss/variables";
-@import "./bootstrap/variables";
-
-@import "./layout/footer/config";
-@import "./layout/header/config";
-@import "./layout/aside/config";
-
 // Configs that are moved to Vue
 @import "../components/Portlet/config";
+@import "../components/Menu/config";
+@import "../components/Form/config";
+
+@import "./layout/footer/config";
+@import "./layout/aside/config";

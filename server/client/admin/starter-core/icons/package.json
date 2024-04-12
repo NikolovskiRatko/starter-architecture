@@ -1,0 +1,45 @@
+{
+    "name": "@starter-core/icons",
+    "version": "1.0.1",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "type": "module",
+    "description": "Custom built bootstrap icons",
+    "private": true,
+    "scripts": {
+        "clean": "node --experimental-vm-modules --loader ts-node/esm ./scripts/clean.ts",
+        "build:icons": "node --experimental-vm-modules --loader ts-node/esm ./scripts/build-icons.ts",
+        "build:ts": "tsc --project tsconfig.json",
+        "build:vite": "node --loader ts-node/esm ./scripts/custom-vite-build.ts",
+        "build": "npm run clean && npm run build:icons && npm run build:vite && npm run build:ts && npm run clean -- after-build"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^5.0.3",
+        "@vue/eslint-config-prettier": "^9.0.0",
+        "prettier-eslint": "^16.3.0",
+        "typescript": "^5.3.3",
+        "vite": "^5.0.12",
+        "vue-tsc": "^1.8.27"
+    },
+    "dependencies": {
+        "@node-projects/node-html-parser-esm": "^6.2.0",
+        "node-html-parser": "^6.1.12",
+        "rimraf": "^5.0.5",
+        "ts-node": "^10.9.2"
+    },
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/admin-icons.js",
+            "require": "./dist/admin-icons.umd.cjs"
+        },
+        "./bootstrap": {
+            "types": "./dist/bootstrap.d.ts",
+            "import": "./dist/bootstrap-icons.js",
+            "require": "./dist/bootstrap-icons.umd.cjs"
+        },
+        "./types": {
+            "types": "./dist/types.d.ts"
+        }
+    }
+}

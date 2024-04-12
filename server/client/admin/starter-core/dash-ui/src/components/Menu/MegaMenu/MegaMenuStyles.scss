@@ -1,0 +1,333 @@
+$desktop-config: kt-get($header-config, menu, desktop);
+$item: kt-get($desktop-config, build, layout, item, submenu, item);
+$submenu: kt-get($desktop-config, build, layout, item, submenu);
+
+$item-submenu-link-padding: kt-get($item, link, self, padding);
+$item-submenu-padding-left: 30px;
+$item-submenu-section-indent: 15px;
+
+.kt-menu__content {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    > .kt-menu__item {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        list-style: none;
+
+      &:last-child {
+        border-right: 0;
+        }
+
+      &.kt-menu--no-heading {
+        > .kt-menu__inner {
+          display: flex;
+
+          > li > .kt-menu__link {
+            margin: 0;
+          }
+        }
+      }
+    }
+}
+
+// mega heading
+.kt-menu__heading {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  text-decoration: none;
+  position: relative;
+  padding: $item-submenu-link-padding;
+  padding-left: $item-submenu-padding-left +
+                  (1 * $item-submenu-section-indent);
+
+.kt-menu__link-text {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.kt-menu__link-badge {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+// link icon
+.kt-menu__link-icon {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    padding: 0 10px 0 0;
+}
+
+// sub menu link arrow icon
+.kt-menu__hor-arrow {
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 10px;
+}
+
+// hide sidebar sub menu link arrow icon
+.kt-menu__ver-arrow {
+    display: none;
+}
+}
+
+.kt-menu__inner,
+.kt-menu__subnav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    > .kt-menu__item {
+    display: flex;
+    flex-grow: 1;
+    margin: 0;
+    padding: 10px 20px;
+
+    .kt-menu__link {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        text-decoration: none;
+        position: relative;
+
+        &:hover,
+        &:active,
+        &:focus {
+        outline: none;
+        text-decoration: none;
+        }
+
+        .kt-menu__link-text {
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        color: #9096b8;
+        font-size: 1rem;
+        text-transform: initial;
+        }
+
+        .kt-menu__link-badge {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        padding: 0px 0px 0px 5px;
+        text-align: center;
+        }
+
+        // link icon
+        .kt-menu__link-icon {
+        display: flex;
+        align-items: center;
+        flex: 0 0 33px;
+        padding: 0;
+        color: #9096b8;
+        font-size: 1.4rem;
+        text-align: right;
+        }
+
+        // menu item link's icon part
+        .kt-menu__link-bullet {
+        display: flex;
+        align-items: center;
+        line-height: 0;
+        }
+
+        // sub menu link arrow icon
+        .kt-menu__hor-arrow {
+        display: flex;
+        align-items: center;
+        padding: 0px 0px 0px 10px;
+        }
+
+        // hide sidebar sub menu link arrow icon
+        .kt-menu__ver-arrow {
+        display: none;
+        }
+    }
+    }
+}
+
+.kt-menu__inner {
+    padding: 0;
+    margin: 0;
+
+  &--open {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+}
+
+// root menu
+.kt-menu__nav {
+  > .kt-menu__item {
+
+    // submenu
+    .kt-menu__submenu {
+
+      > .kt-menu__subnav {
+        > .kt-menu__item {
+          @include kt-attr(margin, kt-get($item, self, margin));
+          @include kt-attr(padding, kt-get($item, self, padding));
+        }
+
+        // mega submenu
+        .kt-menu__content {
+          align-items: stretch;
+          // separator
+          > .kt-menu__item {
+            flex-grow: 1;
+            flex-basis: 0;
+
+            &:last-child {
+              border-right: 0 !important;
+            }
+          }
+
+          // heading
+          .kt-menu__heading {
+            $heading-config: kt-get(
+              $item,
+              column,
+              heading
+            );
+              // heading
+            padding: kt-get($heading-config, self, padding);
+
+            // text
+            > .kt-menu__link-text {
+              font-weight: kt-get($heading-config, caption, text, font-weight);
+              font-size: kt-get($heading-config, caption, text, font-size);
+              text-transform: kt-get($heading-config, caption, text, font-transform);
+            }
+
+            // icon
+            > .kt-menu__link-icon {
+              font-size: kt-get($heading-config, caption, icon, font-size);
+              flex: 0 0 kt-get($heading-config, caption, icon, width);
+              justify-content: kt-get($heading-config, caption, icon, align);
+              padding: kt-get($heading-config, caption, icon, padding);
+            }
+
+            // badge
+            .kt-menu__link-badge {
+              padding: kt-get($heading-config, caption, badge, padding);
+              text-align: kt-get($heading-config, caption, badge, align);
+            }
+          }
+
+          // mega menu
+          .kt-menu__inner {
+            padding: kt-get(
+              $item,
+              column,
+              self,
+              padding
+            );
+
+            > .kt-menu__item {
+              @include kt-attr(margin, kt-get($item, self, margin));
+              @include kt-attr(padding, kt-get($item, self, padding));
+            }
+          }
+        }
+      }
+
+      &.kt-menu__submenu--classic {
+        //padding: kt-get(
+        //  $submenu,
+        //  self,
+        //  padding,
+        //  classic
+        //);
+      }
+
+      // inline submenu
+      &.kt-menu__submenu--inline {
+        display: flex;
+        flex: 0 0 auto;
+
+        > .kt-menu__subnav {
+          > .kt-menu__item {
+            display: flex;
+            padding: 5px 0;
+          }
+        }
+      }
+    }
+  }
+
+  // general submenu hover effect
+  .kt-menu__item {
+    // menu resize item
+    &.kt-menu__item--resize {
+      display: none;
+    }
+
+    // menu item hover
+    &.kt-menu__item--active-tab {
+      .kt-menu__submenu {
+        display: block;
+        animation:
+          #{kt-get($desktop-config, base, class)}-submenu-fade-in 0.3s ease 1,
+          #{kt-get($desktop-config, base, class)}-submenu-move-down 0.3s ease-out 1;
+
+        // ie8-11 versions hack
+        @include kt-hack-ie {
+          animation: none;
+        }
+
+        > .kt-menu__subnav > .kt-menu__item.kt-menu__item--hover {
+          > .kt-menu__submenu {
+            display: block;
+            animation:
+              #{kt-get($desktop-config, base, class)}-submenu-fade-in 0.3s ease 1,
+              #{kt-get($desktop-config, base, class)}-submenu-move-up 0.3s ease-out 1;
+
+            // ie8-11 versions hack
+            @include kt-hack-ie {
+              animation: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.kt-menu__item--submenu-item {
+  // mega submenu
+  .kt-menu__content {
+    // separator
+    > .kt-menu__item {
+      border-right: kt-get(
+                      $item,
+                      column,
+                      separator,
+                      border
+      );
+    }
+
+    // heading
+    .kt-menu__heading {
+      // text
+      > .kt-menu__link-text {
+        color: kt-get(kt-get($item, column, heading), caption, text, font-color);
+      }
+
+      // icon
+      > .kt-menu__link-icon {
+        color: kt-get(kt-get($item, column, heading), caption, icon, font-color);
+      }
+    }
+  }
+}

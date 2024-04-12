@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { useSlots } from "vue";
-import { ContentLoader } from "@/components";
+  import { useSlots } from "vue";
+  import { ContentLoader } from "@starter-core/dash-ui";
 
-import "./AdminSection.scss";
+  import "./AdminSection.scss";
 
-const slots = useSlots();
-const props = defineProps(["loading", "sticky", "footerAlign"]);
-const hasFooterSlot = () => !!slots.footer;
+  const slots = useSlots();
+  const props = defineProps(["loading", "sticky", "footerAlign"]);
+  const hasFooterSlot = () => !!slots.footer;
 </script>
 
 <template>

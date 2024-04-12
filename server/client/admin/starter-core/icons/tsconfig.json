@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "outDir": "./dist/",
+        "module": "esnext",
+        "target": "esnext",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "declaration": true,
+        "strict": true,
+        "noImplicitAny": true,
+        "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true,
+        "allowJs": true,
+        "lib": ["esnext"],
+        "resolveJsonModule": false,
+        "noEmit": false
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+        "src/**/*.vue"
+      ]
+}
