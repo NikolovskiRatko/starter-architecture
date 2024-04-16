@@ -1,0 +1,5 @@
+---
+- name: pm2 reload
+  shell: "/usr/local/lib/npm/bin/pm2 reload ecosystem.config.js --only zoltr"
+  args:
+    chdir: "{{ current_dir }}/client/public"

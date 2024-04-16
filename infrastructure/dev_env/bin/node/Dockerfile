@@ -1,5 +1,5 @@
-FROM node:18
+FROM node:20
 
 WORKDIR /usr/app
 
-EXPOSE 3060
+EXPOSE 3060 3030

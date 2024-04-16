@@ -1,4 +1,9 @@
 ---
+- name: php artisan config:cache
+  shell: php artisan config:cache
+  args:
+    chdir: "{{ new_release_dir }}/api"
+
 - name: php artisan clear-compiled
   shell: php artisan clear-compiled
   args:
@@ -26,11 +31,6 @@
 
 - name: php artisan route:clear
   shell: php artisan route:clear
-  args:
-    chdir: "{{ new_release_dir }}/api"
-
-- name: php artisan config:cache
-  shell: php artisan config:cache
   args:
     chdir: "{{ new_release_dir }}/api"
 

@@ -1,0 +1,3 @@
+---
+- name: Reset redis cache 
+  shell: redis-cli FLUSHALL

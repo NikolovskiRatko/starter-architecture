@@ -43,12 +43,12 @@ run_build(){
   docker exec app /bin/sh -c 'cd zoltr/api php artisan route:cache'
 
   echo -e '\n Run database migrations'
-  docker exec app 'cd zoltr/api php artisan migrate'
+  docker exec app /bin/sh -c 'cd zoltr/api php artisan migrate'
 
   echo -e '\n Run the build commands for the Admin Panel Vuejs3 SPA'
   docker exec node /bin/sh -c 'cd client/admin && npm install'
-  docker exec node /bin/sh -c 'cd client/admin && npm run prod'
   docker exec node /bin/sh -c 'cd client/admin/starter-core/dash-ui && npm install && npm run build:production'
+  docker exec node /bin/sh -c 'cd client/admin && npm run prod'
 
   echo -e '\n Run the build commands for the Public Nuxt3 SSR'
   docker exec node /bin/sh -c 'cd client/public && npm install'
@@ -58,7 +58,7 @@ run_build(){
 run_deploy(){
   echo -e "\n--=========== Starting Deploy stage using Ansible Playbook at $(date)  ===========--\n"
   cd $DEPLOY_ROOT
-  ansible-playbook -i inventory starter.yml -vvv
+  ansible-playbook -i inventory starter.yml
 }
 
 run(){
