@@ -1,10 +1,10 @@
-
 .jumbotron {
     height: 100vh;
     display: flex;
     align-items: center;
     color: white;
     &_background {
+        background: url('~/assets/images/landing_page.png');
         z-index: -1;
         position: absolute;
         width: 100vw;

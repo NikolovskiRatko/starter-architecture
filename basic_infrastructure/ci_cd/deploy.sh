@@ -15,7 +15,7 @@ run_pull(){
   cd $WEBSITE_APP_ROOT
   echo -e "\n--=========== Starting execution of pull $BRANCH at $(date)  ===========--\n"
 
-  git checkout -- . && git pull origin "$BRANCH"
+ # git checkout -- . && git pull origin "$BRANCH"
 }
 
 run_build(){
