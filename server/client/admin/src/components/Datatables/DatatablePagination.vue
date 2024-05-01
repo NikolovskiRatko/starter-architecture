@@ -1,12 +1,17 @@
 <script setup lang="ts">
-  import { ref, computed, inject } from "vue";
+  import { ref, computed, inject, PropType } from "vue";
   import type { Ref } from "vue";
   import PaginationLink from "@/components/Datatables/_partials/PaginationLink.vue";
   import { onQueryUpdateKey } from "@/components/Datatables/typings/inject";
-
+  import { PaginationObject } from "@/components/Datatables/typings";
   import "./DatatablePagination.scss";
 
-  const props = defineProps(["pagination", "page"]);
+  const props = defineProps({
+    pagination: {
+      type: Object as PropType<PaginationObject>,
+      required: true,
+    },
+  });
   const limitOptions = ["10", "25", "50"];
   const selectedLength: Ref<string> = ref(limitOptions[0]);
 

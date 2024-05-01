@@ -58,29 +58,7 @@ class UserRepository implements UserRepositoryInterface
     }
 
     public function draw($data){
-        $paginator = $this->prepareDatatableQuery($data, [User::ADMIN, User::EDITOR, User::COLLABORATOR]);
-        return $this->prepareDatatablesData($paginator, $data);
-    }
-
-    private function prepareDatatablesData($paginator, $data){
-        $last_page = $paginator->lastPage();
-        $limit = $paginator->perPage();
-        $current_page = $paginator->currentPage();
-        $total = $paginator->total();
-        $pagination = [
-            'lastPage' => $last_page,
-            'currentPage' => $current_page,
-            'total' => $total,
-            'dataLength' => $limit,
-            'options' => $paginator->getOptions(),
-        ];
-
-        return [
-            'data' => $paginator,
-            'records' => $paginator->items(),
-            'pagination' => $pagination,
-            'draw' => $data['draw']
-        ];
+        return $this->prepareDatatableQuery($data, [User::ADMIN, User::EDITOR, User::COLLABORATOR]);
     }
 
     private function prepareDatatableQuery($data, array $roles) {

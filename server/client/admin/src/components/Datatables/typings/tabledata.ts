@@ -15,14 +15,14 @@ interface PaginationOptions {
 }
 
 export interface PaginationObject {
-  dataLength: number | undefined;
-  lastPage: number;
+  count: number;
   currentPage: number;
+  lastPage: number;
   total: number;
   options: PaginationOptions;
+  dataLength: number;
 }
 export interface TableQuery {
-  draw?: any;
   page?: number;
   dir?: OrderDirection;
   column?: string;

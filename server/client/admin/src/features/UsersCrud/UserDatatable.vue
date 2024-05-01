@@ -7,16 +7,17 @@
     DatatableComponent,
     DatatablePagination,
     DatatableFilters,
-    DatatableHeader
+    DatatableHeader,
   } from "@/components/Datatables";
   import { useRootStore } from "@/store/root";
+  import type { UserRecord } from "./types";
   // import { get, post } from "@/services/HTTP";
 
   const props = defineProps(["columns"]);
   const { homePath } = useRootStore();
 
   const { records, loading, pagination, tableInfo, query, getData, setQuery } =
-    useDatatable({
+    useDatatable<UserRecord>({
       endpoint: "user",
       redirectRoute: homePath,
       columns: props.columns,
@@ -76,7 +77,7 @@
     </template>
     <template #default>
       <users-table-row
-        v-for="(user, index) in records.data"
+        v-for="(user, index) in records"
         :index="index"
         :key="user.id"
         :columns="columns"

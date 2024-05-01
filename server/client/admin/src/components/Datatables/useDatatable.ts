@@ -12,7 +12,6 @@ const initTableData: TableInfo = {
 };
 
 const initQueryData: TableQuery = {
-  draw: 1,
   length: 10,
   search: "",
   dir: "asc",
@@ -22,20 +21,21 @@ const initPagination: PaginationObject = {
   lastPage: 0,
   currentPage: 0,
   total: 0,
-  dataLength: 10,
+  count: 0,
+  dataLength: 0,
   options: {
     path: "",
     pageName: "",
   },
 };
 
-export function useDatatable({
+export function useDatatable<Record>({
   endpoint,
   columns,
   redirectRoute,
   sortKey = "id",
 }) {
-  const records: Ref<Object[]> = ref([]);
+  const records: Ref<Record[]> = ref([]);
   const loading: Ref<boolean> = ref(true);
   const tableInfo: Ref<TableInfo> = ref(initTableData);
   const pagination: Ref<PaginationObject> = ref(initPagination);
@@ -87,7 +87,6 @@ export function useDatatable({
 
   const getData = async (url?: string) => {
     loading.value = true;
-    query.value.draw++; //TODO: Figure out what this does
 
     const getDataEndpoint = url ?? `${endpoint}/draw`;
 
@@ -96,12 +95,7 @@ export function useDatatable({
     const { data, success, status, message } = response;
 
     if (success) {
-      const {
-        data: newRecords,
-        pagination: newPagination,
-        draw,
-        errors,
-      } = data;
+      const { data: newRecords, errors, pagination: newPagination } = data;
       loading.value = false;
 
       switch (status) {
@@ -112,12 +106,10 @@ export function useDatatable({
           }
 
           records.value = newRecords;
-          if (query.value.draw == draw) {
-            pagination.value = newPagination;
-            setTableInfo({
-              noRecords: newRecords.length <= 0,
-            });
-          }
+          pagination.value = newPagination;
+          setTableInfo({
+            noRecords: newRecords.length <= 0,
+          });
           break;
         }
         case 401: {
@@ -144,13 +136,8 @@ export function useDatatable({
   //   this.getData(url);
   // }
 
-  watch(query, () => {
-    getData();
-  });
-
-  onMounted(() => {
-    getData();
-  });
+  watch(query, () => getData());
+  onMounted(getData);
 
   return {
     records,
