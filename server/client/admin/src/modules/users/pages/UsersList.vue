@@ -2,7 +2,7 @@
   import { onMounted } from "vue";
   import { useRootStore } from "@/store/root";
   import { DatatableColumns } from "@/components/Datatables/typings";
-  import UserDatatable from "@/features/UsersCrud/UserDatatable.vue";
+  import { UsersDatatable } from "../components";
 
   const { setBackUrl, setActiveClasses } = useRootStore();
 
@@ -69,5 +69,5 @@
   ];
 </script>
 <template>
-  <user-datatable :columns="columns" />
+  <users-datatable :columns="columns" />
 </template>

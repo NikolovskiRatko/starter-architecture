@@ -2,7 +2,7 @@
   import { computed, watch } from "vue";
   import { useForm } from "vee-validate";
   import { useI18n } from "vue-i18n";
-  import type { UserFormItem } from "@/types/userformitem";
+  import type { UserFormItem } from "../types";
   import { useUserRoles } from "@/composables/vue-query/useUserRoles";
   // import { getPhotoPath } from "@/utils/imageProcessing;
   import {
@@ -18,7 +18,7 @@
     FormSwitch,
   } from "@starter-core/dash-ui";
   import { IconSave, IconArrowleft, IconMail } from "@starter-core/icons";
-  import { useUsersForm } from "./useUsersForm";
+  import { useUsersForm } from "../composables";
 
   const { t } = useI18n();
 

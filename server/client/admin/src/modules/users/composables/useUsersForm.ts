@@ -3,7 +3,7 @@ import { useToast } from "vue-toastification";
 import { useRoute } from "vue-router";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/vue-query";
 import { get, post, patch } from "@/services/HTTP";
-import type { UserFormItem } from "@/types/userformitem";
+import type { UserFormItem } from "../types";
 
 const USER_CACHE_KEY = "user";
 

@@ -1,19 +1,20 @@
 import type { RouteRecordRaw } from "vue-router";
 import { i18n } from "@/plugins/i18n";
+import { USER_PERMISSIONS } from "../constants";
 const { t } = i18n.global;
 
 const Users = () =>
   import(
     /* webpackChunkName: "users" */
     /* webpackPrefetch: true */
-    "@/pages/Users/UsersList.vue"
+    "../pages/UsersList.vue"
   );
 
 const UserForm = () =>
   import(
     /* webpackChunkName: "user-form" */
     /* webpackPrefetch: true */
-    "@/pages/Users/UserForm.vue"
+    "../pages/UserForm.vue"
   );
 
 // Admin Components
@@ -21,7 +22,7 @@ const MyProfile = () =>
   import(
     /* webpackChunkName: "my-profile" */
     /* webpackPrefetch: true */
-    "@/pages/Admin/MyProfile.vue"
+    "../pages/MyProfile.vue"
   );
 
 export const usersRoutes: RouteRecordRaw[] = [
@@ -31,7 +32,7 @@ export const usersRoutes: RouteRecordRaw[] = [
     component: Users,
     meta: {
       auth: {
-        roles: ["read_users"],
+        roles: [USER_PERMISSIONS.readUsers],
       },
     },
   },
@@ -42,7 +43,7 @@ export const usersRoutes: RouteRecordRaw[] = [
     meta: {
       title: t("users.add", null),
       auth: {
-        roles: ["write_users"],
+        roles: [USER_PERMISSIONS.writeUsers],
       },
     },
   },
@@ -53,7 +54,7 @@ export const usersRoutes: RouteRecordRaw[] = [
     meta: {
       title: t("users.edit_user", null),
       auth: {
-        roles: ["write_users"],
+        roles: [USER_PERMISSIONS.writeUsers],
       },
     },
   },
@@ -64,7 +65,7 @@ export const usersRoutes: RouteRecordRaw[] = [
     meta: {
       title: t("strings.myprofile", null),
       auth: {
-        roles: ["read_users"],
+        roles: [USER_PERMISSIONS.readUsers],
       },
     },
   },

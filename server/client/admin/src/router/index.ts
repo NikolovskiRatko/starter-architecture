@@ -25,7 +25,7 @@ const NotFound = () =>
   import(
     /* webpackChunkName: "not-found" */
     /* webpackPrefetch: true */
-    "@/pages/Admin/NotFound.vue"
+    "@/pages/NotFound/NotFound.vue"
   );
 
 const routes: RouteRecordRaw[] = [

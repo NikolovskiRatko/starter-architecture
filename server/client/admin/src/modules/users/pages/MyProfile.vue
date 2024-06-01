@@ -1,14 +1,14 @@
 <script setup lang="ts">
   import { computed, onMounted, provide, ref } from "vue";
   // import AdminUserForm from '../../../features/Admin/UsersCrud/_components/MyProfileForm.vue';
-  import { useRootStore } from "@/store/root";
   import { cloneDeep } from "lodash";
-  import { useForm } from "@/composables";
-  import { useEventsBus } from "@/composables";
-  import { CustomForm } from "@/components/Form";
-  import { user } from "@/utils/Objects";
-  import { get } from "@/services/HTTP";
   import { useRoute } from "vue-router";
+  import { useRootStore } from "@/store/root";
+  import { useForm } from "@/composables";
+  // import { useEventsBus } from "@/composables";
+  import { CustomForm } from "@/components/Form";
+  import { get } from "@/services/HTTP";
+  import { user } from "../constants";
   import { getPhotoPath } from "@/utils/imageProcessing";
   import {
     PortletComponent,

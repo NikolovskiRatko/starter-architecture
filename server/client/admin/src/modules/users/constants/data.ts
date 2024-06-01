@@ -1,4 +1,4 @@
-import type { UserFormItem } from "@/types/userformitem";
+import type { UserFormItem } from "../types";
 import { createFile } from "@/utils/edgeFileUpload";
 
 const user: UserFormItem = {

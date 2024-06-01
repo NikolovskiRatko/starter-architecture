@@ -2,7 +2,7 @@
   import { PropType } from "vue";
   // import { ref } from "vue";
   // import type { Ref } from "vue";
-  import UsersTableRow from "@/features/UsersCrud/UsersTableRow.vue";
+  import UsersTableRow from "./UsersTableRow.vue";
   import {
     useDatatable,
     DatatableComponent,
@@ -11,7 +11,7 @@
     DatatableHeader,
   } from "@/components/Datatables";
   import { useRootStore } from "@/store/root";
-  import type { UserRecord } from "./types";
+  import type { UserRecord } from "../types";
   import type { DatatableColumns } from "@/components/Datatables/typings";
   // import { get, post } from "@/services/HTTP";
 
