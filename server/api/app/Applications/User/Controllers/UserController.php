@@ -2,14 +2,18 @@
 
 namespace App\Applications\User\Controllers;
 
+use App\Applications\User\Data\UserData;
+use App\Applications\User\Data\UserUpdate;
+use App\Applications\User\Data\UserCreateData;
+use App\Applications\User\Model\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Applications\User\Services\UserServiceInterface;
-use App\Applications\User\Requests\UserRequest;
+// use App\Applications\User\Requests\UserRequest;
 use App\Applications\User\Requests\MyProfile;
-use App\Applications\User\Requests\NewUserRequest;
+use Illuminate\Support\Facades\Route;
 
 /**
  * @property UserServiceInterface $userService
@@ -18,7 +22,7 @@ class UserController extends Controller
 {
     public function __construct(
         UserServiceInterface $userService
-    ){
+    ) {
         $this->userService = $userService;
     }
 
@@ -27,7 +31,8 @@ class UserController extends Controller
      *
      * @return Collection
      */
-    public function getAll(){
+    public function getAll()
+    {
         return $this->userService->getAll();
     }
 
@@ -35,31 +40,39 @@ class UserController extends Controller
      * Get a JSON with a user by ID
      *
      * @param  integer  $id
-     * @return string
+     * @return UserData
      */
-    public function get($id){
-        return $this->userService->get($id)->toJson();
+    public function get($id)
+    {
+        return $this->userService->get($id);
     }
 
     /**
      * Store user and get JSON with a user response
      *
-     * @param  NewUserRequest  $request
-     * @return string
+     * @param  Request  $request
+     * @return UserData
      */
-    public function create(NewUserRequest $request){
-        return $this->userService->create($request)->toJson();
+    public function create(Request $request)
+    {
+        return $this->userService->create(
+            UserCreateData::from($request->all())
+        );
     }
 
     /**
      * Update user
      *
-     * @param  UserRequest  $request
-     * @param  integer  $id
-     * @return void
+     * @param  Request  $request
+     * @return UserData
      */
-    public function update(UserRequest $request, $id){
-        $this->userService->update($request, $id);
+    public function update(Request $request)
+    {
+        $userId = Route::current()->parameter('id');
+        return $this->userService->update(
+            $userId,
+            UserUpdate::from($request->all())
+        );
     }
 
     /**
@@ -67,8 +80,10 @@ class UserController extends Controller
      *
      * @return string
      */
-    public function delete($id){
-        return $this->userService->delete($id);
+    public function delete()
+    {
+        $userId = Route::current()->parameter('id');
+        return $this->userService->delete($userId);
     }
 
     /**
@@ -78,16 +93,18 @@ class UserController extends Controller
      * @param  Request  $request
      * @return array
      */
-    public function draw(Request $request){
+    public function draw(Request $request)
+    {
         return $this->userService->draw($request);
     }
 
     /**
      * Get a JSON of User Roles.
      *
-     * @return string
+     * @return Collection
      */
-    public function getUserRoles(){
+    public function getUserRoles()
+    {
         return $this->userService->getUserRoles();
     }
 
@@ -96,7 +113,8 @@ class UserController extends Controller
      *
      * @return string
      */
-    public function getMyProfile(){
+    public function getMyProfile()
+    {
         return $this->userService->get(Auth::user()->id)->toJson();
     }
 
@@ -106,7 +124,8 @@ class UserController extends Controller
      * @param  MyProfile  $request
      * @return void
      */
-    public function updateMyProfile(MyProfile $request){
+    public function updateMyProfile(MyProfile $request)
+    {
         $this->userService->updateMyProfile($request);
     }
 }

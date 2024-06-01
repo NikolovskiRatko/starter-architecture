@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { onMounted } from "vue";
   import { useRootStore } from "@/store/root";
-  import { ColumnObject } from "@/components/Datatables/typings";
+  import { DatatableColumns } from "@/components/Datatables/typings";
   import UserDatatable from "@/features/UsersCrud/UserDatatable.vue";
 
   const { setBackUrl, setActiveClasses } = useRootStore();
@@ -16,7 +16,7 @@
     });
   });
 
-  const columns: ColumnObject[] = [
+  const columns: DatatableColumns = [
     {
       id: 0,
       width: "15%",

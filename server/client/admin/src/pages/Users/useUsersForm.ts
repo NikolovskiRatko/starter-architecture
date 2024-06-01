@@ -1,30 +1,36 @@
+import { computed } from "vue";
 import { useToast } from "vue-toastification";
+import { useRoute } from "vue-router";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/vue-query";
-import { get, post } from "@/services/HTTP";
+import { get, post, patch } from "@/services/HTTP";
 import type { UserFormItem } from "@/types/userformitem";
 
 const USER_CACHE_KEY = "user";
 
-interface UseUserFormProps {
-  id: string;
-  getUrl: string;
-  postUrl: string;
-}
-
-export const useUsersForm = ({ id, getUrl, postUrl }: UseUserFormProps) => {
+export const useUsersForm = () => {
   const queryClient = useQueryClient();
   const toast = useToast();
+  const route = useRoute();
+
+  const id = String(route.params.userId);
+  const isEditPage = computed(() => route.name == "edit.user");
+  const url = computed(() =>
+    isEditPage.value ? `/user/${id}` : "/user/create",
+  );
 
   const { isLoading: isFetching, data } = useQuery({
     queryKey: [USER_CACHE_KEY, id],
     queryFn: async (): Promise<UserFormItem> => {
-      const data = await get(getUrl);
+      const data = await get(`/user/${id}`);
       return data.data;
     },
   });
 
   const { mutate, isPending: isSaving } = useMutation({
-    mutationFn: (newUserData: UserFormItem) => post(postUrl, newUserData),
+    mutationFn: (newUserData: UserFormItem) =>
+      isEditPage.value
+        ? patch(url.value, newUserData)
+        : post(url.value, newUserData),
     onSuccess: async (data) => {
       if (data.success) {
         queryClient.invalidateQueries({ queryKey: [USER_CACHE_KEY, id] });

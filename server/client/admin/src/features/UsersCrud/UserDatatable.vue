@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import { PropType } from "vue";
   // import { ref } from "vue";
   // import type { Ref } from "vue";
   import UsersTableRow from "@/features/UsersCrud/UsersTableRow.vue";
@@ -11,9 +12,15 @@
   } from "@/components/Datatables";
   import { useRootStore } from "@/store/root";
   import type { UserRecord } from "./types";
+  import type { DatatableColumns } from "@/components/Datatables/typings";
   // import { get, post } from "@/services/HTTP";
 
-  const props = defineProps(["columns"]);
+  const props = defineProps({
+    columns: {
+      type: Array as PropType<DatatableColumns>,
+      required: true,
+    },
+  });
   const { homePath } = useRootStore();
 
   const { records, loading, pagination, tableInfo, query, getData, setQuery } =
@@ -21,7 +28,7 @@
       endpoint: "user",
       redirectRoute: homePath,
       columns: props.columns,
-      sortKey: "first_name",
+      sortKey: "firstName",
     });
 
   // const roles: Ref<any[]> = ref([]);
@@ -78,10 +85,10 @@
     <template #default>
       <users-table-row
         v-for="(user, index) in records"
-        :index="index"
         :key="user.id"
         :columns="columns"
         :user="user"
+        :is-even-row="index % 2 === 0"
       />
     </template>
     <template #pagination>

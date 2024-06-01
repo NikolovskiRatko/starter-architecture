@@ -6,3 +6,5 @@ export interface ColumnObject {
   name?: ColumnName;
   sortable?: boolean;
 }
+
+export type DatatableColumns = ColumnObject[];

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+
 use App\Applications\Pagination\StarterPaginator;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator as LengthAwarePaginatorContract;
 use Illuminate\Pagination\LengthAwarePaginator;

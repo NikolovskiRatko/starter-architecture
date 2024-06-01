@@ -62,7 +62,7 @@ const getComponentBase = (icon: IconObject) => (`
         size?: string;
       }
     
-      const { size } = defineProps<Props>();
+      const { size, ...rest } = defineProps<Props>();
       const style: ComputedRef<CSSProperties> = computed(() => ({
         width: size ? \`\${size}px\` : "16px",
         height: size ? \`\${size}px\` : "16px",
@@ -74,7 +74,7 @@ const getComponentBase = (icon: IconObject) => (`
             :style="style"
             viewBox="${icon.viewBox}"
             fill="currentColor"
-            v-bind="rest"
+            v-bind="rest ?? {}"
         >
             ${icon.content}
         </svg>            

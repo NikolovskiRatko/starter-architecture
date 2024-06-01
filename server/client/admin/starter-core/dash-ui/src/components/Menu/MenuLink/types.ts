@@ -6,9 +6,13 @@ export type BadgeType = {
   label: string;
 };
 
+interface MenuItemRoute {
+  name: string;
+}
+
 export interface MenuItem {
   label: string;
-  route: string;
+  route: MenuItemRoute;
   icon?: VueElement;
   badge?: BadgeType;
   submenu?: SubMenu;

@@ -2,6 +2,11 @@
 
 namespace App\Applications\User\Services;
 
+use Illuminate\Database\Eloquent\Collection;
+use App\Applications\User\Data\UserData;
+use App\Applications\User\Data\UserUpdate;
+use App\Applications\User\Data\UserCreateData;
+// use App\Applications\User\Data\UserRole;
 use App\Applications\User\Repositories\UserRepositoryInterface;
 
 use Illuminate\Support\Facades\Auth;
@@ -13,47 +18,43 @@ class UserService implements UserServiceInterface
 {
     public function __construct(
         UserRepositoryInterface $userRepository
-    ){
+    ) {
         $this->userRepository = $userRepository;
     }
 
-    public function getAll(){
+    public function getAll()
+    {
         return $this->userRepository->getAll();
     }
 
-    public function get($id){
+    public function get($id)
+    {
         return $this->userRepository->get($id);
     }
 
-    public function create($request){
-        $request_array = $request->all();
-        if(empty($request_array['password']))
-            unset($request_array['password']);
-        $user = $this->userRepository->create($request_array);
-        if(!empty($request_array['password']))
-            $this->userRepository->setPassword($user, $request_array['password']);
-        $this->userRepository->changeRoles($user->id, $request_array['roles']);
+    public function create(UserCreateData $userData)
+    {
+        $user = $this->userRepository->create($userData->toArray());
+        $roleIds = [$userData->role];
+        $user->roles()->attach($roleIds);
 
-        return $user;
+        return $this->get($user->id);
     }
 
-    public function update($request, $id){
-        $request_array = $request->all();
-        $user_data = $request_array;
-        unset($user_data['password']);
-        $user = $this->userRepository->get($id);
-        $this->userRepository->update($user, $user_data);
-        if(!empty($request_array['password']) || $request_array['password'] != null)
-            $this->userRepository->setPassword($user, $request_array['password']);
-        $this->userRepository->changeRole($id, $request_array['role']);
+    public function update(int $userId, UserUpdate $userData): UserData
+    {
+        $this->userRepository->changeRole($userId, $userData->role);
+        return $this->userRepository->update($userId, $userData);
     }
 
-    public function delete($id){
+    public function delete(int $id)
+    {
         return $this->userRepository->delete($id);
     }
 
-    public function draw($request){
-        $data['columns'] = Array('users.first_name', 'users.last_name', 'email', 'roles.id', 'users.is_disabled');
+    public function draw($request)
+    {
+        $data['columns'] = array('users.first_name', 'users.last_name', 'email', 'roles.id', 'users.is_disabled');
         $data['length'] = $request->input('length');
         $data['column'] = $request->input('column'); //Index
         $data['dir'] = $request->input('dir');
@@ -63,21 +64,20 @@ class UserService implements UserServiceInterface
         return $this->userRepository->draw($data);
     }
 
-    public function updateMyProfile($request){
+    public function updateMyProfile($request)
+    {
         $request_array = $request->all();
         $user = $this->userRepository->get(Auth::user()->id);
         $data['first_name'] = $request_array['first_name'];
         $data['last_name'] = $request_array['last_name'];
         $data['email'] = $request_array['email'];
         $this->userRepository->update($user, $data);
-        if($request_array['password']!=null)
+        if ($request_array['password'] != null)
             $this->userRepository->setPassword($user, $request_array['password']);
     }
 
-    public function getUserRoles(){
-        return $this->userRepository->getUserRoles()->toJson();
+    public function getUserRoles(): Collection
+    {
+        return $this->userRepository->getUserRoles();
     }
 }
-
-
-

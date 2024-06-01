@@ -1,13 +1,19 @@
 export interface UserFormItem {
   id?: number;
   email?: string;
-  first_name?: string;
-  last_name?: string;
-  role?: string;
+  firstName?: string;
+  lastName?: string;
+  role?: number;
   roles?: any;
-  is_disabled?: number;
-  uploaded_file: File | null;
+  isDisabled?: number;
+  uploadFIle: File | null;
   password?: string;
-  password_confirmation?: string;
+  passwordConfirmation?: string;
   source: string;
+}
+
+interface UserRole {
+  guardName: string;
+  id: number;
+  name: string;
 }

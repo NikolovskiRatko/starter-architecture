@@ -2,6 +2,8 @@
 
 namespace App\Applications\User\Repositories;
 
+use App\Applications\User\Data\UserData;
+use App\Applications\User\Data\UserUpdate;
 use App\Applications\User\Model\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Http\FormRequest;
@@ -21,7 +23,7 @@ interface UserRepositoryInterface
 
     /**
      * @param integer $id
-     * @return User
+     * @return UserData
      */
     public function get($id);
 
@@ -32,17 +34,17 @@ interface UserRepositoryInterface
     public function create($request);
 
     /**
-     * @param FormRequest $request
-     * @param integer $id
-     * @return void
+     * @param int $userId
+     * @param UserUpdate $userData
+     * @return UserData
      */
-    public function update($request, $id);
+    public function update(int $userId, UserUpdate $userData): UserData;
 
     /**
      * @param integer $id
      * @return boolean
      */
-    public function delete($id);
+    public function delete(int $id);
 
     /**
      * @param Request $request

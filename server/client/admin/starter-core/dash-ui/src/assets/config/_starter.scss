@@ -21,6 +21,7 @@ $tertiary-bg: #f7f8fa;
 
 // Border Radius
 //$border-radius: 4px;
+$spacer: 1rem;
 
 $starter-config: (
   font-size: 1rem,
@@ -37,5 +38,13 @@ $starter-config: (
   ),
   line-height: (
     base: 1.5
+  ),
+  spacing: (
+    0: 0,
+    1: $spacer * .25,
+    2: $spacer * .5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
   )
 )

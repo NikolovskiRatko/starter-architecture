@@ -32,7 +32,7 @@ export default (app) => {
         },
       },
       options: {
-        rolesKey: "permissions_array",
+        rolesKey: "permissionsArray",
         parseUserData: function (data) {
           return data;
         },

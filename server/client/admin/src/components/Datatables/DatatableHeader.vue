@@ -22,7 +22,7 @@
   // const exportGeneration: Ref<boolean> = ref(false);
   const auth = useAuth();
   const isUserAllowedToCreate = computed(() =>
-    auth.user().permissions_array.includes("write_users"),
+    auth.user().permissionsArray.includes("write_users"),
   );
 
   // const generateCsv = async () => {
@@ -104,7 +104,7 @@
       <!--        </b-dropdown>-->
       <dash-link
         v-if="isUserAllowedToCreate && props.addRouteName"
-        :to="{ name: 'dashboard' }"
+        :to="{ name: 'add.user' }"
         :icon="IconAdduser"
         theme="secondary"
       >

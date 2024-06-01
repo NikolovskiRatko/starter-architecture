@@ -84,6 +84,7 @@ export default function useSideMenu() {
                   route: {
                     name: link,
                   },
+                  icon: getItemIcon(link),
                 })),
             },
           }),

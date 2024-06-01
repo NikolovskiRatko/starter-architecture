@@ -1,0 +1,16 @@
+{
+  "dashboard": "Dashboard",
+  "users": {
+    "main": "Users",
+    "admin": "Admin Users",
+    "public": "Public Users",
+    "add": "Add user"
+  },
+  "datatable": {
+    "first_name": "First name",
+    "last_name": "Last name",
+    "email": "Email",
+    "user_role": "User role",
+    "status": "Status"
+  }
+}

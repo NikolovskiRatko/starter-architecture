@@ -18,7 +18,7 @@
     PortletHeadLabel,
     FormInput,
     FormInputRadio,
-    FormDropdown
+    FormDropdown,
   } from "@starter-core/dash-ui";
 
   const { setBackUrl, setActiveClasses } = useRootStore();
@@ -40,7 +40,7 @@
   const item = ref(cloneDeep(user));
   // const edit = route.name == 'edit.user';
   const id = 1; //Number(route.params.userId);
-  const fetchUri = `/user/${id}/get`;
+  const fetchUri = `/user/${id}`;
   const roles = ref([]);
   const {
     form,

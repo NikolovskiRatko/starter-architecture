@@ -1,0 +1,28 @@
+{
+  "user_status": "User status",
+  "status": {
+    "label": "Disable user",
+    "enabled": "Enabled"
+  },
+  "roles": {
+    "label": "Roles"
+  },
+  "avatar": "Avatar",
+  "last_name": {
+    "label": "Last name"
+  },
+  "first_name": {
+    "label": "First name"
+  },
+  "email": {
+    "label": "Email"
+  },
+  "password": {
+    "label": "Password",
+    "confirm": "Confirm password",
+    "new_password": "New password"
+  },
+  "basic": {
+    "information": "Basic information"
+  }
+}

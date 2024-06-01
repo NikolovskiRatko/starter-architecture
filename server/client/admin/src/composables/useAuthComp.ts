@@ -8,7 +8,7 @@ export default function useAuthComp() {
 
   const user = computed(() => auth.user());
   const permissionsArray = computed<Array<string>>(
-    () => user.value.permissions_array,
+    () => user.value.permissionsArray,
   );
 
   function fetch(data) {

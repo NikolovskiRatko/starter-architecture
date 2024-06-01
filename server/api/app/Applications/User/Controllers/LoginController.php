@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Applications\User\Data\UserData;
 
 class LoginController extends Controller
 {
@@ -53,18 +54,19 @@ class LoginController extends Controller
         $token = $request->user()->createToken('api-token')->plainTextToken;
 
         return response()
-                ->json(compact('data'), 200)
-                ->header('authorization', $token)
-                ->header('Access-Control-Expose-Headers', 'Authorization');;
+            ->json(compact('data'), 200)
+            ->header('authorization', $token)
+            ->header('Access-Control-Expose-Headers', 'Authorization');;
     }
 
-    public function user(Request $request){
+    public function user(Request $request)
+    {
         $user = $request->user();
 
         // Add roles and permissions if needed
-//        $user->roles = $user->roles_array();        // Assuming roles_array() is a method in your User model
-//        $user->permissions = $user->permissions_array(); // Assuming permissions_array() is a method in your User model
+        //        $user->roles = $user->roles_array();        // Assuming roles_array() is a method in your User model
+        //        $user->permissions = $user->permissions_array(); // Assuming permissions_array() is a method in your User model
 
-        return response()->json($user);
+        return UserData::from($user);
     }
 }

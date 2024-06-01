@@ -4,14 +4,14 @@ import { createFile } from "@/utils/edgeFileUpload";
 const user: UserFormItem = {
   id: 0,
   email: "",
-  first_name: "",
-  last_name: "",
+  firstName: "",
+  lastName: "",
   password: "",
-  password_confirmation: "",
+  passwordConfirmation: "",
   roles: [],
-  role: "",
-  is_disabled: 0,
-  uploaded_file: createFile("image/jpg"),
+  role: 1,
+  isDisabled: 0,
+  uploadFIle: createFile("image/jpg"),
   source: "backend",
 };
 

@@ -2,7 +2,6 @@
   import { computed, watch } from "vue";
   import { useForm } from "vee-validate";
   import { useI18n } from "vue-i18n";
-  import { useRoute } from "vue-router";
   import type { UserFormItem } from "@/types/userformitem";
   import { useUserRoles } from "@/composables/vue-query/useUserRoles";
   // import { getPhotoPath } from "@/utils/imageProcessing;
@@ -21,34 +20,19 @@
   import { IconSave, IconArrowleft, IconMail } from "@starter-core/icons";
   import { useUsersForm } from "./useUsersForm";
 
-  const route = useRoute();
   const { t } = useI18n();
 
   const { handleSubmit, errors, setValues, defineField } =
     useForm<UserFormItem>({
       validationSchema: {
-        last_name(value: string) {
+        lastName(value: string) {
           if (value?.length >= 5) return true;
           return "Name needs to be at least 5 characters.";
         },
       },
     });
 
-  const id = String(route.params.userId);
-  const postUri = computed(() =>
-    route.name == "edit.user" ? `/user/${id}/update` : "/user/create",
-  );
-
-  const {
-    isLoading,
-    data: formData,
-    saveUser,
-  } = useUsersForm({
-    id: String(route.params.userId),
-    postUrl: postUri.value,
-    getUrl: `/user/${id}/get`,
-  });
-
+  const { isLoading, data: formData, saveUser } = useUsersForm();
   const { isLoading: isFetchingRoles, data: roles } = useUserRoles();
 
   // const avatar = computed(() => {
@@ -74,10 +58,10 @@
     }
   }, [formData.value]);
 
-  const [lastName] = defineField("last_name");
-  const [firstName] = defineField("first_name");
+  const [lastName] = defineField("lastName");
+  const [firstName] = defineField("firstName");
   const [email] = defineField("email");
-  const [isDisabled] = defineField("is_disabled");
+  const [isDisabled] = defineField("isDisabled");
   const [role] = defineField("role");
   const [password] = defineField("password");
 </script>
@@ -157,7 +141,7 @@
                       v-model="lastName"
                       name="last-name"
                       :label="t('users.last_name.label')"
-                      :error="errors.last_name"
+                      :error="errors.lastName"
                       is-inline
                     />
                     <form-input

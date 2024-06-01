@@ -1,10 +1,19 @@
 import { createRouter, createWebHistory, Router } from "vue-router";
+import type { RouteRecordRaw } from "vue-router";
+import { i18n } from "@/plugins/i18n";
+const { t } = i18n.global;
 import { useRootStore } from "@/store/root";
+import * as adminRoutes from "./admin/index";
 
-import { adminPaths } from "./admin";
 import { authPaths } from "./auth";
 
-// Pages
+const AdminLayout = () =>
+  import(
+    /* webpackChunkName: "admin-layout" */
+    /* webpackPrefetch: true */
+    "@/layouts/Admin/AdminLayout.vue"
+  );
+
 const Error = () =>
   import(
     /* webpackChunkName: "error" */
@@ -12,9 +21,39 @@ const Error = () =>
     "@/pages/Error/ErrorPage.vue"
   );
 
-const routes = [
+const NotFound = () =>
+  import(
+    /* webpackChunkName: "not-found" */
+    /* webpackPrefetch: true */
+    "@/pages/Admin/NotFound.vue"
+  );
+
+const routes: RouteRecordRaw[] = [
   authPaths,
-  adminPaths,
+  {
+    path: "/admin",
+    component: AdminLayout,
+    meta: {
+      title: t("strings.home", null),
+      auth: {
+        roles: ["read_users"],
+      },
+    },
+    children: [
+      ...Object.values(adminRoutes).flat(),
+      {
+        path: "/:catchAll(.*)",
+        name: "adminnotfound",
+        component: NotFound,
+        meta: {
+          title: t("page.not_found", null),
+          auth: {
+            roles: ["write_users"],
+          },
+        },
+      },
+    ],
+  },
   {
     path: "/:catchAll(.*)",
     name: "errorpage",

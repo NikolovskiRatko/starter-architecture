@@ -1,4 +1,4 @@
-import { RouteConfig } from "vue-router";
+import type { RouteRecordRaw } from "vue-router";
 
 // Layouts
 const AuthBase = () =>
@@ -16,21 +16,19 @@ const Login = () =>
     "@/pages/Auth/LoginPage.vue"
   );
 
-export const authPaths: RouteConfig =
-  //  AUTHENTICATION
-  {
-    path: "/",
-    component: AuthBase,
-    children: [
-      {
-        path: "",
-        name: "home",
-        component: Login,
-      },
-      {
-        path: "login",
-        name: "login",
-        component: Login,
-      },
-    ],
-  };
+export const authPaths: RouteRecordRaw = {
+  path: "/",
+  component: AuthBase,
+  children: [
+    {
+      path: "",
+      name: "home",
+      component: Login,
+    },
+    {
+      path: "login",
+      name: "login",
+      component: Login,
+    },
+  ],
+};

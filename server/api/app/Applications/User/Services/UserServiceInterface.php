@@ -2,6 +2,9 @@
 
 namespace App\Applications\User\Services;
 
+use App\Applications\User\Data\UserData;
+use App\Applications\User\Data\UserUpdate;
+use App\Applications\User\Data\UserCreateData;
 use App\Applications\User\Model\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Http\FormRequest;
@@ -21,28 +24,28 @@ interface UserServiceInterface
 
     /**
      * @param integer $id
-     * @return User
+     * @return UserData
      */
     public function get($id);
 
     /**
-     * @param FormRequest $request
+     * @param UserCreateData $userData
      * @return User
      */
-    public function create($request);
+    public function create(UserCreateData $userData);
 
     /**
-     * @param FormRequest $request
-     * @param integer $id
-     * @return void
+     * @param int $userId
+     * @param UserUpdate $userData
+     * @return UserData
      */
-    public function update($request, $id);
+    public function update(int $userId, UserUpdate $userData): UserData;
 
     /**
      * @param integer $id
      * @return boolean
      */
-    public function delete($id);
+    public function delete(int $id);
 
     /**
      * @param Request $request
@@ -57,7 +60,7 @@ interface UserServiceInterface
     public function updateMyProfile($request);
 
     /**
-     * @return string
+     * @return Collection
      */
     public function getUserRoles();
 }

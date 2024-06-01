@@ -20,18 +20,18 @@ Route::group([
     Route::group([
         'prefix' => 'user',
     ], function () {
-        // CRUD ROUTES
         Route::get('all', [UserController::class, 'getAll']);
-        Route::post('create', [UserController::class, 'create']);
         Route::post('draw', [UserController::class, 'draw']);
         Route::get('roles/get', [UserController::class, 'getUserRoles']);
-        Route::get('{id}/get', [UserController::class, 'get']);
-        Route::post('{id}/update', [UserController::class, 'update']);
-        Route::get('{id}/delete', [UserController::class, 'delete']);
 
         // Admin profile
-        Route::post('edit/myprofile/{id}', [UserController::class, 'updateMyProfile']);
+        Route::patch('myprofile/{id}', [UserController::class, 'updateMyProfile']);
         Route::get('myprofile', [UserController::class, 'getMyProfile']);
 
+        // CRUD ROUTES
+        Route::post('create', [UserController::class, 'create']);
+        Route::get('{id}', [UserController::class, 'get']);
+        Route::patch('{id}', [UserController::class, 'update']);
+        Route::delete('{id}', [UserController::class, 'delete']);
     });
 });
