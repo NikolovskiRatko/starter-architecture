@@ -22,7 +22,6 @@
     sidebarState.value.minimizing = true;
     clearMinimizingTimeout.value = window.setTimeout(() => {
       sidebarState.value.minimizing = false;
-      console.log("minimizingOff");
     }, 300);
   };
 

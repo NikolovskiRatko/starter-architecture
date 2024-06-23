@@ -50,7 +50,7 @@
     background-color: #1a1a27;
     box-shadow: none;
 
-    transition: kt-get($aside-config, base, minimize, transition);
+    transition: var(--dui-transition);
 
     // Header fixed & aside static mode
     .kt-header--fixed.kt-aside--static & {
@@ -85,8 +85,8 @@
 
     // Aside minimize, header fixed & aside static mode
     .kt-header--fixed.kt-aside--static.aside--minimize & {
-      transition: kt-get($aside-config, base, minimize, transition);
-      width: kt-get($aside-config, base, minimize, width);
+      transition: var(--dui-transition);
+      width: var(--dui-aside-minimize-width);
     }
 
     .kt-aside__brand-tools {

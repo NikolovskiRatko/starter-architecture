@@ -1,0 +1,1 @@
+export { useBEMBuilder } from "./bemBlock";

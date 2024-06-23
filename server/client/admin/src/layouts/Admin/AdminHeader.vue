@@ -1,24 +1,14 @@
 <script setup lang="ts">
-  import { storeToRefs } from "pinia";
   import { navMenu as navMenuData } from "@/data/navMenu";
   import { HeaderTopBar } from "@/components/Admin";
   import { NavMenu } from "@starter-core/dash-ui";
-  import { useRootStore } from "@/store/root";
   import "./AdminHeader.scss";
-
-  const rootStore = useRootStore();
-  const { sidebarState } = storeToRefs(rootStore);
 
   // activeTopSubmenu
   // setActiveTopSubmenu
 </script>
 <template>
-  <div
-    class="kt-header kt-header--fixed"
-    :class="{
-      'kt-header--sidebar-minimized': sidebarState.minimized,
-    }"
-  >
+  <div class="kt-header">
     <button
       id="kt_header_menu_mobile_close_btn"
       class="kt-header-menu-wrapper-close"

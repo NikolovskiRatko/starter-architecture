@@ -1,5 +1,6 @@
 import type { VueElement } from 'vue';
-import type { SubMenu } from "../SubMenu/types";
+import type { RouteLocationRaw } from 'vue-router';
+import type { MenuListStyle, SubMenu } from '../SubMenu/types';
 
 export type BadgeType = {
   theme: string;
@@ -16,4 +17,16 @@ export interface MenuItem {
   icon?: VueElement;
   badge?: BadgeType;
   submenu?: SubMenu;
+}
+
+export interface MenuLinkProps {
+  label: string;
+  route: RouteLocationRaw;
+  icon?: VueElement;
+  listStyle?: MenuListStyle | null;
+  hasSubmenu?: boolean;
+  badge?: BadgeType | null;
+  isActive?: boolean;
+  isSubmenuLink?: boolean;
+  level?: number;
 }

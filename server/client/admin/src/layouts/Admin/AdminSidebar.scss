@@ -1,7 +1,7 @@
 // Build Aside Skin
 .aside {
   width: kt-get($aside-config, base, default, width);
-  transition: kt-get($aside-config, base, minimize, transition);
+  transition: var(--dui-transition);
   background-color: kt-get($layout-skins, dark);
 
   // Scrollbar
@@ -119,8 +119,8 @@
     z-index: kt-get($aside-config, base, fixed, zindex);
 
     &--minimize {
-      width: kt-get($aside-config, base, minimize, width);
-      transition: kt-get($aside-config, base, minimize, transition);
+      width: var(--dui-aside-minimize-width);
+      transition: var(--dui-transition);
     }
 
     &--minimizing {
@@ -129,7 +129,7 @@
 
     &--minimize-hover {
       width: kt-get($aside-config, base, default, width);
-      transition: kt-get($aside-config, base, minimize, transition);
+      transition: var(--dui-transition);
     }
 
     &__menu {

@@ -42,7 +42,7 @@
   .kt-footer {
     .kt-footer--fixed & {
       position: fixed;
-      transition: kt-get($aside-config, base, minimize, transition);
+      transition: var(--dui-transition);
       height: kt-get($footer-config, self, fixed, height);
       z-index: kt-get($footer-config, self, fixed, z-index);
       bottom: 0;
@@ -53,8 +53,8 @@
 
     .aside--minimize-hover.kt-footer--fixed &,
     .aside--minimize.kt-footer--fixed & {
-      transition: kt-get($aside-config, base, minimize, transition);
-      left: kt-get($aside-config, base, minimize, width);
+      transition: var(--dui-transition);
+      left: var(--dui-aside-minimize-width);
     }
   }
 }

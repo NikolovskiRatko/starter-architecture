@@ -64,9 +64,10 @@
       classNameArray.push("kt-menu__item--submenu-item");
     }
 
-    if (route === "demo1/index.html") {
-      classNameArray.push("kt-menu__item--active");
-    }
+    //TODO: Implement active logic
+    // if (route === "demo1/index.html") {
+    //   classNameArray.push("kt-menu__item--active");
+    // }
 
     // classNameArray.push('kt-menu__item--open kt-menu__item--here');
     return classNameArray.join(" ");

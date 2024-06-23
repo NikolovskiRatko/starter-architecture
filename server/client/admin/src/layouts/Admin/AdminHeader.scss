@@ -110,13 +110,9 @@ $header-item-hover-bg: rgba(#4d5995, 0.06);
     display: flex;
     justify-content: space-between;
     height: kt-get($header-config, base, desktop, default, height);
-    transition: kt-get($aside-config, base, minimize, transition);
+    transition: var(--dui-transition);
     background-color: kt-get($layout-skins, light);
     border-bottom: 1px solid #eff0f6;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: kt-get($aside-config, base, default, width);
     z-index: kt-get($header-config, base, desktop, fixed, zindex);
 
     &--minimize & {
@@ -173,11 +169,6 @@ $header-item-hover-bg: rgba(#4d5995, 0.06);
           }
         }
       }
-    }
-
-    &--sidebar-minimized {
-      left: kt-get($aside-config, base, minimize, width);
-      transition: kt-get($aside-config, base, minimize, transition);
     }
   }
 }

@@ -16,10 +16,6 @@ $aside-config: (
         width: 4px,
       ),
     ),
-    minimize: (
-      width: $aside-minimize-width,
-      transition: all 0.3s ease,
-    ),
     offcanvas-mobile: (
       layout: (
         self: (
