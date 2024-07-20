@@ -2,7 +2,7 @@
 .aside {
   width: kt-get($aside-config, base, default, width);
   transition: var(--dui-transition);
-  background-color: kt-get($layout-skins, dark);
+  background-color: var(--dui-color-dark);
 
   // Scrollbar
   @include perfect-scrollbar-skin(#637099);

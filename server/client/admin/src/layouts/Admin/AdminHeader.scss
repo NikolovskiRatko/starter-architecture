@@ -111,7 +111,7 @@ $header-item-hover-bg: rgba(#4d5995, 0.06);
     justify-content: space-between;
     height: kt-get($header-config, base, desktop, default, height);
     transition: var(--dui-transition);
-    background-color: kt-get($layout-skins, light);
+    background-color: var(--dui-color-light);
     border-bottom: 1px solid #eff0f6;
     z-index: kt-get($header-config, base, desktop, fixed, zindex);
 

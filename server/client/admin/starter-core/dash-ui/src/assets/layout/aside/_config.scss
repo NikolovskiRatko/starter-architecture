@@ -513,7 +513,7 @@ $aside-config: (
                   // menu panel itself
                   self:
                     (
-                      bg-color: kt-get($layout-skins, dark),
+                      bg-color: var(--dui-color-dark),
                     ),
 
                   // root item
@@ -903,7 +903,7 @@ $aside-config: (
                   // menu panel itself
                   self:
                     (
-                      bg-color: kt-get($layout-skins, light),
+                      bg-color: var(--dui-color-light),
                     ),
 
                   // root item
