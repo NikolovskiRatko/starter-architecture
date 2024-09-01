@@ -42,18 +42,3 @@ $starter-config: (
     5: $spacer * 3,
   )
 );
-
-:root {
-  // Colors
-  --dui-color-dark: #1e1e2d;
-  --dui-color-light: #ffffff;
-
-  // Fonts
-  --dui-font-weight-normal: 400;
-
-  // Spacing
-  --dui-spacing-1: 0.5rem;
-  --dui-spacing-2: 1rem;
-  --dui-spacing-3: 1.5rem;
-  --dui-spacing-4: 2rem;
-}

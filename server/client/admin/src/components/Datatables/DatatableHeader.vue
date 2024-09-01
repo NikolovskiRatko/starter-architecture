@@ -22,7 +22,7 @@
   // const exportGeneration: Ref<boolean> = ref(false);
   const auth = useAuth();
   const isUserAllowedToCreate = computed(() =>
-    auth.user().permissionsArray.includes("write_users"),
+    auth.user().permissions_array.includes("write_users"),
   );
 
   // const generateCsv = async () => {

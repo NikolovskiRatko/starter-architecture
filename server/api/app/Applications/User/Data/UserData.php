@@ -4,11 +4,11 @@ namespace App\Applications\User\Data;
 
 use App\Applications\Pagination\StarterPaginator;
 use Illuminate\Database\Eloquent\Collection;
-use Spatie\LaravelData\Attributes\MapOutputName;
+//use Spatie\LaravelData\Attributes\MapOutputName;
 use Spatie\LaravelData\Data;
-use Spatie\LaravelData\Mappers\CamelCaseMapper;
+//use Spatie\LaravelData\Mappers\CamelCaseMapper;
 
-#[MapOutputName(CamelCaseMapper::class)]
+//#[MapOutputName(CamelCaseMapper::class)]
 class UserData extends Data
 {
     public function __construct(

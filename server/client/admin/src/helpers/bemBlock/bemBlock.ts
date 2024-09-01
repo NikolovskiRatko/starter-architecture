@@ -10,7 +10,7 @@ type CreateBEMClasses = (
 
 type UseBEMBuilder = (
   baseClass: string,
-  baseClassModifiers: Ref<ClassObject>,
+  baseClassModifiers?: Ref<ClassObject>,
 ) => [
   ComputedRef<ClassObject>,
   (

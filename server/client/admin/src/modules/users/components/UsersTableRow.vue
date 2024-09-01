@@ -56,7 +56,7 @@
 
     <TableColumn :width="columns[5].width">
       <dash-link
-        v-if="auth.user().permissionsArray.includes('write_users')"
+        v-if="auth.user().permissions_array.includes('write_users')"
         :to="{ name: 'edit.user', params: { userId: user.id } }"
         theme="primary"
         theme-mod="outline-hover"
@@ -68,7 +68,7 @@
 
     <TableColumn :width="columns[6].width">
       <DashButton
-        v-if="auth.user().permissionsArray.includes('delete_users')"
+        v-if="auth.user().permissions_array.includes('delete_users')"
         :icon="IconTrash"
         theme="danger"
         onclick="deleteUser(user, user.id)"

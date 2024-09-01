@@ -47,7 +47,7 @@
 // Desktop mode
 @include kt-desktop {
   .kt-aside__brand {
-    background-color: #1a1a27;
+    background-color: var(--dui-color-dark);
     box-shadow: none;
 
     transition: var(--dui-transition);
