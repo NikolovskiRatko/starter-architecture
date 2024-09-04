@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Applications\User\Data\UserData;
 
 class LoginController extends Controller
 {
@@ -67,6 +66,6 @@ class LoginController extends Controller
         //        $user->roles = $user->roles_array();        // Assuming roles_array() is a method in your User model
         //        $user->permissions = $user->permissions_array(); // Assuming permissions_array() is a method in your User model
 
-        return UserData::from($user);
+        return $user;
     }
 }

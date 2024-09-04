@@ -2,12 +2,10 @@
 
 namespace App\Applications\User\Repositories;
 
-use App\Applications\User\Data\UserData;
-use App\Applications\User\Data\UserUpdate;
+use App\Applications\Pagination\StarterPaginator;
+use App\Applications\User\DTO\UserDTO;
 use App\Applications\User\Model\User;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Request;
 
 /**
  * Interface UserRepositoryInterface
@@ -17,28 +15,29 @@ use Illuminate\Http\Request;
 interface UserRepositoryInterface
 {
     /**
-     * @return Collection
+     * @return array
      */
-    public function getAll();
+    public function getAll(): array;
 
     /**
      * @param integer $id
-     * @return UserData
+     * @return UserDTO
      */
     public function get($id);
 
     /**
-     * @param FormRequest $request
+     * @param UserDTO $userDTO
+     * @param string $password
      * @return User
      */
-    public function create($request);
+    public function create(UserDTO $userDTO, string $password): User;
 
     /**
      * @param int $userId
-     * @param UserUpdate $userData
-     * @return UserData
+     * @param UserDTO $userData
+     * @return User
      */
-    public function update(int $userId, UserUpdate $userData): UserData;
+    public function update(int $userId, UserDTO $userData): User;
 
     /**
      * @param integer $id
@@ -47,15 +46,15 @@ interface UserRepositoryInterface
     public function delete(int $id);
 
     /**
-     * @param Request $request
-     * @return array
+     * @param array $data
+     * @return StarterPaginator
      */
-    public function draw($request);
+    public function draw(array $data): StarterPaginator;
 
     /**
      * @return Collection
      */
-    public function getUserRoles();
+    public function getUserRoles(): Collection;
 
     /**
      * @param integer $id

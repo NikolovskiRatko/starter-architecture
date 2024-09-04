@@ -1,8 +1,8 @@
 export interface UserRecord {
   id: number;
-  firstName: string;
-  lastName: string;
+  first_name: string;
+  last_name: string;
   email: string;
   roles: string;
-  isDisabled: boolean;
+  is_disabled: boolean;
 }
