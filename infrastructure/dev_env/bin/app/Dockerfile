@@ -49,6 +49,10 @@ RUN apt-get update && \
     pecl install imagick && \
     docker-php-ext-enable imagick
 
+# Install Redis PHP Extension
+RUN pecl install redis && \
+    docker-php-ext-enable redis
+
 # Other PHP8 Extensions
 RUN docker-php-ext-install pdo_mysql && \
     docker-php-ext-install pdo_sqlite && \
