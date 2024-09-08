@@ -1,17 +1,19 @@
 <script setup lang="ts">
-  import { inject, computed } from "vue";
+  import { inject, computed, withDefaults } from "vue";
   import { isMenuMinimizedKey, menuTypeKey } from "../constants";
   import type { MenuLinkProps } from "./types";
   import "./MenuLink.scss";
 
   const props = withDefaults(defineProps<MenuLinkProps>(), {
+    icon: null,
     listStyle: null,
     hasSubmenu: false,
     isSubmenuLink: false,
-    isActive: false,
     badge: null,
-    level: 1,
-  });
+    isActive: false,
+    level: 1
+  })
+
   const emit = defineEmits(["click"]);
   const menuType = inject(menuTypeKey);
   const isMinimized = inject(isMenuMinimizedKey);

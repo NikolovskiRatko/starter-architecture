@@ -1,4 +1,4 @@
-import type { MenuItem } from "../MenuLink/types";
+import type { MenuItem } from "../types";
 
 export type StickToSide = "right" | "left";
 
