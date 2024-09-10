@@ -5,7 +5,7 @@ $label-config: kt-get($form-config, label);
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
-    margin-bottom: 2rem;
+    margin-bottom: var(--dui-spacing-1);
 
     &--inline {
         flex-direction: row;
@@ -14,29 +14,28 @@ $label-config: kt-get($form-config, label);
     &__label {
         display: block;
         font-size: kt-get($form-config, 'font-size');
-        font-weight: $font-weight-normal;
+        font-weight: var(--dui-font-weight-normal);
         padding-top: kt-get($label-config, 'padding-y');
         padding-bottom: kt-get($label-config, 'padding-y');
     }
 
     &__column {
         $columnBlock: &;
-        
-        &--left {
-            width: 100%;
+        width: 100%;
 
-            &#{$columnBlock} {
-                flex: 0 0 16.66667%;
-                max-width: 16.66667%;
+        &--left {
+
+            &#{$columnBlock}--inline {
+                flex: 0 0 20%;
+                max-width: 20%;
             }
         }
 
         &--right {
-            width: 100%;
 
-            &#{$columnBlock} {
-                flex: 0 0 83.33333%;
-                max-width: 83.33333%;
+            &#{$columnBlock}--inline {
+                flex: 0 0 80%;
+                max-width: 80%;
             }
         }
     }

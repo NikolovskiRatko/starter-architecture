@@ -9,12 +9,6 @@ $aside-offcanvas-width: 255px;
 
 $font-weight-normal:          400 !default;
 
-// Layout Skins
-$layout-skins: (
-  dark: #1e1e2d,
-  light: #ffffff,
-);
-
 // content bg color
 $content-bg-color: #f2f3f8;
 $tertiary-bg: #f7f8fa;
@@ -47,4 +41,4 @@ $starter-config: (
     4: $spacer * 1.5,
     5: $spacer * 3,
   )
-)
+);

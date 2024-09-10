@@ -1,14 +1,14 @@
 export interface UserFormItem {
   id?: number;
   email?: string;
-  firstName?: string;
-  lastName?: string;
+  first_name?: string;
+  last_name?: string;
   role?: number;
   roles?: any;
-  isDisabled?: number;
-  uploadFIle: File | null;
+  is_disabled?: number;
+  upload_file: File | null;
   password?: string;
-  passwordConfirmation?: string;
+  password_confirmation?: string;
   source: string;
 }
 

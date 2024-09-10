@@ -1,34 +1,17 @@
 <script setup lang="ts">
-  import { type PropType, computed, ref, inject } from "vue";
+  import { computed, ref, inject, withDefaults } from "vue";
   import MenuLink from "../MenuLink/MenuLink.vue";
   import SubMenu from "../SubMenu/SubMenu.vue";
   import { menuTypeKey, menuThemeKey, isMenuMinimizedKey } from "../constants";
-  import type { MenuItem } from "@/components/Menu/MenuLink/types";
-  import type { MenuListStyle } from "@/components/Menu/SubMenu/types";
   import useOnClickOutside from "@/composables/useOnClickOutside";
+  import type { MenuItemProps } from "./types";
   import "./MenuItem.scss";
 
-  const props = defineProps({
-    item: {
-      type: Object as PropType<MenuItem>,
-      required: true,
-    },
-    style: {
-      type: String as PropType<MenuListStyle>,
-    },
-    isTopLevelItem: {
-      type: Boolean,
-      default: false,
-    },
-    isActive: {
-      type: Boolean,
-      default: false,
-    },
-    level: {
-      type: Number,
-      default: 1,
-    },
-  });
+  const props = withDefaults(defineProps<MenuItemProps>(), {
+    isTopLevelItem: false,
+    isActive: false,
+    level: 1
+  })
 
   const isSubmenuVisible = ref(false);
   const menuType = inject(menuTypeKey);
@@ -37,7 +20,7 @@
   const itemRef = ref();
 
   const menuItemClass = computed(() => {
-    const { submenu, route } = props.item;
+    const { submenu } = props.item;
     let classNameArray = [
       "kt-menu__item",
       `kt-menu__item--${menuType}`,
@@ -64,7 +47,7 @@
       classNameArray.push("kt-menu__item--submenu-item");
     }
 
-    if (route === "demo1/index.html") {
+    if (props.isActive) {
       classNameArray.push("kt-menu__item--active");
     }
 
@@ -112,8 +95,6 @@
     }
   });
 
-  //TODO: Add logic to compare with current route path
-  // const isActive = (item) => item.route === "demo1/index.html";
 </script>
 
 <template>

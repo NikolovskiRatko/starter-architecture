@@ -2,13 +2,10 @@
 
 namespace App\Applications\User\Services;
 
-use App\Applications\User\Data\UserData;
-use App\Applications\User\Data\UserUpdate;
-use App\Applications\User\Data\UserCreateData;
-use App\Applications\User\Model\User;
+use App\Applications\User\DTO\UserDTO;
+use App\Applications\User\DTO\UserRoleDTO;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Request;
 
 /**
  * Interface UserServiceInterface
@@ -18,28 +15,29 @@ use Illuminate\Http\Request;
 interface UserServiceInterface
 {
     /**
-     * @return Collection
+     * @return array
      */
-    public function getAll();
+    public function getAll(): array;
 
     /**
      * @param integer $id
-     * @return UserData
+     * @return UserDTO
      */
-    public function get($id);
+    public function get(int $id): UserDTO;
 
     /**
-     * @param UserCreateData $userData
-     * @return User
+     * @param UserDTO $userData
+     * @param string $password
+     * @return UserDTO
      */
-    public function create(UserCreateData $userData);
+    public function create(UserDTO $userData, string $password): UserDTO;
 
     /**
      * @param int $userId
-     * @param UserUpdate $userData
-     * @return UserData
+     * @param UserDTO $userData
+     * @return UserDTO
      */
-    public function update(int $userId, UserUpdate $userData): UserData;
+    public function update(int $userId, UserDTO $userData): UserDTO;
 
     /**
      * @param integer $id
@@ -48,10 +46,10 @@ interface UserServiceInterface
     public function delete(int $id);
 
     /**
-     * @param Request $request
+     * @param array $data
      * @return array
      */
-    public function draw($request);
+    public function draw(array $data): array;
 
     /**
      * @param FormRequest $request
@@ -60,7 +58,7 @@ interface UserServiceInterface
     public function updateMyProfile($request);
 
     /**
-     * @return Collection
+     * @return array
      */
-    public function getUserRoles();
+    public function getUserRoles(): array;
 }

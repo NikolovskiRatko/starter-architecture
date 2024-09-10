@@ -1,0 +1,21 @@
+@import 'sidebar';
+
+:root {
+  --dui-transition: all .3s ease;
+
+  // Colors
+  --dui-color-primary: #1e1e2d;
+  --dui-color-dark: #1a1a27;
+  --dui-color-light: #ffffff;
+
+  --dui-color-text-dark-bg: #9096b8;
+
+  // Fonts
+  --dui-font-weight-normal: 400;
+
+  // Spacing
+  --dui-spacing-1: 0.5rem;
+  --dui-spacing-2: 1rem;
+  --dui-spacing-3: 1.5rem;
+  --dui-spacing-4: 2rem;
+}

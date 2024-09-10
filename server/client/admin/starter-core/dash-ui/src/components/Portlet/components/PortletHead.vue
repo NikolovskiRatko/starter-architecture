@@ -30,7 +30,6 @@ const isSticky = inject("hasStickyHeader");
         'kt-portlet__head--noborder': headClassed.hasNoBorder,
         'kt-portlet__head--fit': isUnpdaddedPortlet,
         'kt-portlet__head--sticky': isSticky,
-        'kt-portlet__head--main-header-fixed': true, //TODO: Pass this through a context or something
         [`kt-portlet__head--theme-${theme}`]: theme,
       },
     ]"

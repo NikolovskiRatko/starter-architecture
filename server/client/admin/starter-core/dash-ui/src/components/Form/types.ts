@@ -49,3 +49,7 @@ export interface FormSwitchProps {
   size?: 'sm' | 'md' | 'lg';
   helperText?: string;
 }
+
+export interface FormNumberInputProps extends Omit<FormInputProps, 'type' | 'modelValue'> {
+  modelValue?: number;
+}

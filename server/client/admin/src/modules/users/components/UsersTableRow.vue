@@ -5,7 +5,7 @@
   import { IconTrash, IconEdit } from "@starter-core/icons";
   import { DashButton, DashLink } from "@starter-core/dash-ui";
   import type { DatatableColumns } from "@/components/Datatables/typings";
-  import type { UserRecord } from "./types";
+  import type { UserRecord } from "../types";
 
   const props = defineProps({
     user: {
@@ -30,11 +30,11 @@
     <!--kt-datatable__row&#45;&#45;even-->
 
     <TableColumn :width="columns[0].width">
-      {{ user.firstName }}
+      {{ user.first_name }}
     </TableColumn>
 
     <TableColumn :width="columns[1].width">
-      {{ user.lastName }}
+      {{ user.last_name }}
     </TableColumn>
 
     <TableColumn :width="columns[2].width">
@@ -46,7 +46,7 @@
     </TableColumn>
 
     <TableColumn :width="columns[4].width">
-      <template v-if="user.isDisabled">
+      <template v-if="user.is_disabled">
         {{ $t("users.status.disabled") }}
       </template>
       <template v-else>
@@ -56,7 +56,7 @@
 
     <TableColumn :width="columns[5].width">
       <dash-link
-        v-if="auth.user().permissionsArray.includes('write_users')"
+        v-if="auth.user().permissions_array.includes('write_users')"
         :to="{ name: 'edit.user', params: { userId: user.id } }"
         theme="primary"
         theme-mod="outline-hover"
@@ -68,7 +68,7 @@
 
     <TableColumn :width="columns[6].width">
       <DashButton
-        v-if="auth.user().permissionsArray.includes('delete_users')"
+        v-if="auth.user().permissions_array.includes('delete_users')"
         :icon="IconTrash"
         theme="danger"
         onclick="deleteUser(user, user.id)"

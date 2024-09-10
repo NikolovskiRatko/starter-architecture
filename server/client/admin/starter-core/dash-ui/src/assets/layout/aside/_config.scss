@@ -16,10 +16,6 @@ $aside-config: (
         width: 4px,
       ),
     ),
-    minimize: (
-      width: $aside-minimize-width,
-      transition: all 0.3s ease,
-    ),
     offcanvas-mobile: (
       layout: (
         self: (
@@ -517,7 +513,7 @@ $aside-config: (
                   // menu panel itself
                   self:
                     (
-                      bg-color: kt-get($layout-skins, dark),
+                      bg-color: var(--dui-color-primary),
                     ),
 
                   // root item
@@ -907,7 +903,7 @@ $aside-config: (
                   // menu panel itself
                   self:
                     (
-                      bg-color: kt-get($layout-skins, light),
+                      bg-color: var(--dui-color-light),
                     ),
 
                   // root item

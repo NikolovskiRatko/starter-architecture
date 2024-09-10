@@ -3,9 +3,8 @@
 namespace App\Applications\User\Services;
 
 use Illuminate\Database\Eloquent\Collection;
-use App\Applications\User\Data\UserData;
-use App\Applications\User\Data\UserUpdate;
-use App\Applications\User\Data\UserCreateData;
+use App\Applications\User\DTO\UserDTO;
+use App\Applications\User\DTO\UserRoleDTO;
 // use App\Applications\User\Data\UserRole;
 use App\Applications\User\Repositories\UserRepositoryInterface;
 
@@ -22,29 +21,31 @@ class UserService implements UserServiceInterface
         $this->userRepository = $userRepository;
     }
 
-    public function getAll()
+    public function getAll(): array
     {
         return $this->userRepository->getAll();
     }
 
-    public function get($id)
+    public function get($id): UserDTO
     {
         return $this->userRepository->get($id);
     }
 
-    public function create(UserCreateData $userData)
+    public function create(UserDTO $userData, string $password): UserDTO
     {
-        $user = $this->userRepository->create($userData->toArray());
+        $user = $this->userRepository->create($userData, $password);
+
         $roleIds = [$userData->role];
         $user->roles()->attach($roleIds);
 
-        return $this->get($user->id);
+        return UserDTO::fromModel($user);
     }
 
-    public function update(int $userId, UserUpdate $userData): UserData
+    public function update(int $userId, UserDTO $userData): UserDTO
     {
         $this->userRepository->changeRole($userId, $userData->role);
-        return $this->userRepository->update($userId, $userData);
+        $user = $this->userRepository->update($userId, $userData);
+        return UserDTO::fromModel($user);
     }
 
     public function delete(int $id)
@@ -52,16 +53,25 @@ class UserService implements UserServiceInterface
         return $this->userRepository->delete($id);
     }
 
-    public function draw($request)
+    public function draw(array $data): array
     {
-        $data['columns'] = array('users.first_name', 'users.last_name', 'email', 'roles.id', 'users.is_disabled');
-        $data['length'] = $request->input('length');
-        $data['column'] = $request->input('column'); //Index
-        $data['dir'] = $request->input('dir');
-        $data['search'] = $request->input('search');
-        $data['draw'] = $request->input('draw');
+        $data['columns'] = ['users.first_name', 'users.last_name', 'email', 'roles.id', 'users.is_disabled'];
+        $data['length'] = $data['length'] ?? 10;
+        $data['column'] = $data['column'] ?? 'users.first_name';
+        $data['dir'] = $data['dir'] ?? 'asc';
+        $data['search'] = $data['search'] ?? '';
+        $data['draw'] = $data['draw'] ?? 1;
 
-        return $this->userRepository->draw($data);
+        $usersCollection = $this->userRepository->draw($data);
+
+        $usersDTOs = $usersCollection->getCollection()->map(function ($user) {
+            return UserDTO::fromModel($user);
+        });
+
+        return [
+            'data' => $usersDTOs,
+            'pagination' => $usersCollection->toArray()['pagination'],
+        ];
     }
 
     public function updateMyProfile($request)
@@ -76,8 +86,9 @@ class UserService implements UserServiceInterface
             $this->userRepository->setPassword($user, $request_array['password']);
     }
 
-    public function getUserRoles(): Collection
+    public function getUserRoles(): array
     {
-        return $this->userRepository->getUserRoles();
+        $rolesCollection = $this->userRepository->getUserRoles();
+        return UserRoleDTO::fromCollection($rolesCollection);
     }
 }

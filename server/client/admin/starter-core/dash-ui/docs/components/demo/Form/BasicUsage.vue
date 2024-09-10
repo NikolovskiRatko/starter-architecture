@@ -6,6 +6,7 @@
     FormInputRadio,
     FormDropdown,
     FormSwitch,
+    FormNumberInput
   } from "../../../../src/index.ts";
 
   const switchValue = ref(false);
@@ -52,6 +53,13 @@
     label="Switch"
     v-model="switchValue"
     helper-text="Some helper text"
+  />
+  <form-number-input
+      id="form-number-input"
+      name="form-number-input"
+      label="Form number input"
+      helper-text="This is fucking helper text"
+      is-inline
   />
 </template>
 

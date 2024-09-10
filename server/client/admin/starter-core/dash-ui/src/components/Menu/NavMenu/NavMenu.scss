@@ -96,7 +96,7 @@ $header-desktop-tablet-config: kt-get($header-config, menu, tablet-and-mobile);
       margin: 0;
       list-style: none;
       padding: 15px 0;
-      background-color: kt-get($layout-skins, dark);
+      background-color: var(--dui-color-primary);
 
       .kt-menu__scroll {
         position: relative;

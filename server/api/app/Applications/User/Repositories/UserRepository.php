@@ -2,10 +2,9 @@
 
 namespace App\Applications\User\Repositories;
 
-use App\Applications\User\Data\UserData;
-use App\Applications\User\Data\UserUpdate;
-use App\Applications\User\Data\UserRole;
-use Illuminate\Support\Facades\DB;
+use App\Applications\User\DTO\UserDTO;
+use App\Applications\Pagination\StarterPaginator;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Hash;
 use App\Applications\User\Model\User;
 use Spatie\Permission\Models\Role;
@@ -33,28 +32,36 @@ class UserRepository implements UserRepositoryInterface
         'status' => 'users.is_disabled'
     ];
 
-    public function getAll()
+    public function getAll(): array
     {
-        return UserData::collect($this->user::all());
+        $users = $this->user::all();
+        return UserDTO::fromCollection($users);
     }
 
-    public function get($id)
+    public function get($id): UserDTO
     {
-        return UserData::from($this->user::findOrFail($id));
+        $user = $this->user::findOrFail($id);
+        return UserDTO::fromModel($user);
     }
 
-    public function create($input)
+    public function create(UserDTO $userDTO, string $password): User
     {
-        /** @var User */
-        $user = $this->user->create($input);
+        $attributes = $userDTO->toArray();
+        unset($attributes['password']);
+
+        $user = new User($attributes);
+        $user->password = Hash::make($password);
+        $user->save();
+
         return $user;
     }
 
-    public function update(int $userId, UserUpdate $userData): UserData
+    public function update(int $userId, UserDTO $userData): User
     {
         $user = $this->user->findOrFail($userId);
-        $user->update($userData->toArray());
-        return UserData::from($user);
+        $attributes = $userData->toArray();
+        $user->update($attributes);
+        return $user;
     }
 
     public function delete(int $id)
@@ -62,14 +69,10 @@ class UserRepository implements UserRepositoryInterface
         return $this->user::findOrFail($id)->delete();
     }
 
-    public function draw($data)
+    public function draw($data): StarterPaginator
     {
-        $newData = $this->prepareDatatableQuery($data, [User::ADMIN, User::EDITOR, User::COLLABORATOR]);
-        return UserData::tableData($newData);
-    }
+//        $paginatedUsers = $this->prepareDatatableQuery($data, [User::ADMIN, User::EDITOR, User::COLLABORATOR]);
 
-    private function prepareDatatableQuery($data, array $roles)
-    {
         $query = $this->user->query();
 
         // $query->whereIn('roles.name', $roles);
@@ -93,10 +96,34 @@ class UserRepository implements UserRepositoryInterface
         return $query->paginate($data['length']);
     }
 
-    public function getUserRoles()
+//    private function prepareDatatableQuery($data, array $roles)
+//    {
+//        $query = $this->user->query();
+//
+//        // $query->whereIn('roles.name', $roles);
+//
+//        if (array_key_exists($data['column'], self::COLUMNS_MAP)) {
+//            $query->orderBy(self::COLUMNS_MAP[$data['column']], $data['dir']);
+//        }
+//
+//        $search = $data['search'];
+//        if ($search) {
+//            $query->where(function ($subquery) use ($search) {
+//                $subquery->where('users.first_name', 'like', '%' . $search . '%');
+//                $subquery->orWhere('users.last_name', 'like', '%' . $search . '%');
+//                $subquery->orWhere('users.email', 'like', '%' . $search . '%');
+//                $subquery->orWhere('roles.name', 'like', '%' . $search . '%');
+//            });
+//        }
+//
+//        $query->whereNull('deleted_at');
+//
+//        return $query->paginate($data['length']);
+//    }
+
+    public function getUserRoles(): Collection
     {
-        $roles = $this->role->all();
-        return UserRole::collect($roles);
+        return $this->role->all();
     }
 
     public function changeRole($id, $role_id)

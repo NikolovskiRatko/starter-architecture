@@ -25,7 +25,7 @@
   const { handleSubmit, errors, setValues, defineField } =
     useForm<UserFormItem>({
       validationSchema: {
-        lastName(value: string) {
+        last_name(value: string) {
           if (value?.length >= 5) return true;
           return "Name needs to be at least 5 characters.";
         },
@@ -58,10 +58,10 @@
     }
   }, [formData.value]);
 
-  const [lastName] = defineField("lastName");
-  const [firstName] = defineField("firstName");
+  const [lastName] = defineField("last_name");
+  const [firstName] = defineField("first_name");
   const [email] = defineField("email");
-  const [isDisabled] = defineField("isDisabled");
+  const [isDisabled] = defineField("is_disabled");
   const [role] = defineField("role");
   const [password] = defineField("password");
 </script>
