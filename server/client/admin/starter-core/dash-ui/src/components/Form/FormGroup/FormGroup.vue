@@ -2,13 +2,11 @@
   import type { FormGroupProps } from "../types";
   import "./FormGroup.scss";
 
-  const { isInline, className, id } = withDefaults(
-    defineProps<FormGroupProps>(),
-    {
-      isInline: false,
-      className: "",
-    },
-  );
+  const {
+    isInline = false,
+    className = "",
+    id
+  } = defineProps<FormGroupProps>();
 
   const slots = defineSlots<{
     label: () => void;
