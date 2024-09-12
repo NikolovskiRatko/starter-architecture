@@ -57,6 +57,9 @@ services:
   node:
     build:
       context: ./bin/node
+      args:
+        UID: ${UID}
+        GID: ${GID}
     container_name: node
     restart: always
     tty: true
