@@ -1,5 +1,5 @@
 import type { BodyClasses } from "@/store/types/root";
-import { isTouchDevice } from "@/utils/userAgentCheck";
+import { isTouchDevice } from "@/helpers";
 
 export const bodyClasses = (classObj: BodyClasses) => {
   const body = document.getElementsByTagName("body")[0];

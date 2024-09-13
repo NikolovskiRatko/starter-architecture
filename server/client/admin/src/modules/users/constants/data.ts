@@ -1,5 +1,5 @@
 import type { UserFormItem } from "../types";
-import { createFile } from "@/utils/edgeFileUpload";
+import { createFile } from "@/helpers";
 
 const user: UserFormItem = {
   id: 0,

@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { mergeWith } from "lodash";
-import { bodyClasses } from "@/utils/bodyClasses";
+import { bodyClasses } from "@/helpers";
 import { get } from "@/services/HTTP";
 import type { RootState, SetActiveClassesPayload } from "./types/root";
 

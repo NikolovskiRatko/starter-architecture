@@ -1,4 +1,4 @@
-const createFile = (type: string): File => {
+export const createFile = (type: string): File => {
   let file: File = {};
   if (document.documentMode || /Edge/.test(navigator.userAgent)) {
     file = new Blob([], { type: type });
@@ -7,4 +7,3 @@ const createFile = (type: string): File => {
   }
   return file;
 };
-export { createFile };
