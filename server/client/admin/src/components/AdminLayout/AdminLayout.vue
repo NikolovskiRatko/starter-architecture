@@ -4,9 +4,8 @@
   import { useAuth } from "@websanova/vue-auth/src/v3.js";
   import { useRootStore } from "@/store/root";
   import { useBEMBuilder } from "@/helpers";
-  import { layoutConfigKey } from "./types/Admin";
-  import AdminHeader from "./AdminHeader.vue";
-  import AdminSidebar from "./AdminSidebar.vue";
+  import { layoutConfigKey } from "@/types";
+  import { AdminHeader, AdminSidebar } from "@/components";
   import "./AdminLayout.scss";
 
   const layoutConfig = {

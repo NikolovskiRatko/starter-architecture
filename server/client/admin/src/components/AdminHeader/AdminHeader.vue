@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { HeaderTopBar } from "@/components/Admin";
+  import { HeaderTopBar } from "@/components";
   import { NavMenu } from "@starter-core/dash-ui";
   import { useSideMenu } from "@/composables";
   import "./AdminHeader.scss";
