@@ -1,9 +1,9 @@
+import Errors from "../form-backend-validation/Errors.js";
 import {
   guardAgainstReservedFieldName,
   isArray,
   merge,
 } from "@/plugins/form-backend-validation/util/index.js";
-import Errors from "../form-backend-validation/Errors.js";
 
 class Form {
   /**

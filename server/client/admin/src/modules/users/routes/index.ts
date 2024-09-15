@@ -1,6 +1,6 @@
 import type { RouteRecordRaw } from "vue-router";
-import { i18n } from "@/plugins/i18n";
 import { USER_PERMISSIONS } from "../constants";
+import { i18n } from "@/plugins/i18n";
 const { t } = i18n.global;
 
 const Users = () =>

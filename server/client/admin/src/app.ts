@@ -1,7 +1,7 @@
+import { VueQueryPlugin } from "@tanstack/vue-query";
+import { createPinia } from "pinia";
 import { createApp } from "vue";
 // Pinia is a state management library
-import { createPinia } from "pinia";
-import { VueQueryPlugin } from "@tanstack/vue-query";
 import Toast, { POSITION } from "vue-toastification";
 // Import plugins attached to global Vue instance
 import { axios, auth } from "./plugins";

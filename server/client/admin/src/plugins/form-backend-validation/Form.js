@@ -1,3 +1,4 @@
+import axios from "axios";
 import Errors from "./Errors";
 import {
   guardAgainstReservedFieldName,
@@ -6,7 +7,6 @@ import {
   merge,
   objectToFormData,
 } from "./util";
-import axios from "axios";
 
 class Form {
   /**

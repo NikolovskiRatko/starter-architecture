@@ -1,8 +1,6 @@
 <script setup lang="ts">
-  import { computed } from "vue";
   // import type { Ref } from "vue";
   // import { BDropdown, BDropdownItem, BDropdownText } from 'bootstrap-vue';
-  import { useAuth } from "@websanova/vue-auth/src/v3.js";
 
   import {
     PortletHead,
@@ -12,6 +10,8 @@
     DashLink,
   } from "@starter-core/dash-ui";
   import { IconUser, IconAdduser } from "@starter-core/icons";
+  import { useAuth } from "@websanova/vue-auth/src/v3.js";
+  import { computed } from "vue";
 
   const props = defineProps([
     "value",

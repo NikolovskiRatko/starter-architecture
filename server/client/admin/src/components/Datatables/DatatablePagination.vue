@@ -2,8 +2,8 @@
   import { ref, computed, inject, PropType } from "vue";
   import type { Ref } from "vue";
   import PaginationLink from "@/components/Datatables/_partials/PaginationLink.vue";
-  import { onQueryUpdateKey } from "@/components/Datatables/typings/inject";
   import { PaginationObject } from "@/components/Datatables/typings";
+  import { onQueryUpdateKey } from "@/components/Datatables/typings/inject";
   import "./DatatablePagination.scss";
 
   const props = defineProps({

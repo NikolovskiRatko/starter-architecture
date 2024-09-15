@@ -1,8 +1,8 @@
 <script setup lang="ts">
-  import { computed } from "vue";
-  import { useRootStore } from "@/store/root";
   import { useAuth } from "@websanova/vue-auth/src/v3.js";
+  import { computed } from "vue";
   import { isTouchDevice } from "@/helpers";
+  import { useRootStore } from "@/store/root";
   import "@starter-core/dash-ui/src/assets/main.scss";
   import "@starter-core/dash-ui/index.css";
   import "./App.scss";

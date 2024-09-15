@@ -2,6 +2,7 @@
   import { PropType } from "vue";
   // import { ref } from "vue";
   // import type { Ref } from "vue";
+  import type { UserRecord } from "../types";
   import UsersTableRow from "./UsersTableRow.vue";
   import {
     useDatatable,
@@ -10,9 +11,8 @@
     DatatableFilters,
     DatatableHeader,
   } from "@/components/Datatables";
-  import { useRootStore } from "@/store/root";
-  import type { UserRecord } from "../types";
   import type { DatatableColumns } from "@/components/Datatables/typings";
+  import { useRootStore } from "@/store/root";
   // import { get, post } from "@/services/HTTP";
 
   const props = defineProps({

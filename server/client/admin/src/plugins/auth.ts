@@ -1,9 +1,9 @@
-import { createAuth } from "@websanova/vue-auth/src/v3.js";
 import driverAuthBearer from "@websanova/vue-auth/src/drivers/auth/bearer.js";
 import driverHttpAxios from "@websanova/vue-auth/src/drivers/http/axios.1.x.js";
-import driverRouterVueRouter from "@websanova/vue-auth/src/drivers/router/vue-router.2.x.js";
-import driverOAuth2Google from "@websanova/vue-auth/src/drivers/oauth2/google.js";
 import driverOAuth2Facebook from "@websanova/vue-auth/src/drivers/oauth2/facebook.js";
+import driverOAuth2Google from "@websanova/vue-auth/src/drivers/oauth2/google.js";
+import driverRouterVueRouter from "@websanova/vue-auth/src/drivers/router/vue-router.2.x.js";
+import { createAuth } from "@websanova/vue-auth/src/v3.js";
 
 // Constants for OAuth2 configurations (move to environment or config files later)
 const GOOGLE_CLIENT_ID =

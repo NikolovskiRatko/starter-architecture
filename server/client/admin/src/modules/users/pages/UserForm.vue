@@ -1,10 +1,4 @@
 <script lang="ts" setup>
-  import { computed, watch } from "vue";
-  import { useForm } from "vee-validate";
-  import { useI18n } from "vue-i18n";
-  import type { UserFormItem } from "../types";
-  import { useUserRoles } from "@/composables/vue-query/useUserRoles";
-  // import { getPhotoPath } from "@/utils/imageProcessing;
   import {
     PortletComponent,
     PortletBody,
@@ -18,7 +12,13 @@
     FormSwitch,
   } from "@starter-core/dash-ui";
   import { IconSave, IconArrowleft, IconMail } from "@starter-core/icons";
+  import { useForm } from "vee-validate";
+  import { computed, watch } from "vue";
+  import { useI18n } from "vue-i18n";
   import { useUsersForm } from "../composables";
+  import type { UserFormItem } from "../types";
+  import { useUserRoles } from "@/composables/vue-query/useUserRoles";
+  // import { getPhotoPath } from "@/utils/imageProcessing;
 
   const { t } = useI18n();
 

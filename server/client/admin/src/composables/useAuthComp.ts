@@ -1,6 +1,6 @@
+import { useAuth } from "@websanova/vue-auth/src/v3.js";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
-import { useAuth } from "@websanova/vue-auth/src/v3.js";
 
 export default function useAuthComp() {
   const auth = useAuth();

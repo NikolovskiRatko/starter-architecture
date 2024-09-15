@@ -1,9 +1,9 @@
+import { useAuth } from "@websanova/vue-auth/src/v3.js";
 import { ref, computed, onMounted, watch } from "vue";
 import type { Ref } from "vue";
-import { post, get } from "@/services/HTTP";
-import { useAuth } from "@websanova/vue-auth/src/v3.js";
 import { useRouter } from "vue-router";
 import { PaginationObject, TableInfo, TableQuery } from "./typings";
+import { post, get } from "@/services/HTTP";
 
 const initTableData: TableInfo = {
   error: false,

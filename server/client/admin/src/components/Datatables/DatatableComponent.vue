@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import { PortletComponent, PortletBody } from "@starter-core/dash-ui";
   import { computed, provide } from "vue";
   import {
     TableHead,
@@ -6,7 +7,6 @@
     TableColumn,
     TableRow,
   } from "@/components/Datatables";
-  import { PortletComponent, PortletBody } from "@starter-core/dash-ui";
   import {
     TableQuery,
     onQueryUpdateKey,

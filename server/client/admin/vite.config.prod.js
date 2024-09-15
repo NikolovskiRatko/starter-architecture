@@ -1,9 +1,9 @@
-import { defineConfig } from "vite";
 import path from "node:path";
-import laravel from "laravel-vite-plugin";
 import vue from "@vitejs/plugin-vue";
-import { viteStaticCopy } from "vite-plugin-static-copy";
+import laravel from "laravel-vite-plugin";
+import { defineConfig } from "vite";
 import eslintPlugin from "vite-plugin-eslint";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 export default defineConfig({
   plugins: [

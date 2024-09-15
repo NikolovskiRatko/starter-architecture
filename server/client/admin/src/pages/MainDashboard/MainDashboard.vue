@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import { ref, onMounted } from "vue";
   import {
     PortletComponent,
     PortletBody,
@@ -8,6 +7,7 @@
     ContentLoader,
   } from "@starter-core/dash-ui";
   import { IconAirpods as Icon } from "@starter-core/icons";
+  import { ref, onMounted } from "vue";
   // import { get } from "@/services/HTTP";
   import { useRootStore } from "@/store/root";
 

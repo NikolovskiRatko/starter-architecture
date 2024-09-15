@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { PropType, inject } from "vue";
   import { useI18n } from "vue-i18n";
+  import { TableRow } from "@/components/Datatables";
   import {
     ColumnName,
     ColumnObject,
@@ -9,7 +10,6 @@
     TableQuery,
     onQueryUpdateKey,
   } from "@/components/Datatables/typings";
-  import { TableRow } from "@/components/Datatables";
 
   const props = defineProps({
     columns: {
