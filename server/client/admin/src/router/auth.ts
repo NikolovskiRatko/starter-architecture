@@ -5,7 +5,7 @@ const AuthBase = () =>
   import(
     /* webpackChunkName: "auth-base" */
     /* webpackPrefetch: true */
-    "@/layouts/Auth/AuthBase.vue"
+    "@/components/AuthBase/AuthBase.vue"
   );
 
 // Pages
@@ -13,7 +13,7 @@ const Login = () =>
   import(
     /* webpackChunkName: "login" */
     /* webpackPrefetch: true */
-    "@/pages/Auth/LoginPage.vue"
+    "@/pages/Login/LoginPage.vue"
   );
 
 export const authPaths: RouteRecordRaw = {

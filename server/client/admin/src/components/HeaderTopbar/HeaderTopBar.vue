@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { HeaderUserbar } from "@/components/Admin/header";
+  import { HeaderUserbar } from "@/components";
   import {
     IconSearch,
     IconCompiling,

@@ -1,8 +1,10 @@
 <script setup lang="ts">
-  import { navMenu as navMenuData } from "@/data/navMenu";
-  import { HeaderTopBar } from "@/components/Admin";
+  import { HeaderTopBar } from "@/components";
   import { NavMenu } from "@starter-core/dash-ui";
+  import { useSideMenu } from "@/composables";
   import "./AdminHeader.scss";
+
+  const { navMenu } = useSideMenu();
 
   // activeTopSubmenu
   // setActiveTopSubmenu
@@ -20,7 +22,7 @@
         id="kt_header_menu"
         class="kt-header-menu kt-header-menu-mobile kt-header-menu--layout-default"
       >
-        <NavMenu :data="navMenuData" type="horizontal" />
+        <NavMenu :data="navMenu" type="horizontal" />
       </div>
     </div>
     <HeaderTopBar />

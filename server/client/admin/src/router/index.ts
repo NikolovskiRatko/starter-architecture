@@ -11,7 +11,7 @@ const AdminLayout = () =>
   import(
     /* webpackChunkName: "admin-layout" */
     /* webpackPrefetch: true */
-    "@/layouts/Admin/AdminLayout.vue"
+    "@/components/AdminLayout/AdminLayout.vue"
   );
 
 const Error = () =>

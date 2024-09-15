@@ -26,7 +26,7 @@ export default function useSideMenu() {
   const { t } = useI18n();
   const rootStore = useRootStore();
 
-  const { mainMenu } = storeToRefs(rootStore);
+  const { mainMenu, navMenu } = storeToRefs(rootStore);
 
   // TODO: Implement legacy logic to new menu
   // const isActiveClass = (input) => {
@@ -94,5 +94,6 @@ export default function useSideMenu() {
 
   return {
     items,
+    navMenu
   };
 }

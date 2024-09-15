@@ -9,7 +9,7 @@
   import { CustomForm } from "@/components/Form";
   import { get } from "@/services/HTTP";
   import { user } from "../constants";
-  import { getPhotoPath } from "@/utils/imageProcessing";
+  import { getPhotoPath } from "@/helpers";
   import {
     PortletComponent,
     PortletBody,

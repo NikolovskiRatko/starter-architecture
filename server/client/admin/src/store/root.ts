@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { mergeWith } from "lodash";
-import { bodyClasses } from "@/utils/bodyClasses";
+import { bodyClasses } from "@/helpers";
 import { get } from "@/services/HTTP";
 import type { RootState, SetActiveClassesPayload } from "./types/root";
 
@@ -10,6 +10,7 @@ export const useRootStore = defineStore("root", {
     backUrl: "",
     csrfToken: "",
     mainMenu: [],
+    navMenu: [],
     menu: [],
     activeClasses: {},
     homePath: "TESTING PURPOSES ONLY",
@@ -48,13 +49,13 @@ export const useRootStore = defineStore("root", {
       this.frontActiveClass = payload;
     },
     setSidebarState(payload) {
-      console.log(payload);
       this.bodyClasses.sidebarState = payload;
     },
     async setData() {
       try {
         const response = await get("vue");
         const { status, data } = response;
+        console.log(data);
 
         if (status === 200 && !data.errors) {
           this.$state = data;

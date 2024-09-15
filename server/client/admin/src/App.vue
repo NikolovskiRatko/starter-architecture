@@ -2,7 +2,7 @@
   import { computed } from "vue";
   import { useRootStore } from "@/store/root";
   import { useAuth } from "@websanova/vue-auth/src/v3.js";
-  import { isTouchDevice } from "@/utils/userAgentCheck";
+  import { isTouchDevice } from "@/helpers";
   import "@starter-core/dash-ui/src/assets/main.scss";
   import "@starter-core/dash-ui/index.css";
   import "./App.scss";

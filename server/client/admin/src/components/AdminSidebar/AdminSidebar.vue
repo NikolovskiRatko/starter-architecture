@@ -1,9 +1,9 @@
 <script setup lang="ts">
-  import { onMounted, ref } from "vue";
+  import { ref } from "vue";
   import { storeToRefs } from "pinia";
-  import useSideMenu from "@/composables/useSideMenu";
+  import { useSideMenu } from "@/composables";
   import { useRootStore } from "@/store/root";
-  import AsideBrand from "@/components/Admin/AsideBrand.vue";
+  import { AsideBrand } from "@/components";
   import "./AdminSidebar.scss";
 
   import { NavMenu } from "@starter-core/dash-ui";
@@ -11,7 +11,6 @@
   const { items: menuItems } = useSideMenu();
   const rootStore = useRootStore();
   const { sidebarState } = storeToRefs(rootStore);
-  const { setMenu } = rootStore;
   const emit = defineEmits(["sidebarHover"]);
 
   const clearMinimizingTimeout = ref<number>(0);
@@ -51,10 +50,6 @@
       emit("sidebarHover", sidebarState);
     }
   };
-
-  onMounted(() => {
-    setMenu([]);
-  });
 </script>
 
 <template>

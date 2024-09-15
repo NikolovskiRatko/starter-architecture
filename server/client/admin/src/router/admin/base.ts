@@ -1,7 +1,7 @@
 import type { RouteRecordRaw } from "vue-router";
 
 // Pages
-const Dashboard = () =>
+const MainDashboard = () =>
   import(
     /* webpackChunkName: "dashboard" */
     /* webpackPrefetch: true */
@@ -12,7 +12,7 @@ export const baseRoutes: RouteRecordRaw[] = [
   {
     path: "dashboard",
     name: "dashboard",
-    component: Dashboard,
+    component: MainDashboard,
     meta: {
       auth: true,
     },

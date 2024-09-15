@@ -1,4 +1,4 @@
-const isBot = (): boolean => {
+export const isBot = (): boolean => {
   const bots = [
     "googlebot",
     "adsbot-google",
@@ -20,7 +20,7 @@ const isBot = (): boolean => {
   return bots.some((el) => navigator.userAgent.includes(el));
 };
 
-const isTouchDevice = (): boolean => {
+export const isTouchDevice = (): boolean => {
   return (
     "ontouchstart" in window ||
     navigator.maxTouchPoints > 0 ||
@@ -28,4 +28,3 @@ const isTouchDevice = (): boolean => {
   );
 };
 
-export { isBot, isTouchDevice };
