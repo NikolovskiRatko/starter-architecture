@@ -1,15 +1,10 @@
 <script setup lang="ts">
   import { inject } from "vue";
+  import type { TableLoader } from "@/types";
+  import "./TableLoader.scss";
 
   const isVisible = inject("isLoading");
-  const props = defineProps({
-    hasNoShadow: {
-      type: Boolean,
-      default: false,
-    },
-  });
-
-  import "./TableLoader.scss";
+  const { hasNoShadow = false } = defineProps<TableLoader>();
 </script>
 
 <template>
