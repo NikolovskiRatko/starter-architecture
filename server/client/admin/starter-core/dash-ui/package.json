@@ -5,7 +5,7 @@
   "author": "Pashata",
   "license": "MIT",
   "type": "module",
-  "main": "./dist/dash-ui.umd.js",
+  "main": "./dist/dash-ui.js",
   "module": "./dist/dash-ui.js",
   "types": "./dist/index.d.ts",
   "scripts": {

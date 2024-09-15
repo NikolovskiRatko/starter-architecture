@@ -4,14 +4,55 @@
     "es2021": true,
     "node": true
   },
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module"
+  },
   "extends": [
     "eslint:recommended",
     "plugin:vue/vue3-essential",
     "@vue/eslint-config-typescript",
-    "@vue/eslint-config-prettier"
+    "@vue/eslint-config-prettier",
+    "plugin:import/errors",
+    "plugin:import/warnings"
   ],
+  "plugins": ["import"],
   "rules": {
-    "@typescript-eslint/no-unused-vars": "warn"
+    "@typescript-eslint/no-unused-vars": "warn",
+    "import/order": [
+      "warn",
+      {
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ]
   },
-  "ignorePatterns": ["**/starter-core/*"]
+  "ignorePatterns": ["**/starter-core/*"],
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        // TODO: Try to solve this with eslint-import-resolver-vite after update to eslint 9
+        "map": [
+          ["@starter-core/dash-ui", "./starter-core/dash-ui"],
+          ["@starter-core/icons", "./starter-core/icons"],
+          ["@/pages", "./src/pages"],
+          ["@/services", "./src/services"],
+          ["@/locales", "./src/locales"],
+          ["@/components", "./src/components"],
+          ["@/modules", "./src/modules"],
+          ["@/helpers", "./src/helpers"],
+          ["@/store", "./src/store"],
+          ["@/plugins", "./src/plugins"],
+          ["@/composables", "./src/composables"],
+          ["@/types", "./src/types"]
+        ],
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".vue"]
+      },
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".vue"]
+      }
+    }
+  }
 }
