@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import { ContentLoader } from "@starter-core/dash-ui";
   import { useSlots } from "vue";
+  import { ContentLoader } from "@starter-core/dash-ui";
 
   import "./AdminSection.scss";
 

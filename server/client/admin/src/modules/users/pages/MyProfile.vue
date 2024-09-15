@@ -1,14 +1,4 @@
 <script setup lang="ts">
-  import {
-    PortletComponent,
-    PortletBody,
-    PortletHead,
-    PortletHeadToolbar,
-    PortletHeadLabel,
-    FormInput,
-    FormInputRadio,
-    FormDropdown,
-  } from "@starter-core/dash-ui";
   import { cloneDeep } from "lodash";
   import { computed, onMounted, provide, ref } from "vue";
   // import AdminUserForm from '../../../features/Admin/UsersCrud/_components/MyProfileForm.vue';
@@ -19,6 +9,16 @@
   import { getPhotoPath } from "@/helpers";
   import { get } from "@/services/HTTP";
   import { useRootStore } from "@/store/root";
+  import {
+    PortletComponent,
+    PortletBody,
+    PortletHead,
+    PortletHeadToolbar,
+    PortletHeadLabel,
+    FormInput,
+    FormInputRadio,
+    FormDropdown,
+  } from "@starter-core/dash-ui";
   // import { useEventsBus } from "@/composables";
 
   const { setBackUrl, setActiveClasses } = useRootStore();

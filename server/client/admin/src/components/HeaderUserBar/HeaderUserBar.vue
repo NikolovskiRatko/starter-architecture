@@ -1,8 +1,8 @@
 <script setup>
   import { ref } from "vue";
+  import { useRouter } from "vue-router";
   import useAuthComp from "@/composables/useAuthComp";
   import "./HeaderUserBar.scss";
-  import { useRouter } from "vue-router";
 
   const { logout, user } = useAuthComp();
   const isDropdownVisible = ref(false);

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-  import { DashButton, DashLink } from "@starter-core/dash-ui";
   import { IconTrash, IconEdit } from "@starter-core/icons";
   import { useAuth } from "@websanova/vue-auth/src/v3.js";
   import { PropType } from "vue";
   import type { UserRecord } from "../types";
   import { TableColumn, TableRow } from "@/components/Datatables";
   import type { DatatableColumns } from "@/components/Datatables/typings";
+  import { DashButton, DashLink } from "@starter-core/dash-ui";
 
   const props = defineProps({
     user: {

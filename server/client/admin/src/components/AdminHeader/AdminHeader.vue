@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import { NavMenu } from "@starter-core/dash-ui";
   import { HeaderTopBar } from "@/components";
   import { useSideMenu } from "@/composables";
+  import { NavMenu } from "@starter-core/dash-ui";
   import "./AdminHeader.scss";
 
   const { navMenu } = useSideMenu();

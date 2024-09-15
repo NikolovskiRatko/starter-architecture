@@ -4,7 +4,7 @@
   import { isTouchDevice } from "@/helpers";
   import { useRootStore } from "@/store/root";
   import "@starter-core/dash-ui/src/assets/main.scss";
-  import "@starter-core/dash-ui/index.css";
+  import "@starter-core/dash-ui/dist/index.css";
   import "./App.scss";
 
   const auth = useAuth();

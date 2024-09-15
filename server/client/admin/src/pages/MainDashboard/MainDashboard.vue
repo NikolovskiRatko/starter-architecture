@@ -1,4 +1,8 @@
 <script setup lang="ts">
+  import { IconAirpods as Icon } from "@starter-core/icons";
+  import { ref, onMounted } from "vue";
+  // import { get } from "@/services/HTTP";
+  import { useRootStore } from "@/store/root";
   import {
     PortletComponent,
     PortletBody,
@@ -6,10 +10,6 @@
     PortletHeadLabel,
     ContentLoader,
   } from "@starter-core/dash-ui";
-  import { IconAirpods as Icon } from "@starter-core/icons";
-  import { ref, onMounted } from "vue";
-  // import { get } from "@/services/HTTP";
-  import { useRootStore } from "@/store/root";
 
   // const categories = ref([]);
   const isLoading = ref(false);

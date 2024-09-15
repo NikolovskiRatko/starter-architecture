@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import { PortletComponent, PortletBody } from "@starter-core/dash-ui";
   import { computed, provide } from "vue";
   import {
     TableHead,
@@ -11,6 +10,7 @@
     TableQuery,
     onQueryUpdateKey,
   } from "@/components/Datatables/typings";
+  import { PortletComponent, PortletBody } from "@starter-core/dash-ui";
   import "./DatatableComponent.scss";
 
   const props = defineProps(["tableInfo", "query", "loading", "columns"]);

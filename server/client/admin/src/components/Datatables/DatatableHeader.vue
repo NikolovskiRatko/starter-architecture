@@ -2,6 +2,9 @@
   // import type { Ref } from "vue";
   // import { BDropdown, BDropdownItem, BDropdownText } from 'bootstrap-vue';
 
+  import { IconUser, IconAdduser } from "@starter-core/icons";
+  import { useAuth } from "@websanova/vue-auth/src/v3.js";
+  import { computed } from "vue";
   import {
     PortletHead,
     PortletHeadLabel,
@@ -9,9 +12,6 @@
     DashButton,
     DashLink,
   } from "@starter-core/dash-ui";
-  import { IconUser, IconAdduser } from "@starter-core/icons";
-  import { useAuth } from "@websanova/vue-auth/src/v3.js";
-  import { computed } from "vue";
 
   const props = defineProps([
     "value",

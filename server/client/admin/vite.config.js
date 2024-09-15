@@ -2,6 +2,7 @@ import path from "node:path";
 import vue from "@vitejs/plugin-vue";
 import laravel from "laravel-vite-plugin";
 import { defineConfig } from "vite";
+// eslint-disable-next-line import/default
 import eslintPlugin from "vite-plugin-eslint";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 

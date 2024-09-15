@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory, Router } from "vue-router";
 import type { RouteRecordRaw } from "vue-router";
-import { i18n } from "@/plugins/i18n";
-const { t } = i18n.global;
-import { useRootStore } from "@/store/root";
 import * as adminRoutes from "./admin/index";
-
 import { authPaths } from "./auth";
+import { i18n } from "@/plugins/i18n";
+import { useRootStore } from "@/store/root";
+
+const { t } = i18n.global;
 
 const AdminLayout = () =>
   import(
