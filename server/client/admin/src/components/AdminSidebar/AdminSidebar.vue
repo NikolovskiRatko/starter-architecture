@@ -4,11 +4,10 @@
   import { AsideBrand } from "@/components";
   import { useSideMenu } from "@/composables";
   import { useRootStore } from "@/store/root";
+  import { NavMenu } from "@starter-core/dash-ui";
   import "./AdminSidebar.scss";
 
-  import { NavMenu } from "@starter-core/dash-ui";
-
-  const { items: menuItems } = useSideMenu();
+  const { mainMenu } = useSideMenu();
   const rootStore = useRootStore();
   const { sidebarState } = storeToRefs(rootStore);
   const emit = defineEmits(["sidebarHover"]);
@@ -77,7 +76,7 @@
         }"
       >
         <NavMenu
-          :data="menuItems"
+          :data="mainMenu"
           :is-minimized="sidebarState.minimized && !sidebarState.minimizeHover"
           type="vertical"
         />

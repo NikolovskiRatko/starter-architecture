@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { useAuth } from "@websanova/vue-auth/src/v3.js";
   import { storeToRefs } from "pinia";
-  import { onMounted, provide, ref, toRefs } from "vue";
+  import { provide, ref, toRefs } from "vue";
   import { AdminHeader, AdminSidebar } from "@/components";
   import { useBEMBuilder } from "@/helpers";
   import { useRootStore } from "@/store/root";
@@ -26,14 +26,6 @@
   );
 
   provide(layoutConfigKey, layoutConfig);
-
-  onMounted(() => {
-    auth.load().then(async () => {
-      if (auth.check()) {
-        await rootStore.setData();
-      }
-    });
-  });
 </script>
 
 <template>
