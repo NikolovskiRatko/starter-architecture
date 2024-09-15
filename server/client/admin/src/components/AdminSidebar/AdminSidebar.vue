@@ -1,9 +1,9 @@
 <script setup lang="ts">
-  import { ref } from "vue";
   import { storeToRefs } from "pinia";
+  import { ref } from "vue";
+  import { AsideBrand } from "@/components";
   import { useSideMenu } from "@/composables";
   import { useRootStore } from "@/store/root";
-  import { AsideBrand } from "@/components";
   import "./AdminSidebar.scss";
 
   import { NavMenu } from "@starter-core/dash-ui";

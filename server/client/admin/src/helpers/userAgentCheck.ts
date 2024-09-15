@@ -27,4 +27,3 @@ export const isTouchDevice = (): boolean => {
     navigator.msMaxTouchPoints > 0
   );
 };
-

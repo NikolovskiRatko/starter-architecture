@@ -1,11 +1,11 @@
 <script setup lang="ts">
-  import { computed } from "vue";
-  import { storeToRefs } from "pinia";
-  import { useRootStore } from "@/store/root";
   import {
     IconAngledoubleleft,
     IconAngledoubleright,
   } from "@starter-core/icons";
+  import { storeToRefs } from "pinia";
+  import { computed } from "vue";
+  import { useRootStore } from "@/store/root";
   import "./AsideBrand.scss";
 
   const rootStore = useRootStore();

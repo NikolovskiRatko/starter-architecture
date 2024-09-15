@@ -1,14 +1,14 @@
-import { computed } from "vue";
-import { storeToRefs } from "pinia";
-import { useI18n } from "vue-i18n";
-import useAuthComp from "@/composables/useAuthComp";
-import { useRootStore } from "@/store/root";
 import type { NavMenuDataInterface } from "@starter-core/dash-ui/dist/components/Menu/NavMenu/types";
 import {
   IconLayout4blocks,
   IconUser,
   IconArrowright,
 } from "@starter-core/icons";
+import { storeToRefs } from "pinia";
+import { computed } from "vue";
+import { useI18n } from "vue-i18n";
+import useAuthComp from "@/composables/useAuthComp";
+import { useRootStore } from "@/store/root";
 
 const getItemIcon = (link: string) => {
   switch (link) {
@@ -94,6 +94,6 @@ export default function useSideMenu() {
 
   return {
     items,
-    navMenu
+    navMenu,
   };
 }

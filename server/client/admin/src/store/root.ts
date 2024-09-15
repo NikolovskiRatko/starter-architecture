@@ -1,8 +1,8 @@
-import { defineStore } from "pinia";
 import { mergeWith } from "lodash";
+import { defineStore } from "pinia";
+import type { RootState, SetActiveClassesPayload } from "./types/root";
 import { bodyClasses } from "@/helpers";
 import { get } from "@/services/HTTP";
-import type { RootState, SetActiveClassesPayload } from "./types/root";
 
 export const useRootStore = defineStore("root", {
   state: (): RootState => ({

@@ -1,9 +1,9 @@
-import { computed } from "vue";
-import { useToast } from "vue-toastification";
-import { useRoute } from "vue-router";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/vue-query";
-import { get, post, patch } from "@/services/HTTP";
+import { computed } from "vue";
+import { useRoute } from "vue-router";
+import { useToast } from "vue-toastification";
 import type { UserFormItem } from "../types";
+import { get, post, patch } from "@/services/HTTP";
 
 const USER_CACHE_KEY = "user";
 

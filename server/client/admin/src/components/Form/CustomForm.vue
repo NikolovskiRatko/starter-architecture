@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { onMounted, inject } from "vue";
-  import { useRootStore } from "@/store/root";
   import { useRouter, useRoute } from "vue-router";
+  import { useRootStore } from "@/store/root";
 
   const { setActiveClasses } = useRootStore();
   const router = useRouter();

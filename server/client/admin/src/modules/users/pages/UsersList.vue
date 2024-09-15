@@ -1,8 +1,8 @@
 <script setup lang="ts">
   import { onMounted } from "vue";
-  import { useRootStore } from "@/store/root";
-  import { DatatableColumns } from "@/components/Datatables/typings";
   import { UsersDatatable } from "../components";
+  import { DatatableColumns } from "@/components/Datatables/typings";
+  import { useRootStore } from "@/store/root";
 
   const { setBackUrl, setActiveClasses } = useRootStore();
 

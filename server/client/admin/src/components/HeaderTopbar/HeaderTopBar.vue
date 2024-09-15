@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import { HeaderUserbar } from "@/components";
   import {
     IconSearch,
     IconCompiling,
@@ -11,6 +10,7 @@
     IconBox3,
     IconGroup,
   } from "@starter-core/icons";
+  import { HeaderUserbar } from "@/components";
   import "./HeaderTopBar.scss";
 </script>
 

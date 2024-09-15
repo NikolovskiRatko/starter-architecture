@@ -1,11 +1,11 @@
 <script setup lang="ts">
-  import { onMounted, provide, ref, toRefs } from "vue";
-  import { storeToRefs } from "pinia";
   import { useAuth } from "@websanova/vue-auth/src/v3.js";
-  import { useRootStore } from "@/store/root";
-  import { useBEMBuilder } from "@/helpers";
-  import { layoutConfigKey } from "@/types";
+  import { storeToRefs } from "pinia";
+  import { onMounted, provide, ref, toRefs } from "vue";
   import { AdminHeader, AdminSidebar } from "@/components";
+  import { useBEMBuilder } from "@/helpers";
+  import { useRootStore } from "@/store/root";
+  import { layoutConfigKey } from "@/types";
   import "./AdminLayout.scss";
 
   const layoutConfig = {
