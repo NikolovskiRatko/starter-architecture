@@ -1,17 +1,18 @@
 <script setup lang="ts">
-  import { withDefaults, toRefs } from "vue";
   import FormGroup from "../FormGroup/FormGroup.vue";
   import type { FormSwitchProps } from "../types";
   import "./FormSwitch.scss";
 
-  const props = withDefaults(defineProps<FormSwitchProps>(), {
-    isDisabled: false,
-    size: "md",
-    type: "solid",
-    theme: "primary",
-  });
-  const { size, type, label, id } = props;
-  const { modelValue, isDisabled, theme, helperText } = toRefs(props);
+  const {
+    isDisabled = false,
+    size = "md",
+    type = "solid",
+    theme = "primary",
+    label,
+    id,
+    modelValue,
+    helperText
+  } = defineProps<FormSwitchProps>();
 
   const emit = defineEmits<{
     "update:modelValue": [value: boolean];

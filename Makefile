@@ -2,6 +2,9 @@
 starter: ## Start docker containers
 	docker compose -f ./infrastructure/dev_env/docker-compose.yml up
 
+starter-build: ## Start docker containers
+	docker compose -f ./infrastructure/dev_env/docker-compose.yml build
+
 starter-node-shell: ## Run node container
 	docker exec -it node /bin/bash
 
