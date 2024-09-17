@@ -2,15 +2,12 @@ import { mergeWith } from "lodash";
 import { defineStore } from "pinia";
 import type { RootState, SetActiveClassesPayload } from "./types/root";
 import { bodyClasses } from "@/helpers";
-import { get } from "@/services/HTTP";
 
 export const useRootStore = defineStore("root", {
   state: (): RootState => ({
     appName: "",
     backUrl: "",
     csrfToken: "",
-    mainMenu: [],
-    navMenu: [],
     menu: [],
     activeClasses: {},
     homePath: "TESTING PURPOSES ONLY",
@@ -50,22 +47,6 @@ export const useRootStore = defineStore("root", {
     },
     setSidebarState(payload) {
       this.bodyClasses.sidebarState = payload;
-    },
-    async setData() {
-      try {
-        const response = await get("vue");
-        const { status, data } = response;
-        console.log(data);
-
-        if (status === 200 && !data.errors) {
-          this.$state = data;
-        }
-      } catch (error) {
-        alert("Error getting data from API");
-        window.location.reload();
-
-        return;
-      }
     },
   },
 });

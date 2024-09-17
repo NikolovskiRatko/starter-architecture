@@ -11,9 +11,3 @@ export interface UserFormItem {
   password_confirmation?: string;
   source: string;
 }
-
-interface UserRole {
-  guardName: string;
-  id: number;
-  name: string;
-}

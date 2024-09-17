@@ -4,11 +4,10 @@ import {
   IconUser,
   IconArrowright,
 } from "@starter-core/icons";
-import { storeToRefs } from "pinia";
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
+import { useInitialData } from "@/composables";
 import useAuthComp from "@/composables/useAuthComp";
-import { useRootStore } from "@/store/root";
 
 const getItemIcon = (link: string) => {
   switch (link) {
@@ -24,9 +23,7 @@ const getItemIcon = (link: string) => {
 export default function useSideMenu() {
   const { permissionsArray } = useAuthComp();
   const { t } = useI18n();
-  const rootStore = useRootStore();
-
-  const { mainMenu, navMenu } = storeToRefs(rootStore);
+  const { data, isLoading } = useInitialData();
 
   // TODO: Implement legacy logic to new menu
   // const isActiveClass = (input) => {
@@ -54,14 +51,14 @@ export default function useSideMenu() {
   //     this.isExpanded = this.item.expanded || isSubcategoryActive;
   // }
 
-  const items = computed<NavMenuDataInterface>(() => {
-    if (!mainMenu.value) {
+  const mainMenu = computed<NavMenuDataInterface>(() => {
+    if (isLoading && !data.value.mainMenu) {
       return [];
     }
 
     return {
       listStyle: "dot",
-      items: mainMenu.value
+      items: data.value.mainMenu
         .filter((menuItem) =>
           permissionsArray.value.includes(menuItem.permission),
         )
@@ -93,7 +90,6 @@ export default function useSideMenu() {
   });
 
   return {
-    items,
-    navMenu,
+    mainMenu,
   };
 }

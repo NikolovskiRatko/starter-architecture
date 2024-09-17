@@ -7,7 +7,7 @@
   import { CustomForm } from "@/components/Form";
   import { useForm } from "@/composables";
   import { getPhotoPath } from "@/helpers";
-  import { get } from "@/services/HTTP";
+  import { useUserRoles } from "@/modules/users/composables";
   import { useRootStore } from "@/store/root";
   import {
     PortletComponent,
@@ -30,18 +30,17 @@
       title: "users.myprofile",
     });
     initFormFromItem();
-    fetchRoles();
     // Not 100% sure but probably this is used for the same purpose as redirect route and should be removed
     setBackUrl("/");
   });
 
   const route = useRoute();
+  const { isLoading: isFetchingRoles, data: roles } = useUserRoles();
 
   const item = ref(cloneDeep(user));
   // const edit = route.name == 'edit.user';
   const id = 1; //Number(route.params.userId);
   const fetchUri = `/user/${id}`;
-  const roles = ref([]);
   const {
     form,
     messageClass,
@@ -58,15 +57,6 @@
   // const postUri = computed(() => edit ? `/user/${id}/update` : '/user/create');
   const postUri = `/user/${id}/update`;
   const redirectRoute = "users";
-
-  const fetchRoles = async () => {
-    try {
-      const response = await get("user/roles/get");
-      roles.value = response.data;
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   const avatar = computed(() => {
     const { media } = item.value;
@@ -172,6 +162,7 @@
                       }}</label>
                       <div class="col-9">
                         <FormDropdown
+                          v-if="!isFetchingRoles"
                           v-model="form.role"
                           :options="roles"
                           :value="form.role"

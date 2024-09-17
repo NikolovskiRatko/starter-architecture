@@ -21,7 +21,7 @@ Route::group([
         'prefix' => 'user',
     ], function () {
         Route::get('all', [UserController::class, 'getAll']);
-        Route::post('draw', [UserController::class, 'draw']);
+        Route::get('draw', [UserController::class, 'draw']);
         Route::get('roles/get', [UserController::class, 'getUserRoles']);
 
         // Admin profile
