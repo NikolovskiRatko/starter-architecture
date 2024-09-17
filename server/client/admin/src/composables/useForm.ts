@@ -1,11 +1,11 @@
+import axios from "axios";
 import { mergeWith, cloneDeep } from "lodash";
 import { ref, reactive } from "vue";
 import type { Ref } from "vue";
 import { useRouter, onBeforeRouteLeave } from "vue-router";
 import { InitFormFromItem, OnSubmit } from "./types/useForm";
-import { useEventsBus } from "@/composables";
+// import { useEventsBus } from "@/composables";
 import { Form } from "@/plugins/form-backend-validation-new";
-import { get, post } from "@/services/HTTP";
 
 export function useForm(fetchUri, data) {
   const item = ref(cloneDeep(data));
@@ -20,7 +20,7 @@ export function useForm(fetchUri, data) {
   const formattedMessage: Ref<Array<any>> = ref([]);
   const response: object = ref(form.value.errors);
   const error: object = reactive({});
-  const { emit } = useEventsBus();
+  // const { emit } = useEventsBus();
 
   const router = useRouter();
 
@@ -69,7 +69,8 @@ export function useForm(fetchUri, data) {
     resetOnSuccess = true,
   ) => {
     loading.value = true;
-    get(fetchUri)
+    axios
+      .get(fetchUri)
       .then((response) => {
         // For this to work correctly you need to correctly define the object type and properties in the Objects file
         // ex. if expected values from server are id and name than they need to be defined in the object in Objects.ts
@@ -102,7 +103,8 @@ export function useForm(fetchUri, data) {
   const onSubmitTest: OnSubmit = (route, redirectRoute, hasToRedirect) => {
     loading.value = true;
     // TODO: Change this so that it uses the post method from the HTTP service wrapper and the custom Form object as payload
-    post(route, form.value.getData())
+    axios
+      .post(route, form.value.getData())
       .then((responseInternal) => {
         if (!responseInternal.success) {
           throw responseInternal;

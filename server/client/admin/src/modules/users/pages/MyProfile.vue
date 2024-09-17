@@ -7,6 +7,7 @@
   import { CustomForm } from "@/components/Form";
   import { useForm } from "@/composables";
   import { getPhotoPath } from "@/helpers";
+  import { useUserRoles } from "@/modules/users/composables";
   import { useRootStore } from "@/store/root";
   import {
     PortletComponent,
@@ -18,7 +19,6 @@
     FormInputRadio,
     FormDropdown,
   } from "@starter-core/dash-ui";
-  import { useUserRoles } from "@/modules/users/composables";
   // import { useEventsBus } from "@/composables";
 
   const { setBackUrl, setActiveClasses } = useRootStore();

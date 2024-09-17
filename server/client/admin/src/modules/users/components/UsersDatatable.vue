@@ -13,7 +13,6 @@
   } from "@/components/Datatables";
   import type { DatatableColumns } from "@/components/Datatables/typings";
   import { useRootStore } from "@/store/root";
-  // import { get, post } from "@/services/HTTP";
 
   const props = defineProps({
     columns: {
