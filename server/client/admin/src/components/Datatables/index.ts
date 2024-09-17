@@ -1,4 +1,4 @@
-export { useDatatable } from "./useDatatable";
+export * from "./composables";
 
 export { default as DatatablePagination } from "./DatatablePagination.vue";
 export { default as DatatableComponent } from "./DatatableComponent.vue";

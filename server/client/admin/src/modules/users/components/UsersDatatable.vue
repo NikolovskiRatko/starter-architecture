@@ -23,13 +23,22 @@
   });
   const { homePath } = useRootStore();
 
-  const { records, loading, pagination, tableInfo, query, getData, setQuery } =
-    useDatatable<UserRecord>({
-      endpoint: "user",
-      redirectRoute: homePath,
-      columns: props.columns,
-      sortKey: "firstName",
-    });
+  const {
+    records,
+    loading,
+    pagination,
+    tableInfo,
+    query,
+    refreshData,
+    setQuery,
+  } = useDatatable<UserRecord>({
+    endpoint: "user/draw",
+    redirectRoute: homePath,
+    columns: props.columns,
+    sortKey: "firstName",
+  });
+
+  console.log(tableInfo.value)
 
   // const roles: Ref<any[]> = ref([]);
   // const statuses: any[] = [
@@ -60,7 +69,7 @@
   //     .then((response) => {
   //       // dialog('strings.front.deleted_successfully', false);
   //       console.log("strings.front.deleted_successfully");
-  //       getData();
+  //       refreshData();
   //     })
   //     .catch((error) => {
   //       // dialog(error.response.data.message, false);
