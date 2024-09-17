@@ -99,9 +99,31 @@ class UserController extends Controller
      */
     public function draw(Request $request): JsonResponse
     {
-        $data = $request->all();
-        $usersDTO = $this->userService->draw($data);
-        return response()->json($usersDTO);
+        try {
+            $data = $request->all();
+            $usersDTO = $this->userService->draw($data);
+
+            return response()->json($usersDTO);
+        } catch (\InvalidArgumentException $e) {
+            // Handle specific exceptions like InvalidArgumentException
+            return response()->json([
+                'error' => 'Invalid Argument',
+                'message' => $e->getMessage(),
+            ], 400); // Bad Request status code
+        } catch (\ValidationException $e) {
+            // Handle validation exceptions
+            return response()->json([
+                'error' => 'Validation Error',
+                'message' => $e->getMessage(),
+                'errors' => $e->errors(),
+            ], 422); // Unprocessable Entity status code
+        } catch (\Exception $e) {
+            // Handle any other general exceptions
+            return response()->json([
+                'error' => 'Server Error',
+                'message' => $e->getMessage(),
+            ], 500); // Internal Server Error status code
+        }
     }
 
     /**
