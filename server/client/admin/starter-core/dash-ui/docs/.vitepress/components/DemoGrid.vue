@@ -3,9 +3,7 @@
     columns: 2 | 3 | 4 | 5 | 6 | 7 | 8;
   }
 
-  const { columns } = withDefaults(defineProps<DemoGridProps>(), {
-    columns: 4,
-  });
+  const { columns = 4 } = defineProps<DemoGridProps>();
 </script>
 
 <template>

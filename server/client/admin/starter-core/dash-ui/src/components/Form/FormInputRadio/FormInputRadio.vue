@@ -1,17 +1,21 @@
 <script lang="ts" setup>
-  import { toRefs } from "vue";
   import type { FormInputRadioProps } from "../types";
   import FormGroup from "../FormGroup/FormGroup.vue";
   import "./FormInputRadio.scss";
 
-  const props = withDefaults(defineProps<FormInputRadioProps>(), {
-    direction: "horizontal",
-    isDisabled: false,
-    type: "default",
-    theme: "default",
-  });
-  const { id, isInline, label, theme, type } = props;
-  const { error, modelValue, isDisabled, options, helperText } = toRefs(props);
+  const {
+    direction = "horizontal",
+    isDisabled = false,
+    type = "default",
+    theme = "default",
+    label,
+    isInline,
+    id,
+    error,
+    modelValue,
+    options,
+    helperText
+  } = defineProps<FormInputRadioProps>();
 
   const emit = defineEmits<{
     "update:modelValue": [value: string];

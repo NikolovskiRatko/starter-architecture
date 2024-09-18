@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { computed, ref, inject, withDefaults } from "vue";
+  import { computed, ref, inject } from "vue";
   import MenuLink from "../MenuLink/MenuLink.vue";
   import SubMenu from "../SubMenu/SubMenu.vue";
   import { menuTypeKey, menuThemeKey, isMenuMinimizedKey } from "../constants";
@@ -7,11 +7,12 @@
   import type { MenuItemProps } from "./types";
   import "./MenuItem.scss";
 
-  const props = withDefaults(defineProps<MenuItemProps>(), {
-    isTopLevelItem: false,
-    isActive: false,
-    level: 1
-  })
+  const {
+    isTopLevelItem = false,
+    isActive = false,
+    level = 1,
+    item
+  } = defineProps<MenuItemProps>()
 
   const isSubmenuVisible = ref(false);
   const menuType = inject(menuTypeKey);
@@ -20,11 +21,11 @@
   const itemRef = ref();
 
   const menuItemClass = computed(() => {
-    const { submenu } = props.item;
+    const { submenu } = item;
     let classNameArray = [
       "kt-menu__item",
       `kt-menu__item--${menuType}`,
-      `kt-menu__item--level-${props.level}`,
+      `kt-menu__item--level-${level}`,
     ];
 
     if (isMinimized?.value) {
@@ -41,20 +42,20 @@
       }
     }
 
-    if (props.level === 1) {
+    if (level === 1) {
       classNameArray.push("kt-menu__item--top-level");
     } else {
       classNameArray.push("kt-menu__item--submenu-item");
     }
 
-    if (props.isActive) {
+    if (isActive) {
       classNameArray.push("kt-menu__item--active");
     }
 
     // classNameArray.push('kt-menu__item--open kt-menu__item--here');
     return classNameArray.join(" ");
   });
-  const submenu = computed(() => props.item.submenu ?? null);
+  const submenu = computed(() => item.submenu ?? null);
 
   const toggleSubmenu = (visibility?: boolean, delay?: number) => {
     const valueToSet =
@@ -70,7 +71,7 @@
 
   const menuClickHandler = () => {
     if (
-      (menuType === "horizontal" && submenu && props.isTopLevelItem) ||
+      (menuType === "horizontal" && submenu && isTopLevelItem) ||
       (menuType === "vertical" && submenu)
     ) {
       toggleSubmenu();
@@ -78,13 +79,13 @@
   };
 
   const mouseOverHandler = () => {
-    if (submenu && !props.isTopLevelItem && menuType === "horizontal") {
+    if (submenu && !isTopLevelItem && menuType === "horizontal") {
       toggleSubmenu(true);
     }
   };
 
   const mouseLeaveHandler = () => {
-    if (submenu && !props.isTopLevelItem && menuType === "horizontal") {
+    if (submenu && !isTopLevelItem && menuType === "horizontal") {
       toggleSubmenu(false, 300);
     }
   };
@@ -111,10 +112,10 @@
       :list-style="style"
       :label="item.label"
       :badge="item.badge"
-      :is-active="props.isActive || isSubmenuVisible"
+      :is-active="isActive || isSubmenuVisible"
       :has-submenu="!!submenu"
-      :is-submenu-link="!props.isTopLevelItem"
-      :level="props.level"
+      :is-submenu-link="!isTopLevelItem"
+      :level="level"
       @click="menuClickHandler"
     />
     <SubMenu
@@ -125,7 +126,7 @@
       :is-mega-menu="submenu.isMegaMenu"
       :is-visible="isSubmenuVisible"
       :list-style="submenu.listStyle"
-      :level="props.level"
+      :level="level"
     />
   </li>
 </template>

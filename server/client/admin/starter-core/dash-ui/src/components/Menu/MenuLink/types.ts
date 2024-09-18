@@ -10,7 +10,7 @@ export type BadgeType = {
 export type MenuLinkProps = {
   label: string;
   route: string | RouteLocation;
-  icon: VueElement | null;
+  icon?: VueElement | null;
   listStyle?: MenuListStyle | null;
   badge?: BadgeType | null;
   hasSubmenu?: boolean;
