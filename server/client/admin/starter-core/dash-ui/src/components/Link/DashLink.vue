@@ -4,12 +4,10 @@
   import type { DashLinkProps } from './types';
   import DashButton from '../Button/DashButton.vue';
 
-  const props = withDefaults(defineProps<DashLinkProps>(), {
-    to: ""
-  });
+  const { to = '', ...props } = defineProps<DashLinkProps>();
 
   const isExternalLink = computed(() => {
-    return typeof props.to === 'string' && props.to.startsWith('http');
+    return typeof to === 'string' && to.startsWith('http');
   });
 </script>
 <template>
@@ -17,13 +15,13 @@
       v-if="isExternalLink"
       v-bind="props"
       :class="className"
-      :href="props.to as string"
+      :href="to as string"
   >
     <slot />
   </dash-button>
   <router-link
     v-else
-    :to="props.to"
+    :to="to"
     v-slot="{ navigate }"
   >
     <dash-button v-bind="props" @click="navigate">

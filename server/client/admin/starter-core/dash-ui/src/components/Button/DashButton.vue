@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { computed, toRefs } from "vue";
+  import { computed } from "vue";
   import type { DashButtonProps } from "./types";
   import "./DashButton.scss";
 
@@ -7,85 +7,78 @@
     click: [event: MouseEvent]
   }>();
 
-  const props = withDefaults(defineProps<DashButtonProps>(), {
-    type: "button",
-    theme: "primary",
-    isWide: false,
-    isPill: false,
-    isSquare: false
-  });
-
   const {
-    type,
+    type = "button",
     size,
     fontSize,
     fontWeight,
     textTransform,
-    theme,
+    theme = "primary",
     state,
     height,
     href,
     themeMod,
     elevate,
     icon,
-    isWide,
-    isPill,
-    isSquare
-  } = toRefs(props);
+    className,
+    isWide = false,
+    isPill = false,
+    isSquare = false
+  } = defineProps<DashButtonProps>();
 
   const buttonClass = computed(() => {
     const classes = ["btn"];
 
-    if (props.className) {
-      classes.push(props.className)
+    if (className) {
+      classes.push(className)
     }
 
     classes.push(
-      themeMod?.value
-        ? `btn-${themeMod.value}-${theme.value}`
-        : `btn-${theme.value}`,
+      themeMod
+        ? `btn-${themeMod}-${theme}`
+        : `btn-${theme}`,
     );
 
-    if (size?.value) {
-      classes.push(`btn-${size.value}`);
+    if (size) {
+      classes.push(`btn-${size}`);
     }
 
-    if (state?.value) {
-      classes.push(state.value);
+    if (state) {
+      classes.push(state);
     }
 
-    if (elevate?.value) {
+    if (elevate) {
       classes.push("btn-elevate");
-      if (elevate.value === "elevate-air") {
+      if (elevate === "elevate-air") {
         classes.push("btn-elevate-air");
       }
     }
 
-    if (isWide.value) {
+    if (isWide) {
       classes.push("btn-wide");
     }
 
-    if (fontSize?.value) {
-      classes.push(`btn-font-${fontSize.value}`);
+    if (fontSize) {
+      classes.push(`btn-font-${fontSize}`);
     }
 
-    if (fontWeight?.value) {
-      classes.push(`btn-font-${fontWeight.value}`);
+    if (fontWeight) {
+      classes.push(`btn-font-${fontWeight}`);
     }
 
-    if (textTransform?.value) {
-      classes.push(`btn-${textTransform.value}`);
+    if (textTransform) {
+      classes.push(`btn-${textTransform}`);
     }
 
-    if (height?.value) {
-      classes.push(`btn-${height.value}`);
+    if (height) {
+      classes.push(`btn-${height}`);
     }
 
-    if (isPill.value) {
+    if (isPill) {
       classes.push("btn-pill");
     }
 
-    if (isSquare.value) {
+    if (isSquare) {
       classes.push("btn-square")
     }
 
@@ -93,7 +86,7 @@
   });
 
   const buttonType = computed(() =>
-    type.value === "submit" ? "submit" : undefined,
+    type === "submit" ? "submit" : undefined,
   );
 </script>
 <template>

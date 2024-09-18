@@ -1,35 +1,35 @@
 <script setup lang="ts">
-  import { inject, computed, withDefaults } from "vue";
+  import { inject, computed } from "vue";
   import { isMenuMinimizedKey, menuTypeKey } from "../constants";
   import type { MenuLinkProps } from "./types";
   import "./MenuLink.scss";
 
-  const props = withDefaults(defineProps<MenuLinkProps>(), {
-    icon: null,
-    listStyle: null,
-    hasSubmenu: false,
-    isSubmenuLink: false,
-    badge: null,
-    isActive: false,
-    level: 1
-  })
+  const {
+    icon = null,
+    listStyle = null,
+    hasSubmenu = false,
+    isSubmenuLink = false,
+    badge = null,
+    isActive = false,
+    level = 1
+  } = defineProps<MenuLinkProps>();
 
   const emit = defineEmits(["click"]);
   const menuType = inject(menuTypeKey);
   const isMinimized = inject(isMenuMinimizedKey);
 
   const shouldHaveRightArrow = computed<Boolean>(() => {
-    if (props.hasSubmenu) {
+    if (hasSubmenu) {
       return (
         menuType === "vertical" ||
-        (menuType === "horizontal" && props.level > 1)
+        (menuType === "horizontal" && level > 1)
       );
     }
     return false;
   });
 
   const handleClick = (event: Event) => {
-    if (props.hasSubmenu) {
+    if (hasSubmenu) {
       event.preventDefault();
       emit("click");
     }
@@ -42,11 +42,11 @@
     :class="[
       'kt-menu__link',
       `kt-menu__link--${menuType}`,
-      `kt-menu__link--level-${props.level}`,
+      `kt-menu__link--level-${level}`,
       {
-        'kt-menu__toggle': props.hasSubmenu,
-        'kt-menu__link--active': props.isActive,
-        'kt-menu__link--submenu-link': props.isSubmenuLink,
+        'kt-menu__toggle': hasSubmenu,
+        'kt-menu__link--active': isActive,
+        'kt-menu__link--submenu-link': isSubmenuLink,
         'kt-menu__link--minimized': isMinimized,
       },
     ]"
@@ -58,7 +58,7 @@
         'kt-menu__link-icon',
         `kt-menu__link-icon--${menuType}`,
         {
-          'kt-menu__link-icon--active': props.isActive,
+          'kt-menu__link-icon--active': isActive,
         },
       ]"
     >
@@ -77,7 +77,7 @@
         'kt-menu__link-text',
         `kt-menu__link-text--${menuType}`,
         {
-          'kt-menu__link-text--active': props.isActive,
+          'kt-menu__link-text--active': isActive,
           'kt-menu__link-text--minimized': isMinimized,
         },
       ]"
@@ -97,8 +97,8 @@
           `kt-menu__link-arrow--${menuType}`,
           'la la-angle-right',
           {
-            'kt-menu__link-arrow--active': props.isActive,
-            'kt-menu__link-arrow--here': props.isActive,
+            'kt-menu__link-arrow--active': isActive,
+            'kt-menu__link-arrow--here': isActive,
           },
         ]"
       />
