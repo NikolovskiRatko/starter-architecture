@@ -18,7 +18,7 @@ export const useUsersForm = () => {
     isEditPage.value ? `/user/${id}` : "/user/create",
   );
 
-  const { isLoading: isFetching, data } = useQuery({
+  const { isLoading: isFetching, data: queryData } = useQuery({
     queryKey: [USER_CACHE_KEY, id],
     queryFn: async (): Promise<UserFormItem> => {
       const data = await axios.get(`/user/${id}`);
@@ -39,6 +39,8 @@ export const useUsersForm = () => {
       toast.error(error.message);
     },
   });
+
+  const data = computed(() => queryData.value);
 
   return {
     data,

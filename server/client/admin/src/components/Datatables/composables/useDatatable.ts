@@ -56,8 +56,6 @@ export function useDatatable<T>({ endpoint, sortKey = "id" }) {
     },
   });
 
-  console.log(error.value);
-
   // const actualUser = computed(() => auth.user());
 
   const setQuery = (queryObject: TableQuery) => {

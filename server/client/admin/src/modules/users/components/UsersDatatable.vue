@@ -37,8 +37,6 @@
     sortKey: "firstName",
   });
 
-  console.log(tableInfo.value)
-
   // const roles: Ref<any[]> = ref([]);
   // const statuses: any[] = [
   //   { id: 3, name: "All status" },

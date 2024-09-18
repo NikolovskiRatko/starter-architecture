@@ -3,9 +3,8 @@
   import { useForm } from "vee-validate";
   import { watch } from "vue";
   import { useI18n } from "vue-i18n";
-  import { useUsersForm } from "../composables";
+  import { useUsersForm, useUserRoles } from "../composables";
   import type { UserFormItem } from "../types";
-  import { useUserRoles } from "@/modules/users/composables";
   import {
     PortletComponent,
     PortletBody,
@@ -22,18 +21,20 @@
 
   const { t } = useI18n();
 
-  const { handleSubmit, errors, setValues, defineField } =
-    useForm<UserFormItem>({
-      validationSchema: {
-        last_name(value: string) {
-          if (value?.length >= 5) return true;
-          return "Name needs to be at least 5 characters.";
-        },
-      },
-    });
+  const validationSchema = {
+    last_name(value: string) {
+      if (value?.length >= 5) return true;
+      return "Name needs to be at least 5 characters.";
+    },
+  };
 
   const { isLoading, data: formData, saveUser } = useUsersForm();
   const { isLoading: isFetchingRoles, data: roles } = useUserRoles();
+
+  const { handleSubmit, errors, setValues, defineField } =
+    useForm<UserFormItem>({
+      validationSchema,
+    });
 
   // const avatar = computed(() => {
   //   const { media } = formData.value;
@@ -56,7 +57,7 @@
     if (formData.value) {
       setValues(formData.value);
     }
-  }, [formData.value]);
+  }, [formData]);
 
   const [lastName] = defineField("last_name");
   const [firstName] = defineField("first_name");
@@ -141,7 +142,7 @@
                       v-model="lastName"
                       name="last-name"
                       :label="t('users.last_name.label')"
-                      :error="errors.lastName"
+                      :error="errors.last_name"
                       is-inline
                     />
                     <form-input
