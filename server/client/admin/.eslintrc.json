@@ -46,7 +46,8 @@
           ["@/store", "./src/store"],
           ["@/plugins", "./src/plugins"],
           ["@/composables", "./src/composables"],
-          ["@/types", "./src/types"]
+          ["@/types", "./src/types"],
+          ["@/constants", "./src/constants"]
         ],
         "extensions": [".js", ".jsx", ".ts", ".tsx", ".vue"]
       },
