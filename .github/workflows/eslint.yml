@@ -39,7 +39,7 @@ jobs:
         env:
           SARIF_ESLINT_IGNORE_SUPPRESSED: "true"
         run: npx eslint ./server/client/admin/
-          --config ./server/client/admin/.eslintrc.js
+          --config ./server/client/admin/.eslintrc.json
           --ext .js,.jsx,.ts,.tsx,.vue
           --format @microsoft/eslint-formatter-sarif
           --output-file eslint-results.sarif
