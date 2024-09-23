@@ -19,8 +19,9 @@ on:
     - cron: '24 2 * * 1'
 
 jobs:
-  eslint:
+  run-linters:
     name: Run linters
+    working-directory: ./server/client/admin
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -35,7 +36,6 @@ jobs:
           node-version: 18
 
       - name: Install Node.js dependencies
-        working-directory: ./server/client/admin
         run: npm ci
 
 #      - name: Install ESLint
