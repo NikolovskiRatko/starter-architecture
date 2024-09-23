@@ -33,7 +33,6 @@ jobs:
       - name: Install ESLint
         run: |
           npm install eslint@8.10.0
-          npm install @microsoft/eslint-formatter-sarif@3.1.0
           npm install eslint-plugin-vue@9.21.1 --save-dev
           npm install @vue/eslint-config-typescript@12.0.0 --save-dev
           npm install @vue/eslint-config-prettier@9.0.0 --save-dev
@@ -45,8 +44,6 @@ jobs:
         run: ESLINT_USE_FLAT_CONFIG=false npx eslint ./server/client/admin/
           --config ./server/client/admin/.eslintrc.json
           --ext .js,.jsx,.ts,.tsx,.vue
-          --format @microsoft/eslint-formatter-sarif
-          --output-file eslint-results.sarif
         continue-on-error: true
 
       - name: Upload analysis results to GitHub
