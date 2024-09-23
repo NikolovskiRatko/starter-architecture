@@ -40,9 +40,8 @@ jobs:
           npm install eslint-import-resolver-alias@1.1.2 --save-dev
 
       - name: Run ESLint
+        working-directory: ./server/client/admin
         env:
           SARIF_ESLINT_IGNORE_SUPPRESSED: "true"
-        run: ESLINT_USE_FLAT_CONFIG=false npx eslint ./server/client/admin/
-          --config ./server/client/admin/.eslintrc.json
-          --ext .js,.jsx,.ts,.tsx,.vue
+        run: npx eslint . --ext .js,.jsx,.ts,.tsx,.vue
         continue-on-error: true
