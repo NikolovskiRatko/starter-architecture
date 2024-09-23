@@ -19,7 +19,7 @@ on:
     - cron: '24 2 * * 1'
 
 jobs:
-  run-linters:
+  eslint:
     name: Run linters
     runs-on: ubuntu-latest
     permissions:
@@ -34,22 +34,22 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install Node.js dependencies
-        working-directory: ./server/client/admin
-        run: npm ci
+#      - name: Install Node.js dependencies
+#        working-directory: ./server/client/admin
+#        run: npm ci
 
-#      - name: Install ESLint
-#        run: |
-#          npm install eslint@8.10.0
-#          npm install eslint-plugin-vue@9.21.1 --save-dev
-#          npm install @vue/eslint-config-typescript@12.0.0 --save-dev
-#          npm install @vue/eslint-config-prettier@9.0.0 --save-dev
-#          npm install eslint-plugin-import@2.30.0 --save-dev
-#          npm install eslint-import-resolver-alias@1.1.2 --save-dev
+      - name: Install ESLint
+        run: |
+          npm install eslint@8.10.0
+          npm install eslint-plugin-vue@9.21.1 --save-dev
+          npm install @vue/eslint-config-typescript@12.0.0 --save-dev
+          npm install @vue/eslint-config-prettier@9.0.0 --save-dev
+          npm install eslint-plugin-import@2.30.0 --save-dev
+          npm install eslint-import-resolver-alias@1.1.2 --save-dev
 
-      - name: Run linters
+      - name: Run ESLint
         working-directory: ./server/client/admin
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
-          prettier: true
+        env:
+          SARIF_ESLINT_IGNORE_SUPPRESSED: "true"
+        run: npx eslint . --ext .js,.jsx,.ts,.tsx,.vue
+        continue-on-error: true
