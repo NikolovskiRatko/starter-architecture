@@ -29,10 +29,15 @@ export interface FormInputRadioProps {
   error?: string;
 }
 
+export interface FormDropdownOption<T = string> {
+  id: T;
+  name: string;
+}
+
 export interface FormDropdownProps {
   isDisabled?: boolean;
   isInline?: boolean;
-  options: Array<any>;
+  options: FormDropdownOption[];
   id: string;
   modelValue: any;
   label?: string;
