@@ -21,8 +21,7 @@ export const useRootStore = defineStore("root", {
     },
     sidebarState: {
       minimized: false,
-      minimizeHover: false,
-      minimizing: false,
+      minimizeHover: false
     },
   }),
   actions: {
@@ -49,4 +48,7 @@ export const useRootStore = defineStore("root", {
       this.bodyClasses.sidebarState = payload;
     },
   },
+  getters: {
+    getSidebarState: () => {}
+  }
 });

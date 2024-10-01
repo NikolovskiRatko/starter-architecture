@@ -12,16 +12,7 @@
   const { sidebarState } = storeToRefs(rootStore);
   const emit = defineEmits(["sidebarHover"]);
 
-  const clearMinimizingTimeout = ref<number>(0);
   const blockToggle = ref<boolean>(false);
-
-  const setMinimizing = () => {
-    clearTimeout(clearMinimizingTimeout.value);
-    sidebarState.value.minimizing = true;
-    clearMinimizingTimeout.value = window.setTimeout(() => {
-      sidebarState.value.minimizing = false;
-    }, 300);
-  };
 
   const toggleSidebar = () => {
     const { minimized } = sidebarState.value;
@@ -36,7 +27,6 @@
         blockToggle.value = false;
       }, 300);
 
-      setMinimizing();
       emit("sidebarHover", sidebarState);
     }
   };
@@ -45,7 +35,6 @@
     const { minimized } = sidebarState.value;
     if (minimized && !blockToggle.value) {
       sidebarState.value.minimizeHover = isOver;
-      setMinimizing();
       emit("sidebarHover", sidebarState);
     }
   };
@@ -57,8 +46,7 @@
     class="aside"
     :class="{
       'aside--minimize': sidebarState.minimized,
-      'aside--minimize-hover': sidebarState.minimizeHover,
-      'aside--minimizing': sidebarState.minimizing,
+      'aside--minimize-hover': sidebarState.minimizeHover
     }"
     @mouseover="sidebarHover(true)"
     @mouseleave="sidebarHover(false)"
@@ -71,8 +59,7 @@
         :class="{
           'aside__menu--minimize':
             sidebarState.minimized && !sidebarState.minimizeHover,
-          'aside__menu--minimize-hover': sidebarState.minimizeHover,
-          'aside__menu--minimizing': sidebarState.minimizing,
+          'aside__menu--minimize-hover': sidebarState.minimizeHover
         }"
       >
         <NavMenu

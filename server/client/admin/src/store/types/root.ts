@@ -1,7 +1,6 @@
 interface SidebarStates {
   minimized: boolean;
   minimizeHover: boolean;
-  minimizing: boolean;
 }
 
 export interface BodyClasses {
