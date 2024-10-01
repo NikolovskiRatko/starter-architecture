@@ -1,7 +1,6 @@
 interface SidebarStates {
   minimized: boolean;
   minimizeHover: boolean;
-  minimizing: boolean;
 }
 
 export interface BodyClasses {
@@ -16,7 +15,6 @@ export interface RootState {
   appName: string;
   backUrl: string;
   csrfToken: string;
-  menu: any[];
   activeClasses: any;
   homePath: string;
   frontActiveClass: any;

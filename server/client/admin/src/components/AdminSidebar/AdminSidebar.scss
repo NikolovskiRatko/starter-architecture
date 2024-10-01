@@ -117,28 +117,16 @@
     bottom: 0;
     left: 0;
     z-index: kt-get($aside-config, base, fixed, zindex);
+    overflow: hidden;
 
     &--minimize {
       width: var(--dui-aside-minimize-width);
       transition: var(--dui-transition);
     }
 
-    &--minimizing {
-      overflow: hidden;
-    }
-
     &--minimize-hover {
       width: kt-get($aside-config, base, default, width);
       transition: var(--dui-transition);
-    }
-
-    &__menu {
-      &--misnimizing {
-        .kt-menu__nav {
-          width: kt-get($aside-config, base, default, width);
-          overflow: hidden;
-        }
-      }
     }
 
     // Scroll

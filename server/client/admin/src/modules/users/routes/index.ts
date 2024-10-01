@@ -1,5 +1,5 @@
 import type { RouteRecordRaw } from "vue-router";
-import { USER_PERMISSIONS } from "../constants";
+import { USER_PERMISSIONS, USER_ROUTES_DATA } from "../constants";
 import { i18n } from "@/plugins/i18n";
 const { t } = i18n.global;
 
@@ -25,10 +25,17 @@ const MyProfile = () =>
     "../pages/MyProfile.vue"
   );
 
+const {
+  add,
+  main,
+  edit,
+  myProfile
+} = USER_ROUTES_DATA;
+
 export const usersRoutes: RouteRecordRaw[] = [
   {
-    path: "users",
-    name: "users",
+    path: main.path,
+    name: main.name,
     component: Users,
     meta: {
       auth: {
@@ -37,33 +44,33 @@ export const usersRoutes: RouteRecordRaw[] = [
     },
   },
   {
-    path: "user/add",
-    name: "add.user",
+    path: add.path,
+    name: add.name,
     component: UserForm,
     meta: {
-      title: t("users.add", null),
+      title: t(add.translationKey, null),
       auth: {
         roles: [USER_PERMISSIONS.writeUsers],
       },
     },
   },
   {
-    path: "user/:userId",
-    name: "edit.user",
+    path: edit.path,
+    name: edit.name,
     component: UserForm,
     meta: {
-      title: t("users.edit_user", null),
+      title: t(edit.translationKey, null),
       auth: {
         roles: [USER_PERMISSIONS.writeUsers],
       },
     },
   },
   {
-    path: "myprofile",
-    name: "myprofile",
+    path: myProfile.path,
+    name: myProfile.name,
     component: MyProfile,
     meta: {
-      title: t("strings.myprofile", null),
+      title: t(myProfile.translationKey, null),
       auth: {
         roles: [USER_PERMISSIONS.readUsers],
       },

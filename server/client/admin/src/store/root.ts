@@ -2,13 +2,13 @@ import { mergeWith } from "lodash";
 import { defineStore } from "pinia";
 import type { RootState, SetActiveClassesPayload } from "./types/root";
 import { bodyClasses } from "@/helpers";
+import { CLOSED_SIDEBAR_NAVIGATIONS } from "@/constants/store/root";
 
 export const useRootStore = defineStore("root", {
   state: (): RootState => ({
     appName: "",
     backUrl: "",
     csrfToken: "",
-    menu: [],
     activeClasses: {},
     homePath: "TESTING PURPOSES ONLY",
     frontActiveClass: {},
@@ -22,15 +22,11 @@ export const useRootStore = defineStore("root", {
     sidebarState: {
       minimized: false,
       minimizeHover: false,
-      minimizing: false,
     },
   }),
   actions: {
     setBackUrl(payload) {
       this.backUrl = payload;
-    },
-    setMenu(payload) {
-      this.menu = payload;
     },
     setActiveClasses(payload: SetActiveClassesPayload) {
       this.activeClasses = payload;
@@ -47,6 +43,12 @@ export const useRootStore = defineStore("root", {
     },
     setSidebarState(payload) {
       this.bodyClasses.sidebarState = payload;
+    },
+  },
+  getters: {
+    isSidebarMinimized: (state): boolean => {
+      return CLOSED_SIDEBAR_NAVIGATIONS.includes(state.frontActiveClass)
+        || state.sidebarState.minimized
     },
   },
 });
