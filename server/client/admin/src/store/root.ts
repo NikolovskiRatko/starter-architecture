@@ -2,6 +2,7 @@ import { mergeWith } from "lodash";
 import { defineStore } from "pinia";
 import type { RootState, SetActiveClassesPayload } from "./types/root";
 import { bodyClasses } from "@/helpers";
+import { CLOSED_SIDEBAR_NAVIGATIONS } from "@/constants/store/root";
 
 export const useRootStore = defineStore("root", {
   state: (): RootState => ({
@@ -20,7 +21,7 @@ export const useRootStore = defineStore("root", {
     },
     sidebarState: {
       minimized: false,
-      minimizeHover: false
+      minimizeHover: false,
     },
   }),
   actions: {
@@ -45,6 +46,9 @@ export const useRootStore = defineStore("root", {
     },
   },
   getters: {
-    getSidebarState: () => {}
-  }
+    isSidebarMinimized: (state): boolean => {
+      return CLOSED_SIDEBAR_NAVIGATIONS.includes(state.frontActiveClass)
+        || state.sidebarState.minimized
+    },
+  },
 });

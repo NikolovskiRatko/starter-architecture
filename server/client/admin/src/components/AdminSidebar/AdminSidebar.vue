@@ -9,17 +9,16 @@
 
   const { mainMenu } = useSideMenu();
   const rootStore = useRootStore();
-  const { sidebarState } = storeToRefs(rootStore);
+  const { sidebarState, isSidebarMinimized } = storeToRefs(rootStore);
   const emit = defineEmits(["sidebarHover"]);
 
   const blockToggle = ref<boolean>(false);
 
   const toggleSidebar = () => {
-    const { minimized } = sidebarState.value;
     if (!blockToggle.value) {
       blockToggle.value = true;
-      sidebarState.value.minimized = !minimized;
-      if (!minimized) {
+      sidebarState.value.minimized = !isSidebarMinimized.value;
+      if (!isSidebarMinimized.value) {
         sidebarState.value.minimizeHover = false;
       }
 
@@ -32,8 +31,7 @@
   };
 
   const sidebarHover = (isOver: boolean) => {
-    const { minimized } = sidebarState.value;
-    if (minimized && !blockToggle.value) {
+    if (isSidebarMinimized.value && !blockToggle.value) {
       sidebarState.value.minimizeHover = isOver;
       emit("sidebarHover", sidebarState);
     }
@@ -45,7 +43,7 @@
   <div
     class="aside"
     :class="{
-      'aside--minimize': sidebarState.minimized,
+      'aside--minimize': isSidebarMinimized,
       'aside--minimize-hover': sidebarState.minimizeHover
     }"
     @mouseover="sidebarHover(true)"
@@ -58,13 +56,13 @@
         class="aside__menu"
         :class="{
           'aside__menu--minimize':
-            sidebarState.minimized && !sidebarState.minimizeHover,
+            isSidebarMinimized && !sidebarState.minimizeHover,
           'aside__menu--minimize-hover': sidebarState.minimizeHover
         }"
       >
         <NavMenu
           :data="mainMenu"
-          :is-minimized="sidebarState.minimized && !sidebarState.minimizeHover"
+          :is-minimized="isSidebarMinimized && !sidebarState.minimizeHover"
           type="vertical"
         />
       </div>

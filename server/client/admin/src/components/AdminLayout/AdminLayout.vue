@@ -14,14 +14,13 @@
   };
 
   const rootStore = useRootStore();
-  const { sidebarState } = storeToRefs(rootStore);
+  const { isSidebarMinimized } = storeToRefs(rootStore);
   const auth = useAuth();
 
-  const { minimized } = toRefs(sidebarState.value);
   const [block, element] = useBEMBuilder(
     "admin-layout",
     ref({
-      "aside-minimized": minimized,
+      "aside-minimized": isSidebarMinimized,
     }),
   );
 
@@ -41,7 +40,7 @@
             'has-subheader': layoutConfig.hasSubHeader,
             'fixed-subheader':
               layoutConfig.hasSubHeader && layoutConfig.hasSubHeaderFixed,
-            'aside-minimized': sidebarState.minimized,
+            'aside-minimized': isSidebarMinimized,
           }),
         ).value
       "

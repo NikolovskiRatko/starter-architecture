@@ -9,12 +9,12 @@
   import "./AsideBrand.scss";
 
   const rootStore = useRootStore();
-  const { sidebarState } = storeToRefs(rootStore);
+  const { sidebarState, isSidebarMinimized } = storeToRefs(rootStore);
 
   const isLogoVisible = computed(
     () =>
-      !sidebarState.value.minimized ||
-      (sidebarState.value.minimized && sidebarState.value.minimizeHover),
+      !isSidebarMinimized.value ||
+      (isSidebarMinimized.value && sidebarState.value.minimizeHover),
   );
 </script>
 
@@ -34,7 +34,7 @@
         class="kt-aside__brand-aside-toggler"
         @click="$emit('toggleSidebar')"
       >
-        <IconAngledoubleright v-if="sidebarState.minimized" size="26" />
+        <IconAngledoubleright v-if="isSidebarMinimized" size="26" />
         <IconAngledoubleleft v-else size="26" />
       </button>
       <button
