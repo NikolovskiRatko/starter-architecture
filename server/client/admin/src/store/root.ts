@@ -8,7 +8,6 @@ export const useRootStore = defineStore("root", {
     appName: "",
     backUrl: "",
     csrfToken: "",
-    menu: [],
     activeClasses: {},
     homePath: "TESTING PURPOSES ONLY",
     frontActiveClass: {},
@@ -27,9 +26,6 @@ export const useRootStore = defineStore("root", {
   actions: {
     setBackUrl(payload) {
       this.backUrl = payload;
-    },
-    setMenu(payload) {
-      this.menu = payload;
     },
     setActiveClasses(payload: SetActiveClassesPayload) {
       this.activeClasses = payload;

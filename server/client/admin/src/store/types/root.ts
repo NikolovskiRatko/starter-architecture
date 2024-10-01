@@ -15,7 +15,6 @@ export interface RootState {
   appName: string;
   backUrl: string;
   csrfToken: string;
-  menu: any[];
   activeClasses: any;
   homePath: string;
   frontActiveClass: any;
