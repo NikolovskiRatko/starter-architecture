@@ -23,5 +23,8 @@ $contentPadding: var(--dui-spacing-4);
 
     &__subheader-toolbox {
         margin-left: auto;
+        display: flex;
+        flex-direction: row;
+        gap: var(--dui-spacing-2);
     }
 }
