@@ -4,10 +4,17 @@
     PortletBody,
     PortletHead,
   } from "@starter-core/dash-ui";
-  import type { TabbedContentProps } from "./types";
+  import { provide, reactive } from "vue";
+  import { AddTabKey } from "./constants";
+  import type { TabbedContentProps, TabbedContentTab } from "./types";
   import "./TabbedContent.scss";
 
-  const { tabs, isLoading = false } = defineProps<TabbedContentProps>();
+  const { isLoading = false } = defineProps<TabbedContentProps>();
+  const tabs: TabbedContentTab[] = reactive([]);
+
+  provide(AddTabKey, (tab) => {
+    tabs.push(tab);
+  });
 </script>
 <template>
   <div class="tabbed-content">
@@ -22,9 +29,7 @@
         </ul>
       </PortletHead>
       <PortletBody>
-        <div v-for="tab in tabs" v-bind:key="tab.id">
-          <component :is="tab.content"></component>
-        </div>
+        <slot></slot>
       </PortletBody>
     </PortletComponent>
   </div>

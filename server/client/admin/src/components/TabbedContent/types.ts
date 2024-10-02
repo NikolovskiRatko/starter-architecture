@@ -1,14 +1,15 @@
-import type { VueElement } from "vue";
-
-interface TabbedContentTab {
-  label: string;
-  id: string;
-  content: VueElement;
+export interface TabbedContentProps {
+  isLoading?: boolean;
 }
 
-export type TabbedContentTabs = TabbedContentTab[];
+export interface TabbedContentTab {
+  id: string;
+  label: string;
+}
 
-export interface TabbedContentProps {
-  tabs: TabbedContentTabs;
-  isLoading?: boolean;
+export type AddTab = (tab: TabbedContentTab) => void;
+
+export interface TabbedContentTabProps {
+  label: string;
+  id: string;
 }

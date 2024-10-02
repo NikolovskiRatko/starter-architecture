@@ -4,6 +4,7 @@
   import { useForm } from "vee-validate";
   import { watch } from "vue";
   import { useI18n } from "vue-i18n";
+  import { TabbedContent, TabbedContentTab } from "../../../components";
   import { useUsersForm } from "../composables";
   import type { UserFormItem } from "../types";
   import UserFormBasicInfoTab from "./UserFormBasicInfoTab.vue";
@@ -49,20 +50,21 @@
     enctype="multipart/form-data"
     @submit.prevent="submitHandler"
   >
-    <UserFormBasicInfoTab
-      v-model:isDisabled="isDisabled"
-      v-model:role="role"
-      v-model:lastName="lastName"
-      v-model:email="email"
-      v-model:firstName="firstName"
-      :errors="errors"
-    />
-
-    <div
-      class="kt-separator kt-separator--border-dashed kt-separator--space-lg"
-    ></div>
-
-    <UserFormPasswordTab v-model:password="password" />
+    <TabbedContent :isLoading="isLoading">
+      <TabbedContentTab label="Basic info" id="basic-info">
+        <UserFormBasicInfoTab
+          v-model:isDisabled="isDisabled"
+          v-model:role="role"
+          v-model:lastName="lastName"
+          v-model:email="email"
+          v-model:firstName="firstName"
+          :errors="errors"
+        />
+      </TabbedContentTab>
+      <TabbedContentTab label="Change password" id="change-password">
+        <UserFormPasswordTab v-model:password="password" />
+      </TabbedContentTab>
+    </TabbedContent>
 
     <DashLink to="/admin/users" :icon="IconArrowleft" theme="clean">
       {{ t("buttons.back") }}
