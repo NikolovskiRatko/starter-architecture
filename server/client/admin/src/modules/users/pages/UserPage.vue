@@ -10,6 +10,8 @@
   import type { UserFormItem } from "../types";
 
   const { t } = useI18n();
+  const basicInfoLabeel = t("users.basic.information");
+  const changePasswordLabel = t("users.password.change");
 
   const validationSchema = {
     last_name(value: string) {
@@ -50,7 +52,7 @@
     @submit.prevent="submitHandler"
   >
     <TabbedContent :isLoading="isLoading">
-      <TabbedContentTab label="Basic info" id="basic-info">
+      <TabbedContentTab :label="basicInfoLabeel" id="basic-info">
         <UserFormBasicInfoTab
           v-model:isDisabled="isDisabled"
           v-model:role="role"
@@ -60,7 +62,7 @@
           :errors="errors"
         />
       </TabbedContentTab>
-      <TabbedContentTab label="Change password" id="change-password">
+      <TabbedContentTab :label="changePasswordLabel" id="change-password">
         <UserFormPasswordTab v-model:password="password" />
       </TabbedContentTab>
     </TabbedContent>
