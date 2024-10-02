@@ -1,0 +1,22 @@
+.subheader-title {
+    display: flex;
+    align-items: center;
+    gap: var(--dui-spacing-2);
+
+    &__title {
+        color: var(--dui-color-text-dark);
+        margin: 0;
+    }
+
+    &__description {
+        color: var(--dui-color-text-dark-bg);
+        font-weight: var(--dui-font-weight-bold);
+    }
+
+    &__separator {
+        display: block;
+        width: 1px;
+        height: 25px;
+        background: var(--dui-color-base-1);
+    }
+}

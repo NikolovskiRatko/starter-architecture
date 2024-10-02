@@ -10,11 +10,11 @@ const Users = () =>
     "../pages/UsersList.vue"
   );
 
-const UserForm = () =>
+const UserPage = () =>
   import(
-    /* webpackChunkName: "user-form" */
+    /* webpackChunkName: "user-page" */
     /* webpackPrefetch: true */
-    "../pages/UserForm.vue"
+    "../pages/UserPage.vue"
   );
 
 // Admin Components
@@ -25,12 +25,7 @@ const MyProfile = () =>
     "../pages/MyProfile.vue"
   );
 
-const {
-  add,
-  main,
-  edit,
-  myProfile
-} = USER_ROUTES_DATA;
+const { add, main, edit, myProfile } = USER_ROUTES_DATA;
 
 export const usersRoutes: RouteRecordRaw[] = [
   {
@@ -46,7 +41,7 @@ export const usersRoutes: RouteRecordRaw[] = [
   {
     path: add.path,
     name: add.name,
-    component: UserForm,
+    component: UserPage,
     meta: {
       title: t(add.translationKey, null),
       auth: {
@@ -57,7 +52,7 @@ export const usersRoutes: RouteRecordRaw[] = [
   {
     path: edit.path,
     name: edit.name,
-    component: UserForm,
+    component: UserPage,
     meta: {
       title: t(edit.translationKey, null),
       auth: {

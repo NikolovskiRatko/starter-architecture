@@ -1,8 +1,4 @@
 <script setup lang="ts">
-  import { IconAirpods as Icon } from "@starter-core/icons";
-  import { ref, onMounted } from "vue";
-  // import { get } from "@/services/HTTP";
-  import { useRootStore } from "@/store/root";
   import {
     PortletComponent,
     PortletBody,
@@ -10,6 +6,10 @@
     PortletHeadLabel,
     ContentLoader,
   } from "@starter-core/dash-ui";
+  import { IconAirpods as Icon } from "@starter-core/icons";
+  import { ref, onMounted } from "vue";
+  // import { get } from "@/services/HTTP";
+  import { useRootStore } from "@/store/root";
 
   // const categories = ref([]);
   const isLoading = ref(false);
@@ -47,17 +47,3 @@
     <div class="col-md-8" />
   </div>
 </template>
-
-<style lang="scss">
-  .home {
-    padding: 0;
-    background-color: transparent;
-
-    .admin-page-title {
-      text-align: right;
-      display: block;
-      width: 100%;
-      font-size: 13px;
-    }
-  }
-</style>

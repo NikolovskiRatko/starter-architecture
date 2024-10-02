@@ -1,15 +1,14 @@
 <script setup lang="ts">
-  import { toRefs } from "vue";
   import type { FormDropdownProps } from "../types";
   import FormGroup from "../FormGroup/FormGroup.vue";
   import "./FormDropdown.scss";
 
-  const props = defineProps<FormDropdownProps>();
+  const { label, id, isInline, modelValue, errors, isDisabled, options } =
+    defineProps<FormDropdownProps>();
+
   const emit = defineEmits<{
-    "update:modelValue": [value: number];
+    "update:modelValue": [value: string];
   }>();
-  const { label, id, isInline } = props;
-  const { modelValue, errors, isDisabled, options } = toRefs(props);
 </script>
 
 <template>
@@ -31,10 +30,7 @@
         :disabled="isDisabled"
         @input="
           (event: Event) => {
-            emit(
-              'update:modelValue',
-              Number((event.target as HTMLInputElement).value),
-            );
+            emit('update:modelValue', (event.target as HTMLInputElement).value);
           }
         "
       >

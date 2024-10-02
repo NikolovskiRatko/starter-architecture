@@ -1,14 +1,4 @@
 <script setup lang="ts">
-  import { cloneDeep } from "lodash";
-  import { computed, onMounted, provide, ref } from "vue";
-  // import AdminUserForm from '../../../features/Admin/UsersCrud/_components/MyProfileForm.vue';
-  import { useRoute } from "vue-router";
-  import { user } from "../constants";
-  import { CustomForm } from "@/components/Form";
-  import { useForm } from "@/composables";
-  import { getPhotoPath } from "@/helpers";
-  import { useUserRoles } from "@/modules/users/composables";
-  import { useRootStore } from "@/store/root";
   import {
     PortletComponent,
     PortletBody,
@@ -19,6 +9,16 @@
     FormInputRadio,
     FormDropdown,
   } from "@starter-core/dash-ui";
+  import { cloneDeep } from "lodash";
+  import { computed, onMounted, provide, ref } from "vue";
+  // import AdminUserForm from '../../../features/Admin/UsersCrud/_components/MyProfileForm.vue';
+  import { useRoute } from "vue-router";
+  import { user } from "../constants";
+  import { CustomForm } from "@/components/Form";
+  import { useForm } from "@/composables";
+  import { getPhotoPath } from "@/helpers";
+  import { useUserRoles } from "@/modules/users/composables";
+  import { useRootStore } from "@/store/root";
   // import { useEventsBus } from "@/composables";
 
   const { setBackUrl, setActiveClasses } = useRootStore();

@@ -46,9 +46,7 @@
       "
     >
       <AdminHeader />
-      <div :class="element('content').value">
-        <router-view :key="$route.fullPath" />
-      </div>
+      <router-view :key="$route.fullPath" />
     </div>
   </div>
 </template>

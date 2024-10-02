@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { onMounted } from "vue";
   import { UsersDatatable } from "../components";
+  import { PageWrapper } from "@/components";
   import { DatatableColumns } from "@/components/Datatables/typings";
   import { useRootStore } from "@/store/root";
 
@@ -69,5 +70,7 @@
   ];
 </script>
 <template>
-  <users-datatable :columns="columns" />
+  <PageWrapper>
+    <users-datatable :columns="columns" />
+  </PageWrapper>
 </template>

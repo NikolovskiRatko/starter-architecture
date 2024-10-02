@@ -1,0 +1,30 @@
+$contentPadding: var(--dui-spacing-4);
+
+.page-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    &__content {
+        padding: $contentPadding;
+        flex: 1;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    &__subheader {
+        display: flex;
+        align-items: center;
+        background-color: var(--dui-color-light);
+        padding: var(--dui-spacing-2) $contentPadding;
+        box-shadow: var(--dui-elevate-shadow);
+    }
+
+    &__subheader-toolbox {
+        margin-left: auto;
+        display: flex;
+        flex-direction: row;
+        gap: var(--dui-spacing-2);
+    }
+}
