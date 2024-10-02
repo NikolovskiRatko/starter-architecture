@@ -77,32 +77,4 @@
       }
     }
   }
-
-  &__content {
-    flex: 1;
-    padding: kt-get($page-padding, desktop);
-    overflow-x: hidden;
-    overflow-y: auto;
-
-    // Subheader enabled
-    .kt-subheader--enabled.kt-subheader--transparent:not(.kt-subheader--fixed)
-    & {
-      padding-top: 0;
-    }
-
-    @include kt-desktop {
-      .kt-footer--fixed & {
-        padding-bottom: kt-get($footer-config, self, fixed, height);
-      }
-    }
-
-    @include kt-tablet-and-mobile {
-      padding: kt-get($page-padding, mobile);
-
-      // Subheader enabled
-      .kt-subheader--enabled.kt-subheader--transparent & {
-        padding-top: 0;
-      }
-    }
-  }
 }

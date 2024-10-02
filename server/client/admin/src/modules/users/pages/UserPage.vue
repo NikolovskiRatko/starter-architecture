@@ -4,7 +4,12 @@
   import { useForm } from "vee-validate";
   import { watch } from "vue";
   import { useI18n } from "vue-i18n";
-  import { TabbedContent, TabbedContentTab } from "../../../components";
+  import {
+    TabbedContent,
+    TabbedContentTab,
+    PageWrapper,
+    PAGE_WRAPPER_SLOTS,
+  } from "../../../components";
   import { UserFormBasicInfoTab, UserFormPasswordTab } from "../components";
   import { useUsersForm } from "../composables";
   import type { UserFormItem } from "../types";
@@ -46,32 +51,38 @@
 </script>
 
 <template>
-  <form
-    autocomplete="off"
-    enctype="multipart/form-data"
-    @submit.prevent="submitHandler"
-  >
-    <TabbedContent :isLoading="isLoading">
-      <TabbedContentTab :label="basicInfoLabeel" id="basic-info">
-        <UserFormBasicInfoTab
-          v-model:isDisabled="isDisabled"
-          v-model:role="role"
-          v-model:lastName="lastName"
-          v-model:email="email"
-          v-model:firstName="firstName"
-          :errors="errors"
-        />
-      </TabbedContentTab>
-      <TabbedContentTab :label="changePasswordLabel" id="change-password">
-        <UserFormPasswordTab v-model:password="password" />
-      </TabbedContentTab>
-    </TabbedContent>
-
-    <DashLink to="/admin/users" :icon="IconArrowleft" theme="clean">
-      {{ t("buttons.back") }}
-    </DashLink>
-    <DashButton type="submit" :icon="IconSave" :loading="isLoading">
-      {{ t("buttons.save") }}
-    </DashButton>
-  </form>
+  <PageWrapper>
+    <template #[PAGE_WRAPPER_SLOTS.subheaderMain]>
+      <span>Edit user | {{ firstName }} {{ lastName }}</span>
+    </template>
+    <template #[PAGE_WRAPPER_SLOTS.subheaderToolbox]>
+      <DashLink to="/admin/users" :icon="IconArrowleft" theme="clean">
+        {{ t("buttons.back") }}
+      </DashLink>
+      <DashButton type="submit" :icon="IconSave" :loading="isLoading">
+        {{ t("buttons.save") }}
+      </DashButton>
+    </template>
+    <form
+      autocomplete="off"
+      enctype="multipart/form-data"
+      @submit.prevent="submitHandler"
+    >
+      <TabbedContent :isLoading="isLoading">
+        <TabbedContentTab :label="basicInfoLabeel" id="basic-info">
+          <UserFormBasicInfoTab
+            v-model:isDisabled="isDisabled"
+            v-model:role="role"
+            v-model:lastName="lastName"
+            v-model:email="email"
+            v-model:firstName="firstName"
+            :errors="errors"
+          />
+        </TabbedContentTab>
+        <TabbedContentTab :label="changePasswordLabel" id="change-password">
+          <UserFormPasswordTab v-model:password="password" />
+        </TabbedContentTab>
+      </TabbedContent>
+    </form>
+  </PageWrapper>
 </template>
