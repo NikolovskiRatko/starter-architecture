@@ -9,6 +9,7 @@
     TabbedContentTab,
     PageWrapper,
     PAGE_WRAPPER_SLOTS,
+    SubheaderTitle,
   } from "../../../components";
   import { UserFormBasicInfoTab, UserFormPasswordTab } from "../components";
   import { useUsersForm } from "../composables";
@@ -53,7 +54,10 @@
 <template>
   <PageWrapper>
     <template #[PAGE_WRAPPER_SLOTS.subheaderMain]>
-      <span>Edit user | {{ firstName }} {{ lastName }}</span>
+      <SubheaderTitle
+        title="Edit user"
+        :description="`${firstName} ${lastName}`"
+      />
     </template>
     <template #[PAGE_WRAPPER_SLOTS.subheaderToolbox]>
       <DashLink to="/admin/users" :icon="IconArrowleft" theme="clean">
