@@ -6,7 +6,9 @@ interface TabbedContentTab {
   content: VueElement;
 }
 
+export type TabbedContentTabs = TabbedContentTab[];
+
 export interface TabbedContentProps {
-  tabs: TabbedContentTab[];
+  tabs: TabbedContentTabs;
   isLoading?: boolean;
 }
