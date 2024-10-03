@@ -33,5 +33,8 @@ Route::group([
         Route::get('{id}', [UserController::class, 'get']);
         Route::patch('{id}', [UserController::class, 'update']);
         Route::delete('{id}', [UserController::class, 'delete']);
+
+        // User avatars
+        Route::post('avatar/{id}', [UserController::class, 'uploadAvatar']);
     });
 });

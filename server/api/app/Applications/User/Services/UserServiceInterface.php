@@ -3,9 +3,9 @@
 namespace App\Applications\User\Services;
 
 use App\Applications\User\DTO\UserDTO;
-use App\Applications\User\DTO\UserRoleDTO;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Http\FormRequest;
+use App\Applications\User\Model\User;
+use Illuminate\Http\Request;
 
 /**
  * Interface UserServiceInterface
@@ -61,4 +61,14 @@ interface UserServiceInterface
      * @return array
      */
     public function getUserRoles(): array;
+
+    /**
+     * Handle the avatar upload for a user.
+     *
+     * @param int $userId
+     * @param Request $request
+     * @param User $authenticatedUser
+     * @return UserDTO
+     */
+    public function uploadAvatar(int $userId, Request $request, User $authenticatedUser): UserDTO;
 }

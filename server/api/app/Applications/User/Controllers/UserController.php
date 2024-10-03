@@ -5,12 +5,14 @@ namespace App\Applications\User\Controllers;
 use App\Applications\User\DTO\UserDTO;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Auth\Access\AuthorizationException;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Applications\User\Services\UserServiceInterface;
 // use App\Applications\User\Requests\UserRequest;
 use App\Applications\User\Requests\MyProfile;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
@@ -155,5 +157,43 @@ class UserController extends Controller
     public function updateMyProfile(MyProfile $request)
     {
         $this->userService->updateMyProfile($request);
+    }
+
+    /**
+     * Handle the avatar upload for the authenticated user.
+     *
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function uploadAvatar(Request $request): JsonResponse
+    {
+        try {
+            $userId = Route::current()->parameter('id');
+            $authenticatedUser = Auth::user();
+
+            $userDTO = $this->userService->uploadAvatar($userId, $request, $authenticatedUser);
+
+            return response()->json($userDTO, 200);
+        } catch (ValidationException $e) {
+            return response()->json([
+                'message' => 'Validation error.',
+                'errors' => $e->errors(),
+            ], 422);
+        } catch (\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $e) {
+            return response()->json([
+                'message' => 'User not found.',
+            ], 404);
+        } catch (AuthorizationException $e) {
+            return response()->json([
+                'message' => $e->getMessage(),
+            ], 403);
+        } catch (\Exception $e) {
+            // Log unexpected errors and return a generic error response
+            \Log::error('Error uploading avatar: ' . $e->getMessage(), ['exception' => $e]);
+
+            return response()->json([
+                'message' => 'An error occurred while uploading the avatar. Please try again later.',
+            ], 500);
+        }
     }
 }

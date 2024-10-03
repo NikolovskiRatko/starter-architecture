@@ -3,11 +3,13 @@
 namespace App\Applications\User\Services;
 
 use Illuminate\Database\Eloquent\Collection;
+use App\Applications\User\Model\User;
 use App\Applications\User\DTO\UserDTO;
 use App\Applications\User\DTO\UserRoleDTO;
 // use App\Applications\User\Data\UserRole;
 use App\Applications\User\Repositories\UserRepositoryInterface;
-
+use App\Constants\UserPermissions;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 /**
@@ -28,7 +30,9 @@ class UserService implements UserServiceInterface
 
     public function get($id): UserDTO
     {
-        return $this->userRepository->get($id);
+        return UserDTO::fromModel(
+            $this->userRepository->get($id)
+        );
     }
 
     public function create(UserDTO $userData, string $password): UserDTO
@@ -90,5 +94,55 @@ class UserService implements UserServiceInterface
     {
         $rolesCollection = $this->userRepository->getUserRoles();
         return UserRoleDTO::fromCollection($rolesCollection);
+    }
+
+    /**
+     * Handle the avatar upload for a user.
+     *
+     * @param int $userId
+     * @param Request $request
+     * @param User $authenticatedUser
+     * @return UserDTO
+     */
+    public function uploadAvatar(int $userId, Request $request, User $authenticatedUser): UserDTO
+    {
+        // Check if the authenticated user has permission to update another user's avatar
+        $user = $this->validateUserForAvatarUpload($userId, $authenticatedUser);
+
+        // Validate the uploaded file
+        $request->validate([
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        // Clear the existing 'avatars' collection and upload the new avatar
+        $this->userRepository->clearUserAvatars($user);
+        $this->userRepository->uploadAvatar($user, $request->file('avatar'));
+
+        // Return the updated UserDTO
+        return UserDTO::fromModel($user);
+    }
+
+    /**
+     * Validate if the authenticated user can upload an avatar for the given user.
+     *
+     * @param int $userId
+     * @param User $authenticatedUser
+     * @return User
+     */
+    protected function validateUserForAvatarUpload(int $userId, User $authenticatedUser): User
+    {
+        // Check if the current user is trying to update their own avatar
+        if ($authenticatedUser->id !== $userId) {
+            // If not, check if the user has the 'write_users' permission
+            if (!$authenticatedUser->hasPermissionTo(UserPermissions::WRITE_USERS)) {
+                abort(403, 'You do not have permission to update avatars for other users.');
+            }
+
+            // Find the user by the provided user ID
+            return $this->userRepository->get($userId);
+        }
+
+        // Return the authenticated user if they are updating their own avatar
+        return $authenticatedUser;
     }
 }
