@@ -8,12 +8,17 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\Image\Enums\Fit;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class User extends Authenticatable
+class User extends Authenticatable implements HasMedia
 {
     use HasApiTokens, HasFactory, Notifiable;
     use HasRoles;
     use SoftDeletes;
+    use InteractsWithMedia;
 
     const ADMIN = 'admin';
     const EDITOR = 'editor';
@@ -62,8 +67,26 @@ class User extends Authenticatable
      */
     protected $appends = [
         'permissions_array',
-        'role'
+        'role',
+        'avatar_url',
+        'avatar_thumbnail'
     ];
+
+    public function registerMediaCollections(): void
+    {
+        $this
+            ->addMediaCollection('avatars')
+            ->singleFile();
+    }
+
+    public function registerMediaConversions(?Media $media = null): void
+    {
+        $this
+            ->addMediaConversion('thumb')
+            ->fit(Fit::Contain, 100, 100)
+            ->sharpen(10)
+            ->nonQueued();
+    }
 
     public function getPermissionsArrayAttribute()
     {
@@ -73,5 +96,27 @@ class User extends Authenticatable
     public function getRoleAttribute()
     {
         return $this->roles()->first()->id;
+    }
+
+    /**
+     * Get the URL of the user's avatar.
+     *
+     * @return string|null
+     */
+    public function getAvatarUrlAttribute(): ?string
+    {
+        // Return the URL of the first media item in the 'avatars' collection
+        return $this->getFirstMediaUrl('avatars') ?: null;
+    }
+
+    /**
+     * Get the URL of the user's avatar.
+     *
+     * @return string|null
+     */
+    public function getAvatarThumbnailAttribute(): ?string
+    {
+        // Return the URL of the first media item in the 'avatars' collection
+        return $this->getFirstMediaUrl('avatars', 'thumb') ?: null;
     }
 }

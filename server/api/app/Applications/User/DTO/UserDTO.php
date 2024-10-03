@@ -10,6 +10,8 @@ class UserDTO
     public string $first_name;
     public string $last_name;
     public string $email;
+    public ?string $avatar_url;
+    public ?string $avatar_thumbnail;
     public int $role;
     public int $id;
     public int $is_disabled;
@@ -19,6 +21,8 @@ class UserDTO
         string $first_name,
         string $last_name,
         string $email,
+        ?string $avatar_url,
+        ?string $avatar_thumbnail,
         int $role,
         int $id = 0,
         int $is_disabled = 0,
@@ -27,6 +31,8 @@ class UserDTO
         $this->first_name = $first_name;
         $this->last_name = $last_name;
         $this->email = $email;
+        $this->avatar_url = $avatar_url;
+        $this->avatar_thumbnail = $avatar_thumbnail;
         $this->role = $role;
         $this->id = $id;
         $this->is_disabled = $is_disabled;
@@ -39,6 +45,8 @@ class UserDTO
             $request->input('first_name'),
             $request->input('last_name'),
             $request->input('email'),
+            null,
+            null,
             $request->input('role'),
             $request->input('id', 0),
             $request->input('is_disabled', 0),
@@ -52,6 +60,8 @@ class UserDTO
             $request->input('first_name'),
             $request->input('last_name'),
             $request->input('email'),
+            null,
+            null,
             $request->input('role'),
             id: 0,
             is_disabled: 0,
@@ -65,6 +75,8 @@ class UserDTO
             $user->first_name,
             $user->last_name,
             $user->email,
+            $user->avatar_url,
+            $user->avatar_thumbnail,
             $user->role,
             $user->id,
             $user->is_disabled,
@@ -83,6 +95,8 @@ class UserDTO
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
             'email' => $this->email,
+            'avatar_url' => $this->avatar_url,
+            'avatar_thumbnail' => $this->avatar_thumbnail,
             'role' => $this->role,
             'id' => $this->id,
             'is_disabled' => $this->is_disabled,
@@ -97,5 +111,3 @@ class UserDTO
         }, $users->all());
     }
 }
-
-?>
