@@ -84,3 +84,16 @@ RUN curl -L -o /tmp/memcached.tar.gz "https://github.com/php-memcached-dev/php-m
     && docker-php-ext-configure memcached --disable-memcached-sasl \
     && docker-php-ext-install memcached \
     && rm /tmp/memcached.tar.gz
+
+ARG UID=1000
+ARG GID=1000
+
+RUN sed -i 's#/usr/sbin/nologin#/bin/sh#' /etc/passwd
+
+# Update UID and GID in /etc/passwd and /etc/group
+RUN sed -i "s/www-data:x:33:33/www-data:x:${UID}:${GID}/" /etc/passwd \
+    && sed -i "s/www-data:x:33:/www-data:x:${GID}:/" /etc/group
+
+USER www-data
+
+WORKDIR /var/www/html/starter/server/api

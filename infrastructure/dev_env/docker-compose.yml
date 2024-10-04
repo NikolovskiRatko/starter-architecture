@@ -8,6 +8,9 @@ services:
     build:
       context: ./bin/app
       dockerfile: Dockerfile
+      args:
+        UID: ${UID}
+        GID: ${GID}
     container_name: app
     restart: always
     # The external port mapping to internal port mapping
@@ -54,6 +57,9 @@ services:
   node:
     build:
       context: ./bin/node
+      args:
+        UID: ${UID}
+        GID: ${GID}
     container_name: node
     restart: always
     tty: true
