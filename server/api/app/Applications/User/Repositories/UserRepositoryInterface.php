@@ -6,6 +6,8 @@ use App\Applications\Pagination\StarterPaginator;
 use App\Applications\User\DTO\UserDTO;
 use App\Applications\User\Model\User;
 use Illuminate\Database\Eloquent\Collection;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Illuminate\Http\UploadedFile;
 
 /**
  * Interface UserRepositoryInterface
@@ -21,7 +23,7 @@ interface UserRepositoryInterface
 
     /**
      * @param integer $id
-     * @return UserDTO
+     * @return User
      */
     public function get($id);
 
@@ -69,4 +71,21 @@ interface UserRepositoryInterface
      * @return void
      */
     public function setPassword($user, $password);
+
+    /**
+     * Clear the avatar collection for a given user.
+     *
+     * @param User $user
+     * @return void
+     */
+    public function clearUserAvatars(User $user): void;
+
+    /**
+     * Upload a new avatar for a given user.
+     *
+     * @param User $user
+     * @param UploadedFile $file
+     * @return Media
+     */
+    public function uploadAvatar(User $user, UploadedFile $file): Media;
 }

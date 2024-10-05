@@ -6,8 +6,10 @@ use App\Applications\User\DTO\UserDTO;
 use App\Applications\Pagination\StarterPaginator;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\UploadedFile;
 use App\Applications\User\Model\User;
 use Spatie\Permission\Models\Role;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 
 /**
@@ -38,10 +40,9 @@ class UserRepository implements UserRepositoryInterface
         return UserDTO::fromCollection($users);
     }
 
-    public function get($id): UserDTO
+    public function get($id): User
     {
-        $user = $this->user::findOrFail($id);
-        return UserDTO::fromModel($user);
+        return $this->user::findOrFail($id);
     }
 
     public function create(UserDTO $userDTO, string $password): User
@@ -71,7 +72,7 @@ class UserRepository implements UserRepositoryInterface
 
     public function draw($data): StarterPaginator
     {
-//        $paginatedUsers = $this->prepareDatatableQuery($data, [User::ADMIN, User::EDITOR, User::COLLABORATOR]);
+        //        $paginatedUsers = $this->prepareDatatableQuery($data, [User::ADMIN, User::EDITOR, User::COLLABORATOR]);
 
         $query = $this->user->query();
 
@@ -96,30 +97,30 @@ class UserRepository implements UserRepositoryInterface
         return $query->paginate($data['length']);
     }
 
-//    private function prepareDatatableQuery($data, array $roles)
-//    {
-//        $query = $this->user->query();
-//
-//        // $query->whereIn('roles.name', $roles);
-//
-//        if (array_key_exists($data['column'], self::COLUMNS_MAP)) {
-//            $query->orderBy(self::COLUMNS_MAP[$data['column']], $data['dir']);
-//        }
-//
-//        $search = $data['search'];
-//        if ($search) {
-//            $query->where(function ($subquery) use ($search) {
-//                $subquery->where('users.first_name', 'like', '%' . $search . '%');
-//                $subquery->orWhere('users.last_name', 'like', '%' . $search . '%');
-//                $subquery->orWhere('users.email', 'like', '%' . $search . '%');
-//                $subquery->orWhere('roles.name', 'like', '%' . $search . '%');
-//            });
-//        }
-//
-//        $query->whereNull('deleted_at');
-//
-//        return $query->paginate($data['length']);
-//    }
+    //    private function prepareDatatableQuery($data, array $roles)
+    //    {
+    //        $query = $this->user->query();
+    //
+    //        // $query->whereIn('roles.name', $roles);
+    //
+    //        if (array_key_exists($data['column'], self::COLUMNS_MAP)) {
+    //            $query->orderBy(self::COLUMNS_MAP[$data['column']], $data['dir']);
+    //        }
+    //
+    //        $search = $data['search'];
+    //        if ($search) {
+    //            $query->where(function ($subquery) use ($search) {
+    //                $subquery->where('users.first_name', 'like', '%' . $search . '%');
+    //                $subquery->orWhere('users.last_name', 'like', '%' . $search . '%');
+    //                $subquery->orWhere('users.email', 'like', '%' . $search . '%');
+    //                $subquery->orWhere('roles.name', 'like', '%' . $search . '%');
+    //            });
+    //        }
+    //
+    //        $query->whereNull('deleted_at');
+    //
+    //        return $query->paginate($data['length']);
+    //    }
 
     public function getUserRoles(): Collection
     {
@@ -139,5 +140,28 @@ class UserRepository implements UserRepositoryInterface
         $pass = Hash::make($password);
         $user->password = $pass;
         $user->save();
+    }
+
+    /**
+     * Clear the avatar collection for a given user.
+     *
+     * @param User $user
+     * @return void
+     */
+    public function clearUserAvatars(User $user): void
+    {
+        $user->clearMediaCollection('avatars');
+    }
+
+    /**
+     * Upload a new avatar for a given user.
+     *
+     * @param User $user
+     * @param UploadedFile $file
+     * @return Media
+     */
+    public function uploadAvatar(User $user, UploadedFile $file): Media
+    {
+        return $user->addMedia($file)->toMediaCollection('avatars');
     }
 }

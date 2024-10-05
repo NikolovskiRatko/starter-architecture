@@ -1,5 +1,8 @@
 <?php
+
 namespace App\Http\Controllers;
+
+use App\Constants\UserPermissions;
 
 class HomeController extends Controller
 {
@@ -23,20 +26,20 @@ class HomeController extends Controller
                 'label' => 'admin.dashboard',
                 'name' => 'item_dashboard',
                 'link' => 'dashboard',
-                'permission' => 'read_users', // Change to dashboard_view
+                'permission' => UserPermissions::READ_USERS, // Change to dashboard_view
             ],
             [
                 'label' => 'admin.users.main',
                 'name' => 'item_users',
                 'link' => 'users',
                 'expanded' => false,
-                'permission' => 'read_users',
+                'permission' => UserPermissions::READ_USERS,
                 'subcategories' => [
                     [
                         'label' => 'admin.users.admin',
                         'name' => 'item_users',
                         'link' => 'users',
-                        'permission' => 'read_users',
+                        'permission' => UserPermissions::READ_USERS,
                     ]
                 ]
             ]

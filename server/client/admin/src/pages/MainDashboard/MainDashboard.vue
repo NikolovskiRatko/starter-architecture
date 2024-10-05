@@ -8,6 +8,7 @@
   } from "@starter-core/dash-ui";
   import { IconAirpods as Icon } from "@starter-core/icons";
   import { ref, onMounted } from "vue";
+  import { PageWrapper } from "@/components";
   // import { get } from "@/services/HTTP";
   import { useRootStore } from "@/store/root";
 
@@ -30,20 +31,21 @@
   });
 </script>
 <template>
-  <div class="row">
-    <div class="col-md-4">
-      <PortletComponent>
-        <PortletHead>
-          <PortletHeadLabel>
-            Content loader
-            <Icon size="32" />
-          </PortletHeadLabel>
-        </PortletHead>
-        <PortletBody>
-          <ContentLoader />
-        </PortletBody>
-      </PortletComponent>
+  <PageWrapper>
+    <div class="row">
+      <div class="col-md-4">
+        <PortletComponent>
+          <PortletHead>
+            <PortletHeadLabel>
+              Content loader
+              <Icon size="32" />
+            </PortletHeadLabel>
+          </PortletHead>
+          <PortletBody>
+            <ContentLoader />
+          </PortletBody>
+        </PortletComponent>
+      </div>
     </div>
-    <div class="col-md-8" />
-  </div>
+  </PageWrapper>
 </template>

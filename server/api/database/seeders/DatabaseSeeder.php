@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Applications\User\Model\User;
+use App\Constants\UserPermissions;
+use App\Constants\UserRoles;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
@@ -39,21 +41,21 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Create permissions
-        Permission::create(['name' => 'read_users']);
-        Permission::create(['name' => 'write_users']);
-        Permission::create(['name' => 'delete_users']);
+        Permission::create(['name' => UserPermissions::READ_USERS]);
+        Permission::create(['name' => UserPermissions::WRITE_USERS]);
+        Permission::create(['name' => UserPermissions::DELETE_USERS]);
 
         // Create three roles and assign created permissions
-        $roleAdmin = Role::create(['name' => 'admin'])->givePermissionTo(Permission::all());
-        $roleEditor = Role::create(['name' => 'editor'])->givePermissionTo(['read_users', 'write_users']);
-        $roleCollaborator = Role::create(['name' => 'collaborator'])->givePermissionTo('read_users');
+        $roleAdmin = Role::create(['name' => UserRoles::ADMIN])->givePermissionTo(Permission::all());
+        $roleEditor = Role::create(['name' => UserRoles::EDITOR])->givePermissionTo([UserPermissions::READ_USERS, UserPermissions::WRITE_USERS]);
+        $roleCollaborator = Role::create(['name' => UserRoles::COLLABORATOR])->givePermissionTo(UserPermissions::READ_USERS);
 
         $roles = [$roleAdmin->id, $roleEditor->id, $roleCollaborator->id];
 
         // Adding permissions via a role
-        $admin->assignRole('admin');
-        $editor->assignRole('editor');
-        $collaborator->assignRole('collaborator');
+        $admin->assignRole(UserRoles::ADMIN);
+        $editor->assignRole(UserRoles::EDITOR);
+        $collaborator->assignRole(UserRoles::COLLABORATOR);
 
         $faker = Faker::create();
 
