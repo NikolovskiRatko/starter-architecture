@@ -1,17 +1,14 @@
-import type { PermissionArray, UserRole } from "./permissions";
+import type { Permission, UserRoleId } from "./permissions";
 
 export interface GetUserResponse {
-  activation_code: string | null;
-  created_at: string;
-  deleted_at: string;
+  avatar_url: string | null;
+  avatar_thumbnail: string | null;
   email: string;
-  email_verified_at: string;
   first_name: string;
   id: number;
   is_disabled: boolean;
   last_name: string;
-  permissions: PermissionArray[];
-  permissions_array: PermissionArray[];
-  role: UserRole;
+  permissions_array: Permission[];
+  role: UserRoleId;
   updated_at: string;
 }

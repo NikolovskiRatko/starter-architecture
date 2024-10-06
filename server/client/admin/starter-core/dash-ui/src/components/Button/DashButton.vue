@@ -4,7 +4,7 @@
   import "./DashButton.scss";
 
   const emit = defineEmits<{
-    click: [event: MouseEvent]
+    click: [event: MouseEvent];
   }>();
 
   const {
@@ -23,21 +23,18 @@
     className,
     isWide = false,
     isPill = false,
-    isSquare = false
+    isSquare = false,
+    isIcon = false,
   } = defineProps<DashButtonProps>();
 
   const buttonClass = computed(() => {
     const classes = ["btn"];
 
     if (className) {
-      classes.push(className)
+      classes.push(className);
     }
 
-    classes.push(
-      themeMod
-        ? `btn-${themeMod}-${theme}`
-        : `btn-${theme}`,
-    );
+    classes.push(themeMod ? `btn-${themeMod}-${theme}` : `btn-${theme}`);
 
     if (size) {
       classes.push(`btn-${size}`);
@@ -79,22 +76,24 @@
     }
 
     if (isSquare) {
-      classes.push("btn-square")
+      classes.push("btn-square");
+    }
+
+    if (isIcon) {
+      classes.push("btn-icon");
     }
 
     return classes.join(" ");
   });
 
-  const buttonType = computed(() =>
-    type === "submit" ? "submit" : undefined,
-  );
+  const buttonType = computed(() => (type === "submit" ? "submit" : undefined));
 </script>
 <template>
   <a
-      v-if="!!href"
-     :href="href"
-     :class="buttonClass"
-     @click="(event) => emit('click', event)"
+    v-if="!!href"
+    :href="href"
+    :class="buttonClass"
+    @click="(event) => emit('click', event)"
   >
     <component :is="icon"></component>
     <slot />

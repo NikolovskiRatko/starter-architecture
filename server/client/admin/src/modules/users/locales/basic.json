@@ -2,7 +2,8 @@
   "user_status": "User status",
   "status": {
     "label": "Disable user",
-    "enabled": "Enabled"
+    "enabled": "Enabled",
+    "disabled": "Disabled"
   },
   "roles": {
     "label": "Roles"

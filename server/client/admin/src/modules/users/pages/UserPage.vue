@@ -2,8 +2,9 @@
   import { DashButton, DashLink } from "@starter-core/dash-ui";
   import { IconSave, IconArrowleft } from "@starter-core/icons";
   import { useForm } from "vee-validate";
-  import { watch } from "vue";
+  import { watch, computed } from "vue";
   import { useI18n } from "vue-i18n";
+  import { useRoute } from "vue-router";
   import {
     TabbedContent,
     TabbedContentTab,
@@ -18,6 +19,9 @@
   const { t } = useI18n();
   const basicInfoLabeel = t("users.basic.information");
   const changePasswordLabel = t("users.password.change");
+  const route = useRoute();
+  const isEditPage = computed(() => route.name == "edit.user");
+  const userId = Number(route.params.userId);
 
   const validationSchema = {
     last_name(value: string) {
@@ -26,7 +30,13 @@
     },
   };
 
-  const { isLoading, data: formData, saveUser } = useUsersForm();
+  const {
+    isLoading,
+    data: formData,
+    createUser,
+    updateUser,
+    uploadAvatar,
+  } = useUsersForm(userId);
 
   const { handleSubmit, errors, setValues, defineField } =
     useForm<UserFormItem>({
@@ -34,12 +44,27 @@
     });
 
   const submitHandler = handleSubmit((values) => {
-    saveUser(values);
+    if (isEditPage.value) {
+      updateUser(values);
+    } else {
+      createUser(values);
+    }
   });
+
+  const uploadAvatarHandler = (file: File) => {
+    uploadAvatar(file);
+  };
 
   watch(() => {
     if (formData.value) {
-      setValues(formData.value);
+      setValues({
+        id: formData.value.id,
+        email: formData.value.email,
+        first_name: formData.value.first_name,
+        last_name: formData.value.last_name,
+        role: formData.value.role,
+        is_disabled: formData.value.is_disabled,
+      });
     }
   }, [formData]);
 
@@ -81,6 +106,8 @@
             v-model:email="email"
             v-model:firstName="firstName"
             :errors="errors"
+            :avatar="formData?.avatar_thumbnail"
+            @upload-avatar="uploadAvatarHandler"
           />
         </TabbedContentTab>
         <TabbedContentTab :label="changePasswordLabel" id="change-password">

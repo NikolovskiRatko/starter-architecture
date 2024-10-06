@@ -14,7 +14,7 @@ class UserDTO
     public ?string $avatar_thumbnail;
     public int $role;
     public int $id;
-    public int $is_disabled;
+    public bool $is_disabled;
     public array $permissions_array;
 
     public function __construct(
@@ -25,7 +25,7 @@ class UserDTO
         ?string $avatar_thumbnail,
         int $role,
         int $id = 0,
-        int $is_disabled = 0,
+        bool $is_disabled = false,
         array $permissions_array = []
     ) {
         $this->first_name = $first_name;
@@ -49,7 +49,7 @@ class UserDTO
             null,
             $request->input('role'),
             $request->input('id', 0),
-            $request->input('is_disabled', 0),
+            (bool) $request->input('is_disabled', false),
             $request->input('permissions_array', [])
         );
     }
@@ -64,7 +64,7 @@ class UserDTO
             null,
             $request->input('role'),
             id: 0,
-            is_disabled: 0,
+            is_disabled: false,
             permissions_array: $request->input('permissions_array', [])
         );
     }
@@ -79,7 +79,7 @@ class UserDTO
             $user->avatar_thumbnail,
             $user->role,
             $user->id,
-            $user->is_disabled,
+            (bool) $user->is_disabled,
             $user->permissions_array
         );
     }

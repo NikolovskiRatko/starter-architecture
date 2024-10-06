@@ -29,4 +29,5 @@ export interface DashButtonProps {
   isWide?: boolean;
   isPill?: boolean;
   isSquare?: boolean;
+  isIcon?: boolean;
 }

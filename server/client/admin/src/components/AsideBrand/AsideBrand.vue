@@ -25,7 +25,7 @@
         <img
           v-if="isLogoVisible"
           alt="Logo"
-          src="/build/images/sm_logo_white.png"
+          src="@/../assets/images/sm_logo_white.png"
         />
       </router-link>
     </div>

@@ -2,28 +2,15 @@
   import { inject, PropType, computed } from "vue";
   import { TableSections } from "@/components/Datatables/typings";
 
-  const props = defineProps({
-    width: {
-      type: String,
-      required: false,
-    },
-    section: {
-      type: String as PropType<TableSections>,
-      default: "body",
-    },
-  });
+  interface TableColumnProps {
+    section?: TableSections;
+  }
+
+  const { section = "body" } = defineProps<TableColumnProps>();
 
   const isLoading = inject("isLoading");
   const hasError = inject("hasError");
   const isEvenRow = inject("isEvenRow");
-  const style = computed(() => {
-    const stylesArray: string[] = [];
-    if (props.width) {
-      stylesArray.push(`width:${props.width};`);
-    }
-
-    return stylesArray.join("");
-  });
 
   import "./TableColumn.scss";
 </script>
@@ -39,7 +26,6 @@
         'kt-datatable__cell--even': isEvenRow,
       },
     ]"
-    :style="style"
   >
     <slot />
   </td>

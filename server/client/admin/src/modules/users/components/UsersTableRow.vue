@@ -1,15 +1,17 @@
 <script setup lang="ts">
+  import { DashButton, DashLink } from "@starter-core/dash-ui";
   import { IconTrash, IconEdit } from "@starter-core/icons";
   import { useAuth } from "@websanova/vue-auth/src/v3.js";
-  import { PropType } from "vue";
-  import type { UserRecord } from "../types";
+  import { PropType, computed } from "vue";
+  import type { GetUserResponse } from "../types";
+  import UserRoleBadge from "./UserRoleBadge.vue";
+  import UserStatusBadge from "./UserStatusBadge.vue";
   import { TableColumn, TableRow } from "@/components/Datatables";
   import type { DatatableColumns } from "@/components/Datatables/typings";
-  import { DashButton, DashLink } from "@starter-core/dash-ui";
 
   const props = defineProps({
     user: {
-      type: Object as PropType<UserRecord>,
+      type: Object as PropType<GetUserResponse>,
       required: true,
     },
     isEvenRow: {
@@ -23,38 +25,47 @@
   });
   const isEvenRow = props.index % 2 === 0;
   const auth = useAuth();
+
+  const avatarSource = computed(() => {
+    if (props.user.avatar_thumbnail) {
+      return props.user.avatar_thumbnail;
+    }
+    return new URL(
+      `@/../assets/images/placeholders/avatar-placeholder.jpg`,
+      import.meta.url,
+    ).href;
+  });
 </script>
 
 <template>
   <TableRow :section="'body'" :is-even="isEvenRow">
     <!--kt-datatable__row&#45;&#45;even-->
 
-    <TableColumn :width="columns[0].width">
+    <TableColumn>
+      <img :style="{ width: '50px' }" :src="avatarSource" />
+    </TableColumn>
+
+    <TableColumn>
       {{ user.first_name }}
     </TableColumn>
 
-    <TableColumn :width="columns[1].width">
+    <TableColumn>
       {{ user.last_name }}
     </TableColumn>
 
-    <TableColumn :width="columns[2].width">
+    <TableColumn>
       {{ user.email }}
     </TableColumn>
 
-    <TableColumn :width="columns[3].width">
-      {{ user.roles }}
+    <TableColumn>
+      <UserRoleBadge :user-role-id="user.role" />
     </TableColumn>
 
-    <TableColumn :width="columns[4].width">
-      <template v-if="user.is_disabled">
-        {{ $t("users.status.disabled") }}
-      </template>
-      <template v-else>
-        {{ $t("users.status.enabled") }}
-      </template>
+    <TableColumn>
+      <UserStatusBadge :is-disabled="user.is_disabled" />
     </TableColumn>
 
-    <TableColumn :width="columns[5].width">
+    <TableColumn>
       <dash-link
         v-if="auth.user().permissions_array.includes('write_users')"
         :to="{ name: 'edit.user', params: { userId: user.id } }"
@@ -66,13 +77,15 @@
       </dash-link>
     </TableColumn>
 
-    <TableColumn :width="columns[6].width">
+    <TableColumn>
       <DashButton
         v-if="auth.user().permissions_array.includes('delete_users')"
         :icon="IconTrash"
         theme="danger"
+        size="sm"
         onclick="deleteUser(user, user.id)"
         is-pill
+        is-icon
       />
     </TableColumn>
   </TableRow>
