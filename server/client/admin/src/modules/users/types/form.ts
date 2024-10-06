@@ -4,10 +4,7 @@ export interface UserFormItem {
   first_name?: string;
   last_name?: string;
   role?: number;
-  roles?: any;
-  is_disabled?: number;
-  upload_file: File | null;
+  is_disabled?: boolean;
   password?: string;
   password_confirmation?: string;
-  source: string;
 }
