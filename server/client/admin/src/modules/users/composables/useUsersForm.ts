@@ -68,7 +68,7 @@ export const useUsersForm = (userId?: number) => {
     },
     onSuccess: async () => {
       queryClient.invalidateQueries({ queryKey: [USER_CACHE_KEY, userId] });
-      toast.success("User updated!");
+      toast.success("Image has been updated!");
     },
     onError: (error) => {
       toast.error(error.message);

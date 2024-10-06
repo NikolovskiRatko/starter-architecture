@@ -2,7 +2,7 @@
   import { DashButton, DashLink } from "@starter-core/dash-ui";
   import { IconTrash, IconEdit } from "@starter-core/icons";
   import { useAuth } from "@websanova/vue-auth/src/v3.js";
-  import { PropType } from "vue";
+  import { PropType, computed } from "vue";
   import type { GetUserResponse } from "../types";
   import UserRoleBadge from "./UserRoleBadge.vue";
   import UserStatusBadge from "./UserStatusBadge.vue";
@@ -25,6 +25,16 @@
   });
   const isEvenRow = props.index % 2 === 0;
   const auth = useAuth();
+
+  const avatarSource = computed(() => {
+    if (props.user.avatar_thumbnail) {
+      return props.user.avatar_thumbnail;
+    }
+    return new URL(
+      `@/../assets/images/placeholders/avatar-placeholder.jpg`,
+      import.meta.url,
+    ).href;
+  });
 </script>
 
 <template>
@@ -32,7 +42,7 @@
     <!--kt-datatable__row&#45;&#45;even-->
 
     <TableColumn>
-      <img :style="{ width: '50px' }" :src="user.avatar_thumbnail ?? ''" />
+      <img :style="{ width: '50px' }" :src="avatarSource" />
     </TableColumn>
 
     <TableColumn>
