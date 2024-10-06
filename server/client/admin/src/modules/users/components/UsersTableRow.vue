@@ -2,9 +2,10 @@
   import { DashButton, DashLink } from "@starter-core/dash-ui";
   import { IconTrash, IconEdit } from "@starter-core/icons";
   import { useAuth } from "@websanova/vue-auth/src/v3.js";
-  import { PropType, computed } from "vue";
-  import { useUserRoles } from "../composables";
+  import { PropType } from "vue";
   import type { GetUserResponse } from "../types";
+  import UserRoleBadge from "./UserRoleBadge.vue";
+  import UserStatusBadge from "./UserStatusBadge.vue";
   import { TableColumn, TableRow } from "@/components/Datatables";
   import type { DatatableColumns } from "@/components/Datatables/typings";
 
@@ -24,17 +25,6 @@
   });
   const isEvenRow = props.index % 2 === 0;
   const auth = useAuth();
-  const { isLoading: isFetchingRoles, data: roles } = useUserRoles();
-
-  const userRole = computed(() => {
-    if (isFetchingRoles.value || !roles.value) {
-      return "User";
-    }
-
-    return (
-      roles.value.find((role) => role.id === props.user.role)?.name ?? "User"
-    );
-  });
 </script>
 
 <template>
@@ -58,16 +48,11 @@
     </TableColumn>
 
     <TableColumn>
-      {{ userRole }}
+      <UserRoleBadge :user-role-id="user.role" />
     </TableColumn>
 
     <TableColumn>
-      <template v-if="user.is_disabled">
-        {{ $t("users.status.disabled") }}
-      </template>
-      <template v-else>
-        {{ $t("users.status.enabled") }}
-      </template>
+      <UserStatusBadge :is-disabled="user.is_disabled" />
     </TableColumn>
 
     <TableColumn>
@@ -87,8 +72,10 @@
         v-if="auth.user().permissions_array.includes('delete_users')"
         :icon="IconTrash"
         theme="danger"
+        size="sm"
         onclick="deleteUser(user, user.id)"
         is-pill
+        is-icon
       />
     </TableColumn>
   </TableRow>
