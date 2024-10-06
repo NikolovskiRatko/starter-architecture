@@ -2,7 +2,7 @@
   import { PropType } from "vue";
   // import { ref } from "vue";
   // import type { Ref } from "vue";
-  import type { UserRecord } from "../types";
+  import type { GetUserResponse } from "../types";
   import UsersTableRow from "./UsersTableRow.vue";
   import {
     useDatatable,
@@ -30,7 +30,7 @@
     query,
     refreshData,
     setQuery,
-  } = useDatatable<UserRecord>({
+  } = useDatatable<GetUserResponse>({
     endpoint: "user/draw",
     redirectRoute: homePath,
     columns: props.columns,

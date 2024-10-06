@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useQuery, type UseQueryReturnType } from "@tanstack/vue-query";
-import { UserRole } from "@/modules/users/types";
+import axios from "axios";
+import { UserRole } from "../types";
 
 export const useUserRoles = (): UseQueryReturnType<UserRole[], unknown> => {
   return useQuery({
@@ -9,6 +9,6 @@ export const useUserRoles = (): UseQueryReturnType<UserRole[], unknown> => {
       const data = await axios.get("user/roles/get");
       return data.data;
     },
-    initialData: []
+    initialData: [],
   });
 };

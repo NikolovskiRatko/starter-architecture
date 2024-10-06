@@ -21,7 +21,7 @@
     border-bottom: 1px solid $row-border-color;
     border-collapse: collapse;
     overflow: hidden;
-    display: block;
+    // display: block;
     width: 100%;
 
     &--portlet {
@@ -31,7 +31,7 @@
 
   &__body {
     visibility: hidden;
-    display: block;
+    // display: block;
     position: relative;
 
     &--loaded {
@@ -104,7 +104,7 @@
   }
 
   &__head {
-    display: block;
+    // display: block;
     position: relative;
   }
 
