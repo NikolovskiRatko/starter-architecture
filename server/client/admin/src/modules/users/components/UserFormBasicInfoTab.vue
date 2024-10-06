@@ -5,13 +5,28 @@
   import UserFormAvatar from "./UserFormAvatar.vue";
   import UserRolesDropdown from "./UserRolesDropdown.vue";
 
+  type EmitsType = {
+    (event: "uploadAvatar", file: File): void;
+  };
+
   const { t } = useI18n();
-  const isDisabled = defineModel("isDisabled", { required: true });
-  const role = defineModel("role", { required: true });
-  const lastName = defineModel("lastName", { required: true });
-  const firstName = defineModel("firstName", { required: true });
-  const email = defineModel("email", { required: true });
-  const { errors = {} } = defineProps<{ errors: any }>();
+  const isDisabled = defineModel("isDisabled", {
+    required: true,
+    type: Boolean,
+  });
+  const role = defineModel("role", { required: true, type: Number });
+  const lastName = defineModel("lastName", { required: true, type: String });
+  const firstName = defineModel("firstName", { required: true, type: String });
+  const email = defineModel("email", { required: true, type: String });
+  const { errors = {}, avatar } = defineProps<{
+    errors: any;
+    avatar: string | null;
+  }>();
+  const emit = defineEmits<EmitsType>();
+
+  const uploadAvatar = (file: File) => {
+    emit("uploadAvatar", file);
+  };
 </script>
 <template>
   <div class="kt-section kt-section--first">
@@ -38,7 +53,7 @@
   <div class="kt-section">
     <div class="kt-section__body">
       <h3 class="kt-section__title kt-section__title-lg">Customer Info:</h3>
-      <user-form-avatar />
+      <user-form-avatar :src="avatar" @change="uploadAvatar" />
       <form-input
         v-model="lastName"
         name="last-name"
