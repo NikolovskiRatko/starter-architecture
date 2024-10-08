@@ -1,9 +1,10 @@
 <script setup lang="ts">
   import { computed, ref, inject } from "vue";
+  import useOnClickOutside from "@/composables/useOnClickOutside";
+  import { MENU_TYPE, MENU_THEME } from "@/constants";
   import MenuLink from "../MenuLink/MenuLink.vue";
   import SubMenu from "../SubMenu/SubMenu.vue";
   import { menuTypeKey, menuThemeKey, isMenuMinimizedKey } from "../constants";
-  import useOnClickOutside from "@/composables/useOnClickOutside";
   import type { MenuItemProps } from "./types";
   import "./MenuItem.scss";
 
@@ -34,7 +35,7 @@
 
     if (submenu) {
       classNameArray.push("kt-menu__item--submenu");
-      if (menuTheme === "classic") {
+      if (menuTheme === MENU_THEME.classic) {
         classNameArray.push("kt-menu__item--rel");
       }
       if (isSubmenuVisible.value) {
@@ -71,27 +72,27 @@
 
   const menuClickHandler = () => {
     if (
-      (menuType === "horizontal" && submenu && isTopLevelItem) ||
-      (menuType === "vertical" && submenu)
+      (menuType === MENU_TYPE.horizontal && submenu && isTopLevelItem) ||
+      (menuType === MENU_TYPE.vertical && submenu)
     ) {
       toggleSubmenu();
     }
   };
 
   const mouseOverHandler = () => {
-    if (submenu && !isTopLevelItem && menuType === "horizontal") {
+    if (submenu && !isTopLevelItem && menuType === MENU_TYPE.horizontal) {
       toggleSubmenu(true);
     }
   };
 
   const mouseLeaveHandler = () => {
-    if (submenu && !isTopLevelItem && menuType === "horizontal") {
+    if (submenu && !isTopLevelItem && menuType === MENU_TYPE.horizontal) {
       toggleSubmenu(false, 300);
     }
   };
 
   useOnClickOutside(itemRef, () => {
-    if (isSubmenuVisible.value && menuType === "horizontal") {
+    if (isSubmenuVisible.value && menuType === MENU_TYPE.horizontal) {
       toggleSubmenu(false);
     }
   });
@@ -112,7 +113,7 @@
       :list-style="style"
       :label="item.label"
       :badge="item.badge"
-      :is-active="isActive || isSubmenuVisible"
+      :is-active="  isActive || isSubmenuVisible"
       :has-submenu="!!submenu"
       :is-submenu-link="!isTopLevelItem"
       :level="level"
