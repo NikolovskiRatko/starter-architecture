@@ -1,10 +1,11 @@
 import type { VueElement } from "vue";
 import type { RouteLocation } from 'vue-router';
-import type { SubMenu } from "@/components/Menu/SubMenu/types";
-import type { BadgeType } from "@/components/Menu/MenuLink/types";
+import type { SubMenu } from "./SubMenu/types";
+import type { BadgeType } from "./MenuLink/types";
+import type { MENU_TYPE, MENU_THEME } from "../../../constants/menu";
 
-export type MenuTheme = "classic";
-export type MenuType = "horizontal" | "vertical";
+export type MenuTheme = typeof MENU_THEME[keyof typeof MENU_THEME];
+export type MenuType = typeof MENU_TYPE[keyof typeof MENU_TYPE];
 
 export interface MenuItem {
   label: string;

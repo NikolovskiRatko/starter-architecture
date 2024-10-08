@@ -1,7 +1,7 @@
 {
   "name": "@starter-core/dash-ui",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Pashata",
   "license": "MIT",
   "type": "module",
@@ -38,15 +38,5 @@
   "files": [
     "src",
     "dist"
-  ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/dash-ui.js",
-      "require": "./dist/dash-ui.umd.js"
-    },
-    "./src/assets/main.scss": "./src/assets/main.scss",
-    "./src/assets/vite-resources.scss": "./src/assets/vite-resources.scss",
-    "./*": "./dist/*"
-  }
+  ]
 }

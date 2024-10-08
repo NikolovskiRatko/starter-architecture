@@ -5,7 +5,7 @@ import MenuSection from "../MenuSection/MenuSection.vue";
 import type { NavMenuDataInterface } from "./types";
 import type { MenuTheme, MenuType } from "../types";
 import { isMenuMinimizedKey, menuThemeKey, menuTypeKey } from "../constants";
-import { MENU_TYPE } from "@/constants";
+import { MENU_TYPE } from "../../../constants";
 import "./NavMenu.scss";
 
 interface NavMenuProps {

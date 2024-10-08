@@ -18,3 +18,8 @@ export type MenuLinkProps = {
   isActive?: boolean;
   level?: number;
 }
+
+export type MenuLinkIconProps = {
+  icon?: VueElement | null;
+  isActive?: boolean;
+}

@@ -4,7 +4,7 @@
   import { AsideBrand } from "@/components";
   import { useSideMenu } from "@/composables";
   import { useRootStore } from "@/store/root";
-  import { NavMenu } from "@starter-core/dash-ui";
+  import { NavMenu } from "@starter-core/dash-ui/src";
   import "./AdminSidebar.scss";
 
   const { mainMenu } = useSideMenu();

@@ -2,9 +2,9 @@
   import { inject, computed, ref } from "vue";
   import { isMenuMinimizedKey, menuTypeKey } from "../constants";
   import type { MenuLinkProps } from "./types";
-  import { MENU_TYPE } from "@/constants";
   import MenuLinkIcon from "./MenuLinkIcon.vue";
-  import { useBEMBuilder } from "@/helpers";
+  import { MENU_TYPE } from "../../../constants";
+  import { useBEMBuilder } from "../../../helpers";
   import "./MenuLink.scss";
 
   const {

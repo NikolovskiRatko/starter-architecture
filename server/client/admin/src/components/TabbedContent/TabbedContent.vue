@@ -3,7 +3,7 @@
     PortletComponent,
     PortletBody,
     PortletHead,
-  } from "@starter-core/dash-ui";
+  } from "@starter-core/dash-ui/src";
   import { provide, reactive, ref, type Ref, onMounted } from "vue";
   import { AddTabKey, ActiveTabIdKey } from "./constants";
   import type { TabbedContentProps, TabbedContentTab } from "./types";

@@ -11,7 +11,7 @@
     PortletHeadToolbar,
     DashButton,
     DashLink,
-  } from "@starter-core/dash-ui";
+  } from "@starter-core/dash-ui/src";
 
   const props = defineProps([
     "value",

@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { computed, ref, inject } from "vue";
-  import useOnClickOutside from "@/composables/useOnClickOutside";
-  import { MENU_TYPE, MENU_THEME } from "@/constants";
+  import { MENU_TYPE, MENU_THEME } from "../../../constants";
+  import useOnClickOutside from "../../../composables/useOnClickOutside";
   import MenuLink from "../MenuLink/MenuLink.vue";
   import SubMenu from "../SubMenu/SubMenu.vue";
   import { menuTypeKey, menuThemeKey, isMenuMinimizedKey } from "../constants";

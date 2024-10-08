@@ -4,7 +4,7 @@
   import type { DashLinkProps } from './types';
   import DashButton from '../Button/DashButton.vue';
 
-  const { to = '', ...props } = defineProps<DashLinkProps>();
+  const { to, ...props } = defineProps<DashLinkProps>();
 
   const isExternalLink = computed(() => {
     return typeof to === 'string' && to.startsWith('http');
