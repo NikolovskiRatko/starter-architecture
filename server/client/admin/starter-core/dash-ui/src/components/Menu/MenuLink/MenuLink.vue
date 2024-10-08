@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { inject, computed, ref } from "vue";
+  import { inject, computed, ref, h } from "vue";
   import { isMenuMinimizedKey, menuTypeKey } from "../constants";
   import type { MenuLinkProps } from "./types";
   import MenuLinkIcon from "./MenuLinkIcon.vue";
@@ -48,9 +48,10 @@
 </script>
 
 <template>
-  <router-link
-    :to="route"
+  <component
+    :is="hasSubmenu ? 'span' : 'router-link'"
     :class="block"
+    v-bind="hasSubmenu ? {} : { to: route }"
     @click="handleClick"
   >
     <MenuLinkIcon :icon="icon" :is-active="isActive" />
@@ -93,5 +94,5 @@
         ]"
       />
     </template>
-  </router-link>
+  </component>
 </template>
