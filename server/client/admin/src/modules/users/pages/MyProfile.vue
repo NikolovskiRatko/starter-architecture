@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import { IconArrowleft, IconMail, IconSave } from "@starter-core/icons";
   import { cloneDeep } from "lodash";
   import { computed, onMounted, provide, ref } from "vue";
   // import AdminUserForm from '../../../features/Admin/UsersCrud/_components/MyProfileForm.vue';
@@ -10,7 +11,6 @@
     SubheaderTitle,
   } from "../../../components";
   import { user } from "../constants";
-  import { CustomForm } from "@/components/Form";
   import { useForm } from "@/composables";
   import { getPhotoPath } from "@/helpers";
   import { useUserRoles } from "@/modules/users/composables";
@@ -20,6 +20,8 @@
     PortletBody,
     FormInput,
     FormDropdown,
+    DashButton,
+    DashLink,
   } from "@starter-core/dash-ui";
   // import { useEventsBus } from "@/composables";
 
@@ -74,80 +76,38 @@
     return "";
   });
 
-  const beforeSubmit = (hasToRedirect = true) => {
+  const submitHandler = (hasToRedirect = true) => {
     onSubmitTest(postUri, redirectRoute.value, hasToRedirect);
   };
 </script>
 
 <template>
-  <CustomForm
-    class="container-fluid"
-    autocomplete="off"
-    enctype="multipart/form-data"
-    @beforeSubmit="beforeSubmit"
-    @keydown="form.errors.clear($event.target.name)"
-  >
-    <PageWrapper>
-      <template #[PAGE_WRAPPER_SLOTS.subheaderMain]>
-        <SubheaderTitle
-          :title="t('users.basic.information')"
-          :description="`Basic information`"
-        />
-      </template>
-      <template #[PAGE_WRAPPER_SLOTS.subheaderToolbox]>
-        <router-link
-          :loading="loading"
-          :to="`/admin/users`"
-          exact=""
-          class="btn btn-clean kt-margin-r-10"
-        >
-          <i class="la la-arrow-left"></i>
-          <span class="kt-hidden-mobile">{{ t("buttons.cancel") }}</span>
-        </router-link>
-        <div class="btn-group">
-          <button type="submit" :loading="loading" class="btn btn-brand">
-            <i class="la la-save mr-1" />
-            {{ t("buttons.save") }}
-          </button>
-          <button
-            type="button"
-            class="btn btn-brand dropdown-toggle dropdown-toggle-split"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          ></button>
-          <div class="dropdown-menu dropdown-menu-right">
-            <ul class="kt-nav">
-              <li class="kt-nav__item">
-                <a href="#" class="kt-nav__link">
-                  <i class="kt-nav__link-icon flaticon2-reload"></i>
-                  <span class="kt-nav__link-text">Save & continue</span>
-                </a>
-              </li>
-              <li class="kt-nav__item">
-                <a href="#" class="kt-nav__link">
-                  <i class="kt-nav__link-icon flaticon2-power"></i>
-                  <span class="kt-nav__link-text">Save & exit</span>
-                </a>
-              </li>
-              <li class="kt-nav__item">
-                <a href="#" class="kt-nav__link">
-                  <i
-                    class="kt-nav__link-icon flaticon2-edit-interface-symbol-of-pencil-tool"
-                  ></i>
-                  <span class="kt-nav__link-text">Save & edit</span>
-                </a>
-              </li>
-              <li class="kt-nav__item">
-                <a href="#" class="kt-nav__link">
-                  <i class="kt-nav__link-icon flaticon2-add-1"></i>
-                  <span class="kt-nav__link-text">Save & add new</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </template>
+  <PageWrapper>
+    <template #[PAGE_WRAPPER_SLOTS.subheaderMain]>
+      <SubheaderTitle
+        :title="t('users.basic.information')"
+        :description="`${form.first_name} ${form.last_name}`"
+      />
+    </template>
+    <template #[PAGE_WRAPPER_SLOTS.subheaderToolbox]>
+      <DashLink to="/admin/users" :icon="IconArrowleft" theme="clean">
+        {{ t("buttons.cancel") }}
+      </DashLink>
+      <DashButton
+        type="submit"
+        :icon="IconSave"
+        :loading="loading"
+        @click="submitHandler"
+      >
+        {{ t("buttons.save") }}
+      </DashButton>
+    </template>
+    <form
+      autocomplete="off"
+      enctype="multipart/form-data"
+      @submit.prevent="submitHandler"
+      @keydown="form.errors.clear($event.target.name)"
+    >
       <PortletComponent :has-sticky-header="true" :is-loading="loading">
         <PortletBody>
           <div class="kt-section kt-section--first">
@@ -155,32 +115,20 @@
               <h3 class="kt-section__title kt-section__title-lg">
                 {{ t("users.user_status") }}:
               </h3>
-              <div class="form-group row">
-                <label class="col-3 col-form-label">{{
-                  t("users.roles.label")
-                }}</label>
-                <div class="col-9">
-                  <FormDropdown
-                    v-if="!isFetchingRoles"
-                    v-model="form.role"
-                    :options="roles"
-                    :value="form.role"
-                  />
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-3 col-form-label">{{
-                  t("users.status")
-                }}</label>
-                <div class="col-9">
-                  <!--                        <FormInputRadio-->
-                  <!--                            :id="'enabled'"-->
-                  <!--                            v-model="form.is_disabled"-->
-                  <!--                            :options="[{'id': 0, 'name':'Enabled'},{'id': 1, 'name':'Disabled'}]"-->
-                  <!--                            :value="form.is_disabled"-->
-                  <!--                        />-->
-                </div>
-              </div>
+              <FormDropdown
+                :label="t('users.roles.label')"
+                v-if="!isFetchingRoles"
+                v-model="form.role"
+                :options="roles"
+                :value="form.role"
+              />
+              <!--                        <FormInputRadio-->
+              <!--                            :id="'enabled'"-->
+              <!--                            :label="t('users.status')"-->
+              <!--                            v-model="form.is_disabled"-->
+              <!--                            :options="[{'id': 0, 'name':'Enabled'},{'id': 1, 'name':'Disabled'}]"-->
+              <!--                            :value="form.is_disabled"-->
+              <!--                        />-->
             </div>
           </div>
 
@@ -193,53 +141,35 @@
               <h3 class="kt-section__title kt-section__title-lg">
                 Customer Info:
               </h3>
-              <div class="form-group row">
-                <label class="col-3 col-form-label">{{
-                  t("users.avatar")
-                }}</label>
-                <div class="col-9">
-                  <file-upload
-                    :id="'uploaded_file'"
-                    v-model="form.uploaded_file"
-                    :placeholder-image="avatar"
-                    :form="form"
-                  />
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-3 col-form-label">{{
-                  t("users.last_name.label")
-                }}</label>
-                <div class="col-9">
-                  <FormInput v-model="form.last_name" :id="'last_name'" />
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-3 col-form-label">{{
-                  t("users.first_name.label")
-                }}</label>
-                <div class="col-9">
-                  <FormInput v-model="form.first_name" :id="'first_name'" />
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-3 col-form-label">{{
-                  t("users.email.label")
-                }}</label>
-                <div class="col-9">
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"
-                        ><i class="la la-at"></i
-                      ></span>
-                    </div>
-                    <FormInput v-model="form.email" :id="'email'" />
-                  </div>
-                  <span class="form-text text-muted"
-                    >We'll never share your email with anyone else.</span
-                  >
-                </div>
-              </div>
+              <file-upload
+                :label="t('users.avatar')"
+                :id="'uploaded_file'"
+                v-model="form.uploaded_file"
+                :placeholder-image="avatar"
+                :form="form"
+              />
+              <FormInput
+                :label="t('users.last_name.label')"
+                v-model="form.last_name"
+                id="last_name"
+              />
+              <FormInput
+                :label="t('users.first_name.label')"
+                v-model="form.first_name"
+                id="first_name"
+              />
+              <FormInput
+                :label="t('users.email.label')"
+                v-model="form.email"
+                id="email"
+              >
+                <template v-slot:prependContent>
+                  <IconMail />
+                </template>
+              </FormInput>
+              <span class="form-text text-muted"
+                >We'll never share your email with anyone else.</span
+              >
             </div>
           </div>
 
@@ -252,25 +182,16 @@
               <h3 class="kt-section__title kt-section__title-lg">
                 {{ t("users.password.new_password") }}:
               </h3>
-              <div class="form-group row">
-                <label class="col-3 col-form-label">{{
-                  t("users.password.label")
-                }}</label>
-                <div class="col-9">
-                  <FormInput v-model="form.password" :id="'password'" />
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-3 col-form-label">{{
-                  t("users.password.confirm")
-                }}</label>
-                <div class="col-9">
-                  <FormInput
-                    v-model="form.password_confirmation"
-                    :id="'password_confirmation'"
-                  />
-                </div>
-              </div>
+              <FormInput
+                v-model="form.password"
+                :id="'password'"
+                :label="t('users.password.label')"
+              />
+              <FormInput
+                v-model="form.password_confirmation"
+                id="password_confirmation"
+                :label="t('users.password.confirm')"
+              />
             </div>
           </div>
         </PortletBody>
@@ -280,6 +201,6 @@
       <!--      @confirm-unsaved-changes="confirmUnsavedChanges"-->
       <!--      @cancel-unsaved-changes="cancelUnsavedChanges"-->
       <!--    />-->
-    </PageWrapper>
-  </CustomForm>
+    </form>
+  </PageWrapper>
 </template>

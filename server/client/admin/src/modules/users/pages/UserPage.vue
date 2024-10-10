@@ -77,26 +77,31 @@
 </script>
 
 <template>
-  <form
-    autocomplete="off"
-    enctype="multipart/form-data"
-    @submit.prevent="submitHandler"
-  >
-    <PageWrapper>
-      <template #[PAGE_WRAPPER_SLOTS.subheaderMain]>
-        <SubheaderTitle
-          title="Edit user"
-          :description="`${firstName} ${lastName}`"
-        />
-      </template>
-      <template #[PAGE_WRAPPER_SLOTS.subheaderToolbox]>
-        <DashLink to="/admin/users" :icon="IconArrowleft" theme="clean">
-          {{ t("buttons.back") }}
-        </DashLink>
-        <DashButton type="submit" :icon="IconSave" :loading="isLoading">
-          {{ t("buttons.save") }}
-        </DashButton>
-      </template>
+  <PageWrapper>
+    <template #[PAGE_WRAPPER_SLOTS.subheaderMain]>
+      <SubheaderTitle
+        title="Edit user"
+        :description="`${firstName} ${lastName}`"
+      />
+    </template>
+    <template #[PAGE_WRAPPER_SLOTS.subheaderToolbox]>
+      <DashLink to="/admin/users" :icon="IconArrowleft" theme="clean">
+        {{ t("buttons.back") }}
+      </DashLink>
+      <DashButton
+        type="submit"
+        :icon="IconSave"
+        :loading="isLoading"
+        @click="submitHandler"
+      >
+        {{ t("buttons.save") }}
+      </DashButton>
+    </template>
+    <form
+      autocomplete="off"
+      enctype="multipart/form-data"
+      @submit.prevent="submitHandler"
+    >
       <TabbedContent :isLoading="isLoading">
         <TabbedContentTab :label="basicInfoLabeel" id="basic-info">
           <UserFormBasicInfoTab
@@ -114,6 +119,6 @@
           <UserFormPasswordTab v-model:password="password" />
         </TabbedContentTab>
       </TabbedContent>
-    </PageWrapper>
-  </form>
+    </form>
+  </PageWrapper>
 </template>
