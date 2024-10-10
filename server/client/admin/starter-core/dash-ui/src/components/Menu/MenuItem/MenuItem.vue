@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { computed, ref, inject } from "vue";
   import { MENU_TYPE, MENU_THEME } from "../../../constants";
-  import useOnClickOutside from "../../../composables/useOnClickOutside";
+  import { useOnClickOutside } from "../../../composables";
   import MenuLink from "../MenuLink/MenuLink.vue";
   import SubMenu from "../SubMenu/SubMenu.vue";
   import { menuTypeKey, menuThemeKey, isMenuMinimizedKey } from "../constants";
@@ -57,6 +57,10 @@
     return classNameArray.join(" ");
   });
   const submenu = computed(() => item.submenu ?? null);
+  const hasTogglableSubmenu = computed(() => {
+    return (menuType === MENU_TYPE.horizontal && submenu && isTopLevelItem)
+      || (menuType === MENU_TYPE.vertical && submenu)
+  })
 
   const toggleSubmenu = (visibility?: boolean, delay?: number) => {
     const valueToSet =
@@ -71,10 +75,7 @@
   };
 
   const menuClickHandler = () => {
-    if (
-      (menuType === MENU_TYPE.horizontal && submenu && isTopLevelItem) ||
-      (menuType === MENU_TYPE.vertical && submenu)
-    ) {
+    if (hasTogglableSubmenu.value) {
       toggleSubmenu();
     }
   };
@@ -95,8 +96,7 @@
     if (isSubmenuVisible.value && menuType === MENU_TYPE.horizontal) {
       toggleSubmenu(false);
     }
-  });
-
+  }, !hasTogglableSubmenu.value);
 </script>
 
 <template>
@@ -113,7 +113,7 @@
       :list-style="style"
       :label="item.label"
       :badge="item.badge"
-      :is-active="  isActive || isSubmenuVisible"
+      :is-active="isActive || isSubmenuVisible"
       :has-submenu="!!submenu"
       :is-submenu-link="!isTopLevelItem"
       :level="level"

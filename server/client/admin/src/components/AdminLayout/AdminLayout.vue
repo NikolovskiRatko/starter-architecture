@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { useAuth } from "@websanova/vue-auth/src/v3.js";
   import { storeToRefs } from "pinia";
-  import { provide, ref, toRefs } from "vue";
+  import { provide, ref } from "vue";
   import { AdminHeader, AdminSidebar } from "@/components";
   import { useBEMBuilder } from "@/helpers";
   import { useRootStore } from "@/store/root";
