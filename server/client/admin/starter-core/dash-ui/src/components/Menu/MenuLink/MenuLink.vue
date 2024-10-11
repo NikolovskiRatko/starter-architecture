@@ -1,7 +1,10 @@
 <script setup lang="ts">
-  import { inject, computed } from "vue";
+  import { inject, computed, ref, h } from "vue";
   import { isMenuMinimizedKey, menuTypeKey } from "../constants";
   import type { MenuLinkProps } from "./types";
+  import MenuLinkIcon from "./MenuLinkIcon.vue";
+  import { MENU_TYPE } from "../../../constants";
+  import { useBEMBuilder } from "../../../helpers";
   import "./MenuLink.scss";
 
   const {
@@ -21,12 +24,20 @@
   const shouldHaveRightArrow = computed<Boolean>(() => {
     if (hasSubmenu) {
       return (
-        menuType === "vertical" ||
-        (menuType === "horizontal" && level > 1)
+        menuType === MENU_TYPE.vertical ||
+        (menuType === MENU_TYPE.horizontal && level > 1)
       );
     }
     return false;
   });
+
+  const [block, element] = useBEMBuilder('kt-menu__link', ref({
+    [`${menuType}`]: menuType,
+    [`${level}`]: level,
+    active: isActive,
+    'submenu-link': isSubmenuLink,
+    minimized: isMinimized
+  }))
 
   const handleClick = (event: Event) => {
     if (hasSubmenu) {
@@ -37,33 +48,13 @@
 </script>
 
 <template>
-  <router-link
-    :to="route"
-    :class="[
-      'kt-menu__link',
-      `kt-menu__link--${menuType}`,
-      `kt-menu__link--level-${level}`,
-      {
-        'kt-menu__toggle': hasSubmenu,
-        'kt-menu__link--active': isActive,
-        'kt-menu__link--submenu-link': isSubmenuLink,
-        'kt-menu__link--minimized': isMinimized,
-      },
-    ]"
+  <component
+    :is="hasSubmenu ? 'span' : 'router-link'"
+    :class="block"
+    v-bind="hasSubmenu ? {} : { to: route }"
     @click="handleClick"
   >
-    <span
-      v-if="icon"
-      :class="[
-        'kt-menu__link-icon',
-        `kt-menu__link-icon--${menuType}`,
-        {
-          'kt-menu__link-icon--active': isActive,
-        },
-      ]"
-    >
-      <component :is="icon" />
-    </span>
+    <MenuLinkIcon :icon="icon" :is-active="isActive" />
 
     <i
       v-if="listStyle && !isMinimized"
@@ -103,5 +94,5 @@
         ]"
       />
     </template>
-  </router-link>
+  </component>
 </template>

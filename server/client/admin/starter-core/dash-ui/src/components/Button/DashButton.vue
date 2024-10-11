@@ -25,6 +25,7 @@
     isPill = false,
     isSquare = false,
     isIcon = false,
+    isClean = false
   } = defineProps<DashButtonProps>();
 
   const buttonClass = computed(() => {
@@ -81,6 +82,10 @@
 
     if (isIcon) {
       classes.push("btn-icon");
+    }
+
+    if (isClean) {
+      classes.push("btn-clean");
     }
 
     return classes.join(" ");

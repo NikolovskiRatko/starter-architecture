@@ -30,4 +30,5 @@ export interface DashButtonProps {
   isPill?: boolean;
   isSquare?: boolean;
   isIcon?: boolean;
+  isClean?: boolean;
 }

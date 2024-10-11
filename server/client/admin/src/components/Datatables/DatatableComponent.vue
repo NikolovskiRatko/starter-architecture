@@ -10,7 +10,7 @@
     TableQuery,
     onQueryUpdateKey,
   } from "@/components/Datatables/typings";
-  import { PortletComponent, PortletBody } from "@starter-core/dash-ui";
+  import { PortletComponent, PortletBody } from "@starter-core/dash-ui/src";
   import "./DatatableComponent.scss";
 
   const props = defineProps(["tableInfo", "query", "loading", "columns"]);
