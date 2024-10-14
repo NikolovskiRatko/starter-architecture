@@ -1,3 +1,6 @@
+<script lang="ts" setup>
+  import './Footer.css';
+</script>
 <template>
  <footer class="footer">
   	 <div class="container">

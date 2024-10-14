@@ -1,15 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { 
+  devtools: {
     enabled: true
   },
+
   css: [
     "~/assets/main.scss",
     "~/node_modules/bootstrap/dist/css/bootstrap.min.css"
   ],
+
   modules: [
     '@nuxt/image',
   ],
+
   image: {
     dir: 'public/images',
     screens: {
@@ -21,5 +24,7 @@ export default defineNuxtConfig({
       'xxl': 1536,
       '2xl': 1536
     },
-  }
+  },
+
+  compatibilityDate: '2024-10-14'
 })

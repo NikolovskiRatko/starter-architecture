@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
 nav{
   position: fixed;
   z-index: 99;
   width: 100%;
   background: transparent;
 }
-nav .wrapper{
+nav .wrapper {
   position: relative;
   max-width: 1300px;
   padding: 0px 30px;
@@ -17,7 +15,7 @@ nav .wrapper{
   align-items: center;
   justify-content: space-between;
 }
-.wrapper .logo a{
+.wrapper .logo a {
   color: #f2f2f2;
   font-size: 30px;
   font-weight: 600;

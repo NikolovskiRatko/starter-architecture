@@ -1,10 +1,5 @@
 <template>
-    <div class="jumbotron">
-        <div class="jumbotron_background">
-            
-        </div>
-        <div class="container-fluid">
-            <h1 class="offset-md-2">Home Page 1.3</h1>
-        </div>
-    </div>
+  <Jumbotron>
+    <h1>Home Page 1.3</h1>
+  </Jumbotron>
 </template>
