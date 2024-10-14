@@ -3,7 +3,7 @@
 </script>
 <template>
   <div class="jumbotron">
-    <div class="container-fluid">
+    <div class="container">
       <slot></slot>
     </div>
   </div>
