@@ -21,9 +21,18 @@ export default defineNuxtConfig({
       'md': 768,
       'lg': 1024,
       'xl': 1280,
-      'xxl': 1536,
-      '2xl': 1536
+      'xxl': 1536
     },
+  },
+
+  vite: {
+    server: {
+      hmr: {
+        host: '0.0.0.0',
+        clientPort: 3030,
+        protocol: 'ws',
+      }
+    }
   },
 
   compatibilityDate: '2024-10-14'
