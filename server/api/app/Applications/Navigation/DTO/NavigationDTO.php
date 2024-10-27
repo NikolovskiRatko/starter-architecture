@@ -6,6 +6,8 @@ use App\Applications\Navigation\Model\Navigation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
+use Carbon\Carbon;
+use DateTime;
 
 class NavigationDTO
 {
@@ -15,8 +17,8 @@ class NavigationDTO
     public bool $authorized;
     public ?int $parent_id;
     public bool $visible;
-    public ?string $livedate;
-    public ?string $enddate;
+    public ?DateTime $livedate;
+    public ?DateTime $enddate;
     public ?int $model_id;
     public ?string $model_type;
 
@@ -27,8 +29,8 @@ class NavigationDTO
         bool $authorized = false,
         ?int $parent_id = null,
         bool $visible = true,
-        ?string $livedate = null,
-        ?string $enddate = null,
+        ?DateTime $livedate = null,
+        ?DateTime $enddate = null,
         ?int $model_id = null,
         ?string $model_type = null
     ) {
@@ -84,8 +86,8 @@ class NavigationDTO
             authorized: $data['authorized'] ?? false,
             parent_id: $data['parent_id'] ?? null,
             visible: $data['visible'] ?? true,
-            livedate: $data['livedate'] ?? null,
-            enddate: $data['enddate'] ?? null,
+            livedate: isset($data['livedate']) ? new DateTime($data['livedate']) : Carbon::now()->toDateString(),
+            enddate: isset($data['enddate']) ? new DateTime($data['enddate']) : null,
             model_id: $data['model_id'] ?? null,
             model_type: $data['model_type'] ?? null
         );
@@ -137,8 +139,8 @@ class NavigationDTO
             'authorized' => $this->authorized,
             'parent_id' => $this->parent_id,
             'visible' => $this->visible,
-            'livedate' => $this->livedate,
-            'enddate' => $this->enddate,
+            'livedate' => $this->livedate?->format('Y-m-d'),
+            'enddate' => $this->enddate?->format('Y-m-d'),
             'model_id' => $this->model_id,
             'model_type' => $this->model_type,
         ];

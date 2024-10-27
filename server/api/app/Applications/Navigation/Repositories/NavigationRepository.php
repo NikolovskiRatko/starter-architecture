@@ -21,7 +21,7 @@ class NavigationRepository implements NavigationRepositoryInterface
      */
     public function all(): \Illuminate\Database\Eloquent\Collection
     {
-        return Navigation::all();
+        return $this->navigation::all();
     }
 
     /**
@@ -34,7 +34,7 @@ class NavigationRepository implements NavigationRepositoryInterface
      */
     public function findById(int $id): Navigation
     {
-        return Navigation::findOrFail($id);
+        return $this->navigation::findOrFail($id);
     }
 
     /**
@@ -45,7 +45,7 @@ class NavigationRepository implements NavigationRepositoryInterface
      */
     public function create(array $data): Navigation
     {
-        return Navigation::create($data);
+        return $this->navigation::create($data);
     }
 
     /**

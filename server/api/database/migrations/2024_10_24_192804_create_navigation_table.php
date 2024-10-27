@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,7 +19,7 @@ return new class extends Migration
             $table->boolean('authorized')->default(false);
             $table->foreignId('parent_id')->nullable()->constrained('navigations')->onDelete('cascade');
             $table->boolean('visible')->default(true);
-            $table->date('livedate')->nullable();
+            $table->date('livedate')->default(DB::raw('CURRENT_DATE'));
             $table->date('enddate')->nullable();
             $table->nullableMorphs('navigable');
             $table->timestamps();
