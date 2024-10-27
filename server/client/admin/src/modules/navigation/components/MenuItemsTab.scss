@@ -1,0 +1,12 @@
+.menu-items-tab {
+    display: flex;
+    gap: var(--dui-spacing-4);
+
+    &__navigations {
+        flex: 0 0 20%;
+    }
+
+    &__items {
+        flex: 1;
+    }
+}
