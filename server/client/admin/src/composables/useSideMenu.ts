@@ -3,6 +3,8 @@ import {
   IconLayout4blocks,
   IconUser,
   IconArrowright,
+  IconRoute,
+  IconLibrary,
 } from "@starter-core/icons";
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
@@ -15,6 +17,10 @@ const getItemIcon = (link: string) => {
       return IconLayout4blocks;
     case "users":
       return IconUser;
+    case "navigations":
+      return IconRoute;
+    case "navigations.menus":
+      return IconLibrary;
     default:
       return IconArrowright;
   }
