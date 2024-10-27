@@ -1,0 +1,8 @@
+{
+  "main": "Navigation",
+  "menu": {
+    "main": "Menu",
+    "plural": "Menus",
+    "items": "Menu items"
+  }
+}
