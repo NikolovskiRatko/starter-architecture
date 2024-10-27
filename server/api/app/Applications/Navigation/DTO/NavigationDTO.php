@@ -86,7 +86,7 @@ class NavigationDTO
             authorized: $data['authorized'] ?? false,
             parent_id: $data['parent_id'] ?? null,
             visible: $data['visible'] ?? true,
-            livedate: isset($data['livedate']) ? new DateTime($data['livedate']) : Carbon::now()->toDateString(),
+            livedate: isset($data['livedate']) ? new DateTime($data['livedate']) : Carbon::now(),
             enddate: isset($data['enddate']) ? new DateTime($data['enddate']) : null,
             model_id: $data['model_id'] ?? null,
             model_type: $data['model_type'] ?? null
