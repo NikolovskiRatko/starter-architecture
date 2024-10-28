@@ -84,3 +84,13 @@ RUN curl -L -o /tmp/memcached.tar.gz "https://github.com/php-memcached-dev/php-m
     && docker-php-ext-configure memcached --disable-memcached-sasl \
     && docker-php-ext-install memcached \
     && rm /tmp/memcached.tar.gz
+
+# Copy the entrypoint script
+COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
+
+# Make the script executable
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+# Set the script as the entrypoint
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+CMD ["apache2-foreground"]
