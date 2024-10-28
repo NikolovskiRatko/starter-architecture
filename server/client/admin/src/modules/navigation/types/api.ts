@@ -18,3 +18,12 @@ export interface NavigationMenu {
 }
 
 export type NavigationMenus = NavigationMenu[];
+
+export interface NavigationMenuQuery {
+  name: string;
+  description?: string;
+}
+
+export interface NavigationMenuResult extends NavigationMenuQuery {
+  id: number;
+}
