@@ -40,6 +40,17 @@ class NavigationMenuRepository implements NavigationMenuRepositoryInterface
     }
 
     /**
+     * Find a navigation menu by ID, including its items.
+     *
+     * @param int $id
+     * @return NavigationMenu|null
+     */
+    public function findByIdWithItems(int $id): ?NavigationMenu
+    {
+        return $this->navigationMenu->with('items')->find($id);
+    }
+
+    /**
      * Create a new navigation menu.
      *
      * @param array $data

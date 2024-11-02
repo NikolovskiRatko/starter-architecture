@@ -22,6 +22,14 @@ interface NavigationMenuRepositoryInterface
     public function find(int $id): ?NavigationMenu;
 
     /**
+     * Find a navigation menu with its items.
+     *
+     * @param int $id
+     * @return NavigationMenu|null
+     */
+    public function findByIdWithItems(int $id): ?NavigationMenu;
+
+    /**
      * Create a new navigation menu.
      *
      * @param array $data

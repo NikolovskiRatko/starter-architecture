@@ -26,7 +26,7 @@ class NavigationMenuController extends Controller
 
     public function get(int $id): JsonResponse
     {
-        $menu = $this->service->getById($id);
+        $menu = $this->service->getByIdWithItems($id);
 
         return $menu
             ? response()->json($menu)
