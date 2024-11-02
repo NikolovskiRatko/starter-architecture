@@ -1,9 +1,12 @@
 <script lang="ts" setup>
+  import { ref } from "vue";
+  import MenuItems from "./MenuItems.vue";
   import MenusDropdown from "./MenusDropdown.vue";
   import NavigationsForm from "./NavigationsForm.vue";
   import { useBEMBuilder } from "@/helpers";
   import "./MenuItemsTab.scss";
 
+  const selectedMenu = ref<string>("");
   const [block, element] = useBEMBuilder("menu-items-tab");
 </script>
 <template>
@@ -12,7 +15,8 @@
       <NavigationsForm />
     </div>
     <div :class="element('items').value">
-      <MenusDropdown />
+      <MenusDropdown v-model="selectedMenu" />
+      <MenuItems :menu-id="selectedMenu" />
     </div>
   </div>
 </template>

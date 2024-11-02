@@ -2,15 +2,19 @@ import {
   useQuery,
   useMutation,
   type UseQueryReturnType,
-  type UseMutationReturnType, useQueryClient
+  useQueryClient,
 } from "@tanstack/vue-query";
 import axios from "axios";
+import { computed } from "vue";
+import type { Ref } from "vue";
 import { useToast } from "vue-toastification";
 import {
   NAVIGATION_MENU_API_ENDPOINTS,
+  NAVIGATION_MENU_QUERY_KEY,
   NAVIGATION_MENUS_QUERY_KEY,
 } from "../constants";
 import {
+  NavigationMenu,
   NavigationMenuQuery,
   NavigationMenuResult,
   NavigationMenus,
@@ -27,6 +31,23 @@ export const useNavigationMenus = (): UseQueryReturnType<
       return data.data;
     },
     initialData: [],
+  });
+};
+
+export const useNavigationMenu = (
+  menuId: Ref<number | undefined>,
+): UseQueryReturnType<NavigationMenu, unknown> => {
+  const isEnabled = computed(() => !!menuId.value);
+  return useQuery({
+    queryKey: [NAVIGATION_MENU_QUERY_KEY, menuId] as const,
+    queryFn: async () => {
+      const data = await axios.get(
+        NAVIGATION_MENU_API_ENDPOINTS.get(menuId.value ?? 0),
+      );
+      return data.data;
+    },
+    initialData: [],
+    enabled: isEnabled,
   });
 };
 
