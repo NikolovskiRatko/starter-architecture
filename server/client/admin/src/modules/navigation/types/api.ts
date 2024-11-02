@@ -11,10 +11,19 @@ export interface Navigation {
 
 export type NavigationsResponse = Navigation[];
 
+export interface NavigationMenuItem {
+  id: number;
+  label: string;
+  menu_id: number;
+  navigation_id?: number | null;
+  external_url?: string | null;
+}
+
 export interface NavigationMenu {
   id: number;
   name: string;
   description: string | null;
+  items: NavigationMenuItem[];
 }
 
 export type NavigationMenus = NavigationMenu[];
