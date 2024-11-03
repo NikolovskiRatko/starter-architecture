@@ -1,4 +1,6 @@
 <script setup>
+  import { DashLink } from "@starter-core/dash-ui/src";
+  import { useOnClickOutside } from "@starter-core/dash-ui/src/composables";
   import {
     IconUser,
     IconMail,
@@ -8,8 +10,6 @@
   import { ref } from "vue";
   import HeaderUserBarListItem from "./HeaderUserBarListItem.vue";
   import useAuthComp from "@/composables/useAuthComp";
-  import { DashLink } from "@starter-core/dash-ui";
-  import { useOnClickOutside } from "@starter-core/dash-ui/src/composables";
   import "./HeaderUserBar.scss";
 
   const { logout, user } = useAuthComp();

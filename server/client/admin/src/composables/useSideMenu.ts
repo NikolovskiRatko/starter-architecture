@@ -1,3 +1,4 @@
+import type { NavMenuDataInterface } from "@starter-core/dash-ui/src/components/Menu/NavMenu/types";
 import {
   IconLayout4blocks,
   IconUser,
@@ -7,7 +8,6 @@ import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { useInitialData } from "@/composables";
 import useAuthComp from "@/composables/useAuthComp";
-import type { NavMenuDataInterface } from "@starter-core/dash-ui/src/components/Menu/NavMenu/types";
 
 const getItemIcon = (link: string) => {
   switch (link) {

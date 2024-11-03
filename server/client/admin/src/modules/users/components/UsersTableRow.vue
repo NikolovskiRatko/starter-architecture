@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import { DashButton, DashLink } from "@starter-core/dash-ui/src";
   import { IconTrash, IconEdit } from "@starter-core/icons";
   import { useAuth } from "@websanova/vue-auth/src/v3.js";
   import { PropType, computed } from "vue";
@@ -7,7 +8,6 @@
   import UserStatusBadge from "./UserStatusBadge.vue";
   import { TableColumn, TableRow } from "@/components/Datatables";
   import type { DatatableColumns } from "@/components/Datatables/typings";
-  import { DashButton, DashLink } from "@starter-core/dash-ui/src";
 
   const props = defineProps({
     user: {

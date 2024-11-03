@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+  import { DashButton, DashLink } from "@starter-core/dash-ui/src";
   import { IconSave, IconArrowleft } from "@starter-core/icons";
   import { useForm } from "vee-validate";
   import { watch, computed } from "vue";
@@ -14,7 +15,6 @@
   import { UserFormBasicInfoTab, UserFormPasswordTab } from "../components";
   import { useUsersForm } from "../composables";
   import type { UserFormItem } from "../types";
-  import { DashButton, DashLink } from "@starter-core/dash-ui";
 
   const { t } = useI18n();
   const basicInfoLabeel = t("users.basic.information");
