@@ -21,6 +21,7 @@
     border-bottom: 1px solid $row-border-color;
     border-collapse: collapse;
     overflow: hidden;
+
     // display: block;
     width: 100%;
 
@@ -31,6 +32,7 @@
 
   &__body {
     visibility: hidden;
+
     // display: block;
     position: relative;
 
@@ -45,11 +47,12 @@
 
     .kt-datatable__toggle-detail {
       vertical-align: middle;
+
       i {
         transition: color 0.3s ease;
         color: $detail_icon_color;
 
-        &:before {
+        &::before {
           line-height: 0;
           vertical-align: middle;
         }
@@ -63,8 +66,10 @@
         }
       }
     }
+
     .kt-datatable__row-detail {
       display: block;
+
       .kt-datatable__detail {
         display: block;
         padding: 0 ($table-space + 35px);
@@ -91,6 +96,7 @@
             }
           }
         }
+
         table {
           border-left: 1px solid $row-border-color;
           border-right: 1px solid $row-border-color;

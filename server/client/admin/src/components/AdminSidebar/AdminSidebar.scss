@@ -14,14 +14,17 @@
     background-color: #1f2231;
 
     .btn {
-      @include kt-transition();
+      @include kt-transition;
+
       background-color: transparent;
 
       i {
-        @include kt-transition();
+        @include kt-transition;
+
         font-size: 1.4rem;
         color: kt-brand-color();
-        @include kt-transition();
+
+        @include kt-transition;
       }
     }
 
@@ -29,18 +32,21 @@
       background-color: kt-brand-color();
 
       i {
-        @include kt-transition();
+        @include kt-transition;
+
         color: kt-brand-color(inverse);
       }
     }
 
     .show .btn,
     .btn:hover {
-      @include kt-transition();
+      @include kt-transition;
+
       background-color: #191b27;
 
       i {
-        @include kt-transition();
+        @include kt-transition;
+
         color: kt-brand-color();
       }
     }
@@ -55,9 +61,7 @@
 
     > .kt-menu__nav {
       .kt-menu__item {
-        > .kt-menu__link:not(.kt-menu__link--active):not(
-            .kt-menu__link--here
-          ):not(.kt-menu__link--hover) {
+        > .kt-menu__link:not(.kt-menu__link--active, .kt-menu__link--here, .kt-menu__link--hover) {
           [class^="flaticon2-"],
           [class*=" flaticon2-"] {
             color: #434d6b;

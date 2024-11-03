@@ -5,7 +5,6 @@ $header-topbar-user-avatar-size: 34px;
 $header-topbar-item-size-mobile: 34px;
 $header-topbar-item-svg-size-mobile: 30px;
 $header-topbar-user-avatar-size-mobile: 30px;
-
 $header-top-bar-config: (
   height: (
     mobile: 50px,
@@ -44,16 +43,18 @@ $header-top-bar-config: (
       height: $header-topbar-item-size;
       width: $header-topbar-item-size;
       cursor: pointer;
-      @include kt-transition();
+
+      @include kt-transition;
 
       @include kt-rounded {
         border-radius: $border-radius;
       }
 
       i {
-        @include kt-transition();
+        @include kt-transition;
+
         font-size: 1.4rem;
-        color: #ffffff;
+        color: #fff;
       }
 
       svg {
@@ -145,18 +146,20 @@ $header-top-bar-config: (
     &:hover,
     &.show {
       .kt-header__topbar-icon {
-        @include kt-transition();
+        @include kt-transition;
+
         background-color: rgba(#212029, 0.7);
 
         i {
-          @include kt-transition();
+          @include kt-transition;
+
           color: #fff;
         }
       }
 
       &.kt-header__topbar-item--user {
         .kt-header__topbar-user {
-          @include kt-transition();
+          @include kt-transition;
         }
       }
     }
@@ -167,7 +170,7 @@ $header-top-bar-config: (
   .kt-header__topbar {
     padding: 0 kt-get($page-padding, mobile);
     background-color: #2b2a35;
-    box-shadow: 0px 1px 9px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 9px -3px rgb(0 0 0 / 10%);
     transition: all 0.3s ease;
     margin-top: -(kt-get($header-top-bar-config, height, mobile));
     height: kt-get($header-top-bar-config, height, mobile);

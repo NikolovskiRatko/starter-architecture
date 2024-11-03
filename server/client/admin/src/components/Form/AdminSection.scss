@@ -2,7 +2,7 @@
   margin-bottom: 2rem;
 
   &--sticky {
-    position: -webkit-sticky;
+    position: sticky;
     position: sticky;
     top: 2rem;
   }
@@ -34,6 +34,7 @@
           }
         }
       }
+
       .col-md-12,
       .col-sm-12,
       .col-lg-12,
@@ -45,16 +46,18 @@
 
       .form-row {
         margin-bottom: 1rem;
+
         &:last-child {
           margin-bottom: 0;
         }
       }
     }
+
     .subtitle {
       margin-bottom: 1rem;
       padding-bottom: 0.5rem;
       margin-top: 1rem;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid rgb(0 0 0 / 6%);
       font-size: 1.2rem;
       letter-spacing: 2px;
       font-weight: 800;

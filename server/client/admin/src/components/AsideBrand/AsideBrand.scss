@@ -22,7 +22,8 @@
     .kt-aside__brand-aside-toggler {
       display: inline-block;
       padding: 0;
-      @include kt-input-reset();
+
+      @include kt-input-reset;
 
       span {
         display: inline-block;
@@ -49,7 +50,6 @@
   .kt-aside__brand {
     background-color: var(--dui-color-dark);
     box-shadow: none;
-
     transition: var(--dui-transition);
 
     // Header fixed & aside static mode
@@ -115,7 +115,7 @@
 
   .kt-header-mobile {
     background-color: #1a1a27;
-    box-shadow: 0px 1px 9px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 9px -3px rgb(0 0 0 / 10%);
 
     .kt-header__topbar--mobile-on & {
       box-shadow: none;
@@ -140,7 +140,7 @@
         &.kt-header-mobile__topbar-toggler--active,
         &:hover {
           i {
-            color: #ffffff;
+            color: #fff;
           }
         }
       }

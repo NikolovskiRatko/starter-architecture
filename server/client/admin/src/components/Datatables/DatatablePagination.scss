@@ -2,7 +2,7 @@
 @import "skin";
 
 .kt-datatable__pager {
-  margin: 0px;
+  margin: 0;
   padding: $table-space;
   padding-bottom: 0;
   display: flex;
@@ -77,12 +77,14 @@
   }
 
   &__input {
-    @include kt-transition();
+    @include kt-transition;
+
     background: $page-default;
     border-color: $page-default;
 
     &:focus {
-      @include kt-transition();
+      @include kt-transition;
+
       background: $page-hover;
       border-color: $page-hover;
     }

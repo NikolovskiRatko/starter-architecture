@@ -3,9 +3,10 @@
 
 .kt-datatable__pager__link {
   $block: &;
+
   color: $page-default-font;
 
-  @include kt-transition();
+  @include kt-transition;
 
   cursor: pointer;
   border: none;

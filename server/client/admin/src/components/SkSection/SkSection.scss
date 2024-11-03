@@ -1,6 +1,6 @@
 .kt-section {
   padding: 0;
-  margin: 0 0 2rem 0;
+  margin: 0 0 2rem;
 
   &.kt-section--space-sm {
     margin-bottom: 1rem;
@@ -24,7 +24,7 @@
     font-size: 1.3rem;
     font-weight: 500;
     padding: 0;
-    margin: 0 0 1.75rem 0;
+    margin: 0 0 1.75rem;
     color: kt-base-color(label, 4);
 
     &.kt-section__title-sm {
@@ -45,7 +45,7 @@
     font-size: 1rem;
     font-weight: 400;
     padding: 0;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem;
     color: kt-base-color(label, 3);
   }
 
@@ -53,7 +53,7 @@
     display: block;
     font-size: 1rem;
     padding: 0;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem;
     color: kt-base-color(label, 3);
   }
 

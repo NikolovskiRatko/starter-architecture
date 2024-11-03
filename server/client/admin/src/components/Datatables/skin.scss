@@ -27,14 +27,13 @@ $row-active: kt-base-color(grey, 1);
 $body_cell_font_color: kt-base-color(label, 3);
 
 // Lock table shadow
-$lock-shadow: 0px 0px 17px 5px rgba(113, 106, 202, 0.14);
+$lock-shadow: 0px 0px 17px 5px rgb(113 106 202 / 14%);
 
 // Subtable
 $subtable_toggle_icon: kt-state-color(brand);
 $subtable_expanded: $row-active;
 $subtable_pager_pagel: $base-color;
-$subtable_shadow: 0px 0px 15px 1px rgba(113, 106, 202, 0.1);
-
+$subtable_shadow: 0px 0px 15px 1px rgb(113 106 202 / 10%);
 $detail_icon_color: kt-state-color(brand); //kt-base-color(shape, 2);
 $detail_icon_color_hover: kt-state-color(brand);
 
@@ -45,7 +44,6 @@ $page-hover: kt-state-color(brand);
 $page-hover-font: kt-state-color(brand, inverse);
 $page-active: kt-state-color(brand);
 $page-active-font: kt-state-color(brand, inverse);
-
 $page-info: kt-base-color(shape, 1);
 $page-info-font: kt-base-color(shape, 3);
 $page-info-hover: kt-state-color(brand);

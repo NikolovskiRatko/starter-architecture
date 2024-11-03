@@ -3,8 +3,8 @@
 
 .kt-datatable__row {
   $block: &;
-  table-layout: initial;
 
+  table-layout: initial;
   width: 100%;
   border-bottom: 1px solid $row-border-color;
 

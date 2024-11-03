@@ -17,6 +17,7 @@
     // Fixed subheader mode
     .kt-header--fixed.kt-subheader--fixed & {
       position: fixed;
+
       //height: kt-get($subheader-config, fixed, height);
       top: kt-get($header-config, base, desktop, default, height);
       left: 0;
@@ -24,14 +25,14 @@
       transition: all 0.3s ease;
       z-index: kt-get($header-config, base, desktop, fixed, zindex) - 3;
       background-color: #fff;
-      box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.08);
+      box-shadow: 0 10px 30px 0 rgb(82 63 105 / 8%);
       padding-top: 0;
       padding-bottom: 0;
     }
 
     // Fixed header, minimized header and fixed subheader
     .kt-header--fixed.kt-header--minimize.kt-subheader--fixed & {
-      top: kt-get($header-config, base, desktop, fixed, minimizeHeight);
+      top: kt-get($header-config, base, desktop, fixed, minimizeheight);
       transition: top 0.3s ease;
     }
 
@@ -58,15 +59,16 @@
 
   &__main {
     $block: &;
+
     transition: var(--dui-transition);
     grid-area: admin-layout-main;
     display: flex;
     flex-direction: column;
 
     @include kt-desktop {
-
       &--aside-minimized {
         transition: var(--dui-transition);
+
         //padding-left: var(--dui-aside-minimize-width);
       }
 

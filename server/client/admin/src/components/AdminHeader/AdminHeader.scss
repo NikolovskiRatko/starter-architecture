@@ -10,7 +10,8 @@ $header-item-hover-bg: rgba(#4d5995, 0.06);
     .kt-header__topbar-item {
       .kt-header__topbar-icon {
         i {
-          @include kt-transition();
+          @include kt-transition;
+
           color: $header-item-icon-color;
         }
 
@@ -27,12 +28,14 @@ $header-item-hover-bg: rgba(#4d5995, 0.06);
       &.kt-header__topbar-item--user {
         .kt-header__topbar-user {
           .kt-header__topbar-welcome {
-            @include kt-transition();
+            @include kt-transition;
+
             color: #959cb6;
           }
 
           .kt-header__topbar-username {
-            @include kt-transition();
+            @include kt-transition;
+
             color: #6c7293;
           }
 
@@ -57,33 +60,39 @@ $header-item-hover-bg: rgba(#4d5995, 0.06);
       &:hover,
       &.show {
         .kt-header__topbar-icon {
-          @include kt-transition();
+          @include kt-transition;
+
           background-color: $header-item-hover-bg;
 
           i {
-            @include kt-transition();
+            @include kt-transition;
+
             color: kt-brand-color();
           }
         }
 
         &.kt-header__topbar-item--user {
           .kt-header__topbar-user {
-            @include kt-transition();
+            @include kt-transition;
+
             background-color: $header-item-hover-bg;
           }
         }
 
         &.kt-header__topbar-item--quick-panel {
           .kt-aside-secondary--enabled & {
-            @include kt-transition();
+            @include kt-transition;
+
             background-color: kt-brand-color();
 
             .kt-header__topbar-icon {
-              @include kt-transition();
+              @include kt-transition;
+
               background-color: transparent !important;
 
               i {
-                @include kt-transition();
+                @include kt-transition;
+
                 color: kt-brand-color(inverse);
               }
             }
@@ -116,13 +125,13 @@ $header-item-hover-bg: rgba(#4d5995, 0.06);
     z-index: kt-get($header-config, base, desktop, fixed, zindex);
 
     &--minimize & {
-      height: kt-get($header-config, base, desktop, fixed, minimizeHeight);
+      height: kt-get($header-config, base, desktop, fixed, minimizeheight);
       transition: height 0.3s ease;
     }
 
     &:not(.kt-subheader--fixed) & {
       border-bottom: 0;
-      box-shadow: 0px 0px 40px 0px rgba(82, 63, 105, 0.1);
+      box-shadow: 0 0 40px 0 rgb(82 63 105 / 10%);
     }
 
     // Menu
@@ -176,13 +185,13 @@ $header-item-hover-bg: rgba(#4d5995, 0.06);
 @include kt-tablet-and-mobile {
   // Topbar
   .kt-header__topbar {
-    background-color: #ffffff;
+    background-color: #fff;
     box-shadow: none;
   }
 
   .kt-header__topbar--mobile-on {
     .kt-header__topbar {
-      box-shadow: 0px 0px 40px 0px rgba(82, 63, 105, 0.1);
+      box-shadow: 0 0 40px 0 rgb(82 63 105 / 10%);
       border-top: 1px solid kt-base-color(grey, 2);
     }
   }
