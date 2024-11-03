@@ -38,13 +38,25 @@ class NavigationMenuItemDTO
     protected static function validate(array $data): void
     {
         $rules = [
-            'navigation_id' => 'nullable|integer|exists:navigations,id',
-            'external_url' => 'nullable|string|url|max:255',
+            'navigation_id' => 'nullable|integer|exists:navigations,id|required_without_all:external_url',
+            'external_url' => 'nullable|string|url|max:255|required_without_all:navigation_id',
             'menu_id' => 'required|integer|exists:navigation_menus,id',
             'label' => 'required|string|max:255',
         ];
 
-        Validator::make($data, $rules)->validate();
+        // Create the validator instance
+        $validator = Validator::make($data, $rules);
+
+        // Add custom rule to ensure only one of navigation_id or external_url is set
+        $validator->after(function ($validator) use ($data) {
+            if (!empty($data['navigation_id']) && !empty($data['external_url'])) {
+                $validator->errors()->add('navigation_id', 'Only one of navigation_id or external_url should be set.');
+                $validator->errors()->add('external_url', 'Only one of navigation_id or external_url should be set.');
+            }
+        });
+
+        // Run the validation
+        $validator->validate();
     }
 
     /**
