@@ -15,7 +15,12 @@
 <template>
   <form @submit.prevent="submitHandler">
     <input type="text" id="name" name="name" v-model="name" />
-    <input type="text" id="description" name="description" v-model="description" />
+    <input
+      type="text"
+      id="description"
+      name="description"
+      v-model="description"
+    />
     <button type="submit">Add</button>
   </form>
 </template>

@@ -36,3 +36,10 @@ export interface NavigationMenuQuery {
 export interface NavigationMenuResult extends NavigationMenuQuery {
   id: number;
 }
+
+export interface NavigationMenuItemQuery {
+  menu_id: number;
+  label: string;
+  navigation_id?: number;
+  external_url?: string;
+}
