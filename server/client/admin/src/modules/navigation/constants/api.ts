@@ -6,4 +6,8 @@ export const NAVIGATION_MENU_API_ENDPOINTS = {
   getAll: "navigation-menu/all",
   get: (id: number) => `navigation-menu/${id}`,
   create: "navigation-menu/create",
-};
+} as const;
+
+export const NAVIGATION_MENU_ITEM_API_ENDPOINTS = {
+  create: "navigation-menu-item/create",
+} as const;

@@ -10,6 +10,7 @@ import type { Ref } from "vue";
 import { useToast } from "vue-toastification";
 import {
   NAVIGATION_MENU_API_ENDPOINTS,
+  NAVIGATION_MENU_ITEM_API_ENDPOINTS,
   NAVIGATION_MENU_QUERY_KEY,
   NAVIGATION_MENUS_QUERY_KEY,
 } from "../constants";
@@ -18,6 +19,8 @@ import {
   NavigationMenuQuery,
   NavigationMenuResult,
   NavigationMenus,
+  NavigationMenuItemQuery,
+  NavigationMenuItem,
 } from "../types";
 
 export const useNavigationMenus = (): UseQueryReturnType<
@@ -69,7 +72,34 @@ export const useCreateNavigationMenu = () => {
       queryClient.invalidateQueries({
         queryKey: [NAVIGATION_MENUS_QUERY_KEY],
       });
-      toast.success("Navigation menu create!");
+      toast.success("Navigation menu created!");
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
+};
+
+export const useCreateNavigationMenuItem = () => {
+  const toast = useToast();
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async (
+      navigationMenuItemData: NavigationMenuItemQuery,
+    ): Promise<NavigationMenuItem> => {
+      const response = await axios.post(
+        NAVIGATION_MENU_ITEM_API_ENDPOINTS.create,
+        navigationMenuItemData,
+      );
+
+      return response.data;
+    },
+    onSuccess: async (response) => {
+      queryClient.invalidateQueries({
+        queryKey: [NAVIGATION_MENU_QUERY_KEY, response.menu_id],
+      });
+      toast.success("Navigation menu item created!");
     },
     onError: (error) => {
       toast.error(error.message);
