@@ -12,7 +12,7 @@
     IconAirpods,
     IconChartpie,
     IconDollar,
-    IconSpy,
+    IconLibrary,
   } from "@starter-core/icons";
   import { ref, onMounted } from "vue";
   import { PageWrapper } from "@/components";
@@ -66,7 +66,11 @@
             deleniti distinctio magnam? In, odio alias? Possimus labore delectus
             recusandae.
           </AccordionItem>
-          <AccordionItem label="Madinja goli" id="madinja-goli" :icon="IconSpy">
+          <AccordionItem
+            label="Order statistics"
+            id="order-statistics"
+            :icon="IconLibrary"
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, aut
             molestiae.
           </AccordionItem>
