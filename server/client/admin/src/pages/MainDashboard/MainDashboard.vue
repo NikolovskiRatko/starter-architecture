@@ -5,8 +5,15 @@
     PortletHead,
     PortletHeadLabel,
     ContentLoader,
-  } from "@starter-core/dash-ui";
-  import { IconAirpods as Icon } from "@starter-core/icons";
+    AccordionContent,
+    AccordionItem,
+  } from "@starter-core/dash-ui/src";
+  import {
+    IconAirpods,
+    IconChartpie,
+    IconDollar,
+    IconSpy,
+  } from "@starter-core/icons";
   import { ref, onMounted } from "vue";
   import { PageWrapper } from "@/components";
   // import { get } from "@/services/HTTP";
@@ -38,13 +45,40 @@
           <PortletHead>
             <PortletHeadLabel>
               Content loader
-              <Icon size="32" />
+              <IconAirpods size="32" />
             </PortletHeadLabel>
           </PortletHead>
           <PortletBody>
             <ContentLoader />
           </PortletBody>
         </PortletComponent>
+      </div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <AccordionContent>
+          <AccordionItem
+            label="Product inventory"
+            id="product-inventory"
+            :icon="IconChartpie"
+          >
+            Vero laborum esse debitis libero veniam ullam placeat molestias
+            deleniti distinctio magnam? In, odio alias? Possimus labore delectus
+            recusandae.
+          </AccordionItem>
+          <AccordionItem label="Madinja goli" id="madinja-goli" :icon="IconSpy">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, aut
+            molestiae.
+          </AccordionItem>
+          <AccordionItem
+            label="eCommerce reports"
+            id="ecommerce-reports"
+            :icon="IconDollar"
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, aut
+            molestiae.
+          </AccordionItem>
+        </AccordionContent>
       </div>
     </div>
   </PageWrapper>

@@ -1,0 +1,32 @@
+.accordion-content {
+    border: var(--dui-border-light);
+    border-radius: 4px;
+    box-shadow: var(--dui-elevate-shadow);
+    background-color: var(--dui-color-light);
+
+    &__items {
+        list-style: none;
+        display: flex;
+        gap: var(--dui-spacing-4);
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        font-weight: 500;
+        color: var(--dui-color-base-3);
+        border-bottom: 2px solid transparent;
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        &--active {
+            border-bottom: 2px solid var(--dui-color-base-3);
+        }
+
+        &:hover {
+            color: var(--dui-color-text-link);
+            border-color: var(--dui-color-text-link);
+        }
+    }
+}
