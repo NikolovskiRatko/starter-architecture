@@ -1,0 +1,8 @@
+.menu-item {
+    background-color: var(--dui-color-secondary);
+    padding: var(--dui-spacing-1);
+    border: var(--dui-border-light);
+    display: flex;
+    justify-content: space-between;
+    color: var(--dui-color-text-dark);
+}
