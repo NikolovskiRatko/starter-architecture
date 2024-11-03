@@ -1,4 +1,12 @@
 <script setup lang="ts">
+  import {
+    PortletComponent,
+    PortletBody,
+    FormInput,
+    FormDropdown,
+    DashButton,
+    DashLink,
+  } from "@starter-core/dash-ui/src";
   import { IconArrowleft, IconMail, IconSave } from "@starter-core/icons";
   import { cloneDeep } from "lodash";
   import { computed, onMounted, provide, ref } from "vue";
@@ -15,14 +23,6 @@
   import { getPhotoPath } from "@/helpers";
   import { useUserRoles } from "@/modules/users/composables";
   import { useRootStore } from "@/store/root";
-  import {
-    PortletComponent,
-    PortletBody,
-    FormInput,
-    FormDropdown,
-    DashButton,
-    DashLink,
-  } from "@starter-core/dash-ui";
   // import { useEventsBus } from "@/composables";
 
   const { setBackUrl, setActiveClasses } = useRootStore();

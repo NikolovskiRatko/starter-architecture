@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import { FormDropdown } from "@starter-core/dash-ui";
+  import { FormDropdown } from "@starter-core/dash-ui/src";
   import { useI18n } from "vue-i18n";
   import { useUserRoles } from "../composables";
 

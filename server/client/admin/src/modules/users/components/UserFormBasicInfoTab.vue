@@ -1,9 +1,9 @@
 <script lang="ts" setup>
+  import { FormInput, FormSwitch } from "@starter-core/dash-ui/src";
   import { IconMail } from "@starter-core/icons";
   import { useI18n } from "vue-i18n";
   import UserFormAvatar from "./UserFormAvatar.vue";
   import UserRolesDropdown from "./UserRolesDropdown.vue";
-  import { FormInput, FormSwitch } from "@starter-core/dash-ui";
 
   type EmitsType = {
     (event: "uploadAvatar", file: File): void;
