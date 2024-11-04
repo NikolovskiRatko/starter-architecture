@@ -1,0 +1,8 @@
+.menu-items-navigation-forms {
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--dui-spacing-4);
+  }
+}

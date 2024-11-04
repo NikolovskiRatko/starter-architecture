@@ -6,12 +6,6 @@
         flex: 0 0 20%;
     }
 
-    &__navigations-content {
-        display: flex;
-        flex-direction: column;
-        gap: var(--dui-spacing-4);
-    }
-
     &__items {
         flex: 1;
         display: flex;

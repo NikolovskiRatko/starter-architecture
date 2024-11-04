@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-  import { computed, type Ref } from "vue";
+  import { computed } from "vue";
   import { useNavigationMenu } from "../composables";
   import MenuItem from "./MenuItem.vue";
   import { useBEMBuilder } from "@/helpers";
   import "./MenuItems.scss";
 
   interface MenuItemsProps {
-    menuId: Ref<string>;
+    menuId: string;
   }
 
   const [block, element] = useBEMBuilder("menu-items");
