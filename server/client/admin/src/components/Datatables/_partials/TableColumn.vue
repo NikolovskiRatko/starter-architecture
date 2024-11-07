@@ -1,6 +1,7 @@
 <script setup lang="ts">
-  import { inject, PropType, computed } from "vue";
+  import { inject } from "vue";
   import { TableSections } from "@/components/Datatables/typings";
+  import "./TableColumn.scss";
 
   interface TableColumnProps {
     section?: TableSections;
@@ -11,8 +12,6 @@
   const isLoading = inject("isLoading");
   const hasError = inject("hasError");
   const isEvenRow = inject("isEvenRow");
-
-  import "./TableColumn.scss";
 </script>
 
 <template>

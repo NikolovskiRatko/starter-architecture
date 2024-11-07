@@ -1,13 +1,9 @@
-export type OrderDirection = "asc" | "desc";
-export type TableSections = "head" | "body" | "footer";
+import type { DATATABLE_ORDER_DIRECTIONS } from "@/components/Datatables";
 
-export interface TableInfo {
-  category?: number;
-  source?: string;
-  error?: boolean;
-  errorMessage?: string;
-  noRecords?: boolean;
-}
+export type OrderDirection = typeof DATATABLE_ORDER_DIRECTIONS[
+  keyof typeof DATATABLE_ORDER_DIRECTIONS
+];
+export type TableSections = "head" | "body" | "footer";
 
 interface PaginationOptions {
   pageName: string;
