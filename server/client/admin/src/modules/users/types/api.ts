@@ -1,4 +1,5 @@
 import type { Permission, UserRoleId } from "./permissions";
+import { PaginationObject } from "@/components/Datatables/typings";
 
 export interface GetUserResponse {
   avatar_url: string | null;
@@ -11,4 +12,9 @@ export interface GetUserResponse {
   permissions_array: Permission[];
   role: UserRoleId;
   updated_at: string;
+}
+
+export interface UsersTableResponse {
+  data: GetUserResponse[];
+  pagination: PaginationObject;
 }
