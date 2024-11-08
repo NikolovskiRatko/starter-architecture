@@ -1,10 +1,11 @@
 import { computed } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { DATATABLE_ORDER_DIRECTIONS, initQueryData } from "../constants";
-import { OrderDirection, TableQuery } from "../typings";
+import { onPaginationChange, OrderDirection, TableQuery } from "../typings";
 
 export function useDatatable() {
   const route = useRoute();
+  const router = useRouter();
 
   const query = computed<TableQuery>(() => {
     const queryObject = Object.assign({}, initQueryData);
@@ -38,5 +39,16 @@ export function useDatatable() {
     return queryObject;
   });
 
-  return { query };
+  const onPaginationChange: onPaginationChange = ({ limit, page }) => {
+    router.push({
+      path: route.path,
+      query: {
+        ...route.query,
+        length: limit,
+        page,
+      },
+    });
+  };
+
+  return { query, onPaginationChange };
 }

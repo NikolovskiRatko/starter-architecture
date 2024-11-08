@@ -1,26 +1,26 @@
 <script setup lang="ts">
-  import { ref, computed, inject, PropType } from "vue";
-  import type { Ref } from "vue";
-  import PaginationLink from "@/components/Datatables/_partials/PaginationLink.vue";
-  import { PaginationObject } from "@/components/Datatables/typings";
-  import { onQueryUpdateKey } from "@/components/Datatables/typings/inject";
+  import { computed } from "vue";
+  import { PaginationLink } from "./_partials";
+  import { PaginationObject, onPaginationChangeParams } from "./typings";
+  import { InputSelectEvent } from "@/types";
   import "./DatatablePagination.scss";
 
-  const props = defineProps({
-    pagination: {
-      type: Object as PropType<PaginationObject>,
-      required: true,
-    },
-  });
-  const limitOptions = ["10", "25", "50"];
-  const selectedLength: Ref<string> = ref(limitOptions[0]);
+  interface DatatablePagination {
+    pagination: PaginationObject;
+    limitOptions?: number[];
+    isLoading?: boolean;
+  }
+
+  const { pagination, limitOptions = [10, 25, 50] } =
+    defineProps<DatatablePagination>();
 
   const arrowNavigation = computed(() => {
-    const { currentPage, lastPage, dataLength, total } = props.pagination;
+    const { currentPage, lastPage, dataLength, total } = pagination;
     const from = currentPage * dataLength - dataLength + 1;
     const to = Math.min(from + dataLength - 1, total);
+
     return {
-      firstPage: props.pagination.currentPage > 1 ? 1 : null,
+      firstPage: pagination.currentPage > 1 ? 1 : null,
       previousPage: currentPage > 1 ? currentPage - 1 : null,
       lastPage: currentPage < lastPage ? lastPage : null,
       nextPage: currentPage < lastPage ? currentPage + 1 : null,
@@ -29,21 +29,22 @@
     };
   });
 
-  const onQueryUpdate = inject(onQueryUpdateKey, () => {});
-  const isLoading = inject("isLoading");
+  const emit = defineEmits<{
+    (e: "change", params: onPaginationChangeParams): void
+  }>();
 
-  const handleLengthChange = (event: HTMLInputElementEvent) => {
-    onQueryUpdate({
-      length: Number(event.target.value),
+  const handleLengthChange = (event: InputSelectEvent) => {
+    emit("change", {
+      page: pagination.currentPage,
+      limit: Number(event.target.value),
     });
   };
 
   const handleNavClick = (page: number | null): void => {
-    if (!!page && page !== props.pagination.currentPage) {
-      onQueryUpdate({
-        page: Number(page),
-      });
-    }
+    emit("change", {
+      page: page || pagination.currentPage,
+      limit: pagination.dataLength,
+    });
   };
 </script>
 
@@ -106,7 +107,7 @@
       <div class="dropdown bootstrap-select kt-datatable__pager__size">
         <select
           id="select-per-page"
-          v-model="selectedLength"
+          :value="pagination.dataLength"
           name="select-per-page"
           class="kt-datatable__pager__size form-control selectpicker"
           @change="handleLengthChange"
