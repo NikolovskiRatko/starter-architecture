@@ -1,34 +1,24 @@
 <script setup lang="ts">
-  import { DashButton, DashLink } from "@starter-core/dash-ui/src";
   import { IconTrash, IconEdit } from "@starter-core/icons";
   import { useAuth } from "@websanova/vue-auth/src/v3.js";
-  import { PropType, computed } from "vue";
+  import { computed } from "vue";
   import type { GetUserResponse } from "../types";
   import UserRoleBadge from "./UserRoleBadge.vue";
   import UserStatusBadge from "./UserStatusBadge.vue";
   import { TableColumn, TableRow } from "@/components/Datatables";
-  import type { DatatableColumns } from "@/components/Datatables/typings";
+  import { DashButton, DashLink } from "@starter-core/dash-ui/src";
 
-  const props = defineProps({
-    user: {
-      type: Object as PropType<GetUserResponse>,
-      required: true,
-    },
-    isEvenRow: {
-      type: Boolean,
-      default: false,
-    },
-    columns: {
-      type: Array as PropType<DatatableColumns>,
-      required: true,
-    },
-  });
-  const isEvenRow = props.index % 2 === 0;
+  interface UsersTableRowProps {
+    user: GetUserResponse;
+    isEvenRow: boolean;
+  }
+
+  const { user, isEvenRow } = defineProps<UsersTableRowProps>();
   const auth = useAuth();
 
   const avatarSource = computed(() => {
-    if (props.user.avatar_thumbnail) {
-      return props.user.avatar_thumbnail;
+    if (user.avatar_thumbnail) {
+      return user.avatar_thumbnail;
     }
     return new URL(
       `@/../assets/images/placeholders/avatar-placeholder.jpg`,

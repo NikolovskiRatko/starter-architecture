@@ -1,47 +1,48 @@
 <script setup lang="ts">
-  import { PropType, inject } from "vue";
+  import { inject } from "vue";
   import { useI18n } from "vue-i18n";
-  import { TableRow } from "@/components/Datatables";
+  import { useRoute, useRouter } from "vue-router";
+  import { DATATABLE_ORDER_DIRECTIONS } from "../constants";
   import {
     ColumnName,
     ColumnObject,
+    DatatableColumns,
     OrderDirection,
-    TableInfo,
     TableQuery,
-    onQueryUpdateKey,
-  } from "@/components/Datatables/typings";
+  } from "../typings";
+  import TableRow from "./TableRow.vue";
 
-  const props = defineProps({
-    columns: {
-      type: Array as PropType<ColumnObject>,
-      default: () => [],
-    },
-    tableInfo: {
-      type: Object as PropType<TableInfo>,
-      required: true,
-    },
-    query: {
-      type: Object as PropType<TableQuery>,
-      required: true,
-    },
-  });
+  interface TableHeadProps {
+    columns: DatatableColumns;
+    query: TableQuery;
+  }
+
+  const { columns, query } = defineProps<TableHeadProps>();
   const { t } = useI18n();
+  const router = useRouter();
+  const route = useRoute();
 
   const isLoading = inject("isLoading");
-  const onQueryUpdate = inject(onQueryUpdateKey, () => {});
+
+  const getOrderDirection = (columnName: ColumnName): OrderDirection => {
+    const { column, dir } = query;
+    if (column !== columnName) {
+      return DATATABLE_ORDER_DIRECTIONS.desc;
+    }
+
+    return dir === DATATABLE_ORDER_DIRECTIONS.desc
+      ? DATATABLE_ORDER_DIRECTIONS.asc
+      : DATATABLE_ORDER_DIRECTIONS.desc;
+  };
 
   const triggerSort = (columnName: ColumnName) => {
-    const getOrderDirection = (): OrderDirection => {
-      const { column, dir } = props.query;
-      if (column !== columnName) {
-        return "desc";
-      }
-      return dir === "desc" ? "asc" : "desc";
-    };
-
-    onQueryUpdate({
-      column: columnName,
-      dir: getOrderDirection(),
+    router.push({
+      path: route.path,
+      query: {
+        ...route.query,
+        column: columnName,
+        dir: getOrderDirection(columnName),
+      },
     });
   };
 
@@ -50,9 +51,7 @@
     column: ColumnObject,
   ): boolean => {
     const { sortable, name } = column;
-    const {
-      query: { dir, column: sortKey },
-    } = props;
+    const { dir, column: sortKey } = query;
     return !!(sortable && name === sortKey && dir === direction);
   };
 </script>
@@ -67,29 +66,30 @@
     <TableRow>
       <template v-for="column in columns">
         <th
-          v-if="column.sortable && !props.tableInfo.noRecords"
+          v-if="column.sortable"
           :key="`sortable-${column.name}`"
           :title="t(column.label)"
           class="kt-datatable__cell kt-datatable__cell--head"
           :class="{
             'kt-datatable__cell--sort': column.sortable,
           }"
-          :style="`width:${column.width};`"
         >
           <span @click="triggerSort(column.name)">
             {{ t(column.label) }}
             <i
-              v-show="isArrowVisible('desc', column)"
+              v-show="isArrowVisible(DATATABLE_ORDER_DIRECTIONS.desc, column)"
               class="la la-arrow-down"
             />
-            <i v-show="isArrowVisible('asc', column)" class="la la-arrow-up" />
+            <i
+              v-show="isArrowVisible(DATATABLE_ORDER_DIRECTIONS.asc, column)"
+              class="la la-arrow-up"
+            />
           </span>
         </th>
         <th
           v-else
           :key="column.name"
           class="kt-datatable__cell"
-          :style="`width:${column.width};`"
           :title="t(column.label)"
         >
           <span>

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-  import { PropType } from "vue";
-  // import { ref } from "vue";
-  // import type { Ref } from "vue";
-  import type { GetUserResponse } from "../types";
+  import { computed } from "vue";
+  import { useUsersTable } from "../composables";
+  import { USERS_DATATABLE_COLUMNS } from "../constants";
+  import UsersTableHeader from "./UsersTableHeader.vue";
   import UsersTableRow from "./UsersTableRow.vue";
   import {
     useDatatable,
@@ -11,96 +11,41 @@
     DatatableFilters,
     DatatableHeader,
   } from "@/components/Datatables";
-  import type { DatatableColumns } from "@/components/Datatables/typings";
-  import { useRootStore } from "@/store/root";
 
-  const props = defineProps({
-    columns: {
-      type: Array as PropType<DatatableColumns>,
-      required: true,
-    },
-  });
-  const { homePath } = useRootStore();
+  const { query, onPaginationChange } = useDatatable();
 
-  const {
-    records,
-    loading,
-    pagination,
-    tableInfo,
-    query,
-    refreshData,
-    setQuery,
-  } = useDatatable<GetUserResponse>({
-    endpoint: "user/draw",
-    redirectRoute: homePath,
-    columns: props.columns,
-    sortKey: "firstName",
-  });
+  const { data, isLoading, isFetching, error } = useUsersTable(query);
 
-  // const roles: Ref<any[]> = ref([]);
-  // const statuses: any[] = [
-  //   { id: 3, name: "All status" },
-  //   { id: 0, name: "Enabled" },
-  //   { id: 1, name: "Disabled" },
-  // ];
-  // const exportGeneration: boolean = false;
-
-  // const fetchRoles = () => {
-  //   get("user/roles/get")
-  //     .then((response) => {
-  //       roles.value = [
-  //         ...response.data,
-  //         { id: 0, display_name: "- All roles -" },
-  //       ];
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
-
-  // const deleteUser = async (user: User, index: number): Promise<void> => {
-  //   // if (!await dialog('general.confirm.delete', true)) {
-  //   //   return;
-  //   // }
-  //   post(endpoint + "/" + index + "/delete")
-  //     .then((response) => {
-  //       // dialog('strings.front.deleted_successfully', false);
-  //       console.log("strings.front.deleted_successfully");
-  //       refreshData();
-  //     })
-  //     .catch((error) => {
-  //       // dialog(error.response.data.message, false);
-  //       console.log(error.response.data.message);
-  //     });
-  // };
+  const pagination = computed(() => data.value?.pagination ?? null);
+  const users = computed(() => data.value?.data ?? null);
 </script>
 <template>
   <DatatableComponent
-    :tableInfo="tableInfo"
     :query="query"
-    :loading="loading"
-    :columns="columns"
-    lang-key="users"
-    add-route-name="add.user"
-    @onQueryUpdate="setQuery"
+    :isLoading="isLoading || isFetching"
+    :columns="USERS_DATATABLE_COLUMNS"
+    :error="error?.message"
   >
     <template #header>
-      <DatatableHeader lang-key="users" add-route-name="add.user" />
+      <DatatableHeader title="Users" subtitle="List of users">
+        <UsersTableHeader />
+      </DatatableHeader>
       <DatatableFilters />
     </template>
-    <template #default>
-      <users-table-row
-        v-for="(user, index) in records"
+    <template v-if="users" #default>
+      <UsersTableRow
+        v-for="(user, index) in users"
         :key="user.id"
-        :columns="columns"
+        :columns="USERS_DATATABLE_COLUMNS"
         :user="user"
         :is-even-row="index % 2 === 0"
       />
     </template>
-    <template #pagination>
+    <template v-if="pagination" #pagination>
       <DatatablePagination
-        v-if="!tableInfo.noRecords"
         :pagination="pagination"
+        :isLoading="isLoading"
+        @change="onPaginationChange"
       />
     </template>
   </DatatableComponent>

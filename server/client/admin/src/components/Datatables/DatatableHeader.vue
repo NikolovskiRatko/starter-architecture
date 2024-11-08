@@ -1,53 +1,24 @@
 <script setup lang="ts">
-  // import type { Ref } from "vue";
-  // import { BDropdown, BDropdownItem, BDropdownText } from 'bootstrap-vue';
-
   import {
     PortletHead,
     PortletHeadLabel,
     PortletHeadToolbar,
-    DashButton,
-    DashLink,
   } from "@starter-core/dash-ui/src";
-  import { IconUser, IconAdduser } from "@starter-core/icons";
-  import { useAuth } from "@websanova/vue-auth/src/v3.js";
-  import { computed } from "vue";
+  import { IconUser } from "@starter-core/icons";
 
-  const props = defineProps([
-    "value",
-    "addRouteName",
-    "langKey",
-    "draggableAddNewEnable",
-  ]);
-  // const exportGeneration: Ref<boolean> = ref(false);
-  const auth = useAuth();
-  const isUserAllowedToCreate = computed(() =>
-    auth.user().permissions_array.includes("write_users"),
-  );
+  interface DatatableHeaderProps {
+    title: string;
+    subtitle?: string;
+  }
 
-  // const generateCsv = async () => {
-  //   exportGeneration.value = true;
-  //   axios.post(props.endpoint, props.value)
-  //     .then((response) => {
-  //       console.log(response);
-  //       var hiddenElement = document.createElement('a'),
-  //         blob = new Blob([response.data], { type: "octet/stream" }),
-  //         url = window.URL.createObjectURL(blob);
-  //       hiddenElement.href = url;
-  //       var d = new Date();
-  //       hiddenElement.download = this.export_file+'_export_'+d.getFullYear()+'_'+(d.getMonth() < 9 ? '0'+(d.getMonth()+1): +(d.getMonth()+1))+'_'+(d.getDate() < 10 ? '0'+d.getDate(): d.getDate())+'.csv';
-  //       hiddenElement.click();
-  //       window.URL.revokeObjectURL(url);
-  //       this.exportGeneration = false;
-  //     });
-  // }
+  const { title, subtitle } = defineProps<DatatableHeaderProps>();
 </script>
 
 <template>
   <PortletHead :size="'lg'">
     <PortletHeadLabel :icon="IconUser">
-      Datatable header
-      <small>This is a subtitle</small>
+      {{ title }}
+      <small v-if="subtitle">{{ subtitle }}</small>
     </PortletHeadLabel>
 
     <PortletHeadToolbar>
@@ -102,21 +73,7 @@
       <!--            <span class="kt-nav__link-text">Excel</span>-->
       <!--          </b-dropdown-item>-->
       <!--        </b-dropdown>-->
-      <dash-link
-        v-if="isUserAllowedToCreate && props.addRouteName"
-        :to="{ name: 'add.user' }"
-        :icon="IconAdduser"
-        theme="secondary"
-      >
-        {{ $t("admin." + langKey + ".add") }}
-      </dash-link>
-      <dash-button
-        v-if="draggableAddNewEnable"
-        @click="$emit('add-new')"
-        :icon="IconAdduser"
-      >
-        {{ $t("admin." + langKey + ".add") }}
-      </dash-button>
+      <slot />
     </PortletHeadToolbar>
   </PortletHead>
 </template>

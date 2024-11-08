@@ -1,6 +1,6 @@
 import { computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { DATATABLE_ORDER_DIRECTIONS, initQueryData } from "../constants";
+import { DATATABLE_ORDER_DIRECTIONS, INITIAL_QUERY_DATA } from "../constants";
 import { onPaginationChange, OrderDirection, TableQuery } from "../typings";
 
 export function useDatatable() {
@@ -8,12 +8,14 @@ export function useDatatable() {
   const router = useRouter();
 
   const query = computed<TableQuery>(() => {
-    const queryObject = Object.assign({}, initQueryData);
+    const queryObject = Object.assign({}, INITIAL_QUERY_DATA);
     const { query: routeQuery } = route;
+
     const page = Number(routeQuery.page);
     const length = Number(routeQuery.length);
-    const column = String(routeQuery.column);
-    const dir = String(routeQuery.dir);
+    const column = routeQuery.column ? String(routeQuery.column) : null;
+    const dir = routeQuery.dir ? String(routeQuery.dir) : null;
+    const search = routeQuery.search ? String(routeQuery.search) : null;
 
     if (page && !isNaN(page)) {
       queryObject["page"] = page;
@@ -25,6 +27,10 @@ export function useDatatable() {
 
     if (column) {
       queryObject["column"] = column;
+    }
+
+    if (search) {
+      queryObject["search"] = search;
     }
 
     if (

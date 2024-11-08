@@ -1,19 +1,19 @@
 <script setup lang="ts">
-  import { PortletComponent, PortletBody } from "@starter-core/dash-ui/src";
   import { computed, provide } from "vue";
-  import {
-    TableHead,
-    TableLoader,
-    TableColumn,
-    TableRow,
-  } from "@/components/Datatables";
-  import {
-    TableQuery,
-    onQueryUpdateKey,
-  } from "@/components/Datatables/typings";
+  import { TableHead, TableLoader, TableColumn, TableRow } from "./_partials";
+  import { DatatableColumns, TableQuery } from "./typings";
+  import { PortletComponent, PortletBody } from "@starter-core/dash-ui/src";
   import "./DatatableComponent.scss";
 
-  const props = defineProps(["tableInfo", "query", "loading", "columns"]);
+  interface DatatableComponentProps {
+    columns: DatatableColumns;
+    query: TableQuery;
+    isLoading?: boolean;
+    error?: string;
+  }
+
+  const { query, columns, isLoading, error } =
+    defineProps<DatatableComponentProps>();
 
   defineSlots<{
     default: () => void;
@@ -21,15 +21,13 @@
     pagination: () => void;
   }>();
 
-  const emit = defineEmits(["onQueryUpdate"]);
-
-  const handleUpdateQuery = (query: TableQuery) => emit("onQueryUpdate", query);
-  const hasError = computed(() => !!props.tableInfo.error);
-  const isLoading = computed(() => props.loading);
+  const hasError = computed(() => !!error);
 
   provide("hasError", hasError);
-  provide("isLoading", isLoading);
-  provide(onQueryUpdateKey, handleUpdateQuery);
+  provide(
+    "isLoading",
+    computed(() => isLoading),
+  );
 </script>
 
 <template>
@@ -49,11 +47,7 @@
             'kt-datatable__table--loaded': !isLoading,
           }"
         >
-          <TableHead
-            :columns="columns"
-            :table-info="tableInfo"
-            :query="query"
-          />
+          <TableHead :columns="columns" :query="query" />
 
           <tbody
             class="kt-datatable__body"
@@ -62,25 +56,15 @@
               'kt-datatable__body--loaded': !isLoading,
             }"
           >
-            <TableRow v-if="tableInfo.noRecords">
+            <TableRow v-if="!isLoading && !$slots.default?.()?.length">
               <TableColumn>
                 <span class="datatable-error">No records found</span>
               </TableColumn>
             </TableRow>
 
-            <TableRow v-if="tableInfo.error">
+            <TableRow v-if="hasError">
               <TableColumn>
-                <span
-                  v-if="
-                    tableInfo.errorMessage &&
-                    typeof tableInfo.errorMessage !== 'undefined'
-                  "
-                  class="datatable-error"
-                  >{{ tableInfo.errorMessage }}</span
-                >
-                <span v-else class="datatable-error">{{
-                  $t("errors.generic_error")
-                }}</span>
+                <span class="datatable-error">{{ error }}</span>
               </TableColumn>
             </TableRow>
 
