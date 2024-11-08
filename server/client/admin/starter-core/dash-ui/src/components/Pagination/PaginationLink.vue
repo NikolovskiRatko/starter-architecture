@@ -1,28 +1,24 @@
 <script setup lang="ts">
-  import { PropType, computed } from "vue";
-
+  import { computed } from "vue";
   import "./PaginationLink.scss";
+
+  interface PaginationLinkProps {
+    isDisabled?: boolean;
+    isActive?: boolean;
+    classModifiers?: string[];
+  }
 
   const emit = defineEmits<{
     (e: "onClick", event: HTMLAnchorElement): void;
   }>();
-  const props = defineProps({
-    isDisabled: {
-      type: Boolean,
-      default: false,
-    },
-    isActive: {
-      type: Boolean,
-      default: false,
-    },
-    classModifiers: {
-      type: Array as PropType<string[]>,
-      default: () => [],
-    },
-  });
+  const {
+    classModifiers = [],
+    isActive = false,
+    isDisabled = false
+  } = defineProps<PaginationLinkProps>();
 
   const classNames = computed(() => {
-    return props.classModifiers.map((modifier) => {
+    return classModifiers.map((modifier) => {
       return `kt-datatable__pager__link--${modifier}`;
     });
   });
@@ -35,8 +31,8 @@
       :class="[
         ...classNames,
         {
-          'kt-datatable__pager__link--disabled': props.isDisabled,
-          'kt-datatable__pager__link--active': props.isActive,
+          'kt-datatable__pager__link--disabled': isDisabled,
+          'kt-datatable__pager__link--active': isActive,
         },
       ]"
       @click.prevent="(event) => emit('onClick', event)"

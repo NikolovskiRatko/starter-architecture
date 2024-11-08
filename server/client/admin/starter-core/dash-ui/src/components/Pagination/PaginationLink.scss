@@ -1,5 +1,5 @@
-@import "../utils";
-@import "../skin";
+@import "../../../../../src/components/Datatables/utils";
+@import "../../../../../src/components/Datatables/skin";
 
 .kt-datatable__pager__link {
   $block: &;

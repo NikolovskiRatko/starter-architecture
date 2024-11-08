@@ -1,7 +1,6 @@
 export * from "./composables";
 export * from "./constants";
 
-export { default as DatatablePagination } from "./DatatablePagination.vue";
 export { default as DatatableComponent } from "./DatatableComponent.vue";
 export { default as DatatableHeader } from "./DatatableHeader.vue";
 export { default as DatatableFilters } from "./DatatableFilters.vue";

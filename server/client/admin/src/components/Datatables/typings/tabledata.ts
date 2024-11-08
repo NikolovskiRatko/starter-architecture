@@ -5,19 +5,6 @@ export type OrderDirection = typeof DATATABLE_ORDER_DIRECTIONS[
 ];
 export type TableSections = "head" | "body" | "footer";
 
-interface PaginationOptions {
-  pageName: string;
-  path: string;
-}
-
-export interface PaginationObject {
-  count: number;
-  currentPage: number;
-  lastPage: number;
-  total: number;
-  options: PaginationOptions;
-  dataLength: number;
-}
 export interface TableQuery {
   page?: number;
   dir?: OrderDirection;

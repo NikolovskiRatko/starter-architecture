@@ -7,10 +7,10 @@
   import {
     useDatatable,
     DatatableComponent,
-    DatatablePagination,
     DatatableFilters,
     DatatableHeader,
   } from "@/components/Datatables";
+  import { PaginationComponent } from "@starter-core/dash-ui/src/components";
 
   const { query, onPaginationChange } = useDatatable();
 
@@ -42,7 +42,7 @@
       />
     </template>
     <template v-if="pagination" #pagination>
-      <DatatablePagination
+      <PaginationComponent
         :pagination="pagination"
         :isLoading="isLoading"
         @change="onPaginationChange"

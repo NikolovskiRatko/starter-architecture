@@ -1,9 +1,8 @@
 <script setup lang="ts">
   import { computed } from "vue";
-  import { PaginationLink } from "./_partials";
-  import { PaginationObject, onPaginationChangeParams } from "./typings";
-  import { InputSelectEvent } from "@/types";
-  import "./DatatablePagination.scss";
+  import PaginationLink from "./PaginationLink.vue";
+  import type { PaginationObject, onPaginationChangeParams } from "./types";
+  import "./PaginationComponent.scss";
 
   interface DatatablePagination {
     pagination: PaginationObject;

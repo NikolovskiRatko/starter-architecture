@@ -1,5 +1,5 @@
 import type { Permission, UserRoleId } from "./permissions";
-import { PaginationObject } from "@/components/Datatables/typings";
+import type { PaginationObject } from "@starter-core/dash-ui/src/components";
 
 export interface GetUserResponse {
   avatar_url: string | null;
