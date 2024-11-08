@@ -5,8 +5,12 @@
   import type { GetUserResponse } from "../types";
   import UserRoleBadge from "./UserRoleBadge.vue";
   import UserStatusBadge from "./UserStatusBadge.vue";
-  import { TableColumn, TableRow } from "@/components/Datatables";
-  import { DashButton, DashLink } from "@starter-core/dash-ui/src";
+  import {
+    DashButton,
+    DashLink,
+    TableColumn,
+    TableRow,
+  } from "@starter-core/dash-ui/src";
 
   interface UsersTableRowProps {
     user: GetUserResponse;

@@ -1,4 +1,5 @@
-import { PaginationObject, TableQuery } from "./typings";
+import type { TableQuery } from "./types";
+import type { PaginationObject } from "../Pagination";
 
 export const INITIAL_PAGINATION: PaginationObject = {
   lastPage: 0,

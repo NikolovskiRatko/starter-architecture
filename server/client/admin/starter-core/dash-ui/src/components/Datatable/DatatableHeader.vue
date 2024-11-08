@@ -1,14 +1,15 @@
 <script setup lang="ts">
+  import type { VueElement } from "vue";
   import {
     PortletHead,
     PortletHeadLabel,
     PortletHeadToolbar,
-  } from "@starter-core/dash-ui/src";
-  import { IconUser } from "@starter-core/icons";
+  } from "../Portlet";
 
   interface DatatableHeaderProps {
     title: string;
     subtitle?: string;
+    Icon?: VueElement;
   }
 
   const { title, subtitle } = defineProps<DatatableHeaderProps>();
@@ -16,7 +17,7 @@
 
 <template>
   <PortletHead :size="'lg'">
-    <PortletHeadLabel :icon="IconUser">
+    <PortletHeadLabel :icon="Icon">
       {{ title }}
       <small v-if="subtitle">{{ subtitle }}</small>
     </PortletHeadLabel>

@@ -2,8 +2,8 @@ import { useQuery, UseQueryReturnType } from "@tanstack/vue-query";
 import axios, { type AxiosError } from "axios";
 import type { ComputedRef } from "vue";
 import { USER_API_ENDPOINTS, USERS_TABLE_QUERY_KEY } from "../constants";
-import { TableQuery } from "@/components/Datatables/typings";
-import type { UsersTableResponse } from "@/modules/users/types";
+import type { UsersTableResponse } from "../types";
+import type { TableQuery } from "@starter-core/dash-ui/src";
 
 export const useUsersTable = (
   query: ComputedRef<TableQuery>,

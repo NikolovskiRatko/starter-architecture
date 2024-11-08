@@ -1,20 +1,16 @@
 <script setup lang="ts">
-  import { inject, ref, provide, PropType } from "vue";
-  import { TableSections } from "../typings";
-
+  import { inject, ref, provide, computed } from "vue";
+  import type { TableSections } from "./types";
   import "./TableRow.scss";
 
-  const props = defineProps({
-    section: {
-      type: String as PropType<TableSections>,
-      default: "body",
-    },
-    isEven: {
-      default: false,
-    },
-  });
+  interface TableRowProps {
+    section?: TableSections,
+    isEven?: boolean;
+  }
 
-  provide("isEvenRow", props.isEven);
+  const { isEven = false, section = "body" } = defineProps<TableRowProps>();
+
+  provide("isEvenRow", computed(() => isEven));
 
   const isHovering = ref(false);
   const isLoading = inject("isLoading");

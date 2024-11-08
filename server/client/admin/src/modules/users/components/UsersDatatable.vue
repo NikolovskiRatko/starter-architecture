@@ -9,8 +9,8 @@
     DatatableComponent,
     DatatableFilters,
     DatatableHeader,
-  } from "@/components/Datatables";
-  import { PaginationComponent } from "@starter-core/dash-ui/src/components";
+    PaginationComponent,
+  } from "@starter-core/dash-ui/src";
 
   const { query, onPaginationChange } = useDatatable();
 

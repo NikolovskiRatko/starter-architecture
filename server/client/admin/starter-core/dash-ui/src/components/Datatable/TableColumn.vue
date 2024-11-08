@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { inject } from "vue";
-  import { TableSections } from "@/components/Datatables/typings";
+  import type { TableSections } from "./types";
   import "./TableColumn.scss";
 
   interface TableColumnProps {

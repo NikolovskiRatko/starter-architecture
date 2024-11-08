@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import type { TableLoader } from "@/types";
+  import type { TableLoader } from "./types";
   import "./TableLoader.scss";
 
   const { hasNoShadow = false } = defineProps<TableLoader>();

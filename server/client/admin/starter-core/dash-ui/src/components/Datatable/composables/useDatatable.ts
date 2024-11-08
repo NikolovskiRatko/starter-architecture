@@ -1,7 +1,8 @@
 import { computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { DATATABLE_ORDER_DIRECTIONS, INITIAL_QUERY_DATA } from "../constants";
-import { onPaginationChange, OrderDirection, TableQuery } from "../typings";
+import type { onPaginationChange } from "../../Pagination";
+import type { OrderDirection, TableQuery } from "../types";
 
 export function useDatatable() {
   const route = useRoute();

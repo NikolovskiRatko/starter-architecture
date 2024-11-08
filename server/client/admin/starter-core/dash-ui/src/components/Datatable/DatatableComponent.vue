@@ -1,8 +1,11 @@
 <script setup lang="ts">
   import { computed, provide } from "vue";
-  import { TableHead, TableLoader, TableColumn, TableRow } from "./_partials";
-  import { DatatableColumns, TableQuery } from "./typings";
-  import { PortletComponent, PortletBody } from "@starter-core/dash-ui/src";
+  import TableRow from "./TableRow.vue";
+  import TableHead from "./TableHead.vue"
+  import TableLoader from "./TableLoader.vue"
+  import TableColumn from "./TableColumn.vue"
+  import type { DatatableColumns, TableQuery } from "./types";
+  import { PortletComponent, PortletBody } from "../Portlet";
   import "./DatatableComponent.scss";
 
   interface DatatableComponentProps {

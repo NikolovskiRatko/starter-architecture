@@ -1,7 +1,6 @@
 <script setup lang="ts">
   import { useRoute, useRouter } from "vue-router";
-  import { InputTextEvent } from "@/types";
-  import { PortletBody } from "@starter-core/dash-ui/src";
+  import { PortletBody } from "../Portlet";
 
   const router = useRouter();
   const route = useRoute();

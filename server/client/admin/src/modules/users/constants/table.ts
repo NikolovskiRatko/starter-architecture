@@ -1,4 +1,4 @@
-import { DatatableColumns } from "@/components/Datatables/typings";
+import { DatatableColumns } from "@starter-core/dash-ui/src";
 
 export const USERS_DATATABLE_COLUMNS: DatatableColumns = [
   {

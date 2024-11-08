@@ -1,4 +1,4 @@
-import type { DATATABLE_ORDER_DIRECTIONS } from "@/components/Datatables";
+import type { DATATABLE_ORDER_DIRECTIONS } from "../constants";
 
 export type OrderDirection = typeof DATATABLE_ORDER_DIRECTIONS[
   keyof typeof DATATABLE_ORDER_DIRECTIONS
