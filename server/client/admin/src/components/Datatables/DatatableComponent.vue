@@ -90,7 +90,7 @@
 
         <slot name="pagination"></slot>
 
-        <TableLoader />
+        <TableLoader v-if="isLoading" />
       </div>
     </PortletBody>
   </PortletComponent>
