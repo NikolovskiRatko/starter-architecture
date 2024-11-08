@@ -1,15 +1,18 @@
 <script setup lang="ts">
+  import { useRoute, useRouter } from "vue-router";
+  import { InputTextEvent } from "@/types";
   import { PortletBody } from "@starter-core/dash-ui/src";
-  import { ref, inject } from "vue";
-  import type { Ref } from "vue";
-  import { onQueryUpdateKey } from "@/components/Datatables/typings";
 
-  const onQueryUpdate = inject(onQueryUpdateKey, () => {});
+  const router = useRouter();
+  const route = useRoute();
 
-  const searchValue: Ref<string> = ref("");
-  const handleSearchChange = (event: HTMLInputElementEvent) => {
-    onQueryUpdate({
-      search: event.target.value,
+  const handleSearch = (event: InputTextEvent) => {
+    router.push({
+      path: route.path,
+      query: {
+        ...route.query,
+        search: event.target.value,
+      },
     });
   };
 </script>
@@ -24,8 +27,7 @@
             <div class="col-md-4 kt-margin-b-20-tablet-and-mobile">
               <div class="kt-input-icon kt-input-icon--left">
                 <input
-                  v-model="searchValue"
-                  @input="handleSearchChange"
+                  v-on:keyup.enter="handleSearch"
                   type="text"
                   class="form-control"
                   placeholder="Search..."

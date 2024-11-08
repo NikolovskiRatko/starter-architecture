@@ -1,6 +1,6 @@
 import { PaginationObject, TableQuery } from "./typings";
 
-export const initPagination: PaginationObject = {
+export const INITIAL_PAGINATION: PaginationObject = {
   lastPage: 0,
   currentPage: 0,
   total: 0,
@@ -12,15 +12,12 @@ export const initPagination: PaginationObject = {
   },
 };
 
-export const DATATABLE_QUERY_KEY = "datatable";
-
 export const DATATABLE_ORDER_DIRECTIONS = {
   asc: "asc",
   desc: "desc",
 } as const;
 
-export const initQueryData: TableQuery = {
+export const INITIAL_QUERY_DATA: TableQuery = {
   length: 10,
-  search: "",
   dir: DATATABLE_ORDER_DIRECTIONS.asc,
 };
