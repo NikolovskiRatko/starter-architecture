@@ -1,4 +1,4 @@
-@import "../../../../../src/components/Datatables/utils";
+@import "utils";
 
 .kt-datatable__loader {
   @include kt-full-absolute-positioned(rgba(255, 255, 255, 0.6));
