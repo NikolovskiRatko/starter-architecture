@@ -10,7 +10,7 @@
 
   interface DatatableComponentProps {
     columns: DatatableColumns;
-    query: TableQuery;
+    query?: TableQuery;
     isLoading?: boolean;
     error?: string;
   }

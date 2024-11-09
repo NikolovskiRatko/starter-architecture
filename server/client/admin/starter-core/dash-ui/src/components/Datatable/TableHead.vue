@@ -14,7 +14,7 @@
 
   interface TableHeadProps {
     columns: DatatableColumns;
-    query: TableQuery;
+    query?: TableQuery;
   }
 
   const { columns, query } = defineProps<TableHeadProps>();
@@ -25,7 +25,12 @@
   const isLoading = inject("isLoading");
 
   const getOrderDirection = (columnName: ColumnName): OrderDirection => {
+    if (!query) {
+      return DATATABLE_ORDER_DIRECTIONS.desc;
+    }
+
     const { column, dir } = query;
+
     if (column !== columnName) {
       return DATATABLE_ORDER_DIRECTIONS.desc;
     }
@@ -50,8 +55,13 @@
     direction: OrderDirection,
     column: ColumnObject,
   ): boolean => {
+    if (!query) {
+      return false;
+    }
+
     const { sortable, name } = column;
     const { dir, column: sortKey } = query;
+
     return !!(sortable && name === sortKey && dir === direction);
   };
 </script>
