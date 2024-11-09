@@ -2,27 +2,27 @@
   import { useNavigations } from "../composables";
   import { NAVIGATIONS_TABLE_COLUMNS } from "../constants";
   import { PageWrapper } from "@/components";
+  import { useBEMBuilder } from "@/helpers";
   import {
     useDatatable,
     DatatableComponent,
-    DatatablePagination,
+    PaginationComponent,
     DatatableFilters,
     DatatableHeader,
     TableRow,
     TableColumn,
-    INITIAL_TABLE_INFO,
-  } from "@/components/Datatables";
-  import { useBEMBuilder } from "@/helpers";
+  } from "@starter-core/dash-ui/src";
 
   const [block, element] = useBEMBuilder("navigations-page");
 
   const { isLoading, data: navigations } = useNavigations();
+  const { query } = useDatatable();
 </script>
 <template>
   <div :class="block">
     <PageWrapper>
       <DatatableComponent
-        :table-info="INITIAL_TABLE_INFO"
+        :isLoading="isLoading"
         :columns="NAVIGATIONS_TABLE_COLUMNS"
       >
         <template #default>
