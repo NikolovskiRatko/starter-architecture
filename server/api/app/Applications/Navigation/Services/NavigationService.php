@@ -2,6 +2,7 @@
 
 namespace App\Applications\Navigation\Services;
 
+use App\Applications\Navigation\DTO\NavigationDTO;
 use App\Applications\Navigation\Repositories\NavigationRepositoryInterface;
 use App\Applications\Navigation\Model\Navigation;
 use Illuminate\Database\Eloquent\Collection;
@@ -37,11 +38,12 @@ class NavigationService implements NavigationServiceInterface
      * Retrieve a single navigation by its ID.
      *
      * @param  int  $id
-     * @return Navigation
+     * @return NavigationDTO
      */
-    public function getNavigationById(int $id): Navigation
+    public function getNavigationById(int $id): NavigationDTO
     {
-        return $this->repository->findById($id);
+        $navigation = $this->repository->findById($id);
+        return NavigationDTO::fromModel($navigation);
     }
 
     /**

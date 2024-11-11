@@ -27,7 +27,7 @@ class NavigationController extends Controller
     public function get($id)
     {
         $navigation = $this->navigationService->getNavigationById($id);
-        return response()->json($navigation);
+        return response()->json($navigation->toArray());
     }
 
     public function create(Request $request)
