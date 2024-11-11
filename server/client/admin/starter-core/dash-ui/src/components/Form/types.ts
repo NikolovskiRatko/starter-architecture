@@ -32,6 +32,7 @@ export interface FormInputRadioProps {
 export interface FormDropdownOption<T = string> {
   id: T;
   name: string;
+  isDisabled?: boolean;
 }
 
 export interface FormDropdownProps {

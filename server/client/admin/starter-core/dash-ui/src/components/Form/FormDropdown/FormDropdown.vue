@@ -1,14 +1,20 @@
 <script setup lang="ts">
+  import { computed } from "vue";
   import type { FormDropdownProps } from "../types";
   import FormGroup from "../FormGroup/FormGroup.vue";
   import "./FormDropdown.scss";
 
-  const { label, id, isInline, modelValue, errors, isDisabled, options } =
+  const { label, id, isInline, errors, isDisabled, options } =
     defineProps<FormDropdownProps>();
 
-  const emit = defineEmits<{
-    "update:modelValue": [value: string];
-  }>();
+  const model = defineModel({
+    required: true,
+    type: String
+  });
+
+  const hasDefaultOption = computed(() => !options.some(
+    (option) => option.id === String(model.value)
+  ));
 </script>
 
 <template>
@@ -26,20 +32,15 @@
             'form-dropdown__input--error': errors?.length,
           },
         ]"
-        :value="modelValue"
         :disabled="isDisabled"
-        @input="
-          (event: Event) => {
-            emit('update:modelValue', (event.target as HTMLInputElement).value);
-          }
-        "
+        v-model="model"
       >
-        <option value="">Select an Option</option>
+        <option v-if="hasDefaultOption" value="">Select an Option</option>
         <option
           v-for="option in options"
           :key="option.id"
-          :selected="option.id == modelValue"
           :value="option.id"
+          :disabled="option.isDisabled"
         >
           {{ option.name }}
         </option>
