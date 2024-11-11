@@ -43,3 +43,8 @@ export interface NavigationMenuItemQuery {
   navigation_id?: number;
   external_url?: string;
 }
+
+export type NavigationQuery = Pick<
+  Navigation,
+  "title" | "slug" | "parent_id" | "visible"
+>;

@@ -1,18 +1,23 @@
 <script lang="ts" setup>
+  import { IconPlus } from "@starter-core/icons";
+  import { useI18n } from "vue-i18n";
   import { useNavigations } from "../composables";
-  import { NAVIGATIONS_TABLE_COLUMNS } from "../constants";
+  import {
+    NAVIGATION_ROUTES_DATA,
+    NAVIGATIONS_TABLE_COLUMNS,
+  } from "../constants";
   import { PageWrapper } from "@/components";
   import { useBEMBuilder } from "@/helpers";
   import {
     useDatatable,
     DatatableComponent,
-    PaginationComponent,
-    DatatableFilters,
     DatatableHeader,
     TableRow,
     TableColumn,
+    DashLink,
   } from "@starter-core/dash-ui/src";
 
+  const { t } = useI18n();
   const [block, element] = useBEMBuilder("navigations-page");
 
   const { isLoading, data: navigations } = useNavigations();
@@ -25,13 +30,30 @@
         :isLoading="isLoading"
         :columns="NAVIGATIONS_TABLE_COLUMNS"
       >
+        <template #header>
+          <DatatableHeader title="Navigations" subtitle="List of navigations">
+            <DashLink
+              :to="{ name: NAVIGATION_ROUTES_DATA.addNavigation.name }"
+              :icon="IconPlus"
+            >
+              {{ t("navigation.add") }}
+            </DashLink>
+          </DatatableHeader>
+        </template>
         <template #default>
           <TableRow
             v-for="navigation in navigations"
             v-bind:key="navigation.id"
           >
             <TableColumn>
-              {{ navigation.title }}
+              <RouterLink
+                :to="{
+                  name: NAVIGATION_ROUTES_DATA.editNavigation.name,
+                  params: { navigationId: navigation.id },
+                }"
+              >
+                {{ navigation.title }}
+              </RouterLink>
             </TableColumn>
             <TableColumn>
               {{ navigation.slug }}

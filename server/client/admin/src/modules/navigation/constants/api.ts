@@ -1,4 +1,5 @@
 export const NAVIGATIONS_QUERY_KEY = "navigations";
+export const NAVIGATION_QUERY_KEY = "navigation";
 export const NAVIGATION_MENUS_QUERY_KEY = "navigation-menus";
 export const NAVIGATION_MENU_QUERY_KEY = "navigation-menu";
 
@@ -10,4 +11,9 @@ export const NAVIGATION_MENU_API_ENDPOINTS = {
 
 export const NAVIGATION_MENU_ITEM_API_ENDPOINTS = {
   create: "navigation-menu-item/create",
+} as const;
+
+export const NAVIGATION_API_ENDPOINTS = {
+  get: (id: number) => `navigation/${id}`,
+  create: "navigation/create",
 } as const;
