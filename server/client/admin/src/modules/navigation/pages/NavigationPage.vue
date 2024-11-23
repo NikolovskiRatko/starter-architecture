@@ -78,20 +78,13 @@
   });
 
   const slugPrepend = computed(() => {
-    if (parentId && navigations.value) {
-      const parentNavigation = navigations.value.find(
-        ({ id: navigationId }) => {
-          return parentId.value === navigationId;
-        },
-      );
-
-      if (parentNavigation) {
-        return `${parentNavigation.slug}`;
-      }
+    if (!data?.value?.parent_url) {
+      return "/";
     }
 
-    return "/";
+    return `${data.value.parent_url}/`;
   });
+  const isStatic = computed(() => data?.value?.static);
 </script>
 <template>
   <PageWrapper>
@@ -107,6 +100,7 @@
         {{ t("buttons.back") }}
       </DashLink>
       <DashButton
+        v-if="!isStatic"
         type="submit"
         :icon="isEditPage ? IconSave : IconPlus"
         :loading="isLoading"
@@ -119,17 +113,36 @@
       <PortletBody>
         <form autocomplete="off" @submit.prevent="submitHandler">
           <NavigationsDropdown
+            v-if="!isStatic"
             v-model="parentId"
             :disabled-options="navigationId ? [navigationId] : undefined"
             :label="t('navigation.parent')"
           />
-          <FormInput v-model="title" name="title" label="Title" is-inline />
-          <FormInput v-model="slug" name="slug" label="Slug" is-inline>
+          <FormInput
+            v-model="title"
+            name="title"
+            label="Title"
+            :disabled="isStatic"
+            is-inline
+          />
+          <FormInput
+            v-model="slug"
+            name="slug"
+            label="Slug"
+            :disabled="isStatic"
+            is-inline
+          >
             <template v-slot:prependContent>
               {{ slugPrepend }}
             </template>
           </FormInput>
-          <FormSwitch v-model="visible" id="visible" label="Visible" />
+          <FormSwitch
+            v-if="!isStatic"
+            v-model="visible"
+            id="visible"
+            label="Visible"
+          />
+          <span v-else>Visible</span>
         </form>
       </PortletBody>
     </PortletComponent>
