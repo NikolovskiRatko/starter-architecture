@@ -27,9 +27,9 @@ interface NavigationMenuServiceInterface
      * Retrieve a navigation menu by ID, including its associated items.
      *
      * @param int $id
-     * @return NavigationMenu|null
+     * @return NavigationMenuDTO|null
      */
-    public function getByIdWithItems(int $id): ?NavigationMenu;
+    public function getByIdWithItems(int $id): ?NavigationMenuDTO;
 
     /**
      * Create a new navigation menu.

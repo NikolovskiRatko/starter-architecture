@@ -33,6 +33,15 @@ class NavigationMenuController extends Controller
             : response()->json(['error' => 'Menu not found'], 404);
     }
 
+    public function getBySlug(string $slug): JsonResponse
+    {
+        $menu = $this->service->getBySlugWithItems($slug);
+
+        return $menu
+            ? response()->json($menu->toArray())
+            : response()->json(['error' => 'Menu not found'], 404);
+    }
+
     public function create(Request $request): JsonResponse
     {
         $menuDTO = NavigationMenuDTO::fromRequest($request);

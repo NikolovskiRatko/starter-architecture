@@ -133,11 +133,11 @@ class Navigation extends Model
     }
 
     /**
-     * Get the full URL for the navigation.
+     * Get the parent path for the navigation.
      *
      * @return string
      */
-    public function getParentUrlAttribute(): string
+    public function getParentPathAttribute(): string
     {
         $ancestorSlugs = DB::table('navigation_treepath')
             ->join('navigations', 'navigations.id', '=', 'navigation_treepath.ancestor')
@@ -147,5 +147,19 @@ class Navigation extends Model
             ->pluck('navigations.slug');
 
         return $ancestorSlugs->implode('/');
+    }
+
+    /**
+     * Get the full path for the navigation.
+     *
+     * @return string
+     */
+    public function getPathAttribute(): string
+    {
+        // Use the parent path and append the current slug
+        $parentPath = $this->parent_path;
+        $separator = $parentPath && $this->slug ? '/' : '';
+
+        return '/' . ltrim(rtrim($parentPath . $separator . $this->slug, '/'), '/');
     }
 }

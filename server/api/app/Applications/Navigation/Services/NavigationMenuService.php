@@ -28,15 +28,27 @@ class NavigationMenuService implements NavigationMenuServiceInterface
     }
 
     /**
-     * Retrieve a navigation menu by ID, including its associated items.
+     * Retrieve a navigation menu by ID, including its associated items, and return as a DTO.
      *
      * @param int $id
-     * @return NavigationMenu|null
+     * @return NavigationMenuDTO|null
      */
-    public function getByIdWithItems(int $id): ?NavigationMenu
+    public function getByIdWithItems(int $id): ?NavigationMenuDTO
     {
-        // Fetch the menu with its items using Eloquent eager loading
-        return $this->repository->findByIdWithItems($id);
+        $navigationMenu = $this->repository->findByIdWithItems($id);
+
+        return $navigationMenu
+            ? NavigationMenuDTO::fromModel($navigationMenu)
+            : null;
+    }
+
+    public function getBySlugWithItems(string $slug): ?NavigationMenuDTO
+    {
+        $navigationMenu = $this->repository->findBySlugWithItems($slug);
+
+        return $navigationMenu
+            ? NavigationMenuDTO::fromModel($navigationMenu)
+            : null;
     }
 
     /**

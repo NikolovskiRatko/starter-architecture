@@ -22,7 +22,8 @@ class NavigationDTO
     public ?int $content_id;
     public ?string $content_type;
     public ?array $content;
-    public ?string $parent_url;
+    public ?string $parent_path;
+    public ?string $path;
     public bool $static;
 
     public function __construct(
@@ -37,7 +38,8 @@ class NavigationDTO
         ?int $content_id = null,
         ?string $content_type = null,
         ?array $content = null,
-        ?string $parent_url = null,
+        ?string $parent_path = null,
+        ?string $path = null,
         bool $static = false
     ) {
         $this->id = $id;
@@ -51,7 +53,8 @@ class NavigationDTO
         $this->content_id = $content_id;
         $this->content_type = $content_type;
         $this->content = $content;
-        $this->parent_url = $parent_url;
+        $this->parent_path = $parent_path;
+        $this->path = $path;
         $this->static = $static;
     }
 
@@ -98,8 +101,7 @@ class NavigationDTO
             livedate: isset($data['livedate']) ? new DateTime($data['livedate']) : Carbon::now(),
             enddate: isset($data['enddate']) ? new DateTime($data['enddate']) : null,
             content_id: $data['content_id'] ?? null,
-            content_type: $data['content_type'] ?? null,
-            parent_url: $data['parent_url'] ?? null
+            content_type: $data['content_type'] ?? null
         );
     }
 
@@ -123,7 +125,8 @@ class NavigationDTO
             content_id: $navigation->content_id,
             content_type: $navigation->content_type,
             content: $navigation->content ? $navigation->content->toArray() : null,
-            parent_url: $navigation->parent_url,
+            parent_path: $navigation->parent_path,
+            path: $navigation->path,
             static: (bool) $navigation->static
         );
     }
@@ -157,7 +160,8 @@ class NavigationDTO
             'content_id' => $this->content_id,
             'content_type' => $this->content_type,
             'content' => $this->content,
-            'parent_url' => $this->parent_url,
+            'parent_path' => $this->parent_path,
+            'path' => $this->path,
             'static' => $this->static,
         ];
     }

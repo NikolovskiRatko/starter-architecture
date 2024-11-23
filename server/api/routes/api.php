@@ -2,6 +2,7 @@
 
 use App\Applications\User\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Frontend\NavigationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,13 +22,15 @@ use Illuminate\Support\Facades\Route;
 //});
 
 // NON AUTHORIZED ROUTES
-Route::get('vue', [HomeController::class,'vue']);
+Route::get('vue', [HomeController::class, 'vue']);
+
 // AUTHENTICATION ROUTES
 Route::group([
     'prefix' => 'auth',
 ], function () {
-    Route::post('login', [LoginController::class,'login']);
+    Route::post('login', [LoginController::class, 'login']);
 });
+
 // GUEST ROUTES
 Route::group([
     'prefix' => 'guest',
@@ -45,9 +48,15 @@ Route::group([
     Route::group([
         'prefix' => 'auth',
     ], function () {
-        Route::post('logout', [LoginController::class,'logout']);
+        Route::post('logout', [LoginController::class, 'logout']);
         Route::get('user', [LoginController::class, 'user']);
         Route::get('refresh', [LoginController::class, 'refresh']);
     });
 });
 
+// Nuxt Routes
+Route::group([
+    'prefix' => 'nuxt',
+], function () {
+    Route::get('/menu/{slug}', [NavigationController::class, 'get']);
+});

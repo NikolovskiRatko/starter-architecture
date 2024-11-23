@@ -14,6 +14,7 @@ return new class extends Migration
         // Create the `navigation_menus` table to represent menu containers/groups
         Schema::create('navigation_menus', function (Blueprint $table) {
             $table->id();
+            $table->string('slug')->unique();
             $table->string('name');
             $table->text('description')->nullable();
             $table->timestamps();
@@ -23,11 +24,11 @@ return new class extends Migration
         Schema::create('navigation_menu_items', function (Blueprint $table) {
             $table->id();
             $table->string('label');
-            $table->unsignedBigInteger('navigation_id')->nullable(); // Link to `navigations` entity
+            $table->unsignedBigInteger('navigation_id')->nullable();
             $table->foreign('navigation_id')->references('id')->on('navigations')->onDelete('cascade');
 
-            $table->string('external_url')->nullable(); // For external links
-            $table->foreignId('menu_id')->constrained('navigation_menus')->onDelete('cascade'); // Belongs to a `navigation_menu`
+            $table->string('external_url')->nullable();
+            $table->foreignId('menu_id')->constrained('navigation_menus')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -1,4 +1,9 @@
 <?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,7 +15,6 @@
 |
 */
 
-use App\Http\Controllers\HomeController;
+Route::get('/login', [HomeController::class, 'index'])->name('login');
 
-Route::get('/login', [HomeController::class,'index'])->name('login');
-Route::get('/{any}', [HomeController::class,'index'])->where('any', '.*');
+Route::get('/{any}', [HomeController::class, 'index'])->where('any', '.*');

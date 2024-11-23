@@ -50,6 +50,13 @@ class NavigationMenuRepository implements NavigationMenuRepositoryInterface
         return $this->navigationMenu->with('items')->find($id);
     }
 
+    public function findBySlugWithItems(string $slug)
+    {
+        return NavigationMenu::with('items.navigation')
+            ->where('slug', $slug)
+            ->first();
+    }
+
     /**
      * Create a new navigation menu.
      *

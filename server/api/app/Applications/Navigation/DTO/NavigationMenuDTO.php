@@ -12,15 +12,18 @@ class NavigationMenuDTO
     public int $id;
     public string $name;
     public ?string $description;
+    public array $items;
 
     public function __construct(
         int $id,
         string $name,
-        ?string $description = null
+        ?string $description = null,
+        array $items = []
     ) {
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;
+        $this->items = $items;
     }
 
     /**
@@ -69,7 +72,8 @@ class NavigationMenuDTO
         return new self(
             id: $navigationMenu->id,
             name: $navigationMenu->name,
-            description: $navigationMenu->description
+            description: $navigationMenu->description,
+            items: NavigationMenuItemDTO::fromCollection($navigationMenu->items ?? [])
         );
     }
 

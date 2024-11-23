@@ -11,6 +11,7 @@ class NavigationMenuItemDTO
 {
     public int $id;
     public ?int $navigation_id;
+    public ?array $navigation;
     public ?string $external_url;
     public int $menu_id;
     public string $label;
@@ -18,12 +19,14 @@ class NavigationMenuItemDTO
     public function __construct(
         int $id,
         ?int $navigation_id = null,
+        ?array $navigation = null,
         ?string $external_url = null,
         int $menu_id,
         string $label
     ) {
         $this->id = $id;
         $this->navigation_id = $navigation_id;
+        $this->navigation = $navigation;
         $this->external_url = $external_url;
         $this->menu_id = $menu_id;
         $this->label = $label;
@@ -74,6 +77,7 @@ class NavigationMenuItemDTO
         return new self(
             id: $data['id'] ?? 0,
             navigation_id: $data['navigation_id'] ?? null,
+            navigation: null,
             external_url: $data['external_url'] ?? null,
             menu_id: $data['menu_id'],
             label: $data['label']
@@ -91,6 +95,7 @@ class NavigationMenuItemDTO
         return new self(
             id: $item->id,
             navigation_id: $item->navigation_id,
+            navigation: $item->navigation ? NavigationDTO::fromModel($item->navigation)->toArray() : null,
             external_url: $item->external_url,
             menu_id: $item->menu_id,
             label: $item->label
@@ -117,6 +122,7 @@ class NavigationMenuItemDTO
         return [
             'id' => $this->id,
             'navigation_id' => $this->navigation_id,
+            'navigation' => $this->navigation,
             'external_url' => $this->external_url,
             'menu_id' => $this->menu_id,
             'label' => $this->label,

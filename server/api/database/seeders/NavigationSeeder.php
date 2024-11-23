@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Applications\Navigation\Model\Navigation;
+use App\Applications\Navigation\Model\NavigationMenu;
 use Illuminate\Database\Seeder;
 
 class NavigationSeeder extends Seeder
@@ -44,7 +45,7 @@ class NavigationSeeder extends Seeder
             'static' => true,
         ]);
 
-        // Optionally, add a child under "About Us"
+        // Add a child under "About Us"
         Navigation::create([
             'title' => 'Our Team',
             'slug' => 'our-team',
@@ -54,6 +55,46 @@ class NavigationSeeder extends Seeder
             'enddate' => null,
             'parent_id' => $aboutUs->id,
             'static' => true,
+        ]);
+
+        // Create "Top menu" and "Footer menu" containers
+        $topMenu = NavigationMenu::create([
+            'slug' => 'top-menu',
+            'name' => 'Top Menu',
+            'description' => 'This is the top navigation menu',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        $footerMenu = NavigationMenu::create([
+            'slug' => 'footer-menu',
+            'name' => 'Footer Menu',
+            'description' => 'This is the footer navigation menu',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        // Add "Home" and "Contact" to "Top Menu"
+        $topMenu->items()->create([
+            'label' => 'Home',
+            'navigation_id' => $home->id,
+        ]);
+
+        $topMenu->items()->create([
+            'label' => 'Contact',
+            'navigation_id' => $contact->id,
+        ]);
+
+        // Add "About Us" to "Footer Menu"
+        $topMenu->items()->create([
+            'label' => 'About Us',
+            'navigation_id' => $aboutUs->id,
+        ]);
+
+        // Add an external link to "Footer Menu"
+        $footerMenu->items()->create([
+            'label' => 'Privacy Policy',
+            'external_url' => 'https://example.com/privacy-policy',
         ]);
     }
 }
