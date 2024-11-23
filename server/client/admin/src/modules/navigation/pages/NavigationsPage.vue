@@ -1,4 +1,12 @@
 <script lang="ts" setup>
+  import {
+    useDatatable,
+    DatatableComponent,
+    DatatableHeader,
+    TableRow,
+    TableColumn,
+    DashLink,
+  } from "@starter-core/dash-ui/src";
   import { IconPlus } from "@starter-core/icons";
   import { useI18n } from "vue-i18n";
   import { useNavigations } from "../composables";
@@ -8,14 +16,6 @@
   } from "../constants";
   import { PageWrapper } from "@/components";
   import { useBEMBuilder } from "@/helpers";
-  import {
-    useDatatable,
-    DatatableComponent,
-    DatatableHeader,
-    TableRow,
-    TableColumn,
-    DashLink,
-  } from "@starter-core/dash-ui/src";
 
   const { t } = useI18n();
   const [block, element] = useBEMBuilder("navigations-page");
@@ -56,7 +56,7 @@
               </RouterLink>
             </TableColumn>
             <TableColumn>
-              {{ navigation.parent_url }}/{{ navigation.slug }}
+              {{ navigation.parent_path }}/{{ navigation.slug }}
             </TableColumn>
             <TableColumn>
               {{ navigation.livedate }}
