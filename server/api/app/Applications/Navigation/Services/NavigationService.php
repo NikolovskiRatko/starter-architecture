@@ -27,13 +27,16 @@ class NavigationService implements NavigationServiceInterface
     }
 
     /**
-     * Retrieve all navigations.
+     * Retrieve all navigations as DTOs.
      *
-     * @return Collection|Navigation[]
+     * @return Collection|NavigationDTO[]
      */
     public function getAllNavigations(): Collection
     {
-        return $this->repository->all();
+        $navigations = $this->repository->all();
+
+        // Transform each navigation into a DTO
+        return new Collection(NavigationDTO::fromCollection($navigations));
     }
 
     /**

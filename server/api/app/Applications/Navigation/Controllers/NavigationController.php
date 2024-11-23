@@ -22,7 +22,7 @@ class NavigationController extends Controller
     public function getAll()
     {
         $navigations = $this->navigationService->getAllNavigations();
-        return response()->json($navigations);
+        return response()->json($navigations->map->toArray());
     }
 
     public function get($id)

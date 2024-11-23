@@ -11,7 +11,7 @@ interface NavigationServiceInterface
     /**
      * Retrieve all navigations.
      *
-     * @return Collection|Navigation[]
+     * @return Collection|NavigationDTO[]
      */
     public function getAllNavigations(): Collection;
 
