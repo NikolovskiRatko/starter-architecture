@@ -4,7 +4,10 @@
   "menu": {
     "main": "Menu",
     "plural": "Menus",
-    "items": "Menu items"
+    "items": "Menu items",
+    "name": "Menu name",
+    "add": "Add menu",
+    "description": "Menu description"
   },
   "external": "External navigation",
   "internal": "Internal navigation",
