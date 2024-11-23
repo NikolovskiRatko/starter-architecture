@@ -8,7 +8,7 @@
       <div class="auth-base__container">
         <div class="auth-base__logo">
           <a href="#">
-            <img src="build/images/sm_logo.png" />
+            <img src="@/../assets/images/sm_logo.png" />
           </a>
         </div>
         <router-view />
