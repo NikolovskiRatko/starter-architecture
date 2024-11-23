@@ -21,7 +21,8 @@ return new class extends Migration
             $table->boolean('visible')->default(true);
             $table->date('livedate')->default(DB::raw('CURRENT_DATE'));
             $table->date('enddate')->nullable();
-            $table->nullableMorphs('navigable');
+            $table->nullableMorphs('content');
+            $table->boolean('static')->default(false);
             $table->timestamps();
             $table->softDeletes();
         });
