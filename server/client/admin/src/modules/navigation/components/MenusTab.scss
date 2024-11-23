@@ -1,0 +1,26 @@
+.menus-tab {
+  display: flex;
+  gap: var(--dui-spacing-4);
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__list-item {
+    background-color: var(--dui-color-light);
+    padding: var(--dui-spacing-2);
+    border: var(--dui-border-light);
+    border-radius: var(--dui-border-radius);
+    margin-bottom: var(--dui-spacing-1);
+  }
+
+  &__list-item-element {
+    display: block;
+
+    &--name {
+      color: var(--dui-color-text-dark);
+    }
+  }
+}

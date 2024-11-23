@@ -1,9 +1,18 @@
 <script lang="ts" setup>
+  import { ref } from "vue";
+  import { useI18n } from "vue-i18n";
   import { useCreateNavigationMenu } from "../composables";
+  import {
+    AccordionContent,
+    AccordionItem,
+    DashButton,
+    FormInput,
+  } from "@starter-core/dash-ui/src";
 
+  const { t } = useI18n();
   const { mutate: createMenu } = useCreateNavigationMenu();
-  const name = defineModel("name", { required: true, type: String });
-  const description = defineModel("description", { type: String });
+  const name = ref<string>("");
+  const description = ref<string>("");
 
   const submitHandler = () => {
     createMenu({
@@ -14,13 +23,18 @@
 </script>
 <template>
   <form @submit.prevent="submitHandler">
-    <input type="text" id="name" name="name" v-model="name" />
-    <input
-      type="text"
-      id="description"
-      name="description"
-      v-model="description"
+    <FormInput
+      id="name"
+      v-model="name"
+      :label="t('navigation.menu.name')"
+      name="Name"
     />
-    <button type="submit">Add</button>
+    <FormInput
+      id="description"
+      v-model="description"
+      :label="t('navigation.menu.description')"
+      name="Description"
+    />
+    <DashButton type="submit"> {{ t("navigation.menu.add") }} </DashButton>
   </form>
 </template>
