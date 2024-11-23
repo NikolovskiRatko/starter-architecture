@@ -7,6 +7,8 @@ export interface Navigation {
   visible: number;
   livedate: string;
   enddate: string | null;
+  parent_url: string;
+  static: boolean;
 }
 
 export type NavigationsResponse = Navigation[];

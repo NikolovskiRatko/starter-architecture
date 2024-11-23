@@ -8,7 +8,7 @@
 
   const { item } = defineProps<{ item: NavigationMenuItem }>();
 
-  const type = computed(() => (item.navigation_id ? "Internavl" : "External"));
+  const type = computed(() => (item.navigation_id ? "Internal" : "External"));
 </script>
 <template>
   <li :class="block">

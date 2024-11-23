@@ -56,13 +56,17 @@
               </RouterLink>
             </TableColumn>
             <TableColumn>
-              {{ navigation.slug }}
+              {{ navigation.parent_url }}/{{ navigation.slug }}
             </TableColumn>
             <TableColumn>
               {{ navigation.livedate }}
             </TableColumn>
             <TableColumn>
               {{ navigation.enddate }}
+            </TableColumn>
+            <TableColumn>
+              <span v-if="navigation.static">Static</span>
+              <span v-else>Editable</span>
             </TableColumn>
           </TableRow>
         </template>

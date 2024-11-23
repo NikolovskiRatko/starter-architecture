@@ -2,6 +2,8 @@
   "table": {
     "title": "Title",
     "slug": "Slug",
-    "live-date": "Live date"
+    "live-date": "Live date",
+    "end-date": "End date",
+    "static": "Static"
   }
 }

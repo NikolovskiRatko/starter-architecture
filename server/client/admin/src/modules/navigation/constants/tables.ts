@@ -16,4 +16,14 @@ export const NAVIGATIONS_TABLE_COLUMNS: DatatableColumns = [
     label: "navigation.table.live-date",
     name: "live-date",
   },
+  {
+    id: 3,
+    label: "navigation.table.end-date",
+    name: "end-date",
+  },
+  {
+    id: 4,
+    label: "navigation.table.static",
+    name: "static",
+  },
 ];
