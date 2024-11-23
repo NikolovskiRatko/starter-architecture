@@ -7,7 +7,8 @@ export interface Navigation {
   visible: number;
   livedate: string;
   enddate: string | null;
-  parent_url: string;
+  parent_path: string;
+  path: string;
   static: boolean;
 }
 
