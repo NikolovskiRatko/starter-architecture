@@ -3,6 +3,7 @@
 namespace App\Applications\Navigation\Repositories;
 
 use App\Applications\Navigation\Model\Navigation;
+use Illuminate\Database\Eloquent\Collection;
 
 /**
  * @property Navigation $navigation
@@ -25,7 +26,7 @@ class NavigationRepository implements NavigationRepositoryInterface
     }
 
     /**
-     * Find a navigation by its ID.
+     * Find a navigation by its ID, including its related content.
      *
      * @param  int  $id
      * @return Navigation
@@ -34,7 +35,8 @@ class NavigationRepository implements NavigationRepositoryInterface
      */
     public function findById(int $id): Navigation
     {
-        return $this->navigation::findOrFail($id);
+        // Eager-load the content relationship
+        return $this->navigation::with('content')->findOrFail($id);
     }
 
     /**
@@ -72,4 +74,38 @@ class NavigationRepository implements NavigationRepositoryInterface
     {
         return $navigation->delete();
     }
+
+    public function findWithAncestors(int $id): Navigation
+    {
+        return $this->navigation::with(['parent'])
+            ->with(['treepath' => function ($query) use ($id) {
+                $query->where('descendant', $id);
+            }])
+            ->findOrFail($id);
+    }
+
+    /**
+     * Find all ancestors of a navigation by its ID.
+     *
+     * @param  int  $id
+     * @return Collection
+     */
+    public function findAncestors(int $id): Collection
+    {
+        return $this->navigation::whereIn('id', function ($query) use ($id) {
+            $query->select('ancestor')
+                ->from('navigation_treepath')
+                ->where('descendant', $id);
+        })->get();
+    }
+
+    public function findDescendants(int $id): Collection
+    {
+        return $this->navigation::whereIn('id', function ($query) use ($id) {
+            $query->select('descendant')
+                ->from('navigation_treepath')
+                ->where('ancestor', $id);
+        })->get();
+    }
+
 }

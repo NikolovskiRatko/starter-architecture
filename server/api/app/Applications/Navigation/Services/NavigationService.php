@@ -5,6 +5,8 @@ namespace App\Applications\Navigation\Services;
 use App\Applications\Navigation\DTO\NavigationDTO;
 use App\Applications\Navigation\Repositories\NavigationRepositoryInterface;
 use App\Applications\Navigation\Model\Navigation;
+use App\Applications\User\Model\User;
+use Exception;
 use Illuminate\Database\Eloquent\Collection;
 
 class NavigationService implements NavigationServiceInterface
@@ -72,11 +74,81 @@ class NavigationService implements NavigationServiceInterface
     /**
      * Delete a navigation.
      *
-     * @param  Navigation  $navigation
+     * @param Navigation $navigation
      * @return bool|null
+     * @throws Exception
      */
     public function deleteNavigation(Navigation $navigation): ?bool
     {
         return $this->repository->delete($navigation);
+    }
+
+    /**
+     * Attach a navigation entry to another model (morph it).
+     *
+     * @param int $navigationId
+     * @param int $modelId
+     * @param string $modelType
+     * @return Navigation
+     * @throws Exception
+     */
+    public function attachToModel(int $navigationId, int $modelId, string $modelType): Navigation
+    {
+        $navigation = $this->repository->findById($navigationId);
+
+        if (!$navigation) {
+            throw new Exception("Navigation entry not found");
+        }
+
+        // Attach the morphable model
+        $model = User::findOrFail($modelId);
+        $navigation->content()->associate($model);
+        $navigation->save();
+
+        return $navigation;
+    }
+
+    /**
+     * Detach the morphable model from a navigation entry.
+     *
+     * @param int $navigationId
+     * @return Navigation
+     * @throws Exception
+     */
+    public function detachModel(int $navigationId): Navigation
+    {
+        $navigation = $this->repository->findById($navigationId);
+
+        if (!$navigation) {
+            throw new Exception("Navigation entry not found");
+        }
+
+        // Detach the morphable model
+        $navigation->content()->dissociate();
+        $navigation->save();
+
+        return $navigation;
+    }
+
+    public function getAncestors(int $id): Collection
+    {
+        $ancestors = $this->repository->findAncestors($id);
+
+        $ancestors->each(function ($ancestor) {
+            return NavigationDTO::fromModel($ancestor);
+        });
+
+        return $ancestors;
+    }
+
+    public function getDescendants(int $id): Collection
+    {
+        $descendants = $this->repository->findDescendants($id);
+
+        $descendants->each(function ($descendant) {
+            return NavigationDTO::fromModel($descendant);
+        });
+
+        return $descendants;
     }
 }

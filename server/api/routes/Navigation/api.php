@@ -26,6 +26,10 @@ Route::group([
         Route::post('create', [NavigationController::class, 'create']);
         Route::patch('{id}', [NavigationController::class, 'update']);
         Route::delete('{id}', [NavigationController::class, 'delete']);
+        Route::patch('{id}/attach', [NavigationController::class, 'attachToModel']);
+        Route::patch('{id}/detach', [NavigationController::class, 'detachModel']);
+        Route::get('{id}/ancestors', [NavigationController::class, 'getAncestors']);
+        Route::get('{id}/descendants', [NavigationController::class, 'getDescendants']);
     });
 
     Route::group([

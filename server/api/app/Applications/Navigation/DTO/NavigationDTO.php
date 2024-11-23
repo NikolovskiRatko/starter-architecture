@@ -19,8 +19,11 @@ class NavigationDTO
     public bool $visible;
     public ?DateTime $livedate;
     public ?DateTime $enddate;
-    public ?int $model_id;
-    public ?string $model_type;
+    public ?int $content_id;
+    public ?string $content_type;
+    public ?array $content;
+    public ?string $parent_url;
+    public bool $static;
 
     public function __construct(
         int $id,
@@ -31,8 +34,11 @@ class NavigationDTO
         bool $visible = true,
         ?DateTime $livedate = null,
         ?DateTime $enddate = null,
-        ?int $model_id = null,
-        ?string $model_type = null
+        ?int $content_id = null,
+        ?string $content_type = null,
+        ?array $content = null,
+        ?string $parent_url = null,
+        bool $static = false
     ) {
         $this->id = $id;
         $this->title = $title;
@@ -42,8 +48,11 @@ class NavigationDTO
         $this->visible = $visible;
         $this->livedate = $livedate;
         $this->enddate = $enddate;
-        $this->model_id = $model_id;
-        $this->model_type = $model_type;
+        $this->content_id = $content_id;
+        $this->content_type = $content_type;
+        $this->content = $content;
+        $this->parent_url = $parent_url;
+        $this->static = $static;
     }
 
     /**
@@ -88,8 +97,9 @@ class NavigationDTO
             visible: (bool)($data['visible'] ?? true),
             livedate: isset($data['livedate']) ? new DateTime($data['livedate']) : Carbon::now(),
             enddate: isset($data['enddate']) ? new DateTime($data['enddate']) : null,
-            model_id: $data['model_id'] ?? null,
-            model_type: $data['model_type'] ?? null
+            content_id: $data['content_id'] ?? null,
+            content_type: $data['content_type'] ?? null,
+            parent_url: $data['parent_url'] ?? null
         );
     }
 
@@ -110,8 +120,11 @@ class NavigationDTO
             visible: (bool) $navigation->visible,
             livedate: $navigation->livedate ? new DateTime($navigation->livedate) : null,
             enddate: $navigation->enddate ? new DateTime($navigation->enddate) : null,
-            model_id: $navigation->model_id,
-            model_type: $navigation->model_type
+            content_id: $navigation->content_id,
+            content_type: $navigation->content_type,
+            content: $navigation->content ? $navigation->content->toArray() : null,
+            parent_url: $navigation->parent_url,
+            static: (bool) $navigation->static
         );
     }
 
@@ -139,10 +152,13 @@ class NavigationDTO
             'authorized' => $this->authorized,
             'parent_id' => $this->parent_id,
             'visible' => $this->visible,
-            'livedate' => $this->livedate ? $this->livedate->format('Y-m-d H:i:s.u') : null,
-            'enddate' => $this->enddate ? $this->enddate->format('Y-m-d H:i:s.u') : null,
-            'model_id' => $this->model_id,
-            'model_type' => $this->model_type,
+            'livedate' => $this->livedate ? $this->livedate->format('Y-m-d H:i:s') : null,
+            'enddate' => $this->enddate ? $this->enddate->format('Y-m-d H:i:s') : null,
+            'content_id' => $this->content_id,
+            'content_type' => $this->content_type,
+            'content' => $this->content,
+            'parent_url' => $this->parent_url,
+            'static' => $this->static,
         ];
     }
 

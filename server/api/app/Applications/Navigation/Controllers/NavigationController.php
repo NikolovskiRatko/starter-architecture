@@ -6,6 +6,7 @@ use App\Applications\Navigation\DTO\NavigationDTO;
 use App\Applications\Navigation\Model\Navigation;
 use App\Applications\Navigation\Services\NavigationService;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
@@ -49,5 +50,49 @@ class NavigationController extends Controller
     {
         $this->navigationService->deleteNavigation($navigation);
         return response()->json(null, 204);
+    }
+
+    /**
+     * Attach a navigation entry to another model (morph it).
+     *
+     * @param int $id
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function attachToModel(int $id, Request $request)
+    {
+        $validated = $request->validate([
+            'model_id' => 'required|integer',
+            'model_type' => 'required|string|in:App\Applications\User\Model,App\Models\Post',
+        ]);
+
+        $navigation = $this->navigationService->attachToModel($id, $validated['model_id'], $validated['model_type']);
+
+        return response()->json($navigation->toArray());
+    }
+
+    /**
+     * Detach the morphable model from a navigation entry.
+     *
+     * @param int $id
+     * @return JsonResponse
+     */
+    public function detachModel(int $id): JsonResponse
+    {
+        $navigation = $this->navigationService->detachModel($id);
+
+        return response()->json($navigation->toArray());
+    }
+
+    public function getAncestors(int $id)
+    {
+        $ancestors = $this->navigationService->getAncestors($id);
+        return response()->json($ancestors);
+    }
+
+    public function getDescendants(int $id)
+    {
+        $descendants = $this->navigationService->getDescendants($id);
+        return response()->json($descendants);
     }
 }
