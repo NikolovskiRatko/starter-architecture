@@ -1,5 +1,8 @@
 <script lang="ts" setup>
 import { computed } from "vue";
+const nuxtApp = useNuxtApp();
+console.log(nuxtApp.payload.data);
+
 const { data: menu } = await useFetch(
   "http://starter.test/api/nuxt/menu/top-menu"
 );
