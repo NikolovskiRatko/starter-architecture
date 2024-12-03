@@ -4,5 +4,5 @@ export { default as DashLink } from "./Link/DashLink.vue";
 export * from "./Portlet";
 export * from "./Accordion";
 export * from "./Form";
-export * from "./Pagination";
 export * from "./Datatable";
+export * from "./Modal";
