@@ -6,7 +6,6 @@
   flex-direction: column;
   box-shadow: var(--dui-elevate-shadow);
   background-color: kt-get($portlet, bg-color);
-  margin-bottom: kt-get($portlet, bottom-space, desktop);
 
   @include kt-rounded {
     border-radius: $border-radius;

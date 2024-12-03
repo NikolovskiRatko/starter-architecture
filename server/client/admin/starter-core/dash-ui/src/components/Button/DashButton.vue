@@ -91,7 +91,7 @@
     return classes.join(" ");
   });
 
-  const buttonType = computed(() => (type === "submit" ? "submit" : undefined));
+  const buttonType = computed(() => (type === "submit" ? "submit" : "button"));
 </script>
 <template>
   <a
