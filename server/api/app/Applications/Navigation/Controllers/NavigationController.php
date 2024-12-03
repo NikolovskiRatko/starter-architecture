@@ -63,10 +63,23 @@ class NavigationController extends Controller
     {
         $validated = $request->validate([
             'model_id' => 'required|integer',
-            'model_type' => 'required|string|in:App\Applications\User\Model,App\Models\Post',
+            'model_type' => [
+                'required',
+                'string',
+                function ($attribute, $value, $fail) {
+                    $allowedModelTypes = array_keys(config('navigation.model_types'));
+
+                    if (!in_array($value, $allowedModelTypes, true)) {
+                        $fail("The selected $attribute is invalid.");
+                    }
+                },
+            ],
         ]);
 
-        $navigation = $this->navigationService->attachToModel($id, $validated['model_id'], $validated['model_type']);
+        // Convert alias to the full namespace
+        $modelType = config('navigation.model_types')[$validated['model_type']];
+
+        $navigation = $this->navigationService->attachToModel($id, $validated['model_id'], $modelType);
 
         return response()->json($navigation->toArray());
     }

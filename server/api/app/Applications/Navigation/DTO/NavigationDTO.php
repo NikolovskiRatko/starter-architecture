@@ -79,6 +79,12 @@ class NavigationDTO
         Validator::make($data, $rules)->validate();
     }
 
+    protected static function getAliasFromModelType(string $modelType): string
+    {
+        $modelTypes = config('navigation.model_types');
+        return array_search($modelType, $modelTypes, true) ?: $modelType; // Return alias or fallback to the full namespace
+    }
+
     /**
      * Validate and initialize NavigationDTO from request data.
      *
@@ -123,7 +129,9 @@ class NavigationDTO
             livedate: $navigation->livedate ? new DateTime($navigation->livedate) : null,
             enddate: $navigation->enddate ? new DateTime($navigation->enddate) : null,
             content_id: $navigation->content_id,
-            content_type: $navigation->content_type,
+            content_type: $navigation->content_type
+                ? self::getAliasFromModelType($navigation->content_type)
+                : null,
             content: $navigation->content ? $navigation->content->toArray() : null,
             parent_path: $navigation->parent_path,
             path: $navigation->path,

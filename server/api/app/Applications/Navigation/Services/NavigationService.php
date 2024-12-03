@@ -5,7 +5,6 @@ namespace App\Applications\Navigation\Services;
 use App\Applications\Navigation\DTO\NavigationDTO;
 use App\Applications\Navigation\Repositories\NavigationRepositoryInterface;
 use App\Applications\Navigation\Model\Navigation;
-use App\Applications\User\Model\User;
 use Exception;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -97,14 +96,21 @@ class NavigationService implements NavigationServiceInterface
      */
     public function attachToModel(int $navigationId, int $modelId, string $modelType): Navigation
     {
+        // Fetch the navigation entry
         $navigation = $this->repository->findById($navigationId);
 
         if (!$navigation) {
             throw new Exception("Navigation entry not found");
         }
 
+        // Dynamically resolve and find the model instance
+        if (!class_exists($modelType)) {
+            throw new Exception("Invalid model type: {$modelType}");
+        }
+
+        $model = $modelType::findOrFail($modelId);
+
         // Attach the morphable model
-        $model = User::findOrFail($modelId);
         $navigation->content()->associate($model);
         $navigation->save();
 

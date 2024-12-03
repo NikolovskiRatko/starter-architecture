@@ -46,4 +46,9 @@ interface NavigationRepositoryInterface
      * @return bool|null
      */
     public function delete(Navigation $navigation): ?bool;
+
+    public function findLiveNavigations(): Collection;
+    public function findAncestors(int $id): Collection;
+    public function findDescendants(int $id): Collection;
+    public function doesSlugExist(string $slug): bool;
 }
