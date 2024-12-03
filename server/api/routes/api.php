@@ -59,4 +59,5 @@ Route::group([
     'prefix' => 'nuxt',
 ], function () {
     Route::get('/menu/{slug}', [NavigationController::class, 'get']);
+    Route::get('/navigation-routes', [NavigationController::class, 'getLiveNavigations']);
 });

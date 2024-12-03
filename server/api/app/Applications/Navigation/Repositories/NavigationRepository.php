@@ -108,4 +108,24 @@ class NavigationRepository implements NavigationRepositoryInterface
         })->get();
     }
 
+    /**
+     * Find all visible navigations that are currently live.
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function findLiveNavigations(): Collection
+    {
+        return Navigation::where('visible', true)
+            ->where('livedate', '<=', now())
+            ->where(function ($query) {
+                $query->whereNull('enddate')
+                    ->orWhere('enddate', '>=', now());
+            })
+            ->get();
+    }
+
+    public function doesSlugExist(string $slug): bool
+    {
+        return $this->navigation::where('slug', $slug)->exists();
+    }
 }

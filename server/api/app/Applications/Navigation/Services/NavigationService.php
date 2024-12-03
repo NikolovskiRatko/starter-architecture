@@ -160,4 +160,25 @@ class NavigationService implements NavigationServiceInterface
 
         return $descendants;
     }
+
+    /**
+     * Fetch all visible navigations that are currently live.
+     *
+     * @return array
+     */
+    public function getLiveNavigations(): array
+    {
+        $navigations = $this->repository->findLiveNavigations();
+
+        return NavigationDTO::fromCollection($navigations);
+    }
+
+    public function createNavigationAndAttach(NavigationDTO $navigationDTO, int $modelId, string $modelType): NavigationDTO
+    {
+        $navigation = $this->repository->create($navigationDTO->toArray());
+
+        $this->attachToModel($navigation->id, $modelId, $modelType);
+
+        return NavigationDTO::fromModel($navigation);
+    }
 }
