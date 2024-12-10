@@ -1,18 +1,14 @@
 <script lang="ts" setup>
 import { computed } from "vue";
 const nuxtApp = useNuxtApp();
-console.log(nuxtApp.payload.data);
-
-const { data: menu } = await useFetch(
-  "http://starter.test/api/nuxt/menu/top-menu"
-);
 
 const links = computed(() => {
-  if (!menu?.value?.items) {
+  const { topMenu } = nuxtApp.payload.data.menus ?? {};
+  if (!topMenu?.items) {
     return null;
   }
 
-  return menu.value.items.map((navigationItem) => {
+  return topMenu.items.map((navigationItem) => {
     const { label, navigation, external_url } = navigationItem;
     return {
       label,
