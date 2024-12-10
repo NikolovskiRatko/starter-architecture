@@ -47,8 +47,34 @@ interface NavigationRepositoryInterface
      */
     public function delete(Navigation $navigation): ?bool;
 
+    /**
+     * Find all visible navigations that are currently live.
+     * 
+     * @return Collection
+     */
     public function findLiveNavigations(): Collection;
+
+    /**
+     * Find all ancestors of a navigation by its ID.
+     * 
+     * @param int $id The navigation ID
+     * @return Collection
+     */
     public function findAncestors(int $id): Collection;
+
+    /**
+     * Find all descendants of a navigation by its ID.
+     * 
+     * @param int $id The navigation ID
+     * @return Collection
+     */
     public function findDescendants(int $id): Collection;
+
+    /**
+     * Check if a navigation with the given slug exists.
+     * 
+     * @param string $slug The slug to check
+     * @return bool True if slug exists, false otherwise
+     */
     public function doesSlugExist(string $slug): bool;
 }

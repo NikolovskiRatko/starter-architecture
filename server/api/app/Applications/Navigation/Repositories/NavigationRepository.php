@@ -115,7 +115,7 @@ class NavigationRepository implements NavigationRepositoryInterface
      */
     public function findLiveNavigations(): Collection
     {
-        return Navigation::where('visible', true)
+        return $this->navigation->where('visible', true)
             ->where('livedate', '<=', now())
             ->where(function ($query) {
                 $query->whereNull('enddate')
