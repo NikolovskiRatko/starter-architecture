@@ -21,6 +21,7 @@ import {
   NavigationMenus,
   NavigationMenuItemQuery,
   NavigationMenuItem,
+  NavigationDeleteResult,
 } from "../types";
 
 export const useNavigationMenus = (): UseQueryReturnType<
@@ -100,6 +101,29 @@ export const useCreateNavigationMenuItem = () => {
         queryKey: [NAVIGATION_MENU_QUERY_KEY, response.menu_id],
       });
       toast.success("Navigation menu item created!");
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
+};
+
+export const useDeleteNavigationMenuItem = () => {
+  const queryClient = useQueryClient();
+  const toast = useToast();
+
+  return useMutation({
+    mutationFn: async (menuItemId: number): Promise<NavigationDeleteResult> => {
+      const response = await axios.delete(
+        NAVIGATION_MENU_ITEM_API_ENDPOINTS.delete(menuItemId),
+      );
+      return response.data;
+    },
+    onSuccess: async () => {
+      queryClient.invalidateQueries({
+        queryKey: [NAVIGATION_MENU_QUERY_KEY],
+      });
+      toast.success("Navigation menu item deleted!");
     },
     onError: (error) => {
       toast.error(error.message);

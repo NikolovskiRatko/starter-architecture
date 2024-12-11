@@ -51,3 +51,7 @@ export type NavigationQuery = Pick<
   Navigation,
   "title" | "slug" | "parent_id" | "visible"
 >;
+
+export interface NavigationDeleteResult {
+  success: boolean;
+}

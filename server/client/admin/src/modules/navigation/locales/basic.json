@@ -1,14 +1,6 @@
 {
   "main": "Navigation",
   "plural": "Navigations",
-  "menu": {
-    "main": "Menu",
-    "plural": "Menus",
-    "items": "Menu items",
-    "name": "Menu name",
-    "add": "Add menu",
-    "description": "Menu description"
-  },
   "external": "External navigation",
   "internal": "Internal navigation",
   "add-to-menu": "Add to menu",
