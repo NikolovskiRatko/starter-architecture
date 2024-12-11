@@ -1,0 +1,14 @@
+{
+  "main": "Menu",
+  "menu": {
+    "main": "Menu",
+    "plural": "Menus",
+    "items": "Menu items",
+    "name": "Menu name",
+    "add": "Add menu",
+    "description": "Menu description",
+    "item": {
+      "delete-confirm": "Are you sure you want to delete this item"
+    }
+  }
+}
