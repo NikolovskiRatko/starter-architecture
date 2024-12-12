@@ -6,3 +6,4 @@ export * from "./Accordion";
 export * from "./Form";
 export * from "./Datatable";
 export * from "./Modal";
+export * from "./Pagination";
