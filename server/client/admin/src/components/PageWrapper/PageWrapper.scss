@@ -15,7 +15,7 @@ $contentPadding: var(--dui-spacing-4);
     &__subheader {
         display: flex;
         align-items: center;
-        background-color: var(--dui-color-light);
+        background-color: var(--dui-color-base-shape-1);
         padding: var(--dui-spacing-2) $contentPadding;
         box-shadow: var(--dui-elevate-shadow);
     }

@@ -3,6 +3,7 @@
   import { PAGE_WRAPPER_SLOTS } from "./constants";
   import type { PageWrapperSlot } from "./types";
   import { useBEMBuilder } from "@/helpers";
+
   import "./PageWrapper.scss";
 
   const slots = useSlots();
