@@ -2,10 +2,12 @@
   import { computed, ref, inject } from "vue";
   import { MENU_TYPE, MENU_THEME } from "../../../constants";
   import { useOnClickOutside } from "../../../composables";
+  import { useBEMBuilder } from "../../../helpers";
   import MenuLink from "../MenuLink/MenuLink.vue";
   import SubMenu from "../SubMenu/SubMenu.vue";
   import { menuTypeKey, menuThemeKey, isMenuMinimizedKey } from "../constants";
   import type { MenuItemProps } from "./types";
+
   import "./MenuItem.scss";
 
   const {
@@ -20,43 +22,20 @@
   const menuTheme = inject(menuThemeKey);
   const isMinimized = inject(isMenuMinimizedKey);
   const itemRef = ref();
-
-  const menuItemClass = computed(() => {
-    const { submenu } = item;
-    let classNameArray = [
-      "kt-menu__item",
-      `kt-menu__item--${menuType}`,
-      `kt-menu__item--level-${level}`,
-    ];
-
-    if (isMinimized?.value) {
-      classNameArray.push("kt-menu__item--minimized");
-    }
-
-    if (submenu) {
-      classNameArray.push("kt-menu__item--submenu");
-      if (menuTheme === MENU_THEME.classic) {
-        classNameArray.push("kt-menu__item--rel");
-      }
-      if (isSubmenuVisible.value) {
-        classNameArray.push("kt-menu__item--hover");
-      }
-    }
-
-    if (level === 1) {
-      classNameArray.push("kt-menu__item--top-level");
-    } else {
-      classNameArray.push("kt-menu__item--submenu-item");
-    }
-
-    if (isActive) {
-      classNameArray.push("kt-menu__item--active");
-    }
-
-    // classNameArray.push('kt-menu__item--open kt-menu__item--here');
-    return classNameArray.join(" ");
-  });
   const submenu = computed(() => item.submenu ?? null);
+
+  const [block] = useBEMBuilder("kt-menu__item", ref({
+    [`${menuType}`]: true,
+    [`level-${level}`]: true,
+    minimized: isMinimized?.value,
+    submenu: submenu.value,
+    rel: submenu.value && menuTheme === MENU_THEME.classic,
+    hover: submenu.value && isSubmenuVisible.value,
+    'top-level': level === 1,
+    'submenu-item': level > 1,
+    active: isActive
+  }));
+
   const hasTogglableSubmenu = computed(() => {
     return (menuType === MENU_TYPE.horizontal && submenu && isTopLevelItem)
       || (menuType === MENU_TYPE.vertical && submenu)
@@ -101,7 +80,7 @@
 
 <template>
   <li
-    :class="menuItemClass"
+    :class="block"
     aria-haspopup="true"
     @mouseover="mouseOverHandler"
     @mouseleave="mouseLeaveHandler"
