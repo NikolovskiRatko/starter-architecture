@@ -26,8 +26,7 @@ $portlet: (
     desktop: 20px,
     mobile: 20px,
   ),
-  border-color: kt-base-color(grey, 2),
-  bg-color: #ffffff,
+  border-color: var(--dui-gray-200),
   shadow: 0px 0px 30px 0px rgba(82, 63, 105, 0.05),
 );
 

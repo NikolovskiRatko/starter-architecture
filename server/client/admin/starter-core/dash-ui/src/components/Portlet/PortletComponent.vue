@@ -1,34 +1,20 @@
 <script setup lang="ts">
 import { provide, computed } from "vue";
-import type { PropType } from "vue";
 import { portletIsLoadingKey, portletThemeKey } from "./constants";
 
 import "./PortletComponent.scss";
 
-const props = defineProps({
-  isBordered: {
-    default: false,
-  },
-  isUnpadded: {
-    default: false,
-  },
-  theme: {
-    type: String as PropType<DashUIComponentThemes>,
-    required: false,
-  },
-  isEqualHeight: {
-    default: false,
-  },
-  isEqualHalfHeight: {
-    default: false,
-  },
-  hasStickyHeader: {
-    default: false,
-  },
-  isLoading: {
-    default: false,
-  },
-});
+interface PortletComponentProps {
+  isBordered?: boolean;
+  isUnpadded?: boolean;
+  theme?: DashUIComponentThemes;
+  isEqualHeight?: boolean;
+  isEqualHalfHeight?: boolean;
+  hasStickyHeader?: boolean;
+  isLoading?: boolean;
+}
+
+const props = defineProps<PortletComponentProps>();
 
 provide("isUnpadded", props.isUnpadded);
 provide("hasStickyHeader", props.hasStickyHeader);
@@ -38,9 +24,6 @@ provide(
   computed(() => props.isLoading),
 );
 
-const headClassed = {
-  hasNoBorder: false,
-};
 </script>
 
 <template>

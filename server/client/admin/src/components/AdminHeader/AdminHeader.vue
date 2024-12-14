@@ -1,7 +1,8 @@
 <script setup lang="ts">
-  import { NavMenu } from "@starter-core/dash-ui/src";
   import { HeaderTopBar } from "@/components";
   import { useInitialData } from "@/composables";
+  import { NavMenu } from "@starter-core/dash-ui/src";
+
   import "./AdminHeader.scss";
 
   const { data } = useInitialData();

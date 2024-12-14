@@ -27,10 +27,10 @@
   const [block] = useBEMBuilder("kt-menu__item", ref({
     [`${menuType}`]: true,
     [`level-${level}`]: true,
-    minimized: isMinimized?.value,
+    minimized: isMinimized,
     submenu: submenu.value,
     rel: submenu.value && menuTheme === MENU_THEME.classic,
-    hover: submenu.value && isSubmenuVisible.value,
+    hover: submenu.value && isSubmenuVisible,
     'top-level': level === 1,
     'submenu-item': level > 1,
     active: isActive

@@ -23,7 +23,7 @@
   justify-content: space-between;
   position: relative;
   padding: 0 kt-get($portlet, space, desktop);
-  border-bottom: 1px solid kt-get($portlet, border-color);
+  border-bottom: var(--dui-border-light);
 
   @include head-sizes(desktop);
 

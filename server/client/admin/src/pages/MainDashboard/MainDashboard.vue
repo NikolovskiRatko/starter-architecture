@@ -40,8 +40,8 @@
 <template>
   <PageWrapper>
     <div class="row">
-      <div class="col-md-4">
-        <PortletComponent>
+      <div class="col-md-4 mb-4">
+        <PortletComponent isBordered>
           <PortletHead>
             <PortletHeadLabel>
               Content loader
@@ -55,7 +55,7 @@
       </div>
       <div class="col-md-4"></div>
       <div class="col-md-4"></div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <AccordionContent>
           <AccordionItem
             label="Product inventory"

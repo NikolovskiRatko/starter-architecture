@@ -32,18 +32,18 @@
         }
 
         &:hover {
-            color: var(--dui-color-base-3);
+            color: var(--dui-color-base-label-3);
 
             &:after {
-                border-color: var(--dui-color-base-3);
+                border-color: var(--dui-color-base-label-3);
             }
         }
 
         &--active {
-            color: var(--dui-color-base-3);
+            color: var(--dui-color-base-label-3);
 
             &:after {
-                border-color: var(--dui-color-base-3);
+                border-color: var(--dui-color-base-label-3);
                 transform: rotate(45deg);
                 -webkit-transform: rotate(45deg);
             }
