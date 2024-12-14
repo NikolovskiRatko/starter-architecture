@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { provide } from "vue";
+import { provide, computed } from "vue";
 import MenuItem from "../MenuItem/MenuItem.vue";
 import MenuSection from "../MenuSection/MenuSection.vue";
 import type { NavMenuDataInterface } from "./types";
 import type { MenuTheme, MenuType } from "../types";
 import { isMenuMinimizedKey, menuThemeKey, menuTypeKey } from "../constants";
-import { MENU_TYPE } from "../../../constants";
+import { MENU_THEME, MENU_TYPE } from "../../../constants";
 import "./NavMenu.scss";
 
 interface NavMenuProps {
   data: NavMenuDataInterface;
-  theme: MenuTheme;
+  theme?: MenuTheme;
   type: MenuType;
   isMinimized: boolean;
 }
@@ -18,13 +18,13 @@ interface NavMenuProps {
 const {
   data,
   type,
-  theme = 'classic',
+  theme = MENU_THEME.classic,
   isMinimized = false
 } = defineProps<NavMenuProps>();
 
 provide(menuTypeKey, type);
 provide(menuThemeKey, theme);
-provide(isMenuMinimizedKey, isMinimized);
+provide(isMenuMinimizedKey, computed(() => isMinimized));
 </script>
 <template>
   <ul
