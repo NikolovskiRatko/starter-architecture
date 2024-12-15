@@ -5,6 +5,7 @@
   import { useSideMenu } from "@/composables";
   import { useRootStore } from "@/store/root";
   import { NavMenu } from "@starter-core/dash-ui/src";
+
   import "./AdminSidebar.scss";
 
   const { mainMenu } = useSideMenu();
@@ -44,7 +45,7 @@
     class="aside"
     :class="{
       'aside--minimize': isSidebarMinimized,
-      'aside--minimize-hover': sidebarState.minimizeHover
+      'aside--minimize-hover': sidebarState.minimizeHover,
     }"
     @mouseover="sidebarHover(true)"
     @mouseleave="sidebarHover(false)"
@@ -57,7 +58,7 @@
         :class="{
           'aside__menu--minimize':
             isSidebarMinimized && !sidebarState.minimizeHover,
-          'aside__menu--minimize-hover': sidebarState.minimizeHover
+          'aside__menu--minimize-hover': sidebarState.minimizeHover,
         }"
       >
         <NavMenu

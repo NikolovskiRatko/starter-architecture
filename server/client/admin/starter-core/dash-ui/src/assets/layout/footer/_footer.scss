@@ -43,11 +43,11 @@
     .kt-footer--fixed & {
       position: fixed;
       transition: var(--dui-transition);
-      height: kt-get($footer-config, self, fixed, height);
-      z-index: kt-get($footer-config, self, fixed, z-index);
+      height: var(--dui-footer-height);
+      z-index: var(--dui-footer-zindex);
       bottom: 0;
       right: 0;
-      left: kt-get($aside-config, base, default, width);
+      left: var(--dui-aside-default-width);
       box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
     }
 

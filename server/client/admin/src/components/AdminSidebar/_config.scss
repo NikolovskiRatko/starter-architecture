@@ -3,13 +3,8 @@
 //
 $header-fixed-zindex: kt-get($header-config, base, desktop, fixed, zindex);
 
-$aside-menu-dropdown-submenu-width: 245px;
-
 $aside-config: (
   base: (
-    default: (
-      width: $aside-default-width,
-    ),
     fixed: (
       zindex: 98,
       scroll: (
@@ -286,7 +281,6 @@ $aside-config: (
                 self:
                   (
                     padding: 15px 0,
-                    width: $aside-minimize-width,
                   ),
 
                 // root item
@@ -296,8 +290,8 @@ $aside-config: (
                     self:
                       (
                         zindex: $header-fixed-zindex - 1,
-                        width: $aside-menu-dropdown-submenu-width +
-                          $aside-minimize-width + 1,
+                        width: var(--dui-aside-menu-dropdown-submenu-width) +
+                          var(--dui-aside-minimize-width) + 1,
                       ),
 
                     // item link
@@ -315,8 +309,8 @@ $aside-config: (
                         // self
                         self:
                           (
-                            width: $aside-menu-dropdown-submenu-width,
-                            margin-left: $aside-minimize-width + 1,
+                            width: var(--dui-aside-menu-dropdown-submenu-width),
+                            margin-left: var(aside-minimize-width) + 1,
                           ),
 
                         // parent item
@@ -386,8 +380,8 @@ $aside-config: (
                           (
                             // submenu base styles
                             padding: 20px 0,
-                            width: $aside-menu-dropdown-submenu-width,
-                            parent-width: $aside-default-width,
+                            width: var(--dui-aside-menu-dropdown-submenu-width),
+                            parent-width: var(--dui-aside-default-width),
                             border-radius: 4px,
 
                             // submenu animation

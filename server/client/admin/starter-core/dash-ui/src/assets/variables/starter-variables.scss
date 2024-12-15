@@ -1,12 +1,16 @@
 @import 'sidebar';
 @import 'colors';
+@import 'footer';
+@import 'brand';
 
 :root {
   --dui-transition: all .3s ease;
 
   // Fonts
+  --dui-font-size: 1rem;
   --dui-font-weight-normal: 400;
   --dui-font-weight-bold: 500;
+  --dui-line-height: 1.5;
 
   // Spacing
   --dui-spacing-1: 0.5rem;
@@ -15,11 +19,15 @@
   --dui-spacing-4: 2rem;
 
   // Borders
-  --dui-border: 1px solid var(--dui-color-base-shape-4);
-  --dui-border-light: 1px solid var(--dui-color-secondary);
-  --dui-border-radius: 0.25rem;
+  --dui-border: 1px solid #e2e5ec;
+  --dui-border-radius: .375rem;
 
   //Box shadows
   --dui-elevate-shadow: 0px 0px 13px 0px rgba(82, 63, 105, 0.05);
   --dui-elevate-shadow-2: 0px 0px 13px 0px rgba(82, 63, 105, 0.1);
+  --dui-focus-ring-box-shadow: 0 0 0 .2rem rgba(var(--dui-color-primary), .25);
+
+  //Layers
+  --dui-layers-base: 1;
+  --dui-layers-over: 2;
 }

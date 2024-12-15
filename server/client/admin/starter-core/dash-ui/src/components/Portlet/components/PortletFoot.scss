@@ -2,7 +2,7 @@
 
 .kt-portlet__foot {
   padding: kt-get($portlet, space, desktop);
-  border-top: var(--dui-border-light);
+  border-top: var(--dui-border);
 
   .kt-portlet__foot-wrapper {
     display: flex;
@@ -37,7 +37,7 @@
 
   &.kt-portlet__foot--top {
     border-top: 0;
-    border-bottom: var(--dui-border-light);
+    border-bottom: var(--dui-border);
   }
 
   &.kt-portlet__foot--solid {

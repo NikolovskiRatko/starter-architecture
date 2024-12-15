@@ -1,3 +1,5 @@
+$enable-shadows: false;
+
 // Include utility mixins and functions
 @import "utils";
 
@@ -7,13 +9,7 @@
 // Bootstrap Variables
 @import "./bootstrap/variables";
 
-// Include starter config (that overrides the above global config)
-@import "config/starter";
-
 // Configs that are moved to Vue
 @import "../components/Portlet/config";
 @import "../components/Menu/config";
 @import "../components/Form/config";
-
-@import "./layout/footer/config";
-@import "./layout/aside/config";
