@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-  import { FormInput, FormSwitch } from "@starter-core/dash-ui/src";
   import { IconMail } from "@starter-core/icons";
   import { useI18n } from "vue-i18n";
   import UserFormAvatar from "./UserFormAvatar.vue";
   import UserRolesDropdown from "./UserRolesDropdown.vue";
+  import { FormInput, FormSwitch } from "@starter-core/dash-ui/src";
 
   type EmitsType = {
     (event: "uploadAvatar", file: File): void;
@@ -53,7 +53,20 @@
   <div class="kt-section">
     <div class="kt-section__body">
       <h3 class="kt-section__title kt-section__title-lg">Customer Info:</h3>
-      <user-form-avatar :src="avatar" @change="uploadAvatar" />
+      <div class="form-group form-input form-group--inline">
+        <div
+          class="form-group__column form-group__column--left form-group__column--inline"
+        >
+          <label class="form-group__label" for="avatar">{{
+            t("users.avatar")
+          }}</label>
+        </div>
+        <div
+          class="form-group__column form-group__column--left form-group__column--inline"
+        >
+          <user-form-avatar :src="avatar" @change="uploadAvatar" is-circle is-outline />
+        </div>
+      </div>
       <form-input
         v-model="lastName"
         name="last-name"

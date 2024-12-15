@@ -1,9 +1,6 @@
 .user-form-avatar {
-    &__image-holder {
-        position: relative;
-        width: 120px;
-        height: 120px;
-    }
+    position: relative;
+    display: inline-block;
 
     &__input {
         display: none;
@@ -14,28 +11,105 @@
         height: 120px;
     }
 
-    &__controls {
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: 1;
-        display: flex;
-        flex-direction: column;
-        gap: var(--dui-spacing-1);
-    }
+    &__holder {
+        width: 120px;
+        height: 120px;
+        border-radius: 3px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        overflow: hidden;
 
-    &__control {
-        background-color: var(--dui-color-secondary);
-        padding: var(--dui-spacing-1);
-        cursor: pointer;
-        border: none;
-
-        &--delete {
-            background-color: var(--dui-color-danger);
+        &--circle {
+            border-radius: 50%;
         }
 
-        &--save {
-            background-color: var(--dui-color-success);
+        &--outline {
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 13px 0 rgba(#000000, 0.1);
+        }
+    }
+
+    &__upload {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: none;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 13px 0px rgba(#000000, 0.1);
+
+        &--circle {
+            right: 0;
+            top: 5px;
+        }
+
+        input {
+            width: 0 !important;
+            height: 0 !important;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        i {
+            color: kt-brand-color();
+            font-size: 0.9rem;
+        }
+
+        @include kt-transition();
+        &:hover {
+            @include kt-transition();
+            background-color: kt-brand-color();
+
+            i {
+                color: kt-brand-color(inverse);
+            }
+        }
+    }
+
+    &__cancel {
+        display: flex;
+        position: absolute;
+        top: auto;
+        right: -10px;
+        bottom: -5px;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background-color: var(--dui-color-danger);
+        box-shadow: 0 0 13px 0 rgba(#000000, 0.1);
+        border: none;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+
+        &--circle {
+            right: 3px;
+            bottom: 10px;
+        }
+    }
+
+    // States
+    @each $name, $color in $state-colors {
+        &--#{$name} {
+            &__upload {
+                i {
+                    color: kt-get($color, base);
+                }
+
+                &:hover {
+                    background-color: kt-get($color, base);
+
+                    i {
+                        color: kt-get($color, inverse);
+                    }
+                }
+            }
         }
     }
 }
