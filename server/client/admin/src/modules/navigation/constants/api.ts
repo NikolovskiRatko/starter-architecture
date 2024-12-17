@@ -12,6 +12,7 @@ export const NAVIGATION_MENU_API_ENDPOINTS = {
 export const NAVIGATION_MENU_ITEM_API_ENDPOINTS = {
   create: "navigation-menu-item/create",
   delete: (id: number) => `navigation-menu-item/${id}`,
+  reorder: (menuId: number) => `navigation-menu-item/${menuId}/reorder`,
 } as const;
 
 export const NAVIGATION_API_ENDPOINTS = {

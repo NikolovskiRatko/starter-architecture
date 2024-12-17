@@ -18,6 +18,7 @@ export interface NavigationMenuItem {
   id: number;
   label: string;
   menu_id: number;
+  order: number;
   navigation_id?: number | null;
   external_url?: string | null;
 }
@@ -54,4 +55,10 @@ export type NavigationQuery = Pick<
 
 export interface NavigationDeleteResult {
   success: boolean;
+}
+
+export interface ReorderNavigationItemQuery {
+  menuId: number;
+  item_id: number;
+  order: number;
 }

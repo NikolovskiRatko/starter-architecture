@@ -22,6 +22,7 @@ import {
   NavigationMenuItemQuery,
   NavigationMenuItem,
   NavigationDeleteResult,
+  ReorderNavigationItemQuery,
 } from "../types";
 
 export const useNavigationMenus = (): UseQueryReturnType<
@@ -116,6 +117,33 @@ export const useDeleteNavigationMenuItem = () => {
     mutationFn: async (menuItemId: number): Promise<NavigationDeleteResult> => {
       const response = await axios.delete(
         NAVIGATION_MENU_ITEM_API_ENDPOINTS.delete(menuItemId),
+      );
+      return response.data;
+    },
+    onSuccess: async () => {
+      queryClient.invalidateQueries({
+        queryKey: [NAVIGATION_MENU_QUERY_KEY],
+      });
+      toast.success("Navigation menu item deleted!");
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
+};
+
+export const useReorderNavigationMenuItem = () => {
+  const queryClient = useQueryClient();
+  const toast = useToast();
+
+  return useMutation({
+    mutationFn: async ({
+      menuId,
+      ...query
+    }: ReorderNavigationItemQuery): Promise<{ success: boolean }> => {
+      const response = await axios.patch(
+        NAVIGATION_MENU_ITEM_API_ENDPOINTS.reorder(menuId),
+        query,
       );
       return response.data;
     },
