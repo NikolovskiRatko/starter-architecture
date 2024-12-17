@@ -9,11 +9,28 @@
 
   import "./MenuItem.scss";
 
-  const { t } = useI18n();
-  const [block, element] = useBEMBuilder("menu-item");
-  const { mutate: deleteMenuItem } = useDeleteNavigationMenuItem();
+  type EmitsType = {
+    (e: "dragstart", event: DragEvent, itemId: number): void;
+    (e: "dragleave"): void;
+    (e: "dragenter", itemId: number): void;
+  };
 
-  const { item } = defineProps<{ item: NavigationMenuItem }>();
+  type MenuItemProps = {
+    item: NavigationMenuItem;
+    isDragged?: boolean;
+    hasDraggableOver?: boolean;
+  };
+
+  const emit = defineEmits<EmitsType>();
+  const { item, isDragged, hasDraggableOver } = defineProps<MenuItemProps>();
+
+  const baseModifiers = computed(() => ({
+    "is-dragged": isDragged,
+    "has-draggable-over": hasDraggableOver,
+  }));
+  const [block, element] = useBEMBuilder("menu-item", baseModifiers);
+  const { t } = useI18n();
+  const { mutate: deleteMenuItem } = useDeleteNavigationMenuItem();
 
   const type = computed(() => (item.navigation_id ? "Internal" : "External"));
 
@@ -22,10 +39,41 @@
       deleteMenuItem(item.id);
     }
   };
+
+  const onDragStart = (event: DragEvent) => {
+    if (event.dataTransfer) {
+      event.dataTransfer.dropEffect = "move";
+      event.dataTransfer.effectAllowed = "move";
+    }
+    emit("dragstart", event, item.id);
+  };
+
+  const onDragEnter = (itemId: number) => {
+    emit("dragenter", itemId);
+  };
+
+  const onDragLeave = () => {
+    emit("dragleave");
+  };
 </script>
 <template>
-  <li :class="block">
-    <div :class="element('label').value">
+  <li
+    :class="block"
+    draggable="true"
+    @dragstart="onDragStart"
+    @dragenter="onDragEnter(item.id)"
+    @dragleave="onDragLeave"
+  >
+    <div
+      :class="
+        element(
+          'label',
+          computed(() => ({
+            'has-draggable-over': hasDraggableOver,
+          })),
+        ).value
+      "
+    >
       <span>{{ item.label }}</span>
       <span>{{ type }}</span>
     </div>
