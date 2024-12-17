@@ -1,12 +1,4 @@
 <script lang="ts" setup>
-  import {
-    FormInput,
-    FormSwitch,
-    PortletComponent,
-    PortletBody,
-    DashButton,
-    DashLink,
-  } from "@starter-core/dash-ui/src";
   import { IconArrowleft, IconSave, IconPlus } from "@starter-core/icons";
   import { useForm } from "vee-validate";
   import { computed, watch } from "vue";
@@ -25,6 +17,14 @@
   } from "../composables";
   import { NAVIGATION_ROUTES_DATA } from "../constants";
   import { NavigationForm } from "../types";
+  import {
+    FormInput,
+    FormSwitch,
+    PortletComponent,
+    PortletBody,
+    DashButton,
+    DashLink,
+  } from "@starter-core/dash-ui/src";
 
   const { mutateAsync: createNavigation } = useNavigationCreate();
 
@@ -78,6 +78,20 @@
   });
 
   const slugPrepend = computed(() => {
+    if (!isEditPage.value) {
+      if (parentId.value && navigations.value) {
+        const parentNavigation = navigations.value.find(
+          (navigation) => navigation.id === parentId.value,
+        );
+
+        if (parentNavigation) {
+          return parentNavigation.path;
+        }
+      }
+
+      return "/";
+    }
+
     if (!data?.value?.parent_path) {
       return "/";
     }
