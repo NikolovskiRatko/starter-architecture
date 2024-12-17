@@ -29,6 +29,7 @@ return new class extends Migration
 
             $table->string('external_url')->nullable();
             $table->foreignId('menu_id')->constrained('navigation_menus')->onDelete('cascade');
+            $table->unsignedInteger('order');
             $table->timestamps();
         });
     }

@@ -78,23 +78,27 @@ class NavigationSeeder extends Seeder
         $topMenu->items()->create([
             'label' => 'Home',
             'navigation_id' => $home->id,
+            'order' => 1,
         ]);
 
         $topMenu->items()->create([
             'label' => 'Contact',
             'navigation_id' => $contact->id,
+            'order' => 2,
         ]);
 
         // Add "About Us" to "Footer Menu"
         $topMenu->items()->create([
             'label' => 'About Us',
             'navigation_id' => $aboutUs->id,
+            'order' => 3,
         ]);
 
         // Add an external link to "Footer Menu"
         $footerMenu->items()->create([
             'label' => 'Privacy Policy',
             'external_url' => 'https://example.com/privacy-policy',
+            'order' => 1,
         ]);
     }
 }
