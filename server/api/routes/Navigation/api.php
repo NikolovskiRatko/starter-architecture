@@ -50,5 +50,6 @@ Route::group([
         Route::post('create', [NavigationMenuItemController::class, 'create']);
         Route::patch('{id}', [NavigationMenuItemController::class, 'update']);
         Route::delete('{id}', [NavigationMenuItemController::class, 'delete']);
+        Route::patch('{id}/reorder', [NavigationMenuItemController::class, 'reorder']);
     });
 });

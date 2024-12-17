@@ -15,6 +15,7 @@ class NavigationMenuItemDTO
     public ?string $external_url;
     public int $menu_id;
     public string $label;
+    public int $order;
 
     public function __construct(
         int $id,
@@ -22,7 +23,8 @@ class NavigationMenuItemDTO
         ?array $navigation = null,
         ?string $external_url = null,
         int $menu_id,
-        string $label
+        string $label,
+        int $order
     ) {
         $this->id = $id;
         $this->navigation_id = $navigation_id;
@@ -30,6 +32,7 @@ class NavigationMenuItemDTO
         $this->external_url = $external_url;
         $this->menu_id = $menu_id;
         $this->label = $label;
+        $this->order = $order;
     }
 
     /**
@@ -45,6 +48,7 @@ class NavigationMenuItemDTO
             'external_url' => 'nullable|string|url|max:255|required_without_all:navigation_id',
             'menu_id' => 'required|integer|exists:navigation_menus,id',
             'label' => 'required|string|max:255',
+            'order' => 'required|integer|min:1',
         ];
 
         // Create the validator instance
@@ -80,7 +84,8 @@ class NavigationMenuItemDTO
             navigation: null,
             external_url: $data['external_url'] ?? null,
             menu_id: $data['menu_id'],
-            label: $data['label']
+            label: $data['label'],
+            order: $data['order']
         );
     }
 
@@ -98,7 +103,8 @@ class NavigationMenuItemDTO
             navigation: $item->navigation ? NavigationDTO::fromModel($item->navigation)->toArray() : null,
             external_url: $item->external_url,
             menu_id: $item->menu_id,
-            label: $item->label
+            label: $item->label,
+            order: $item->order
         );
     }
 
@@ -126,6 +132,7 @@ class NavigationMenuItemDTO
             'external_url' => $this->external_url,
             'menu_id' => $this->menu_id,
             'label' => $this->label,
+            'order' => $this->order,
         ];
     }
 

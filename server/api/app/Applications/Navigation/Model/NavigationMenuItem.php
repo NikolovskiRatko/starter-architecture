@@ -15,6 +15,7 @@ class NavigationMenuItem extends Model
         'external_url',
         'menu_id',
         'label',
+        'order',
     ];
 
     /**

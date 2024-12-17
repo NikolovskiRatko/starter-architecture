@@ -52,6 +52,10 @@ class NavigationMenuItemController extends Controller
      */
     public function create(Request $request): JsonResponse
     {
+        $request->merge([
+            'order' => $this->service->getNextOrderValue($request->menu_id)
+        ]);
+
         $menuItemDTO = NavigationMenuItemDTO::fromRequest($request);
         $item = $this->service->create($menuItemDTO);
 
@@ -88,5 +92,34 @@ class NavigationMenuItemController extends Controller
         return $deleted
             ? response()->json(['success' => true])
             : response()->json(['error' => 'Item not found or deletion failed'], 404);
+    }
+
+    /**
+     * Reorder a navigation menu item.
+     *
+     * @param Request $request
+     * @param int $menuId
+     * @return JsonResponse
+     */
+    public function reorder(Request $request, int $menuId): JsonResponse
+    {
+        $request->validate([
+            'item_id' => 'required|integer|exists:navigation_menu_items,id',
+            'order' => 'required|integer|min:1'
+        ]);
+
+        try {
+            $this->service->reorderItem(
+                $menuId,
+                $request->input('item_id'),
+                $request->input('order')
+            );
+
+            return response()->json(['success' => true]);
+        } catch (Exception $e) {
+            return response()->json([
+                'error' => $e->getMessage()
+            ], 400);
+        }
     }
 }

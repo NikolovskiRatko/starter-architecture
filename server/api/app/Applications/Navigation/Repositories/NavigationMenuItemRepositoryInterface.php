@@ -45,4 +45,22 @@ interface NavigationMenuItemRepositoryInterface
      * @return bool
      */
     public function delete(NavigationMenuItem $item): bool;
+
+    /**
+     * Get the maximum order value for a specific menu.
+     *
+     * @param int $menuId
+     * @return int
+     */
+    public function getMaxOrderByMenuId(int $menuId): int;
+
+    /**
+     * Reorder a menu item within its menu.
+     *
+     * @param int $menuId
+     * @param int $itemId
+     * @param int $newOrder
+     * @return bool
+     */
+    public function reorderItem(int $menuId, int $itemId, int $newOrder): bool;
 }

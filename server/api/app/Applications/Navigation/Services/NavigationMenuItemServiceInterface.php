@@ -49,4 +49,22 @@ interface NavigationMenuItemServiceInterface
      * @return bool
      */
     public function delete(int $id): bool;
+
+    /**
+     * Get the next available order value for a specific menu.
+     *
+     * @param int $menuId
+     * @return int
+     */
+    public function getNextOrderValue(int $menuId): int;
+
+    /**
+     * Reorder a navigation menu item.
+     *
+     * @param int $menuId
+     * @param int $itemId
+     * @param int $newOrder
+     * @return bool
+     */
+    public function reorderItem(int $menuId, int $itemId, int $newOrder): bool;
 }

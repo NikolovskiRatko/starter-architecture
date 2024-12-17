@@ -47,7 +47,9 @@ class NavigationMenuRepository implements NavigationMenuRepositoryInterface
      */
     public function findByIdWithItems(int $id): ?NavigationMenu
     {
-        return $this->navigationMenu->with('items')->find($id);
+        return $this->navigationMenu->with(['items' => function($query) {
+            $query->orderBy('order', 'asc');
+        }])->find($id);
     }
 
     public function findBySlugWithItems(string $slug)

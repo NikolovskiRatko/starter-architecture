@@ -98,4 +98,34 @@ class NavigationMenuItemService implements NavigationMenuItemServiceInterface
 
         Validator::make($data, $rules)->validate();
     }
+
+    /**
+     * Get the next available order value for a specific menu.
+     *
+     * @param int $menuId
+     * @return int
+     */
+    public function getNextOrderValue(int $menuId): int
+    {
+        return $this->repository->getMaxOrderByMenuId($menuId) + 1;
+    }
+
+    /**
+     * Reorder a menu item within its menu.
+     *
+     * @param int $menuId
+     * @param int $itemId
+     * @param int $newOrder
+     * @return bool
+     */
+    public function reorderItem(int $menuId, int $itemId, int $newOrder): bool
+    {
+        $result = $this->repository->reorderItem($menuId, $itemId, $newOrder);
+
+        if (!$result) {
+            throw new Exception("Failed to reorder navigation menu item");
+        }
+
+        return $result;
+    }
 }

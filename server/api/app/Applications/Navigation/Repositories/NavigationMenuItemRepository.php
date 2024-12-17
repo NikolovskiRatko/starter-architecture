@@ -72,4 +72,54 @@ class NavigationMenuItemRepository implements NavigationMenuItemRepositoryInterf
     {
         return $item->delete();
     }
+
+    /**
+     * Get the maximum order value for a specific menu.
+     *
+     * @param int $menuId
+     * @return int
+     */
+    public function getMaxOrderByMenuId(int $menuId): int
+    {
+        return $this->navigationMenuItem
+            ->where('menu_id', $menuId)
+            ->max('order') ?? 1;
+    }
+
+    /**
+     * Reorder a menu item within its menu.
+     *
+     * @param int $menuId
+     * @param int $itemId
+     * @param int $newOrder
+     * @return bool
+     */
+    public function reorderItem(int $menuId, int $itemId, int $newOrder): bool
+    {
+        $item = $this->navigationMenuItem->find($itemId);
+
+        if (!$item || $item->menu_id !== $menuId) {
+            return false;
+        }
+
+        $currentOrder = $item->order;
+
+        if ($newOrder > $currentOrder) {
+            // Moving down: decrease order of items between current and new position
+            $this->navigationMenuItem
+                ->where('menu_id', $menuId)
+                ->where('order', '>', $currentOrder)
+                ->where('order', '<=', $newOrder)
+                ->decrement('order');
+        } else {
+            // Moving up: increase order of items between new and current position
+            $this->navigationMenuItem
+                ->where('menu_id', $menuId)
+                ->where('order', '>=', $newOrder)
+                ->where('order', '<', $currentOrder)
+                ->increment('order');
+        }
+
+        return $item->update(['order' => $newOrder]);
+    }
 }
