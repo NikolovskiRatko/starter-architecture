@@ -1,6 +1,16 @@
 .menu-item {
     display: flex;
     align-items: center;
+    background-color: var(--dui-color-secondary);
+
+    &--is-dragged {
+        background-color: var(--dui-gray-200);
+        opacity: 0.7;
+    }
+
+    &--has-draggable-over {
+        background-color: var(--dui-gray-800);
+    }
 
     &__label {
         flex: 1;
@@ -8,8 +18,11 @@
         border: var(--dui-border-light);
         display: flex;
         justify-content: space-between;
-        background-color: var(--dui-color-secondary);
         gap: var(--dui-spacing-1);
         color: var(--dui-color-text-dark);
+
+        &--has-draggable-over {
+            color: var(--dui-color-text-dark-bg);
+        }
     }
 }
