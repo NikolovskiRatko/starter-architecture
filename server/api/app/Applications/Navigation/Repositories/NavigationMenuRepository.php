@@ -47,16 +47,22 @@ class NavigationMenuRepository implements NavigationMenuRepositoryInterface
      */
     public function findByIdWithItems(int $id): ?NavigationMenu
     {
-        return $this->navigationMenu->with(['items' => function($query) {
+        return $this->navigationMenu->with(['items' => function ($query) {
             $query->orderBy('order', 'asc');
         }])->find($id);
     }
 
-    public function findBySlugWithItems(string $slug)
+    /**
+     * Find a navigation menu by slug, including its ordered items.
+     *
+     * @param string $slug
+     * @return NavigationMenu|null
+     */
+    public function findBySlugWithItems(string $slug): ?NavigationMenu
     {
-        return NavigationMenu::with('items.navigation')
-            ->where('slug', $slug)
-            ->first();
+        return NavigationMenu::with(['items' => function ($query) {
+            $query->orderBy('order', 'asc');
+        }])->where('slug', $slug)->first();
     }
 
     /**
