@@ -2,7 +2,7 @@
 
 # Define variables for Docker Compose and project paths
 DOCKER_COMPOSE = docker-compose
-DEV_ENV_DIR = infrastucture/dev_env
+DEV_ENV_DIR = infrastructure/dev_env
 API_DIR = app/api
 CLIENT_DIR = app/client
 
@@ -99,7 +99,7 @@ install_api:
 
 # 5. Install Admin Panel SPA Vue.js Dependencies
 .PHONY: install_client_admin
-install_client:
+install_client_admin:
 	@echo "Installing Node.js dependencies..."
 	docker exec -it -w /usr/app/client/admin $(NODE_CONTAINER) bash -c "npm install"
 	@echo "Node.js dependencies installed successfully."
@@ -113,21 +113,21 @@ migrate_seed:
 
 # 7. Start Admin Panel Vue.js Development Server
 .PHONY: start_client_admin
-start_client:
+start_client_admin:
 	@echo "Starting Vue.js development server..."
 	docker exec -it -w /usr/app/client/admin $(NODE_CONTAINER) bash -c "npm run dev"
 	@echo "Vue.js development server is running."
 
 # 8. Install Public facing SSR Nuxt.js Dependencies
 .PHONY: install_client_public
-install_client:
+install_client_public:
 	@echo "Installing Node.js dependencies..."
 	docker exec -it -w /usr/app/client/public $(NODE_CONTAINER) bash -c "npm install"
 	@echo "Node.js dependencies installed successfully."
 
 # 9. Start Public facing SSR Nuxt.js Development Server
 .PHONY: start_client_public
-start_client:
+start_client_public:
 	@echo "Starting Vue.js development server..."
 	docker exec -it -w /usr/app/client/public $(NODE_CONTAINER) bash -c "npm run dev"
 	@echo "Vue.js development server is running."
