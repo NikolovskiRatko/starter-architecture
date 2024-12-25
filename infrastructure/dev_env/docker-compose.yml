@@ -6,6 +6,9 @@ services:
     build:
       context: ./bin/app
       dockerfile: Dockerfile
+      args:
+        WWW_DATA_UID: ${UID}
+        WWW_DATA_GID: ${GID}
     container_name: app
     restart: always
     # The external port mapping to internal port mapping

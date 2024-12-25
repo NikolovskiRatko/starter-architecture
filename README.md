@@ -12,7 +12,7 @@ The folder structure of the components is the following:
  **jenkins** (Ansible Provisioning Playbook)
  **terraform** (Terraform Cold Start)
 
-**server**
+**app**
  **api** (Laravel API)
  **client**
   **admin** (Vue SPA Admin Panel)
@@ -32,7 +32,7 @@ Language: Go
 
 
 ### 2 - Back-end API
-#### Folder: server/api
+#### Folder: app/api
 
 Approach: S.O.L.I.D Principles
 

@@ -1,5 +1,5 @@
 # Source directory on Jenkins server
-source_directory: "/var/lib/jenkins/workspace/Starter_dev/server"
+source_directory: "/var/lib/jenkins/workspace/Starter_dev/app"
 
 # Domain of your site
 domain: nikolovski.org

@@ -19,7 +19,7 @@ After starting the Docker-Compose local development environment from the **infra
 ```shell
 docker exec -it app /bin/bash
 ```
-Then in folder within the app container **server/api** run the following commands:
+Then in folder within the app container **app/api** run the following commands:
 ```shell
 composer install && php artisan config:clear && php artisan view:clear && php artisan route:clear && composer dump-autoload && php artisan cache:clear && php artisan config:cache && php artisan route:cache
 ```
@@ -32,7 +32,7 @@ php artisan migrate:fresh && php artisan db:seed
 ```shell
 docker exec -it node /bin/bash
 ```
-Then in folder within the node container **server/client/admin** run the following commands:
+Then in folder within the node container **app/client/admin** run the following commands:
 ```shell
 npm install && npm run dev
 ```
@@ -41,14 +41,14 @@ npm install && npm run dev
 ```shell
 docker exec -it node /bin/bash
 ```
-Then in folder within the node container **server/client/public** run the following commands:
+Then in folder within the node container **app/client/public** run the following commands:
 ```shell
 npm install && npm run dev
 ```
 
 ### Tips
 
-To fix Permission issues for Laravel folder in folder **server/api** outside of docker containers:
+To fix Permission issues for Laravel folder in folder **app/api** outside of docker containers:
 ```shell
 sudo chown -R www-data. . && sudo setfacl -R -m u:$USER:rwx .
 ```

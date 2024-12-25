@@ -6,15 +6,15 @@ php_upload_max_filesize: "256M"
 php_session_cookie_lifetime: "20000"
 php_session_gc_maxlifetime: "20000"
 php_packages:
-  - php8.2
-  - php8.2-cli
-  - php8.2-common
-  - php8.2-gd
-  - php8.2-mbstring
-  - php8.2-pdo
-  - php8.2-apcu
-  - php8.2-xml
-  - php8.2-opcache
-  - php8.2-mysql
-  - php8.2-curl
-  - php8.2-intl
+  - phpapp8.3
+  - phpapp8.3-cli
+  - phpapp8.3-common
+  - phpapp8.3-gd
+  - phpapp8.3-mbstring
+  - phpapp8.3-pdo
+  - phpapp8.3-apcu
+  - phpapp8.3-xml
+  - phpapp8.3-opcache
+  - phpapp8.3-mysql
+  - phpapp8.3-curl
+  - phpapp8.3-intl

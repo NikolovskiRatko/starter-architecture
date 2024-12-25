@@ -2,7 +2,7 @@
 root_dir: "{{ lookup('file', 'sensitive/root_dir') }}"
 
 # Source directory on Local computer
-source_directory: "{{ root_dir }}/starter-architecture/server"
+source_directory: "{{ root_dir }}/starter-architecture/app"
 
 # Domain of your site
 domain: "{{ lookup('file', 'sensitive/domain_name') }}"
