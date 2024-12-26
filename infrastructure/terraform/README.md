@@ -44,4 +44,5 @@ terraform apply
 Go to **jenkins.thestarter.net** and login with admin user
 
 **admin**
+
 **(admin_password)**

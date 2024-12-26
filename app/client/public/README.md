@@ -1,15 +1,25 @@
-# Release Engineering Environment
+# Public Content (Nuxt.js Single Page Application)
 
-The Jenkins server uses this Continuous Integration and Continuous Deployment (CI/CD) Environment.
+Nuxt is a framework for server-side rendering (SSR) Vue.js applications. It simplifies the development of universal or isomorphic web applications, providing SEO benefits and improved performance.
 
-## Jenkins Pipeline
+## Development Server
 
-The testing, build and deployment stages are defined in the **Jenkinsfile** in **infrastructure/ci_cd** folder
+For the Nuxt.js Public Content SSR start the app container by running:
 
-## Build Environment
+```shell
+docker exec -it node /bin/bash
+```
 
-Dockerized build environment via Docker Compose defined in **infrastructure/ci_cd/build** folder
+Then in folder within the node container **app/client/public** run the following commands:
 
-## Deployment Playbook
+```shell
+npm install && npm run dev
+```
 
-Ansible Playbooks for zero downtime deployments and rollback mechanisms in case of failures defined in **infrastructure/ci_cd/deploy** folder
+## Production
+
+Build the application for production:
+
+```bash
+npm install && npm run build
+```

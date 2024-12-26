@@ -14,6 +14,8 @@ Dockerized build environment via Docker Compose defined in **infrastructure/ci_c
 
 Ansible Playbooks for zero downtime deployments and rollback mechanisms in case of failures defined in **infrastructure/ci_cd/deploy** folder
 
-##NOTE: Create folder sensitive in deploy with the following files containing a single string:
+## NOTE: Create folder sensitive in deploy with the following files containing a single string:
+
 domain_name
+
 root_dir

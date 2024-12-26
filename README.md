@@ -1,13 +1,21 @@
 ## Introduction
 Starter Architecture is a custom web application software project that follows a well defined and standardized technology stack and architectural principles.
 
+![Starter Text](documentation/images/starter_text.png "Starter")
+
+![Starter Logo](documentation/images/starter_logo.png "Logo")
+
 ## Documentation
 
 ### Introduction
 
-- [Overview Guide](./documentation/README-Introduction.md)
+- [Introduction](./documentation/README-Introduction.md)
+- [Starter Architecture Overview](./documentation/StarterArchitecturePresentation.md)
 
 ### Installation Guides
+
+- [Onboarding Guide](./documentation/OnboardingGuide.md)
+
 
 - [Windows Setup Guide](./documentation/README-Windows.md)
 - [macOS Setup Guide](./documentation/README-macOS.md)
@@ -24,7 +32,5 @@ Starter Architecture is a custom web application software project that follows a
 
 ### Additional Guides
 
-- [System Setup Guide](./documentation/OnboardingGuide.pdf)
-- [Starter Architecture Overview](./documentation/StarterArchitecturePresentation.pdf)
-- [Engineering Best Practices Guide](./documentation/EngineeringBestPractices.pdf)
-- [In-Depth Technology Guide](./documentation/TechnologyGuide.pdf)
+- [Engineering Best Practices Guide](./documentation/EngineeringBestPractices.md)
+- [Technology Practices Manual](./documentation/TechnologyGuide.md)
