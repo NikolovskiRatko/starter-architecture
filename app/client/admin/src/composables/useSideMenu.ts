@@ -1,4 +1,3 @@
-import type { NavMenuDataInterface } from "@starter-core/dash-ui/src/components/Menu/NavMenu/types";
 import {
   IconLayout4blocks,
   IconUser,
@@ -8,6 +7,7 @@ import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { useInitialData } from "@/composables";
 import useAuthComp from "@/composables/useAuthComp";
+import type { NavMenuDataInterface } from "@starter-core/dash-ui/src/components/Menu/NavMenu/types";
 
 const getItemIcon = (link: string) => {
   switch (link) {
@@ -57,7 +57,7 @@ export default function useSideMenu() {
     }
 
     return {
-      listStyle: "dot",
+      listStyle: "icons",
       items: data.value.mainMenu
         .filter((menuItem) =>
           permissionsArray.value.includes(menuItem.permission),
@@ -70,7 +70,7 @@ export default function useSideMenu() {
           icon: getItemIcon(link),
           ...(subcategories && {
             submenu: {
-              listStyle: "icons",
+              listStyle: "dot",
               stickToSide: "left",
               items: subcategories
                 .filter((subitem) =>

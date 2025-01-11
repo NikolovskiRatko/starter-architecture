@@ -14,6 +14,7 @@
     isTopLevelItem = false,
     isActive = false,
     level = 1,
+    style = 'none',
     item
   } = defineProps<MenuItemProps>()
 
@@ -105,7 +106,7 @@
       :is-expanded="submenu.isExpanded"
       :is-mega-menu="submenu.isMegaMenu"
       :is-visible="isSubmenuVisible"
-      :list-style="submenu.listStyle"
+      :style="submenu.listStyle"
       :level="level"
     />
   </li>

@@ -11,7 +11,7 @@ export type MenuLinkProps = {
   label: string;
   route: string | RouteLocation;
   icon?: VueElement | null;
-  listStyle?: MenuListStyle | null;
+  listStyle: MenuListStyle;
   badge?: BadgeType | null;
   hasSubmenu?: boolean;
   isSubmenuLink?: boolean;

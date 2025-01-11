@@ -294,7 +294,7 @@ class HomeController extends Controller
 
         $navMenu = [
             'theme' => 'classic',
-            'listStyle' => 'dot',
+            'listStyle' => 'none',
             'items' => [
                 [
                     'label' => 'Pages',
@@ -316,7 +316,7 @@ class HomeController extends Controller
 
         return [
             'mainMenu' => $mainMenu,
-            'navMenu' => $navMenu,
+            'navMenu' => [],
         ];
     }
 }

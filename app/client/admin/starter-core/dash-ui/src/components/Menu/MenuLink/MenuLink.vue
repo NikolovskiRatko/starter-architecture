@@ -1,10 +1,11 @@
 <script setup lang="ts">
-  import { inject, computed, ref, h } from "vue";
+  import { inject, computed, ref } from "vue";
   import { isMenuMinimizedKey, menuTypeKey } from "../constants";
   import type { MenuLinkProps } from "./types";
   import MenuLinkIcon from "./MenuLinkIcon.vue";
   import { MENU_TYPE } from "../../../constants";
   import { useBEMBuilder } from "../../../helpers";
+
   import "./MenuLink.scss";
 
   const {
@@ -33,7 +34,7 @@
 
   const [block, element] = useBEMBuilder('kt-menu__link', ref({
     [`${menuType}`]: menuType,
-    [`${level}`]: level,
+    [`level-${level}`]: level,
     active: isActive,
     'submenu-link': isSubmenuLink,
     minimized: isMinimized
@@ -54,10 +55,9 @@
     v-bind="hasSubmenu ? {} : { to: route }"
     @click="handleClick"
   >
-    <MenuLinkIcon :icon="icon" :is-active="isActive" />
-
+    <MenuLinkIcon v-if="icon && listStyle === 'icons'" :icon="icon" :is-active="isActive" />
     <i
-      v-if="listStyle && !isMinimized"
+      v-if="!isMinimized && !['icons', 'none'].includes(listStyle)"
       :class="['kt-menu__link-bullet', `kt-menu__link-bullet--${listStyle}`]"
     >
       <span />

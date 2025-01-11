@@ -43,6 +43,7 @@ provide(isMenuMinimizedKey, computed(() => isMinimized));
       :key="`${navMenuItem.label}-menu-item`"
       :item="navMenuItem"
       :is-top-level-item="true"
+      :style="data.listStyle"
     />
   </ul>
 </template>

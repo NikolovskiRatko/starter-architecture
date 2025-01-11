@@ -1,37 +1,31 @@
 <script setup lang="ts">
-import { inject, type PropType } from "vue";
+import { inject } from "vue";
 import MenuItem from "../MenuItem/MenuItem.vue";
 import MegaMenu from "../MegaMenu/MegaMenu.vue";
-import type { StickToSide, SubmenuItems } from "../SubMenu/types";
+import type { MenuListStyle, StickToSide, SubmenuItems } from "./types";
 import { menuTypeKey, menuThemeKey } from "../constants";
+
 import "./SubMenu.scss";
 
-const props = defineProps({
-  stickToSide: {
-    type: String as PropType<StickToSide>,
-    default: "left",
-  },
-  items: {
-    type: Array as PropType<SubmenuItems>,
-    required: true,
-  },
-  isExpanded: {
-    type: Boolean,
-    default: false,
-  },
-  isVisible: {
-    type: Boolean,
-    default: false,
-  },
-  isMegaMenu: {
-    type: Boolean,
-    default: false,
-  },
-  level: {
-    type: Number,
-    default: 1
-  }
-});
+interface SubMenuProps {
+  items: SubmenuItems;
+  style?: MenuListStyle;
+  stickToSide?: StickToSide;
+  level?: number;
+  isExpanded?: boolean;
+  isVisible?: boolean;
+  isMegaMenu?: boolean;
+}
+
+const {
+  items,
+  stickToSide = "left",
+  level = 1,
+  isMegaMenu,
+  isVisible,
+  isExpanded,
+  style
+} = defineProps<SubMenuProps>();
 
 const menuType = inject(menuTypeKey);
 const menuTheme = inject(menuThemeKey);
@@ -49,7 +43,7 @@ const menuTheme = inject(menuThemeKey);
       },
     ]"
   >
-    <ul v-if="props.isMegaMenu" :class="['kt-menu__subnav', `kt-menu__subnav--${menuType}`]">
+    <ul v-if="isMegaMenu" :class="['kt-menu__subnav', `kt-menu__subnav--${menuType}`]">
       <MegaMenu />
     </ul>
     <ul v-else :class="['kt-menu__subnav', `kt-menu__subnav--${menuType}`]">
@@ -57,7 +51,8 @@ const menuTheme = inject(menuThemeKey);
           v-for="item in items"
           :key="item.label"
           :item="item"
-          :level="props.level + 1"
+          :level="level + 1"
+          :style="style"
       />
     </ul>
   </div>

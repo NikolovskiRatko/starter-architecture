@@ -557,7 +557,7 @@ $item-submenu-section-indent: 15px;
         }
       }
 
-      &#{$block}--level-2 {
+      &.kt-menu__link--level-2 {
         padding: kt-get($item, link, padding);
         padding-left: $item-submenu-padding-left +
                   (1 * $item-submenu-section-indent);
