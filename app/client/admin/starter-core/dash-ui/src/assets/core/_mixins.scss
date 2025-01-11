@@ -69,13 +69,13 @@
 }
 
 @mixin kt-rounded {
-  @if $rounded == true {
+  @if $enable-rounded == true {
     @content;
   }
 }
 
 @mixin kt-not-rounded {
-  @if $rounded == false {
+  @if $enable-rounded == false {
     @content;
   }
 }

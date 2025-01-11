@@ -1,13 +1,9 @@
 $enable-shadows: false;
 
-// Include utility mixins and functions
-@import "utils";
-
-// Include global config
-@import "config/framework";
-
 // Bootstrap Variables
 @import "./bootstrap/variables";
+// Include utility mixins and functions
+@import "utils";
 
 // Configs that are moved to Vue
 @import "../components/Portlet/config";

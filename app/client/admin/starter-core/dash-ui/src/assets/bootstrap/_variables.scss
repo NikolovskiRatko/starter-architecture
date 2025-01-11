@@ -1,4 +1,187 @@
-$enable-rounded: $rounded; // pass rounded corners setting to bootstrap SASS
+@import "../core/functions";
+
+$border-radius: 4px !default;
+
+// State colors
+$state-colors: (
+  // Metronic states
+        brand:
+        (
+                base: #505ae2,
+                inverse: #ffffff,
+        ),
+        light: (
+                base: #ffffff,
+                inverse: #282a3c,
+        ),
+        dark: (
+                base: lighten(#4c467a, 12%),
+                inverse: #ffffff,
+        ),
+        primary:
+        (
+                base: #5867dd,
+                inverse: #ffffff,
+        ),
+        success: (
+                base: #1dc9b7,
+                inverse: #ffffff,
+        ),
+        info: (
+                base: #5578eb,
+                inverse: #ffffff,
+        ),
+        warning: (
+                base: #ffb822,
+                inverse: #111111,
+        ),
+        danger: (
+                base: #fd397a,
+                inverse: #ffffff,
+        )
+);
+
+$media-breakpoints: (
+  // Extra small screen / phone
+        xs: 0,
+
+  // Small screen / phone
+        sm: 576px,
+
+  // Medium screen / tablet
+        md: 768px,
+
+  // Large screen / desktop
+        lg: 1024px,
+
+  //1024px,
+  // Extra large screen / wide desktop
+        xl: 1399px
+);
+
+// Root Font Settings
+$font-size: (
+        size: (
+                desktop: 13px,
+                tablet: 12px,
+                mobile: 12px,
+        ),
+        weight: 300,
+);
+
+// General Link Settings
+$font-color: (
+        text: #646c9a,
+        link: (
+                default: #505ae2,
+                hover: darken(#505ae2 , 6%),
+        ),
+);
+
+$page-padding: (
+        desktop: 25px,
+        mobile: 15px,
+);
+$dropdown-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.15);
+$dropdown-zindex: 95;
+
+$action-bold-icons: (
+        down: "\f1b1",
+        up: "\f1b3",
+        left: "\f1b2",
+        right: "\f1a9",
+) !default;
+
+$action-icons: (
+        close: "\f191",
+        down: "\f110",
+        up: "\f113",
+        left: "\f111",
+        right: "\f112",
+        plus: "\f2c2",
+        minus: "\f28e",
+);
+
+$base-colors: (
+        label: (
+                1: #adb1c7,
+                2: #a7abc3,
+                3: #6c7293,
+                4: #464457,
+        ),
+        shape: (
+                1: #f0f3ff,
+                2: #e8ecfa,
+                3: #93a2dd,
+                4: #646c9a,
+        ),
+        grey: (
+                1: #f7f8fa,
+          //#f4f5f8
+                2: #ebedf2,
+                3: darken(#ebedf2, 3%),
+                4: darken(#ebedf2, 6%),
+        ),
+);
+
+$transition: all 0.3s;
+
+$font-families: (
+        regular: "Poppins",
+        heading: "Poppins",
+);
+
+// Elevate shadow
+$elevate-shadow: 0px 0px 13px 0px rgba(82, 63, 105, 0.05) !default;
+$elevate-shadow-2: 0px 0px 13px 0px rgba(82, 63, 105, 0.1) !default;
+
+// Dropdown shadow
+$dropdown-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.15) !default;
+
+// Custom scrollbar color
+$scroll-color: darken(#ebedf2, 6%) !default;
+
+// Transition
+$transition: all 0.3s !default;
+
+// Modal Z-index
+$modal-zindex: 1050 !default;
+
+// dropdown Z-index
+$dropdown-zindex: 95 !default;
+
+// Social network colors
+$social-colors: (
+  facebook: (
+    base: #3b5998,
+    inverse: #ffffff,
+  ),
+  google: (
+    base: #dc4e41,
+    inverse: #ffffff,
+  ),
+  twitter: (
+    base: #4ab3f4,
+    inverse: #ffffff,
+  ),
+  instagram: (
+    base: #517fa4,
+    inverse: #ffffff,
+  ),
+  youtube: (
+    base: #b31217,
+    inverse: #ffffff,
+  ),
+  linkedin: (
+    base: #0077b5,
+    inverse: #ffffff,
+  ),
+) !default;
+
+// Custom Scroll(Perfect Scrollbar) size
+$custom-scroll-size: 4px !default;
+
+$enable-rounded: true; // pass rounded corners setting to bootstrap SASS
 
 // Fonts
 $font-family-base: kt-get($font-families, regular);
