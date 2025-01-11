@@ -12,6 +12,7 @@
 
     img {
       max-width: 13rem;
+      max-height: 3rem;
     }
   }
 
@@ -48,7 +49,7 @@
 // Desktop mode
 @include kt-desktop {
   .kt-aside__brand {
-    background-color: var(--dui-color-dark);
+    background-color: var(--dui-color-darker);
     box-shadow: none;
     transition: var(--dui-transition);
 
