@@ -5,40 +5,40 @@ $border-radius: 4px !default;
 // State colors
 $state-colors: (
   // Metronic states
-        brand:
-        (
-                base: #505ae2,
-                inverse: #ffffff,
-        ),
-        light: (
-                base: #ffffff,
-                inverse: #282a3c,
-        ),
-        dark: (
-                base: lighten(#4c467a, 12%),
-                inverse: #ffffff,
-        ),
-        primary:
-        (
-                base: #5867dd,
-                inverse: #ffffff,
-        ),
-        success: (
-                base: #1dc9b7,
-                inverse: #ffffff,
-        ),
-        info: (
-                base: #5578eb,
-                inverse: #ffffff,
-        ),
-        warning: (
-                base: #ffb822,
-                inverse: #111111,
-        ),
-        danger: (
-                base: #fd397a,
-                inverse: #ffffff,
-        )
+  brand:
+  (
+    base: #505ae2,
+    inverse: #ffffff,
+  ),
+  light: (
+    base: #ffffff,
+    inverse: #282a3c,
+  ),
+  dark: (
+    base: lighten(#4c467a, 12%),
+    inverse: #ffffff,
+  ),
+  primary:
+  (
+    base: #5867dd,
+    inverse: #ffffff,
+  ),
+  success: (
+    base: #1dc9b7,
+    inverse: #ffffff,
+  ),
+  info: (
+    base: #5578eb,
+    inverse: #ffffff,
+  ),
+  warning: (
+    base: #ffb822,
+    inverse: #111111,
+  ),
+  danger: (
+    base: #fd397a,
+    inverse: #ffffff,
+  )
 );
 
 $media-breakpoints: (
@@ -61,12 +61,12 @@ $media-breakpoints: (
 
 // Root Font Settings
 $font-size: (
-        size: (
-                desktop: 13px,
-                tablet: 12px,
-                mobile: 12px,
-        ),
-        weight: 300,
+    size: (
+      desktop: 14px,
+      tablet: 13px,
+      mobile: 13px,
+    ),
+    weight: 300,
 );
 
 // General Link Settings

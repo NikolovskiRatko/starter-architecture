@@ -3,48 +3,24 @@
 //
 
 // Base
-@import "../core/base/page-loader";
 @import "../core/base/normalize";
-@import "../core/base/animations";
 @import "../core/base/helpers";
-@import "../core/base/portlet";
-//@import "../core/base/datatable";
-@import "../core/base/scrolltop";
 @import "../core/base/form";
 @import "../core/base/input-icon";
-@import "../core/base/checkbox";
-// @import "../core/base/radio";
-@import "../core/base/option";
-//@import "../core/base/avatar";
-@import "../core/base/spinner";
-@import "../core/base/loader";
-@import "../core/base/pulse";
-//@import "../../components/Modal/dialog";
 
 // General
 @import "general/grid-nav-v2";
 @import "general/grid-nav";
 @import "general/head";
-@import "general/list-pics";
-@import "general/list-timeline";
 @import "general/my-cart";
 @import "general/nav";
 @import "general/notification";
 @import "general/notification-v2";
 @import "general/profile";
 @import "general/notes";
-@import "general/timeline-v1";
-@import "general/timeline-v2";
-@import "general/timeline-v3";
 @import "general/user-card";
-//@import "general/user-card-v2";
-//@import "general/user-card-v3";
-@import "general/user-pic";
 @import "general/pagination";
 @import "general/searchbar";
-
-// Widgets - Chat
-//@import "general/chat";
 
 // Typography
 @import "typography/badge";
