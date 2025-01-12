@@ -6,9 +6,6 @@
   transition: var(--dui-transition);
   background-color: var(--dui-color-dark);
 
-  // Scrollbar
-  @include perfect-scrollbar-skin(#637099);
-
   &__footer {
     height: 45px;
     width: 45px;
@@ -134,11 +131,6 @@
       width: var(--dui-aside-default-width);;
       transition: var(--dui-transition);
     }
-
-    // Scroll
-    @include perfect-scrollbar-ver-size(
-      kt-get($aside-config, base, fixed, scroll, width)
-    );
   }
 }
 
