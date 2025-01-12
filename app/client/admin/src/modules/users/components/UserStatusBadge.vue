@@ -1,23 +1,18 @@
 <script setup lang="ts">
-  import { ref } from "vue";
-  import { useBEMBuilder } from "@/helpers";
+  import { BadgeComponent } from "@starter-core/dash-ui/src";
 
   const { isDisabled } = defineProps<{ isDisabled: boolean }>();
-
-  const [block] = useBEMBuilder(
-    "kt-badge",
-    ref({
-      danger: isDisabled,
-      success: !isDisabled,
-      inline: true,
-      pill: true,
-    }),
-  );
 </script>
 <template>
   <span>
-    <span :style="{ textTransform: 'capitalize' }" :class="block">{{
-      isDisabled ? $t("users.status.disabled") : $t("users.status.enabled")
-    }}</span>
+    <BadgeComponent
+      :theme="isDisabled ? 'danger' : 'success'"
+      is-inline
+      is-pill
+    >
+      {{
+        isDisabled ? $t("users.status.disabled") : $t("users.status.enabled")
+      }}
+    </BadgeComponent>
   </span>
 </template>

@@ -14,32 +14,32 @@
   font-size: 0.8rem;
 
   // Font options
-  &.kt-badge--bold {
+  &--bold {
     font-weight: 500;
   }
 
-  &.kt-badge--bolder {
+  &--bolder {
     font-weight: 600;
   }
 
-  &.kt-badge--boldest {
+  &--boldest {
     font-weight: 700;
   }
 
   // Sizing
-  &.kt-badge--md {
+  &--md {
     height: 24px;
     width: 24px;
     font-size: 1rem;
   }
 
-  &.kt-badge--lg {
+  &--lg {
     height: 35px;
     width: 35px;
     font-size: 1rem;
   }
 
-  &.kt-badge--xl {
+  &--xl {
     height: 50px;
     width: 50px;
     font-size: 1.1rem;

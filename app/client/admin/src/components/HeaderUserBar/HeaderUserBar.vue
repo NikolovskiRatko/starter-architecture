@@ -1,9 +1,9 @@
 <script setup>
   import { IconUser } from "@starter-core/icons";
-  import { ref } from "vue";
+  import { ref, computed } from "vue";
   import HeaderUserBarListItem from "./HeaderUserBarListItem.vue";
   import useAuthComp from "@/composables/useAuthComp";
-  import { DashLink } from "@starter-core/dash-ui/src";
+  import { BadgeComponent } from "@starter-core/dash-ui/src";
   import { useOnClickOutside } from "@starter-core/dash-ui/src/composables";
 
   import "./HeaderUserBar.scss";
@@ -20,6 +20,18 @@
       toggleDropdown();
     }
   });
+
+  const avatarSource = computed(() => {
+    if (user?.value?.avatar_thumbnail) {
+      return user.value.avatar_thumbnail;
+    }
+
+    return null;
+  });
+
+  const userFirstLetter = computed(() =>
+    (user?.value?.first_name ?? "A")?.substring(0, 1),
+  );
 </script>
 <template>
   <div
@@ -35,13 +47,10 @@
         <span class="kt-header__topbar-username kt-hidden-mobile">{{
           user.first_name
         }}</span>
-        <img class="kt-hidden" alt="Pic" src="" />
-
-        <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
-        <span
-          class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold"
-          >S</span
-        >
+        <img v-if="avatarSource" alt="avatar" :src="avatarSource" />
+        <BadgeComponent v-else font-weight="bold" size="lg">
+          {{ userFirstLetter }}
+        </BadgeComponent>
       </div>
       <div
         class="header-user-bar__dropdown dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl"
@@ -54,13 +63,10 @@
           class="header-user-bar__user-card kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x"
         >
           <div class="kt-user-card__avatar">
-            <img class="kt-hidden" alt="Pic" src="" />
-
-            <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
-            <span
-              class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success"
-              >S</span
-            >
+            <img v-if="avatarSource" alt="avatar" :src="avatarSource" />
+            <BadgeComponent v-else font-weight="bold" size="lg">
+              {{ userFirstLetter }}
+            </BadgeComponent>
           </div>
           <div class="kt-user-card__name">
             {{ user.first_name }}
@@ -83,9 +89,6 @@
               class="btn btn-label btn-label-brand btn-sm btn-bold"
               >Sign Out</a
             >
-            <DashLink :to="{ name: 'dashboard' }" size="sm" is-clean>
-              Upgrade Plan
-            </DashLink>
           </div>
         </div>
 

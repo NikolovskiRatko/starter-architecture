@@ -2,21 +2,23 @@
   import { computed, ref } from "vue";
   import { useUserRoles } from "../composables";
   import type { UserRoleId } from "../types";
-  import { useBEMBuilder } from "@/helpers";
+  import { BadgeComponent } from "@starter-core/dash-ui/src";
 
   const { userRoleId } = defineProps<{ userRoleId: UserRoleId }>();
   const { isLoading: isFetchingRoles, data: roles } = useUserRoles();
 
-  const [block] = useBEMBuilder(
-    "kt-badge",
-    ref({
-      danger: userRoleId === 1,
-      success: userRoleId === 2,
-      primary: userRoleId >= 3,
-      inline: true,
-      pill: true,
-    }),
-  );
+  const badgeTheme = computed(() => {
+    switch (userRoleId) {
+      case 1:
+        return "danger";
+      case 2:
+        return "success";
+      case 3:
+        return "primary";
+      default:
+        return "";
+    }
+  });
 
   const userRole = computed(() => {
     if (isFetchingRoles.value || !roles.value) {
@@ -28,8 +30,8 @@
 </script>
 <template>
   <span>
-    <span :style="{ textTransform: 'capitalize' }" :class="block">{{
-      userRole
-    }}</span>
+    <BadgeComponent :theme="badgeTheme" is-inline is-pill>
+      {{ userRole }}
+    </BadgeComponent>
   </span>
 </template>
