@@ -16,10 +16,6 @@
     font-weight: 400;
     justify-content: flex-start;
     color: kt-base-color(label, 2);
-
-    .kt-link {
-      @include kt-link-color(kt-base-color(label, 2), kt-brand-color());
-    }
   }
 
   .kt-footer__menu {
@@ -33,7 +29,6 @@
       padding: 0;
       font-size: 1rem;
       font-weight: 400;
-      @include kt-link-color(kt-base-color(label, 3), kt-brand-color());
     }
   }
 }

@@ -124,14 +124,6 @@
 
     // Toolbar
     .kt-header-mobile__toolbar {
-      @include kt-burger-icon-skin(
-        kt-header-mobile__toggler,
-        (
-          default: #484f66,
-          hover: #ffffff,
-          active: #ffffff,
-        )
-      );
 
       .kt-header-mobile__topbar-toggler {
         i {
