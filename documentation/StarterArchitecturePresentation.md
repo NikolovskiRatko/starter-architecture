@@ -112,6 +112,11 @@ created by **thestarter.net**
 ![Nuxt](images/nuxt.png "Nuxt")
 ---
 
+## Architecture Diagram
+
+![Architecture Diagram](images/architecture_diagram.png "Architecture Diagram")
+---
+
 ## References
 
 - **Technology Practices Manual**:
