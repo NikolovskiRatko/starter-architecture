@@ -154,6 +154,14 @@ $header-menu-link-config: (
                         hover: kt-brand-color(),
                 ),
         ),
+        icon: (
+                font-color:	(
+                        default: #cacad2,
+                        active: kt-brand-color(),
+                        here: kt-brand-color(),
+                        hover: kt-brand-color()
+                )
+        )
 );
 $header-submenu-config: (
         // submenu itself
