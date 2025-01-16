@@ -1,15 +1,16 @@
 @import './animations';
+
 .kt-header-menu {
   display: flex;
   align-items: stretch;
   height: 100%;
 
   @include kt-desktop {
-    margin: kt-get($header-menu-config-desktop, build, layout, self, margin);
+    margin: 0 0 0 kt-get($page-padding, desktop);
   }
 
   @include kt-desktop-and-tablet {
-    margin: kt-get($header-menu-config-tablet-mobile, build, layout, self, margin);
+    margin: kt-get($header-menu-config-tablet-mobile, self, margin);
   }
 }
 
@@ -85,9 +86,6 @@
     }
 
     &--vertical {
-      $vertical-base: kt-get($header-menu-config-desktop, base);
-      $vertica-layout: kt-get($header-menu-config-desktop, build, layout);
-
       margin: 0;
       list-style: none;
       padding: 15px 0;

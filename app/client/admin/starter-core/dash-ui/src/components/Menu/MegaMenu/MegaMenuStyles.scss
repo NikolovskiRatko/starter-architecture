@@ -1,7 +1,4 @@
-$item: kt-get($header-menu-config-desktop, build, layout, item, submenu, item);
-$submenu: kt-get($header-menu-config-desktop, build, layout, item, submenu);
-
-$item-submenu-link-padding: kt-get($item, link, self, padding);
+$item-submenu-link-padding: kt-get($submenu-item-config, link, self, padding);
 $item-submenu-padding-left: 30px;
 $item-submenu-section-indent: 15px;
 
@@ -175,8 +172,8 @@ $item-submenu-section-indent: 15px;
 //
 //      > .kt-menu__subnav {
 //        > .kt-menu__item {
-//          @include kt-attr(margin, kt-get($item, self, margin));
-//          @include kt-attr(padding, kt-get($item, self, padding));
+//          @include kt-attr(margin, kt-get($submenu-item-config, self, margin));
+//          @include kt-attr(padding, kt-get($submenu-item-config, self, padding));
 //        }
 //
 //        // mega submenu
@@ -195,7 +192,7 @@ $item-submenu-section-indent: 15px;
 //          // heading
 //          .kt-menu__heading {
 //            $heading-config: kt-get(
-//              $item,
+//              $submenu-item-config,
 //              column,
 //              heading
 //            );
@@ -227,15 +224,15 @@ $item-submenu-section-indent: 15px;
 //          // mega menu
 //          .kt-menu__inner {
 //            padding: kt-get(
-//              $item,
+//              $submenu-item-config,
 //              column,
 //              self,
 //              padding
 //            );
 //
 //            > .kt-menu__item {
-//              @include kt-attr(margin, kt-get($item, self, margin));
-//              @include kt-attr(padding, kt-get($item, self, padding));
+//              @include kt-attr(margin, kt-get($submenu-item-config, self, margin));
+//              @include kt-attr(padding, kt-get($submenu-item-config, self, padding));
 //            }
 //          }
 //        }
@@ -243,8 +240,7 @@ $item-submenu-section-indent: 15px;
 //
 //      &.kt-menu__submenu--classic {
 //        //padding: kt-get(
-//        //  $submenu,
-//        //  self,
+//        //  $submenu-config,
 //        //  padding,
 //        //  classic
 //        //);
@@ -277,8 +273,8 @@ $item-submenu-section-indent: 15px;
 //      .kt-menu__submenu {
 //        display: block;
 //        animation:
-//          #{kt-get($header-menu-config-desktop, base, class)}-submenu-fade-in 0.3s ease 1,
-//          #{kt-get($header-menu-config-desktop, base, class)}-submenu-move-down 0.3s ease-out 1;
+//          #{$header-menu-base-class}-submenu-fade-in 0.3s ease 1,
+//          #{$header-menu-base-class}-submenu-move-down 0.3s ease-out 1;
 //
 //        // ie8-11 versions hack
 //        @include kt-hack-ie {
@@ -289,8 +285,8 @@ $item-submenu-section-indent: 15px;
 //          > .kt-menu__submenu {
 //            display: block;
 //            animation:
-//              #{kt-get($header-menu-config-desktop, base, class)}-submenu-fade-in 0.3s ease 1,
-//              #{kt-get($header-menu-config-desktop, base, class)}-submenu-move-up 0.3s ease-out 1;
+//              #{$header-menu-base-class}-submenu-fade-in 0.3s ease 1,
+//              #{$header-menu-base-class}-submenu-move-up 0.3s ease-out 1;
 //
 //            // ie8-11 versions hack
 //            @include kt-hack-ie {
@@ -309,7 +305,7 @@ $item-submenu-section-indent: 15px;
     // separator
     > .kt-menu__item {
       border-right: kt-get(
-                      $item,
+                      $submenu-item-config,
                       column,
                       separator,
                       border
@@ -320,12 +316,12 @@ $item-submenu-section-indent: 15px;
     .kt-menu__heading {
       // text
       > .kt-menu__link-text {
-        color: kt-get(kt-get($item, column, heading), caption, text, font-color);
+        color: kt-get(kt-get($submenu-item-config, column, heading), caption, text, font-color);
       }
 
       // icon
       > .kt-menu__link-icon {
-        color: kt-get(kt-get($item, column, heading), caption, icon, font-color);
+        color: kt-get(kt-get($submenu-item-config, column, heading), caption, icon, font-color);
       }
     }
   }

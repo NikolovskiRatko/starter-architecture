@@ -1,7 +1,5 @@
-$submenu-desktop-config: kt-get($header-menu-config-desktop, build, layout, item, submenu);
-$submenu-tablet-mobile-config: kt-get($header-menu-config-tablet-mobile, build, layout, default, item, submenu);
-
-$submenu-desktop-skin-config: kt-get($header-menu-config-desktop, build, skins, light, item, submenu);
+$submenu-tablet-mobile-config: kt-get($header-menu-config-tablet-mobile, item, submenu);
+$submenu-desktop-skin-config: kt-get($header-menu-skins-config, light, item, submenu);
 
 .kt-menu__submenu {
     $block: &;
@@ -19,15 +17,13 @@ $submenu-desktop-skin-config: kt-get($header-menu-config-desktop, build, skins, 
         box-shadow: kt-get($submenu-desktop-skin-config, self, box-shadow);
 
         padding: kt-get(
-            $submenu-desktop-config,
-            self,
+            $submenu-config,
             padding,
             megamenu
         );
 
         width: kt-get(
-            $submenu-desktop-config,
-            self,
+            $submenu-config,
             width,
             classic
         );
@@ -47,11 +43,10 @@ $submenu-desktop-skin-config: kt-get($header-menu-config-desktop, build, skins, 
         }
 
         &#{$block}--visible {
-            $baseClass: kt-get($header-menu-config-desktop, base, class);
             display: block;
             animation:
-              #{$baseClass}-submenu-fade-in 0.3s ease 1,
-              #{$baseClass}-submenu-move-down 0.3s ease-out 1;
+              #{$header-menu-base-class}-submenu-fade-in 0.3s ease 1,
+              #{$header-menu-base-class}-submenu-move-down 0.3s ease-out 1;
 
             // ie8-11 versions hack
             @include kt-hack-ie {
@@ -62,8 +57,8 @@ $submenu-desktop-skin-config: kt-get($header-menu-config-desktop, build, skins, 
                 > .kt-menu__submenu {
                   display: block;
                   animation:
-                    #{$baseClass}-submenu-fade-in 0.3s ease 1,
-                    #{$baseClass}-submenu-move-up 0.3s ease-out 1;
+                    #{$header-menu-base-class}-submenu-fade-in 0.3s ease 1,
+                    #{$header-menu-base-class}-submenu-move-up 0.3s ease-out 1;
 
                   // ie8-11 versions hack
                   @include kt-hack-ie {
@@ -114,24 +109,24 @@ $submenu-desktop-skin-config: kt-get($header-menu-config-desktop, build, skins, 
 
 
         @include kt-desktop {
-            z-index: kt-get($submenu-desktop-config, self, zindex);
+            z-index: kt-get($submenu-config, zindex);
             @include kt-rounded {
-                border-radius: kt-get($submenu-desktop-config, self, border-radius);
+                border-radius: kt-get($submenu-config, border-radius);
             }
-            @include kt-attr(margin,kt-get($submenu-desktop-config, self, margin));
-            @include kt-attr(padding,kt-get($submenu-desktop-config, self, padding, classic));
+            @include kt-attr(margin,kt-get($submenu-config, margin));
+            @include kt-attr(padding,kt-get($submenu-config, padding, classic));
 
             // full width
             &#{$block}--full {
-                left: kt-get($submenu-desktop-config, self, width, full, offset);
-                right: kt-get($submenu-desktop-config, self, width, full, offset);
+                left: kt-get($submenu-config, width, full, offset);
+                right: kt-get($submenu-config, width, full, offset);
             }
         }
 
         @include kt-desktop-and-tablet {
             z-index: kt-get($submenu-tablet-mobile-config, self, zindex);
             @include kt-rounded {
-                border-radius: kt-get($header-menu-config-tablet-mobile, build, layout, item, submenu, self, border-radius);
+                border-radius: kt-get($header-menu-config-tablet-mobile, item, submenu, self, border-radius);
             }
             @include kt-attr(margin, kt-get($submenu-tablet-mobile-config, self, margin));
             @include kt-attr(padding, kt-get($submenu-tablet-mobile-config, self, padding, classic));

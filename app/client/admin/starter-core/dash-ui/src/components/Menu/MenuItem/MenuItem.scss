@@ -1,7 +1,9 @@
 .kt-menu__item {
     $block: &;
-    $item-config: kt-get($header-menu-config-desktop, build, layout, item);
-    $item-skin-config: kt-get($header-menu-config-desktop, build, skins, light, item);
+    $item-skin-config: kt-get($header-menu-skins-config, light, item);
+    $menu-item-config: (
+            padding: 0px 0.25rem,
+    );
 
     &--horizontal {
 
@@ -9,8 +11,8 @@
             display: flex;
             align-items: center;
 
-            @include kt-attr(margin, kt-get($item-config, self, margin));
-            @include kt-attr(padding, kt-get($item-config, self, padding));
+            @include kt-attr(margin, kt-get($menu-item-config, margin));
+            @include kt-attr(padding, kt-get($menu-item-config, padding));
 
             @if kt-get($item-skin-config, self) {
                 &#{$block}--hover,
@@ -96,21 +98,21 @@
         flex-grow: 1;
         float: none;
         padding: 0;
-        @include kt-attr(background-color, kt-get($item-config, self, bg-color, default));
+        @include kt-attr(background-color, kt-get($menu-item-config, bg-color, default));
 
         &#{$block}--level-1 {
             position: relative;
-            @include kt-attr(margin, kt-get($item-config, self, margin));
-            @include kt-attr(padding, kt-get($item-config, self, padding));
+            @include kt-attr(margin, kt-get($menu-item-config, margin));
+            @include kt-attr(padding, kt-get($menu-item-config, padding));
         }
 
         &#{$block}--active {
             transition: background-color 0.3s;
-            @include kt-attr(background-color, kt-get($item-config, self, bg-color, open));
+            @include kt-attr(background-color, kt-get($menu-item-config, bg-color, open));
         }
 
         &#{$block}--minimized {
-            margin: kt-get($item-config, self, margin);
+            margin: kt-get($menu-item-config, margin);
             background: transparent;
         }
     }

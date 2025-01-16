@@ -1,11 +1,7 @@
 $header-item-icon-color: #c8cad5;
 $header-item-hover-bg: rgba(#4d5995, 0.06);
 
-$skin-config: kt-get($header-menu-config-desktop, build, skins, light);
-$item-skin: kt-get($skin-config, item);
-
-$dark-skin-config: kt-get($header-menu-config-desktop, build, skins, dark);
-$dark-item-skin: kt-get($skin-config, item);
+$item-skin: kt-get($header-menu-skins-config, light, item);
 
 $item-submenu-padding-left: 30px;
 $item-submenu-section-indent: 15px;
@@ -187,7 +183,7 @@ $item-submenu-section-indent: 15px;
   $block: &;
 
   @if kt-has($item-skin, link, text, font-weight) {
-    font-weight: kt-get($item, link, text, font-weight);
+    font-weight: kt-get($submenu-item-config, link, text, font-weight);
   }
 
   @include kt-desktop {
@@ -250,21 +246,20 @@ $item-submenu-section-indent: 15px;
 
 .kt-menu__link-icon {
   $block: &;
-  $item: kt-get($header-menu-config-desktop, build, layout, item, submenu, item);
 
   display: flex;
   align-items: center;
 
   @include kt-desktop {
-    font-size: kt-get($item, link, icon, font-size);
-    width: kt-get($item, link, icon, width);
-    padding: kt-get($item, link, icon, padding);
+    font-size: kt-get($submenu-item-config, link, icon, font-size);
+    width: kt-get($submenu-item-config, link, icon, width);
+    padding: kt-get($submenu-item-config, link, icon, padding);
     line-height: 0;
 
     // duo-tone svg icon
     svg {
-      @include kt-attr(height, kt-get($item, link, icon, svg-width));
-      @include kt-attr(width, kt-get($item, link, icon, svg-width));
+      @include kt-attr(height, kt-get($submenu-item-config, link, icon, svg-width));
+      @include kt-attr(width, kt-get($submenu-item-config, link, icon, svg-width));
       margin-left: -2px;
     }
   }
@@ -284,14 +279,14 @@ $item-submenu-section-indent: 15px;
     display: flex;
     align-items: center;
     line-height: 0;
-    text-align: kt-get($item, link, icon, align);
-    flex: 0 0 kt-get($item, link, icon, width);
-    font-size: kt-get($item, link, icon, font-size);
-    @include kt-attr(color, kt-get($item, link, icon, font-color, default));
+    text-align: kt-get($submenu-item-config, link, icon, align);
+    flex: 0 0 kt-get($submenu-item-config, link, icon, width);
+    font-size: kt-get($submenu-item-config, link, icon, font-size);
+    @include kt-attr(color, kt-get($submenu-item-config, link, icon, font-color, default));
 
     svg {
-      @include kt-attr(height, kt-get($item, link, icon, svg-width));
-      @include kt-attr(width, kt-get($item, link, icon, svg-width));
+      @include kt-attr(height, kt-get($submenu-item-config, link, icon, svg-width));
+      @include kt-attr(width, kt-get($submenu-item-config, link, icon, svg-width));
       margin-left: -2px;
       @include kt-svg-icon-color(#494b74);
     }
@@ -299,7 +294,7 @@ $item-submenu-section-indent: 15px;
     &#{$block}--active,
     &#{$block}--hover,
     &:hover {
-      @include kt-attr(color, kt-get($item, link, icon, font-color, open));
+      @include kt-attr(color, kt-get($submenu-item-config, link, icon, font-color, open));
 
       // Due-tone icon
       svg {
@@ -388,13 +383,11 @@ $item-submenu-section-indent: 15px;
 }
 
 @include kt-desktop {
-  $item: kt-get($header-menu-config-desktop, build, layout, item, submenu, item);
-
   .kt-menu__link {
     transition: all 0.3s ease;
     cursor: pointer;
-    @include kt-attr(padding, kt-get($item, link, self, padding));
-    @include kt-attr(margin, kt-get($item, link, self, margin));
+    @include kt-attr(padding, kt-get($submenu-item-config, link, self, padding));
+    @include kt-attr(margin, kt-get($submenu-item-config, link, self, margin));
 
     &:hover {
       transition: all 0.3s ease;
@@ -402,10 +395,10 @@ $item-submenu-section-indent: 15px;
 
     // link bullet
     .kt-menu__link-bullet {
-      width: kt-get($item, link, bullet, self, width);
+      width: kt-get($submenu-item-config, link, bullet, self, width);
 
-      @if kt-has($item, link, bullet, padding) {
-        padding: kt-get($item, link, bullet, padding);
+      @if kt-has($submenu-item-config, link, bullet, padding) {
+        padding: kt-get($submenu-item-config, link, bullet, padding);
       }
 
       > span {
@@ -415,29 +408,29 @@ $item-submenu-section-indent: 15px;
 
       &.kt-menu__link-bullet--dot {
         > span {
-          width: kt-get($item, link, bullet, dot, size);
-          height: kt-get($item, link, bullet, dot, size);
+          width: kt-get($submenu-item-config, link, bullet, dot, size);
+          height: kt-get($submenu-item-config, link, bullet, dot, size);
           border-radius: 100%;
         }
       }
 
       &.kt-menu__link-bullet--line {
         > span {
-          width: kt-get($item, link, bullet, line, width);
-          height: kt-get($item, link, bullet, line, height);
+          width: kt-get($submenu-item-config, link, bullet, line, width);
+          height: kt-get($submenu-item-config, link, bullet, line, height);
         }
       }
     }
 
     // link badge
     .kt-menu__link-badge {
-      padding: kt-get($item, link, badge, padding);
-      justify-content: kt-get($item, link, badge, align);
+      padding: kt-get($submenu-item-config, link, badge, padding);
+      justify-content: kt-get($submenu-item-config, link, badge, align);
     }
 
     // link border radius
     @include kt-rounded {
-      @include kt-attr(border-radius, kt-get($item, link, self, border-radius));
+      @include kt-attr(border-radius, kt-get($submenu-item-config, link, self, border-radius));
     }
 
     // menu root level "here" arrow
@@ -472,11 +465,11 @@ $item-submenu-section-indent: 15px;
       text-decoration: none;
       position: relative;
       outline: none;
-      height: kt-get($item, link, self, height);
-      @include kt-attr(margin, kt-get($item, link, self, margin));
+      height: kt-get($submenu-item-config, link, self, height);
+      @include kt-attr(margin, kt-get($submenu-item-config, link, self, margin));
 
       @include kt-rounded {
-        @include kt-attr(border-radius, kt-get($item, link, self, border-radius));
+        @include kt-attr(border-radius, kt-get($submenu-item-config, link, self, border-radius));
       }
 
       &:hover {
@@ -488,8 +481,8 @@ $item-submenu-section-indent: 15px;
         display: flex;
         align-items: center;
         white-space: nowrap;
-        padding: kt-get($item, link, badge, padding);
-        text-align: kt-get($item, link, badge, align);
+        padding: kt-get($submenu-item-config, link, badge, padding);
+        text-align: kt-get($submenu-item-config, link, badge, align);
       }
 
       // menu item link's icon part
@@ -499,7 +492,7 @@ $item-submenu-section-indent: 15px;
         line-height: 0;
         vertical-align: middle;
         text-align: left;
-        flex: 0 0 kt-get($item, link, bullet, self, width);
+        flex: 0 0 kt-get($submenu-item-config, link, bullet, self, width);
 
         > span {
           vertical-align: middle;
@@ -508,23 +501,23 @@ $item-submenu-section-indent: 15px;
 
         &--dot {
           > span {
-            width: kt-get($item, link, bullet, dot, size);
-            height: kt-get($item, link, bullet, dot, size);
+            width: kt-get($submenu-item-config, link, bullet, dot, size);
+            height: kt-get($submenu-item-config, link, bullet, dot, size);
             border-radius: 100%;
             @include kt-attr(
               background-color,
-              kt-get($item, link, bullet, dot, bg-color, default)
+              kt-get($submenu-item-config, link, bullet, dot, bg-color, default)
             );
           }
         }
 
         &--line {
           > span {
-            width: kt-get($item, link, bullet, line, width);
-            height: kt-get($item, link, bullet, line, height);
+            width: kt-get($submenu-item-config, link, bullet, line, width);
+            height: kt-get($submenu-item-config, link, bullet, line, height);
             @include kt-attr(
               background-color,
-              kt-get($item, link, bullet, line, bg-color, default)
+              kt-get($submenu-item-config, link, bullet, line, bg-color, default)
             );
           }
         }
@@ -533,7 +526,7 @@ $item-submenu-section-indent: 15px;
       &#{$block}--active {
         @include kt-attr(
           background-color,
-          kt-get($item, link, self, bg-color, open)
+          kt-get($submenu-item-config, link, self, bg-color, open)
         );
 
         .kt-menu__link-bullet {
@@ -541,7 +534,7 @@ $item-submenu-section-indent: 15px;
             > span {
               @include kt-attr(
                               background-color,
-                              kt-get($item, link, bullet, dot, bg-color, open)
+                              kt-get($submenu-item-config, link, bullet, dot, bg-color, open)
               );
             }
           }
@@ -549,7 +542,7 @@ $item-submenu-section-indent: 15px;
             > span {
               @include kt-attr(
                               background-color,
-                              kt-get($item, link, bullet, line, bg-color, open)
+                              kt-get($submenu-item-config, link, bullet, line, bg-color, open)
               );
             }
           }
@@ -557,19 +550,19 @@ $item-submenu-section-indent: 15px;
       }
 
       &.kt-menu__link--level-2 {
-        padding: kt-get($item, link, padding);
+        padding: kt-get($submenu-item-config, link, padding);
         padding-left: $item-submenu-padding-left +
                   (1 * $item-submenu-section-indent);
       }
 
       &#{$block}--level-3 {
-        padding: kt-get($item, link, padding);
+        padding: kt-get($submenu-item-config, link, padding);
         padding-left: $item-submenu-padding-left +
                   (2 * $item-submenu-section-indent);
       }
 
       &#{$block}--minimized {
-        height: kt-get($item, link, self, height);
+        height: kt-get($submenu-item-config, link, self, height);
       }
     }
   }
