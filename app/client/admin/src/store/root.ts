@@ -1,8 +1,8 @@
 import { mergeWith } from "lodash";
 import { defineStore } from "pinia";
 import type { RootState, SetActiveClassesPayload } from "./types/root";
-import { bodyClasses } from "@/helpers";
 import { CLOSED_SIDEBAR_NAVIGATIONS } from "@/constants/store/root";
+import { bodyClasses } from "@/helpers";
 
 export const useRootStore = defineStore("root", {
   state: (): RootState => ({
@@ -47,8 +47,10 @@ export const useRootStore = defineStore("root", {
   },
   getters: {
     isSidebarMinimized: (state): boolean => {
-      return CLOSED_SIDEBAR_NAVIGATIONS.includes(state.frontActiveClass)
-        || state.sidebarState.minimized
+      return (
+        CLOSED_SIDEBAR_NAVIGATIONS.includes(state.frontActiveClass) ||
+        state.sidebarState.minimized
+      );
     },
   },
 });

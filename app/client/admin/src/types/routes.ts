@@ -4,4 +4,4 @@ export interface RouteData {
   translationKey: string;
 }
 
-export type ModulesRoutesData<T> = Record<T, RouteData>
+export type ModulesRoutesData<T> = Record<T, RouteData>;

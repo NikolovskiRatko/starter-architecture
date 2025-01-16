@@ -1,14 +1,5 @@
 <script setup lang="ts">
   import {
-    PortletComponent,
-    PortletBody,
-    PortletHead,
-    PortletHeadLabel,
-    ContentLoader,
-    AccordionContent,
-    AccordionItem,
-  } from "@starter-core/dash-ui/src";
-  import {
     IconAirpods,
     IconChartpie,
     IconDollar,
@@ -18,6 +9,15 @@
   import { PageWrapper } from "@/components";
   // import { get } from "@/services/HTTP";
   import { useRootStore } from "@/store/root";
+  import {
+    PortletComponent,
+    PortletBody,
+    PortletHead,
+    PortletHeadLabel,
+    ContentLoader,
+    AccordionContent,
+    AccordionItem,
+  } from "@starter-core/dash-ui/src";
 
   // const categories = ref([]);
   const isLoading = ref(false);

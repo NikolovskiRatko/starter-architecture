@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-  import { FormInput } from "@starter-core/dash-ui/src";
   import { useI18n } from "vue-i18n";
+  import { FormInput } from "@starter-core/dash-ui/src";
 
   const { t } = useI18n();
   const password = defineModel("password", { required: true });

@@ -64,7 +64,12 @@
         <div
           class="form-group__column form-group__column--left form-group__column--inline"
         >
-          <user-form-avatar :src="avatar" @change="uploadAvatar" is-circle is-outline />
+          <user-form-avatar
+            :src="avatar"
+            @change="uploadAvatar"
+            is-circle
+            is-outline
+          />
         </div>
       </div>
       <form-input
