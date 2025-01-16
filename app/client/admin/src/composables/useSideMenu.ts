@@ -52,7 +52,7 @@ export default function useSideMenu() {
   // }
 
   const mainMenu = computed<NavMenuDataInterface>(() => {
-    if (isLoading && !data.value.mainMenu) {
+    if (isLoading && !data.value?.mainMenu) {
       return [];
     }
 
