@@ -1,9 +1,5 @@
 .kt-menu__item {
     $block: &;
-    $item-skin-config: kt-get($header-menu-skins-config, light, item);
-    $menu-item-config: (
-            padding: 0px 0.25rem,
-    );
 
     &--horizontal {
 
@@ -11,22 +7,19 @@
             display: flex;
             align-items: center;
 
-            @include kt-attr(margin, kt-get($menu-item-config, margin));
-            @include kt-attr(padding, kt-get($menu-item-config, padding));
-
-            @if kt-get($item-skin-config, self) {
+            @if kt-get($header-menu-skins-config, self) {
                 &#{$block}--hover,
                 &:hover {
-                    background-color: kt-get($item-skin-config, self, bg-color, hover);
+                    background-color: kt-get($header-menu-skins-config, self, bg-color, hover);
                 }
 
                 &#{$block}--here {
-                    background-color: kt-get($item-skin-config, self, bg-color, here);
+                    background-color: kt-get($header-menu-skins-config, self, bg-color, here);
                 }
 
                 &#{$block}--open,
                 &#{$block}--active {
-                    background-color: kt-get($item-skin-config, self, bg-color, active);
+                    background-color: kt-get($header-menu-skins-config, self, bg-color, active);
                 }
             }
         }
@@ -98,21 +91,16 @@
         flex-grow: 1;
         float: none;
         padding: 0;
-        @include kt-attr(background-color, kt-get($menu-item-config, bg-color, default));
 
         &#{$block}--level-1 {
             position: relative;
-            @include kt-attr(margin, kt-get($menu-item-config, margin));
-            @include kt-attr(padding, kt-get($menu-item-config, padding));
         }
 
         &#{$block}--active {
             transition: background-color 0.3s;
-            @include kt-attr(background-color, kt-get($menu-item-config, bg-color, open));
         }
 
         &#{$block}--minimized {
-            margin: kt-get($menu-item-config, margin);
             background: transparent;
         }
     }

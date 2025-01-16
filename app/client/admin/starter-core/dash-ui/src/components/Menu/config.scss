@@ -3,25 +3,45 @@
 //
 $header-menu-base-class: kt-header-menu;
 $header-menu-skins-config: (
-        light: (
-                // Primary item
+        // submenu
+        submenu:
+        (
+                // submenu itself
+                self:
+                (
+                        bg-color: #ffffff,
+                        box-shadow: 0px 15px 50px 0px
+                        rgba(82, 63, 105, 0.15),
+                ),
+
+                // menu item
                 item:
                 (
-                        // primary menu link
-                        link:
-                        (
+                        link: (
                                 self: (
                                         bg-color: (
-                                                default: none,
-                                                active: none,
-                                                here: none,
-                                                hover: none,
+                                                active: lighten(#f0f3ff, 2%),
+                                                here: lighten(#f0f3ff, 2%),
+                                                hover: lighten(#f0f3ff, 2%),
                                         ),
                                 ),
-                                bullet: (
+
+                                // link icon
+                                icon:
+                                (
+                                        font-color: (
+                                                default: #cacad2,
+                                                active: kt-brand-color(),
+                                                here: kt-brand-color(),
+                                                hover: kt-brand-color(),
+                                        ),
+                                ),
+                                // link bullet
+                                bullet:
+                                (
                                         dot: (
                                                 bg-color: (
-                                                        default: #9096b8,
+                                                        default: #cacad2,
                                                         active: kt-brand-color(),
                                                         here: kt-brand-color(),
                                                         hover: kt-brand-color(),
@@ -29,24 +49,29 @@ $header-menu-skins-config: (
                                         ),
                                         line: (
                                                 bg-color: (
-                                                        default: #9096b8,
+                                                        default: #cacad2,
                                                         active: kt-brand-color(),
                                                         here: kt-brand-color(),
                                                         hover: kt-brand-color(),
                                                 ),
                                         ),
                                 ),
-                                text: (
+
+                                // link text
+                                text:
+                                (
                                         font-color: (
-                                                default: #9096b8,
+                                                default: #5f6281,
                                                 active: kt-brand-color(),
                                                 here: kt-brand-color(),
                                                 hover: kt-brand-color(),
                                         ),
                                 ),
-                                arrow: (
+                                // link arrow
+                                arrow:
+                                (
                                         font-color: (
-                                                default: #6c7293,
+                                                default: #cacad2,
                                                 active: kt-brand-color(),
                                                 here: kt-brand-color(),
                                                 hover: kt-brand-color(),
@@ -54,274 +79,186 @@ $header-menu-skins-config: (
                                 ),
                         ),
 
-                        // submenu
-                        submenu:
+                        // mega menu column
+                        column:
                         (
-                                // submenu itself
-                                self:
+                                // separator
+                                separator:
                                 (
-                                        bg-color: #ffffff,
-                                        box-shadow: 0px 15px 50px 0px
-                                        rgba(82, 63, 105, 0.15),
+                                        border: 1px solid #f6f6f9,
                                 ),
 
-                                // menu item
-                                item:
+                                // heading
+                                heading:
                                 (
-                                        link: (
-                                                self: (
-                                                        bg-color: (
-                                                                active: lighten(#f0f3ff, 2%),
-                                                                here: lighten(#f0f3ff, 2%),
-                                                                hover: lighten(#f0f3ff, 2%),
-                                                        ),
-                                                ),
-
-                                                // link icon
+                                        // heading caption
+                                        caption:
+                                        (
+                                                // caption icon
                                                 icon:
                                                 (
-                                                        font-color: (
-                                                                default: #cacad2,
-                                                                active: kt-brand-color(),
-                                                                here: kt-brand-color(),
-                                                                hover: kt-brand-color(),
-                                                        ),
-                                                ),
-                                                // link bullet
-                                                bullet:
-                                                (
-                                                        dot: (
-                                                                bg-color: (
-                                                                        default: #cacad2,
-                                                                        active: kt-brand-color(),
-                                                                        here: kt-brand-color(),
-                                                                        hover: kt-brand-color(),
-                                                                ),
-                                                        ),
-                                                        line: (
-                                                                bg-color: (
-                                                                        default: #cacad2,
-                                                                        active: kt-brand-color(),
-                                                                        here: kt-brand-color(),
-                                                                        hover: kt-brand-color(),
-                                                                ),
-                                                        ),
+                                                        font-color: #cacad2,
                                                 ),
 
-                                                // link text
+                                                // caption text
                                                 text:
                                                 (
-                                                        font-color: (
-                                                                default: #5f6281,
-                                                                active: kt-brand-color(),
-                                                                here: kt-brand-color(),
-                                                                hover: kt-brand-color(),
-                                                        ),
-                                                ),
-                                                // link arrow
-                                                arrow:
-                                                (
-                                                        font-color: (
-                                                                default: #cacad2,
-                                                                active: kt-brand-color(),
-                                                                here: kt-brand-color(),
-                                                                hover: kt-brand-color(),
-                                                        ),
-                                                ),
-                                        ),
-
-                                        // mega menu column
-                                        column:
-                                        (
-                                                // separator
-                                                separator:
-                                                (
-                                                        border: 1px solid #f6f6f9,
-                                                ),
-
-                                                // heading
-                                                heading:
-                                                (
-                                                        // heading caption
-                                                        caption:
-                                                        (
-                                                                // caption icon
-                                                                icon:
-                                                                (
-                                                                        font-color: #cacad2,
-                                                                ),
-
-                                                                // caption text
-                                                                text:
-                                                                (
-                                                                        font-color: #5f6281,
-                                                                )
-                                                        )
-                                                ),
-                                        ),
-                                )
-                        )
+                                                        font-color: #5f6281,
+                                                )
+                                        )
+                                ),
+                        ),
+                )
+        )
+);
+$header-menu-link-config: (
+        self: (
+                bg-color: (
+                        default: none,
+                        active: none,
+                        here: none,
+                        hover: none,
                 ),
         ),
-        dark: (
-        // Primary item
-                item:
-                (
-                        // primary menu link
-                        link:
+        bullet: (
+                dot: (
+                        bg-color: (
+                                default: #9096b8,
+                                active: kt-brand-color(),
+                                here: kt-brand-color(),
+                                hover: kt-brand-color(),
+                        ),
+                ),
+                line: (
+                        bg-color: (
+                                default: #9096b8,
+                                active: kt-brand-color(),
+                                here: kt-brand-color(),
+                                hover: kt-brand-color(),
+                        ),
+                ),
+        ),
+        text: (
+                font-color: (
+                        default: #9096b8,
+                        active: kt-brand-color(),
+                        here: kt-brand-color(),
+                        hover: kt-brand-color(),
+                ),
+        ),
+        arrow: (
+                font-color: (
+                        default: #6c7293,
+                        active: kt-brand-color(),
+                        here: kt-brand-color(),
+                        hover: kt-brand-color(),
+                ),
+        ),
+);
+$header-submenu-config: (
+        // submenu itself
+        self:
+        (
+                bg-color: #ffffff,
+                box-shadow: 0px 15px 50px 0px
+                rgba(82, 63, 105, 0.15),
+        ),
+
+        // menu item
+        item:
+        (
+                link: (
+                        self: (
+                                bg-color: (
+                                        active: lighten(#f0f3ff, 2%),
+                                        here: lighten(#f0f3ff, 2%),
+                                        hover: lighten(#f0f3ff, 2%),
+                                ),
+                        ),
+
+                        // link icon
+                        icon:
                         (
-                                self: (
+                                font-color: (
+                                        default: #cacad2,
+                                        active: kt-brand-color(),
+                                        here: kt-brand-color(),
+                                        hover: kt-brand-color(),
+                                ),
+                        ),
+                        // link bullet
+                        bullet:
+                        (
+                                dot: (
                                         bg-color: (
-                                                default: none,
-                                                active: #6548e5,
-                                                here: #6548e5,
-                                                hover: #6548e5,
+                                                default: #cacad2,
+                                                active: kt-brand-color(),
+                                                here: kt-brand-color(),
+                                                hover: kt-brand-color(),
                                         ),
                                 ),
-                                bullet: (
-                                        dot: (
-                                                bg-color: (
-                                                        default: #ffffff,
-                                                        active: #ffffff,
-                                                        here: #ffffff,
-                                                        hover: #ffffff,
-                                                ),
-                                        ),
-                                        line: (
-                                                bg-color: (
-                                                        default: #ffffff,
-                                                        active: #ffffff,
-                                                        here: #ffffff,
-                                                        hover: #ffffff,
-                                                ),
-                                        ),
-                                ),
-                                text: (
-                                        font-color: (
-                                                default: #ffffff,
-                                                active: #ffffff,
-                                                here: #ffffff,
-                                                hover: #ffffff,
-                                        ),
-                                ),
-                                arrow: (
-                                        font-color: (
-                                                default: #ffffff,
-                                                active: #ffffff,
-                                                here: #ffffff,
-                                                hover: #ffffff,
+                                line: (
+                                        bg-color: (
+                                                default: #cacad2,
+                                                active: kt-brand-color(),
+                                                here: kt-brand-color(),
+                                                hover: kt-brand-color(),
                                         ),
                                 ),
                         ),
 
-                        // submenu
-                        submenu:
+                        // link text
+                        text:
                         (
-                                // submenu itself
-                                self:
-                                (
-                                        bg-color: #ffffff,
-                                        box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.15),
+                                font-color: (
+                                        default: #5f6281,
+                                        active: kt-brand-color(),
+                                        here: kt-brand-color(),
+                                        hover: kt-brand-color(),
                                 ),
-
-                                //
-                                item:
-                                (
-                                        link: (
-                                                self: (
-                                                        bg-color: (
-                                                                active: #f8f8fb,
-                                                                here: #f8f8fb,
-                                                                hover: #f8f8fb,
-                                                        ),
-                                                ),
-
-                                                // link icon
-                                                icon:
-                                                (
-                                                        font-color: (
-                                                                default: #cacad2,
-                                                                active: kt-brand-color(),
-                                                                here: kt-brand-color(),
-                                                                hover: kt-brand-color(),
-                                                        ),
-                                                ),
-                                                // link bullet
-                                                bullet:
-                                                (
-                                                        dot: (
-                                                                bg-color: (
-                                                                        default: #cacad2,
-                                                                        active: kt-brand-color(),
-                                                                        here: kt-brand-color(),
-                                                                        hover: kt-brand-color(),
-                                                                ),
-                                                        ),
-                                                        line: (
-                                                                bg-color: (
-                                                                        default: #cacad2,
-                                                                        active: kt-brand-color(),
-                                                                        here: kt-brand-color(),
-                                                                        hover: kt-brand-color(),
-                                                                ),
-                                                        ),
-                                                ),
-
-                                                // link text
-                                                text:
-                                                (
-                                                        font-color: (
-                                                                default: #5f6281,
-                                                                active: kt-brand-color(),
-                                                                here: kt-brand-color(),
-                                                                hover: kt-brand-color(),
-                                                        ),
-                                                ),
-                                                // link arrow
-                                                arrow:
-                                                (
-                                                        font-color: (
-                                                                default: #cacad2,
-                                                                active: kt-brand-color(),
-                                                                here: kt-brand-color(),
-                                                                hover: kt-brand-color(),
-                                                        ),
-                                                ),
-                                        ),
-
-                                        // mega menu column
-                                        column:
-                                        (
-                                                // separator
-                                                separator:
-                                                (
-                                                        border: 1px solid #f6f6f9,
-                                                ),
-
-                                                // heading
-                                                heading:
-                                                (
-                                                        // heading caption
-                                                        caption:
-                                                        (
-                                                                // caption icon
-                                                                icon:
-                                                                (
-                                                                        font-color: #cacad2,
-                                                                ),
-
-                                                                // caption text
-                                                                text:
-                                                                (
-                                                                        font-color: #5f6281,
-                                                                )
-                                                        )
-                                                ),
-                                        ),
-                                )
-                        )
+                        ),
+                        // link arrow
+                        arrow:
+                        (
+                                font-color: (
+                                        default: #cacad2,
+                                        active: kt-brand-color(),
+                                        here: kt-brand-color(),
+                                        hover: kt-brand-color(),
+                                ),
+                        ),
                 ),
-        ),
+
+                // mega menu column
+                column:
+                (
+                        // separator
+                        separator:
+                        (
+                                border: 1px solid #f6f6f9,
+                        ),
+
+                        // heading
+                        heading:
+                        (
+                                // heading caption
+                                caption:
+                                (
+                                        // caption icon
+                                        icon:
+                                        (
+                                                font-color: #cacad2,
+                                        ),
+
+                                        // caption text
+                                        text:
+                                        (
+                                                font-color: #5f6281,
+                                        )
+                                )
+                        ),
+                ),
+        )
 );
 
 $submenu-config: (

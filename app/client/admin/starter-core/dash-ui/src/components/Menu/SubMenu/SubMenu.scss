@@ -1,5 +1,4 @@
 $submenu-tablet-mobile-config: kt-get($header-menu-config-tablet-mobile, item, submenu);
-$submenu-desktop-skin-config: kt-get($header-menu-skins-config, light, item, submenu);
 
 .kt-menu__submenu {
     $block: &;
@@ -13,8 +12,8 @@ $submenu-desktop-skin-config: kt-get($header-menu-skins-config, light, item, sub
         margin: 0 auto;
         left: auto;
         right: auto;
-        background-color: kt-get($submenu-desktop-skin-config, self, bg-color);
-        box-shadow: kt-get($submenu-desktop-skin-config, self, box-shadow);
+        background-color: kt-get($header-submenu-config, self, bg-color);
+        box-shadow: kt-get($header-submenu-config, self, box-shadow);
 
         padding: kt-get(
             $submenu-config,

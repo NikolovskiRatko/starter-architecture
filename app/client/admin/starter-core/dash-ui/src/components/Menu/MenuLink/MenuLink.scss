@@ -1,25 +1,23 @@
 $header-item-icon-color: #c8cad5;
 $header-item-hover-bg: rgba(#4d5995, 0.06);
 
-$item-skin: kt-get($header-menu-skins-config, light, item);
-
 $item-submenu-padding-left: 30px;
 $item-submenu-section-indent: 15px;
 
 .kt-menu__link {
     $block: &;
-    background-color: kt-get($item-skin, link, self, bg-color, default);
+    background-color: kt-get($header-menu-link-config, self, bg-color, default);
     @include kt-rounded {
       border-radius: $border-radius !important;
     }
 
     .kt-menu__hor-icon {
-      color: kt-get($item-skin, link, icon, font-color, default);
+      color: kt-get($header-menu-link-config, icon, font-color, default);
 
       // Due-tone icon
       svg {
         @include kt-svg-icon-color(
-          kt-get($item-skin, link, icon, font-color, default)
+          kt-get($header-menu-link-config, icon, font-color, default)
         );
       }
     }
@@ -27,15 +25,14 @@ $item-submenu-section-indent: 15px;
     .kt-menu__link-bullet {
       &.kt-menu__link-bullet--dot {
         > span {
-          background-color: kt-get($item-skin, link, bullet, dot, bg-color, default);
+          background-color: kt-get($header-menu-link-config, bullet, dot, bg-color, default);
         }
       }
 
       &.kt-menu__link-bullet--line {
         > span {
           background-color: kt-get(
-            $item-skin,
-            link,
+            $header-menu-link-config,
             bullet,
             line,
             bg-color,
@@ -82,15 +79,14 @@ $item-submenu-section-indent: 15px;
     }
 
     &--active {
-      background-color: kt-get($item-skin, link, self, bg-color, active);
+      background-color: kt-get($header-menu-link-config, self, bg-color, active);
 
         // link bullet
         .kt-menu__link-bullet {
           &.kt-menu__link-bullet--dot {
             > span {
               background-color: kt-get(
-                $item-skin,
-                link,
+                $header-menu-link-config,
                 bullet,
                 dot,
                 bg-color,
@@ -102,8 +98,7 @@ $item-submenu-section-indent: 15px;
           &.kt-menu__link-bullet--line {
             > span {
               background-color: kt-get(
-                $item-skin,
-                link,
+                $header-menu-link-config,
                 bullet,
                 line,
                 bg-color,
@@ -116,19 +111,19 @@ $item-submenu-section-indent: 15px;
 
     &--here {
       // link bg color
-      background-color: kt-get($item-skin, link, self, bg-color, here);
+      background-color: kt-get($header-menu-link-config, self, bg-color, here);
 
       // link bullet
       .kt-menu__link-bullet {
         &.kt-menu__link-bullet--dot {
           > span {
-            background-color: kt-get($item-skin, link, bullet, dot, bg-color, here);
+            background-color: kt-get($header-menu-link-config, bullet, dot, bg-color, here);
           }
         }
 
         &.kt-menu__link-bullet--line {
           > span {
-            background-color: kt-get($item-skin, link, bullet, line, bg-color, here);
+            background-color: kt-get($header-menu-link-config, bullet, line, bg-color, here);
           }
         }
       }
@@ -136,16 +131,16 @@ $item-submenu-section-indent: 15px;
 
     &--hover:not(#{$block}--hover):not(#{$block}--active) {
       // link bg color
-      background-color: kt-get($item-skin, link, self, bg-color, hover);
+      background-color: kt-get($header-menu-link-config, self, bg-color, hover);
 
       // link icon
       .kt-menu__link-icon {
-        color: kt-get($item-skin, link, icon, font-color, hover);
+        color: kt-get($header-menu-link-config, icon, font-color, hover);
 
         // Due-tone icon
         svg {
           @include kt-svg-icon-color(
-            kt-get($item-skin, link, icon, font-color, hover)
+            kt-get($header-menu-link-config, icon, font-color, hover)
           );
         }
       }
@@ -154,15 +149,14 @@ $item-submenu-section-indent: 15px;
       .kt-menu__link-bullet {
         &.kt-menu__link-bullet--dot {
           > span {
-            background-color: kt-get($item-skin, link, bullet, dot, bg-color, hover);
+            background-color: kt-get($header-menu-link-config, bullet, dot, bg-color, hover);
           }
         }
 
         &.kt-menu__link-bullet--line {
           > span {
             background-color: kt-get(
-              $item-skin,
-              link,
+              $header-menu-link-config,
               bullet,
               line,
               bg-color,
@@ -174,7 +168,7 @@ $item-submenu-section-indent: 15px;
 
       // link arrow icon
       > .kt-menu__link-arrow--horizontal {
-        color: kt-get($item-skin, link, arrow, font-color, hover);
+        color: kt-get($header-menu-link-config, arrow, font-color, hover);
       }
     }
 }
@@ -182,17 +176,17 @@ $item-submenu-section-indent: 15px;
 .kt-menu__link-text {
   $block: &;
 
-  @if kt-has($item-skin, link, text, font-weight) {
+  @if kt-has($header-menu-link-config, text, font-weight) {
     font-weight: kt-get($submenu-item-config, link, text, font-weight);
   }
 
   @include kt-desktop {
-    font-weight: kt-get($item-skin, link, text, font-weight);
-    font-size: kt-get($item-skin, link, text, font-size);
-    text-transform: kt-get($item-skin, link, text, font-transform);
+    font-weight: kt-get($header-menu-link-config, text, font-weight);
+    font-size: kt-get($header-menu-link-config, text, font-size);
+    text-transform: kt-get($header-menu-link-config, text, font-transform);
 
-    @if kt-has($item-skin, link, text, padding) {
-      padding: kt-get($item-skin, link, text, padding);
+    @if kt-has($header-menu-link-config, text, padding) {
+      padding: kt-get($header-menu-link-config, text, padding);
     }
   }
 
@@ -203,11 +197,11 @@ $item-submenu-section-indent: 15px;
   }
 
   &--here {
-    color: kt-get($item-skin, link, text, font-color, here);
+    color: kt-get($header-menu-link-config, text, font-color, here);
   }
 
   &--hover:not(#{$block}--hover):not(#{$block}--active) {
-    color: kt-get($item-skin, link, text, font-color, hover);
+    color: kt-get($header-menu-link-config, text, font-color, hover);
   }
 
   &--horizontal {
@@ -215,10 +209,10 @@ $item-submenu-section-indent: 15px;
     align-items: center;
     flex-grow: 1;
     padding: 0;
-    color: kt-get($item-skin, link, text, font-color, default);
+    color: kt-get($header-menu-link-config, text, font-color, default);
 
     &#{$block}--active {
-      color: kt-get($item-skin, link, text, font-color, active);
+      color: kt-get($header-menu-link-config, text, font-color, active);
     }
   }
 
@@ -226,10 +220,10 @@ $item-submenu-section-indent: 15px;
     display: flex;
     align-items: center;
     flex-grow: 1;
-    font-weight: kt-get($item-skin, link, text, font-weight);
-    font-size: kt-get($item-skin, link, text, font-size);
-    text-transform: kt-get($item-skin, link, text, font-transform);
-    @include kt-attr(color, kt-get($item-skin, link, text, font-color, default));
+    font-weight: kt-get($header-menu-link-config, text, font-weight);
+    font-size: kt-get($header-menu-link-config, text, font-size);
+    text-transform: kt-get($header-menu-link-config, text, font-transform);
+    @include kt-attr(color, kt-get($header-menu-link-config, text, font-color, default));
     white-space: nowrap;
 
     &#{$block}--active,
@@ -265,12 +259,12 @@ $item-submenu-section-indent: 15px;
   }
 
   &--active {
-    color: kt-get($item-skin, link, icon, font-color, active);
+    color: kt-get($header-menu-link-config, icon, font-color, active);
 
     // Due-tone icon
     svg {
       @include kt-svg-icon-color(
-                      kt-get($item-skin, link, icon, font-color, active)
+                      kt-get($header-menu-link-config, icon, font-color, active)
       );
     }
   }
@@ -304,12 +298,12 @@ $item-submenu-section-indent: 15px;
   }
 
   &--here {
-    color: kt-get($item-skin, link, icon, font-color, here);
+    color: kt-get($header-menu-link-config, icon, font-color, here);
 
     // Due-tone icon
     svg {
       @include kt-svg-icon-color(
-                      kt-get($item-skin, link, icon, font-color, here)
+                      kt-get($header-menu-link-config, icon, font-color, here)
       );
     }
   }
@@ -317,7 +311,7 @@ $item-submenu-section-indent: 15px;
 
 .kt-menu__link-arrow {
   $block: &;
-  $arrow-config: kt-get($item-skin, link, arrow);
+  $arrow-config: kt-get($header-menu-link-config, arrow);
 
   &--horizontal {
     display: flex;
