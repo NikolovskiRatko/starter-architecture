@@ -48,7 +48,7 @@
     background: #fff;
 
     &#{$block}--main-header-fixed {
-      top: kt-get($header-config, base, desktop, default, height);
+      top: var(--dui-header-height-desktop);
     }
   }
 

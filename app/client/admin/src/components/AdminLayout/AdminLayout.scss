@@ -19,11 +19,11 @@
       position: fixed;
 
       //height: kt-get($subheader-config, fixed, height);
-      top: kt-get($header-config, base, desktop, default, height);
+      top: var(--dui-header-height-desktop);
       left: 0;
       right: 0;
       transition: all 0.3s ease;
-      z-index: kt-get($header-config, base, desktop, fixed, zindex) - 3;
+      z-index: var(--dui-layers-fixed-header) - 3;
       background-color: #fff;
       box-shadow: 0 10px 30px 0 rgb(82 63 105 / 8%);
       padding-top: 0;
@@ -32,7 +32,7 @@
 
     // Fixed header, minimized header and fixed subheader
     .kt-header--fixed.kt-header--minimize.kt-subheader--fixed & {
-      top: kt-get($header-config, base, desktop, fixed, minimizeheight);
+      top: var(--dui-header-minimizeheight-desktop);
       transition: top 0.3s ease;
     }
 
@@ -53,7 +53,7 @@
 
   @include kt-tablet-and-mobile {
     .kt-header-mobile--fixed & {
-      padding-top: kt-get($header-config, base, mobile, self, default, height);
+      padding-top: var(--dui-header-height-mobile);
     }
   }
 
@@ -75,7 +75,7 @@
 
       // Fixed Content Head
       &--has-subheader#{$block}--fixed-subheader {
-        //padding-top: kt-get($header-config, base, desktop, default, height) + kt-get($subheader-config, fixed, height);
+        //padding-top: var(--dui-header-height-desktop + kt-get($subheader-config, fixed, height);
       }
     }
   }

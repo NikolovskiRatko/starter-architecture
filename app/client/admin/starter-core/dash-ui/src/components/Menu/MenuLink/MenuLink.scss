@@ -1,11 +1,10 @@
 $header-item-icon-color: #c8cad5;
 $header-item-hover-bg: rgba(#4d5995, 0.06);
 
-$desktop-config: kt-get($header-config, menu, desktop);
-$skin-config: kt-get($desktop-config, build, skins, light);
+$skin-config: kt-get($header-menu-config-desktop, build, skins, light);
 $item-skin: kt-get($skin-config, item);
 
-$dark-skin-config: kt-get($desktop-config, build, skins, dark);
+$dark-skin-config: kt-get($header-menu-config-desktop, build, skins, dark);
 $dark-item-skin: kt-get($skin-config, item);
 
 $item-submenu-padding-left: 30px;
@@ -251,7 +250,7 @@ $item-submenu-section-indent: 15px;
 
 .kt-menu__link-icon {
   $block: &;
-  $item: kt-get($desktop-config, build, layout, item, submenu, item);
+  $item: kt-get($header-menu-config-desktop, build, layout, item, submenu, item);
 
   display: flex;
   align-items: center;
@@ -389,7 +388,7 @@ $item-submenu-section-indent: 15px;
 }
 
 @include kt-desktop {
-  $item: kt-get($desktop-config, build, layout, item, submenu, item);
+  $item: kt-get($header-menu-config-desktop, build, layout, item, submenu, item);
 
   .kt-menu__link {
     transition: all 0.3s ease;

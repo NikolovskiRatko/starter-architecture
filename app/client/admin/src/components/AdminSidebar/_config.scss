@@ -1,7 +1,6 @@
 //
 // Aside Config
 //
-$header-fixed-zindex: kt-get($header-config, base, desktop, fixed, zindex);
 
 $aside-config: (
   base: (
@@ -289,7 +288,7 @@ $aside-config: (
                     // self
                     self:
                       (
-                        zindex: $header-fixed-zindex - 1,
+                        zindex: var(--dui-layers-fixed-header) - 1,
                         width: var(--dui-aside-menu-dropdown-submenu-width) +
                           var(--dui-aside-minimize-width) + 1,
                       ),
@@ -369,7 +368,7 @@ $aside-config: (
                     self:
                       (
                         margin: 0,
-                        zindex: $header-fixed-zindex + 1,
+                        zindex: var(--dui-layers-fixed-header) + 1,
                       ),
 
                     // submenu

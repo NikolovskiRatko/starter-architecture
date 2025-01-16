@@ -118,14 +118,14 @@ $header-item-hover-bg: rgba(#4d5995, 0.06);
   .kt-header {
     display: flex;
     justify-content: space-between;
-    height: kt-get($header-config, base, desktop, default, height);
+    height: var(--dui-header-height-desktop);
     transition: var(--dui-transition);
     background-color: var(--dui-color-light);
     border-bottom: 1px solid #eff0f6;
-    z-index: kt-get($header-config, base, desktop, fixed, zindex);
+    z-index: var(--dui-layers-fixed-header);
 
     &--minimize & {
-      height: kt-get($header-config, base, desktop, fixed, minimizeheight);
+      height: var(--dui-header-minimizeheight-desktop);
       transition: height 0.3s ease;
     }
 

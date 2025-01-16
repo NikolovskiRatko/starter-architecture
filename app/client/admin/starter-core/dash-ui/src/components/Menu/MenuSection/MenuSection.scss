@@ -1,5 +1,4 @@
-$desktop-config: kt-get($header-config, menu, desktop);
-$section: kt-get($desktop-config, build, layout, item, submenu, section);
+$section: kt-get($header-menu-config-desktop, build, layout, item, submenu, section);
 
 .kt-menu__section {
   margin: 20px 0 0 0;

@@ -4,7 +4,7 @@ import type { Ref, VueElement } from 'vue';
 export default function useOnClickOutside(
     component: Ref<VueElement>,
     callback: () => void,
-    skip?: boolean = false
+    skip?: boolean
 ) {
     if (!component) return;
 

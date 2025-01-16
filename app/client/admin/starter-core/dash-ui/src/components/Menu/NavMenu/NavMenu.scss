@@ -1,20 +1,15 @@
 @import './animations';
-// Desktop Mode
-
-$header-desktop-config: kt-get($header-config, menu, desktop);
-$header-desktop-tablet-config: kt-get($header-config, menu, tablet-and-mobile);
-
 .kt-header-menu {
   display: flex;
   align-items: stretch;
   height: 100%;
 
   @include kt-desktop {
-    margin: kt-get($header-desktop-config, build, layout, self, margin);
+    margin: kt-get($header-menu-config-desktop, build, layout, self, margin);
   }
 
   @include kt-desktop-and-tablet {
-    margin: kt-get($header-desktop-tablet-config, build, layout, self, margin);
+    margin: kt-get($header-menu-config-tablet-mobile, build, layout, self, margin);
   }
 }
 
@@ -22,7 +17,7 @@ $header-desktop-tablet-config: kt-get($header-config, menu, tablet-and-mobile);
 @include kt-offcanvas-build(
   kt-header-menu-wrapper,
   tablet-and-mobile,
-  kt-get($header-config, menu, offcanvas-mobile)
+  $header-menu-config-offcanvas-mobile
 );
 
 .kt-menu__nav {
@@ -90,8 +85,8 @@ $header-desktop-tablet-config: kt-get($header-config, menu, tablet-and-mobile);
     }
 
     &--vertical {
-      $vertical-base: kt-get($header-desktop-config, base);
-      $vertica-layout: kt-get($header-desktop-config, build, layout);
+      $vertical-base: kt-get($header-menu-config-desktop, base);
+      $vertica-layout: kt-get($header-menu-config-desktop, build, layout);
 
       margin: 0;
       list-style: none;

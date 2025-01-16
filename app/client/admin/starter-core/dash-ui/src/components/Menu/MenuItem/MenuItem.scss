@@ -1,9 +1,7 @@
-$header-desktop-config: kt-get($header-config, menu, desktop);
-
 .kt-menu__item {
     $block: &;
-    $item-config: kt-get($header-desktop-config, build, layout, item);
-    $item-skin-config: kt-get($header-desktop-config, build, skins, light, item);
+    $item-config: kt-get($header-menu-config-desktop, build, layout, item);
+    $item-skin-config: kt-get($header-menu-config-desktop, build, skins, light, item);
 
     &--horizontal {
 

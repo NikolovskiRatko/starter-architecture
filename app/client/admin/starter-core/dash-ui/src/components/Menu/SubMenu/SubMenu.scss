@@ -1,10 +1,7 @@
-$header-desktop-config: kt-get($header-config, menu, desktop);
-$header-tablet-mobile-config: kt-get($header-config, menu, tablet-and-mobile);
+$submenu-desktop-config: kt-get($header-menu-config-desktop, build, layout, item, submenu);
+$submenu-tablet-mobile-config: kt-get($header-menu-config-tablet-mobile, build, layout, default, item, submenu);
 
-$submenu-desktop-config: kt-get($header-desktop-config, build, layout, item, submenu);
-$submenu-tablet-mobile-config: kt-get($header-tablet-mobile-config, build, layout, default, item, submenu);
-
-$submenu-desktop-skin-config: kt-get($header-desktop-config, build, skins, light, item, submenu);
+$submenu-desktop-skin-config: kt-get($header-menu-config-desktop, build, skins, light, item, submenu);
 
 .kt-menu__submenu {
     $block: &;
@@ -50,7 +47,7 @@ $submenu-desktop-skin-config: kt-get($header-desktop-config, build, skins, light
         }
 
         &#{$block}--visible {
-            $baseClass: kt-get($header-desktop-config, base, class);
+            $baseClass: kt-get($header-menu-config-desktop, base, class);
             display: block;
             animation:
               #{$baseClass}-submenu-fade-in 0.3s ease 1,
@@ -134,7 +131,7 @@ $submenu-desktop-skin-config: kt-get($header-desktop-config, build, skins, light
         @include kt-desktop-and-tablet {
             z-index: kt-get($submenu-tablet-mobile-config, self, zindex);
             @include kt-rounded {
-                border-radius: kt-get($header-tablet-mobile-config, build, layout, item, submenu, self, border-radius);
+                border-radius: kt-get($header-menu-config-tablet-mobile, build, layout, item, submenu, self, border-radius);
             }
             @include kt-attr(margin, kt-get($submenu-tablet-mobile-config, self, margin));
             @include kt-attr(padding, kt-get($submenu-tablet-mobile-config, self, padding, classic));

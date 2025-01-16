@@ -182,7 +182,7 @@ $header-top-bar-config: (
     // Fixed mobile header
     .kt-header-mobile--fixed & {
       position: fixed;
-      z-index: kt-get($header-config, base, mobile, self, fixed, zindex) - 1;
+      z-index: var(--dui-layers-fixed-header) - 1;
     }
 
     // Topbar shown

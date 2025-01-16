@@ -1,6 +1,5 @@
-$desktop-config: kt-get($header-config, menu, desktop);
-$item: kt-get($desktop-config, build, layout, item, submenu, item);
-$submenu: kt-get($desktop-config, build, layout, item, submenu);
+$item: kt-get($header-menu-config-desktop, build, layout, item, submenu, item);
+$submenu: kt-get($header-menu-config-desktop, build, layout, item, submenu);
 
 $item-submenu-link-padding: kt-get($item, link, self, padding);
 $item-submenu-padding-left: 30px;
@@ -278,8 +277,8 @@ $item-submenu-section-indent: 15px;
 //      .kt-menu__submenu {
 //        display: block;
 //        animation:
-//          #{kt-get($desktop-config, base, class)}-submenu-fade-in 0.3s ease 1,
-//          #{kt-get($desktop-config, base, class)}-submenu-move-down 0.3s ease-out 1;
+//          #{kt-get($header-menu-config-desktop, base, class)}-submenu-fade-in 0.3s ease 1,
+//          #{kt-get($header-menu-config-desktop, base, class)}-submenu-move-down 0.3s ease-out 1;
 //
 //        // ie8-11 versions hack
 //        @include kt-hack-ie {
@@ -290,8 +289,8 @@ $item-submenu-section-indent: 15px;
 //          > .kt-menu__submenu {
 //            display: block;
 //            animation:
-//              #{kt-get($desktop-config, base, class)}-submenu-fade-in 0.3s ease 1,
-//              #{kt-get($desktop-config, base, class)}-submenu-move-up 0.3s ease-out 1;
+//              #{kt-get($header-menu-config-desktop, base, class)}-submenu-fade-in 0.3s ease 1,
+//              #{kt-get($header-menu-config-desktop, base, class)}-submenu-move-up 0.3s ease-out 1;
 //
 //            // ie8-11 versions hack
 //            @include kt-hack-ie {
