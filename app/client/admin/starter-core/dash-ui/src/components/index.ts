@@ -8,3 +8,4 @@ export * from "./Datatable";
 export * from "./Modal";
 export * from "./Pagination";
 export * from "./Badge";
+export * from "./Menu";

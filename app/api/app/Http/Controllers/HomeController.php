@@ -25,20 +25,19 @@ class HomeController extends Controller
             [
                 'label' => 'admin.dashboard',
                 'name' => 'item_dashboard',
-                'link' => 'dashboard',
+                'route' => 'dashboard',
                 'permission' => UserPermissions::READ_USERS, // Change to dashboard_view
             ],
             [
                 'label' => 'admin.users.main',
                 'name' => 'item_users',
-                'link' => 'users',
-                'expanded' => false,
+                'route' => 'users',
                 'permission' => UserPermissions::READ_USERS,
-                'subcategories' => [
+                'submenu' => [
                     [
                         'label' => 'admin.users.admin',
                         'name' => 'item_users',
-                        'link' => 'users',
+                        'route' => 'users',
                         'permission' => UserPermissions::READ_USERS,
                     ]
                 ]
@@ -293,25 +292,21 @@ class HomeController extends Controller
         ];
 
         $navMenu = [
-            'theme' => 'classic',
-            'listStyle' => 'none',
-            'items' => [
-                [
-                    'label' => 'Pages',
-                    'route' => '#',
-                    'submenu' => $pagesItems
-                ],
-                [
-                    'label' => 'Apps',
-                    'route' => '#',
-                    'submenu' => $appsItems
-                ],
-                [
-                    'label' => 'Features',
-                    'route' => '#',
-                    'submenu' => $featuresItems
-                ]
+            [
+                'label' => 'Pages',
+                'route' => '#',
+                'submenu' => $pagesItems
             ],
+            [
+                'label' => 'Apps',
+                'route' => '#',
+                'submenu' => $appsItems
+            ],
+            [
+                'label' => 'Features',
+                'route' => '#',
+                'submenu' => $featuresItems
+            ]
         ];
 
         return [

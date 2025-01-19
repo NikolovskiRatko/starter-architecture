@@ -6,7 +6,8 @@ import { navMenu } from "./constants/data";
   <div class="kt-header-menu-wrapper kt-header-menu-wrapper--aside-enabled">
     <div class="kt-header">
       <NavMenu
-          :data="navMenu"
+          :items="navMenu"
+          :style="'dot'"
           type="horizontal"
           theme="classic"
       />

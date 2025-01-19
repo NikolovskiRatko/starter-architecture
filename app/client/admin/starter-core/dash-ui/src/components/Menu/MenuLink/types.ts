@@ -16,6 +16,7 @@ export type MenuLinkProps = {
   hasSubmenu?: boolean;
   isSubmenuLink?: boolean;
   isActive?: boolean;
+  isExpanded?: boolean;
   level?: number;
 }
 

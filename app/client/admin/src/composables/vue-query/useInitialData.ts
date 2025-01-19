@@ -1,9 +1,10 @@
 import type { QueryFunction, UseQueryReturnType } from "@tanstack/vue-query";
 import { useQuery } from "@tanstack/vue-query";
 import axios from "axios";
+import { NavMenuData } from "@/types";
 
 interface InitialData {
-  mainMenu: any;
+  mainMenu: NavMenuData;
   navMenu: any;
 }
 
@@ -12,13 +13,9 @@ export const getInitialData: QueryFunction<InitialData> = async () => {
   return data;
 };
 
-export const useInitialData = (): UseQueryReturnType<InitialData, unknown> => {
+export const useInitialData = (): UseQueryReturnType<InitialData, Error> => {
   return useQuery({
     queryKey: ["initial-data"],
     queryFn: getInitialData,
-    initialData: {
-      mainMenu: [],
-      navMenu: [],
-    },
   });
 };

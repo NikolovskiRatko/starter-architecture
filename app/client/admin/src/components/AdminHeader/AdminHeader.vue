@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { HeaderTopBar } from "@/components";
   import { useInitialData } from "@/composables";
-  import { NavMenu } from "@starter-core/dash-ui/src";
+  import { NavMenu, MenuItem } from "@starter-core/dash-ui/src";
 
   import "./AdminHeader.scss";
 
@@ -23,7 +23,16 @@
         id="kt_header_menu"
         class="kt-header-menu kt-header-menu-mobile kt-header-menu--layout-default"
       >
-        <NavMenu :data="data.navMenu" type="horizontal" />
+        <NavMenu v-if="data" type="horizontal">
+          <MenuItem
+            v-for="navMenuItem in data.navMenu"
+            :key="`${navMenuItem.label}-menu-item`"
+            :item="navMenuItem"
+            :style="'icons'"
+            :is-active="navMenuItem.isActive"
+            is-top-level-item
+          />
+        </NavMenu>
       </div>
     </div>
     <HeaderTopBar />

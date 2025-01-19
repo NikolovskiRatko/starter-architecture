@@ -7,10 +7,15 @@ import type { MENU_TYPE, MENU_THEME } from "../../constants";
 export type MenuTheme = typeof MENU_THEME[keyof typeof MENU_THEME];
 export type MenuType = typeof MENU_TYPE[keyof typeof MENU_TYPE];
 
+type MenuItemRoute = string | Partial<RouteLocation> & Pick<RouteLocation, 'name'>
+
 export interface MenuItem {
   label: string;
-  route: string | RouteLocation;
+  route: string | MenuItemRoute;
   icon?: VueElement;
   badge?: BadgeType;
-  submenu?: SubMenu;
+  isActive?: boolean;
+  submenu?: SubMenu | null;
 }
+
+export type MenuItems = MenuItem[];

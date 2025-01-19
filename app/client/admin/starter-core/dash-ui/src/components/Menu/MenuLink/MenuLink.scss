@@ -45,7 +45,7 @@ $item-submenu-section-indent: 15px;
     // primary link
     //TODO: Figure out what's a Primary link
     > .kt-menu__link {
-      > .kt-menu__link-text {
+      > .kt-menu__link__text {
         width: auto;
       }
     }
@@ -173,7 +173,7 @@ $item-submenu-section-indent: 15px;
     }
 }
 
-.kt-menu__link-text {
+.kt-menu__link__text {
   $block: &;
 
   @if kt-has($header-menu-link-config, text, font-weight) {
@@ -359,19 +359,13 @@ $item-submenu-section-indent: 15px;
 
     &#{$block}--active {
       @include kt-attr(color, kt-get($arrow-config, font-color, open));
-
-      &:before {
-        transition: kt-get($arrow-config, transition);
-        transform: rotateZ(90deg) #{"/*rtl:ignore*/"};
-
-        [direction="rtl"] & {
-          transform: rotateZ(-90deg) #{"/*rtl:ignore*/"};
-        }
-      }
     }
 
-    &#{$block}--here {
-      @include kt-attr(color, kt-get($arrow-config, font-color, here));
+    &#{$block}--expanded {
+      &:before {
+        transition: kt-get($arrow-config, transition);
+        transform: rotateZ(90deg);
+      }
     }
   }
 }

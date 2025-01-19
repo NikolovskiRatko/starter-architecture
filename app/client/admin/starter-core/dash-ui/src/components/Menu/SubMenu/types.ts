@@ -10,6 +10,5 @@ export interface SubMenu {
   items: SubmenuItems;
   stickToSide: StickToSide;
   listStyle?: MenuListStyle;
-  isExpanded?: boolean;
   isMegaMenu?: boolean;
 }

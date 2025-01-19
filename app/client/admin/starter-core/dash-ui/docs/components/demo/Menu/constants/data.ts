@@ -1,7 +1,7 @@
 import Icon from '../../../demo/components/Icon.vue';
 import type { SubMenu } from "../../../../../src/components/Menu/SubMenu/types";
-import type { NavMenuDataInterface } from "../../../../../src/components/Menu/NavMenu/types";
 import { VueElement } from 'vue';
+import type { MenuItems } from "../../../../../src/components/Menu/types";
 
 export const briefcaseIcon: VueElement = Icon;
 
@@ -290,31 +290,28 @@ const featuresItems: SubMenu = {
     ],
 };
 
-export const navMenu: NavMenuDataInterface = {
-    listStyle: "dot",
-    items: [
-        {
-            label: "Pages",
-            route: "#",
-            submenu: pagesItems,
+export const navMenu: MenuItems = [
+    {
+        label: "Pages",
+        route: "#",
+        submenu: pagesItems,
+    },
+    {
+        label: "Apps",
+        route: "#",
+        submenu: appsItems,
+    },
+    {
+        label: "Features",
+        route: "#",
+        submenu: featuresItems,
+    },
+    {
+        label: "Mega menu",
+        route: "#",
+        submenu: {
+            ...featuresItems,
+            isMegaMenu: true
         },
-        {
-            label: "Apps",
-            route: "#",
-            submenu: appsItems,
-        },
-        {
-            label: "Features",
-            route: "#",
-            submenu: featuresItems,
-        },
-        {
-            label: "Mega menu",
-            route: "#",
-            submenu: {
-                ...featuresItems,
-                isMegaMenu: true
-            },
-        },
-    ],
-};
+    },
+];

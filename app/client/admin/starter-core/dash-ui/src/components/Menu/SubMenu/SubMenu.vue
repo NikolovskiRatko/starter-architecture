@@ -12,7 +12,6 @@ interface SubMenuProps {
   style?: MenuListStyle;
   stickToSide?: StickToSide;
   level?: number;
-  isExpanded?: boolean;
   isVisible?: boolean;
   isMegaMenu?: boolean;
 }
@@ -23,7 +22,6 @@ const {
   level = 1,
   isMegaMenu,
   isVisible,
-  isExpanded,
   style
 } = defineProps<SubMenuProps>();
 
@@ -53,6 +51,7 @@ const menuTheme = inject(menuThemeKey);
           :item="item"
           :level="level + 1"
           :style="style"
+          :is-active="item.isActive"
       />
     </ul>
   </div>

@@ -13,6 +13,7 @@
     listStyle = null,
     hasSubmenu = false,
     isSubmenuLink = false,
+    isExpanded = false,
     badge = null,
     isActive = false,
     level = 1
@@ -32,13 +33,20 @@
     return false;
   });
 
-  const [block, element] = useBEMBuilder('kt-menu__link', ref({
-    [`${menuType}`]: menuType,
-    [`level-${level}`]: level,
-    active: isActive,
-    'submenu-link': isSubmenuLink,
-    minimized: isMinimized
-  }))
+  const blockModifiers = computed(() => {
+    return {
+      [`${menuType}`]: !!menuType,
+      [`level-${level}`]: !!level,
+      active: isActive,
+      'submenu-link': isSubmenuLink,
+      minimized: !!isMinimized?.value
+    };
+  });
+
+  const [block, element] = useBEMBuilder(
+    'kt-menu__link',
+    blockModifiers
+  )
 
   const handleClick = (event: Event) => {
     if (hasSubmenu) {
@@ -51,27 +59,25 @@
 <template>
   <component
     :is="hasSubmenu ? 'span' : 'router-link'"
+    class="kt-menu__link"
     :class="block"
     v-bind="hasSubmenu ? {} : { to: route }"
     @click="handleClick"
   >
     <MenuLinkIcon v-if="icon && listStyle === 'icons'" :icon="icon" :is-active="isActive" />
     <i
-      v-if="!isMinimized && !['icons', 'none'].includes(listStyle)"
+      v-if="!isMinimized && (listStyle && !['icons', 'none'].includes(listStyle))"
       :class="['kt-menu__link-bullet', `kt-menu__link-bullet--${listStyle}`]"
     >
       <span />
     </i>
 
     <span
-      :class="[
-        'kt-menu__link-text',
-        `kt-menu__link-text--${menuType}`,
-        {
-          'kt-menu__link-text--active': isActive,
-          'kt-menu__link-text--minimized': isMinimized,
-        },
-      ]"
+      :class="element('text', ref({
+        [`${menuType}`]: !!menuType,
+        active: isActive || isExpanded,
+        minimized: !!isMinimized
+      })).value"
     >
       {{ label }}
     </span>
@@ -88,8 +94,8 @@
           `kt-menu__link-arrow--${menuType}`,
           'la la-angle-right',
           {
-            'kt-menu__link-arrow--active': isActive,
-            'kt-menu__link-arrow--here': isActive,
+            'kt-menu__link-arrow--active': isActive || isExpanded,
+            'kt-menu__link-arrow--expanded': isExpanded,
           },
         ]"
       />

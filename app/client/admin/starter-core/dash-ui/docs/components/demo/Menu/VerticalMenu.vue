@@ -21,10 +21,12 @@
 <template>
   <div @mouseover="mouseOverHandler" @mouseleave="mouseLeaveHandler">
     <div :class="['aside', { 'aside--minimized': !isHover && props.isMinimizedMenu }]">
-      <NavMenu :data="{
-        ...navMenu,
-        items: navMenu.items.map((item) => ({ ...item, icon: briefcaseIcon }))
-      }" type="vertical" theme="classic" />
+      <NavMenu
+        :items="navMenu.map((item) => ({ ...item, icon: briefcaseIcon }))"
+        :style="'icons'"
+        type="vertical"
+        theme="classic"
+      />
     </div>
   </div>
 </template>

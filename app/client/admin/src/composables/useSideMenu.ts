@@ -5,9 +5,18 @@ import {
 } from "@starter-core/icons";
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
+import { useRoute, type RouteLocationNormalizedLoaded } from "vue-router";
 import { useInitialData } from "@/composables";
 import useAuthComp from "@/composables/useAuthComp";
-import type { NavMenuDataInterface } from "@starter-core/dash-ui/src/components/Menu/NavMenu/types";
+import { NavSubmenuData } from "@/types";
+import type {
+  SubMenu,
+  SubmenuItems,
+} from "@starter-core/dash-ui/src/components/Menu/SubMenu/types";
+import type {
+  MenuItem,
+  MenuItems,
+} from "@starter-core/dash-ui/src/components/Menu/types";
 
 const getItemIcon = (link: string) => {
   switch (link) {
@@ -20,76 +29,83 @@ const getItemIcon = (link: string) => {
   }
 };
 
+function findActiveCategory(
+  categories: NavSubmenuData,
+  routeName: RouteLocationNormalizedLoaded["name"],
+  activePath: string[] = [],
+) {
+  for (const category of categories) {
+    if (category.route === routeName) {
+      activePath.push(category.route);
+      return activePath;
+    }
+
+    if (category.submenu) {
+      return findActiveCategory(category.submenu, routeName, activePath);
+    }
+  }
+
+  return activePath;
+}
+
 export default function useSideMenu() {
   const { permissionsArray } = useAuthComp();
   const { t } = useI18n();
   const { data, isLoading } = useInitialData();
+  const route = useRoute();
 
-  // TODO: Implement legacy logic to new menu
-  // const isActiveClass = (input) => {
-  //     let path = input.link;
-  //     let curPath = this.$route.name;
-  //     return path === curPath;
-  // }
-  // const setInitialExpanded = () => {
-  //     const currentRoute = this.$route.name;
-  //     const isSubcategoryActive =
-  //         this.item.subcategories?.some((menuItem) => {
-  //             const firstLevelIsActive = menuItem.link === currentRoute;
-  //             if (firstLevelIsActive) {
-  //                 return true;
-  //             } else {
-  //                 return (
-  //                     menuItem.subcategories?.some(
-  //                         (secondLevelMenuItem) =>
-  //                             secondLevelMenuItem.link === currentRoute,
-  //                     ) || false
-  //                 );
-  //             }
-  //         }) || false;
-  //
-  //     this.isExpanded = this.item.expanded || isSubcategoryActive;
-  // }
-
-  const mainMenu = computed<NavMenuDataInterface>(() => {
-    if (isLoading && !data.value?.mainMenu) {
+  const activeRoutes = computed(() => {
+    if (isLoading.value || !data.value?.mainMenu) {
       return [];
     }
 
-    return {
-      listStyle: "icons",
-      items: data.value.mainMenu
-        .filter((menuItem) =>
-          permissionsArray.value.includes(menuItem.permission),
-        )
-        .map(({ label, link, subcategories }) => ({
-          label: t(label),
-          route: {
-            name: link,
-          },
-          icon: getItemIcon(link),
-          ...(subcategories && {
-            submenu: {
-              listStyle: "dot",
-              stickToSide: "left",
-              items: subcategories
-                .filter((subitem) =>
-                  permissionsArray.value.includes(subitem.permission),
-                )
-                .map(({ label, link }) => ({
-                  label: t(label),
-                  route: {
-                    name: link,
-                  },
-                  icon: getItemIcon(link),
-                })),
-            },
-          }),
-        })),
-    };
+    return findActiveCategory(data.value.mainMenu, route.name);
   });
 
-  return {
-    mainMenu,
+  const parseSubmenu = (submenuData?: NavSubmenuData): SubMenu | null => {
+    if (!submenuData) {
+      return null;
+    }
+
+    const items: SubmenuItems = submenuData
+      .filter((subitem) => permissionsArray.value.includes(subitem.permission))
+      .map(({ label, route }) => ({
+        label: t(label),
+        route: {
+          name: route,
+        },
+        isActive: activeRoutes.value.includes(route),
+        icon: getItemIcon(route),
+      }));
+
+    return {
+      listStyle: "dot",
+      stickToSide: "left",
+      items,
+    };
   };
+
+  return computed<MenuItems>(() => {
+    if (isLoading.value || !data.value?.mainMenu) {
+      return [];
+    }
+
+    const filteredItems = data.value.mainMenu.filter((menuItem) =>
+      permissionsArray.value.includes(menuItem.permission),
+    );
+
+    return filteredItems.map(({ label, route, submenu }) => {
+      const item: MenuItem = {
+        label: t(label),
+        route: {
+          name: route,
+        },
+        icon: getItemIcon(route),
+        isActive: activeRoutes.value.includes(route),
+        submenu: parseSubmenu(submenu),
+      };
+
+      return item;
+    });
+  });
 }

@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { inject } from "vue";
   import { isMenuMinimizedKey } from "../constants";
+
   import './MenuSection.scss';
 
   const isMinimized = inject(isMenuMinimizedKey);
