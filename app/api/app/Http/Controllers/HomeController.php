@@ -45,20 +45,20 @@ class HomeController extends Controller
             [
                 'label' => 'navigation.main',
                 'name' => 'navigations',
-                'link' => 'navigations',
+                'route' => 'navigations',
                 'expanded' => false,
                 'permission' => UserPermissions::READ_USERS,
-                'subcategories' => [
+                'submenu' => [
                     [
                         'label' => 'navigation.main',
                         'name' => 'navigations',
-                        'link' => 'navigations',
+                        'route' => 'navigations',
                         'permission' => UserPermissions::READ_USERS,
                     ],
                     [
                         'label' => 'navigation.menu.plural',
                         'name' => 'navigations.menus',
-                        'link' => 'navigations.menus',
+                        'route' => 'navigations.menus',
                         'permission' => UserPermissions::READ_USERS,
                     ]
                 ]
