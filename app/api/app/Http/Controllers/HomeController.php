@@ -31,7 +31,7 @@ class HomeController extends Controller
             [
                 'label' => 'admin.users.main',
                 'name' => 'item_users',
-                'route' => 'users',
+                'route' => 'users.trigger',
                 'permission' => UserPermissions::READ_USERS,
                 'submenu' => [
                     [
@@ -45,7 +45,7 @@ class HomeController extends Controller
             [
                 'label' => 'navigation.main',
                 'name' => 'navigations',
-                'route' => 'navigations',
+                'route' => 'navigations.trigger',
                 'expanded' => false,
                 'permission' => UserPermissions::READ_USERS,
                 'submenu' => [

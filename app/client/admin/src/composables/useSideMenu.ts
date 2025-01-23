@@ -24,9 +24,9 @@ const getItemIcon = (link: string) => {
   switch (link) {
     case "dashboard":
       return IconLayout4blocks;
-    case "users":
+    case "users.trigger":
       return IconUser;
-    case "navigations":
+    case "navigations.trigger":
       return IconRoute;
     case "navigations.menus":
       return IconLibrary;
@@ -47,7 +47,19 @@ function findActiveCategory(
     }
 
     if (category.submenu) {
-      return findActiveCategory(category.submenu, routeName, activePath);
+      const submenuActiveCategories = findActiveCategory(
+        category.submenu,
+        routeName,
+        activePath,
+      );
+      if (submenuActiveCategories.length > 0) {
+        activePath = [
+          category.route,
+          ...activePath,
+          ...submenuActiveCategories,
+        ];
+        return activePath;
+      }
     }
   }
 
