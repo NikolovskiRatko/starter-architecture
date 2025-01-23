@@ -7,6 +7,7 @@
     PortletBody,
     PortletHead,
   } from "@starter-core/dash-ui/src";
+
   import "./TabbedContent.scss";
 
   const { isLoading = false } = defineProps<TabbedContentProps>();

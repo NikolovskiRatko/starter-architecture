@@ -8,18 +8,25 @@
     }
 
     &__tab {
+        $block: &;
         font-weight: 500;
-        color: var(--dui-color-base-3);
+        color: var(--dui-color-base-label-2);
         border-bottom: 2px solid transparent;
         display: flex;
         align-items: center;
         height: 100%;
 
         &--active {
-            border-bottom: 2px solid var(--dui-color-base-3);
+            color: var(--dui-color-base-label-3);
+            border-bottom: 2px solid var(--dui-color-base-shape-3);
+
+            &:hover {
+                cursor: default;
+                color: var(--dui-color-base-label-3);
+            }
         }
 
-        &:hover {
+        &:not(#{$block}--active):hover {
             color: var(--dui-color-text-link);
             border-color: var(--dui-color-text-link);
         }
