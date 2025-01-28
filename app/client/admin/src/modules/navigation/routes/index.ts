@@ -16,6 +16,13 @@ const Menus = () =>
     "../pages/MenusPage.vue"
   );
 
+const Menu = () =>
+  import(
+    /* webpackChunkName: "menu" */
+    /* webpackPrefetch: true */
+    "../pages/MenuPage.vue"
+  );
+
 const NavigationPage = () =>
   import(
     /* webpackChunkName: "menus" */
@@ -23,7 +30,8 @@ const NavigationPage = () =>
     "../pages/NavigationPage.vue"
   );
 
-const { main, menus, editNavigation, addNavigation } = NAVIGATION_ROUTES_DATA;
+const { main, menus, menu, editNavigation, addNavigation } =
+  NAVIGATION_ROUTES_DATA;
 
 export const navigationRoutes: RouteRecordRaw[] = [
   {
@@ -40,6 +48,16 @@ export const navigationRoutes: RouteRecordRaw[] = [
     path: menus.path,
     name: menus.name,
     component: Menus,
+    meta: {
+      auth: {
+        roles: [USER_PERMISSIONS.readUsers],
+      },
+    },
+  },
+  {
+    path: menu.path,
+    name: menu.name,
+    component: Menu,
     meta: {
       auth: {
         roles: [USER_PERMISSIONS.readUsers],

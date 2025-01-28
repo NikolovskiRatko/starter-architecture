@@ -1,6 +1,9 @@
-.menus-tab {
-  display: flex;
-  gap: var(--dui-spacing-4);
+.menus-page {
+
+  &__content {
+    display: flex;
+    gap: var(--dui-spacing-4);
+  }
 
   &__list {
     list-style: none;
@@ -9,7 +12,7 @@
   }
 
   &__list-item {
-    background-color: var(--dui-color-light);
+    background-color: var(--dui-color-base-shape-2);
     padding: var(--dui-spacing-2);
     border: var(--dui-border-light);
     border-radius: var(--dui-border-radius);

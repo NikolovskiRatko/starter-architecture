@@ -10,7 +10,7 @@
   import "./MenuItems.scss";
 
   interface MenuItemsProps {
-    menuId: string;
+    menuId: number;
   }
 
   const [block, element] = useBEMBuilder("menu-items");

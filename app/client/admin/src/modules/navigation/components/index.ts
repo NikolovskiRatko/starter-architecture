@@ -1,3 +1,4 @@
-export { default as MenusTab } from "./MenusTab.vue";
-export { default as MenuItemsTab } from "./MenuItemsTab.vue";
 export { default as NavigationsDropdown } from "./NavigationsDropdown.vue";
+export { default as MenuItems } from "./MenuItems.vue";
+export { default as MenuItemsNavigationForms } from "./MenuItemsNavigationForms.vue";
+export { default as AddMenuForm } from "./AddMenuForm.vue";

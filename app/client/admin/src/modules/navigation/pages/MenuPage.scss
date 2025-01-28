@@ -1,6 +1,9 @@
-.menu-items-tab {
-    display: flex;
-    gap: var(--dui-spacing-4);
+.menu-page {
+
+    &__content {
+        display: flex;
+        gap: var(--dui-spacing-4);
+    }
 
     &__navigations {
         flex: 0 0 20%;

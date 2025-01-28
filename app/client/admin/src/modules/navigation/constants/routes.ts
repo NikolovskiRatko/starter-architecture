@@ -3,6 +3,7 @@ import type { ModulesRoutesData } from "@/types/routes";
 export const NAVIGATION_ROUTES = {
   main: "main",
   menus: "menus",
+  menu: "menu",
   addNavigation: "addNavigation",
   editNavigation: "editNavigation",
 } as const;
@@ -19,6 +20,11 @@ export const NAVIGATION_ROUTES_DATA: ModulesRoutesData<UsersRoutes> = {
     path: "navigations/menus",
     name: "navigations.menus",
     translationKey: "navigation.menu.plural",
+  },
+  menu: {
+    path: "navigations/menu/:menuId",
+    name: "navigations.menu",
+    translationKey: "navigation.menu.main",
   },
   editNavigation: {
     path: "navigation/:navigationId",
