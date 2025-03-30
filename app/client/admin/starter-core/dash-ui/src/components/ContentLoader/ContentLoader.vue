@@ -13,7 +13,9 @@ const extraClass = props.fullCont;
 
 const className = computed(() => {
   const classNames: Array<string> = [];
-  const { fullCont, transparent } = props;
+  const { fullCont, transparent, heightClass } = props;
+
+  classNames.push(heightClass);
 
   if (fullCont) {
     classNames.push("full-cont");

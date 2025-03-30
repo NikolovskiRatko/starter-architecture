@@ -7,6 +7,8 @@ export interface FormInputProps {
   modelValue?: string;
   isInline?: boolean;
   disabled?: boolean;
+  required?: boolean;
+  placeholder?: string;
 }
 
 export interface FormGroupProps {

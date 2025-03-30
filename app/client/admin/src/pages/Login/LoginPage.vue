@@ -1,76 +1,62 @@
 <script setup lang="ts">
+  import { useForm, Field } from "vee-validate";
   import { ref } from "vue";
-  import { useRouter } from "vue-router";
+  import { useI18n } from "vue-i18n";
   import useAuthComp from "@/composables/useAuthComp";
+  import type { UserFormItem } from "@/modules/users/types";
+  import {
+    DashButton,
+    FormInput,
+    ContentLoader,
+  } from "@starter-core/dash-ui/src";
 
-  const form = ref({ email: "", password: "" });
-  const formErrors = ref({ email: "", password: "" });
   const authError = ref(false);
   const staySignedIn = ref(true);
 
-  const router = useRouter();
-  const { login } = useAuthComp();
+  const { t } = useI18n();
+  const { login, isLoading } = useAuthComp();
 
-  const validateForm = () => {
-    let isValid = true;
-    formErrors.value.email = "";
-    formErrors.value.password = "";
+  const { handleSubmit, errors, defineField } = useForm<UserFormItem>({
+    validationSchema: {
+      email: (value: string) => !!value,
+      password: (value: string) => !!value,
+    },
+  });
 
-    if (!form.value.email) {
-      formErrors.value.email = "Email is required";
-      isValid = false;
-    }
-    if (!form.value.password) {
-      formErrors.value.password = "Password is required";
-      isValid = false;
-    }
-
-    return isValid;
-  };
-
-  const submitForm = async () => {
-    if (!validateForm()) return;
-
+  const submitHandler = handleSubmit((values) => {
     login({
-      data: form.value,
+      data: values,
       redirect: false,
       remember: false,
       staySignedIn: staySignedIn.value,
     }).catch((error) => {
       authError.value = true;
-      console.log(error);
+      console.log(error.message);
     });
-  };
+  });
+
+  const [email] = defineField("email");
+  const [password] = defineField("password");
 </script>
 
 <template>
   <div class="auth-login">
-    <div class="auth-base__head">
-      <h3 class="auth-base__title">Login 1.3</h3>
-    </div>
-    <form class="kt-form auth-base__form" @submit.prevent="submitForm">
-      <div class="input-group">
-        <input
-          v-model="form.email"
-          class="form-control"
-          type="text"
-          placeholder="admin@example.com"
-          name="email"
-          autocomplete="off"
-          required
-          autofocus
-        />
-      </div>
-      <div class="input-group">
-        <input
-          v-model="form.password"
-          class="form-control"
-          type="password"
-          placeholder="password"
-          name="password"
-          required
-        />
-      </div>
+    <form class="kt-form auth-base__form" @submit.prevent="submitHandler">
+      <FormInput
+        id="email"
+        v-model="email"
+        name="Email"
+        placeholder="admin@example.com"
+        :error="errors['email']"
+      />
+      <FormInput
+        id="email"
+        type="password"
+        v-model="password"
+        name="password"
+        placeholder="password"
+        :error="errors['password']"
+      />
       <span v-if="authError" class="error invalid-feedback">
         Authentication failed
       </span>
@@ -82,18 +68,15 @@
             <span></span>
           </label>
         </div>
-        <div class="col kt-align-right">
-          <!--                    <router-link id="kt_login_forgot" to="/password/reset" class="auth-base__link">-->
-          <!--                        Password Reset-->
-          <!--                    </router-link>-->
-        </div>
+        <!--                    <router-link id="kt_login_forgot" to="/password/reset" class="auth-base__link">-->
+        <!--                        Password Reset-->
+        <!--                    </router-link>-->
       </div>
       <div class="auth-base__actions">
-        <input
-          class="btn btn-brand btn-elevate auth-base__btn-primary"
-          type="submit"
-          value="Sign In"
-        />
+        <ContentLoader v-if="isLoading" height-class="mh-5" />
+        <DashButton v-else type="submit" is-wide>
+          {{ t("buttons.login") }}
+        </DashButton>
       </div>
     </form>
   </div>

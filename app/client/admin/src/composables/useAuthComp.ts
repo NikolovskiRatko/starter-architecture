@@ -1,10 +1,11 @@
 import { useAuth } from "@websanova/vue-auth/src/v3.js";
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
 
 export default function useAuthComp() {
   const auth = useAuth();
   const router = useRouter();
+  const isLoading = ref(false);
 
   const user = computed(() => auth.user());
   const permissionsArray = computed<Array<string>>(
@@ -21,6 +22,7 @@ export default function useAuthComp() {
 
   function login(data): Promise<any> {
     data = data || {};
+    isLoading.value = true;
 
     return new Promise((resolve, reject) => {
       auth
@@ -49,12 +51,16 @@ export default function useAuthComp() {
         })
         .catch((error) => {
           reject(error?.message);
+        })
+        .finally(() => {
+          isLoading.value = false;
         });
     });
   }
 
   function register(data) {
     data = data || {};
+    isLoading.value = true;
 
     return new Promise((resolve, reject) => {
       auth
@@ -67,7 +73,10 @@ export default function useAuthComp() {
           if (data.autoLogin) {
             login(data).then(resolve, reject);
           }
-        }, reject);
+        }, reject)
+        .finally(() => {
+          isLoading.value = false;
+        });
     });
   }
 
@@ -109,6 +118,7 @@ export default function useAuthComp() {
     unimpersonate,
     logout,
     impersonating,
+    isLoading,
     user,
     permissionsArray,
   };

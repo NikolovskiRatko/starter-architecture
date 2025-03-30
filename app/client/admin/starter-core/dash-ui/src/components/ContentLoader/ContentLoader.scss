@@ -11,6 +11,7 @@
 .loading-cont {
   position: relative;
   z-index: 1;
+
   @for $i from 1 through 20 {
     &.mh-#{$i*5} {
       min-height: #{$i * 5}rem;
