@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { useForm, Field } from "vee-validate";
+  import { useForm } from "vee-validate";
   import { ref } from "vue";
   import { useI18n } from "vue-i18n";
   import useAuthComp from "@/composables/useAuthComp";
