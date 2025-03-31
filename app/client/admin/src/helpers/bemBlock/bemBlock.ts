@@ -20,13 +20,19 @@ type UseBEMBuilder = (
 ];
 
 export const useBEMBuilder: UseBEMBuilder = (baseClass, baseClassModifiers) => {
-  const createBEMClasses: CreateBEMClasses = (base, element, conditionalClasses) =>
+  const createBEMClasses: CreateBEMClasses = (
+    base,
+    element,
+    conditionalClasses,
+  ) =>
     computed(() => {
       const classBody = element ? `${base}__${element}` : base;
       const classes: ClassObject = { [classBody]: true };
 
       if (conditionalClasses?.value) {
-        for (const [className, condition] of Object.entries(conditionalClasses.value)) {
+        for (const [className, condition] of Object.entries(
+          conditionalClasses.value,
+        )) {
           classes[`${classBody}--${className}`] = condition;
         }
       }

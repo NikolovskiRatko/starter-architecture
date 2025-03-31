@@ -1,6 +1,6 @@
 <script lang="ts">
   import { defineComponent, ref, watch } from "vue";
-  import { useEventsBus } from "@/composables";
+  // import { useEventsBus } from "@/composables";
 
   export default defineComponent({
     name: "FileUpload",
@@ -21,7 +21,7 @@
       const inputClass = ref("form-control");
       const labelClass = ref("");
       const url = ref(null);
-      const { emit } = useEventsBus();
+      // const { emit } = useEventsBus();
 
       const updateInputClass = () => {
         if (props.form.errors.has(props.id)) {

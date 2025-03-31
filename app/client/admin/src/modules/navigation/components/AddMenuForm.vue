@@ -2,12 +2,7 @@
   import { ref } from "vue";
   import { useI18n } from "vue-i18n";
   import { useCreateNavigationMenu } from "../composables";
-  import {
-    AccordionContent,
-    AccordionItem,
-    DashButton,
-    FormInput,
-  } from "@starter-core/dash-ui/src";
+  import { DashButton, FormInput } from "@starter-core/dash-ui/src";
 
   const { t } = useI18n();
   const { mutate: createMenu } = useCreateNavigationMenu();

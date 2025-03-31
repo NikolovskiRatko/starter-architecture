@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { computed, ref } from "vue";
+  import { computed } from "vue";
   import { useUserRoles } from "../composables";
   import type { UserRoleId } from "../types";
   import { BadgeComponent } from "@starter-core/dash-ui/src";

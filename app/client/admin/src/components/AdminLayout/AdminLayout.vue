@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import { useAuth } from "@websanova/vue-auth/src/v3.js";
   import { storeToRefs } from "pinia";
   import { provide, ref } from "vue";
   import { AdminHeader, AdminSidebar } from "@/components";
@@ -15,7 +14,6 @@
 
   const rootStore = useRootStore();
   const { isSidebarMinimized } = storeToRefs(rootStore);
-  const auth = useAuth();
 
   const [block, element] = useBEMBuilder(
     "admin-layout",
