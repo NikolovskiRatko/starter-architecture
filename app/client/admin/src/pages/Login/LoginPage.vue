@@ -41,6 +41,9 @@
 
 <template>
   <div class="auth-login">
+    <div class="auth-base__head">
+      <h3 class="auth-base__title">Login 1.3</h3>
+    </div>
     <form class="kt-form auth-base__form" @submit.prevent="submitHandler">
       <FormInput
         id="email"
