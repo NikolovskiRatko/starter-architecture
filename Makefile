@@ -154,3 +154,13 @@ fix_permissions:
 .PHONY: full_setup
 full_setup: setup_env build up fix_permissions install_api install_client_admin install_client_public migrate_seed
 	@echo "Full setup completed successfully."
+
+# 13. Enter node container shell
+.PHONY: shell_node
+shell_node:
+	docker exec -it $(NODE_CONTAINER) /bin/bash
+
+# 14. Enter app container shell
+.PHONY: shell_app
+shell_app:
+	docker exec -it $(APP_CONTAINER) /bin/bash
