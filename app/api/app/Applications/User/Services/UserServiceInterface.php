@@ -6,6 +6,7 @@ use App\Applications\User\DTO\UserDTO;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Applications\User\Model\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 /**
  * Interface UserServiceInterface
@@ -61,6 +62,14 @@ interface UserServiceInterface
      * @return array
      */
     public function getUserRoles(): array;
+
+    /**
+     * Get a user role by its name.
+     *
+     * @param string $name
+     * @return Role|null
+     */
+    public function getUserRoleByName(string $name): ?Role;
 
     /**
      * Handle the avatar upload for a user.

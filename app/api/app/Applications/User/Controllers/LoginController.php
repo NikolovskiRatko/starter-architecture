@@ -6,9 +6,21 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Applications\User\DTO\UserDTO;
+use App\Constants\UserRoles;
+use App\Applications\User\Services\LoginServiceInterface;
+use App\Applications\User\Services\UserService;
 
+/**
+ * @property UserService $userService
+ */
 class LoginController extends Controller
 {
+    public function __construct(
+        UserService $userService
+    ) {
+        $this->userService = $userService;
+    }
 
     /**
      * Handle an authentication attempt.
@@ -67,5 +79,37 @@ class LoginController extends Controller
         //        $user->permissions = $user->permissions_array(); // Assuming permissions_array() is a method in your User model
 
         return $user;
+    }
+
+    /**
+     * Sign up user and get JSON with a user response
+     *
+     * @param  Request  $request
+     * @return JsonResponse
+     */
+    public function signUp(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
+        ]);
+        $password = $request->input('password');
+
+        $role = $this->userService->getUserRoleByName(UserRoles::COLLABORATOR);
+
+        if (!$role) {
+            return 'jajca goli';
+        }
+
+        $request->merge([
+            'role' => $role->id
+        ]);
+        $userDTO = UserDTO::fromRequestForCreate($request);
+
+        $newUserDTO = $this->userService->create($userDTO, $password);
+
+        return response()->json($newUserDTO);
     }
 }

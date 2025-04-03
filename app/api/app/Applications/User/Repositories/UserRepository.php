@@ -127,6 +127,17 @@ class UserRepository implements UserRepositoryInterface
         return $this->role->all();
     }
 
+    /**
+     * Find a user role by its name.
+     *
+     * @param string $name
+     * @return Role|null
+     */
+    public function findUserRoleByName(string $name): ?Role
+    {
+        return $this->role->where('name', $name)->first();
+    }
+
     public function changeRole($id, $role_id)
     {
         $this->user

@@ -7,6 +7,7 @@ use App\Applications\User\Model\User;
 use App\Applications\User\DTO\UserDTO;
 use App\Applications\User\DTO\UserRoleDTO;
 // use App\Applications\User\Data\UserRole;
+use Spatie\Permission\Models\Role;
 use App\Applications\User\Repositories\UserRepositoryInterface;
 use App\Constants\UserPermissions;
 use Illuminate\Http\Request;
@@ -94,6 +95,11 @@ class UserService implements UserServiceInterface
     {
         $rolesCollection = $this->userRepository->getUserRoles();
         return UserRoleDTO::fromCollection($rolesCollection);
+    }
+
+    public function getUserRoleByName(string $name): ?Role
+    {
+        return $this->userRepository->findUserRoleByName($name);
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Applications\User\Repositories;
 use App\Applications\Pagination\StarterPaginator;
 use App\Applications\User\DTO\UserDTO;
 use App\Applications\User\Model\User;
+use Spatie\Permission\Models\Role;
 use Illuminate\Database\Eloquent\Collection;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Illuminate\Http\UploadedFile;
@@ -57,6 +58,15 @@ interface UserRepositoryInterface
      * @return Collection
      */
     public function getUserRoles(): Collection;
+
+
+    /**
+     * Find a user role by its name.
+     *
+     * @param string $name
+     * @return Role|null
+     */
+    public function findUserRoleByName(string $name): ?Role;
 
     /**
      * @param integer $id

@@ -29,6 +29,7 @@ Route::group([
     'prefix' => 'auth',
 ], function () {
     Route::post('login', [LoginController::class, 'login']);
+    Route::post('sign-up', [LoginController::class, 'signUp']);
 });
 
 // GUEST ROUTES
