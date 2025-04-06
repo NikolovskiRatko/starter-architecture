@@ -1,5 +1,9 @@
 <script setup lang="ts">
   import "./AuthBase.scss";
+
+  const { title } = defineProps<{
+    title: string;
+  }>();
 </script>
 
 <template>
@@ -11,13 +15,10 @@
             <img src="@/../assets/images/sm_logo.png" />
           </a>
         </div>
-        <router-view />
-        <div class="auth-base__account">
-          <span class="auth-base__account-msg">
-            Don't have an account yet ?
-          </span>
-          <a class="auth-base__account-link">Sign Up!</a>
+        <div class="auth-base__head">
+          <h3 class="auth-base__title">{{ title }}</h3>
         </div>
+        <slot />
       </div>
     </div>
   </div>

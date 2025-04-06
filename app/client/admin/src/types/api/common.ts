@@ -21,3 +21,9 @@ export type PaginatedApiResponse<T> = {
   data: T[];
   pagination: ApiResponsePagination;
 };
+
+export type ValidationErrors = Record<string, string[]>;
+export type LaravelValidationErrorResponse = {
+  message: string;
+  errors: ValidationErrors;
+};

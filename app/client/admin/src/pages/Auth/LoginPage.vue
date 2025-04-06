@@ -2,8 +2,11 @@
   import { useForm } from "vee-validate";
   import { ref } from "vue";
   import { useI18n } from "vue-i18n";
-  import useAuthComp from "@/composables/useAuthComp";
-  import type { UserFormItem } from "@/modules/users/types";
+  import { useToast } from "vue-toastification";
+  import { AuthBase } from "@/components";
+  import { useAuth } from "@/composables";
+  import { getAPIErrorMessage } from "@/helpers";
+  import { LoginQuery } from "@/types";
   import {
     DashButton,
     FormInput,
@@ -14,9 +17,10 @@
   const staySignedIn = ref(true);
 
   const { t } = useI18n();
-  const { login, isLoading } = useAuthComp();
+  const { login, isLoading } = useAuth();
+  const toast = useToast();
 
-  const { handleSubmit, errors, defineField } = useForm<UserFormItem>({
+  const { handleSubmit, errors, defineField, setErrors } = useForm<LoginQuery>({
     validationSchema: {
       email: (value: string) => !!value,
       password: (value: string) => !!value,
@@ -31,7 +35,13 @@
       staySignedIn: staySignedIn.value,
     }).catch((error) => {
       authError.value = true;
-      console.log(error.message);
+      const errorMessage = getAPIErrorMessage(error);
+
+      if (typeof errorMessage === "string") {
+        toast.error(errorMessage);
+      } else {
+        setErrors(errorMessage);
+      }
     });
   });
 
@@ -40,10 +50,7 @@
 </script>
 
 <template>
-  <div class="auth-login">
-    <div class="auth-base__head">
-      <h3 class="auth-base__title">Login 1.3</h3>
-    </div>
+  <AuthBase title="Login 1.3">
     <form class="kt-form auth-base__form" @submit.prevent="submitHandler">
       <FormInput
         id="email"
@@ -81,6 +88,14 @@
           {{ t("buttons.login") }}
         </DashButton>
       </div>
+      <div class="auth-base__account">
+        <span class="auth-base__account-msg">
+          Don't have an account yet ?
+        </span>
+        <router-link class="auth-base__account-link" to="/sign-up">
+          Sign Up!
+        </router-link>
+      </div>
     </form>
-  </div>
+  </AuthBase>
 </template>
