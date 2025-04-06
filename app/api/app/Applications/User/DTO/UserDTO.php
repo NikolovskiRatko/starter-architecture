@@ -17,6 +17,8 @@ class UserDTO
     public bool $is_disabled;
     public array $permissions_array;
 
+    private ?User $model = null;
+
     public function __construct(
         string $first_name,
         string $last_name,
@@ -26,7 +28,8 @@ class UserDTO
         int $role,
         int $id = 0,
         bool $is_disabled = false,
-        array $permissions_array = []
+        array $permissions_array = [],
+        ?User $model = null
     ) {
         $this->first_name = $first_name;
         $this->last_name = $last_name;
@@ -37,6 +40,7 @@ class UserDTO
         $this->id = $id;
         $this->is_disabled = $is_disabled;
         $this->permissions_array = $permissions_array;
+        $this->model = $model;
     }
 
     public static function fromRequest(Request $request): self
@@ -80,8 +84,18 @@ class UserDTO
             $user->role,
             $user->id,
             (bool) $user->is_disabled,
-            $user->permissions_array
+            $user->permissions_array,
+            $user
         );
+    }
+
+    public function model(): User
+    {
+        if (!$this->model) {
+            throw new \LogicException('No User model instance is set on this DTO.');
+        }
+
+        return $this->model;
     }
 
     public function jsonSerialize(): array
