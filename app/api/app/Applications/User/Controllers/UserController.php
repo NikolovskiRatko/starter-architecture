@@ -129,13 +129,15 @@ class UserController extends Controller
     }
 
     /**
-     * Get a JSON of User Roles.
+     * Get a JSON of User Roles and Permissions.
      *
-     * @return array
+     * @return JsonResponse
      */
-    public function getUserRoles(): array
+    public function getUserPermissionsRoles(): JsonResponse
     {
-        return $this->userService->getUserRoles();
+        $permissionsAndRoles = $this->userService->getUserPermissionsAndRoles();
+
+        return response()->json($permissionsAndRoles);
     }
 
     /**

@@ -59,6 +59,10 @@ interface UserRepositoryInterface
      */
     public function getUserRoles(): Collection;
 
+    /**
+     * @return Collection
+     */
+    public function getUserPermissions(): Collection;
 
     /**
      * Find a user role by its name.

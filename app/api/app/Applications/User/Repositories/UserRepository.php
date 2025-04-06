@@ -9,21 +9,25 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\UploadedFile;
 use App\Applications\User\Model\User;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 
 /**
  * @property User $user
  * @property Role $role
+ * @property Permission $permission
  */
 class UserRepository implements UserRepositoryInterface
 {
     public function __construct(
         User $user,
-        Role $role
+        Role $role,
+        Permission $permission
     ) {
         $this->user = $user;
         $this->role = $role;
+        $this->permission = $permission;
     }
 
     private const COLUMNS_MAP = [
@@ -125,6 +129,11 @@ class UserRepository implements UserRepositoryInterface
     public function getUserRoles(): Collection
     {
         return $this->role->all();
+    }
+
+    public function getUserPermissions(): Collection
+    {
+        return $this->permission->all();
     }
 
     /**

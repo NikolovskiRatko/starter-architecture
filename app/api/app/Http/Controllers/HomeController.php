@@ -26,7 +26,7 @@ class HomeController extends Controller
                 'label' => 'admin.dashboard',
                 'name' => 'item_dashboard',
                 'route' => 'dashboard',
-                'permission' => UserPermissions::READ_USERS, // Change to dashboard_view
+                'permission' => UserPermissions::READ_USERS,
             ],
             [
                 'label' => 'admin.users.main',
@@ -47,19 +47,19 @@ class HomeController extends Controller
                 'name' => 'navigations',
                 'route' => 'navigations.trigger',
                 'expanded' => false,
-                'permission' => UserPermissions::READ_USERS,
+                'permission' => UserPermissions::READ_NAVIGATION,
                 'submenu' => [
                     [
                         'label' => 'navigation.main',
                         'name' => 'navigations',
                         'route' => 'navigations',
-                        'permission' => UserPermissions::READ_USERS,
+                        'permission' => UserPermissions::READ_NAVIGATION,
                     ],
                     [
                         'label' => 'navigation.menu.plural',
                         'name' => 'navigations.menus',
                         'route' => 'navigations.menus',
-                        'permission' => UserPermissions::READ_USERS,
+                        'permission' => UserPermissions::READ_NAVIGATION,
                     ]
                 ]
             ]

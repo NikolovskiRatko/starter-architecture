@@ -22,7 +22,7 @@ Route::group([
     ], function () {
         Route::get('all', [UserController::class, 'getAll']);
         Route::get('draw', [UserController::class, 'draw']);
-        Route::get('roles/get', [UserController::class, 'getUserRoles']);
+        Route::get('permissions-roles', [UserController::class, 'getUserPermissionsRoles']);
 
         // Admin profile
         Route::patch('myprofile/{id}', [UserController::class, 'updateMyProfile']);

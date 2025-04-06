@@ -61,7 +61,7 @@ interface UserServiceInterface
     /**
      * @return array
      */
-    public function getUserRoles(): array;
+    public function getUserPermissionsAndRoles(): array;
 
     /**
      * Get a user role by its name.
