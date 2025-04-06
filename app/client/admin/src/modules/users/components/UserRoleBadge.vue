@@ -1,11 +1,11 @@
 <script setup lang="ts">
   import { computed } from "vue";
-  import { useUserRoles } from "../composables";
+  import { useUserPermissionsRoles } from "../composables";
   import type { UserRoleId } from "../types";
   import { BadgeComponent } from "@starter-core/dash-ui/src";
 
   const { userRoleId } = defineProps<{ userRoleId: UserRoleId }>();
-  const { isLoading: isFetchingRoles, data: roles } = useUserRoles();
+  const { isLoading: isFetchingRoles, data } = useUserPermissionsRoles();
 
   const badgeTheme = computed(() => {
     switch (userRoleId) {
@@ -21,11 +21,11 @@
   });
 
   const userRole = computed(() => {
-    if (isFetchingRoles.value || !roles.value) {
+    if (isFetchingRoles.value || !data.value?.roles) {
       return "User";
     }
 
-    return roles.value.find((role) => role.id === userRoleId)?.name ?? "User";
+    return data.value.roles.find((role) => role.id === userRoleId)?.name ?? "User";
   });
 </script>
 <template>

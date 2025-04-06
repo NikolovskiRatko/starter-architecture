@@ -13,7 +13,7 @@
   import { user } from "../constants";
   import { useForm } from "@/composables";
   import { getPhotoPath } from "@/helpers";
-  import { useUserRoles } from "@/modules/users/composables";
+  import { useUserPermissionsRoles } from "@/modules/users/composables";
   import { useRootStore } from "@/store/root";
   import {
     PortletComponent,
@@ -40,7 +40,7 @@
   });
 
   const route = useRoute();
-  const { isLoading: isFetchingRoles, data: roles } = useUserRoles();
+  const { isLoading: isFetchingRoles, data } = useUserPermissionsRoles();
 
   const item = ref(cloneDeep(user));
   // const edit = route.name == 'edit.user';
@@ -119,7 +119,7 @@
                 :label="t('users.roles.label')"
                 v-if="!isFetchingRoles"
                 v-model="form.role"
-                :options="roles"
+                :options="data?.roles"
                 :value="form.role"
               />
               <!--                        <FormInputRadio-->

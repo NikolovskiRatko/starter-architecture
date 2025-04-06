@@ -1,3 +1,4 @@
+export * from "./composables";
 export * from "./bemBlock";
 export * from "./bodyClasses";
 export * from "./edgeFileUpload";

@@ -67,7 +67,7 @@ export const usersRoutes: RouteRecordRaw[] = [
     meta: {
       title: t(myProfile.translationKey, null),
       auth: {
-        roles: [USER_PERMISSIONS.readUsers],
+        roles: true,
       },
     },
   },

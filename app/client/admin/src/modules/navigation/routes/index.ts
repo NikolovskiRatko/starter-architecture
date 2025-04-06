@@ -40,7 +40,7 @@ export const navigationRoutes: RouteRecordRaw[] = [
     component: Navigations,
     meta: {
       auth: {
-        roles: [USER_PERMISSIONS.readUsers],
+        roles: [USER_PERMISSIONS.readNavigation],
       },
     },
   },
@@ -50,7 +50,7 @@ export const navigationRoutes: RouteRecordRaw[] = [
     component: Menus,
     meta: {
       auth: {
-        roles: [USER_PERMISSIONS.readUsers],
+        roles: [USER_PERMISSIONS.readNavigation],
       },
     },
   },
@@ -60,7 +60,7 @@ export const navigationRoutes: RouteRecordRaw[] = [
     component: Menu,
     meta: {
       auth: {
-        roles: [USER_PERMISSIONS.readUsers],
+        roles: [USER_PERMISSIONS.readNavigation],
       },
     },
   },
@@ -70,7 +70,7 @@ export const navigationRoutes: RouteRecordRaw[] = [
     component: NavigationPage,
     meta: {
       auth: {
-        roles: [USER_PERMISSIONS.readUsers],
+        roles: [USER_PERMISSIONS.readNavigation],
       },
     },
   },
@@ -80,7 +80,7 @@ export const navigationRoutes: RouteRecordRaw[] = [
     component: NavigationPage,
     meta: {
       auth: {
-        roles: [USER_PERMISSIONS.readUsers],
+        roles: [USER_PERMISSIONS.readNavigation],
       },
     },
   },
