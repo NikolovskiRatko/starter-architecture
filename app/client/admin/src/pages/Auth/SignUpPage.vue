@@ -114,9 +114,6 @@
             {{ t("buttons.cancel") }}
           </DashLink>
         </template>
-        <router-link class="auth-base__account-link" to="/admin/dashboard">
-          Dashboard
-        </router-link>
       </div>
     </form>
   </AuthBase>
