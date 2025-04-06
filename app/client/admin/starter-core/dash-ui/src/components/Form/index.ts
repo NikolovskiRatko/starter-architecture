@@ -4,3 +4,4 @@ export { default as FormNumberInput } from './FormNumberInput/FormNumberInput.vu
 export { default as FormInputRadio } from './FormInputRadio/FormInputRadio.vue';
 export { default as FormDropdown } from './FormDropdown/FormDropdown.vue';
 export { default as FormSwitch } from './FormSwitch/FormSwitch.vue';
+export { default as FormHelperText } from './FormHelperText/FormHelperText.vue';

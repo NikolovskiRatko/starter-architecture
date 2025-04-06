@@ -11,6 +11,7 @@
     DashLink,
     FormInput,
     ContentLoader,
+    FormHelperText,
   } from "@starter-core/dash-ui/src";
 
   const authError = ref(false);
@@ -25,7 +26,12 @@
       last_name: (value: string) => !!value,
       email: (value: string) => !!value,
       password: (value: string) => !!value,
-      is_terms_and_conditions_agreed: (value: boolean) => value,
+      is_terms_and_conditions_agreed: (value: boolean) => {
+        if (!value) {
+          return "You must agree to the terms and conditions";
+        }
+        return value;
+      },
     },
   });
 
@@ -42,8 +48,6 @@
           setErrors(error);
         }
       });
-    } else {
-      authError.value = true;
     }
   });
 
@@ -101,6 +105,10 @@
             />
             I Agree the terms and conditions
             <span></span>
+            <FormHelperText
+              v-if="errors['is_terms_and_conditions_agreed']"
+              :error="errors['is_terms_and_conditions_agreed']"
+            />
           </label>
         </div>
       </div>

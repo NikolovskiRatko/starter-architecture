@@ -30,7 +30,6 @@
   const submitHandler = handleSubmit((values) => {
     login({
       data: values,
-      redirect: false,
       remember: false,
       staySignedIn: staySignedIn.value,
     }).catch((error) => {
