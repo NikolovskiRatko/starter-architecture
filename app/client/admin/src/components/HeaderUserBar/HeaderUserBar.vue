@@ -2,13 +2,13 @@
   import { IconUser } from "@starter-core/icons";
   import { ref, computed } from "vue";
   import HeaderUserBarListItem from "./HeaderUserBarListItem.vue";
-  import useAuthComp from "@/composables/useAuthComp";
+  import { useAuth } from "@/composables";
   import { BadgeComponent } from "@starter-core/dash-ui/src";
   import { useOnClickOutside } from "@starter-core/dash-ui/src/composables";
 
   import "./HeaderUserBar.scss";
 
-  const { logout, user } = useAuthComp();
+  const { logout, user } = useAuth();
   const isDropdownVisible = ref(false);
   const dropdownRef = ref();
 

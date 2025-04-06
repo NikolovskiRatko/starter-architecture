@@ -8,8 +8,7 @@ import {
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { useRoute, type RouteLocationNormalizedLoaded } from "vue-router";
-import { useInitialData } from "@/composables";
-import useAuthComp from "@/composables/useAuthComp";
+import { useInitialData, useAuth } from "@/composables";
 import { NavSubmenuData } from "@/types";
 import type {
   SubMenu,
@@ -67,7 +66,7 @@ function findActiveCategory(
 }
 
 export default function useSideMenu() {
-  const { permissionsArray } = useAuthComp();
+  const { permissionsArray } = useAuth();
   const { t } = useI18n();
   const { data, isLoading } = useInitialData();
   const route = useRoute();
