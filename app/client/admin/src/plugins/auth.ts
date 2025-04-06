@@ -4,6 +4,7 @@ import driverOAuth2Facebook from "@websanova/vue-auth/src/drivers/oauth2/faceboo
 import driverOAuth2Google from "@websanova/vue-auth/src/drivers/oauth2/google.js";
 import driverRouterVueRouter from "@websanova/vue-auth/src/drivers/router/vue-router.2.x.js";
 import { createAuth } from "@websanova/vue-auth/src/v3.js";
+import { AuthUser } from "@/modules/users/types";
 
 // Constants for OAuth2 configurations (move to environment or config files later)
 const GOOGLE_CLIENT_ID =
@@ -33,8 +34,29 @@ export default (app) => {
       },
       options: {
         rolesKey: "permissions_array",
-        parseUserData: function (data) {
+        parseUserData: function (data: AuthUser) {
           return data;
+        },
+        loginData: {
+          url: "/auth/login",
+          method: "POST",
+          redirect: "/admin/dashboard",
+          fetchUser: true,
+        },
+        registerData: {
+          url: "/auth/sign-up",
+          method: "POST",
+        },
+        fetchData: {
+          url: "/auth/user",
+          method: "GET",
+          enabled: true,
+        },
+        logoutData: {
+          url: "/auth/logout",
+          method: "POST",
+          redirect: "/login",
+          makeRequest: false,
         },
       },
     }),

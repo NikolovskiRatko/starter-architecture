@@ -18,3 +18,5 @@ export interface UsersTableResponse {
   data: GetUserResponse[];
   pagination: PaginationObject;
 }
+
+export type AuthUser = Omit<GetUserResponse, "updated_at">;
