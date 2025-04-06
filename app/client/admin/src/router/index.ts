@@ -29,7 +29,7 @@ const NotFound = () =>
   );
 
 const routes: RouteRecordRaw[] = [
-  authPaths,
+  ...authPaths,
   {
     path: "/admin",
     component: AdminLayout,
