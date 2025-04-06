@@ -4,4 +4,5 @@ export * from "./edgeFileUpload";
 export * from "./imageProcessing";
 export * from "./userAgentCheck";
 export * from "./inject";
+export * from "./api";
 export * from "./typeguards";
