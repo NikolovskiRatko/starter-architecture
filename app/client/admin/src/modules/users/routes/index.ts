@@ -34,7 +34,7 @@ export const usersRoutes: RouteRecordRaw[] = [
     component: Users,
     meta: {
       auth: {
-        roles: [USER_PERMISSIONS.readUsers],
+        roles: main.authRoles,
       },
     },
   },
@@ -45,7 +45,7 @@ export const usersRoutes: RouteRecordRaw[] = [
     meta: {
       title: t(add.translationKey, null),
       auth: {
-        roles: [USER_PERMISSIONS.writeUsers],
+        roles: add.authRoles,
       },
     },
   },
@@ -56,7 +56,7 @@ export const usersRoutes: RouteRecordRaw[] = [
     meta: {
       title: t(edit.translationKey, null),
       auth: {
-        roles: [USER_PERMISSIONS.writeUsers],
+        roles: edit.authRoles,
       },
     },
   },
@@ -67,7 +67,7 @@ export const usersRoutes: RouteRecordRaw[] = [
     meta: {
       title: t(myProfile.translationKey, null),
       auth: {
-        roles: true,
+        roles: myProfile.authRoles,
       },
     },
   },

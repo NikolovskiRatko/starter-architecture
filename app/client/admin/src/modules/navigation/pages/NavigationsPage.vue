@@ -8,6 +8,8 @@
   } from "../constants";
   import { PageWrapper } from "@/components";
   import { useBEMBuilder } from "@/helpers";
+  import { useUserCheck } from "@/modules/users/composables";
+  import { USER_PERMISSIONS } from "@/modules/users/constants";
   import {
     // useDatatable,
     DatatableComponent,
@@ -17,6 +19,7 @@
     DashLink,
   } from "@starter-core/dash-ui/src";
 
+  const { checkUser } = useUserCheck();
   const { t } = useI18n();
   const [block] = useBEMBuilder("navigations-page");
 
@@ -33,6 +36,7 @@
         <template #header>
           <DatatableHeader title="Navigations" subtitle="List of navigations">
             <DashLink
+              v-if="checkUser('permissions', USER_PERMISSIONS.writeNavigation)"
               :to="{ name: NAVIGATION_ROUTES_DATA.addNavigation.name }"
               :icon="IconPlus"
             >

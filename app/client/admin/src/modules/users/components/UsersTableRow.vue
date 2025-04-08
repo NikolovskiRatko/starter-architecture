@@ -5,6 +5,7 @@
   import UserRoleBadge from "./UserRoleBadge.vue";
   import UserStatusBadge from "./UserStatusBadge.vue";
   import { useUserCheck } from "@/modules/users/composables";
+  import { USER_PERMISSIONS } from "@/modules/users/constants";
   import {
     DashButton,
     DashLink,
@@ -61,7 +62,7 @@
 
     <TableColumn>
       <dash-link
-        v-if="checkUser('permissions', 'write_users')"
+        v-if="checkUser('permissions', USER_PERMISSIONS.writeUsers)"
         :to="{ name: 'edit.user', params: { userId: user.id } }"
         theme="primary"
         theme-mod="outline-hover"
@@ -73,7 +74,7 @@
 
     <TableColumn>
       <DashButton
-        v-if="checkUser('permissions', 'delete_users')"
+        v-if="checkUser('permissions', USER_PERMISSIONS.deleteUsers)"
         :icon="IconTrash"
         theme="danger"
         size="sm"

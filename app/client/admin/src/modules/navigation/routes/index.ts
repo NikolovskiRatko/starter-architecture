@@ -1,6 +1,5 @@
 import type { RouteRecordRaw } from "vue-router";
 import { NAVIGATION_ROUTES_DATA } from "../constants";
-import { USER_PERMISSIONS } from "@/modules/users/constants";
 
 const Navigations = () =>
   import(
@@ -40,7 +39,7 @@ export const navigationRoutes: RouteRecordRaw[] = [
     component: Navigations,
     meta: {
       auth: {
-        roles: [USER_PERMISSIONS.readNavigation],
+        roles: main.authRoles,
       },
     },
   },
@@ -50,7 +49,7 @@ export const navigationRoutes: RouteRecordRaw[] = [
     component: Menus,
     meta: {
       auth: {
-        roles: [USER_PERMISSIONS.readNavigation],
+        roles: menu.authRoles,
       },
     },
   },
@@ -60,7 +59,7 @@ export const navigationRoutes: RouteRecordRaw[] = [
     component: Menu,
     meta: {
       auth: {
-        roles: [USER_PERMISSIONS.readNavigation],
+        roles: menu.authRoles,
       },
     },
   },
@@ -70,7 +69,7 @@ export const navigationRoutes: RouteRecordRaw[] = [
     component: NavigationPage,
     meta: {
       auth: {
-        roles: [USER_PERMISSIONS.readNavigation],
+        roles: editNavigation.authRoles,
       },
     },
   },
@@ -80,7 +79,7 @@ export const navigationRoutes: RouteRecordRaw[] = [
     component: NavigationPage,
     meta: {
       auth: {
-        roles: [USER_PERMISSIONS.readNavigation],
+        roles: addNavigation.authRoles,
       },
     },
   },
