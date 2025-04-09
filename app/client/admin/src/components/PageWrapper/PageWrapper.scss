@@ -1,4 +1,9 @@
 $contentPadding: var(--dui-spacing-4);
+$content-sizes: (
+    small: 576px,
+    medium: 1024px,
+    large: 1399px,
+);
 
 .page-wrapper {
     flex: 1;
@@ -10,6 +15,17 @@ $contentPadding: var(--dui-spacing-4);
         padding: $contentPadding;
         flex: 1;
         overflow: hidden auto;
+        width: 100%;
+    }
+
+    &__content-inner {
+        margin: 0 auto;
+
+        @each $size, $width in $content-sizes {
+            &--#{$size} {
+                max-width: $width;
+            }
+        }
     }
 
     &__subheader {

@@ -3,8 +3,11 @@
   import { PAGE_WRAPPER_SLOTS } from "./constants";
   import type { PageWrapperSlot } from "./types";
   import { useBEMBuilder } from "@/helpers";
-
   import "./PageWrapper.scss";
+
+  const { size } = defineProps<{
+    size?: "small" | "medium" | "large";
+  }>();
 
   const slots = useSlots();
   const hasSubheaderSlot = computed(() => {
@@ -31,7 +34,18 @@
       </div>
     </div>
     <div :class="element('content').value">
-      <slot></slot>
+      <div
+        :class="
+          element(
+            'content-inner',
+            ref({
+              [`${size}`]: !!size,
+            }),
+          ).value
+        "
+      >
+        <slot></slot>
+      </div>
     </div>
   </div>
 </template>
