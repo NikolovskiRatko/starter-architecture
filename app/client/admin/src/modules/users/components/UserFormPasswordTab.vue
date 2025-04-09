@@ -9,7 +9,7 @@
   <div class="kt-section">
     <div class="kt-section__body">
       <h3 class="kt-section__title kt-section__title-lg">
-        {{ t("users.password.new_password") }}:
+        {{ t("users.password.new") }}:
       </h3>
       <form-input
         name="password"

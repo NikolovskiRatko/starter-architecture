@@ -1,5 +1,6 @@
 <script lang="ts" setup>
   import { IconMail } from "@starter-core/icons";
+  import { computed } from "vue";
   import { useI18n } from "vue-i18n";
   import UserFormAvatar from "./UserFormAvatar.vue";
   import UserRolesDropdown from "./UserRolesDropdown.vue";
@@ -11,10 +12,9 @@
 
   const { t } = useI18n();
   const isDisabled = defineModel("isDisabled", {
-    required: true,
     type: Boolean,
   });
-  const role = defineModel("role", { required: true, type: Number });
+  const role = defineModel("role", { type: Number });
   const lastName = defineModel("lastName", { required: true, type: String });
   const firstName = defineModel("firstName", { required: true, type: String });
   const email = defineModel("email", { required: true, type: String });
@@ -27,30 +27,36 @@
   const uploadAvatar = (file: File) => {
     emit("uploadAvatar", file);
   };
+
+  const hasUserStatus = computed(
+    () => isDisabled.value !== undefined && role.value !== undefined,
+  );
 </script>
 <template>
-  <div class="kt-section kt-section--first">
-    <div class="kt-section__body">
-      <h3 class="kt-section__title kt-section__title-lg">
-        {{ t("users.user_status") }}:
-      </h3>
-      <user-roles-dropdown v-model:role="role" />
-      <form-switch
-        v-model="isDisabled"
-        id="enabled"
-        theme="danger"
-        type="outline"
-        :label="t('users.status.label')"
-        :helper-text="`User is  ${isDisabled ? 'disabled' : 'enabled'}`"
-      />
+  <template v-if="hasUserStatus">
+    <div class="kt-section kt-section--first">
+      <div class="kt-section__body">
+        <h3 class="kt-section__title kt-section__title-lg">
+          {{ t("users.user_status") }}:
+        </h3>
+        <user-roles-dropdown v-model:role="role" />
+        <form-switch
+          v-model="isDisabled"
+          id="enabled"
+          theme="danger"
+          type="outline"
+          :label="t('users.status.label')"
+          :helper-text="`User is  ${isDisabled ? 'disabled' : 'enabled'}`"
+        />
+      </div>
     </div>
-  </div>
 
-  <div
-    class="kt-separator kt-separator--border-dashed kt-separator--space-lg"
-  ></div>
+    <div
+      class="kt-separator kt-separator--border-dashed kt-separator--space-lg"
+    ></div>
+  </template>
 
-  <div class="kt-section">
+  <div :class="`kt-section ${!hasUserStatus ? 'kt-section--first' : ''}`">
     <div class="kt-section__body">
       <h3 class="kt-section__title kt-section__title-lg">Customer Info:</h3>
       <div class="form-group form-input form-group--inline">

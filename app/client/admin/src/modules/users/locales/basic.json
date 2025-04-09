@@ -22,7 +22,8 @@
     "change": "Change password",
     "label": "Password",
     "confirm": "Confirm password",
-    "new_password": "New password"
+    "new": "New password",
+    "current": "Current password"
   },
   "basic": {
     "information": "Basic information"
