@@ -4,12 +4,20 @@ import { computed } from "vue";
 import { useToast } from "vue-toastification";
 import { USER_API_ENDPOINTS } from "../constants";
 import type { UserFormItem, GetUserResponse } from "../types";
+import { useUploadAvatar } from "./useUploadAvatar";
 
 const USER_CACHE_KEY = "user";
 
 export const useUsersForm = (userId?: number) => {
   const queryClient = useQueryClient();
   const toast = useToast();
+  const { uploadAvatar, isLoading: isUploadingAvatar } = useUploadAvatar({
+    userId,
+    onSuccess: async () => {
+      queryClient.invalidateQueries({ queryKey: [USER_CACHE_KEY, userId] });
+      toast.success("Image has been updated!");
+    },
+  });
 
   const { isLoading: isFetching, data: queryData } = useQuery({
     queryKey: [USER_CACHE_KEY, userId],
@@ -44,31 +52,6 @@ export const useUsersForm = (userId?: number) => {
     onSuccess: async () => {
       queryClient.invalidateQueries({ queryKey: [USER_CACHE_KEY, userId] });
       toast.success("User updated!");
-    },
-    onError: (error) => {
-      toast.error(error.message);
-    },
-  });
-
-  const { mutate: uploadAvatar, isPending: isUploadingAvatar } = useMutation({
-    mutationFn: async (file: File): Promise<GetUserResponse> => {
-      const formData = new FormData();
-      formData.append("avatar", file);
-
-      const response = await axios.post(
-        USER_API_ENDPOINTS.uploadAvatar(userId ?? 0),
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        },
-      );
-      return response.data;
-    },
-    onSuccess: async () => {
-      queryClient.invalidateQueries({ queryKey: [USER_CACHE_KEY, userId] });
-      toast.success("Image has been updated!");
     },
     onError: (error) => {
       toast.error(error.message);
