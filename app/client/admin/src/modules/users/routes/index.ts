@@ -17,7 +17,6 @@ const UserPage = () =>
     "../pages/UserPage.vue"
   );
 
-// Admin Components
 const MyProfile = () =>
   import(
     /* webpackChunkName: "my-profile" */
@@ -25,7 +24,28 @@ const MyProfile = () =>
     "../pages/MyProfile.vue"
   );
 
-const { add, main, edit, myProfile } = USER_ROUTES_DATA;
+const MyProfilePersonalInformation = () =>
+  import(
+    /* webpackChunkName: "my-profile" */
+    /* webpackPrefetch: true */
+    "../pages/MyProfilePersonalInformation.vue"
+  );
+
+const MyProfileChangePassword = () =>
+  import(
+    /* webpackChunkName: "my-profile" */
+    /* webpackPrefetch: true */
+    "../pages/MyProfileChangePassword.vue"
+  );
+
+const {
+  add,
+  main,
+  edit,
+  myProfile,
+  myProfilePersonalInfo,
+  myProfileChangePassword,
+} = USER_ROUTES_DATA;
 
 export const usersRoutes: RouteRecordRaw[] = [
   {
@@ -70,5 +90,29 @@ export const usersRoutes: RouteRecordRaw[] = [
         roles: myProfile.authRoles,
       },
     },
+    children: [
+      {
+        path: myProfilePersonalInfo.path,
+        name: myProfilePersonalInfo.name,
+        component: MyProfilePersonalInformation,
+        meta: {
+          title: t(myProfilePersonalInfo.translationKey),
+          auth: {
+            roles: myProfilePersonalInfo.authRoles,
+          },
+        },
+      },
+      {
+        path: myProfileChangePassword.path,
+        name: myProfileChangePassword.name,
+        component: MyProfileChangePassword,
+        meta: {
+          title: t(myProfileChangePassword.translationKey),
+          auth: {
+            roles: myProfileChangePassword.authRoles,
+          },
+        },
+      },
+    ],
   },
 ];

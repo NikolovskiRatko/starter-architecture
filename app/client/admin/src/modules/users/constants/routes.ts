@@ -6,6 +6,8 @@ export const USERS_ROUTES = {
   add: "add",
   edit: "edit",
   myProfile: "myProfile",
+  myProfilePersonalInfo: "myProfilePersonalInfo",
+  myProfileChangePassword: "myProfileChangePassword",
 } as const;
 
 type UsersRoutes = (typeof USERS_ROUTES)[keyof typeof USERS_ROUTES];
@@ -30,9 +32,21 @@ export const USER_ROUTES_DATA: ModulesRoutesData<UsersRoutes> = {
     authRoles: [USER_PERMISSIONS.writeUsers],
   },
   myProfile: {
-    path: "myprofile",
-    name: "myprofile",
-    translationKey: "strings.myprofile",
+    path: "my-profile",
+    name: "my-profile",
+    translationKey: "users.my-profile.label",
+    authRoles: true,
+  },
+  myProfilePersonalInfo: {
+    path: "personal-info",
+    name: "my-profile-personal-info",
+    translationKey: "users.personal-information.label",
+    authRoles: true,
+  },
+  myProfileChangePassword: {
+    path: "change-password",
+    name: "my-profile-change-password",
+    translationKey: "users.my-profile.label",
     authRoles: true,
   },
 };

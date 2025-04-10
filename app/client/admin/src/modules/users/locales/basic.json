@@ -25,7 +25,10 @@
     "new": "New password",
     "current": "Current password"
   },
-  "basic": {
-    "information": "Basic information"
+  "personal-information": {
+    "label": "Personal information"
+  },
+  "my-profile": {
+    "label": "My profile"
   }
 }

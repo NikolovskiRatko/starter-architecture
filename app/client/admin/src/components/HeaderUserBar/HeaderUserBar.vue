@@ -3,6 +3,7 @@
   import { ref, computed } from "vue";
   import HeaderUserBarListItem from "./HeaderUserBarListItem.vue";
   import { useAuth } from "@/composables";
+  import { USER_ROUTES_DATA } from "@/modules/users/constants";
   import { BadgeComponent } from "@starter-core/dash-ui/src";
   import { useOnClickOutside } from "@starter-core/dash-ui/src/composables";
 
@@ -79,7 +80,7 @@
         <div class="kt-notification">
           <HeaderUserBarListItem
             :icon="IconUser"
-            :to="{ name: 'myprofile' }"
+            :to="{ name: USER_ROUTES_DATA.myProfile.name }"
             title="My Profile"
             subtitle="Account settings and more"
           />

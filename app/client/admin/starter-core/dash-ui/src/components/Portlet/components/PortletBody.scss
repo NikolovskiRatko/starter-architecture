@@ -1,5 +1,11 @@
 @import "../config";
 
+$content-sizes: (
+  small: 576px,
+  medium: 1024px,
+  large: 1399px,
+);
+
 @mixin alignment() {
   &--center {
     justify-content: center;
@@ -50,6 +56,14 @@
   display: flex;
   flex-direction: column;
   padding: kt-get($portlet, space, desktop);
+  width: 100%;
+  margin: 0 auto;
+
+  @each $size, $width in $content-sizes {
+    &--#{$size} {
+      max-width: $width;
+    }
+  }
 
   @include kt-rounded {
     border-radius: $border-radius;

@@ -1,43 +1,44 @@
 <script setup lang="ts">
-import { inject, type PropType } from "vue";
+import {inject, ref} from "vue";
 import ContentLoader from "../../ContentLoader/ContentLoader.vue";
 import type { PortletBodyAlignment } from "../types";
 import { portletThemeKey, portletIsLoadingKey } from '../constants'
+import { useBEMBuilder } from "../../../helpers";
 
 import "./PortletBody.scss";
 
-const props = defineProps({
-  isUnpdadded: {
-    default: false,
-  },
-  alignment: {
-    type: String as PropType<PortletBodyAlignment>,
-    required: false,
-  },
-  isEqualHeight: {
-    default: false,
-  },
-  isEqualHalfHeight: {
-    default: false,
-  },
-});
+interface PortletBodyProps {
+  alignment?: PortletBodyAlignment;
+  isUnpdadded?: boolean;
+  isEqualHeight?: boolean;
+  isEqualHalfHeight?: boolean;
+  size?: "small" | "medium" | "large";
+}
+
+const {
+  isEqualHeight, isEqualHalfHeight, size, isUnpdadded, alignment
+} = defineProps<PortletBodyProps>();
+
 const isUnpdaddedPortlet = inject("isUnpadded");
 const theme = inject(portletThemeKey);
 const isLoading = inject(portletIsLoadingKey);
+
+const [block] = useBEMBuilder(
+    "kt-portlet__body",
+    ref({
+      fit: isUnpdadded || isUnpdaddedPortlet,
+      'height-fluid': isEqualHeight,
+      'height-fluid-half': isEqualHalfHeight,
+      loading: isLoading,
+      [`theme-${theme}`]: theme,
+      [`${alignment}`]: alignment,
+      [`${size}`]: size,
+    }),
+);
 </script>
 
 <template>
-  <div
-    class="kt-portlet__body"
-    :class="{
-      'kt-portlet__body--fit': isUnpdadded || isUnpdaddedPortlet,
-      'kt-portlet__body--height-fluid': isEqualHeight,
-      'kt-portlet__body--height-fluid-half': isEqualHalfHeight,
-      'kt-portlet__body--loading': isLoading,
-      [`kt-portlet__body--theme-${theme}`]: theme,
-      [`kt-portlet__body--${alignment}`]: alignment,
-    }"
-  >
+  <div :class="block">
     <ContentLoader
       v-if="isLoading"
       :full-cont="true"
