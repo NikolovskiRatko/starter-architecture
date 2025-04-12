@@ -58,6 +58,16 @@ class UserDTO
         );
     }
 
+    public static function fromMyProfileRequest(User $user, array $data): self
+    {
+        $dto = self::fromModel($user);
+
+        $dto->first_name = $data['first_name'];
+        $dto->last_name = $data['last_name'];
+
+        return $dto;
+    }
+
     public static function fromRequestForCreate(Request $request): self
     {
         return new self(

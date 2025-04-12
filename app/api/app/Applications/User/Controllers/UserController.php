@@ -3,14 +3,13 @@
 namespace App\Applications\User\Controllers;
 
 use App\Applications\User\DTO\UserDTO;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Applications\User\Services\UserServiceInterface;
-// use App\Applications\User\Requests\UserRequest;
-use App\Applications\User\Requests\MyProfile;
+use App\Applications\User\Requests\MyProfileRequest;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -147,18 +146,38 @@ class UserController extends Controller
      */
     public function getMyProfile()
     {
-        return $this->userService->get(Auth::user()->id)->toJson();
+        $userDTO = $this->userService->get(
+            Auth::user()->id
+        );
+        return response()->json($userDTO);
     }
 
     /**
      * Update logged user
      *
-     * @param  MyProfile  $request
-     * @return void
+     * @param MyProfileRequest $request
+     * @return JsonResponse
      */
-    public function updateMyProfile(MyProfile $request)
+    public function updateMyProfile(MyProfileRequest $request): JsonResponse
     {
-        $this->userService->updateMyProfile($request);
+        try {
+            $userDTO = $this->userService->updateMyProfile($request->validated());
+
+            return response()->json($userDTO, 200);
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            return response()->json([
+                'message' => 'User not found.',
+            ], 404);
+        } catch (\Throwable $e) {
+            Log::error('Profile update failed', [
+                'error' => $e->getMessage(),
+                'user_id' => Auth::id(),
+            ]);
+
+            return response()->json([
+                'message' => 'An unexpected error occurred while updating your profile. Please try again later.',
+            ], 500);
+        }
     }
 
     /**
@@ -190,8 +209,7 @@ class UserController extends Controller
                 'message' => $e->getMessage(),
             ], 403);
         } catch (\Exception $e) {
-            // Log unexpected errors and return a generic error response
-            \Log::error('Error uploading avatar: ' . $e->getMessage(), ['exception' => $e]);
+            Log::error('Error uploading avatar: ' . $e->getMessage(), ['exception' => $e]);
 
             return response()->json([
                 'message' => 'An error occurred while uploading the avatar. Please try again later.',

@@ -53,10 +53,10 @@ interface UserServiceInterface
     public function draw(array $data): array;
 
     /**
-     * @param FormRequest $request
-     * @return void
+     * @param array $data
+     * @return UserDTO
      */
-    public function updateMyProfile($request);
+    public function updateMyProfile(array $data): UserDTO;
 
     /**
      * @return array
@@ -76,8 +76,8 @@ interface UserServiceInterface
      *
      * @param int $userId
      * @param Request $request
-     * @param User $authenticatedUser
+     * @param User $user
      * @return UserDTO
      */
-    public function uploadAvatar(int $userId, Request $request, User $authenticatedUser): UserDTO;
+    public function uploadAvatar(int $userId, Request $request, User $user): UserDTO;
 }

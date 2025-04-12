@@ -40,6 +40,7 @@ class UserService implements UserServiceInterface
 
     public function create(UserDTO $userData, string $password): UserDTO
     {
+        $this->authorizeUserEdit();
         $user = $this->userRepository->create($userData, $password);
 
         $roleIds = [$userData->role];
@@ -50,6 +51,7 @@ class UserService implements UserServiceInterface
 
     public function update(int $userId, UserDTO $userData): UserDTO
     {
+        $this->authorizeUserEdit($userId);
         $this->userRepository->changeRole($userId, $userData->role);
         $user = $this->userRepository->update($userId, $userData);
         return UserDTO::fromModel($user);
@@ -81,16 +83,15 @@ class UserService implements UserServiceInterface
         ];
     }
 
-    public function updateMyProfile($request)
+    public function updateMyProfile(array $data): UserDTO
     {
-        $request_array = $request->all();
-        $user = $this->userRepository->get(Auth::user()->id);
-        $data['first_name'] = $request_array['first_name'];
-        $data['last_name'] = $request_array['last_name'];
-        $data['email'] = $request_array['email'];
-        $this->userRepository->update($user, $data);
-        if ($request_array['password'] != null)
-            $this->userRepository->setPassword($user, $request_array['password']);
+        $user = $this->userRepository->get(Auth::id());
+
+        $dto = UserDTO::fromMyProfileRequest($user, $data);
+
+        $updatedUser = $this->userRepository->update($user->id, $dto);
+
+        return UserDTO::fromModel($updatedUser);
     }
 
     public function getUserPermissionsAndRoles(): array
@@ -114,13 +115,12 @@ class UserService implements UserServiceInterface
      *
      * @param int $userId
      * @param Request $request
-     * @param User $authenticatedUser
+     * @param User $user
      * @return UserDTO
      */
-    public function uploadAvatar(int $userId, Request $request, User $authenticatedUser): UserDTO
+    public function uploadAvatar(int $userId, Request $request, User $user): UserDTO
     {
-        // Check if the authenticated user has permission to update another user's avatar
-        $user = $this->validateUserForAvatarUpload($userId, $authenticatedUser);
+        $this->authorizeUserEdit($userId);
 
         // Validate the uploaded file
         $request->validate([
@@ -136,26 +136,23 @@ class UserService implements UserServiceInterface
     }
 
     /**
-     * Validate if the authenticated user can upload an avatar for the given user.
+     * Validate if the authenticated user can edit or create users.
      *
-     * @param int $userId
-     * @param User $authenticatedUser
-     * @return User
+     * Aborts with 403 if not authorized.
+     *
+     * @param int|null $userId The ID of the user being edited. Null means the authenticated user.
+     * @return void
      */
-    protected function validateUserForAvatarUpload(int $userId, User $authenticatedUser): User
+    protected function authorizeUserEdit(?int $userId = null): void
     {
-        // Check if the current user is trying to update their own avatar
-        if ($authenticatedUser->id !== $userId) {
-            // If not, check if the user has the 'write_users' permission
-            if (!$authenticatedUser->hasPermissionTo(UserPermissions::WRITE_USERS)) {
-                abort(403, 'You do not have permission to update avatars for other users.');
-            }
+        $authUser = Auth::user();
 
-            // Find the user by the provided user ID
-            return $this->userRepository->get($userId);
+        if ($userId === null || $authUser->id === $userId) {
+            return;
         }
 
-        // Return the authenticated user if they are updating their own avatar
-        return $authenticatedUser;
+        if (!$authUser->hasPermissionTo(UserPermissions::WRITE_USERS)) {
+            abort(403, 'You do not have permission to edit this user.');
+        }
     }
 }

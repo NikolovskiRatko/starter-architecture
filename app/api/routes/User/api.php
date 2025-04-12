@@ -24,8 +24,8 @@ Route::group([
         Route::get('draw', [UserController::class, 'draw']);
         Route::get('permissions-roles', [UserController::class, 'getUserPermissionsRoles']);
 
-        // Admin profile
-        Route::patch('myprofile/{id}', [UserController::class, 'updateMyProfile']);
+        // User profile
+        Route::patch('myprofile', [UserController::class, 'updateMyProfile']);
         Route::get('myprofile', [UserController::class, 'getMyProfile']);
 
         // CRUD ROUTES

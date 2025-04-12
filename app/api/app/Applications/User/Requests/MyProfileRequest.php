@@ -3,7 +3,6 @@
 namespace App\Applications\User\Requests;
 
 use App\Http\Requests\ApiFormRequest;
-use Illuminate\Support\Facades\Auth;
 
 class MyProfileRequest extends ApiFormRequest
 {
@@ -18,40 +17,23 @@ class MyProfileRequest extends ApiFormRequest
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
-    public function rules()
+    public function rules(): array
     {
         return [
-            'first_name' => 'required|max:255|min:2',
-            'last_name' => 'required|max:255|min:2',
-            'email' => 'required|email|min:2|max:255|unique:users,email,'.Auth::user()->id,
-            'password' => 'required_with:password_confirmation|nullable|between:6,30|confirmed',
-            'password_confirmation' => 'required_with:password|nullable|between:6,30|same:password',
+            'first_name' => 'required|string|min:2|max:255',
+            'last_name'  => 'required|string|min:2|max:255',
         ];
     }
-    public function messages(){
+
+    public function messages(): array
+    {
         return [
             'first_name.required' => 'users.first_name.required',
-            'first_name.max' => 'users.first_name.max',
-            'first_name.min' => 'users.first_name.min',
-            'last_name.required' => 'users.last_name.required',
-            'last_name.max' => 'users.last_name.max',
-            'last_name.min' => 'users.last_name.min',
-            'email.required' => 'users.email.required',
-            'email.email' => 'users.email.invalid',
-            'email.max' => 'users.email.max',
-            'email.min' => 'users.email.min',
-            'email.unique' => 'users.email.unique',
-            'roles.required' => 'users.roles.required',
-            'roles.exists' => 'users.roles.exists',
-            'password.required_with' => 'users.password.required',
-            'password_confirmation.required_with' => 'users.password_confirmation.required',
-            'password.between' => 'users.password.between',
-            'password.confirmed' => 'users.password.confirmed',
+            'first_name.max'      => 'users.first_name.max',
+            'first_name.min'      => 'users.first_name.min',
+            'last_name.required'  => 'users.last_name.required',
+            'last_name.max'       => 'users.last_name.max',
+            'last_name.min'       => 'users.last_name.min',
         ];
     }
 }
