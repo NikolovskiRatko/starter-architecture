@@ -190,9 +190,11 @@ class UserController extends Controller
     {
         try {
             $userId = Route::current()->parameter('id');
-            $authenticatedUser = Auth::user();
+            $userId = (is_numeric($userId) && (int)$userId > 0)
+                ? (int)$userId
+                : Auth::id();
 
-            $userDTO = $this->userService->uploadAvatar($userId, $request, $authenticatedUser);
+            $userDTO = $this->userService->uploadAvatar($userId, $request, Auth::user());
 
             return response()->json($userDTO, 200);
         } catch (ValidationException $e) {
