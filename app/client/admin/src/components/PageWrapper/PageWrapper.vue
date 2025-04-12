@@ -5,8 +5,9 @@
   import { useBEMBuilder } from "@/helpers";
   import "./PageWrapper.scss";
 
-  const { size } = defineProps<{
+  const { size, justifyContent } = defineProps<{
     size?: "small" | "medium" | "large";
+    justifyContent?: "left" | "center" | "right";
   }>();
 
   const slots = useSlots();
@@ -33,7 +34,16 @@
         <slot :name="PAGE_WRAPPER_SLOTS.subheaderToolbox" />
       </div>
     </div>
-    <div :class="element('content').value">
+    <div
+      :class="
+        element(
+          'content',
+          ref({
+            [`justify-content-${justifyContent}`]: !!justifyContent,
+          }),
+        ).value
+      "
+    >
       <div
         :class="
           element(

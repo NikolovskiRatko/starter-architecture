@@ -11,15 +11,15 @@
 </script>
 
 <template>
-  <PageWrapper>
+  <PageWrapper size="large">
     <template #[PAGE_WRAPPER_SLOTS.subheaderMain]>
       <SubheaderTitle :title="t('users.my-profile.label')" />
     </template>
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-lg-5 col-xl-3">
         <UserProfileWidget />
       </div>
-      <div class="col-md-9">
+      <div class="col-lg-7 col-xl-9">
         <router-view />
       </div>
     </div>

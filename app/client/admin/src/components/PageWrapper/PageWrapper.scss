@@ -5,6 +5,12 @@ $content-sizes: (
     large: 1399px,
 );
 
+$justify-content: (
+    left: flex-start,
+    center: center,
+    right: flex-end,
+);
+
 .page-wrapper {
     flex: 1;
     display: flex;
@@ -16,10 +22,19 @@ $content-sizes: (
         flex: 1;
         overflow: hidden auto;
         width: 100%;
+        display: flex;
+        justify-content: flex-start;
+
+        @each $alignment, $attribute in $justify-content {
+            &--justify-content-#{$alignment} {
+                justify-content: $attribute;
+            }
+        }
     }
 
     &__content-inner {
-        margin: 0 auto;
+        flex: 1;
+        //margin: 0 auto;
 
         @each $size, $width in $content-sizes {
             &--#{$size} {
