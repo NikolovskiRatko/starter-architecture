@@ -8,3 +8,8 @@ export interface UserFormItem {
   password?: string;
   password_confirmation?: string;
 }
+
+export type UserMyProfileForm = Pick<
+  UserFormItem,
+  "first_name" | "last_name" | "email"
+>;
