@@ -1,0 +1,19 @@
+:root {
+  --dui-font-size-sm: 0.75rem;   /* 14px - Small text, captions, UI labels */
+  --dui-font-size: 0.875rem;     /* 16px - Default body text */
+  --dui-font-size-md: 1rem;      /* 18px - Larger body text, subheaders */
+  --dui-font-size-lg: 1.25rem;   /* 24px - Section headings */
+  --dui-font-size-xl: 1.5rem;    /* 32px - Page titles or hero elements */
+
+  --dui-font-weight-normal: 400;
+  --dui-font-weight-bold: 500;
+  --dui-line-height: 1.5;
+
+  @include kt-desktop-xl {
+    --dui-font-size-sm: 0.875rem;  /* 14px - Small text, captions, UI labels */
+    --dui-font-size: 1rem;         /* 16px - Default body text */
+    --dui-font-size-md: 1.125rem;  /* 18px - Larger body text, subheaders */
+    --dui-font-size-lg: 1.5rem;    /* 24px - Section headings */
+    --dui-font-size-xl: 2rem;      /* 32px - Page titles or hero elements */
+  }
+}

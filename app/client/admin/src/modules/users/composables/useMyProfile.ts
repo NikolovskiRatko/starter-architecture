@@ -5,9 +5,11 @@ import { useToast } from "vue-toastification";
 import { USER_API_ENDPOINTS, MY_PROFILE_CACHE_KEY } from "../constants";
 import type { UserMyProfileForm, GetUserResponse } from "../types";
 import { useUploadAvatar } from "./useUploadAvatar";
+import { useAuth } from "@/composables";
 
 export const useMyProfile = () => {
   const queryClient = useQueryClient();
+  const { refreshUserData } = useAuth();
   const toast = useToast();
 
   const { isLoading: isFetching, data: queryData } = useQuery({
@@ -29,6 +31,7 @@ export const useMyProfile = () => {
     onSuccess: async () => {
       queryClient.invalidateQueries({ queryKey: [MY_PROFILE_CACHE_KEY] });
       toast.success("Your profile has been updated!");
+      refreshUserData();
     },
     onError: (error) => {
       toast.error(error.message);
@@ -38,6 +41,7 @@ export const useMyProfile = () => {
   const { uploadAvatar, isLoading: isUploadingAvatar } = useUploadAvatar({
     onSuccess: async () => {
       queryClient.invalidateQueries({ queryKey: [MY_PROFILE_CACHE_KEY] });
+      refreshUserData();
       toast.success("Image has been updated!");
     },
   });

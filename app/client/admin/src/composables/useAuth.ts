@@ -1,6 +1,6 @@
 import { useAuth as useAuthWebsanova } from "@websanova/vue-auth/src/v3.js";
 import type { AxiosResponse, AxiosError } from "axios";
-import { computed, ref } from "vue";
+import { computed, ref, watchEffect } from "vue";
 import { useRouter } from "vue-router";
 import { getAPIErrorMessage } from "@/helpers";
 import { AuthUser } from "@/modules/users/types";
@@ -11,17 +11,26 @@ export default function useAuth() {
   const router = useRouter();
   const isLoading = ref(false);
 
-  const user = computed<AuthUser>(() => auth.user());
+  const user = ref<AuthUser>(auth.user());
   const permissionsArray = computed<Array<string>>(
     () => user.value.permissions_array,
   );
 
-  function fetch(data) {
-    return auth.fetch(data);
+  async function fetch(): Promise<AuthUser> {
+    const updatedUser: AxiosResponse<AuthUser> = await auth.fetch();
+    user.value = updatedUser.data;
+
+    return updatedUser.data;
   }
 
-  function refresh(data) {
-    return auth.refresh(data);
+  function refreshUserData(): void {
+    fetch().then((newUserData) => {
+      user.value = newUserData;
+    });
+  }
+
+  async function refresh(): Promise<any> {
+    return auth.refresh();
   }
 
   function login(params: UseAuthLoginParams): Promise<AuthUser> {
@@ -96,6 +105,7 @@ export default function useAuth() {
     login,
     register,
     logout,
+    refreshUserData,
     isLoading,
     user,
     permissionsArray,

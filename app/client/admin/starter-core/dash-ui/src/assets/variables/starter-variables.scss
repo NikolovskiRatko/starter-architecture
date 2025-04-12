@@ -4,15 +4,10 @@
 @import 'brand';
 @import 'layers';
 @import 'header';
+@import 'fonts';
 
 :root {
   --dui-transition: all .3s ease;
-
-  // Fonts
-  --dui-font-size: 1rem;
-  --dui-font-weight-normal: 400;
-  --dui-font-weight-bold: 500;
-  --dui-line-height: 1.5;
 
   // Spacing
   --dui-spacing-1: 0.5rem;
