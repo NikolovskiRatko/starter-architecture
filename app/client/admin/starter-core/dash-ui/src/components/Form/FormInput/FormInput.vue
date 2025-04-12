@@ -18,7 +18,7 @@
   const props = defineProps<FormInputProps>();
 
   const { name, label, isInline, type, placeholder } = props;
-  const { modelValue, disabled, helperText, error, required } = toRefs(props);
+  const { modelValue, disabled, helperText, error, required, readonly } = toRefs(props);
 
   const renderInput = () => {
     return h("input", {
@@ -33,6 +33,7 @@
       ],
       disabled: disabled.value,
       required: required.value,
+      readonly: readonly.value,
       type: type ?? "text",
       onInput: (event: Event) => {
         emit("update:modelValue", (event.target as HTMLInputElement).value);
