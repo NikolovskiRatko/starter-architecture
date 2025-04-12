@@ -4,9 +4,8 @@
   import { watch } from "vue";
   import { useI18n } from "vue-i18n";
   import { UserFormBasicInfoTab } from "../components";
-  import { useAuth } from "@/composables";
-  import { useUsersForm } from "@/modules/users/composables";
-  import type { UserFormItem } from "@/modules/users/types";
+  import { useMyProfile } from "../composables";
+  import type { UserMyProfileForm } from "../types";
   import {
     PortletComponent,
     PortletBody,
@@ -18,17 +17,12 @@
   const { t } = useI18n();
 
   const title = t("users.personal-information.label");
-
-  const { user: authUser } = useAuth();
-
-  const id = authUser.value.id;
-
   const {
     isLoading,
     data: formData,
     updateUser,
     uploadAvatar,
-  } = useUsersForm(id);
+  } = useMyProfile();
 
   const validationSchema = {
     last_name(value: string) {
@@ -38,12 +32,11 @@
   };
 
   const { handleSubmit, errors, setValues, defineField } =
-    useForm<UserFormItem>({
+    useForm<UserMyProfileForm>({
       validationSchema,
     });
 
   const submitHandler = handleSubmit((values) => {
-    // Let's validate in the Backend if the user is not allowed to write_users to block him
     updateUser(values);
   });
 
@@ -54,7 +47,6 @@
   watch(() => {
     if (formData.value) {
       setValues({
-        id: formData.value.id,
         email: formData.value.email,
         first_name: formData.value.first_name,
         last_name: formData.value.last_name,

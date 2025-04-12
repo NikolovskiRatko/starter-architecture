@@ -17,7 +17,7 @@
   import { DashButton, DashLink } from "@starter-core/dash-ui/src";
 
   const { t } = useI18n();
-  const basicInfoLabeel = t("users.basic.information");
+  const personalInformationLabel = t("users.personal-information.label");
   const changePasswordLabel = t("users.password.change");
   const route = useRoute();
   const isEditPage = computed(() => route.name == "edit.user");
@@ -103,7 +103,7 @@
       @submit.prevent="submitHandler"
     >
       <TabbedContent :isLoading="isLoading">
-        <TabbedContentTab :label="basicInfoLabeel" id="basic-info">
+        <TabbedContentTab :label="personalInformationLabel" id="basic-info">
           <UserFormBasicInfoTab
             v-model:isDisabled="isDisabled"
             v-model:role="role"

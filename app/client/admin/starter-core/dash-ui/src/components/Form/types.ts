@@ -9,6 +9,7 @@ export interface FormInputProps {
   disabled?: boolean;
   required?: boolean;
   placeholder?: string;
+  readonly?: boolean;
 }
 
 export interface FormGroupProps {

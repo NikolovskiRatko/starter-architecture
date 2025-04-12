@@ -95,8 +95,9 @@
         v-model="email"
         name="email"
         :label="t('users.email.label')"
-        helper-text="We'll never share your email with anyone else."
+        helper-text="You can't update your email."
         is-inline
+        readonly
       >
         <template v-slot:prependContent>
           <IconMail />
