@@ -3,7 +3,11 @@ import axios from "axios";
 import { computed } from "vue";
 import { useToast } from "vue-toastification";
 import { USER_API_ENDPOINTS, MY_PROFILE_CACHE_KEY } from "../constants";
-import type { UserMyProfileForm, GetUserResponse } from "../types";
+import {
+  UserMyProfileForm,
+  GetUserResponse,
+  UpdatePasswordForm,
+} from "../types";
 import { useUploadAvatar } from "./useUploadAvatar";
 import { useAuth } from "@/composables";
 
@@ -38,6 +42,21 @@ export const useMyProfile = () => {
     },
   });
 
+  const { mutate: updatePassword, isPending: isUpdatingPassword } = useMutation(
+    {
+      mutationFn: async (data: UpdatePasswordForm): Promise<void> => {
+        const response = await axios.patch(
+          USER_API_ENDPOINTS.myPasswordUpdate,
+          data,
+        );
+        return response.data;
+      },
+      onSuccess: async () => {
+        toast.success("Your password has been updated!");
+      },
+    },
+  );
+
   const { uploadAvatar, isLoading: isUploadingAvatar } = useUploadAvatar({
     onSuccess: async () => {
       queryClient.invalidateQueries({ queryKey: [MY_PROFILE_CACHE_KEY] });
@@ -52,6 +71,8 @@ export const useMyProfile = () => {
     data,
     updateUser,
     uploadAvatar,
-    isLoading: isFetching || isUpdating || isUploadingAvatar,
+    updatePassword,
+    isLoading:
+      isFetching || isUpdating || isUploadingAvatar || isUpdatingPassword,
   };
 };

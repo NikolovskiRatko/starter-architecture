@@ -13,3 +13,9 @@ export type UserMyProfileForm = Pick<
   UserFormItem,
   "first_name" | "last_name" | "email"
 >;
+
+export interface UpdatePasswordForm {
+  current_password: string;
+  password: string;
+  password_confirmation: string;
+}

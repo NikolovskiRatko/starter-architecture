@@ -4,8 +4,9 @@ export const USER_API_ENDPOINTS = {
   patch: (userId: number) => `/user/${userId}`,
   uploadAvatar: (userId: number) => `/user/avatar/${userId}`,
   table: "user/draw",
-  myProfileGet: "user/myprofile",
-  myProfileUpdate: "user/myprofile",
+  myProfileGet: "me/profile",
+  myProfileUpdate: "me/profile",
+  myPasswordUpdate: "me/password",
 };
 
 export const USERS_TABLE_QUERY_KEY = "users-table";
