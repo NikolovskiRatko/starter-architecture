@@ -17,7 +17,7 @@ export default function useUserCheck() {
     }
 
     if (checkBy === "roles" && typeof checkFor === "string") {
-      const { role } = user.value;
+      const { role } = user;
       const checkForRoleObject = data.value.roles.find(
         (role) => role.name === checkFor,
       );

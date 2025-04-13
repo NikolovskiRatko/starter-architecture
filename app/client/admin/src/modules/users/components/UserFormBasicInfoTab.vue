@@ -79,16 +79,16 @@
         </div>
       </div>
       <form-input
+        v-model="firstName"
+        name="first-name"
+        :label="t('users.first_name.label')"
+        is-inline
+      />
+      <form-input
         v-model="lastName"
         name="last-name"
         :label="t('users.last_name.label')"
         :error="errors.last_name"
-        is-inline
-      />
-      <form-input
-        v-model="firstName"
-        name="first-name"
-        :label="t('users.first_name.label')"
         is-inline
       />
       <form-input

@@ -9,7 +9,7 @@
 
   import "./HeaderUserBar.scss";
 
-  const { logout, user } = useAuth();
+  const { logout, user, avatar } = useAuth();
   const isDropdownVisible = ref(false);
   const dropdownRef = ref();
 
@@ -22,16 +22,8 @@
     }
   });
 
-  const avatarSource = computed(() => {
-    if (user?.value?.avatar_thumbnail) {
-      return user.value.avatar_thumbnail;
-    }
-
-    return null;
-  });
-
   const userFirstLetter = computed(() =>
-    (user?.value?.first_name ?? "A")?.substring(0, 1),
+    (user?.first_name ?? "A")?.substring(0, 1),
   );
 </script>
 <template>
@@ -48,7 +40,7 @@
         <span class="kt-header__topbar-username kt-hidden-mobile">{{
           user.first_name
         }}</span>
-        <img v-if="avatarSource" alt="avatar" :src="avatarSource" />
+        <img v-if="avatar" alt="avatar" :src="avatar" />
         <BadgeComponent v-else font-weight="bold" size="lg">
           {{ userFirstLetter }}
         </BadgeComponent>
@@ -64,7 +56,7 @@
           class="header-user-bar__user-card kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x"
         >
           <div class="kt-user-card__avatar">
-            <img v-if="avatarSource" alt="avatar" :src="avatarSource" />
+            <img v-if="avatar" alt="avatar" :src="avatar" />
             <BadgeComponent v-else font-weight="bold" size="lg">
               {{ userFirstLetter }}
             </BadgeComponent>

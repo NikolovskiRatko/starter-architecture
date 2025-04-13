@@ -7,20 +7,12 @@
   import { PortletComponent, PortletBody } from "@starter-core/dash-ui/src";
   import "./UserProfileWidget.scss";
 
-  const { user } = useAuth();
+  const { user, avatar } = useAuth();
   const { t } = useI18n();
 
-  const avatarSource = computed(() => {
-    if (user?.value?.avatar_thumbnail) {
-      return user.value.avatar_thumbnail;
-    }
-
-    return null;
-  });
-
   const fullName = computed(() => {
-    if (user?.value) {
-      return `${user.value.first_name} ${user.value.last_name}`;
+    if (user) {
+      return `${user.first_name} ${user.last_name}`;
     }
 
     return null;
@@ -29,7 +21,7 @@
   const widgetInfo = [
     {
       label: t("users.email.label"),
-      value: user.value.email,
+      value: user.email,
     },
     {
       label: "Phone",
@@ -47,7 +39,7 @@
       <div class="user-profile-widget user-profile-widget--user-profile-1">
         <div class="user-profile-widget__head">
           <div class="user-profile-widget__media">
-            <img v-if="avatarSource" :src="avatarSource" alt="image" />
+            <img v-if="avatar" :src="avatar" alt="image" />
           </div>
           <div class="user-profile-widget__content">
             <div class="user-profile-widget__section">

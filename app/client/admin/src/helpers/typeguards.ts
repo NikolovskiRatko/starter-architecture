@@ -9,7 +9,10 @@ export const isLaravelValidationErrorResponse = (
     "errors" in data &&
     isObject(data.errors) &&
     Object.values(data.errors).every((messages) => {
-      return Array.isArray(messages) && messages.every((message) => typeof message === "string");
+      return (
+        Array.isArray(messages) &&
+        messages.every((message) => typeof message === "string")
+      );
     })
   );
 };
