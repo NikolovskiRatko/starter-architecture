@@ -11,6 +11,10 @@
       <h3 class="kt-section__title kt-section__title-lg">
         {{ t("users.password.new") }}:
       </h3>
+      <div class="alert alert-danger" role="alert">
+        <div class="alert-icon"><i class="flaticon-questions-circular-button"></i></div>
+        <div class="alert-text">We need password reset functionality in Backend</div>
+      </div>
       <form-input
         name="password"
         type="password"

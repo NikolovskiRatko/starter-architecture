@@ -79,7 +79,7 @@
 </script>
 
 <template>
-  <PageWrapper>
+  <PageWrapper size="large" justify-content="center">
     <template #[PAGE_WRAPPER_SLOTS.subheaderMain]>
       <SubheaderTitle
         title="Edit user"
