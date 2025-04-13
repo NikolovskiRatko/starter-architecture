@@ -43,10 +43,9 @@
           </div>
           <div class="user-profile-widget__content">
             <div class="user-profile-widget__section">
-              <a href="#" class="user-profile-widget__username">
+              <span class="user-profile-widget__username">
                 {{ fullName }}
-                <i class="flaticon2-correct kt-font-success"></i>
-              </a>
+              </span>
               <span class="user-profile-widget__subtitle">
                 <UserRole :userRoleId="user.role" />
               </span>

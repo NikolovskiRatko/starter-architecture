@@ -7,15 +7,17 @@
   }
 
   &__media {
-    img {
-      width: 90px;
-      max-width: 100%;
+    width: 90px;
+    overflow: hidden;
+    border-radius: var(--dui-border-radius);
 
-      border-radius: var(--dui-border-radius);
+    img {
+      max-width: 100%;
     }
   }
 
   &__content {
+    flex: 1;
     padding-left: var(--dui-spacing-2);
   }
 
@@ -23,12 +25,6 @@
     font-size: var(--dui-font-size-lg);
     color: var(--dui-color-base-label-4);
     font-weight: var(--dui-font-weight-bold);
-
-
-    &:hover {
-      color: var(--dui-brand-color);
-      transition: var(--dui-transition);
-    }
 
     i {
       padding-left: var(--dui-spacing-1);
