@@ -3,7 +3,7 @@
   import { useForm } from "vee-validate";
   import { watch } from "vue";
   import { useI18n } from "vue-i18n";
-  import { UserFormBasicInfoTab } from "../components";
+  import { UserFormBasicInfo } from "../components";
   import { useMyProfile } from "../composables";
   import type { UserMyProfileForm } from "../types";
   import {
@@ -15,8 +15,6 @@
   } from "@starter-core/dash-ui/src";
 
   const { t } = useI18n();
-
-  const title = t("users.personal-information.label");
   const {
     isLoading,
     data: formData,
@@ -63,7 +61,7 @@
   <PortletComponent>
     <PortletHead>
       <PortletHeadLabel>
-        {{ title }}
+        {{ t("users.personal-information.label") }}
       </PortletHeadLabel>
     </PortletHead>
     <PortletBody size="large">
@@ -72,13 +70,13 @@
         enctype="multipart/form-data"
         @submit.prevent="submitHandler"
       >
-        <UserFormBasicInfoTab
+        <UserFormBasicInfo
           v-model:lastName="lastName"
           v-model:email="email"
           v-model:firstName="firstName"
-          :errors="errors"
           :avatar="formData?.avatar_thumbnail"
           @upload-avatar="uploadAvatarHandler"
+          :errors="errors"
         />
         <DashButton
           type="submit"

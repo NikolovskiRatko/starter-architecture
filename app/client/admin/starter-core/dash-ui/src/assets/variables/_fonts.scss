@@ -1,4 +1,6 @@
 :root {
+  --dui-root-font-size: 14px;
+
   --dui-font-size-sm: 0.75rem;   /* 14px - Small text, captions, UI labels */
   --dui-font-size: 0.875rem;     /* 16px - Default body text */
   --dui-font-size-md: 1rem;      /* 18px - Larger body text, subheaders */
@@ -10,6 +12,8 @@
   --dui-line-height: 1.5;
 
   @include kt-desktop-xl {
+    --dui-root-font-size: 15px;
+
     --dui-font-size-sm: 0.875rem;  /* 14px - Small text, captions, UI labels */
     --dui-font-size: 1rem;         /* 16px - Default body text */
     --dui-font-size-md: 1.125rem;  /* 18px - Larger body text, subheaders */
