@@ -20,7 +20,7 @@
       .oneOf([yup.ref("password")], t("users.password.messages.confirmed")),
   });
 
-  const { handleSubmit, errors, defineField, setErrors } =
+  const { handleSubmit, errors, defineField, setErrors, resetForm } =
     useForm<UpdatePasswordForm>({
       validationSchema,
     });
@@ -32,8 +32,8 @@
 
   const submitHandler = handleSubmit((values) => {
     updatePassword(values)
-      .then((response) => {
-        console.log(response);
+      .then(() => {
+        resetForm();
       })
       .catch(handleAPIError);
   });
