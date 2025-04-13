@@ -3,7 +3,7 @@
   import { FormInput } from "@starter-core/dash-ui/src";
 
   const { t } = useI18n();
-  const password = defineModel("password", { required: true });
+  const password = defineModel("password", { required: true, type: String });
 </script>
 <template>
   <div class="kt-section">
