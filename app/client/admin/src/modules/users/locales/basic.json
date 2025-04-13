@@ -23,7 +23,14 @@
     "label": "Password",
     "confirm": "Confirm password",
     "new": "New password",
-    "current": "Current password"
+    "current": "Current password",
+    "messages": {
+      "required": "New password is required.",
+      "confirmed": "The passwords do not match.",
+      "min": "Your password must be at least 8 characters long.",
+      "current_required": "Current password is required.",
+      "current_invalid": "Your current password is incorrect."
+    }
   },
   "personal-information": {
     "label": "Personal information"

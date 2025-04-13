@@ -3,6 +3,7 @@
   import { useForm } from "vee-validate";
   import { useI18n } from "vue-i18n";
   import * as yup from "yup";
+  import { useAppErrors } from "../../../composables";
   import type { UpdatePasswordForm } from "../types";
   import { useMyProfile } from "@/modules/users/composables";
   import { DashButton, FormInput } from "@starter-core/dash-ui/src";
@@ -16,19 +17,25 @@
     password_confirmation: yup
       .string()
       .required()
-      .oneOf([yup.ref("password")], "Passwords do not match"),
+      .oneOf([yup.ref("password")], t("users.password.messages.confirmed")),
   });
 
-  const { handleSubmit, errors, defineField } = useForm<UpdatePasswordForm>({
-    validationSchema,
-  });
+  const { handleSubmit, errors, defineField, setErrors } =
+    useForm<UpdatePasswordForm>({
+      validationSchema,
+    });
+  const { handleAPIError } = useAppErrors({ setErrors, translator: t });
 
   const [currentPassword] = defineField("current_password");
   const [password] = defineField("password");
   const [passwordConfirmation] = defineField("password_confirmation");
 
   const submitHandler = handleSubmit((values) => {
-    updatePassword(values);
+    updatePassword(values)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch(handleAPIError);
   });
 </script>
 <template>

@@ -27,6 +27,10 @@ $input-config: kt-get($form-config, input);
       }
     }
 
+    &--error {
+      margin-bottom: var(--dui-spacing-1);
+    }
+
     &--error,
     &--error:focus {
       border-color: kt-get($input-config, color, error);

@@ -42,8 +42,8 @@ export const useMyProfile = () => {
     },
   });
 
-  const { mutate: updatePassword, isPending: isUpdatingPassword } = useMutation(
-    {
+  const { mutateAsync: updatePassword, isPending: isUpdatingPassword } =
+    useMutation({
       mutationFn: async (data: UpdatePasswordForm): Promise<void> => {
         const response = await axios.patch(
           USER_API_ENDPOINTS.myPasswordUpdate,
@@ -54,8 +54,7 @@ export const useMyProfile = () => {
       onSuccess: async () => {
         toast.success("Your password has been updated!");
       },
-    },
-  );
+    });
 
   const { uploadAvatar, isLoading: isUploadingAvatar } = useUploadAvatar({
     onSuccess: async () => {
