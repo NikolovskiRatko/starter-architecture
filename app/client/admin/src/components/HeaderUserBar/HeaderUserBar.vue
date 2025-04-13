@@ -80,7 +80,7 @@
         <div class="kt-notification">
           <HeaderUserBarListItem
             :icon="IconUser"
-            :to="{ name: USER_ROUTES_DATA.myProfile.name }"
+            :to="{ name: USER_ROUTES_DATA.myProfilePersonalInfo.name }"
             title="My Profile"
             subtitle="Account settings and more"
           />

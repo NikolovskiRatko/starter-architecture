@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { IconSave } from "@starter-core/icons";
-  import { useForm } from "vee-validate"; //useForm custom hook remove this
+  import { useForm } from "vee-validate";
   import { watch } from "vue";
   import { useI18n } from "vue-i18n";
   import { UserFormBasicInfoTab } from "../components";
