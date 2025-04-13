@@ -79,12 +79,6 @@ interface UserRepositoryInterface
      */
     public function changeRole($id, $role_id);
 
-    /**
-     * @param User $user
-     * @param string $password
-     * @return void
-     */
-    public function setPassword($user, $password);
 
     /**
      * Clear the avatar collection for a given user.

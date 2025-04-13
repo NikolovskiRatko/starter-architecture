@@ -2,14 +2,15 @@
 
 namespace App\Applications\User\Services;
 
-use Illuminate\Database\Eloquent\Collection;
+// use Illuminate\Database\Eloquent\Collection;
 use App\Applications\User\Model\User;
 use App\Applications\User\DTO\UserDTO;
 use App\Applications\User\DTO\UserRoleDTO;
 use App\Applications\User\DTO\UserPermissionDTO;
 // use App\Applications\User\Data\UserRole;
 use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
+// use Spatie\Permission\Models\Permission;
+use Illuminate\Support\Facades\Hash;
 use App\Applications\User\Repositories\UserRepositoryInterface;
 use App\Constants\UserPermissions;
 use Illuminate\Http\Request;
@@ -154,5 +155,16 @@ class UserService implements UserServiceInterface
         if (!$authUser->hasPermissionTo(UserPermissions::WRITE_USERS)) {
             abort(403, 'You do not have permission to edit this user.');
         }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function updatePassword(int $userId, array $data): void
+    {
+        $user = $this->userRepository->get($userId);
+
+        $user->password = Hash::make($data['password']);
+        $user->save();
     }
 }

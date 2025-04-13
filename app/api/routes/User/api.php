@@ -24,10 +24,6 @@ Route::group([
         Route::get('draw', [UserController::class, 'draw']);
         Route::get('permissions-roles', [UserController::class, 'getUserPermissionsRoles']);
 
-        // User profile
-        Route::patch('myprofile', [UserController::class, 'updateMyProfile']);
-        Route::get('myprofile', [UserController::class, 'getMyProfile']);
-
         // CRUD ROUTES
         Route::post('create', [UserController::class, 'create']);
         Route::get('{id}', [UserController::class, 'get']);
@@ -36,5 +32,18 @@ Route::group([
 
         // User avatars
         Route::post('avatar/{id}', [UserController::class, 'uploadAvatar']);
+    });
+});
+
+// User profile
+Route::group([
+    'middleware' => 'auth:sanctum'
+], function () {
+    Route::group([
+        'prefix' => 'me',
+    ], function () {
+        Route::patch('profile', [UserController::class, 'updateMyProfile']);
+        Route::get('profile', [UserController::class, 'getMyProfile']);
+        Route::patch('password', [UserController::class, 'updatePassword']);
     });
 });

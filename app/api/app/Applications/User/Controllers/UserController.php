@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Applications\User\Services\UserServiceInterface;
 use App\Applications\User\Requests\MyProfileRequest;
+use App\Applications\User\Requests\UpdatePasswordRequest;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -216,6 +217,28 @@ class UserController extends Controller
             return response()->json([
                 'message' => 'An error occurred while uploading the avatar. Please try again later.',
             ], 500);
+        }
+    }
+
+    /**
+     * Update password for the currently authenticated user.
+     *
+     * @param UpdatePasswordRequest $request
+     * @return JsonResponse
+     */
+    public function updatePassword(UpdatePasswordRequest $request): JsonResponse
+    {
+        try {
+            $this->userService->updatePassword(Auth::id(), $request->validated());
+
+            return response()->json(['message' => 'Password updated successfully.']);
+        } catch (\Throwable $e) {
+            \Log::error('Password update failed', [
+                'user_id' => Auth::id(),
+                'error' => $e->getMessage(),
+            ]);
+
+            return response()->json(['message' => 'An error occurred while updating the password.'], 500);
         }
     }
 }

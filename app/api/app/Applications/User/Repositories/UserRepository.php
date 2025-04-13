@@ -155,13 +155,6 @@ class UserRepository implements UserRepositoryInterface
             ->syncRoles($role_id);
     }
 
-    public function setPassword($user, $password)
-    {
-        $pass = Hash::make($password);
-        $user->password = $pass;
-        $user->save();
-    }
-
     /**
      * Clear the avatar collection for a given user.
      *

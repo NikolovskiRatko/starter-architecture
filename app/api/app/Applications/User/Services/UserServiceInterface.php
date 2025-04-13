@@ -80,4 +80,13 @@ interface UserServiceInterface
      * @return UserDTO
      */
     public function uploadAvatar(int $userId, Request $request, User $user): UserDTO;
+
+    /**
+     * Update the password for a specific user.
+     *
+     * @param int $userId
+     * @param array $data
+     * @return void
+     */
+    public function updatePassword(int $userId, array $data): void;
 }
