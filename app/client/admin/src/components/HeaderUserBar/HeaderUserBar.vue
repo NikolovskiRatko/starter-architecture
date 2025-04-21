@@ -44,12 +44,10 @@
         </BadgeComponent>
       </div>
       <div
-        :class="
-          (`${DROPDOWN_CLASSNAMES.join(' ')}`,
-          {
-            show: isDropdownVisible,
-          })
-        "
+        :class="{
+          [`${DROPDOWN_CLASSNAMES.join(' ')}`]: true,
+          show: isDropdownVisible,
+        }"
       >
         <!--begin: Head -->
         <div class="header-user-bar__user-card kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x">
