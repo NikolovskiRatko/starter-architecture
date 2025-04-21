@@ -14,8 +14,7 @@ $header-top-bar-config: (
 .kt-header__topbar {
   display: flex;
   align-items: stretch;
-  padding: 0;
-  padding-right: 15px;
+  padding: 0 15px 0 0;
 
   .kt-header__topbar-item {
     display: flex;
@@ -23,15 +22,15 @@ $header-top-bar-config: (
     margin: 0;
 
     .kt-header__topbar-wrapper {
-      cursor: pointer;
       display: flex;
       align-items: stretch;
+      cursor: pointer;
 
       .kt-badge.kt-badge--notify {
         position: absolute;
+        top: 14px;
         left: 50%;
         margin-left: -2px;
-        top: 14px;
       }
     }
 
@@ -40,8 +39,8 @@ $header-top-bar-config: (
       align-items: center;
       align-self: center;
       justify-content: center;
-      height: $header-topbar-item-size;
       width: $header-topbar-item-size;
+      height: $header-topbar-item-size;
       cursor: pointer;
 
       @include kt-transition;
@@ -58,20 +57,20 @@ $header-top-bar-config: (
       }
 
       svg {
-        height: $header-topbar-item-svg-size;
         width: $header-topbar-item-svg-size;
+        height: $header-topbar-item-svg-size;
       }
     }
 
     // User profile
     &.kt-header__topbar-item--user {
       .kt-header__topbar-user {
-        padding: 0 8px;
         display: flex;
         align-items: center;
         align-self: center;
         justify-content: center;
         height: $header-topbar-item-size;
+        padding: 0 8px;
         cursor: pointer;
 
         @include kt-rounded {
@@ -82,8 +81,8 @@ $header-top-bar-config: (
           display: flex;
           align-self: center;
           padding: 0 0.55rem 0 0;
-          font-weight: 500;
           font-size: 0.9rem;
+          font-weight: 500;
           color: #636177;
         }
 
@@ -91,8 +90,8 @@ $header-top-bar-config: (
           display: flex;
           align-self: center;
           padding: 0 0.55rem 0 0;
-          font-weight: 500;
           font-size: 1rem;
+          font-weight: 500;
           color: #fff;
         }
 
@@ -106,8 +105,8 @@ $header-top-bar-config: (
         }
 
         .kt-badge.kt-badge--username {
-          height: $header-topbar-user-avatar-size;
           width: $header-topbar-user-avatar-size;
+          height: $header-topbar-user-avatar-size;
 
           @include kt-rounded {
             border-radius: $border-radius;
@@ -168,16 +167,16 @@ $header-top-bar-config: (
 
 @include kt-tablet-and-mobile {
   .kt-header__topbar {
+    position: absolute;
+    right: 0;
+    left: 0;
+    justify-content: flex-end;
+    height: kt-get($header-top-bar-config, height, mobile);
     padding: 0 kt-get($page-padding, mobile);
+    margin-top: -(kt-get($header-top-bar-config, height, mobile));
     background-color: #2b2a35;
     box-shadow: 0 1px 9px -3px rgb(0 0 0 / 10%);
     transition: all 0.3s ease;
-    margin-top: -(kt-get($header-top-bar-config, height, mobile));
-    height: kt-get($header-top-bar-config, height, mobile);
-    position: absolute;
-    left: 0;
-    right: 0;
-    justify-content: flex-end;
 
     // Fixed mobile header
     .kt-header-mobile--fixed & {
@@ -193,8 +192,8 @@ $header-top-bar-config: (
 
     // Topbar item
     .kt-header__topbar-item {
-      margin: 0 2px;
       padding: 0;
+      margin: 0 2px;
 
       .kt-header__topbar-wrapper {
         display: flex;
@@ -206,8 +205,8 @@ $header-top-bar-config: (
       }
 
       .kt-header__topbar-icon {
-        height: $header-topbar-item-size-mobile;
         width: $header-topbar-item-size-mobile;
+        height: $header-topbar-item-size-mobile;
 
         i {
           font-size: 1.3rem;
@@ -215,13 +214,13 @@ $header-top-bar-config: (
       }
 
       &.kt-header__topbar-item--user {
-        margin-left: 2px;
-        margin-right: 0;
         padding: 0;
+        margin-right: 0;
+        margin-left: 2px;
 
         .kt-header__topbar-user {
-          padding: 0 2px;
           height: $header-topbar-item-size-mobile;
+          padding: 0 2px;
 
           .kt-header__topbar-welcome {
             padding: 0 0.35rem 0 0;
@@ -238,8 +237,8 @@ $header-top-bar-config: (
           }
 
           .kt-badge.kt-badge--username {
-            height: $header-topbar-user-avatar-size-mobile;
             width: $header-topbar-user-avatar-size-mobile;
+            height: $header-topbar-user-avatar-size-mobile;
           }
         }
       }

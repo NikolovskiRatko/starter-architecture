@@ -1,11 +1,11 @@
 .admin-layout {
-  height: 100%;
   display: grid;
   grid-template-areas: 'admin-layout-aside admin-layout-main';
-  grid-template-columns: var(--dui-aside-width) auto;
   grid-template-rows: 100%;
-  transition: var(--dui-transition);
+  grid-template-columns: var(--dui-aside-width) auto;
+  height: 100%;
   overflow: hidden;
+  transition: var(--dui-transition);
 
   &--aside-minimized {
     grid-template-columns: var(--dui-aside-minimize-width) auto;
@@ -20,14 +20,14 @@
 
       //height: kt-get($subheader-config, fixed, height);
       top: var(--dui-header-height-desktop);
-      left: 0;
       right: 0;
-      transition: all 0.3s ease;
+      left: 0;
       z-index: var(--dui-layers-fixed-header) - 3;
-      background-color: #fff;
-      box-shadow: 0 10px 30px 0 rgb(82 63 105 / 8%);
       padding-top: 0;
       padding-bottom: 0;
+      background-color: #fff;
+      box-shadow: 0 10px 30px 0 rgb(82 63 105 / 8%);
+      transition: all 0.3s ease;
     }
 
     // Fixed header, minimized header and fixed subheader
@@ -60,10 +60,10 @@
   &__main {
     $block: &;
 
-    transition: var(--dui-transition);
-    grid-area: admin-layout-main;
     display: flex;
     flex-direction: column;
+    grid-area: admin-layout-main;
+    transition: var(--dui-transition);
 
     @include kt-desktop {
       &--aside-minimized {

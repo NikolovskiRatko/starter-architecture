@@ -14,39 +14,39 @@
     &__holder {
         width: 120px;
         height: 120px;
-        border-radius: 3px;
+        overflow: hidden;
         background-repeat: no-repeat;
         background-size: contain;
-        overflow: hidden;
+        border-radius: 3px;
 
         &--circle {
             border-radius: 50%;
         }
 
         &--outline {
-            border: 3px solid #ffffff;
-            box-shadow: 0 0 13px 0 rgba(#000000, 0.1);
+            border: 3px solid #fff;
+            box-shadow: 0 0 13px 0 rgba(#000, 0.1);
         }
     }
 
     &__upload {
-        cursor: pointer;
+        position: absolute;
+        top: -10px;
+        right: -10px;
         display: flex;
         align-items: center;
         justify-content: center;
-        position: absolute;
-        right: -10px;
-        top: -10px;
         width: 30px;
         height: 30px;
-        border-radius: 50%;
+        cursor: pointer;
+        background-color: #fff;
         border: none;
-        background-color: #ffffff;
-        box-shadow: 0px 0px 13px 0px rgba(#000000, 0.1);
+        border-radius: 50%;
+        box-shadow: 0 0 13px 0 rgba(#000, 0.1);
 
         &--circle {
-            right: 0;
             top: 5px;
+            right: 0;
         }
 
         input {
@@ -57,13 +57,15 @@
         }
 
         i {
-            color: kt-brand-color();
             font-size: 0.9rem;
+            color: kt-brand-color();
         }
 
-        @include kt-transition();
+        @include kt-transition;
+
         &:hover {
-            @include kt-transition();
+            @include kt-transition;
+
             background-color: kt-brand-color();
 
             i {
@@ -73,20 +75,20 @@
     }
 
     &__cancel {
-        display: flex;
         position: absolute;
         top: auto;
         right: -10px;
         bottom: -5px;
-        width: 22px;
-        height: 22px;
-        border-radius: 50%;
-        background-color: var(--dui-color-danger);
-        box-shadow: 0 0 13px 0 rgba(#000000, 0.1);
-        border: none;
+        display: flex;
         align-items: center;
         justify-content: center;
+        width: 22px;
+        height: 22px;
         padding: 0;
+        background-color: var(--dui-color-danger);
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0 0 13px 0 rgba(#000, 0.1);
 
         &--circle {
             right: 3px;

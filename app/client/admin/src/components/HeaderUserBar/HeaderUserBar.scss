@@ -3,10 +3,10 @@
 
   &__dropdown {
     position: absolute;
-    will-change: transform;
     top: 100%;
     right: 0;
     left: auto;
+    will-change: transform;
   }
 
   &__user-card {
@@ -21,10 +21,10 @@
 .kt-user-card {
   display: flex;
   align-items: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   padding: 2rem 1rem;
   background-color: #f9fafe;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   // Elements
   .kt-user-card__avatar {
@@ -45,10 +45,10 @@
 
   .kt-user-card__name {
     flex-grow: 1;
-    color: kt-base-color(label, 3);
+    padding-left: 1rem;
     font-size: 1.3rem;
     font-weight: 500;
-    padding-left: 1rem;
+    color: kt-base-color(label, 3);
   }
 
   .kt-user-card__badge {
@@ -83,7 +83,7 @@
 
 @include kt-tablet-and-mobile {
   .kt-user-card {
-    padding: 1rem 1rem;
+    padding: 1rem;
 
     // Elements
     .kt-user-card__avatar {
@@ -95,8 +95,8 @@
     }
 
     .kt-user-card__name {
-      font-size: 1.1rem;
       padding-left: 0.5rem;
+      font-size: 1.1rem;
     }
 
     .kt-user-card__badge {

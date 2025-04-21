@@ -1,10 +1,10 @@
 .kt-aside__brand {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   flex-direction: row;
-  padding: 0 kt-get($page-padding, desktop);
+  align-items: center;
+  justify-content: space-between;
   height: var(--dui-header-height-desktop);
+  padding: 0 kt-get($page-padding, desktop);
 
   .kt-aside__brand-logo {
     display: flex;
@@ -35,8 +35,8 @@
       }
 
       svg {
-        height: 26px;
         width: 26px;
+        height: 26px;
         margin-right: -2px;
       }
     }
@@ -55,8 +55,8 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: var(--dui-aside-default-width);
       z-index: var(--dui-layers-fixed-header);
+      width: var(--dui-aside-default-width);
     }
 
     // Aside minimize mode
@@ -83,8 +83,8 @@
 
     // Aside minimize, header fixed & aside static mode
     .kt-header--fixed.kt-aside--static.aside--minimize & {
-      transition: var(--dui-transition);
       width: var(--dui-aside-minimize-width);
+      transition: var(--dui-transition);
     }
 
     .kt-aside__brand-tools {
@@ -121,7 +121,6 @@
 
     // Toolbar
     .kt-header-mobile__toolbar {
-
       .kt-header-mobile__topbar-toggler {
         i {
           color: #484f66;

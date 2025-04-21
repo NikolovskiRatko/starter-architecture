@@ -2,15 +2,15 @@
 
 // Build Aside Skin
 .aside {
-  width: var(--dui-aside-default-width);;
+  width: var(--dui-aside-default-width);
+  background-color: var(--dui-color-dark);;
   transition: var(--dui-transition);
-  background-color: var(--dui-color-dark);
 
   &__footer {
-    height: 45px;
     width: 45px;
-    border-radius: 50%;
+    height: 45px;
     background-color: #1f2231;
+    border-radius: 50%;
 
     .btn {
       @include kt-transition;

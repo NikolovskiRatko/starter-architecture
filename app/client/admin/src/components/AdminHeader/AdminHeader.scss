@@ -40,8 +40,8 @@ $header-item-hover-bg: rgba(#4d5995, 0.06);
           }
 
           .kt-badge.kt-badge--username {
-            height: 35px;
             width: 35px;
+            height: 35px;
             font-size: 1.4rem;
             font-weight: 600;
           }
@@ -116,13 +116,13 @@ $header-item-hover-bg: rgba(#4d5995, 0.06);
 
 @include kt-desktop {
   .kt-header {
+    z-index: var(--dui-layers-fixed-header);
     display: flex;
     justify-content: space-between;
     height: var(--dui-header-height-desktop);
-    transition: var(--dui-transition);
     background-color: var(--dui-color-light);
     border-bottom: 1px solid #eff0f6;
-    z-index: var(--dui-layers-fixed-header);
+    transition: var(--dui-transition);
 
     &--minimize & {
       height: var(--dui-header-minimizeheight-desktop);
@@ -144,8 +144,8 @@ $header-item-hover-bg: rgba(#4d5995, 0.06);
             }
 
             .kt-menu__link-text {
-              color: #6c7293;
               font-weight: 500;
+              color: #6c7293;
             }
 
             .kt-menu__hor-arrow {
@@ -191,8 +191,8 @@ $header-item-hover-bg: rgba(#4d5995, 0.06);
 
   .kt-header__topbar--mobile-on {
     .kt-header__topbar {
-      box-shadow: 0 0 40px 0 rgb(82 63 105 / 10%);
       border-top: 1px solid kt-base-color(grey, 2);
+      box-shadow: 0 0 40px 0 rgb(82 63 105 / 10%);
     }
   }
 }

@@ -1,9 +1,9 @@
 .auth-base {
+  height: 100%;
   background-image: url("@/../assets/images/auth-background.jpg");
   background-repeat: no-repeat;
   background-position: center right;
   background-size: cover;
-  height: 100%;
 
   &__wrapper {
     padding: 6% 2rem 1rem;
@@ -17,9 +17,9 @@
   }
 
   &__logo {
-    text-align: center;
-    margin: 0 auto 4rem;
     max-width: 150px;
+    margin: 0 auto 4rem;
+    text-align: center;
 
     img {
       max-width: 100%;
@@ -27,8 +27,8 @@
   }
 
   &__account {
-    text-align: center;
     margin-top: 2rem;
+    text-align: center;
   }
 
   &__account-msg {
@@ -55,25 +55,25 @@
   }
 
   &__title {
-    text-align: center;
     font-size: 1.5rem;
     font-weight: 500;
     color: kt-base-color(label, 3);
+    text-align: center;
   }
 
   &__desc {
     margin-top: 1.5rem;
-    text-align: center;
     font-size: 1.1rem;
     font-weight: 400;
     color: kt-base-color(label, 2);
+    text-align: center;
   }
 
   &__extra {
     margin-top: 30px;
     margin-bottom: 15px;
-    color: kt-base-color(label, 2);
     font-size: 1rem;
+    color: kt-base-color(label, 2);
 
     .kt-checkbox {
       font-size: 1rem;
@@ -92,15 +92,15 @@
   }
 
   &__actions {
-    text-align: center;
     margin-top: 7%;
+    text-align: center;
   }
 
   &__btn-secondary,
   &__btn-primary {
     height: 50px;
-    padding-left: 2.5rem;
     padding-right: 2.5rem;
+    padding-left: 2.5rem;
   }
 
   &__form {
@@ -113,27 +113,27 @@
 
     .form-control {
       height: 46px;
-      border: none;
-      padding-left: 1.5rem;
       padding-right: 1.5rem;
+      padding-left: 1.5rem;
       margin-top: 1.5rem;
       background: rgba(kt-base-color(grey, 2), 0.4);
+      border: none;
 
       @include kt-input-placeholder(kt-base-color(label, 2));
     }
 
     .form-control.is-valid + .valid-feedback,
     .form-control.is-invalid + .invalid-feedback {
-      font-weight: 500;
-      font-size: 0.9rem;
       padding-left: 1.6rem;
+      font-size: 0.9rem;
+      font-weight: 500;
     }
   }
 
   @include kt-tablet-and-mobile {
     &__wrapper {
-      padding-top: 5rem;
       width: 100%;
+      padding-top: 5rem;
     }
 
     &__container {

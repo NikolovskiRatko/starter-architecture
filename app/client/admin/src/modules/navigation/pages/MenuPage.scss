@@ -1,5 +1,4 @@
 .menu-page {
-
     &__content {
         display: flex;
         gap: var(--dui-spacing-4);
@@ -10,8 +9,8 @@
     }
 
     &__items {
-        flex: 1;
         display: flex;
+        flex: 1;
         flex-direction: column;
         gap: var(--dui-spacing-2);
     }

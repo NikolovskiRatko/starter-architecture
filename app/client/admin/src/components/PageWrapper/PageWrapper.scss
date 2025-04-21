@@ -4,7 +4,6 @@ $content-sizes: (
     medium: 1024px,
     large: 1399px,
 );
-
 $justify-content: (
     left: flex-start,
     center: center,
@@ -12,18 +11,18 @@ $justify-content: (
 );
 
 .page-wrapper {
-    flex: 1;
     display: flex;
+    flex: 1;
     flex-direction: column;
     overflow: hidden;
 
     &__content {
-        padding: $contentPadding;
-        flex: 1;
-        overflow: hidden auto;
-        width: 100%;
         display: flex;
+        flex: 1;
         justify-content: flex-start;
+        width: 100%;
+        padding: $contentPadding;
+        overflow: hidden auto;
 
         @each $alignment, $attribute in $justify-content {
             &--justify-content-#{$alignment} {
@@ -34,6 +33,7 @@ $justify-content: (
 
     &__content-inner {
         flex: 1;
+
         //margin: 0 auto;
 
         @each $size, $width in $content-sizes {
@@ -46,15 +46,15 @@ $justify-content: (
     &__subheader {
         display: flex;
         align-items: center;
-        background-color: var(--dui-color-light);
         padding: var(--dui-spacing-2) $contentPadding;
+        background-color: var(--dui-color-light);
         box-shadow: var(--dui-elevate-shadow);
     }
 
     &__subheader-toolbox {
-        margin-left: auto;
         display: flex;
         flex-direction: row;
         gap: var(--dui-spacing-2);
+        margin-left: auto;
     }
 }

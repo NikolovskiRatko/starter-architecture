@@ -1,16 +1,16 @@
 .subheader-title {
     display: flex;
-    align-items: center;
     gap: var(--dui-spacing-2);
+    align-items: center;
 
     &__title {
-        color: var(--dui-color-text-dark);
         margin: 0;
+        color: var(--dui-color-text-dark);
     }
 
     &__description {
-        color: var(--dui-color-text-dark-bg);
         font-weight: var(--dui-font-weight-bold);
+        color: var(--dui-color-text-dark-bg);
     }
 
     &__separator {
