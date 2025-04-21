@@ -23,8 +23,8 @@
 
   &__username {
     font-size: var(--dui-font-size-lg);
-    color: var(--dui-color-base-label-4);
     font-weight: var(--dui-font-weight-bold);
+    color: var(--dui-color-base-label-4);
 
     i {
       padding-left: var(--dui-spacing-1);
@@ -48,13 +48,13 @@
         padding-bottom: var(--dui-spacing-1);
 
         #{$block}__label {
-          color: var(--dui-color-base-label-4);
           font-weight: var(--dui-font-weight-bold);
+          color: var(--dui-color-base-label-4);
         }
 
         #{$block}__data {
-          color: var(--dui-color-base-label-2);
           font-weight: var(--dui-font-weight-normal);
+          color: var(--dui-color-base-label-2);
         }
 
         a.user-profile-widget__data:hover {
@@ -77,8 +77,8 @@
         margin: 0.4rem 0;
 
         &.user-profile-widget__item--active {
-          transition: color 0.3s ease;
           background: #f2f3f7;
+          transition: color 0.3s ease;
 
           @include kt-rounded {
             border-radius: $border-radius;
@@ -110,16 +110,16 @@
           }
 
           #{$block}__desc {
-            color: kt-base-color(label, 2);
-            font-weight: 500;
             padding-left: 0.3rem;
+            font-weight: 500;
+            color: kt-base-color(label, 2);
           }
         }
 
         &:hover {
-          transition: color 0.3s ease;
-          background: #f2f3f7;
           cursor: pointer;
+          background: #f2f3f7;
+          transition: color 0.3s ease;
 
           @include kt-rounded {
             border-radius: $border-radius;
