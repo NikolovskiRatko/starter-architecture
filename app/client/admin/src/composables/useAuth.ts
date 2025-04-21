@@ -3,7 +3,7 @@ import type { AxiosResponse, AxiosError } from 'axios';
 import { computed, ref, reactive } from 'vue';
 import { useRouter } from 'vue-router';
 import { getAPIErrorMessage } from '@/helpers';
-import { AuthUser } from '@/modules/users/types';
+import type { AuthUser } from '@/modules/users/types';
 import type { SignUpQuery, UseAuthLoginParams } from '@/types';
 
 export default function useAuth() {

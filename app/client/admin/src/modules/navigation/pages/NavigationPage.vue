@@ -8,7 +8,7 @@
   import { NavigationsDropdown } from '../components';
   import { useNavigation, useNavigationCreate, useNavigations } from '../composables';
   import { NAVIGATION_ROUTES_DATA } from '../constants';
-  import { NavigationForm } from '../types';
+  import type { NavigationForm } from '../types';
   import { FormInput, FormSwitch, PortletComponent, PortletBody, DashButton, DashLink } from '@starter-core/dash-ui/src';
 
   const { mutateAsync: createNavigation } = useNavigationCreate();
@@ -89,7 +89,13 @@
       <DashLink :to="{ name: NAVIGATION_ROUTES_DATA.main.name }" :icon="IconArrowleft" theme="clean">
         {{ t('buttons.back') }}
       </DashLink>
-      <DashButton v-if="!isStatic" type="submit" :icon="isEditPage ? IconSave : IconPlus" :loading="isLoading" @click="submitHandler">
+      <DashButton
+        v-if="!isStatic"
+        type="submit"
+        :icon="isEditPage ? IconSave : IconPlus"
+        :loading="isLoading"
+        @click="submitHandler"
+      >
         {{ isEditPage ? t('navigation.save') : t('navigation.add') }}
       </DashButton>
     </template>

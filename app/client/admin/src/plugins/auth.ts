@@ -4,7 +4,7 @@ import driverOAuth2Facebook from '@websanova/vue-auth/src/drivers/oauth2/faceboo
 import driverOAuth2Google from '@websanova/vue-auth/src/drivers/oauth2/google.js';
 import driverRouterVueRouter from '@websanova/vue-auth/src/drivers/router/vue-router.2.x.js';
 import { createAuth } from '@websanova/vue-auth/src/v3.js';
-import { AuthUser } from '@/modules/users/types';
+import type { AuthUser } from '@/modules/users/types';
 
 // Constants for OAuth2 configurations (move to environment or config files later)
 const GOOGLE_CLIENT_ID = '547886745924-4vrbhl09fr3t771drtupacct6f788566.apps.googleusercontent.com';

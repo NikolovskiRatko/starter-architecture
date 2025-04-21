@@ -12,6 +12,15 @@
   const { logout, user, avatar } = useAuth();
   const isDropdownVisible = ref(false);
   const dropdownRef = ref();
+  const DROPDOWN_CLASSNAMES = [
+    'header-user-bar__dropdown',
+    'dropdown-menu',
+    'dropdown-menu-fit',
+    'dropdown-menu-right',
+    'dropdown-menu-anim',
+    'dropdown-menu-top-unround',
+    'dropdown-menu-xl',
+  ];
 
   const toggleDropdown = () => (isDropdownVisible.value = !isDropdownVisible.value);
 
@@ -35,10 +44,12 @@
         </BadgeComponent>
       </div>
       <div
-        class="header-user-bar__dropdown dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl"
-        :class="{
-          show: isDropdownVisible,
-        }"
+        :class="
+          (`${DROPDOWN_CLASSNAMES.join(' ')}`,
+          {
+            show: isDropdownVisible,
+          })
+        "
       >
         <!--begin: Head -->
         <div class="header-user-bar__user-card kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x">

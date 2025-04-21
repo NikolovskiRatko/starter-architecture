@@ -53,8 +53,8 @@
       <div class="col-md-3">
         <AccordionContent>
           <AccordionItem label="Product inventory" id="product-inventory" :icon="IconChartpie">
-            Vero laborum esse debitis libero veniam ullam placeat molestias deleniti distinctio magnam? In, odio alias? Possimus labore
-            delectus recusandae.
+            Vero laborum esse debitis libero veniam ullam placeat molestias deleniti distinctio magnam? In, odio alias? Possimus
+            labore delectus recusandae.
           </AccordionItem>
           <AccordionItem label="Order statistics" id="order-statistics" :icon="IconLibrary">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, aut molestiae.

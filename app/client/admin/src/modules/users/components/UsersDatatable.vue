@@ -4,7 +4,13 @@
   import { USERS_DATATABLE_COLUMNS } from '../constants';
   import UsersTableHeader from './UsersTableHeader.vue';
   import UsersTableRow from './UsersTableRow.vue';
-  import { useDatatable, DatatableComponent, DatatableFilters, DatatableHeader, PaginationComponent } from '@starter-core/dash-ui/src';
+  import {
+    useDatatable,
+    DatatableComponent,
+    DatatableFilters,
+    DatatableHeader,
+    PaginationComponent,
+  } from '@starter-core/dash-ui/src';
 
   const { query, onPaginationChange } = useDatatable();
 
@@ -14,7 +20,12 @@
   const users = computed(() => data.value?.data ?? null);
 </script>
 <template>
-  <DatatableComponent :query="query" :isLoading="isLoading || isFetching" :columns="USERS_DATATABLE_COLUMNS" :error="error?.message">
+  <DatatableComponent
+    :query="query"
+    :isLoading="isLoading || isFetching"
+    :columns="USERS_DATATABLE_COLUMNS"
+    :error="error?.message"
+  >
     <template #header>
       <DatatableHeader title="Users" subtitle="List of users">
         <UsersTableHeader />

@@ -8,7 +8,9 @@
   const rootStore = useRootStore();
   const { sidebarState, isSidebarMinimized } = storeToRefs(rootStore);
 
-  const isLogoVisible = computed(() => !isSidebarMinimized.value || (isSidebarMinimized.value && sidebarState.value.minimizeHover));
+  const isLogoVisible = computed(
+    () => !isSidebarMinimized.value || (isSidebarMinimized.value && sidebarState.value.minimizeHover)
+  );
 </script>
 
 <template>

@@ -33,7 +33,14 @@
   </div>
   <form-input v-model="firstName" name="first-name" :label="t('users.first_name.label')" is-inline />
   <form-input v-model="lastName" name="last-name" :label="t('users.last_name.label')" :error="errors.last_name" is-inline />
-  <form-input v-model="email" name="email" :label="t('users.email.label')" helper-text="You can't update your email." is-inline readonly>
+  <form-input
+    v-model="email"
+    name="email"
+    :label="t('users.email.label')"
+    helper-text="You can't update your email."
+    is-inline
+    readonly
+  >
     <template v-slot:prependContent>
       <IconMail />
     </template>

@@ -1,5 +1,5 @@
 import type { RouteLocationNormalizedLoaded } from 'vue-router';
-import { NavSubmenuData } from '@/types';
+import type { NavSubmenuData } from '@/types';
 
 export function findActiveCategory(
   categories: NavSubmenuData,

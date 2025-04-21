@@ -5,7 +5,7 @@ import { useRoute } from 'vue-router';
 import { useInitialData, useAuth } from '@/composables';
 import { SIDEMENU_ICONS_MAP } from '@/constants';
 import { findActiveCategory } from '@/helpers/composables';
-import { NavSubmenuData } from '@/types';
+import type { NavSubmenuData } from '@/types';
 import type { SubMenu, SubmenuItems } from '@starter-core/dash-ui/src/components/Menu/SubMenu/types';
 import type { MenuItem, MenuItems } from '@starter-core/dash-ui/src/components/Menu/types';
 

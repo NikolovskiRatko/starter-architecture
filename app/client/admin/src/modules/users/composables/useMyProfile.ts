@@ -3,7 +3,7 @@ import axios from 'axios';
 import { computed } from 'vue';
 import { useToast } from 'vue-toastification';
 import { USER_API_ENDPOINTS, MY_PROFILE_CACHE_KEY } from '../constants';
-import { UserMyProfileForm, GetUserResponse, UpdatePasswordForm } from '../types';
+import type { UserMyProfileForm, GetUserResponse, UpdatePasswordForm } from '../types';
 import { useUploadAvatar } from './useUploadAvatar';
 import { useAuth } from '@/composables';
 

@@ -1,4 +1,5 @@
-import { useQuery, UseQueryReturnType } from '@tanstack/vue-query';
+import type { UseQueryReturnType } from '@tanstack/vue-query';
+import { useQuery } from '@tanstack/vue-query';
 import axios, { type AxiosError } from 'axios';
 import type { ComputedRef } from 'vue';
 import { USER_API_ENDPOINTS, USERS_TABLE_QUERY_KEY } from '../constants';

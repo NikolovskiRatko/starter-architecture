@@ -16,7 +16,11 @@
   });
 </script>
 <template>
-  <component :is="isExternalLink ? 'a' : 'router-link'" v-bind="isExternalLink ? { href: to } : { to }" class="kt-notification__item">
+  <component
+    :is="isExternalLink ? 'a' : 'router-link'"
+    v-bind="isExternalLink ? { href: to } : { to }"
+    class="kt-notification__item"
+  >
     <div class="kt-notification__item-icon">
       <component :is="icon"></component>
     </div>

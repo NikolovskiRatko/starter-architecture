@@ -9,7 +9,7 @@ import {
   NAVIGATION_MENU_QUERY_KEY,
   NAVIGATION_MENUS_QUERY_KEY,
 } from '../constants';
-import {
+import type {
   NavigationMenu,
   NavigationMenuQuery,
   NavigationMenuResult,

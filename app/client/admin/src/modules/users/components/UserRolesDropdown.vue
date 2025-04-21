@@ -21,5 +21,12 @@
   });
 </script>
 <template>
-  <form-dropdown v-if="!isFetchingRoles" v-model="role" id="role" :options="rolesOptions" :label="t('users.roles.label')" is-inline />
+  <form-dropdown
+    v-if="!isFetchingRoles"
+    v-model="role"
+    id="role"
+    :options="rolesOptions"
+    :label="t('users.roles.label')"
+    is-inline
+  />
 </template>

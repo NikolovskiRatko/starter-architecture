@@ -1,7 +1,7 @@
 import type { QueryFunction, UseQueryReturnType } from '@tanstack/vue-query';
 import { useQuery } from '@tanstack/vue-query';
 import axios from 'axios';
-import { NavMenuData } from '@/types';
+import type { NavMenuData } from '@/types';
 
 interface InitialData {
   mainMenu: NavMenuData;

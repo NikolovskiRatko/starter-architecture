@@ -1,6 +1,6 @@
 import { useQuery, type UseQueryReturnType } from '@tanstack/vue-query';
 import axios from 'axios';
-import { UserRole, UserPermission } from '../../types';
+import type { UserRole, UserPermission } from '../../types';
 
 interface UserPermissionsRolesResult {
   roles: UserRole[];

@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory, Router } from 'vue-router';
-import type { RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
+import type { RouteRecordRaw, Router } from 'vue-router';
 import * as adminRoutes from './admin/index';
 import { authPaths } from './auth';
 import { i18n } from '@/plugins/i18n';

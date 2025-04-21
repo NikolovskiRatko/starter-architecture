@@ -1,7 +1,10 @@
 import { isAxiosError, type AxiosError } from 'axios';
 import { isLaravelValidationErrorResponse } from '@/helpers';
 
-export const getAPIErrorMessage = (error: AxiosError | object, translator?: (key: string) => string): string | Record<string, string> => {
+export const getAPIErrorMessage = (
+  error: AxiosError | object,
+  translator?: (key: string) => string
+): string | Record<string, string> => {
   const translate = translator ?? ((msg: string) => msg);
 
   if (isAxiosError(error)) {

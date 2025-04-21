@@ -1,5 +1,5 @@
 import { isObject } from 'lodash';
-import { LaravelValidationErrorResponse } from '@/types';
+import type { LaravelValidationErrorResponse } from '@/types';
 
 export const isLaravelValidationErrorResponse = (data: any): data is LaravelValidationErrorResponse => {
   return (
