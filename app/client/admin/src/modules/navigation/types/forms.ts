@@ -1,6 +1,3 @@
-import { Navigation } from "./api";
+import { Navigation } from './api';
 
-export type NavigationForm = Pick<
-  Navigation,
-  "title" | "slug" | "visible" | "parent_id"
->;
+export type NavigationForm = Pick<Navigation, 'title' | 'slug' | 'visible' | 'parent_id'>;

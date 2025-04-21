@@ -1,60 +1,60 @@
 $contentPadding: var(--dui-spacing-4);
 $content-sizes: (
-    small: 576px,
-    medium: 1024px,
-    large: 1399px,
+  small: 576px,
+  medium: 1024px,
+  large: 1399px,
 );
 $justify-content: (
-    left: flex-start,
-    center: center,
-    right: flex-end,
+  left: flex-start,
+  center: center,
+  right: flex-end,
 );
 
 .page-wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+
+  &__content {
     display: flex;
     flex: 1;
-    flex-direction: column;
-    overflow: hidden;
+    justify-content: flex-start;
+    width: 100%;
+    padding: $contentPadding;
+    overflow: hidden auto;
 
-    &__content {
-        display: flex;
-        flex: 1;
-        justify-content: flex-start;
-        width: 100%;
-        padding: $contentPadding;
-        overflow: hidden auto;
-
-        @each $alignment, $attribute in $justify-content {
-            &--justify-content-#{$alignment} {
-                justify-content: $attribute;
-            }
-        }
+    @each $alignment, $attribute in $justify-content {
+      &--justify-content-#{$alignment} {
+        justify-content: $attribute;
+      }
     }
+  }
 
-    &__content-inner {
-        flex: 1;
+  &__content-inner {
+    flex: 1;
 
-        //margin: 0 auto;
+    //margin: 0 auto;
 
-        @each $size, $width in $content-sizes {
-            &--#{$size} {
-                max-width: $width;
-            }
-        }
+    @each $size, $width in $content-sizes {
+      &--#{$size} {
+        max-width: $width;
+      }
     }
+  }
 
-    &__subheader {
-        display: flex;
-        align-items: center;
-        padding: var(--dui-spacing-2) $contentPadding;
-        background-color: var(--dui-color-light);
-        box-shadow: var(--dui-elevate-shadow);
-    }
+  &__subheader {
+    display: flex;
+    align-items: center;
+    padding: var(--dui-spacing-2) $contentPadding;
+    background-color: var(--dui-color-light);
+    box-shadow: var(--dui-elevate-shadow);
+  }
 
-    &__subheader-toolbox {
-        display: flex;
-        flex-direction: row;
-        gap: var(--dui-spacing-2);
-        margin-left: auto;
-    }
+  &__subheader-toolbox {
+    display: flex;
+    flex-direction: row;
+    gap: var(--dui-spacing-2);
+    margin-left: auto;
+  }
 }

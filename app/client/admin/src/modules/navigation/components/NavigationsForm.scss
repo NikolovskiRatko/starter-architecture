@@ -1,21 +1,21 @@
 .navigations-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dui-spacing-2);
+
+  &__list {
     display: flex;
     flex-direction: column;
     gap: var(--dui-spacing-2);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
 
-    &__list {
-        display: flex;
-        flex-direction: column;
-        gap: var(--dui-spacing-2);
-        padding: 0;
-        margin: 0;
-        list-style: none;
-    }
-
-    &__label {
-        display: flex;
-        gap: var(--dui-spacing-1);
-        align-items: center;
-        cursor: pointer;
-    }
+  &__label {
+    display: flex;
+    gap: var(--dui-spacing-1);
+    align-items: center;
+    cursor: pointer;
+  }
 }

@@ -1,21 +1,21 @@
 <script setup lang="ts">
-  import { computed } from "vue";
-  import type { UserRoleId } from "../types";
-  import UserRole from "./UserRole.vue";
-  import { BadgeComponent } from "@starter-core/dash-ui/src";
+  import { computed } from 'vue';
+  import type { UserRoleId } from '../types';
+  import UserRole from './UserRole.vue';
+  import { BadgeComponent } from '@starter-core/dash-ui/src';
 
   const { userRoleId } = defineProps<{ userRoleId: UserRoleId }>();
 
   const badgeTheme = computed(() => {
     switch (userRoleId) {
       case 1:
-        return "danger";
+        return 'danger';
       case 2:
-        return "success";
+        return 'success';
       case 3:
-        return "primary";
+        return 'primary';
       default:
-        return "";
+        return '';
     }
   });
 </script>

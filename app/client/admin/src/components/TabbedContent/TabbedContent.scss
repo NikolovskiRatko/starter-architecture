@@ -1,35 +1,35 @@
 .tabbed-content {
-    &__tabs {
-        display: flex;
-        gap: var(--dui-spacing-4);
-        padding: 0;
-        margin: 0;
-        list-style: none;
+  &__tabs {
+    display: flex;
+    gap: var(--dui-spacing-4);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__tab {
+    $block: &;
+
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-weight: 500;
+    color: var(--dui-color-base-label-2);
+    border-bottom: 2px solid transparent;
+
+    &--active {
+      color: var(--dui-color-base-label-3);
+      border-bottom: 2px solid var(--dui-color-base-shape-3);
+
+      &:hover {
+        color: var(--dui-color-base-label-3);
+        cursor: default;
+      }
     }
 
-    &__tab {
-        $block: &;
-
-        display: flex;
-        align-items: center;
-        height: 100%;
-        font-weight: 500;
-        color: var(--dui-color-base-label-2);
-        border-bottom: 2px solid transparent;
-
-        &--active {
-            color: var(--dui-color-base-label-3);
-            border-bottom: 2px solid var(--dui-color-base-shape-3);
-
-            &:hover {
-                color: var(--dui-color-base-label-3);
-                cursor: default;
-            }
-        }
-
-        &:not(#{$block}--active):hover {
-            color: var(--dui-color-text-link);
-            border-color: var(--dui-color-text-link);
-        }
+    &:not(#{$block}--active):hover {
+      color: var(--dui-color-text-link);
+      border-color: var(--dui-color-text-link);
     }
+  }
 }

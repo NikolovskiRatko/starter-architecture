@@ -1,17 +1,17 @@
 .menu-page {
-    &__content {
-        display: flex;
-        gap: var(--dui-spacing-4);
-    }
+  &__content {
+    display: flex;
+    gap: var(--dui-spacing-4);
+  }
 
-    &__navigations {
-        flex: 0 0 20%;
-    }
+  &__navigations {
+    flex: 0 0 20%;
+  }
 
-    &__items {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        gap: var(--dui-spacing-2);
-    }
+  &__items {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--dui-spacing-2);
+  }
 }

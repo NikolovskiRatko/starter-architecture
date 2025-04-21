@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-  import { useBEMBuilder } from "@/helpers";
-  import "./SubheaderTitle.scss";
+  import { useBEMBuilder } from '@/helpers';
+  import './SubheaderTitle.scss';
 
   interface SubheaderTitleProps {
     title: string;
     description?: string;
   }
 
-  const [block, element] = useBEMBuilder("subheader-title");
+  const [block, element] = useBEMBuilder('subheader-title');
 
   const { title, description } = defineProps<SubheaderTitleProps>();
 </script>

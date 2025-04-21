@@ -1,12 +1,12 @@
-import { useQuery, useMutation, useQueryClient } from "@tanstack/vue-query";
-import axios from "axios";
-import { computed } from "vue";
-import { useToast } from "vue-toastification";
-import { USER_API_ENDPOINTS } from "../constants";
-import type { UserFormItem, GetUserResponse } from "../types";
-import { useUploadAvatar } from "./useUploadAvatar";
+import { useQuery, useMutation, useQueryClient } from '@tanstack/vue-query';
+import axios from 'axios';
+import { computed } from 'vue';
+import { useToast } from 'vue-toastification';
+import { USER_API_ENDPOINTS } from '../constants';
+import type { UserFormItem, GetUserResponse } from '../types';
+import { useUploadAvatar } from './useUploadAvatar';
 
-const USER_CACHE_KEY = "user";
+const USER_CACHE_KEY = 'user';
 
 export const useUsersForm = (userId?: number) => {
   const queryClient = useQueryClient();
@@ -15,7 +15,7 @@ export const useUsersForm = (userId?: number) => {
     userId,
     onSuccess: async () => {
       queryClient.invalidateQueries({ queryKey: [USER_CACHE_KEY, userId] });
-      toast.success("Image has been updated!");
+      toast.success('Image has been updated!');
     },
   });
 
@@ -34,7 +34,7 @@ export const useUsersForm = (userId?: number) => {
       return data.data;
     },
     onSuccess: async () => {
-      toast.success("User saved!");
+      toast.success('User saved!');
     },
     onError: (error) => {
       toast.error(error.message);
@@ -43,15 +43,12 @@ export const useUsersForm = (userId?: number) => {
 
   const { mutate: updateUser, isPending: isUpdating } = useMutation({
     mutationFn: async (data: UserFormItem): Promise<GetUserResponse> => {
-      const response = await axios.patch(
-        USER_API_ENDPOINTS.patch(userId ?? 0),
-        data,
-      );
+      const response = await axios.patch(USER_API_ENDPOINTS.patch(userId ?? 0), data);
       return response.data;
     },
     onSuccess: async () => {
       queryClient.invalidateQueries({ queryKey: [USER_CACHE_KEY, userId] });
-      toast.success("User updated!");
+      toast.success('User updated!');
     },
     onError: (error) => {
       toast.error(error.message);

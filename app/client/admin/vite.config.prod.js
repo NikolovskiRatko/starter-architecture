@@ -1,17 +1,17 @@
-import path from "node:path";
-import vue from "@vitejs/plugin-vue";
-import laravel from "laravel-vite-plugin";
-import { defineConfig } from "vite";
+import path from 'node:path';
+import vue from '@vitejs/plugin-vue';
+import laravel from 'laravel-vite-plugin';
+import { defineConfig } from 'vite';
 // eslint-disable-next-line import/default
-import eslintPlugin from "vite-plugin-eslint";
-import { viteStaticCopy } from "vite-plugin-static-copy";
+import eslintPlugin from 'vite-plugin-eslint';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
   plugins: [
     laravel({
-      input: ["src/app.ts"],
+      input: ['src/app.ts'],
       refresh: true,
-      publicDirectory: "../../api/public",
+      publicDirectory: '../../api/public',
     }),
     vue({
       template: {
@@ -34,22 +34,22 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: path.resolve(__dirname, "./assets/images"),
-          dest: "./",
+          src: path.resolve(__dirname, './assets/images'),
+          dest: './',
         },
       ],
     }),
     eslintPlugin(),
   ],
   build: {
-    outDir: path.resolve(__dirname, "./../../api/public/build"),
+    outDir: path.resolve(__dirname, './../../api/public/build'),
     emptyOutDir: true,
-    minify: "terser",
+    minify: 'terser',
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
-      "@styles": path.resolve(__dirname, "./assets/sass"),
+      '@': path.resolve(__dirname, './src'),
+      '@styles': path.resolve(__dirname, './assets/sass'),
     },
   },
   css: {

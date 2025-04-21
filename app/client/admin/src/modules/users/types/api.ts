@@ -1,5 +1,5 @@
-import type { Permission, UserRoleId } from "./permissions";
-import type { PaginationObject } from "@starter-core/dash-ui/src/components";
+import type { Permission, UserRoleId } from './permissions';
+import type { PaginationObject } from '@starter-core/dash-ui/src/components';
 
 export interface GetUserResponse {
   avatar_url: string | null;
@@ -19,4 +19,4 @@ export interface UsersTableResponse {
   pagination: PaginationObject;
 }
 
-export type AuthUser = Omit<GetUserResponse, "updated_at">;
+export type AuthUser = Omit<GetUserResponse, 'updated_at'>;

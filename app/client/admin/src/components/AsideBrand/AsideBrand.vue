@@ -1,46 +1,29 @@
 <script setup lang="ts">
-  import {
-    IconAngledoubleleft,
-    IconAngledoubleright,
-  } from "@starter-core/icons";
-  import { storeToRefs } from "pinia";
-  import { computed } from "vue";
-  import { useRootStore } from "@/store/root";
-  import "./AsideBrand.scss";
+  import { IconAngledoubleleft, IconAngledoubleright } from '@starter-core/icons';
+  import { storeToRefs } from 'pinia';
+  import { computed } from 'vue';
+  import { useRootStore } from '@/store/root';
+  import './AsideBrand.scss';
 
   const rootStore = useRootStore();
   const { sidebarState, isSidebarMinimized } = storeToRefs(rootStore);
 
-  const isLogoVisible = computed(
-    () =>
-      !isSidebarMinimized.value ||
-      (isSidebarMinimized.value && sidebarState.value.minimizeHover),
-  );
+  const isLogoVisible = computed(() => !isSidebarMinimized.value || (isSidebarMinimized.value && sidebarState.value.minimizeHover));
 </script>
 
 <template>
   <div class="kt-aside__brand">
     <div class="kt-aside__brand-logo">
       <router-link to="/admin/dashboard">
-        <img
-          v-if="isLogoVisible"
-          alt="Logo"
-          src="@/../assets/images/sm_logo_white.png"
-        />
+        <img v-if="isLogoVisible" alt="Logo" src="@/../assets/images/sm_logo_white.png" />
       </router-link>
     </div>
     <div class="kt-aside__brand-tools">
-      <button
-        class="kt-aside__brand-aside-toggler"
-        @click="$emit('toggleSidebar')"
-      >
+      <button class="kt-aside__brand-aside-toggler" @click="$emit('toggleSidebar')">
         <IconAngledoubleright v-if="isSidebarMinimized" size="26" />
         <IconAngledoubleleft v-else size="26" />
       </button>
-      <button
-        class="kt-aside__brand-aside-toggler kt-aside__brand-aside-toggler--left"
-        @click="$emit('toggleSidebar')"
-      >
+      <button class="kt-aside__brand-aside-toggler kt-aside__brand-aside-toggler--left" @click="$emit('toggleSidebar')">
         <span />
       </button>
     </div>

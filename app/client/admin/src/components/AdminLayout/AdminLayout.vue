@@ -1,11 +1,11 @@
 <script setup lang="ts">
-  import { storeToRefs } from "pinia";
-  import { provide, ref } from "vue";
-  import { AdminHeader, AdminSidebar } from "@/components";
-  import { useBEMBuilder } from "@/helpers";
-  import { useRootStore } from "@/store/root";
-  import { layoutConfigKey } from "@/types";
-  import "./AdminLayout.scss";
+  import { storeToRefs } from 'pinia';
+  import { provide, ref } from 'vue';
+  import { AdminHeader, AdminSidebar } from '@/components';
+  import { useBEMBuilder } from '@/helpers';
+  import { useRootStore } from '@/store/root';
+  import { layoutConfigKey } from '@/types';
+  import './AdminLayout.scss';
 
   const layoutConfig = {
     hasSubHeader: false,
@@ -16,10 +16,10 @@
   const { isSidebarMinimized } = storeToRefs(rootStore);
 
   const [block, element] = useBEMBuilder(
-    "admin-layout",
+    'admin-layout',
     ref({
-      "aside-minimized": isSidebarMinimized,
-    }),
+      'aside-minimized': isSidebarMinimized,
+    })
   );
 
   provide(layoutConfigKey, layoutConfig);
@@ -36,10 +36,9 @@
           'main',
           ref({
             'has-subheader': layoutConfig.hasSubHeader,
-            'fixed-subheader':
-              layoutConfig.hasSubHeader && layoutConfig.hasSubHeaderFixed,
+            'fixed-subheader': layoutConfig.hasSubHeader && layoutConfig.hasSubHeaderFixed,
             'aside-minimized': isSidebarMinimized,
-          }),
+          })
         ).value
       "
     >

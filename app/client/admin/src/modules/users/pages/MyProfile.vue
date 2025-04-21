@@ -1,11 +1,7 @@
 <script setup lang="ts">
-  import { useI18n } from "vue-i18n";
-  import {
-    PageWrapper,
-    PAGE_WRAPPER_SLOTS,
-    SubheaderTitle,
-  } from "../../../components";
-  import { UserProfileWidget } from "../components";
+  import { useI18n } from 'vue-i18n';
+  import { PageWrapper, PAGE_WRAPPER_SLOTS, SubheaderTitle } from '../../../components';
+  import { UserProfileWidget } from '../components';
 
   const { t } = useI18n();
 </script>

@@ -1,21 +1,21 @@
 .menu-items {
-    max-width: 20rem;
+  max-width: 20rem;
 
-    &__list {
-        display: flex;
-        flex-direction: column;
-        gap: var(--dui-spacing-1);
-        padding: 0;
-        margin: 0;
-        list-style: none;
-    }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--dui-spacing-1);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
 
-    &__test-item {
-        padding: 1rem;
-        font-size: 1rem;
-        font-weight: 500;
-        color: white;
-        background-color: var(--dui-color-info);
-        border: 1px solid white;
-    }
+  &__test-item {
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background-color: var(--dui-color-info);
+    border: 1px solid white;
+  }
 }

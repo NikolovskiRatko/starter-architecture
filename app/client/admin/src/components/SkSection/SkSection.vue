@@ -1,16 +1,16 @@
 <script setup lang="ts">
-  import { ref } from "vue";
-  import { useBEMBuilder } from "@/helpers";
-  import "./SkSection.scss";
+  import { ref } from 'vue';
+  import { useBEMBuilder } from '@/helpers';
+  import './SkSection.scss';
 
   interface SkSectionProps {
     title?: string;
-    size?: "small" | "medium" | "large";
+    size?: 'small' | 'medium' | 'large';
   }
 
   const { title } = defineProps<SkSectionProps>();
 
-  const [block, element] = useBEMBuilder("kt-section");
+  const [block, element] = useBEMBuilder('kt-section');
 </script>
 <template>
   <div :class="block">
@@ -22,7 +22,7 @@
             'title',
             ref({
               [`${size}`]: !!size,
-            }),
+            })
           ).value
         "
       >

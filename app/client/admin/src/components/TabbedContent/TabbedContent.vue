@@ -1,18 +1,14 @@
 <script lang="ts" setup>
-  import { provide, reactive, ref, type Ref, onMounted } from "vue";
-  import { AddTabKey, ActiveTabIdKey } from "./constants";
-  import type { TabbedContentProps, TabbedContentTab } from "./types";
-  import {
-    PortletComponent,
-    PortletBody,
-    PortletHead,
-  } from "@starter-core/dash-ui/src";
+  import { provide, reactive, ref, type Ref, onMounted } from 'vue';
+  import { AddTabKey, ActiveTabIdKey } from './constants';
+  import type { TabbedContentProps, TabbedContentTab } from './types';
+  import { PortletComponent, PortletBody, PortletHead } from '@starter-core/dash-ui/src';
 
-  import "./TabbedContent.scss";
+  import './TabbedContent.scss';
 
   const { isLoading = false } = defineProps<TabbedContentProps>();
   const tabs: TabbedContentTab[] = reactive([]);
-  const activeTab: Ref<string> = ref("");
+  const activeTab: Ref<string> = ref('');
 
   const onTabClik = (tabId: string) => {
     activeTab.value = tabId;

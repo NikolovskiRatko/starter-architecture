@@ -1,1 +1,1 @@
-export * from "./useInitialData";
+export * from './useInitialData';

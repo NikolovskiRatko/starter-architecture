@@ -1,27 +1,25 @@
 <script setup lang="ts">
-  import { ref, useSlots, computed } from "vue";
-  import { PAGE_WRAPPER_SLOTS } from "./constants";
-  import type { PageWrapperSlot } from "./types";
-  import { useBEMBuilder } from "@/helpers";
-  import "./PageWrapper.scss";
+  import { ref, useSlots, computed } from 'vue';
+  import { PAGE_WRAPPER_SLOTS } from './constants';
+  import type { PageWrapperSlot } from './types';
+  import { useBEMBuilder } from '@/helpers';
+  import './PageWrapper.scss';
 
   const { size, justifyContent } = defineProps<{
-    size?: "small" | "medium" | "large";
-    justifyContent?: "left" | "center" | "right";
+    size?: 'small' | 'medium' | 'large';
+    justifyContent?: 'left' | 'center' | 'right';
   }>();
 
   const slots = useSlots();
   const hasSubheaderSlot = computed(() => {
-    return Object.keys(slots).some((slot) =>
-      Object.values(PAGE_WRAPPER_SLOTS).includes(slot as PageWrapperSlot),
-    );
+    return Object.keys(slots).some((slot) => Object.values(PAGE_WRAPPER_SLOTS).includes(slot as PageWrapperSlot));
   });
 
   const [block, element] = useBEMBuilder(
-    "page-wrapper",
+    'page-wrapper',
     ref({
-      "sidebar-minimized": true,
-    }),
+      'sidebar-minimized': true,
+    })
   );
 </script>
 <template>
@@ -40,7 +38,7 @@
           'content',
           ref({
             [`justify-content-${justifyContent}`]: !!justifyContent,
-          }),
+          })
         ).value
       "
     >
@@ -50,7 +48,7 @@
             'content-inner',
             ref({
               [`${size}`]: !!size,
-            }),
+            })
           ).value
         "
       >

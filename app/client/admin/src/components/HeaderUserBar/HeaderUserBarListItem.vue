@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-  import { computed, type VueElement } from "vue";
-  import type { RouterLinkProps } from "vue-router";
+  import { computed, type VueElement } from 'vue';
+  import type { RouterLinkProps } from 'vue-router';
 
   interface HeaderUserBarListItemProps {
     icon?: VueElement;
@@ -12,15 +12,11 @@
   const { title, subtitle } = defineProps<HeaderUserBarListItemProps>();
 
   const isExternalLink = computed(() => {
-    return typeof to === "string" && to.startsWith("http");
+    return typeof to === 'string' && to.startsWith('http');
   });
 </script>
 <template>
-  <component
-    :is="isExternalLink ? 'a' : 'router-link'"
-    v-bind="isExternalLink ? { href: to } : { to }"
-    class="kt-notification__item"
-  >
+  <component :is="isExternalLink ? 'a' : 'router-link'" v-bind="isExternalLink ? { href: to } : { to }" class="kt-notification__item">
     <div class="kt-notification__item-icon">
       <component :is="icon"></component>
     </div>

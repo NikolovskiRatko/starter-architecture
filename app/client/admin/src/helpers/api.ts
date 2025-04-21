@@ -1,16 +1,13 @@
-import { isAxiosError, type AxiosError } from "axios";
-import { isLaravelValidationErrorResponse } from "@/helpers";
+import { isAxiosError, type AxiosError } from 'axios';
+import { isLaravelValidationErrorResponse } from '@/helpers';
 
-export const getAPIErrorMessage = (
-  error: AxiosError | object,
-  translator?: (key: string) => string,
-): string | Record<string, string> => {
+export const getAPIErrorMessage = (error: AxiosError | object, translator?: (key: string) => string): string | Record<string, string> => {
   const translate = translator ?? ((msg: string) => msg);
 
   if (isAxiosError(error)) {
     const axiosErrorJson = error.toJSON();
 
-    if ("message" in axiosErrorJson) {
+    if ('message' in axiosErrorJson) {
       return translate(String(axiosErrorJson.message));
     }
   }
@@ -21,11 +18,11 @@ export const getAPIErrorMessage = (
         acc[errorKey] = translate(error.errors[errorKey][0]);
         return acc;
       },
-      {} as Record<string, string>,
+      {} as Record<string, string>
     );
   }
 
-  if ("message" in error) {
+  if ('message' in error) {
     return translate(String(error.message));
   }
 

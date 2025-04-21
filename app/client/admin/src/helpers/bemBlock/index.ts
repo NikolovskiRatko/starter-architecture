@@ -1,1 +1,1 @@
-export { useBEMBuilder } from "./bemBlock";
+export { useBEMBuilder } from './bemBlock';

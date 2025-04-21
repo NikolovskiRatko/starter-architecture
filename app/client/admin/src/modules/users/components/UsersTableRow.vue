@@ -1,17 +1,12 @@
 <script setup lang="ts">
-  import { IconTrash, IconEdit } from "@starter-core/icons";
-  import { computed } from "vue";
-  import type { GetUserResponse } from "../types";
-  import UserRoleBadge from "./UserRoleBadge.vue";
-  import UserStatusBadge from "./UserStatusBadge.vue";
-  import { useUserCheck } from "@/modules/users/composables";
-  import { USER_PERMISSIONS } from "@/modules/users/constants";
-  import {
-    DashButton,
-    DashLink,
-    TableColumn,
-    TableRow,
-  } from "@starter-core/dash-ui/src";
+  import { IconTrash, IconEdit } from '@starter-core/icons';
+  import { computed } from 'vue';
+  import type { GetUserResponse } from '../types';
+  import UserRoleBadge from './UserRoleBadge.vue';
+  import UserStatusBadge from './UserStatusBadge.vue';
+  import { useUserCheck } from '@/modules/users/composables';
+  import { USER_PERMISSIONS } from '@/modules/users/constants';
+  import { DashButton, DashLink, TableColumn, TableRow } from '@starter-core/dash-ui/src';
 
   interface UsersTableRowProps {
     user: GetUserResponse;
@@ -25,10 +20,7 @@
     if (user.avatar_thumbnail) {
       return user.avatar_thumbnail;
     }
-    return new URL(
-      `@/../assets/images/placeholders/avatar-placeholder.jpg`,
-      import.meta.url,
-    ).href;
+    return new URL(`@/../assets/images/placeholders/avatar-placeholder.jpg`, import.meta.url).href;
   });
 </script>
 
@@ -68,7 +60,7 @@
         theme-mod="outline-hover"
         :icon="IconEdit"
       >
-        {{ $t("buttons.edit") }}
+        {{ $t('buttons.edit') }}
       </dash-link>
     </TableColumn>
 

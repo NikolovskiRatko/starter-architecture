@@ -1,4 +1,4 @@
-import type { ApiResponsePagination } from "@/types";
+import type { ApiResponsePagination } from '@/types';
 
 export const API_RESPONSE_DEFAULT_PAGINATION: ApiResponsePagination = {
   total: 0,
@@ -7,8 +7,8 @@ export const API_RESPONSE_DEFAULT_PAGINATION: ApiResponsePagination = {
   lastPage: 0,
   limit: 0,
   options: {
-    path: "",
-    pageName: "",
+    path: '',
+    pageName: '',
   },
   dataLength: 0,
 };

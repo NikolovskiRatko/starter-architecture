@@ -1,19 +1,15 @@
 <script lang="ts" setup>
-  import { ref } from "vue";
-  import {
-    PageWrapper,
-    PAGE_WRAPPER_SLOTS,
-    SubheaderTitle,
-  } from "../../../components";
-  import { AddMenuForm } from "../components";
-  import { useBEMBuilder } from "@/helpers";
-  import { useNavigationMenus } from "@/modules/navigation/composables";
-  import { NAVIGATION_ROUTES_DATA } from "@/modules/navigation/constants";
-  import { PortletComponent, PortletBody } from "@starter-core/dash-ui/src";
+  import { ref } from 'vue';
+  import { PageWrapper, PAGE_WRAPPER_SLOTS, SubheaderTitle } from '../../../components';
+  import { AddMenuForm } from '../components';
+  import { useBEMBuilder } from '@/helpers';
+  import { useNavigationMenus } from '@/modules/navigation/composables';
+  import { NAVIGATION_ROUTES_DATA } from '@/modules/navigation/constants';
+  import { PortletComponent, PortletBody } from '@starter-core/dash-ui/src';
 
-  import "./MenusPage.scss";
+  import './MenusPage.scss';
 
-  const [block, element] = useBEMBuilder("menus-page");
+  const [block, element] = useBEMBuilder('menus-page');
   const { isLoading, data: menus } = useNavigationMenus();
 </script>
 <template>
@@ -26,11 +22,7 @@
         <div :class="element('content').value">
           <AddMenuForm />
           <ul v-if="!isLoading" :class="element('list').value">
-            <li
-              :class="element('list-item').value"
-              v-for="menu in menus"
-              v-bind:key="menu.id"
-            >
+            <li :class="element('list-item').value" v-for="menu in menus" v-bind:key="menu.id">
               <router-link
                 :to="{
                   name: NAVIGATION_ROUTES_DATA.menu.name,
@@ -45,7 +37,7 @@
                       'list-item-element',
                       ref({
                         name: true,
-                      }),
+                      })
                     ).value
                   "
                   >{{ menu.name }}</span
@@ -56,7 +48,7 @@
                       'list-item-element',
                       ref({
                         description: true,
-                      }),
+                      })
                     ).value
                   "
                   >{{ menu.description }}</span

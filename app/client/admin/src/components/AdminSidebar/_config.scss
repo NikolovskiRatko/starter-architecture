@@ -46,8 +46,7 @@ $aside-config: (
 
   menu: (
     // base parameters required to build the base menu
-    base:
-      (
+    base: (
         class: aside__menu,
         // menu element class name
         parent-class: aside,
@@ -57,50 +56,40 @@ $aside-config: (
       ),
 
     // customize the menu
-    build:
-      (
+    build: (
         // layout
-        layout:
-          (
+        layout: (
             // default mode
-            default:
-              (
+            default: (
                 // menu panel itself
-                self:
-                  (
+                self: (
                     padding: 15px 0,
                   ),
 
                 // root item
-                item:
-                  (
+                item: (
                     // item itself
-                    self:
-                      (
+                    self: (
                         margin: 0,
                       ),
 
                     // item link
-                    link:
-                      (
+                    link: (
                         // link itself
-                        self:
-                          (
+                        self: (
                             height: 44px,
                             padding: 9px 25px,
                           ),
 
                         // link icon
-                        icon:
-                          (
+                        icon: (
                             width: 35px,
                             svg-width: 23px,
                             font-size: 1.3rem,
                           ),
 
                         // link bullet
-                        bullet:
-                          (
+                        bullet: (
                             self: (
                               width: 15px,
                             ),
@@ -116,69 +105,58 @@ $aside-config: (
                           ),
 
                         // link text
-                        text:
-                          (
+                        text: (
                             font-size: 1rem,
                             font-weight: 400,
                             font-transform: initial,
                           ),
 
                         // link arrow
-                        arrow:
-                          (
+                        arrow: (
                             width: 20px,
                             transition: all 0.3s ease,
                             font-size: 0.7rem,
                           ),
 
                         // link badge
-                        badge:
-                          (
+                        badge: (
                             padding: 0px 0px 0px 5px,
                           )
                       ),
 
                     // item submenu
-                    submenu:
-                      (
+                    submenu: (
                         // submenu self
-                        self:
-                          (
+                        self: (
                             indent: 15px,
                             margin: 0,
                           ),
 
                         // submenu item
-                        item:
-                          (
+                        item: (
                             // item itself
-                            self:
-                              (
+                            self: (
                                 margin: 0,
                               ),
 
                             // item link
-                            link:
-                              (
+                            link: (
                                 // link itself
-                                self:
-                                  (
+                                self: (
                                     height: 40px,
                                     padding: 0 25px,
                                     padding-x: 25px,
                                   ),
 
                                 // link icon
-                                icon:
-                                  (
+                                icon: (
                                     width: 35px,
                                     svg-width: 24px,
                                     font-size: 1.3rem,
                                   ),
 
                                 // link bullet
-                                bullet:
-                                  (
+                                bullet: (
                                     self: (
                                       width: 15px,
                                     ),
@@ -192,32 +170,28 @@ $aside-config: (
                                   ),
 
                                 // link text
-                                text:
-                                  (
+                                text: (
                                     font-size: 1rem,
                                     font-weight: 400,
                                     font-transform: initial,
                                   ),
 
                                 // link arrow
-                                arrow:
-                                  (
+                                arrow: (
                                     width: 20px,
                                     transition: all 0.3s ease,
                                     font-size: 0.7rem,
                                   ),
 
                                 // link badge
-                                badge:
-                                  (
+                                badge: (
                                     padding: 0px 0px 0px 5px,
                                   )
                               )
                           ),
 
                         // submenu section
-                        section:
-                          (
+                        section: (
                             self: (
                               indent: 15px,
                               padding: 0 25px,
@@ -238,16 +212,14 @@ $aside-config: (
                           ),
 
                         // submenu separator
-                        separator:
-                          (
+                        separator: (
                             margin: 15px 0,
                           )
                       )
                   ),
 
                 // root section
-                section:
-                  (
+                section: (
                     self: (
                       padding: 0 25px,
                       margin: 20px 0 0 0,
@@ -267,35 +239,28 @@ $aside-config: (
                   ),
 
                 // root separator
-                separator:
-                  (
+                separator: (
                     margin: 15px 0,
                   )
               ),
 
             // minimize mode
-            minimize:
-              (
+            minimize: (
                 // menu panel itself
-                self:
-                  (
+                self: (
                     padding: 15px 0,
                   ),
 
                 // root item
-                item:
-                  (
+                item: (
                     // self
-                    self:
-                      (
+                    self: (
                         zindex: var(--dui-layers-fixed-header) - 1,
-                        width: var(--dui-aside-menu-dropdown-submenu-width) +
-                          var(--dui-aside-minimize-width) + 1,
+                        width: var(--dui-aside-menu-dropdown-submenu-width) + var(--dui-aside-minimize-width) + 1,
                       ),
 
                     // item link
-                    link:
-                      (
+                    link: (
                         badge: (
                           right: 7px,
                           size: 6px,
@@ -303,44 +268,36 @@ $aside-config: (
                       ),
 
                     // item submenu
-                    submenu:
-                      (
+                    submenu: (
                         // self
-                        self:
-                          (
+                        self: (
                             width: var(--dui-aside-menu-dropdown-submenu-width),
                             margin-left: var(aside-minimize-width) + 1,
                           ),
 
                         // parent item
-                        parent-item:
-                          (
+                        parent-item: (
                             // item itself
-                            self:
-                              (
+                            self: (
                                 margin: 0,
                               ),
 
                             // item link
-                            link:
-                              (
+                            link: (
                                 // link itself
-                                self:
-                                  (
+                                self: (
                                     height: 40px,
                                     margin-bottom: 0px,
                                     padding: 0 30px 10px 30px,
                                   ),
                                 // link text
-                                text:
-                                  (
+                                text: (
                                     font-size: 1.05rem,
                                     font-weight: 400,
                                     font-transform: initial,
                                   ),
                                 // link badge
-                                badge:
-                                  (
+                                badge: (
                                     padding: 0px 0px 0px 5px,
                                   )
                               )
@@ -349,8 +306,7 @@ $aside-config: (
                   ),
 
                 // root section
-                section:
-                  (
+                section: (
                     icon: (
                       font-size: 1.1rem,
                       padding: 0,
@@ -359,24 +315,19 @@ $aside-config: (
               ),
 
             // dropdown mode
-            dropdown:
-              (
+            dropdown: (
                 // dropdown menu item
-                item:
-                  (
+                item: (
                     // item itself
-                    self:
-                      (
+                    self: (
                         margin: 0,
                         zindex: var(--dui-layers-fixed-header) + 1,
                       ),
 
                     // submenu
-                    submenu:
-                      (
+                    submenu: (
                         // submenu itself
-                        self:
-                          (
+                        self: (
                             // submenu base styles
                             padding: 20px 0,
                             width: var(--dui-aside-menu-dropdown-submenu-width),
@@ -384,14 +335,12 @@ $aside-config: (
                             border-radius: 4px,
 
                             // submenu animation
-                            animation:
-                              (
+                            animation: (
                                 offset: 10px,
                               ),
 
                             // vertical offset
-                            offset:
-                              (
+                            offset: (
                                 root: (
                                   default: -5px,
                                   up: -10px,
@@ -404,32 +353,26 @@ $aside-config: (
                           ),
 
                         // submenu item
-                        item:
-                          (
+                        item: (
                             // item itself
-                            self:
-                              (
+                            self: (
                                 margin: 0,
                               ),
 
                             // item link
-                            link:
-                              (
+                            link: (
                                 // link itself
-                                self:
-                                  (
+                                self: (
                                     height: 40px,
                                     padding: 7px 30px,
                                   ),
                                 // link icon
-                                icon:
-                                  (
+                                icon: (
                                     width: 35px,
                                     font-size: 1.35rem,
                                   ),
                                 // link bullet
-                                bullet:
-                                  (
+                                bullet: (
                                     self: (
                                       width: 15px,
                                     ),
@@ -442,24 +385,21 @@ $aside-config: (
                                     ),
                                   ),
                                 // link text
-                                text:
-                                  (
+                                text: (
                                     font-size: 1rem,
                                     font-weight: 400,
                                     font-transform: initial,
                                   ),
 
                                 // link arrow
-                                arrow:
-                                  (
+                                arrow: (
                                     width: 20px,
                                     transition: all 0.3s ease,
                                     font-size: 0.7rem,
                                   ),
 
                                 // link badge
-                                badge:
-                                  (
+                                badge: (
                                     padding: 0px 0px 0px 5px,
                                     align: right,
                                   )
@@ -467,8 +407,7 @@ $aside-config: (
                           ),
 
                         // submenu section
-                        section:
-                          (
+                        section: (
                             self: (
                               margin: 20px 0 0 0,
                               padding: 0 25px,
@@ -487,8 +426,7 @@ $aside-config: (
                           ),
 
                         // submenu separator
-                        separator:
-                          (
+                        separator: (
                             margin: 15px 0,
                           )
                       )
@@ -497,24 +435,19 @@ $aside-config: (
           ),
 
         // skins
-        skins:
-          (
+        skins: (
             dark: (
               // default mode
-              default:
-                (
+              default: (
                   // menu panel itself
-                  self:
-                    (
+                  self: (
                       bg-color: var(--dui-color-dark),
                     ),
 
                   // root item
-                  item:
-                    (
+                  item: (
                       // item itself
-                      self:
-                        (
+                      self: (
                           bg-color: (
                             default: null,
                             open: null,
@@ -525,11 +458,9 @@ $aside-config: (
                         ),
 
                       // item link
-                      link:
-                        (
+                      link: (
                           // link itself
-                          self:
-                            (
+                          self: (
                               bg-color: (
                                 default: transparent,
                                 open: #1b1b28,
@@ -539,8 +470,7 @@ $aside-config: (
                               ),
                             ),
                           // link icon
-                          icon:
-                            (
+                          icon: (
                               font-color: (
                                 default: #494b74,
                                 open: kt-brand-color(),
@@ -550,8 +480,7 @@ $aside-config: (
                               ),
                             ),
                           // link bullet
-                          bullet:
-                            (
+                          bullet: (
                               dot: (
                                 bg-color: (
                                   default: #5c5e81,
@@ -572,8 +501,7 @@ $aside-config: (
                               ),
                             ),
                           // link text
-                          text:
-                            (
+                          text: (
                               font-color: (
                                 default: #a2a3b7,
                                 open: #ffffff,
@@ -583,8 +511,7 @@ $aside-config: (
                               ),
                             ),
                           // link arrow
-                          arrow:
-                            (
+                          arrow: (
                               font-color: (
                                 default: #5c5e81,
                                 open: #ffffff,
@@ -596,11 +523,9 @@ $aside-config: (
                         ),
 
                       // item submenu
-                      submenu:
-                        (
+                      submenu: (
                           // submenu self
-                          self:
-                            (
+                          self: (
                               bg-color: (
                                 default: null,
                                 open: null,
@@ -609,11 +534,9 @@ $aside-config: (
                               ),
                             ),
                           // submenu item
-                          item:
-                            (
+                          item: (
                               // item itself
-                              self:
-                                (
+                              self: (
                                   bg-color: (
                                     default: null,
                                     open: null,
@@ -623,11 +546,9 @@ $aside-config: (
                                   ),
                                 ),
                               // item link
-                              link:
-                                (
+                              link: (
                                   // link itself
-                                  self:
-                                    (
+                                  self: (
                                       bg-color: (
                                         default: transparent,
                                         open: #1b1b28,
@@ -638,8 +559,7 @@ $aside-config: (
                                     ),
 
                                   // link icon
-                                  icon:
-                                    (
+                                  icon: (
                                       font-color: (
                                         default: #494b74,
                                         open: kt-brand-color(),
@@ -650,8 +570,7 @@ $aside-config: (
                                     ),
 
                                   // link bullet
-                                  bullet:
-                                    (
+                                  bullet: (
                                       dot: (
                                         bg-color: (
                                           default: #5c5e81,
@@ -672,8 +591,7 @@ $aside-config: (
                                       ),
                                     ),
                                   // link text
-                                  text:
-                                    (
+                                  text: (
                                       font-color: (
                                         default: #9899ac,
                                         open: #ffffff,
@@ -682,8 +600,7 @@ $aside-config: (
                                       ),
                                     ),
                                   // link arrow
-                                  arrow:
-                                    (
+                                  arrow: (
                                       font-color: (
                                         default: #5c5e81,
                                         open: #ffffff,
@@ -695,8 +612,7 @@ $aside-config: (
                                 )
                             ),
                           // submenu section
-                          section:
-                            (
+                          section: (
                               text: (
                                 font-color: #4c4e6f,
                               ),
@@ -706,16 +622,14 @@ $aside-config: (
                             ),
 
                           // submenu separator
-                          separator:
-                            (
+                          separator: (
                               border: 1px solid #4c4e6f,
                             )
                         )
                     ),
 
                   // root section
-                  section:
-                    (
+                  section: (
                       text: (
                         font-color: #4c4e6f,
                       ),
@@ -725,24 +639,19 @@ $aside-config: (
                     ),
 
                   // root separator
-                  separator:
-                    (
+                  separator: (
                       border: 1px solid #4c4e6f,
                     )
                 ),
 
               // minimize mode
-              minimize:
-                (
+              minimize: (
                   // root item
-                  item:
-                    (
+                  item: (
                       // item link
-                      link:
-                        (
+                      link: (
                           // self
-                          self:
-                            (
+                          self: (
                               bg-color: (
                                 default: null,
                                 open: null,
@@ -751,8 +660,7 @@ $aside-config: (
                               ),
                             ),
                           // link icon
-                          icon:
-                            (
+                          icon: (
                               font-color: (
                                 default: #7c87a6,
                                 open: kt-brand-color(),
@@ -765,28 +673,21 @@ $aside-config: (
                 ),
 
               // dropdown mode
-              dropdown:
-                (
+              dropdown: (
                   // dropdown menu item
-                  item:
-                    (
+                  item: (
                       // submenu
-                      submenu:
-                        (
+                      submenu: (
                           // submenu itself
-                          self:
-                            (
+                          self: (
                               // submenu base styles
                               bg-color: #fff,
-                              box-shadow: 0px 0px 50px 0px
-                                rgba(82, 63, 105, 0.15)
+                              box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.15)
                             ),
                           // submenu item
-                          item:
-                            (
+                          item: (
                               // item itself
-                              self:
-                                (
+                              self: (
                                   bg-color: (
                                     default: null,
                                     open: null,
@@ -796,11 +697,9 @@ $aside-config: (
                                   ),
                                 ),
                               // item link
-                              link:
-                                (
+                              link: (
                                   // link itself
-                                  self:
-                                    (
+                                  self: (
                                       bg-color: (
                                         default: null,
                                         open: #f8f8fb,
@@ -811,8 +710,7 @@ $aside-config: (
                                     ),
 
                                   // link icon
-                                  icon:
-                                    (
+                                  icon: (
                                       font-color: (
                                         default: lighten(#8c8ea4, 10%),
                                         open: kt-brand-color(),
@@ -822,8 +720,7 @@ $aside-config: (
                                     ),
 
                                   // link bullet
-                                  bullet:
-                                    (
+                                  bullet: (
                                       dot: (
                                         bg-color: (
                                           default: lighten(#8c8ea4, 10%),
@@ -846,8 +743,7 @@ $aside-config: (
                                     ),
 
                                   // link text
-                                  text:
-                                    (
+                                  text: (
                                       font-color: (
                                         default: darken(#868aa8, 10%),
                                         open: kt-brand-color(),
@@ -857,8 +753,7 @@ $aside-config: (
                                     ),
 
                                   // link arrow
-                                  arrow:
-                                    (
+                                  arrow: (
                                       font-color: (
                                         default: lighten(#8c8ea4, 10%),
                                         open: kt-brand-color(),
@@ -870,8 +765,7 @@ $aside-config: (
                             ),
 
                           // submenu section
-                          section:
-                            (
+                          section: (
                               text: (
                                 font-color: lighten(#868aa8, 10%),
                               ),
@@ -880,8 +774,7 @@ $aside-config: (
                               ),
                             ),
                           // submenu separator
-                          separator:
-                            (
+                          separator: (
                               border: 1px solid rgba(#000000, 0.07),
                             )
                         )
@@ -891,20 +784,16 @@ $aside-config: (
 
             light: (
               // default mode
-              default:
-                (
+              default: (
                   // menu panel itself
-                  self:
-                    (
+                  self: (
                       bg-color: var(--dui-color-light),
                     ),
 
                   // root item
-                  item:
-                    (
+                  item: (
                       // item itself
-                      self:
-                        (
+                      self: (
                           bg-color: (
                             default: null,
                             open: null,
@@ -914,11 +803,9 @@ $aside-config: (
                           ),
                         ),
                       // item link
-                      link:
-                        (
+                      link: (
                           // link itself
-                          self:
-                            (
+                          self: (
                               bg-color: (
                                 default: null,
                                 open: #f6f7fd,
@@ -928,8 +815,7 @@ $aside-config: (
                               ),
                             ),
                           // link icon
-                          icon:
-                            (
+                          icon: (
                               font-color: (
                                 default: #c4cff9,
                                 open: kt-brand-color(),
@@ -939,8 +825,7 @@ $aside-config: (
                               ),
                             ),
                           // link bullet
-                          bullet:
-                            (
+                          bullet: (
                               dot: (
                                 bg-color: (
                                   default: #c4cff9,
@@ -961,8 +846,7 @@ $aside-config: (
                               ),
                             ),
                           // link text
-                          text:
-                            (
+                          text: (
                               font-color: (
                                 default: darken(#3d4465, 6%),
                                 open: kt-brand-color(),
@@ -972,8 +856,7 @@ $aside-config: (
                               ),
                             ),
                           // link arrow
-                          arrow:
-                            (
+                          arrow: (
                               font-color: (
                                 default: #c4cff9,
                                 open: kt-brand-color(),
@@ -985,11 +868,9 @@ $aside-config: (
                         ),
 
                       // item submenu
-                      submenu:
-                        (
+                      submenu: (
                           // submenu self
-                          self:
-                            (
+                          self: (
                               bg-color: (
                                 default: null,
                                 open: null,
@@ -998,11 +879,9 @@ $aside-config: (
                               ),
                             ),
                           // submenu item
-                          item:
-                            (
+                          item: (
                               // item itself
-                              self:
-                                (
+                              self: (
                                   bg-color: (
                                     default: null,
                                     open: null,
@@ -1012,11 +891,9 @@ $aside-config: (
                                   ),
                                 ),
                               // item link
-                              link:
-                                (
+                              link: (
                                   // link itself
-                                  self:
-                                    (
+                                  self: (
                                       bg-color: (
                                         default: null,
                                         open: #f8f8fb,
@@ -1026,8 +903,7 @@ $aside-config: (
                                       ),
                                     ),
                                   // link icon
-                                  icon:
-                                    (
+                                  icon: (
                                       font-color: (
                                         default: #c4cff9,
                                         open: kt-brand-color(),
@@ -1036,8 +912,7 @@ $aside-config: (
                                       ),
                                     ),
                                   // link bullet
-                                  bullet:
-                                    (
+                                  bullet: (
                                       dot: (
                                         bg-color: (
                                           default: #c4cff9,
@@ -1058,8 +933,7 @@ $aside-config: (
                                       ),
                                     ),
                                   // link text
-                                  text:
-                                    (
+                                  text: (
                                       font-color: (
                                         default: #3d4465,
                                         open: kt-brand-color(),
@@ -1069,8 +943,7 @@ $aside-config: (
                                     ),
 
                                   // link arrow
-                                  arrow:
-                                    (
+                                  arrow: (
                                       font-color: (
                                         default: #c4cff9,
                                         open: kt-brand-color(),
@@ -1082,8 +955,7 @@ $aside-config: (
                             ),
 
                           // submenu section
-                          section:
-                            (
+                          section: (
                               text: (
                                 font-color: lighten(#868aa8, 10%),
                               ),
@@ -1093,16 +965,14 @@ $aside-config: (
                             ),
 
                           // submenu separator
-                          separator:
-                            (
+                          separator: (
                               border: 1px solid rgba(#000000, 0.07),
                             )
                         )
                     ),
 
                   // root section
-                  section:
-                    (
+                  section: (
                       text: (
                         font-color: #a1a8c3,
                       ),
@@ -1112,24 +982,19 @@ $aside-config: (
                     ),
 
                   // root separator
-                  separator:
-                    (
+                  separator: (
                       border: 1px solid #a1a8c3,
                     )
                 ),
 
               // minimize mode
-              minimize:
-                (
+              minimize: (
                   // root item
-                  item:
-                    (
+                  item: (
                       // item link
-                      link:
-                        (
+                      link: (
                           // self
-                          self:
-                            (
+                          self: (
                               bg-color: (
                                 default: null,
                                 open: null,
@@ -1138,8 +1003,7 @@ $aside-config: (
                               ),
                             ),
                           // link icon
-                          icon:
-                            (
+                          icon: (
                               font-color: (
                                 default: #c4cff9,
                                 open: kt-brand-color(),
@@ -1152,29 +1016,22 @@ $aside-config: (
                 ),
 
               // dropdown mode
-              dropdown:
-                (
+              dropdown: (
                   // dropdown menu item
-                  item:
-                    (
+                  item: (
                       // submenu
-                      submenu:
-                        (
+                      submenu: (
                           // submenu itself
-                          self:
-                            (
+                          self: (
                               // submenu base styles
                               bg-color: #fff,
-                              box-shadow: 0px 0px 50px 0px
-                                rgba(82, 63, 105, 0.15)
+                              box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.15)
                             ),
 
                           // submenu item
-                          item:
-                            (
+                          item: (
                               // item itself
-                              self:
-                                (
+                              self: (
                                   bg-color: (
                                     default: null,
                                     open: null,
@@ -1184,11 +1041,9 @@ $aside-config: (
                                   ),
                                 ),
                               // item link
-                              link:
-                                (
+                              link: (
                                   // link itself
-                                  self:
-                                    (
+                                  self: (
                                       bg-color: (
                                         default: null,
                                         open: #f8f8fb,
@@ -1198,8 +1053,7 @@ $aside-config: (
                                       ),
                                     ),
                                   // link icon
-                                  icon:
-                                    (
+                                  icon: (
                                       font-color: (
                                         default: lighten(#8c8ea4, 10%),
                                         open: kt-brand-color(),
@@ -1209,8 +1063,7 @@ $aside-config: (
                                     ),
 
                                   // link bullet
-                                  bullet:
-                                    (
+                                  bullet: (
                                       dot: (
                                         bg-color: (
                                           default: lighten(#8c8ea4, 10%),
@@ -1231,8 +1084,7 @@ $aside-config: (
                                       ),
                                     ),
                                   // link text
-                                  text:
-                                    (
+                                  text: (
                                       font-color: (
                                         default: darken(#868aa8, 10%),
                                         open: kt-brand-color(),
@@ -1241,8 +1093,7 @@ $aside-config: (
                                       ),
                                     ),
                                   // link arrow
-                                  arrow:
-                                    (
+                                  arrow: (
                                       font-color: (
                                         default: lighten(#8c8ea4, 10%),
                                         open: kt-brand-color(),
@@ -1253,8 +1104,7 @@ $aside-config: (
                                 )
                             ),
                           // submenu section
-                          section:
-                            (
+                          section: (
                               text: (
                                 font-color: lighten(#868aa8, 10%),
                               ),
@@ -1263,8 +1113,7 @@ $aside-config: (
                               ),
                             ),
                           // submenu separator
-                          separator:
-                            (
+                          separator: (
                               border: 1px solid rgba(#000000, 0.07),
                             )
                         )

@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-  import type { FormDropdownOption } from "@starter-core/dash-ui/dist/components/Form/types";
-  import { computed } from "vue";
-  import { useI18n } from "vue-i18n";
-  import { useNavigations } from "../composables";
-  import { FormDropdown } from "@starter-core/dash-ui/src";
+  import type { FormDropdownOption } from '@starter-core/dash-ui/dist/components/Form/types';
+  import { computed } from 'vue';
+  import { useI18n } from 'vue-i18n';
+  import { useNavigations } from '../composables';
+  import { FormDropdown } from '@starter-core/dash-ui/src';
 
   const { t } = useI18n();
 
@@ -38,8 +38,8 @@
 
     const mappedOptions: FormDropdownOption[] = [
       {
-        id: "0",
-        name: "None",
+        id: '0',
+        name: 'None',
       },
     ];
 
@@ -53,15 +53,8 @@
 
     return mappedOptions;
   });
-  const computedLabel = computed(() => label ?? t("navigation.plural"));
+  const computedLabel = computed(() => label ?? t('navigation.plural'));
 </script>
 <template>
-  <form-dropdown
-    v-if="!isLoading"
-    v-model="model"
-    id="navigation"
-    :options="options"
-    :label="computedLabel"
-    is-inline
-  />
+  <form-dropdown v-if="!isLoading" v-model="model" id="navigation" :options="options" :label="computedLabel" is-inline />
 </template>

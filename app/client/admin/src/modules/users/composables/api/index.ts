@@ -1,1 +1,1 @@
-export * from "./useUserPermissionsRoles";
+export * from './useUserPermissionsRoles';

@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-  import { IconEdit, IconSave, IconClose } from "@starter-core/icons";
-  import { ref } from "vue";
-  import { useBEMBuilder } from "@/helpers";
+  import { IconEdit, IconSave, IconClose } from '@starter-core/icons';
+  import { ref } from 'vue';
+  import { useBEMBuilder } from '@/helpers';
 
-  import "./UserFormAvatar.scss";
+  import './UserFormAvatar.scss';
 
   interface UserFormAvatarProps {
     src: string | null;
@@ -12,16 +12,16 @@
   }
 
   type EmitsType = {
-    (event: "change", file: File): void;
+    (event: 'change', file: File): void;
   };
 
   const { src, isOutline, isCircle } = defineProps<UserFormAvatarProps>();
   const [block, element] = useBEMBuilder(
-    "user-form-avatar",
+    'user-form-avatar',
     ref({
       outline: isOutline,
       circle: isCircle,
-    }),
+    })
   );
   const preview = ref<string | null>(null);
   const file = ref<File | null>(null);
@@ -55,7 +55,7 @@
 
   const saveHandler = () => {
     if (file.value) {
-      emit("change", file.value);
+      emit('change', file.value);
       preview.value = null;
       file.value = null;
     }
@@ -70,16 +70,11 @@
           ref({
             circle: isCircle,
             outline: isOutline,
-          }),
+          })
         ).value
       "
     >
-      <img
-        alt="Avatar"
-        v-if="preview || src"
-        :src="preview ?? src ?? ''"
-        :class="element('image').value"
-      />
+      <img alt="Avatar" v-if="preview || src" :src="preview ?? src ?? ''" :class="element('image').value" />
     </div>
 
     <label
@@ -89,19 +84,14 @@
           'upload',
           ref({
             circle: isCircle,
-          }),
+          })
         ).value
       "
       title=""
       data-original-title="Change avatar"
     >
       <IconEdit />
-      <input
-        id="avatar"
-        :class="element('input').value"
-        type="file"
-        @change="changeHandler"
-      />
+      <input id="avatar" :class="element('input').value" type="file" @change="changeHandler" />
     </label>
 
     <button
@@ -111,7 +101,7 @@
           'upload',
           ref({
             circle: isCircle,
-          }),
+          })
         ).value
       "
       type="button"
@@ -129,7 +119,7 @@
           'cancel',
           ref({
             circle: isCircle,
-          }),
+          })
         ).value
       "
     >

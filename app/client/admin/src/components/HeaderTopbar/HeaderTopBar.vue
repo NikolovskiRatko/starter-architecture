@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import { HeaderUserbar } from "@/components";
-  import "./HeaderTopBar.scss";
+  import { HeaderUserbar } from '@/components';
+  import './HeaderTopBar.scss';
 </script>
 
 <template>

@@ -1,17 +1,17 @@
 <script setup lang="ts">
-  import { storeToRefs } from "pinia";
-  import { ref } from "vue";
-  import { AsideBrand } from "@/components";
-  import { useSideMenu } from "@/composables";
-  import { useRootStore } from "@/store/root";
-  import { NavMenu, MenuItem, MenuSection } from "@starter-core/dash-ui/src";
+  import { storeToRefs } from 'pinia';
+  import { ref } from 'vue';
+  import { AsideBrand } from '@/components';
+  import { useSideMenu } from '@/composables';
+  import { useRootStore } from '@/store/root';
+  import { NavMenu, MenuItem, MenuSection } from '@starter-core/dash-ui/src';
 
-  import "./AdminSidebar.scss";
+  import './AdminSidebar.scss';
 
   const sideMenu = useSideMenu();
   const rootStore = useRootStore();
   const { sidebarState, isSidebarMinimized } = storeToRefs(rootStore);
-  const emit = defineEmits(["sidebarHover"]);
+  const emit = defineEmits(['sidebarHover']);
 
   const blockToggle = ref<boolean>(false);
 
@@ -27,14 +27,14 @@
         blockToggle.value = false;
       }, 300);
 
-      emit("sidebarHover", sidebarState);
+      emit('sidebarHover', sidebarState);
     }
   };
 
   const sidebarHover = (isOver: boolean) => {
     if (isSidebarMinimized.value && !blockToggle.value) {
       sidebarState.value.minimizeHover = isOver;
-      emit("sidebarHover", sidebarState);
+      emit('sidebarHover', sidebarState);
     }
   };
 </script>
@@ -56,15 +56,11 @@
       <div
         class="aside__menu"
         :class="{
-          'aside__menu--minimize':
-            isSidebarMinimized && !sidebarState.minimizeHover,
+          'aside__menu--minimize': isSidebarMinimized && !sidebarState.minimizeHover,
           'aside__menu--minimize-hover': sidebarState.minimizeHover,
         }"
       >
-        <NavMenu
-          :is-minimized="isSidebarMinimized && !sidebarState.minimizeHover"
-          type="vertical"
-        >
+        <NavMenu :is-minimized="isSidebarMinimized && !sidebarState.minimizeHover" type="vertical">
           <MenuSection />
           <MenuItem
             v-for="navMenuItem in sideMenu"

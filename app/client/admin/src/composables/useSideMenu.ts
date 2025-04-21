@@ -1,19 +1,13 @@
-import { IconArrowright } from "@starter-core/icons";
-import { computed } from "vue";
-import { useI18n } from "vue-i18n";
-import { useRoute } from "vue-router";
-import { useInitialData, useAuth } from "@/composables";
-import { SIDEMENU_ICONS_MAP } from "@/constants";
-import { findActiveCategory } from "@/helpers/composables";
-import { NavSubmenuData } from "@/types";
-import type {
-  SubMenu,
-  SubmenuItems,
-} from "@starter-core/dash-ui/src/components/Menu/SubMenu/types";
-import type {
-  MenuItem,
-  MenuItems,
-} from "@starter-core/dash-ui/src/components/Menu/types";
+import { IconArrowright } from '@starter-core/icons';
+import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { useRoute } from 'vue-router';
+import { useInitialData, useAuth } from '@/composables';
+import { SIDEMENU_ICONS_MAP } from '@/constants';
+import { findActiveCategory } from '@/helpers/composables';
+import { NavSubmenuData } from '@/types';
+import type { SubMenu, SubmenuItems } from '@starter-core/dash-ui/src/components/Menu/SubMenu/types';
+import type { MenuItem, MenuItems } from '@starter-core/dash-ui/src/components/Menu/types';
 
 export default function useSideMenu() {
   const { permissionsArray } = useAuth();
@@ -46,8 +40,8 @@ export default function useSideMenu() {
       }));
 
     return {
-      listStyle: "dot",
-      stickToSide: "left",
+      listStyle: 'dot',
+      stickToSide: 'left',
       items,
     };
   };
@@ -57,9 +51,7 @@ export default function useSideMenu() {
       return [];
     }
 
-    const filteredItems = data.value.mainMenu.filter((menuItem) =>
-      permissionsArray.value.includes(menuItem.permission),
-    );
+    const filteredItems = data.value.mainMenu.filter((menuItem) => permissionsArray.value.includes(menuItem.permission));
 
     return filteredItems.map(({ label, route, submenu }) => {
       const item: MenuItem = {

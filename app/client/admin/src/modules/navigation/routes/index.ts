@@ -1,36 +1,35 @@
-import type { RouteRecordRaw } from "vue-router";
-import { NAVIGATION_ROUTES_DATA } from "../constants";
+import type { RouteRecordRaw } from 'vue-router';
+import { NAVIGATION_ROUTES_DATA } from '../constants';
 
 const Navigations = () =>
   import(
     /* webpackChunkName: "navigations" */
     /* webpackPrefetch: true */
-    "../pages/NavigationsPage.vue"
+    '../pages/NavigationsPage.vue'
   );
 
 const Menus = () =>
   import(
     /* webpackChunkName: "menus" */
     /* webpackPrefetch: true */
-    "../pages/MenusPage.vue"
+    '../pages/MenusPage.vue'
   );
 
 const Menu = () =>
   import(
     /* webpackChunkName: "menu" */
     /* webpackPrefetch: true */
-    "../pages/MenuPage.vue"
+    '../pages/MenuPage.vue'
   );
 
 const NavigationPage = () =>
   import(
     /* webpackChunkName: "menus" */
     /* webpackPrefetch: true */
-    "../pages/NavigationPage.vue"
+    '../pages/NavigationPage.vue'
   );
 
-const { main, menus, menu, editNavigation, addNavigation } =
-  NAVIGATION_ROUTES_DATA;
+const { main, menus, menu, editNavigation, addNavigation } = NAVIGATION_ROUTES_DATA;
 
 export const navigationRoutes: RouteRecordRaw[] = [
   {

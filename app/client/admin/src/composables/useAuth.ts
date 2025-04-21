@@ -1,10 +1,10 @@
-import { useAuth as useAuthWebsanova } from "@websanova/vue-auth/src/v3.js";
-import type { AxiosResponse, AxiosError } from "axios";
-import { computed, ref, reactive } from "vue";
-import { useRouter } from "vue-router";
-import { getAPIErrorMessage } from "@/helpers";
-import { AuthUser } from "@/modules/users/types";
-import type { SignUpQuery, UseAuthLoginParams } from "@/types";
+import { useAuth as useAuthWebsanova } from '@websanova/vue-auth/src/v3.js';
+import type { AxiosResponse, AxiosError } from 'axios';
+import { computed, ref, reactive } from 'vue';
+import { useRouter } from 'vue-router';
+import { getAPIErrorMessage } from '@/helpers';
+import { AuthUser } from '@/modules/users/types';
+import type { SignUpQuery, UseAuthLoginParams } from '@/types';
 
 export default function useAuth() {
   const auth = useAuthWebsanova();
@@ -12,9 +12,7 @@ export default function useAuth() {
   const isLoading = ref(false);
 
   const user = reactive<AuthUser>(auth.user());
-  const permissionsArray = computed<Array<string>>(
-    () => user.permissions_array,
-  );
+  const permissionsArray = computed<Array<string>>(() => user.permissions_array);
 
   async function fetch(): Promise<AuthUser> {
     const updatedUser: AxiosResponse<AuthUser> = await auth.fetch();
@@ -52,7 +50,7 @@ export default function useAuth() {
               auth.remember(
                 JSON.stringify({
                   name: `${first_name} ${last_name}`,
-                }),
+                })
               );
             }
 
@@ -78,7 +76,7 @@ export default function useAuth() {
           const token = response.headers?.authorization;
           auth.token(token);
           auth.fetch().then(() => {
-            router.push("/admin/dashboard");
+            router.push('/admin/dashboard');
             resolve(response.data);
           });
         })
@@ -94,7 +92,7 @@ export default function useAuth() {
   function logout() {
     return auth.logout({
       redirect: {
-        name: "login",
+        name: 'login',
       },
     });
   }

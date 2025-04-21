@@ -48,10 +48,7 @@ export interface NavigationMenuItemQuery {
   external_url?: string;
 }
 
-export type NavigationQuery = Pick<
-  Navigation,
-  "title" | "slug" | "parent_id" | "visible"
->;
+export type NavigationQuery = Pick<Navigation, 'title' | 'slug' | 'parent_id' | 'visible'>;
 
 export interface NavigationDeleteResult {
   success: boolean;

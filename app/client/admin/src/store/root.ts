@@ -1,16 +1,16 @@
-import { mergeWith } from "lodash";
-import { defineStore } from "pinia";
-import type { RootState, SetActiveClassesPayload } from "./types/root";
-import { CLOSED_SIDEBAR_NAVIGATIONS } from "@/constants/store/root";
-import { bodyClasses } from "@/helpers";
+import { mergeWith } from 'lodash';
+import { defineStore } from 'pinia';
+import type { RootState, SetActiveClassesPayload } from './types/root';
+import { CLOSED_SIDEBAR_NAVIGATIONS } from '@/constants/store/root';
+import { bodyClasses } from '@/helpers';
 
-export const useRootStore = defineStore("root", {
+export const useRootStore = defineStore('root', {
   state: (): RootState => ({
-    appName: "",
-    backUrl: "",
-    csrfToken: "",
+    appName: '',
+    backUrl: '',
+    csrfToken: '',
     activeClasses: {},
-    homePath: "TESTING PURPOSES ONLY",
+    homePath: 'TESTING PURPOSES ONLY',
     frontActiveClass: {},
     bodyClasses: {
       modalOpen: false,
@@ -32,9 +32,7 @@ export const useRootStore = defineStore("root", {
       this.activeClasses = payload;
     },
     setBodyClasses(payload) {
-      const newClasses = mergeWith({}, this.bodyClasses, payload, (a, b) =>
-        b === null ? a : undefined,
-      );
+      const newClasses = mergeWith({}, this.bodyClasses, payload, (a, b) => (b === null ? a : undefined));
       this.bodyClasses = newClasses;
       bodyClasses(newClasses);
     },
@@ -47,10 +45,7 @@ export const useRootStore = defineStore("root", {
   },
   getters: {
     isSidebarMinimized: (state): boolean => {
-      return (
-        CLOSED_SIDEBAR_NAVIGATIONS.includes(state.frontActiveClass) ||
-        state.sidebarState.minimized
-      );
+      return CLOSED_SIDEBAR_NAVIGATIONS.includes(state.frontActiveClass) || state.sidebarState.minimized;
     },
   },
 });

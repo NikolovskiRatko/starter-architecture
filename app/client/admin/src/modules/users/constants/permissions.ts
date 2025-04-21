@@ -1,10 +1,10 @@
 export const USER_PERMISSIONS = {
-  readUsers: "read_users",
-  writeUsers: "write_users",
-  deleteUsers: "delete_users",
-  readNavigation: "read_navigation",
-  writeNavigation: "write_navigation",
-  deleteNavigation: "delete_navigation",
+  readUsers: 'read_users',
+  writeUsers: 'write_users',
+  deleteUsers: 'delete_users',
+  readNavigation: 'read_navigation',
+  writeNavigation: 'write_navigation',
+  deleteNavigation: 'delete_navigation',
 } as const;
 
 export const USER_ROLES = {
@@ -14,6 +14,6 @@ export const USER_ROLES = {
 } as const;
 
 export const USER_CHECK_BY = {
-  roles: "roles",
-  permissions: "permissions",
+  roles: 'roles',
+  permissions: 'permissions',
 } as const;

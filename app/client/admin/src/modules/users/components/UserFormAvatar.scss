@@ -1,117 +1,117 @@
 .user-form-avatar {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 
-    &__input {
-        display: none;
+  &__input {
+    display: none;
+  }
+
+  &__image {
+    width: 120px;
+    height: 120px;
+  }
+
+  &__holder {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 3px;
+
+    &--circle {
+      border-radius: 50%;
     }
 
-    &__image {
-        width: 120px;
-        height: 120px;
+    &--outline {
+      border: 3px solid #fff;
+      box-shadow: 0 0 13px 0 rgba(#000, 0.1);
+    }
+  }
+
+  &__upload {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 13px 0 rgba(#000, 0.1);
+
+    &--circle {
+      top: 5px;
+      right: 0;
     }
 
-    &__holder {
-        width: 120px;
-        height: 120px;
-        overflow: hidden;
-        background-repeat: no-repeat;
-        background-size: contain;
-        border-radius: 3px;
-
-        &--circle {
-            border-radius: 50%;
-        }
-
-        &--outline {
-            border: 3px solid #fff;
-            box-shadow: 0 0 13px 0 rgba(#000, 0.1);
-        }
+    input {
+      width: 0 !important;
+      height: 0 !important;
+      overflow: hidden;
+      opacity: 0;
     }
 
-    &__upload {
-        position: absolute;
-        top: -10px;
-        right: -10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        background-color: #fff;
-        border: none;
-        border-radius: 50%;
-        box-shadow: 0 0 13px 0 rgba(#000, 0.1);
+    i {
+      font-size: 0.9rem;
+      color: kt-brand-color();
+    }
 
-        &--circle {
-            top: 5px;
-            right: 0;
-        }
+    @include kt-transition;
 
-        input {
-            width: 0 !important;
-            height: 0 !important;
-            overflow: hidden;
-            opacity: 0;
-        }
+    &:hover {
+      @include kt-transition;
 
+      background-color: kt-brand-color();
+
+      i {
+        color: kt-brand-color(inverse);
+      }
+    }
+  }
+
+  &__cancel {
+    position: absolute;
+    top: auto;
+    right: -10px;
+    bottom: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    background-color: var(--dui-color-danger);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 13px 0 rgba(#000, 0.1);
+
+    &--circle {
+      right: 3px;
+      bottom: 10px;
+    }
+  }
+
+  // States
+  @each $name, $color in $state-colors {
+    &--#{$name} {
+      &__upload {
         i {
-            font-size: 0.9rem;
-            color: kt-brand-color();
+          color: kt-get($color, base);
         }
-
-        @include kt-transition;
 
         &:hover {
-            @include kt-transition;
+          background-color: kt-get($color, base);
 
-            background-color: kt-brand-color();
-
-            i {
-                color: kt-brand-color(inverse);
-            }
+          i {
+            color: kt-get($color, inverse);
+          }
         }
+      }
     }
-
-    &__cancel {
-        position: absolute;
-        top: auto;
-        right: -10px;
-        bottom: -5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 22px;
-        height: 22px;
-        padding: 0;
-        background-color: var(--dui-color-danger);
-        border: none;
-        border-radius: 50%;
-        box-shadow: 0 0 13px 0 rgba(#000, 0.1);
-
-        &--circle {
-            right: 3px;
-            bottom: 10px;
-        }
-    }
-
-    // States
-    @each $name, $color in $state-colors {
-        &--#{$name} {
-            &__upload {
-                i {
-                    color: kt-get($color, base);
-                }
-
-                &:hover {
-                    background-color: kt-get($color, base);
-
-                    i {
-                        color: kt-get($color, inverse);
-                    }
-                }
-            }
-        }
-    }
+  }
 }

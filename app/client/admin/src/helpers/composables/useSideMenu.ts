@@ -1,10 +1,10 @@
-import type { RouteLocationNormalizedLoaded } from "vue-router";
-import { NavSubmenuData } from "@/types";
+import type { RouteLocationNormalizedLoaded } from 'vue-router';
+import { NavSubmenuData } from '@/types';
 
 export function findActiveCategory(
   categories: NavSubmenuData,
-  routeName: RouteLocationNormalizedLoaded["name"],
-  activePath: string[] = [],
+  routeName: RouteLocationNormalizedLoaded['name'],
+  activePath: string[] = []
 ) {
   for (const category of categories) {
     if (category.route === routeName) {
@@ -13,17 +13,9 @@ export function findActiveCategory(
     }
 
     if (category.submenu) {
-      const submenuActiveCategories = findActiveCategory(
-        category.submenu,
-        routeName,
-        activePath,
-      );
+      const submenuActiveCategories = findActiveCategory(category.submenu, routeName, activePath);
       if (submenuActiveCategories.length > 0) {
-        activePath = [
-          category.route,
-          ...activePath,
-          ...submenuActiveCategories,
-        ];
+        activePath = [category.route, ...activePath, ...submenuActiveCategories];
         return activePath;
       }
     }

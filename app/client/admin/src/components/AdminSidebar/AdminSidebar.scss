@@ -3,7 +3,7 @@
 // Build Aside Skin
 .aside {
   width: var(--dui-aside-default-width);
-  background-color: var(--dui-color-dark);;
+  background-color: var(--dui-color-dark);
   transition: var(--dui-transition);
 
   &__footer {
@@ -61,8 +61,8 @@
     > .kt-menu__nav {
       .kt-menu__item {
         > .kt-menu__link:not(.kt-menu__link--active, .kt-menu__link--here, .kt-menu__link--hover) {
-          [class^="flaticon2-"],
-          [class*=" flaticon2-"] {
+          [class^='flaticon2-'],
+          [class*=' flaticon2-'] {
             color: #434d6b;
           }
         }
@@ -128,14 +128,10 @@
     }
 
     &--minimize-hover {
-      width: var(--dui-aside-default-width);;
+      width: var(--dui-aside-default-width);
       transition: var(--dui-transition);
     }
   }
 }
 
-@include kt-offcanvas-build(
-  kt-aside,
-  tablet-and-mobile,
-  kt-get($aside-config, base, offcanvas-mobile)
-);
+@include kt-offcanvas-build(kt-aside, tablet-and-mobile, kt-get($aside-config, base, offcanvas-mobile));

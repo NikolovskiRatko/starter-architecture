@@ -1,51 +1,44 @@
-import type { RouteRecordRaw } from "vue-router";
-import { USER_PERMISSIONS, USER_ROUTES_DATA } from "../constants";
-import { i18n } from "@/plugins/i18n";
+import type { RouteRecordRaw } from 'vue-router';
+import { USER_PERMISSIONS, USER_ROUTES_DATA } from '../constants';
+import { i18n } from '@/plugins/i18n';
 const { t } = i18n.global;
 
 const Users = () =>
   import(
     /* webpackChunkName: "users" */
     /* webpackPrefetch: true */
-    "../pages/UsersList.vue"
+    '../pages/UsersList.vue'
   );
 
 const UserPage = () =>
   import(
     /* webpackChunkName: "user-page" */
     /* webpackPrefetch: true */
-    "../pages/UserPage.vue"
+    '../pages/UserPage.vue'
   );
 
 const MyProfile = () =>
   import(
     /* webpackChunkName: "my-profile" */
     /* webpackPrefetch: true */
-    "../pages/MyProfile.vue"
+    '../pages/MyProfile.vue'
   );
 
 const MyProfilePersonalInformation = () =>
   import(
     /* webpackChunkName: "my-profile" */
     /* webpackPrefetch: true */
-    "../pages/MyProfilePersonalInformation.vue"
+    '../pages/MyProfilePersonalInformation.vue'
   );
 
 const MyProfileChangePassword = () =>
   import(
     /* webpackChunkName: "my-profile" */
     /* webpackPrefetch: true */
-    "../pages/MyProfileChangePassword.vue"
+    '../pages/MyProfileChangePassword.vue'
   );
 
-const {
-  add,
-  main,
-  edit,
-  myProfile,
-  myProfilePersonalInfo,
-  myProfileChangePassword,
-} = USER_ROUTES_DATA;
+const { add, main, edit, myProfile, myProfilePersonalInfo, myProfileChangePassword } = USER_ROUTES_DATA;
 
 export const usersRoutes: RouteRecordRaw[] = [
   {

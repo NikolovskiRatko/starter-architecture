@@ -1,11 +1,11 @@
 <script setup lang="ts">
-  import { computed } from "vue";
-  import { useI18n } from "vue-i18n";
-  import { MY_PROFILE_WIDGET_LINKS } from "../constants";
-  import UserRole from "./UserRole.vue";
-  import { useAuth } from "@/composables";
-  import { PortletComponent, PortletBody } from "@starter-core/dash-ui/src";
-  import "./UserProfileWidget.scss";
+  import { computed } from 'vue';
+  import { useI18n } from 'vue-i18n';
+  import { MY_PROFILE_WIDGET_LINKS } from '../constants';
+  import UserRole from './UserRole.vue';
+  import { useAuth } from '@/composables';
+  import { PortletComponent, PortletBody } from '@starter-core/dash-ui/src';
+  import './UserProfileWidget.scss';
 
   const { user, avatar } = useAuth();
   const { t } = useI18n();
@@ -20,16 +20,16 @@
 
   const widgetInfo = [
     {
-      label: t("users.email.label"),
+      label: t('users.email.label'),
       value: user.email,
     },
     {
-      label: "Phone",
-      value: "",
+      label: 'Phone',
+      value: '',
     },
     {
-      label: "Location",
-      value: "",
+      label: 'Location',
+      value: '',
     },
   ];
 </script>
@@ -54,11 +54,7 @@
         </div>
         <div class="user-profile-widget__body">
           <div class="user-profile-widget__content">
-            <div
-              v-for="info in widgetInfo"
-              :key="info.label"
-              class="user-profile-widget__info"
-            >
+            <div v-for="info in widgetInfo" :key="info.label" class="user-profile-widget__info">
               <span class="user-profile-widget__label">{{ info.label }}:</span>
               <a href="#" class="user-profile-widget__data">{{ info.value }}</a>
             </div>

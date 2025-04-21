@@ -1,28 +1,28 @@
 .menu-item {
-    display: flex;
-    align-items: center;
-    background-color: var(--dui-color-secondary);
+  display: flex;
+  align-items: center;
+  background-color: var(--dui-color-secondary);
 
-    &--is-dragged {
-        background-color: var(--dui-gray-200);
-        opacity: 0.7;
-    }
+  &--is-dragged {
+    background-color: var(--dui-gray-200);
+    opacity: 0.7;
+  }
+
+  &--has-draggable-over {
+    background-color: var(--dui-gray-800);
+  }
+
+  &__label {
+    display: flex;
+    flex: 1;
+    gap: var(--dui-spacing-1);
+    justify-content: space-between;
+    padding: var(--dui-spacing-1);
+    color: var(--dui-color-text-dark);
+    border: var(--dui-border-light);
 
     &--has-draggable-over {
-        background-color: var(--dui-gray-800);
+      color: var(--dui-color-text-dark-bg);
     }
-
-    &__label {
-        display: flex;
-        flex: 1;
-        gap: var(--dui-spacing-1);
-        justify-content: space-between;
-        padding: var(--dui-spacing-1);
-        color: var(--dui-color-text-dark);
-        border: var(--dui-border-light);
-
-        &--has-draggable-over {
-            color: var(--dui-color-text-dark-bg);
-        }
-    }
+  }
 }

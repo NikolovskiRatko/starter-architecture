@@ -1,19 +1,16 @@
 <script lang="ts" setup>
-  import { computed, ref } from "vue";
-  import {
-    useNavigationMenu,
-    useReorderNavigationMenuItem,
-  } from "../composables";
-  import MenuItem from "./MenuItem.vue";
-  import { useBEMBuilder } from "@/helpers";
+  import { computed, ref } from 'vue';
+  import { useNavigationMenu, useReorderNavigationMenuItem } from '../composables';
+  import MenuItem from './MenuItem.vue';
+  import { useBEMBuilder } from '@/helpers';
 
-  import "./MenuItems.scss";
+  import './MenuItems.scss';
 
   interface MenuItemsProps {
     menuId: number;
   }
 
-  const [block, element] = useBEMBuilder("menu-items");
+  const [block, element] = useBEMBuilder('menu-items');
 
   const { menuId } = defineProps<MenuItemsProps>();
   const id = computed<number>(() => Number(menuId));
@@ -32,21 +29,15 @@
   const onDragStart = (event: DragEvent, itemId: number) => {
     draggingItem.value = itemId;
     if (event.dataTransfer) {
-      event.dataTransfer.setData("itemID", String(itemId));
+      event.dataTransfer.setData('itemID', String(itemId));
     }
   };
 
   const onDragEnd = () => {
     console.log(dragOverItem.value);
     console.log(draggingItem.value);
-    if (
-      dragOverItem.value &&
-      draggingItem.value &&
-      draggingItem.value !== dragOverItem.value
-    ) {
-      const newOrder = items.value.find(
-        (item) => item.id === dragOverItem.value,
-      );
+    if (dragOverItem.value && draggingItem.value && draggingItem.value !== dragOverItem.value) {
+      const newOrder = items.value.find((item) => item.id === dragOverItem.value);
 
       if (newOrder) {
         reorderMenuItem({
@@ -70,11 +61,7 @@
 </script>
 <template>
   <div :class="block">
-    <ul
-      :class="element('list').value"
-      @dragover="dragoverHandler"
-      @dragend="onDragEnd"
-    >
+    <ul :class="element('list').value" @dragover="dragoverHandler" @dragend="onDragEnd">
       <MenuItem
         v-for="item in items"
         v-bind:key="item.id"
@@ -83,9 +70,7 @@
         @dragleave="onDragLeave"
         @dragenter="onDragEnter"
         :is-dragged="draggingItem === item.id"
-        :has-draggable-over="
-          dragOverItem === item.id && draggingItem !== item.id
-        "
+        :has-draggable-over="dragOverItem === item.id && draggingItem !== item.id"
       />
     </ul>
     <p v-if="!items.length">There is no items assigned to this menu</p>

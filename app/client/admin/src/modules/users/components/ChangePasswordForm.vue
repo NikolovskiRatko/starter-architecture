@@ -1,12 +1,12 @@
 <script setup lang="ts">
-  import { IconSave } from "@starter-core/icons";
-  import { useForm } from "vee-validate";
-  import { useI18n } from "vue-i18n";
-  import * as yup from "yup";
-  import { useAppErrors } from "../../../composables";
-  import type { UpdatePasswordForm } from "../types";
-  import { useMyProfile } from "@/modules/users/composables";
-  import { DashButton, FormInput } from "@starter-core/dash-ui/src";
+  import { IconSave } from '@starter-core/icons';
+  import { useForm } from 'vee-validate';
+  import { useI18n } from 'vue-i18n';
+  import * as yup from 'yup';
+  import { useAppErrors } from '../../../composables';
+  import type { UpdatePasswordForm } from '../types';
+  import { useMyProfile } from '@/modules/users/composables';
+  import { DashButton, FormInput } from '@starter-core/dash-ui/src';
 
   const { t } = useI18n();
   const { isLoading, updatePassword } = useMyProfile();
@@ -17,18 +17,17 @@
     password_confirmation: yup
       .string()
       .required()
-      .oneOf([yup.ref("password")], t("users.password.messages.confirmed")),
+      .oneOf([yup.ref('password')], t('users.password.messages.confirmed')),
   });
 
-  const { handleSubmit, errors, defineField, setErrors, resetForm } =
-    useForm<UpdatePasswordForm>({
-      validationSchema,
-    });
+  const { handleSubmit, errors, defineField, setErrors, resetForm } = useForm<UpdatePasswordForm>({
+    validationSchema,
+  });
   const { handleAPIError } = useAppErrors({ setErrors, translator: t });
 
-  const [currentPassword] = defineField("current_password");
-  const [password] = defineField("password");
-  const [passwordConfirmation] = defineField("password_confirmation");
+  const [currentPassword] = defineField('current_password');
+  const [password] = defineField('password');
+  const [passwordConfirmation] = defineField('password_confirmation');
 
   const submitHandler = handleSubmit((values) => {
     updatePassword(values)
@@ -41,11 +40,7 @@
 <template>
   <div class="kt-section">
     <div class="kt-section__body">
-      <form
-        autocomplete="off"
-        enctype="multipart/form-data"
-        @submit.prevent="submitHandler"
-      >
+      <form autocomplete="off" enctype="multipart/form-data" @submit.prevent="submitHandler">
         <FormInput
           v-model="currentPassword"
           type="password"
@@ -71,7 +66,7 @@
           :error="errors.password_confirmation"
         />
         <DashButton type="submit" :icon="IconSave" :loading="isLoading">
-          {{ t("users.password.change") }}
+          {{ t('users.password.change') }}
         </DashButton>
       </form>
     </div>

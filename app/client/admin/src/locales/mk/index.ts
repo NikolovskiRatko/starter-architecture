@@ -1,3 +1,3 @@
-import admin from "./admin.json";
+import admin from './admin.json';
 
 export { admin };
