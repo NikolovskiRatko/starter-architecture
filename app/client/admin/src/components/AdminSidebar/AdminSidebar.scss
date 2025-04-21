@@ -4,6 +4,7 @@
 .aside {
   width: var(--dui-aside-default-width);
   background-color: var(--dui-color-dark);
+  border-right: var(--dui-border);
   transition: var(--dui-transition);
 
   &__footer {
