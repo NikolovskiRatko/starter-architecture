@@ -33,6 +33,7 @@ $justify-content: (
 
   &__content-inner {
     flex: 1;
+    overflow: hidden auto;
 
     //margin: 0 auto;
 

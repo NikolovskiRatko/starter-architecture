@@ -8,3 +8,4 @@ export { default as AdminSidebar } from './AdminSidebar/AdminSidebar.vue';
 export * from './AdminLayout';
 export * from './TabbedContent';
 export * from './PageWrapper';
+export * from './FormSelect';
