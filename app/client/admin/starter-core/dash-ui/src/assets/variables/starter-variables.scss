@@ -5,6 +5,7 @@
 @import 'layers';
 @import 'header';
 @import 'fonts';
+@import 'forms';
 
 :root {
   --dui-transition: all .3s ease;
@@ -16,7 +17,7 @@
   --dui-spacing-4: 2rem;
 
   // Borders
-  --dui-border: 1px solid #e2e5ec;
+  --dui-border: 1px solid var(--dui-border-color);
   --dui-border-radius: .375rem;
 
   //Box shadows
