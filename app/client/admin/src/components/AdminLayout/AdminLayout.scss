@@ -2,13 +2,13 @@
   display: grid;
   grid-template-areas: 'admin-layout-aside admin-layout-main';
   grid-template-rows: 100%;
-  grid-template-columns: var(--dui-aside-width) auto;
+  grid-template-columns: var(--dui-aside-width) 1fr;
   height: 100%;
   overflow: hidden;
   transition: var(--dui-transition);
 
   &--aside-minimized {
-    grid-template-columns: var(--dui-aside-minimize-width) auto;
+    grid-template-columns: var(--dui-aside-minimize-width) 1fr;
   }
 
   .kt-subheader {
@@ -64,6 +64,7 @@
     flex-direction: column;
     grid-area: admin-layout-main;
     transition: var(--dui-transition);
+    overflow: hidden;
 
     @include kt-desktop {
       &--aside-minimized {
