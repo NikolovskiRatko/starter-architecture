@@ -1,0 +1,13 @@
+.dui-form-select {
+  --vs-border-color: var(--dui-border-color);
+  --vs-border-radius: var(--dui-border-radius);
+  --vs-actions-padding: 4px var(--dui-form-padding-y) 0 3px;
+
+  .vs__search, .vs__search:focus {
+    padding-left: var(--dui-form-padding-y);
+  }
+
+  .vs__dropdown-toggle {
+    padding: 6px 0 9px;
+  }
+}

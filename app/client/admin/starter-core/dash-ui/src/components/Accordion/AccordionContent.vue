@@ -31,8 +31,10 @@
   provide(ActiveAccordionIdKey, activeAccordion);
 
   onMounted(() => {
-    activeAccordion.value = accordions[0].id;
-    emit('onAccordionChange', accordions[0].id);
+    if (accordions.length > 0) {
+      activeAccordion.value = accordions[0].id;
+      emit('onAccordionChange', accordions[0].id);
+    }
   });
 </script>
 <template>
