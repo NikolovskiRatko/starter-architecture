@@ -14,7 +14,7 @@ export const useUsersForm = (userId?: number) => {
   const { uploadAvatar, isLoading: isUploadingAvatar } = useUploadAvatar({
     userId,
     onSuccess: async () => {
-      queryClient.invalidateQueries({ queryKey: [USER_CACHE_KEY, userId] });
+      await queryClient.invalidateQueries({ queryKey: [USER_CACHE_KEY, userId] });
       toast.success('Image has been updated!');
     },
   });
@@ -22,16 +22,16 @@ export const useUsersForm = (userId?: number) => {
   const { isLoading: isFetching, data: queryData } = useQuery({
     queryKey: [USER_CACHE_KEY, userId],
     queryFn: async (): Promise<GetUserResponse> => {
-      const data = await axios.get(USER_API_ENDPOINTS.get(userId ?? 0));
-      return data.data;
+      const { data } = await axios.get<GetUserResponse>(USER_API_ENDPOINTS.get(userId ?? 0));
+      return data;
     },
     enabled: !!userId,
   });
 
   const { mutate: createUser, isPending: isCreating } = useMutation({
     mutationFn: async (newUserData: UserFormItem): Promise<GetUserResponse> => {
-      const data = await axios.post(USER_API_ENDPOINTS.create, newUserData);
-      return data.data;
+      const { data } = await axios.post<GetUserResponse>(USER_API_ENDPOINTS.create, newUserData);
+      return data;
     },
     onSuccess: async () => {
       toast.success('User saved!');
@@ -42,12 +42,12 @@ export const useUsersForm = (userId?: number) => {
   });
 
   const { mutate: updateUser, isPending: isUpdating } = useMutation({
-    mutationFn: async (data: UserFormItem): Promise<GetUserResponse> => {
-      const response = await axios.patch(USER_API_ENDPOINTS.patch(userId ?? 0), data);
-      return response.data;
+    mutationFn: async (userFormData: UserFormItem): Promise<GetUserResponse> => {
+      const { data } = await axios.patch<GetUserResponse>(USER_API_ENDPOINTS.patch(userId ?? 0), userFormData);
+      return data;
     },
     onSuccess: async () => {
-      queryClient.invalidateQueries({ queryKey: [USER_CACHE_KEY, userId] });
+      await queryClient.invalidateQueries({ queryKey: [USER_CACHE_KEY, userId] });
       toast.success('User updated!');
     },
     onError: (error) => {
