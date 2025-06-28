@@ -1,0 +1,6 @@
+{
+  "eslint.workingDirectories": [
+    "./app/client/admin",
+    "./app/client/public",
+  ]
+}
