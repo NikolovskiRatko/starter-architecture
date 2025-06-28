@@ -164,3 +164,10 @@ shell_node:
 .PHONY: shell_app
 shell_app:
 	docker exec -it $(APP_CONTAINER) /bin/bash
+
+# 15. Stop Docker Containers
+.PHONY: down
+up:
+	@echo "Stopping Docker containers..."
+	$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) down -d
+	@echo "Docker containers are stopped successfully."
