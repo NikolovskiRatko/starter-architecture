@@ -1,7 +1,14 @@
 # Makefile
 
 # Define variables for Docker Compose and project paths
-DOCKER_COMPOSE = docker-compose
+DOCKER_COMPOSE := $(shell \
+  if docker compose version >/dev/null 2>&1; then \
+    echo "docker compose"; \
+  elif docker-compose version >/dev/null 2>&1 2>&1; then \
+    echo "docker-compose"; \
+  else \
+    echo ""; \
+  fi)
 DEV_ENV_DIR = infrastructure/dev_env
 API_DIR = app/api
 CLIENT_DIR = app/client
@@ -167,7 +174,7 @@ shell_app:
 
 # 15. Stop Docker Containers
 .PHONY: down
-up:
+down:
 	@echo "Stopping Docker containers..."
-	$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) down -d
+	$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) down
 	@echo "Docker containers are stopped successfully."
