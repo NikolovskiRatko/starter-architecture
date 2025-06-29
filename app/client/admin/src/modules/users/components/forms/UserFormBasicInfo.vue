@@ -5,13 +5,14 @@
 
   interface UserFormBasicInfoProps {
     errors: any;
+    hasReadOnlyEmail?: boolean;
   }
 
   const { t } = useI18n();
   const lastName = defineModel('lastName', { required: true, type: String });
   const firstName = defineModel('firstName', { required: true, type: String });
   const email = defineModel('email', { required: true, type: String });
-  const { errors = {} } = defineProps<UserFormBasicInfoProps>();
+  const { hasReadOnlyEmail, errors = {} } = defineProps<UserFormBasicInfoProps>();
 </script>
 <template>
   <form-input v-model="firstName" name="first-name" :label="t('users.first_name.label')" is-inline />
@@ -20,9 +21,9 @@
     v-model="email"
     name="email"
     :label="t('users.email.label')"
-    helper-text="You can't update your email."
+    :readonly="hasReadOnlyEmail"
+    v-bind="hasReadOnlyEmail && { helperText: `You can't update your email.` }"
     is-inline
-    readonly
   >
     <template v-slot:prependContent>
       <IconMail />

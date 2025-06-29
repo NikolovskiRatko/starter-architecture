@@ -58,6 +58,7 @@
           v-model:email="email"
           v-model:firstName="firstName"
           :errors="errors"
+          has-read-only-email
         />
         <DashButton type="submit" :icon="IconSave" :loading="isLoading" @click="submitHandler">
           {{ t('buttons.save') }}

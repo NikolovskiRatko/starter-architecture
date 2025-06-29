@@ -10,12 +10,19 @@ const Users = () =>
     '../pages/UsersList.vue'
   );
 
-const UserPage = () =>
+const UserEditPage = () =>
   import(
-    /* webpackChunkName: "user-page" */
+    /* webpackChunkName: "user-edit-page" */
     /* webpackPrefetch: true */
-    '../pages/UserPage.vue'
+    '../pages/UserEditPage.vue'
   );
+
+const UserAddPage = () =>
+    import(
+        /* webpackChunkName: "user-add-page" */
+        /* webpackPrefetch: true */
+        '../pages/UserAddPage.vue'
+        );
 
 const MyProfile = () =>
   import(
@@ -54,7 +61,7 @@ export const usersRoutes: RouteRecordRaw[] = [
   {
     path: add.path,
     name: add.name,
-    component: UserPage,
+    component: UserAddPage,
     meta: {
       title: t(add.translationKey, null),
       auth: {
@@ -65,7 +72,7 @@ export const usersRoutes: RouteRecordRaw[] = [
   {
     path: edit.path,
     name: edit.name,
-    component: UserPage,
+    component: UserEditPage,
     meta: {
       title: t(edit.translationKey, null),
       auth: {
