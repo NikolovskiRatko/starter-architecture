@@ -6,8 +6,8 @@
   import { UserFormAvatar, UserFormBasicInfo } from '../components';
   import { useMyProfile } from '../composables';
   import type { UserMyProfileForm } from '../types';
+  import { useAuth } from '@/composables';
   import { PortletComponent, PortletBody, PortletHead, PortletHeadLabel, DashButton } from '@starter-core/dash-ui/src';
-  import { useAuth } from "@/composables";
 
   const { t } = useI18n();
   const { isLoading, data: formData, updateUser } = useMyProfile();
@@ -52,7 +52,7 @@
     </PortletHead>
     <PortletBody size="large">
       <form autocomplete="off" enctype="multipart/form-data" @submit.prevent="submitHandler">
-        <UserFormAvatar :src="formData?.avatar_thumbnail" @upload="refreshUserData"  />
+        <UserFormAvatar :src="formData?.avatar_thumbnail" @upload="refreshUserData" />
         <UserFormBasicInfo
           v-model:lastName="lastName"
           v-model:email="email"

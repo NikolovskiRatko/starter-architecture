@@ -18,11 +18,11 @@ const UserEditPage = () =>
   );
 
 const UserAddPage = () =>
-    import(
-        /* webpackChunkName: "user-add-page" */
-        /* webpackPrefetch: true */
-        '../pages/UserAddPage.vue'
-        );
+  import(
+    /* webpackChunkName: "user-add-page" */
+    /* webpackPrefetch: true */
+    '../pages/UserAddPage.vue'
+  );
 
 const MyProfile = () =>
   import(

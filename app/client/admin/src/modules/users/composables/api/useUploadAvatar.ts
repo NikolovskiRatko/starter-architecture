@@ -1,6 +1,6 @@
-import {type QueryKey, useMutation, useQueryClient} from '@tanstack/vue-query';
-import type { ComputedRef } from 'vue';
+import { type QueryKey, useMutation, useQueryClient } from '@tanstack/vue-query';
 import axios from 'axios';
+import type { ComputedRef } from 'vue';
 import { useToast } from 'vue-toastification';
 import { MY_PROFILE_CACHE_KEY, USER_API_ENDPOINTS, USER_CACHE_KEY } from '../../constants';
 import type { GetUserResponse } from '../../types';

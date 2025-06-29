@@ -1,8 +1,8 @@
 <script setup lang="ts">
   import type { ComputedRef } from 'vue';
-  import { UserAvatarUpload } from "../UserAvatarUpload";
-  import {useUploadAvatar} from "@/modules/users/composables";
-  import {useI18n} from "vue-i18n";
+  import { useI18n } from 'vue-i18n';
+  import { UserAvatarUpload } from '../UserAvatarUpload';
+  import { useUploadAvatar } from '@/modules/users/composables';
 
   interface UserFormAvatarProps {
     src?: string | null;
@@ -20,7 +20,7 @@
     userId,
     onSuccess: () => {
       emit('upload');
-    }
+    },
   });
 
   const uploadAvatarHandler = (file: File) => {
