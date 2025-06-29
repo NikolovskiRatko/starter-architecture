@@ -4,7 +4,6 @@ import { computed } from 'vue';
 import { useToast } from 'vue-toastification';
 import { USER_API_ENDPOINTS, MY_PROFILE_CACHE_KEY } from '../../constants';
 import type { UserMyProfileForm, GetUserResponse, UpdatePasswordForm } from '../../types';
-import { useUploadAvatar } from './useUploadAvatar';
 import { useAuth } from '@/composables';
 
 export const useMyProfile = () => {
@@ -45,16 +44,11 @@ export const useMyProfile = () => {
     },
   });
 
-  const { uploadAvatar, isLoading: isUploadingAvatar } = useUploadAvatar({
-    onSuccess: refreshUserData,
-  });
-
   const data = computed(() => queryData.value);
 
   return {
     data,
     updateUser,
-    uploadAvatar,
     updatePassword,
     isLoading: isFetching || isUpdating || isUploadingAvatar || isUpdatingPassword,
   };
