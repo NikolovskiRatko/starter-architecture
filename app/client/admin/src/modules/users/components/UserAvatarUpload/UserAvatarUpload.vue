@@ -3,9 +3,9 @@
   import { ref } from 'vue';
   import { useBEMBuilder } from '@/helpers';
 
-  import './UserFormAvatar.scss';
+  import './UserAvatarUpload.scss';
 
-  interface UserFormAvatarProps {
+  interface UserAvatarUploadProps {
     src: string | null;
     isOutline?: boolean;
     isCircle?: boolean;
@@ -15,7 +15,7 @@
     (event: 'change', file: File): void;
   };
 
-  const { src, isOutline, isCircle } = defineProps<UserFormAvatarProps>();
+  const { src, isOutline, isCircle } = defineProps<UserAvatarUploadProps>();
   const [block, element] = useBEMBuilder(
     'user-form-avatar',
     ref({

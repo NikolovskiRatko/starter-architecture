@@ -1,12 +1,10 @@
 <script lang="ts" setup>
   import { IconSave, IconArrowleft } from '@starter-core/icons';
-  import { useForm } from 'vee-validate';
-  import { watch, computed } from 'vue';
+  import { computed } from 'vue';
   import { useI18n } from 'vue-i18n';
   import { useRoute } from 'vue-router';
-  import { UserFormPasswordTab, UserFormBasicInfo } from '../components';
-  import { useUsersForm } from '../composables';
-  import type { UserFormItem } from '../types';
+  import { UserFormPasswordTab, UserFormBasicInfo, UserFormAvatar } from '../components';
+  import { useGetUser, useUpdateUser, useUploadAvatar, useUserForm } from '../composables';
   import { TabbedContent, TabbedContentTab, PageWrapper, PAGE_WRAPPER_SLOTS, SubheaderTitle, SkSection } from '@/components';
   import UserRolesDropdown from '@/modules/users/components/UserRolesDropdown.vue';
   import { DashButton, DashLink, FormSwitch } from '@starter-core/dash-ui/src';
@@ -15,53 +13,24 @@
   const personalInformationLabel = t('users.personal-information.label');
   const changePasswordLabel = t('users.password.change');
   const route = useRoute();
-  const isEditPage = computed(() => route.name == 'edit.user');
-  const userId = Number(route.params.userId);
+  const userId = computed(() => Number(route.params.userId));
 
-  const validationSchema = {
-    last_name(value: string) {
-      if (value?.length >= 5) return true;
-      return 'Name needs to be at least 5 characters.';
-    },
-  };
+  const { isLoading: isUserLoading, data: formData } = useGetUser(userId);
+  const { mutate: updateUser, isPending: isUserUpdating } = useUpdateUser(userId);
+  const { uploadAvatar, isLoading: isUploadingAvatar } = useUploadAvatar({ userId });
 
-  const { isLoading, data: formData, createUser, updateUser, uploadAvatar } = useUsersForm(userId);
+  const { handleSubmit, errors, form } = useUserForm(formData);
+  const { lastName, firstName, email, role, password, isDisabled } = form;
 
-  const { handleSubmit, errors, setValues, defineField } = useForm<UserFormItem>({
-    validationSchema,
-  });
+  const isLoading = computed(() => isUserUpdating.value || isUploadingAvatar.value || isUserLoading.value);
 
   const submitHandler = handleSubmit((values) => {
-    if (isEditPage.value) {
-      updateUser(values);
-    } else {
-      createUser(values);
-    }
+    updateUser(values);
   });
 
   const uploadAvatarHandler = (file: File) => {
     uploadAvatar(file);
   };
-
-  watch(() => {
-    if (formData.value) {
-      setValues({
-        id: formData.value.id,
-        email: formData.value.email,
-        first_name: formData.value.first_name,
-        last_name: formData.value.last_name,
-        role: formData.value.role,
-        is_disabled: formData.value.is_disabled,
-      });
-    }
-  }, [formData]);
-
-  const [lastName] = defineField('last_name');
-  const [firstName] = defineField('first_name');
-  const [email] = defineField('email');
-  const [isDisabled] = defineField('is_disabled');
-  const [role] = defineField('role');
-  const [password] = defineField('password');
 </script>
 
 <template>
@@ -81,7 +50,7 @@
       <TabbedContent :isLoading="isLoading">
         <TabbedContentTab :label="personalInformationLabel" id="basic-info">
           <SkSection :title="t('users.user_status')">
-            <user-roles-dropdown v-model:role="role" />
+            <UserRolesDropdown v-model:role="role" />
             <form-switch
               v-model="isDisabled"
               id="enabled"
@@ -92,13 +61,15 @@
             />
           </SkSection>
           <SkSection title="Customer Info">
+            <UserFormAvatar :user-id="userId" :src="formData?.avatar_thumbnail" />
             <UserFormBasicInfo
               v-model:lastName="lastName"
               v-model:email="email"
               v-model:firstName="firstName"
               :avatar="formData?.avatar_thumbnail"
-              @upload-avatar="uploadAvatarHandler"
+              @uploadAvatar="uploadAvatarHandler"
               :errors="errors"
+              has-read-only-email
             />
           </SkSection>
         </TabbedContentTab>

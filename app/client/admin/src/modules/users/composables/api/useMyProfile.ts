@@ -2,9 +2,8 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/vue-query';
 import axios from 'axios';
 import { computed } from 'vue';
 import { useToast } from 'vue-toastification';
-import { USER_API_ENDPOINTS, MY_PROFILE_CACHE_KEY } from '../constants';
-import type { UserMyProfileForm, GetUserResponse, UpdatePasswordForm } from '../types';
-import { useUploadAvatar } from './useUploadAvatar';
+import { USER_API_ENDPOINTS, MY_PROFILE_CACHE_KEY } from '../../constants';
+import type { UserMyProfileForm, GetUserResponse, UpdatePasswordForm } from '../../types';
 import { useAuth } from '@/composables';
 
 export const useMyProfile = () => {
@@ -45,20 +44,11 @@ export const useMyProfile = () => {
     },
   });
 
-  const { uploadAvatar, isLoading: isUploadingAvatar } = useUploadAvatar({
-    onSuccess: async () => {
-      queryClient.invalidateQueries({ queryKey: [MY_PROFILE_CACHE_KEY] });
-      refreshUserData();
-      toast.success('Image has been updated!');
-    },
-  });
-
   const data = computed(() => queryData.value);
 
   return {
     data,
     updateUser,
-    uploadAvatar,
     updatePassword,
     isLoading: isFetching || isUpdating || isUploadingAvatar || isUpdatingPassword,
   };

@@ -20,3 +20,10 @@ export interface UsersTableResponse {
 }
 
 export type AuthUser = Omit<GetUserResponse, 'updated_at'>;
+
+export interface CreateUserQuery {
+  first_name: string;
+  last_name: string;
+  email: string;
+  password: string;
+}
