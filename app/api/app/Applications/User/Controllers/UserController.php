@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Applications\User\Services\UserServiceInterface;
 use App\Applications\User\Requests\MyProfileRequest;
 use App\Applications\User\Requests\UpdatePasswordRequest;
+use App\Applications\User\Requests\NewUserRequest;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -52,10 +53,10 @@ class UserController extends Controller
     /**
      * Store user and get JSON with a user response
      *
-     * @param  Request  $request
+     * @param  NewUserRequest  $request
      * @return JsonResponse
      */
-    public function create(Request $request): JsonResponse
+    public function create(NewUserRequest $request): JsonResponse
     {
         $password = $request->input('password');
         $userDTO = UserDTO::fromRequestForCreate($request);

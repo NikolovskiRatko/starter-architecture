@@ -11,9 +11,9 @@ class NewUserRequest extends ApiFormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        // we will handle this with middleware
+        // Authorization handled via middleware (e.g., role checks)
         return true;
     }
 
@@ -22,36 +22,45 @@ class NewUserRequest extends ApiFormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
-        $rules = [
-            'first_name' => 'required|max:255|min:2',
-            'last_name' => 'required|max:255|min:2',
-            'email' => 'required|email|min:2|max:255|unique:users,email,'.$this->segment(3),
-            'password' => 'sometimes|between:6,30|confirmed',
-            'roles' => 'required|exists:roles,id',
-        ];
-
-        return $rules;
-    }
-    public function messages(){
         return [
-            'first_name.required' => 'users.first_name.required',
-            'first_name.max' => 'users.first_name.max',
-            'first_name.min' => 'users.first_name.min',
-            'last_name.required' => 'users.last_name.required',
-            'last_name.max' => 'users.last_name.max',
-            'last_name.min' => 'users.last_name.min',
-            'email.required' => 'users.email.required',
-            'email.email' => 'users.email.invalid',
-            'email.max' => 'users.email.max',
-            'email.min' => 'users.email.min',
-            'email.unique' => 'users.email.unique',
-            'roles.required' => 'users.roles.required',
-            'roles.exists' => 'users.roles.exists',
-            'password.required' => 'users.password.required',
-            'password.between' => 'users.password.between',
-            'password.confirmed' => 'users.password.confirmed',
+            'first_name' => 'required|string|min:2|max:255',
+            'last_name' => 'required|string|min:2|max:255',
+            'email' => 'required|email|min:2|max:255|unique:users,email',
+            'password' => 'required|string|between:6,30|confirmed',
+            'role' => 'required|exists:roles,id',
+        ];
+    }
+
+    /**
+     * Custom validation messages.
+     *
+     * @return array
+     */
+    public function messages(): array
+    {
+        return [
+            'first_name.required' => 'users.validation.first_name.required',
+            'first_name.max' => 'users.validation.first_name.max',
+            'first_name.min' => 'users.validation.first_name.min',
+
+            'last_name.required' => 'users.validation.last_name.required',
+            'last_name.max' => 'users.validation.last_name.max',
+            'last_name.min' => 'users.validation.last_name.min',
+
+            'email.required' => 'users.validation.email.required',
+            'email.email' => 'users.validation.email.invalid',
+            'email.max' => 'users.validation.email.max',
+            'email.min' => 'users.validation.email.min',
+            'email.unique' => 'users.validation.email.unique',
+
+            'roles.required' => 'users.validation.roles.required',
+            'roles.exists' => 'users.validation.roles.exists',
+
+            'password.required' => 'users.validation.password.required',
+            'password.between' => 'users.validation.password.between',
+            'password.confirmed' => 'users.validation.password.confirmed',
         ];
     }
 }
