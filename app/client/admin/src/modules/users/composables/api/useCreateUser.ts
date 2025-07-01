@@ -3,9 +3,11 @@ import axios from 'axios';
 import { useToast } from 'vue-toastification';
 import { USER_API_ENDPOINTS } from '../../constants';
 import type { GetUserResponse, CreateUserQuery } from '../../types';
+import { useAppErrors } from "@/composables";
 
 export const useCreateUser = () => {
   const toast = useToast();
+  const { handleAPIError } = useAppErrors();
 
   return useMutation({
     mutationFn: async (newUserData: CreateUserQuery): Promise<GetUserResponse> => {
@@ -16,7 +18,7 @@ export const useCreateUser = () => {
       toast.success('User created successfully.!');
     },
     onError: (error) => {
-      toast.error(error.message);
+      handleAPIError(error);
     },
   });
 };

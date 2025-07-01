@@ -14,8 +14,8 @@
   const router = useRouter();
   const { mutateAsync: createUser } = useCreateUser();
   const { handleSubmit, errors, form, setErrors } = useUserForm();
-  const { handleAPIError } = useAppErrors({ setErrors, translator: t });
-  const { role, lastName, firstName, email, password } = form;
+  const { handleAPIError } = useAppErrors({ setErrors });
+  const { role, lastName, firstName, email, password, passwordConfirmation } = form;
 
   const submitHandler = handleSubmit((values) => {
     createUser(values)
@@ -41,7 +41,7 @@
     <PortletComponent>
       <PortletBody>
         <form autocomplete="off" enctype="multipart/form-data" @submit.prevent="submitHandler">
-          <UserRolesDropdown v-model:role="role" />
+          <UserRolesDropdown v-model:role="role" :error="errors.role" />
           <UserFormBasicInfo v-model:lastName="lastName" v-model:email="email" v-model:firstName="firstName" :errors="errors" />
           <FormInput
             v-model="password"
@@ -50,6 +50,15 @@
             id="password"
             :label="t('users.password.label')"
             :error="errors.password"
+            is-inline
+          />
+          <FormInput
+            v-model="passwordConfirmation"
+            type="password"
+            name="password-confirmation"
+            id="password-confirmation"
+            :label="t('users.password.confirm')"
+            :error="errors.password_confirmation"
             is-inline
           />
         </form>
