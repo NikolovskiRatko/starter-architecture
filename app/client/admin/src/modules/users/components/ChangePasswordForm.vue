@@ -23,7 +23,7 @@
   const { handleSubmit, errors, defineField, setErrors, resetForm } = useForm<UpdatePasswordForm>({
     validationSchema,
   });
-  const { handleAPIError } = useAppErrors({ setErrors, translator: t });
+  const { handleAPIError } = useAppErrors({ setErrors });
 
   const [currentPassword] = defineField('current_password');
   const [password] = defineField('password');

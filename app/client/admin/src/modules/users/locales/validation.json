@@ -1,0 +1,30 @@
+{
+    "validation": {
+      "first_name": {
+        "required": "First name is required.",
+        "min": "First name must be at least 2 characters.",
+        "max": "First name must not exceed 255 characters."
+      },
+      "last_name": {
+        "required": "Last name is required.",
+        "min": "Last name must be at least 2 characters.",
+        "max": "Last name must not exceed 255 characters."
+      },
+      "email": {
+        "required": "Email is required.",
+        "invalid": "Email must be a valid email address.",
+        "min": "Email must be at least 2 characters.",
+        "max": "Email must not exceed 255 characters.",
+        "unique": "This email is already in use."
+      },
+      "role": {
+        "required": "User role is required.",
+        "exists": "The selected role does not exist."
+      },
+      "password": {
+        "required": "Password is required.",
+        "between": "Password must be between 6 and 30 characters.",
+        "confirmed": "Passwords do not match."
+      }
+    }
+}

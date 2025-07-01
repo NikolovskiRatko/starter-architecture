@@ -8,6 +8,9 @@
   "roles": {
     "label": "Roles"
   },
+  "role": {
+    "label": "User Role"
+  },
   "avatar": "Avatar",
   "last_name": {
     "label": "Last name"

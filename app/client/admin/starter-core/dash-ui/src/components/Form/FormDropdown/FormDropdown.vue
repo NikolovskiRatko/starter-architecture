@@ -2,9 +2,10 @@
   import { computed } from "vue";
   import type { FormDropdownProps } from "../types";
   import FormGroup from "../FormGroup/FormGroup.vue";
+  import FormHelperText from "../FormHelperText/FormHelperText.vue";
   import "./FormDropdown.scss";
 
-  const { label, id, isInline, errors, isDisabled, options } =
+  const { label, id, isInline, error, helperText, isDisabled, options } =
     defineProps<FormDropdownProps>();
 
   const model = defineModel({
@@ -45,11 +46,7 @@
           {{ option.name }}
         </option>
       </select>
-      <div v-if="errors?.length" class="form-dropdown__error">
-        <span v-for="error in errors" :key="error">
-          {{ error }}
-        </span>
-      </div>
+      <FormHelperText :text="helperText" :error="error" />
     </template>
   </form-group>
 </template>
