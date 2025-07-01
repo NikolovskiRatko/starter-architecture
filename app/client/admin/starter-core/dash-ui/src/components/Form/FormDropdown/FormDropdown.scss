@@ -37,8 +37,4 @@ $input-config: kt-get($form-config, input);
         padding-top: kt-get($label-config, 'padding-y');
         padding-bottom: kt-get($label-config, 'padding-y');
     }
-
-    &__error {
-        color: kt-get($state-colors, danger, base);
-    }
 }
