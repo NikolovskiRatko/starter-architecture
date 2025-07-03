@@ -9,7 +9,7 @@
     to: string | RouterLinkProps;
   }
 
-  const { title, subtitle } = defineProps<HeaderUserBarListItemProps>();
+  const { title, subtitle, to } = defineProps<HeaderUserBarListItemProps>();
 
   const isExternalLink = computed(() => {
     return typeof to === 'string' && to.startsWith('http');
