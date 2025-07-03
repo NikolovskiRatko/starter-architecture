@@ -61,6 +61,9 @@ export default defineConfig({
           @import "@starter-core/dash-ui/src/assets/vite-resources.scss";
         `,
       },
+      sass: {
+        api: 'legacy'
+      }
     },
   },
   server: {

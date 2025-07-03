@@ -25,7 +25,7 @@ export const useMyProfile = () => {
       return response.data;
     },
     onSuccess: async () => {
-      queryClient.invalidateQueries({ queryKey: [MY_PROFILE_CACHE_KEY] });
+      await queryClient.invalidateQueries({ queryKey: [MY_PROFILE_CACHE_KEY] });
       toast.success('Your profile has been updated!');
       refreshUserData();
     },
@@ -50,6 +50,6 @@ export const useMyProfile = () => {
     data,
     updateUser,
     updatePassword,
-    isLoading: isFetching || isUpdating || isUploadingAvatar || isUpdatingPassword,
+    isLoading: isFetching || isUpdating || isUpdatingPassword,
   };
 };
