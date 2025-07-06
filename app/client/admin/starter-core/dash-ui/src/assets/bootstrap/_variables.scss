@@ -69,15 +69,6 @@ $font-size: (
     weight: 300,
 );
 
-// General Link Settings
-$font-color: (
-        text: #646c9a,
-        link: (
-                default: #505ae2,
-                hover: darken(#505ae2 , 6%),
-        ),
-);
-
 $page-padding: (
         desktop: 25px,
         mobile: 15px,

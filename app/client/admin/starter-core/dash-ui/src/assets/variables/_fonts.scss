@@ -7,9 +7,15 @@
   --dui-font-size-lg: 1.25rem;   /* 24px - Section headings */
   --dui-font-size-xl: 1.5rem;    /* 32px - Page titles or hero elements */
 
+  --dui-font-weight-thin: 300;
   --dui-font-weight-normal: 400;
   --dui-font-weight-bold: 500;
   --dui-line-height: 1.5;
+
+  --dui-font-family-regular: "Poppins", serif;
+  --dui-font-family-heading: "Poppins", serif;
+
+  --dui-link-text-decoration: 'none';
 
   @include kt-desktop-xl {
     --dui-root-font-size: 15px;

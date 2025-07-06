@@ -44,7 +44,7 @@
 
   &:hover {
     color: var(--#{$prefix}btn-hover-color);
-    text-decoration: if($link-hover-decoration == underline, none, null);
+    text-decoration: var(--dui-link-text-decoration);
     background-color: var(--#{$prefix}btn-hover-bg);
     border-color: var(--#{$prefix}btn-hover-border-color);
   }
@@ -141,7 +141,7 @@
 
   &:hover,
   &:focus-visible {
-    text-decoration: $link-hover-decoration;
+    text-decoration: var(--dui-link-text-decoration);
   }
 
   &:focus-visible {
