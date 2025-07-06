@@ -4,9 +4,8 @@
   import HeaderUserBarListItem from './HeaderUserBarListItem.vue';
   import { useAuth } from '@/composables';
   import { USER_ROUTES_DATA } from '@/modules/users/constants';
-  import { BadgeComponent } from '@starter-core/dash-ui/src';
+  import { BadgeComponent, KtNotification } from '@starter-core/dash-ui/src';
   import { useOnClickOutside } from '@starter-core/dash-ui/src/composables';
-
   import './HeaderUserBar.scss';
 
   const { logout, user, avatar } = useAuth();
@@ -65,7 +64,7 @@
         <!--end: Head -->
 
         <!--begin: Navigation -->
-        <div class="kt-notification">
+        <KtNotification>
           <HeaderUserBarListItem
             :icon="IconUser"
             :to="{ name: USER_ROUTES_DATA.myProfilePersonalInfo.name }"
@@ -75,7 +74,7 @@
           <div class="kt-notification__custom kt-space-between">
             <a @click.prevent="logout" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
           </div>
-        </div>
+        </KtNotification>
 
         <!--end: Navigation -->
       </div>
