@@ -28,7 +28,6 @@ export default defineConfig({
 In your `main.ts`, you shall import the libraries and CSS:
 
 ```ts
-import "@starter-core/dash-ui/src/assets/main.scss";
 import "@starter-core/dash-ui/index.css";
 ```
 
