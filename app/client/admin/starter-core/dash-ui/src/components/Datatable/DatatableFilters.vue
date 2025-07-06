@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { useRoute, useRouter } from "vue-router";
   import { PortletBody } from "../Portlet";
-  import { KtForm, KtSeparator } from "../RawComponents";
+  import { KtForm, KtSeparator, KtInputIcon } from "../RawComponents";
 
   const router = useRouter();
   const route = useRoute();
@@ -25,7 +25,7 @@
           <div class="col-xl-8 order-2 order-xl-1">
             <div class="row align-items-center">
               <div class="col-md-4 kt-margin-b-20-tablet-and-mobile">
-                <div class="kt-input-icon kt-input-icon--left">
+                <KtInputIcon class-name="kt-input-icon--left">
                   <input
                       v-on:keyup.enter="handleSearch"
                       type="text"
@@ -34,11 +34,11 @@
                       name="search"
                   />
                   <span class="kt-input-icon__icon kt-input-icon__icon--left">
-                  <span>
-                    <i class="las la-search" />
+                    <span>
+                      <i class="las la-search" />
+                    </span>
                   </span>
-                </span>
-                </div>
+                </KtInputIcon>
               </div>
 
               <div class="col-md-4 kt-margin-b-20-tablet-and-mobile">
