@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { useRoute, useRouter } from "vue-router";
   import { PortletBody } from "../Portlet";
-  import { KtForm } from "../RawComponents";
+  import { KtForm, KtSeparator } from "../RawComponents";
 
   const router = useRouter();
   const route = useRoute();
@@ -68,9 +68,7 @@
             <a href="#" class="btn btn-default kt-hidden">
               <i class="la la-cart-plus" /> New Order
             </a>
-            <div
-                class="kt-separator kt-separator--border-dashed kt-separator--space-lg d-xl-none"
-            />
+            <KtSeparator />
           </div>
         </div>
       </KtForm>
