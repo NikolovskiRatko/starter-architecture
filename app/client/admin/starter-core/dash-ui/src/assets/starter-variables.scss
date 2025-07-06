@@ -1,11 +1,11 @@
-@import 'sidebar';
-@import 'colors';
-@import 'footer';
-@import 'brand';
-@import 'layers';
-@import 'header';
-@import 'fonts';
-@import 'forms';
+@import './variables/sidebar';
+@import './variables/colors';
+@import './variables/footer';
+@import './variables/brand';
+@import './variables/layers';
+@import './variables/header';
+@import './variables/fonts';
+@import './variables/forms';
 
 :root {
   --dui-transition: all .3s ease;
