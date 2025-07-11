@@ -37,11 +37,9 @@ export default defineConfig({
   },
   css: {
     preprocessorOptions: {
-      scss: {
-        additionalData: `
-          @import "@/assets/vite-resources.scss";
-        `,
-      },
+      sass: {
+        api: 'legacy'
+      }
     },
   },
 });
