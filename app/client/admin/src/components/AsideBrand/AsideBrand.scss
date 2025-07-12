@@ -1,14 +1,18 @@
+@use '@starter-core/dash-ui/src/assets/mixins' as *;
+@use '@starter-core/dash-ui/src/assets/mixins/breakpoint-mixins' as *;
+@use '@starter-core/dash-ui/src/assets/mixins/icons' as *;
+
 .kt-aside__brand {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   height: var(--dui-header-height-desktop);
-  padding: 0 kt-get($page-padding, desktop);
+  padding: 0 var(--dui-page-padding-desktop);
 
   .kt-aside__brand-logo {
     display: flex;
-    justify-content: flex-begin;
+    justify-content: flex-start;
 
     img {
       max-width: 13rem;
@@ -92,12 +96,13 @@
 
       .kt-aside__brand-aside-toggler {
         svg {
+          color: black;
           @include kt-svg-icon-color(#494b74);
         }
 
         &:hover {
           svg {
-            @include kt-svg-icon-color(kt-brand-color());
+            @include kt-svg-icon-color(var(--dui-brand-color));
           }
         }
       }

@@ -1,3 +1,6 @@
+@use '../../../assets/functions' as *;
+@use '../../../assets/variables' as *;
+@use '../config' as *;
 $switch-sizes: 'sm', 'md', 'lg';
 $switch-size-config: (
     sm: (
@@ -41,13 +44,13 @@ $switch-size-config: (
         height: kt-get($size-config, height);
         width: kt-get($size-config, width) + kt-get($size-config, space);
         border-radius: calc(kt-get($size-config, height) / 2);
-    
+
         &:before,
         &:after {
             width: kt-get($size-config, width);
             border-radius: calc(kt-get($size-config, height) / 2);
         }
-    
+
         &:after {
             height: kt-get($size-config, height) - 2 * kt-get($size-config, space);
             width: kt-get($size-config, height) - 2 * kt-get($size-config, space);
@@ -59,7 +62,7 @@ $switch-size-config: (
             text-align: center;
             vertical-align: middle;
         }
-    
+
         &#{$block}--checked:after {
             margin-left: kt-get($size-config, 'checked-tick-pos');
         }
@@ -69,7 +72,7 @@ $switch-size-config: (
 // Component Skin
 @mixin kt-switch-skin() {
     $base-color: #e8ebf1;
-  
+
     .d-form-switch {
         &__handle {
             $switchHandleBlock: &;
@@ -96,7 +99,7 @@ $switch-size-config: (
 
             &--disabled {
                 cursor: not-allowed;
-                
+
                 &:before, &:after {
                     cursor: not-allowed;
                     opacity: 0.7;
@@ -145,13 +148,13 @@ $switch-size-config: (
                         }
                     }
                 }
-            }            
+            }
         }
     }
 }
 
 .d-form-switch {
-    
+
     &__switch {
         display: flex;
         font-size: 1rem;
@@ -192,7 +195,7 @@ $switch-size-config: (
             -webkit-transition: all 100ms ease-in;
             transition: all 100ms ease-in;
         }
-  
+
         @each $size in $switch-sizes {
             @include kt-switch-size($size);
         }

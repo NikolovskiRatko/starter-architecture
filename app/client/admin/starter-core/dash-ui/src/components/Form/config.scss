@@ -1,5 +1,8 @@
+@use '../../assets/variables';
+@use '../../assets/functions' as *;
+
 $input-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-$radio-base-color: kt-base-color(grey, 1);
+$radio-base-color: kt-get(variables.$base-colors, grey, 1);
 
 $form-config: (
   font-size: 1rem,
@@ -12,8 +15,8 @@ $form-config: (
     font-weight: 400,
     transition: $input-transition,
     color: (
-      focus: tint-color($primary, 50%),
-      error: kt-get($state-colors, danger, base)
+      focus: tint-color(variables.$primary, 50%),
+      error: kt-get(variables.$state-colors, danger, base)
     )
   ),
   radio: (

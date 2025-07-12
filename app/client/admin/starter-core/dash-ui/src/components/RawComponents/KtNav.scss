@@ -30,7 +30,7 @@
       align-items: center;
       padding: $nav-padding-y $nav-padding-x;
       cursor: pointer;
-      @include kt-transition(); // menu item link's text part
+      transition: var(--dui-transition); // menu item link's text part
 
       .kt-nav__link-text {
         flex-grow: 1;
@@ -138,7 +138,7 @@
       > .kt-nav__link {
         background-color: kt-base-color(grey, 1);
 
-        @include kt-transition();
+        transition: var(--dui-transition);
 
         .kt-nav__link-icon,
         .kt-nav__link-text,
@@ -166,7 +166,7 @@
       > .kt-nav__link.collapsed {
         background-color: kt-base-color(grey, 1);
 
-        @include kt-transition();
+        transition: var(--dui-transition);
 
         .kt-nav__link-icon,
         .kt-nav__link-text,
@@ -433,7 +433,7 @@
       margin: 0;
 
       .kt-nav__link {
-        @include kt-transition();
+        transition: var(--dui-transition);
         padding-top: 1rem;
         padding-bottom: 1rem;
         border-left: 2px solid transparent;
@@ -442,7 +442,7 @@
       &.active,
       &.kt-nav__link--active {
         .kt-nav__link {
-          @include kt-transition();
+          transition: var(--dui-transition);
           background-color: kt-base-color(grey, 1);
           border-left: 2px solid kt-state-color(brand);
 
@@ -453,7 +453,7 @@
       }
 
       &:hover {
-        @include kt-transition();
+        transition: var(--dui-transition);
         background-color: kt-base-color(grey, 1);
 
         .kt-nav__link {

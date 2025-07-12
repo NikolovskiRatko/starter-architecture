@@ -1,82 +1,62 @@
-@import 'bootstrap/scss/variables';
+@import '../../assets/functions';
+@import '../../assets/variables';
 
 //
 // Base styles
 //
 
 .btn {
-  // scss-docs-start btn-css-vars
-  --#{$prefix}border-radius: #{$border-radius};
-  --#{$prefix}btn-padding-x: #{$btn-padding-x};
-  --#{$prefix}btn-padding-y: #{$btn-padding-y};
-  --#{$prefix}btn-font-family: #{$btn-font-family};
-  @include rfs($btn-font-size, --#{$prefix}btn-font-size);
-  --#{$prefix}btn-font-weight: #{$btn-font-weight};
-  --#{$prefix}btn-line-height: #{$btn-line-height};
-  --#{$prefix}btn-color: #{$btn-color};
-  --#{$prefix}btn-bg: transparent;
-  --#{$prefix}btn-border-color: transparent;
-  --#{$prefix}btn-border-radius: #{$btn-border-radius};
-  --#{$prefix}btn-hover-border-color: transparent;
-  --#{$prefix}btn-box-shadow: #{$btn-box-shadow};
-  --#{$prefix}btn-disabled-opacity: #{$btn-disabled-opacity};
-  --#{$prefix}btn-focus-box-shadow: 0 0 0 #{$btn-focus-width} rgba(var(--#{$prefix}btn-focus-shadow-rgb), .5);
-  // scss-docs-end btn-css-vars
-
   display: inline-block;
-  padding: var(--#{$prefix}btn-padding-y) var(--#{$prefix}btn-padding-x);
-  font-family: var(--#{$prefix}btn-font-family);
-  @include font-size(var(--#{$prefix}btn-font-size));
-  font-weight: var(--#{$prefix}btn-font-weight);
-  line-height: var(--#{$prefix}btn-line-height);
-  color: var(--#{$prefix}btn-color);
+  padding: var(--dui-input-btn-padding-y) var(--dui-input-btn-padding-x);
+  font-family: var(--dui-font-family-regular);
+  font-weight: var(--dui-font-weight-thin);
+  line-height: var(--dui-input-btn-line-height);
+  color: var(--dui-btn-color);
   text-align: center;
   text-decoration: if($link-decoration == none, null, none);
-  white-space: $btn-white-space;
+  background-color: var(--dui-btn-background);
   vertical-align: middle;
   cursor: if($enable-button-pointers, pointer, null);
   user-select: none;
-  border: 1px solid var(--#{$prefix}btn-border-color);
-  border-radius: $btn-border-radius;
-  @include gradient-bg(var(--#{$prefix}btn-bg));
-  @include box-shadow(var(--#{$prefix}btn-box-shadow));
-  @include transition($btn-transition);
+  border: 1px solid var(--dui-btn-border-color);
+  border-radius: var(--dui-border-radius);
+  box-shadow: var(--dui-btn-box-shadow);
+  transition: var(--dui-transition);
 
   &:hover {
-    color: var(--#{$prefix}btn-hover-color);
+    color: var(--dui-btn-hover-color);
     text-decoration: var(--dui-link-text-decoration);
-    background-color: var(--#{$prefix}btn-hover-bg);
-    border-color: var(--#{$prefix}btn-hover-border-color);
+    background-color: var(--dui-btn-hover-background);
+    border-color: var(--dui-btn-hover-border-color);
   }
 
   .btn-check + &:hover {
     // override for the checkbox/radio buttons
-    color: var(--#{$prefix}btn-color);
-    background-color: var(--#{$prefix}btn-bg);
-    border-color: var(--#{$prefix}btn-border-color);
+    color: var(--dui-color-text);
+    background-color: var(--dui-btn-background);
+    border-color: var(--dui-btn-border-color);
   }
 
   &:focus-visible {
-    color: var(--#{$prefix}btn-hover-color);
-    @include gradient-bg(var(--#{$prefix}btn-hover-bg));
-    border-color: var(--#{$prefix}btn-hover-border-color);
+    color: var(--dui-btn-hover-color);
+    //@include gradient-bg(var(--#{$prefix}btn-hover-bg));
+    border-color: var(--dui-btn-hover-border-color);
     outline: 0;
     // Avoid using mixin so we can pass custom focus shadow properly
     @if $enable-shadows {
-      box-shadow: var(--#{$prefix}btn-box-shadow), var(--#{$prefix}btn-focus-box-shadow);
+      box-shadow: var(--dui-btn-box-shadow), var(--dui-btn-focus-box-shadow);
     } @else {
-      box-shadow: var(--#{$prefix}btn-focus-box-shadow);
+      box-shadow: var(--dui-btn-focus-box-shadow);
     }
   }
 
   .btn-check:focus-visible + & {
-    border-color: var(--#{$prefix}btn-hover-border-color);
+    border-color: var(--dui-btn-hover-border-color);
     outline: 0;
-    // Avoid using mixin so we can pass custom focus shadow properly
     @if $enable-shadows {
-      box-shadow: var(--#{$prefix}btn-box-shadow), var(--#{$prefix}btn-focus-box-shadow);
+      box-shadow: var(--dui-btn-box-shadow), var(--dui-btn-focus-box-shadow);
     } @else {
-      box-shadow: var(--#{$prefix}btn-focus-box-shadow);
+      box-shadow: var(--dui-btn-focus-box-shadow);
     }
   }
 
@@ -85,19 +65,19 @@
   &:first-child:active,
   &.active,
   &.show {
-    color: var(--#{$prefix}btn-active-color);
-    background-color: var(--#{$prefix}btn-active-bg);
+    color: var(--dui-btn-active-color);
+    background-color: var(--dui-btn-active-background);
     // Remove CSS gradients if they're enabled
     background-image: if($enable-gradients, none, null);
-    border-color: var(--#{$prefix}btn-active-border-color);
-    @include box-shadow(var(--#{$prefix}btn-active-shadow));
+    border-color: var(--dui-btn-active-border-color);
+    box-shadow: var(--bs-btn-active-shadow);
 
     &:focus-visible {
       // Avoid using mixin so we can pass custom focus shadow properly
       @if $enable-shadows {
-        box-shadow: var(--#{$prefix}btn-active-shadow), var(--#{$prefix}btn-focus-box-shadow);
+        box-shadow: var(--dui-btn-active-shadow), var(--dui-btn-focus-box-shadow);
       } @else {
-        box-shadow: var(--#{$prefix}btn-focus-box-shadow);
+        box-shadow: var(--dui-btn-focus-box-shadow);
       }
     }
   }
@@ -105,13 +85,13 @@
   &:disabled,
   &.disabled,
   fieldset:disabled & {
-    color: var(--#{$prefix}btn-disabled-color);
+    color: var(--dui-btn-disabled-color);
     pointer-events: none;
-    background-color: var(--#{$prefix}btn-disabled-bg);
+    background-color: var(--dui-btn-disabled-background);
     background-image: if($enable-gradients, none, null);
-    border-color: var(--#{$prefix}btn-disabled-border-color);
-    opacity: var(--#{$prefix}btn-disabled-opacity);
-    @include box-shadow(none);
+    border-color: var(--dui-btn-disabled-border-color);
+    opacity: var(--dui-btn-disabled-opacity);
+    box-shadow: none;
   }
 }
 
@@ -121,19 +101,6 @@
 
 // Make a button look and behave like a link
 .btn-link {
-  --#{$prefix}btn-font-weight: var(--dui-font-weight-normal);
-  --#{$prefix}btn-color: #{$btn-link-color};
-  --#{$prefix}btn-bg: transparent;
-  --#{$prefix}btn-border-color: transparent;
-  --#{$prefix}btn-hover-color: #{$btn-link-hover-color};
-  --#{$prefix}btn-hover-border-color: transparent;
-  --#{$prefix}btn-active-color: #{$btn-link-hover-color};
-  --#{$prefix}btn-active-border-color: transparent;
-  --#{$prefix}btn-disabled-color: #{$btn-link-disabled-color};
-  --#{$prefix}btn-disabled-border-color: transparent;
-  --#{$prefix}btn-box-shadow: 0 0 0 #000; // Can't use `none` as keyword negates all values when used with multiple shadows
-  --#{$prefix}btn-focus-shadow-rgb: #{$btn-link-focus-shadow-rgb};
-
   text-decoration: $link-decoration;
   @if $enable-gradients {
     background-image: none;
@@ -145,11 +112,11 @@
   }
 
   &:focus-visible {
-    color: var(--#{$prefix}btn-color);
+    color: var(--dui-color-text);
   }
 
   &:hover {
-    color: var(--#{$prefix}btn-hover-color);
+    color: var(--dui-btn-hover-color);
   }
 
   // No need for an active state here
@@ -160,11 +127,15 @@
 //
 
 .btn-lg {
-  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+  padding: var(--dui-input-btn-padding-y-lg) var(--dui-input-btn-padding-x-lg);
+  font-size: var(--dui-font-size-lg);
+  border-radius: var(--dui-border-radius-lg);
 }
 
 .btn-sm {
-  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+  padding: var(--dui-input-btn-padding-y-sm) var(--dui-input-btn-padding-x-sm);
+  font-size: var(--dui-font-size-sm);
+  border-radius: var(--dui-border-radius-sm);
 }
 
 
@@ -243,7 +214,7 @@
   // Button states
   @each $name, $color in join($state-colors, $social-colors) {
     &-#{$name} {
-      @include button-variant(kt-get($color, base), kt-get($color, base));
+      //@include button-variant(kt-get($color, base), kt-get($color, base));
       color: kt-get($color, inverse);
 
       @if $name == light {
@@ -283,14 +254,14 @@
   }
 
   // Outline states
-  @each $name, $color in $state-colors {
-    &-outline-#{$name} {
-      @include button-outline-variant(
-        kt-get($color, base),
-        kt-get($color, inverse)
-      );
-    }
-  }
+  //@each $name, $color in $state-colors {
+  //  &-outline-#{$name} {
+  //    @include button-outline-variant(
+  //      kt-get($color, base),
+  //      kt-get($color, inverse)
+  //    );
+  //  }
+  //}
 
   // Hover states
   @each $name, $color in $state-colors {
@@ -435,19 +406,15 @@
   }
 
   &.btn-bold {
-    font-weight: 600;
+    font-weight: var(--dui-font-weight-bold);
   }
 
   &.btn-bolder {
-    font-weight: 500;
-  }
-
-  &.btn-boldest {
-    font-weight: 700;
+    font-weight: var(--dui-font-weight-bolder);
   }
 
   &.btn-thin {
-    font-weight: 400;
+    font-weight: var(--dui-font-weight-thin);
   }
 
   &.btn-lower {
@@ -532,13 +499,13 @@
   }
 
   &.btn-lg {
-    @include kt-icons-size(
-      (
-        lineawesome: 1.7rem,
-        fontawesome: 1.4rem,
-        flaticon: 1.3rem,
-      )
-    );
+    //@include kt-icons-size(
+    //  (
+    //    lineawesome: 1.7rem,
+    //    fontawesome: 1.4rem,
+    //    flaticon: 1.3rem,
+    //  )
+    //);
 
     i {
       padding-right: 0.75rem;
@@ -637,34 +604,34 @@ input.btn.btn-label {
 
   // Icon sizing
   &.btn-icon-sm {
-    @include kt-icons-size(
-      (
-        lineawesome: 1.25rem,
-        fontawesome: 1.15rem,
-        flaticon: 1.15rem,
-      )
-    );
+    //@include kt-icons-size(
+    //  (
+    //    lineawesome: 1.25rem,
+    //    fontawesome: 1.15rem,
+    //    flaticon: 1.15rem,
+    //  )
+    //);
   }
 
   // Icon sizing
   &.btn-icon-md {
-    @include kt-icons-size(
-      (
-        lineawesome: 1.3rem,
-        fontawesome: 1.2rem,
-        flaticon: 1.2rem,
-      )
-    );
+    //@include kt-icons-size(
+    //  (
+    //    lineawesome: 1.3rem,
+    //    fontawesome: 1.2rem,
+    //    flaticon: 1.2rem,
+    //  )
+    //);
   }
 
   &.btn-icon-lg {
-    @include kt-icons-size(
-      (
-        lineawesome: 1.4rem,
-        fontawesome: 1.4rem,
-        flaticon: 1.4rem,
-      )
-    );
+    //@include kt-icons-size(
+    //  (
+    //    lineawesome: 1.4rem,
+    //    fontawesome: 1.4rem,
+    //    flaticon: 1.4rem,
+    //  )
+    //);
   }
 
   // Icon button states
@@ -716,63 +683,63 @@ input.btn.btn-label {
 .btn.kt-spinner {
   & {
     &:not(.kt-spinner--center) {
-      padding-left: 3 * $input-btn-padding-x;
+      padding-left: calc(3 * var(--dui-input-btn-padding-x));
 
       &:before {
-        left: $input-btn-padding-x;
+        left: var(--dui-input-btn-padding-x);
       }
     }
 
     // Right
     &.kt-spinner--right {
-      padding-left: $input-btn-padding-x;
-      padding-right: 3 * $input-btn-padding-x;
+      padding-left: var(--dui-input-btn-padding-x);
+      padding-right: calc(3 * var(--dui-input-btn-padding-x));
 
       &:before {
         left: auto;
-        right: $input-btn-padding-x;
+        right: var(--dui-input-btn-padding-x);
       }
     }
   }
 
   &.kt-spinner--sm {
     &:not(.kt-spinner--center) {
-      padding-left: 2.5 * $input-btn-padding-x;
+      padding-left: calc(2.5 * var(--dui-input-btn-padding-x));
 
       &:before {
-        left: $input-btn-padding-x;
+        left: var(--dui-input-btn-padding-x);
       }
     }
 
     // Right
     &.kt-spinner--right {
-      padding-left: $input-btn-padding-x;
-      padding-right: 2.5 * $input-btn-padding-x;
+      padding-left: var(--dui-input-btn-padding-x);
+      padding-right: calc(2.5 * var(--dui-input-btn-padding-x));
 
       &:before {
         left: auto;
-        right: $input-btn-padding-x;
+        right: var(--dui-input-btn-padding-x);
       }
     }
   }
 
   &.kt-spinner--lg {
     &:not(.kt-spinner--center) {
-      padding-left: 3.5 * $input-btn-padding-x;
+      padding-left: calc(3.5 * var(--dui-input-btn-padding-x));
 
       &:before {
-        left: $input-btn-padding-x;
+        left: var(--dui-input-btn-padding-x);
       }
     }
 
     // Right
     &.kt-spinner--right {
-      padding-left: $input-btn-padding-x;
-      padding-right: 3.5 * $input-btn-padding-x;
+      padding-left: var(--dui-input-btn-padding-x);
+      padding-right: calc(3.5 * var(--dui-input-btn-padding-x));
 
       &:before {
         left: auto;
-        right: $input-btn-padding-x;
+        right: var(--dui-input-btn-padding-x);
       }
     }
   }

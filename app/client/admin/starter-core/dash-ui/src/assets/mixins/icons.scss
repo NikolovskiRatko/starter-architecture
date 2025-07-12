@@ -1,0 +1,174 @@
+@use '../variables' as *;
+@use '../functions' as *;
+
+// Icon Sizing
+// SASS Map:  (lineawesome: 1.1rem, fontawesome: 1.2rem, flaticon: 1.1rem)
+@mixin kt-icons-size($config) {
+  // Lineawesome
+  [class^="la-"],
+  [class*=" la-"] {
+    font-size: kt-get($config, lineawesome);
+  }
+
+  // Fontawesome
+  [class^="fa-"],
+  [class*=" fa-"] {
+    font-size: kt-get($config, fontawesome);
+  }
+
+  // Flaticon
+  [class^="flaticon-"],
+  [class*=" flaticon-"],
+  [class^="flaticon2-"],
+  [class*=" flaticon2-"] {
+    font-size: kt-get($config, flaticon);
+  }
+}
+
+// Icon attr
+// SASS Map:  (lineawesome: 1.1rem, fontawesome: 1.2rem, flaticon: 1.1rem)
+@mixin kt-icons-style($attr, $config) {
+  // lineawesome
+  [class^="la-"],
+  [class*=" la-"] {
+    #{$attr}: kt-get($config, lineawesome);
+  }
+
+  // Fontawesome
+  [class^="fa-"],
+  [class*=" fa-"] {
+    #{$attr}: kt-get($config, fontawesome);
+  }
+
+  // Flaticon
+  [class^="flaticon-"],
+  [class*=" flaticon-"],
+  [class^="flaticon2-"],
+  [class*=" flaticon2-"] {
+    #{$attr}: kt-get($config, flaticon);
+  }
+}
+
+// SASS Map:  (lineawesome: 1.1rem, fontawesome: 1.2rem, flaticon: 1.1rem)
+@mixin kt-icons {
+  [class^="la-"],
+  [class*=" la-"],
+  [class^="fa-"],
+  [class*=" fa-"],
+  [class^="flaticon-"],
+  [class*=" flaticon-"],
+  [class^="flaticon2-"],
+  [class*=" flaticon2-"] {
+    @content;
+  }
+}
+
+// Lineawesome icon
+@mixin kt-la-icon($icon) {
+  font-family: "Line Awesome Free";
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+
+  &:before {
+    content: "#{$icon}";
+  }
+}
+
+@mixin kt-la-icon-change($icon) {
+  &:before {
+    content: "#{$icon}";
+  }
+}
+
+@mixin kt-flaticon2-icon($icon) {
+  font-family: Flaticon2;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  content: "#{$icon}";
+}
+
+// Lineawesome icon
+@mixin kt-la-icon-self($icon) {
+  font-family: "Line Awesome Free";
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  content: "#{$icon}";
+}
+
+// Close icon
+@mixin kt-close-icon($self: null) {
+  @if $self == true {
+    @include kt-la-icon-self(kt-get($action-icons, close));
+  } @else {
+    @include kt-la-icon(kt-get($action-icons, close));
+  }
+}
+
+// Svg icon color
+@mixin kt-svg-icon-color($color) {
+  g {
+    [fill] {
+      transition: fill 0.3s ease;
+      fill: $color;
+    }
+  }
+
+  &:hover {
+    g {
+      [fill] {
+        transition: fill 0.3s ease;
+      }
+    }
+  }
+}
+
+// Arrow icon
+@mixin kt-arrow-icon($dir, $self: null) {
+  @if $dir == down {
+    @if $self == true {
+      @include kt-la-icon-self(kt-get($action-icons, down));
+    } @else {
+      @include kt-la-icon(kt-get($action-icons, down));
+    }
+  }
+
+  @if $dir == up {
+    @if $self == true {
+      @include kt-la-icon-self(kt-get($action-icons, up));
+    } @else {
+      @include kt-la-icon(kt-get($action-icons, up));
+    }
+  }
+
+  @if $dir == left {
+    @if $self == true {
+      @include kt-la-icon-self(kt-get($action-icons, left));
+    } @else {
+      @include kt-la-icon(kt-get($action-icons, left));
+    }
+  }
+
+  @if $dir == right {
+    @if $self == true {
+      @include kt-la-icon-self(kt-get($action-icons, right));
+    } @else {
+      @include kt-la-icon(kt-get($action-icons, right));
+    }
+  }
+}

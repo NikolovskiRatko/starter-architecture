@@ -1,3 +1,7 @@
+@use '../../assets/functions' as *;
+@use '../../assets/mixins' as *;
+@use '../../assets/mixins/breakpoint-mixins' as *;
+@use '../../assets/variables' as *;
 //
 // Badge
 //
@@ -142,7 +146,7 @@
 
   // Rounded
   &.kt-badge--rounded {
-    border-radius: $border-radius;
+    border-radius: var(--dui-border-radius);
   }
 
   // Dot style

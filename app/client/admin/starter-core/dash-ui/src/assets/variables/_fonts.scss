@@ -1,3 +1,5 @@
+@use '../mixins/breakpoint-mixins' as *;
+
 :root {
   --dui-root-font-size: 14px;
 
@@ -10,6 +12,7 @@
   --dui-font-weight-thin: 300;
   --dui-font-weight-normal: 400;
   --dui-font-weight-bold: 500;
+  --dui-font-weight-bolder: 600;
   --dui-line-height: 1.5;
 
   --dui-font-family-regular: "Poppins", serif;

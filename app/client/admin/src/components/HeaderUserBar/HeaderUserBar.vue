@@ -4,7 +4,7 @@
   import HeaderUserBarListItem from './HeaderUserBarListItem.vue';
   import { useAuth } from '@/composables';
   import { USER_ROUTES_DATA } from '@/modules/users/constants';
-  import { BadgeComponent, KtNotification } from '@starter-core/dash-ui/src';
+  import { BadgeComponent, KtNotification, DropdownMenu } from '@starter-core/dash-ui/src';
   import { useOnClickOutside } from '@starter-core/dash-ui/src/composables';
   import './HeaderUserBar.scss';
 
@@ -13,7 +13,6 @@
   const dropdownRef = ref();
   const DROPDOWN_CLASSNAMES = [
     'header-user-bar__dropdown',
-    'dropdown-menu',
     'dropdown-menu-fit',
     'dropdown-menu-right',
     'dropdown-menu-anim',
@@ -42,12 +41,7 @@
           {{ userFirstLetter }}
         </BadgeComponent>
       </div>
-      <div
-        :class="{
-          [`${DROPDOWN_CLASSNAMES.join(' ')}`]: true,
-          show: isDropdownVisible,
-        }"
-      >
+      <DropdownMenu :class-name="DROPDOWN_CLASSNAMES.join(' ')" :is-visible="isDropdownVisible">
         <!--begin: Head -->
         <div class="header-user-bar__user-card kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x">
           <div class="kt-user-card__avatar">
@@ -77,7 +71,7 @@
         </KtNotification>
 
         <!--end: Navigation -->
-      </div>
+      </DropdownMenu>
     </a>
   </div>
 </template>

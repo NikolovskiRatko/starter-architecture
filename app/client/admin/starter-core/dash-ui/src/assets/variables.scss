@@ -1,8 +1,10 @@
-@import "../core/functions";
+@use './functions' as *;
 
-$border-radius: 4px !default;
+$prefix:            bs-;
+$enable-gradients:  false !default;
+$enable-shadows:    true;
 
-// State colors
+  // State colors
 $state-colors: (
   // Metronic states
   brand:
@@ -115,8 +117,6 @@ $base-colors: (
         ),
 );
 
-$transition: all 0.3s;
-
 $font-families: (
         regular: "Poppins",
         heading: "Poppins",
@@ -132,8 +132,6 @@ $dropdown-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.15) !default;
 // Custom scrollbar color
 $scroll-color: darken(#ebedf2, 6%) !default;
 
-// Transition
-$transition: all 0.3s !default;
 
 // Modal Z-index
 $modal-zindex: 1050 !default;
@@ -172,8 +170,6 @@ $social-colors: (
 // Custom Scroll(Perfect Scrollbar) size
 $custom-scroll-size: 4px !default;
 
-$enable-rounded: true; // pass rounded corners setting to bootstrap SASS
-
 // Fonts
 $font-family-base: kt-get($font-families, regular);
 
@@ -204,18 +200,27 @@ $theme-colors: (
 // adapting to different screen sizes, for use in media queries.
 
 $grid-breakpoints: $media-breakpoints !default;
+$enable-button-pointers:      true !default;
 
 // Border Radiues
 $border-radius: 0.25rem !default;
 $border-radius-lg: 0.3rem !default;
 $border-radius-sm: 0.2rem !default;
 
-// Form & Button Controls
-$btn-font-weight: normal !default;
-$input-plaintext-color: kt-base-color(label, 3) !default;
-$input-placeholder-color: kt-base-color(label, 2) !default;
+$focus-ring-width:      .25rem !default;
+$input-btn-focus-width:         $focus-ring-width !default;
 
-$btn-secondary-color: kt-base-color(label, 3) !default;
+// Form & Button Controls
+$btn-white-space:             null !default; // Set to `nowrap` to prevent text wrapping
+$btn-font-weight: normal !default;
+$input-plaintext-color: kt-get($base-colors, label, 3) !default;
+$input-placeholder-color: kt-get($base-colors, label, 2) !default;
+$btn-focus-width:             $input-btn-focus-width !default;
+$link-decoration:                         underline !default;
+
+$btn-disabled-opacity: .65 !default;
+$btn-box-shadow: inset 0 1px 0 rgba(var(--dui-color-light), .15), 0 1px 1px rgba(var(--dui-color-darker), .075) !default;
+$btn-secondary-color: kt-get($base-colors, label, 3) !default;
 $btn-secondary-hover-bg-color: #f4f5f8 !default;
 $input-border-radius: $border-radius !default;
 $input-btn-padding-y: 0.65rem;
@@ -230,14 +235,14 @@ $input-btn-padding-y-lg: 1.15rem;
 $input-btn-padding-x-lg: 1.65rem;
 $input-btn-line-height-lg: 1.5;
 
-$input-border-color: kt-base-color(grey, 3) !default;
-$input-focus-border-color: lighten(kt-state-color(brand, base), 12%);
-$input-disabled-bg: kt-base-color(grey, 1) !default;
+$input-border-color: kt-get($base-colors, grey, 3) !default;
+$input-focus-border-color: lighten(kt-get($state-colors, brand, base), 12%);
+$input-disabled-bg: kt-get($base-colors, grey, 1) !default;
 $input-readonly-bg: #ffffff !default;
-$input-group-icon-color: kt-base-color(label, 2) !default;
+$input-group-icon-color: kt-get($base-colors, label, 2) !default;
 
-$input-group-addon-color: kt-base-color(label, 2) !default;
-$input-group-addon-bg: kt-base-color(grey, 1) !default;
+$input-group-addon-color: kt-get($base-colors, label, 2) !default;
+$input-group-addon-bg: kt-get($base-colors, grey, 1) !default;
 
 // Button elevate shadows
 $btn-elevate-shadow-1: 0px 0px 11px 0px rgba(56, 36, 99, 0.08);
@@ -251,40 +256,40 @@ $btn-elevate-shadow-3-hover: 0px 0px 22px 0px rgba(56, 36, 99, 0.15);
 $table-bg: transparent !default;
 $table-accent-bg: lighten(#f4f5f8, 1%);
 $table-hover-bg: lighten(#f4f5f8, 2%);
-$table-active-bg: kt-state-color(primary, base);
+$table-active-bg: kt-get($state-colors, primary, base);
 
-$table-border-color: kt-base-color(grey, 2);
+$table-border-color: kt-get($base-colors, grey, 2);
 
-$table-head-bg: kt-base-color(grey, 2);
-$table-head-color: kt-base-color(label, 3);
+$table-head-bg: kt-get($base-colors, grey, 2);
+$table-head-color: kt-get($base-colors, label, 3);
 
 // Card
-$card-border-color: kt-base-color(grey, 2) !default;
-$card-cap-bg: kt-base-color(grey, 1) !default;
+$card-border-color: kt-get($base-colors, grey, 2) !default;
+$card-cap-bg: kt-get($base-colors, grey, 1) !default;
 
 // List group
-$list-group-border-color: kt-base-color(grey, 2) !default;
-$list-group-hover-bg: kt-base-color(grey, 2) !default;
+$list-group-border-color: kt-get($base-colors, grey, 2) !default;
+$list-group-hover-bg: kt-get($base-colors, grey, 2) !default;
 
 // Modal
 $modal-inner-padding: 1.25rem !default;
 $modal-header-padding: 1.25rem !default;
 
-$modal-content-border-color: kt-base-color(grey, 2) !default;
-$modal-content-box-shadow-xs: 0 0.25rem 0.5rem rgba(kt-base-color(grey, 2), 0.5) !default;
-$modal-content-box-shadow-sm-up: 0 0.5rem 1rem rgba(kt-base-color(grey, 2), 0.5) !default;
+$modal-content-border-color: kt-get($base-colors, grey, 2) !default;
+$modal-content-box-shadow-xs: 0 0.25rem 0.5rem rgba(kt-get($base-colors, grey, 2), 0.5) !default;
+$modal-content-box-shadow-sm-up: 0 0.5rem 1rem rgba(kt-get($base-colors, grey, 2), 0.5) !default;
 
-$modal-header-border-color: kt-base-color(grey, 2) !default;
-$modal-footer-border-color: kt-base-color(grey, 2) !default;
+$modal-header-border-color: kt-get($base-colors, grey, 2) !default;
+$modal-footer-border-color: kt-get($base-colors, grey, 2) !default;
 
 // Pagination
-$pagination-color: kt-state-color(brand, base) !default;
-$pagination-border-color: kt-base-color(grey, 2) !default;
+$pagination-color: kt-get($state-colors, brand, base) !default;
+$pagination-border-color: kt-get($base-colors, grey, 2) !default;
 
-$pagination-hover-bg: kt-base-color(grey, 2) !default;
-$pagination-hover-border-color: kt-base-color(grey, 2) !default;
+$pagination-hover-bg: kt-get($base-colors, grey, 2) !default;
+$pagination-hover-border-color: kt-get($base-colors, grey, 2) !default;
 
-$pagination-disabled-border-color: kt-base-color(grey, 2) !default;
+$pagination-disabled-border-color: kt-get($base-colors, grey, 2) !default;
 
 // Popovers
 $popover-font-size: 0.9rem !default;
@@ -295,16 +300,16 @@ $popover-border-radius: 3px !default;
 $popover-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15) !default;
 
 $popover-header-bg: #ffffff !default;
-$popover-header-color: kt-base-color(label, 3) !default;
+$popover-header-color: kt-get($base-colors, label, 3) !default;
 $popover-header-padding-y: 1rem !default;
 $popover-header-padding-x: 1.25rem !default;
 
-$popover-body-color: kt-base-color(label, 2) !default;
+$popover-body-color: kt-get($base-colors, label, 2) !default;
 
 // Tooltips
 $tooltip-font-size: 0.9rem !default;
 $tooltip-max-width: 200px !default;
-$tooltip-color: kt-base-color(label, 3) !default;
+$tooltip-color: kt-get($base-colors, label, 3) !default;
 $tooltip-bg: #ffffff !default;
 $tooltip-border-radius: 3px !default;
 $tooltip-opacity: 1 !default;
@@ -318,9 +323,9 @@ $toast-spacing: 2rem !default;
 $toast-width: 350px !default;
 $toast-box-shadow: $dropdown-shadow !default;
 
-$toast-header-color: kt-base-color(label, 3) !default;
+$toast-header-color: kt-get($base-colors, label, 3) !default;
 $toast-header-background-color: #fff !default;
-$toast-header-border-color: kt-base-color(grey, 2) !default;
+$toast-header-border-color: kt-get($base-colors, grey, 2) !default;
 
 // Progress bars
 $progress-bg: kt-get-color() !default;
@@ -330,7 +335,7 @@ $dropdown-box-shadow: $dropdown-shadow !default;
 $zindex-dropdown: $dropdown-zindex !default;
 
 // Text muted
-$text-muted: kt-base-color(label, 2) !default;
+$text-muted: kt-get($base-colors, label, 2) !default;
 
 // Badges
 $badge-padding-y: 0.5em !default;
@@ -343,13 +348,13 @@ $grid-gutter-width: 20px !default;
 // Dropdowns
 //
 // Dropdown menu container and contents.
-$dropdown-link-color: kt-base-color(label, 2) !default;
-$dropdown-link-hover-color: kt-base-color(label, 3) !default;
-$dropdown-link-hover-bg: kt-base-color(grey, 1) !default;
+$dropdown-link-color: kt-get($base-colors, label, 2) !default;
+$dropdown-link-hover-color: kt-get($base-colors, label, 3) !default;
+$dropdown-link-hover-bg: kt-get($base-colors, grey, 1) !default;
 
 $dropdown-link-active-color: kt-brand-color(inverse) !default;
 $dropdown-link-active-bg: kt-brand-color() !default;
 
-$dropdown-link-disabled-color: kt-base-color(label, 1) !default;
+$dropdown-link-disabled-color: kt-get($base-colors, label, 1) !default;
 
-$dropdown-header-color: kt-base-color(label, 2) !default;
+$dropdown-header-color: kt-get($base-colors, label, 2) !default;

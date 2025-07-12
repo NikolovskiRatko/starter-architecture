@@ -1,3 +1,6 @@
+@use '../../../assets/functions' as *;
+@use '../../../assets/mixins' as *;
+@use '../../../assets/mixins/breakpoint-mixins' as *;
 @import "../config";
 
 @mixin head-sizes($device) {
@@ -28,8 +31,8 @@
   @include head-sizes(desktop);
 
   @include kt-rounded {
-    border-top-left-radius: $border-radius;
-    border-top-right-radius: $border-radius;
+    border-top-left-radius: var(--dui-border-radius);
+    border-top-right-radius: var(--dui-border-radius);
   }
 
   &--noborder {

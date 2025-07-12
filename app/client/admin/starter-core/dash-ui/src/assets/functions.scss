@@ -84,27 +84,3 @@
     @return lighten($color, 50%);
   }
 }
-
-@function kt-state-color($name, $type: null) {
-  @if ($type == null) {
-    $type: base;
-  }
-
-  @return kt-get($state-colors, $name, $type);
-}
-
-@function kt-brand-color($type: null) {
-  @return kt-state-color(brand, $type);
-}
-
-@function kt-base-color($type, $level) {
-  @return kt-get($base-colors, $type, $level);
-}
-
-@function kt-media-breakpoint($type) {
-  @if (kt-has($media-breakpoints, $type)) {
-    @return kt-get($media-breakpoints, $type);
-  } @else {
-    @return $type;
-  }
-}

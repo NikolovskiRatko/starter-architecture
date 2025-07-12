@@ -1,3 +1,7 @@
+@use '../../../assets/variables' as *;
+@use '../../../assets/functions' as *;
+@use '../../../assets/mixins' as *;
+@use '../../../assets/mixins/breakpoint-mixins' as *;
 @import "../config";
 
 .kt-portlet__head__label {

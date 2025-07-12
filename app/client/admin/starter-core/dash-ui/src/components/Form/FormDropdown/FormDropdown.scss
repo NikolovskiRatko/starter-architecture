@@ -1,3 +1,5 @@
+@use '../../../assets/functions' as *;
+@use '../config' as *;
 $label-config: kt-get($form-config, label);
 $input-config: kt-get($form-config, input);
 
@@ -24,9 +26,9 @@ $input-config: kt-get($form-config, input);
             border-color: kt-get($input-config, color, focus);
             outline: 0;
 
-            @if ($enable-shadows) {
-              box-shadow: var(--dui-focus-ring-box-shadow);
-            }
+            //@if ($enable-shadows) {
+            //  box-shadow: var(--dui-focus-ring-box-shadow);
+            //}
         }
     }
 

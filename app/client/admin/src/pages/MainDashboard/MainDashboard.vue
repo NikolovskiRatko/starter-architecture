@@ -12,6 +12,7 @@
     ContentLoader,
     AccordionContent,
     AccordionItem,
+    DashButton
   } from '@starter-core/dash-ui/src';
 
   // const categories = ref([]);
@@ -63,6 +64,13 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, aut molestiae.
           </AccordionItem>
         </AccordionContent>
+      </div>
+      <div class="col-md-6">
+        <DashButton>Jajca goli</DashButton>
+        <DashButton theme="secondary">Jajca goli</DashButton>
+        <DashButton theme="success">Jajca goli</DashButton>
+        <DashButton theme="info">Jajca goli</DashButton>
+        <DashButton theme="danger">Jajca goli</DashButton>
       </div>
     </div>
   </PageWrapper>

@@ -1,3 +1,7 @@
+@use '../../../assets/functions' as *;
+@use '../../../assets/mixins' as *;
+@use '../../../assets/mixins/breakpoint-mixins' as *;
+@use '../config' as *;
 $submenu-tablet-mobile-config: kt-get($header-menu-config-tablet-mobile, item, submenu);
 
 .kt-menu__submenu {

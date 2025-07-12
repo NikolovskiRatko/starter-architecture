@@ -1,3 +1,7 @@
+@use '../../assets/functions' as *;
+@use '../../assets/mixins' as *;
+@use '../../assets/mixins/breakpoint-mixins' as *;
+@use '../../assets/variables' as *;
 @import "../Datatable/utils";
 @import "../Datatable/skin";
 
@@ -77,13 +81,13 @@
   }
 
   &__input {
-    @include kt-transition;
+    transition: var(--dui-transition);
 
     background: $page-default;
     border-color: $page-default;
 
     &:focus {
-      @include kt-transition;
+      transition: var(--dui-transition);
 
       background: $page-hover;
       border-color: $page-hover;
