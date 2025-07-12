@@ -1,3 +1,5 @@
+@use '../../../assets/functions' as *;
+@use '../config' as *;
 $label-config: kt-get($form-config, label);
 
 .form-group {

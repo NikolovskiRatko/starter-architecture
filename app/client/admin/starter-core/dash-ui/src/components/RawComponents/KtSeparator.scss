@@ -1,3 +1,8 @@
+@use '../../assets/mixins' as *;
+@use '../../assets/mixins/breakpoint-mixins' as *;
+@use '../../assets/functions' as *;
+@use '../../assets/variables' as *;
+@use '../Portlet/config' as *;
 //
 // Separator
 //

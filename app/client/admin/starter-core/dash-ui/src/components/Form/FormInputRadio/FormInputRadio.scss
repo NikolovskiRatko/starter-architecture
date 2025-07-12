@@ -1,3 +1,8 @@
+@use '../../../assets/functions' as *;
+@use '../../../assets/mixins' as *;
+@use '../../../assets/mixins/breakpoint-mixins' as *;
+@use '../../../assets/variables' as *;
+@use '../config' as *;
 $radio-config: kt-get($form-config, radio);
 
 @mixin kt-radio-theme(
@@ -21,23 +26,23 @@ $radio-config: kt-get($form-config, radio);
         border: solid $outline-tick-color;
         background: $outline-tick-color;
       }
-  
+
       &#{$radioDotBlock}--solid-type {
         background: $solid-bg-color;
-  
+
         &:after {
           border: solid $solid-tick-color;
           background: $solid-tick-color;
         }
-  
+
         &#{$radioDotBlock}--checked {
           background: $solid-bg-checked-color;
         }
       }
-  
+
       &--disabled {
         opacity: 0.6;
-  
+
         &:after {
           border-color: $outline-border-checked-color;
         }
@@ -79,7 +84,7 @@ $radio-config: kt-get($form-config, radio);
       display: inline-block;
       margin-right: 15px;
       margin-bottom: 5px;
-      
+
       &:last-child {
         margin-right: 0;
       }
@@ -175,7 +180,7 @@ $radio-config: kt-get($form-config, radio);
 );
 
 // State Colors
-@each $name, $color in $state-colors {  
+@each $name, $color in $state-colors {
   @include kt-radio-theme(
       $name,
       kt-get($color, base),

@@ -1,3 +1,6 @@
+@use '@starter-core/dash-ui/src/assets/variables' as *;
+@use '@starter-core/dash-ui/src/assets/functions' as *;
+
 .user-form-avatar {
   position: relative;
   display: inline-block;
@@ -61,10 +64,10 @@
       color: kt-brand-color();
     }
 
-    @include kt-transition;
+    transition: var(--dui-transition);
 
     &:hover {
-      @include kt-transition;
+      transition: var(--dui-transition);
 
       background-color: kt-brand-color();
 

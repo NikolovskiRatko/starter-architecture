@@ -4,9 +4,8 @@
   import HeaderUserBarListItem from './HeaderUserBarListItem.vue';
   import { useAuth } from '@/composables';
   import { USER_ROUTES_DATA } from '@/modules/users/constants';
-  import { BadgeComponent } from '@starter-core/dash-ui/src';
+  import { BadgeComponent, KtNotification, DropdownMenu } from '@starter-core/dash-ui/src';
   import { useOnClickOutside } from '@starter-core/dash-ui/src/composables';
-
   import './HeaderUserBar.scss';
 
   const { logout, user, avatar } = useAuth();
@@ -14,7 +13,6 @@
   const dropdownRef = ref();
   const DROPDOWN_CLASSNAMES = [
     'header-user-bar__dropdown',
-    'dropdown-menu',
     'dropdown-menu-fit',
     'dropdown-menu-right',
     'dropdown-menu-anim',
@@ -43,12 +41,7 @@
           {{ userFirstLetter }}
         </BadgeComponent>
       </div>
-      <div
-        :class="{
-          [`${DROPDOWN_CLASSNAMES.join(' ')}`]: true,
-          show: isDropdownVisible,
-        }"
-      >
+      <DropdownMenu :class-name="DROPDOWN_CLASSNAMES.join(' ')" :is-visible="isDropdownVisible">
         <!--begin: Head -->
         <div class="header-user-bar__user-card kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x">
           <div class="kt-user-card__avatar">
@@ -65,7 +58,7 @@
         <!--end: Head -->
 
         <!--begin: Navigation -->
-        <div class="kt-notification">
+        <KtNotification>
           <HeaderUserBarListItem
             :icon="IconUser"
             :to="{ name: USER_ROUTES_DATA.myProfilePersonalInfo.name }"
@@ -75,10 +68,10 @@
           <div class="kt-notification__custom kt-space-between">
             <a @click.prevent="logout" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
           </div>
-        </div>
+        </KtNotification>
 
         <!--end: Navigation -->
-      </div>
+      </DropdownMenu>
     </a>
   </div>
 </template>

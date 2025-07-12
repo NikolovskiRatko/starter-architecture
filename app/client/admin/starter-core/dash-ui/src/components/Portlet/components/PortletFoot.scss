@@ -1,3 +1,6 @@
+@use '../../../assets/functions' as *;
+@use '../../../assets/mixins' as *;
+@use '../../../assets/mixins/breakpoint-mixins' as *;
 @import "../config";
 
 .kt-portlet__foot {
@@ -13,8 +16,8 @@
   }
 
   @include kt-rounded {
-    border-bottom-left-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: var(--dui-border-radius);
+    border-bottom-right-radius: var(--dui-border-radius);
   }
 
   &--fit {

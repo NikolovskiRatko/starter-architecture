@@ -1,3 +1,6 @@
+@use '@starter-core/dash-ui/src/assets/mixins' as *;
+@use '@starter-core/dash-ui/src/assets/mixins/breakpoint-mixins' as *;
+
 $sk-section-title-sizes: (
   small: var(--dui-font-size),
   medium: var(--dui-font-size-lg),
@@ -28,7 +31,7 @@ $sk-section-title-sizes: (
     margin: 0 0 var(--dui-spacing-3);
     font-size: var(--dui-font-size-md);
     font-weight: 500;
-    color: kt-base-color(label, 4);
+    color: var(--dui-color-base-label-4);
 
     @each $size, $value in $sk-section-title-sizes {
       &--#{$size} {
@@ -43,7 +46,7 @@ $sk-section-title-sizes: (
     margin: 0 0 1rem;
     font-size: 1rem;
     font-weight: 400;
-    color: kt-base-color(label, 3);
+    color: var(--dui-color-base-label-3);
   }
 
   .kt-section__info {
@@ -51,7 +54,7 @@ $sk-section-title-sizes: (
     padding: 0;
     margin: 0 0 1rem;
     font-size: 1rem;
-    color: kt-base-color(label, 3);
+    color: var(--dui-color-base-label-3);
   }
 
   .kt-section__content {
@@ -61,17 +64,17 @@ $sk-section-title-sizes: (
 
     &.kt-section__content--border {
       padding: 1.5rem;
-      border: 3px solid kt-base-color(grey, 2);
+      border: 3px solid var(--dui-gray-200);
 
       @include kt-rounded {
-        border-radius: $border-radius;
+        border-radius: var(--dui-border-radius);
       }
     }
 
     &.kt-section__content--solid {
       padding: 1.5rem;
-      background-color: kt-base-color(grey, 1);
-      border-left: 4px solid kt-base-color(grey, 3);
+      background-color: var(--dui-gray-100);
+      border-left: 4px solid var(--dui-gray-300);
       border-top-left-radius: var(--dui-border-radius);
       border-top-right-radius: var(--dui-border-radius);
     }

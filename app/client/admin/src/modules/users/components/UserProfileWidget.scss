@@ -1,3 +1,7 @@
+@use '@starter-core/dash-ui/src/assets/mixins' as *;
+@use '@starter-core/dash-ui/src/assets/mixins/breakpoint-mixins' as *;
+@use '@starter-core/dash-ui/src/assets/mixins/icons' as *;
+
 .user-profile-widget {
   $block: &;
 
@@ -81,7 +85,7 @@
           transition: color 0.3s ease;
 
           @include kt-rounded {
-            border-radius: $border-radius;
+            border-radius: var(--dui-border-radius);
           }
 
           #{$block}__section {
@@ -122,7 +126,7 @@
           transition: color 0.3s ease;
 
           @include kt-rounded {
-            border-radius: $border-radius;
+            border-radius: var(--dui-border-radius);
           }
 
           #{$block}__desc {

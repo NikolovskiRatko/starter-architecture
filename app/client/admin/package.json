@@ -21,6 +21,7 @@
     "@vee-validate/yup": "^4.15.0",
     "@websanova/vue-auth": "^4.2.1",
     "axios": "^1.6.7",
+    "bootstrap-4-grid": "^3.4.0",
     "lodash": "^4.17.21",
     "mitt": "^3.0.1",
     "pinia": "^3.0.3",

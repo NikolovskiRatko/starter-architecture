@@ -1,3 +1,6 @@
+@use '@starter-core/dash-ui/src/assets/mixins' as *;
+@use '@starter-core/dash-ui/src/assets/mixins/breakpoint-mixins' as *;
+
 .header-user-bar {
   position: relative;
 
@@ -5,7 +8,7 @@
     position: absolute;
     top: 100%;
     right: 0;
-    left: auto;
+    left: auto !important;
     will-change: transform;
   }
 
@@ -46,7 +49,7 @@
     padding-left: 1rem;
     font-size: 1.3rem;
     font-weight: 500;
-    color: kt-base-color(label, 3);
+    color: var(--dui-color-base-label-3);
   }
 
   .kt-user-card__badge {
@@ -56,7 +59,7 @@
   // Skins
   &.kt-user-card--skin-light {
     .kt-user-card__name {
-      color: kt-base-color(label, 3);
+      color: var(--dui-color-base-label-3);
     }
 
     .kt-user-card__avatar {

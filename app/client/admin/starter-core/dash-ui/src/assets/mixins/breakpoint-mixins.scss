@@ -1,0 +1,70 @@
+@use '../functions' as *;
+@use '../variables' as *;
+
+@function kt-media-breakpoint($type) {
+  @if (kt-has($media-breakpoints, $type)) {
+    @return kt-get($media-breakpoints, $type);
+  } @else {
+    @return $type;
+  }
+}
+
+@mixin kt-minimal-desktop {
+  @media (min-width: #{kt-media-breakpoint(lg) + 1px}) and (max-width: #{kt-media-breakpoint(xl)}) {
+    @content;
+  }
+}
+
+@mixin kt-minimal-desktop-and-below {
+  @media (max-width: #{kt-media-breakpoint(xl)}) {
+    @content;
+  }
+}
+
+@mixin kt-desktop {
+  @media (min-width: #{kt-media-breakpoint(lg) + 1px}) {
+    @content;
+  }
+}
+
+@mixin kt-desktop-xl {
+  @media (min-width: #{kt-media-breakpoint(xl) + 1px}) {
+    @content;
+  }
+}
+
+@mixin kt-desktop-xxl {
+  @media (min-width: #{kt-media-breakpoint(xxl) + 1px}) {
+    @content;
+  }
+}
+
+@mixin kt-desktop-and-tablet {
+  @media (min-width: #{kt-media-breakpoint(md) + 1px}) {
+    @content;
+  }
+}
+
+@mixin kt-tablet {
+  @media (min-width: #{kt-media-breakpoint(md) + 1px}) and (max-width: #{kt-media-breakpoint(lg)}) {
+    @content;
+  }
+}
+
+@mixin kt-tablet-and-mobile {
+  @media (max-width: #{kt-media-breakpoint(lg)}) {
+    @content;
+  }
+}
+
+@mixin kt-mobile {
+  @media (max-width: #{kt-media-breakpoint(md)}) {
+    @content;
+  }
+}
+
+@mixin kt-mobile-sm {
+  @media (max-width: #{kt-media-breakpoint(sm)}) {
+    @content;
+  }
+}

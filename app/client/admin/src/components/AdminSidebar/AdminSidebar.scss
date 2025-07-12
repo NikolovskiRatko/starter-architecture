@@ -1,4 +1,8 @@
-@import 'config';
+@use '@starter-core/dash-ui/src/assets/functions' as *;
+@use '@starter-core/dash-ui/src/assets/mixins' as *;
+@use '@starter-core/dash-ui/src/assets/mixins/breakpoint-mixins' as *;
+@use '@starter-core/dash-ui/src/assets/mixins/offcanvas' as *;
+@use 'config' as *;
 
 // Build Aside Skin
 .aside {
@@ -14,17 +18,17 @@
     border-radius: 50%;
 
     .btn {
-      @include kt-transition;
+      transition: var(--dui-transition);
 
       background-color: transparent;
 
       i {
-        @include kt-transition;
+        transition: var(--dui-transition);
 
         font-size: 1.4rem;
         color: kt-brand-color();
 
-        @include kt-transition;
+        transition: var(--dui-transition);
       }
     }
 
@@ -32,7 +36,7 @@
       background-color: kt-brand-color();
 
       i {
-        @include kt-transition;
+        transition: var(--dui-transition);
 
         color: kt-brand-color(inverse);
       }
@@ -40,12 +44,12 @@
 
     .show .btn,
     .btn:hover {
-      @include kt-transition;
+      transition: var(--dui-transition);
 
       background-color: #191b27;
 
       i {
-        @include kt-transition;
+        transition: var(--dui-transition);
 
         color: kt-brand-color();
       }

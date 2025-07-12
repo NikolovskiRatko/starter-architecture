@@ -1,3 +1,8 @@
+@use '../../assets/variables' as *;
+@use '../../assets/mixins' as *;
+@use '../../assets/mixins/breakpoint-mixins' as *;
+@use '../../assets/functions' as *;
+
 // Portlet settings
 $portlet: (
   min-height: (

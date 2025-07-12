@@ -1,0 +1,106 @@
+@function to-rgb($value) {
+  @return red($value), green($value), blue($value);
+}
+
+:root {
+  --dui-btn-color: var(--dui-color-text);
+  --dui-btn-background: transparent;
+  --dui-btn-border-color: transparent;
+
+  --dui-btn-hover-color: #fff;
+  --dui-btn-hover-background: transparent;
+  --dui-btn-hover-border-color: #fff;
+
+  --dui-btn-active-color: #fff;
+  --dui-btn-active-background: #4652b1;
+  --dui-btn-active-border-color: #424da6;
+  --dui-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+
+  --dui-btn-disabled-color: #fff;
+  --dui-btn-disabled-background: #5867dd;
+  --dui-btn-disabled-border-color: #5867dd;
+
+  --dui-btn-white-space: null;
+  --dui-btn-font-weight: normal;
+  --dui-btn-focus-width: var(--dui-focus-ring-width);
+  --dui-btn-disabled-opacity: 0.65;
+  --dui-btn-box-shadow: inset 0 1px 0 rgba(var(--dui-color-light), 0.15), 0 1px 1px rgba(var(--dui-color-darker), 0.075);
+
+  --dui-btn-focus-shadow-rgb: #{to-rgb(mix(#646c9a, transparent, 15%))};
+  --dui-btn-focus-box-shadow: 0 0 0 var(--dui-focus-ring-width) rgba(var(--dui-btn-focus-shadow-rgb), .5);
+
+  --dui-btn-elevate-shadow-1: 0px 0px 11px 0px rgba(56, 36, 99, 0.08);
+  --dui-btn-elevate-shadow-1-hover: 0px 0px 22px 0px rgba(56, 36, 99, 0.11);
+  --dui-btn-elevate-shadow-2: 0px 0px 11px 0px rgba(56, 36, 99, 0.1);
+  --dui-btn-elevate-shadow-2-hover: 0px 0px 22px 0px rgba(56, 36, 99, 0.13);
+  --dui-btn-elevate-shadow-3: 0px 0px 11px 0px rgba(56, 36, 99, 0.12);
+  --dui-btn-elevate-shadow-3-hover: 0px 0px 22px 0px rgba(56, 36, 99, 0.15);
+
+  --dui-input-btn-padding-y: 0.65rem;
+  --dui-input-btn-padding-x: 1rem;
+  --dui-input-btn-line-height: 1.5;
+
+  --dui-input-btn-padding-y-sm: 0.5rem;
+  --dui-input-btn-padding-x-sm: 1rem;
+
+  --dui-input-btn-padding-y-lg: 1.15rem;
+  --dui-input-btn-padding-x-lg: 1.65rem;
+
+  .btn-primary {
+    --dui-btn-color: #fff;
+    --dui-btn-background: #5867dd;
+    --dui-btn-border-color: #5867dd;
+
+    --dui-btn-hover-color: #fff;
+    --dui-btn-hover-background: #4b58bc;
+    --dui-btn-hover-border-color: #4652b1;
+
+    --dui-btn-focus-shadow-rgb: 113, 126, 226;
+
+    --dui-btn-active-color: #fff;
+    --dui-btn-active-background: #4652b1;
+    --dui-btn-active-border-color: #424da6;
+    --dui-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+
+    --dui-btn-disabled-color: #fff;
+    --dui-btn-disabled-background: #5867dd;
+    --dui-btn-disabled-border-color: #5867dd;
+  }
+
+  .btn-danger {
+    --dui-btn-color: #000;
+    --dui-btn-background: #fd397a;
+    --dui-btn-border-color: #fd397a;
+
+    --dui-btn-hover-color: #000;
+    --dui-btn-hover-bg: #fd578e;
+    --dui-btn-hover-border-color: #fd4d87;
+    --dui-btn-focus-shadow-rgb: 215, 48, 104;
+
+    --dui-btn-active-color: #000;
+    --dui-btn-active-background: #fd6195;
+    --dui-btn-active-border-color: #fd4d87;
+    --dui-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+
+    --dui-btn-disabled-color: #000;
+    --dui-btn-disabled-background: #fd397a;
+    --dui-btn-disabled-border-color: #fd397a;
+  }
+
+  .btn-link {
+    --dui-btn-color: var(--dui-color-text-link);
+    --dui-btn-background: transparent;
+    --dui-btn-border-color: transparent;
+
+    --dui-btn-active-border-color: transparent;
+    --dui-btn-disabled-color: var(--dui-gray-600);
+    --dui-btn-disabled-border-color: transparent;
+    --dui-btn-box-shadow: 0 0 0 #000; // Can't use `none` as keyword negates all values when used with multiple shadows
+
+    --dui-btn-hover-color: var(--dui-color-text-link-hover);
+    --dui-btn-hover-border-color: transparent;
+    --dui-btn-active-color: var(--dui-color-text-link-hover);
+
+    //--#{$prefix}btn-focus-shadow-rgb: #{$btn-link-focus-shadow-rgb};
+  }
+}

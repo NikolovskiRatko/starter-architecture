@@ -1,3 +1,9 @@
+@use '../../../assets/functions' as *;
+@use '../../../assets/mixins' as *;
+@use '../../../assets/mixins/breakpoint-mixins' as *;
+@use '../../../assets/mixins/icons' as *;
+@use '../../../assets/variables' as *;
+@use '../config' as *;
 $header-item-icon-color: #c8cad5;
 $header-item-hover-bg: rgba(#4d5995, 0.06);
 
@@ -8,7 +14,7 @@ $item-submenu-section-indent: 15px;
     $block: &;
     background-color: kt-get($header-menu-link-config, self, bg-color, default);
     @include kt-rounded {
-      border-radius: $border-radius !important;
+      border-radius: var(--dui-border-radius) !important;
     }
 
     .kt-menu__hor-icon {

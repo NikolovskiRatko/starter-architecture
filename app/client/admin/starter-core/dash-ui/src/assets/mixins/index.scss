@@ -1,0 +1,158 @@
+@use '../config';
+//@use '../functions' as *;
+@use '../variable-functions' as *;
+//
+// Global Mixins
+//
+@mixin kt-clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin kt-button-reset() {
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  cursor: pointer;
+  background: none;
+  outline: none !important;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin kt-input-reset() {
+  border: 0;
+  background: none;
+  outline: none !important;
+  box-shadow: none;
+}
+
+@mixin kt-btn-reset() {
+  border: 0;
+  background: none;
+  outline: none !important;
+  box-shadow: none;
+  outline: none !important;
+}
+
+@mixin kt-fix-fixed-position-lags() {
+  // webkit hack for smooth font view on fixed positioned elements
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+@mixin kt-fix-animation-lags() {
+  transform: translateZ(0);
+  -webkit-transform-style: preserve-3d;
+}
+
+@mixin kt-attr($attr, $value, $important: "") {
+  @if $value != null {
+    #{$attr}: #{$value} #{$important};
+  }
+}
+
+@mixin kt-hack-ie {
+  @media screen\0 {
+    @content;
+  }
+}
+
+@mixin kt-hack-edge-all {
+  @supports (-ms-ime-align: auto) {
+    @content;
+  }
+}
+
+@mixin kt-rounded {
+  @if config.$enable-rounded == true {
+    @content;
+  }
+}
+
+@mixin kt-not-rounded {
+  @if config.$enable-rounded == false {
+    @content;
+  }
+}
+
+// Input placeholder color
+@mixin kt-input-placeholder($color) {
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+  // See https://github.com/twbs/bootstrap/pull/11526
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  // Internet Explorer 10+
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  // Safari and Chrome
+}
+
+@mixin kt-hover-transition {
+  transition: $transition;
+
+  &:hover {
+    transition: $transition;
+  }
+}
+
+// Breakpoint mixins
+// Layout Breakpoints
+// Define the minimum and maximum dimensions at which your layout will change, adapting to different screen sizes, for use in media queries.
+
+@mixin kt-media-below($width) {
+  @media (max-width: #{kt-media-breakpoint($width)}) {
+    @content;
+  }
+}
+
+@mixin kt-media-above($width) {
+  @media (min-width: #{kt-media-breakpoint($width) + 1px}) {
+    @content;
+  }
+}
+
+@mixin kt-media-range($from, $to) {
+  @media (min-width: #{kt-media-breakpoint($from) + 1px}) and (max-width: #{kt-media-breakpoint($to)}) {
+    @content;
+  }
+}
+
+@mixin kt-responsive-below($width) {
+  @media (max-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin kt-responsive-above($width) {
+  @media (min-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin kt-responsive-range($from, $to) {
+  @media (min-width: #{$from}) and (max-width: #{$to}) {
+    @content;
+  }
+}
+
+@mixin kt-full-absolute-positioned($bg) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $bg;
+}

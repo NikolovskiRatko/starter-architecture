@@ -1,0 +1,39 @@
+@import './variables/sidebar';
+@import './variables/colors';
+@import './variables/footer';
+@import './variables/brand';
+@import './variables/layers';
+@import './variables/header';
+@import './variables/fonts';
+@import './variables/forms';
+@import './variables/button';
+@import './variables/dropdown';
+
+:root {
+  --dui-transition: all .3s ease;
+
+  // Spacing
+  --dui-spacing-1: 0.5rem;
+  --dui-spacing-2: 1rem;
+  --dui-spacing-3: 1.5rem;
+  --dui-spacing-4: 2rem;
+
+  --dui-page-padding-desktop: 25px;
+  --dui-page-padding-mobile: 15px;
+
+  // Borders
+  --dui-border-width: 1px;
+  --dui-border: var(--dui-border-width) solid var(--dui-border-color);
+  --dui-border-radius:      .375rem;
+  --dui-border-radius-sm:   .25rem;
+  --dui-border-radius-lg:   .5rem;
+  --dui-border-radius-xl:   1rem;
+  --dui-border-radius-xxl:  2rem;
+  --dui-border-radius-pill: 50rem;
+
+  //Box shadows
+  --dui-elevate-shadow:         0px 0px 13px 0px rgba(82, 63, 105, 0.05);
+  --dui-elevate-shadow-2:       0px 0px 13px 0px rgba(82, 63, 105, 0.1);
+  --dui-focus-ring-width:       .25rem;
+  --dui-focus-ring-box-shadow:  0 0 0 .2rem rgba(var(--dui-color-primary), .25);
+}

@@ -1,3 +1,6 @@
+@use '../../../assets/functions' as *;
+@use '../../../assets/mixins' as *;
+@use '../../../assets/mixins/breakpoint-mixins' as *;
 @import "../config";
 
 $content-sizes: (
@@ -66,7 +69,7 @@ $content-sizes: (
   }
 
   @include kt-rounded {
-    border-radius: $border-radius;
+    border-radius: var(--dui-border-radius);
   }
 
   @include alignment;

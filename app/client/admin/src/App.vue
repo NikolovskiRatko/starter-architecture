@@ -3,9 +3,10 @@
   import { computed } from 'vue';
   import { isTouchDevice } from '@/helpers';
   import { useRootStore } from '@/store/root';
-  import '@starter-core/dash-ui/src/assets/main.scss';
-  // eslint-disable-next-line import/no-unresolved
-  // import "@starter-core/dash-ui/index.css";
+  import 'bootstrap-4-grid/scss/grid.scss';
+  import '@starter-core/dash-ui/src/assets/normalize.scss';
+  import '@starter-core/dash-ui/src/assets/starter-variables.scss';
+  import '@starter-core/dash-ui/src/assets/helpers.scss';
   import './App.scss';
 
   const auth = useAuth();

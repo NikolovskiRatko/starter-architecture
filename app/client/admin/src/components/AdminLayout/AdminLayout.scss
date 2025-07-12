@@ -1,3 +1,6 @@
+@use '@starter-core/dash-ui/src/assets/mixins' as *;
+@use '@starter-core/dash-ui/src/assets/mixins/breakpoint-mixins' as *;
+
 .admin-layout {
   display: grid;
   grid-template-areas: 'admin-layout-aside admin-layout-main';

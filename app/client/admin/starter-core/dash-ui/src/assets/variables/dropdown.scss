@@ -1,0 +1,28 @@
+:root {
+  --dui-dropdown-zindex: 1000;
+  --dui-dropdown-min-width: 10rem;
+  --dui-dropdown-padding-x: 0;
+  --dui-dropdown-padding-y: 0.5rem;
+  --dui-dropdown-spacer: 0.125rem;
+  --dui-dropdown-font-size: 1rem;
+  --dui-dropdown-color: var(--dui-color-text);
+  --dui-dropdown-bg: var(--dui-color-body-background);
+  //--dui-dropdown-border-color: var(--dui-border-color-translucent);
+  --dui-dropdown-border-radius: var(--dui-border-radius);
+  --dui-dropdown-border-width: var(--dui-border-width);
+  --dui-dropdown-inner-border-radius: calc(var(--dui-border-radius) - var(--dui-border-width));
+  //--dui-dropdown-divider-bg: var(--dui-border-color-translucent);
+  --dui-dropdown-divider-margin-y: 0.5rem;
+  //--dui-dropdown-box-shadow: var(--dui-box-shadow);
+  --dui-dropdown-link-color: var(--dui-color-text);
+  --dui-dropdown-link-hover-color: var(--dui-color-text);
+  --dui-dropdown-link-hover-bg: var(--dui-gray-100);
+  --dui-dropdown-link-active-color: #fff;
+  --dui-dropdown-link-active-bg: #0d6efd;
+  --dui-dropdown-link-disabled-color: var(--dui-gray-100);
+  --dui-dropdown-item-padding-x: 1rem;
+  --dui-dropdown-item-padding-y: 0.25rem;
+  --dui-dropdown-header-color: #6c757d;
+  --dui-dropdown-header-padding-x: 1rem;
+  --dui-dropdown-header-padding-y: 0.5rem;
+}
