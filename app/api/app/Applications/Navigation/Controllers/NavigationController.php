@@ -5,6 +5,7 @@ namespace App\Applications\Navigation\Controllers;
 use App\Applications\Navigation\DTO\NavigationDTO;
 use App\Applications\Navigation\Model\Navigation;
 use App\Applications\Navigation\Services\NavigationService;
+use App\Applications\Navigation\Requests\NavigationRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Route;
@@ -31,7 +32,7 @@ class NavigationController extends Controller
         return response()->json($navigation->toArray());
     }
 
-    public function create(Request $request)
+    public function create(NavigationRequest $request)
     {
         $navigationDTO = NavigationDTO::fromRequest($request);
         $navigation = $this->navigationService->createNavigation($navigationDTO->toArray());

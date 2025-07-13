@@ -3,7 +3,7 @@
 namespace App\Applications\Navigation\DTO;
 
 use App\Applications\Navigation\Model\Navigation;
-use Illuminate\Http\Request;
+use App\Applications\Navigation\Requests\NavigationRequest;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 use Carbon\Carbon;
@@ -88,19 +88,17 @@ class NavigationDTO
     /**
      * Validate and initialize NavigationDTO from request data.
      *
-     * @param Request $request
+     * @param NavigationRequest $request
      * @return static
-     * @throws ValidationException
      */
-    public static function fromRequest(Request $request): self
+    public static function fromRequest(NavigationRequest $request): self
     {
-        $data = $request->all();
-        self::validate($data);
+        $data = $request->validated(); // Use validated data only
 
         return new self(
             id: $data['id'] ?? 0,
             title: $data['title'],
-            slug: $data['slug'],
+            slug: $data['slug'] ?? '', // prevent key error when omitted
             authorized: $data['authorized'] ?? false,
             parent_id: $data['parent_id'] ?? null,
             visible: (bool)($data['visible'] ?? true),
