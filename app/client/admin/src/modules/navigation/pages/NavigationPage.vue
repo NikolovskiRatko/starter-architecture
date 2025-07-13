@@ -4,6 +4,7 @@
   import { computed, watch } from 'vue';
   import { useI18n } from 'vue-i18n';
   import { useRoute, useRouter } from 'vue-router';
+  import * as yup from 'yup';
   import { PageWrapper, SubheaderTitle, PAGE_WRAPPER_SLOTS } from '../../../components';
   import { NavigationsDropdown } from '../components';
   import { useNavigation, useNavigationCreate, useNavigations } from '../composables';
@@ -19,10 +20,32 @@
   const navigationId = computed(() => Number(route.params.navigationId));
   const isEditPage = computed(() => route.name == NAVIGATION_ROUTES_DATA.editNavigation.name);
 
+  const validationSchema = yup.object().shape({
+    title: yup.string().required('Title is required'),
+    parent_id: yup
+        .number()
+        .nullable()
+        .transform((value, originalValue) =>
+            String(originalValue).trim() === '' ? null : value
+        ),
+    slug: yup.string().when('parent_id', {
+      is: (val: number | null) => val !== null,
+      then: (schema) =>
+          schema
+              .required('Slug is required')
+              .matches(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Slug must be lowercase and use hyphens only'),
+      otherwise: (schema) => schema.notRequired().nullable(),
+    }),
+    visible: yup.boolean().required(),
+  });
+
   const { handleSubmit, errors, setValues, defineField } = useForm<NavigationForm>({
     initialValues: {
       visible: true,
+      parent_id: null,
+      slug: ''
     },
+    validationSchema
   });
 
   const { data, isLoading } = useNavigation(navigationId);
@@ -108,8 +131,22 @@
             :disabled-options="navigationId ? [navigationId] : undefined"
             :label="t('navigation.parent')"
           />
-          <FormInput v-model="title" name="title" label="Title" :disabled="isStatic" is-inline />
-          <FormInput v-model="slug" name="slug" label="Slug" :disabled="isStatic" is-inline>
+          <FormInput
+              v-model="title"
+              name="title"
+              label="Title"
+              :disabled="isStatic"
+              is-inline
+              :error="errors.title"
+          />
+          <FormInput
+              v-model="slug"
+              name="slug"
+              label="Slug"
+              :disabled="isStatic"
+              :error="errors.slug"
+              is-inline
+          >
             <template v-slot:prependContent>
               {{ slugPrepend }}
             </template>
