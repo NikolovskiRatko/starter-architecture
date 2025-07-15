@@ -12,6 +12,7 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use App\Constants\UserRoles;
 
 class User extends Authenticatable implements HasMedia
 {
@@ -118,5 +119,20 @@ class User extends Authenticatable implements HasMedia
     {
         // Return the URL of the first media item in the 'avatars' collection
         return $this->getFirstMediaUrl('avatars', 'thumb') ?: null;
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->hasRole(UserRoles::ADMIN);
+    }
+
+    public function isEditor(): bool
+    {
+        return $this->hasRole(UserRoles::EDITOR);
+    }
+
+    public function isCollaborator(): bool
+    {
+        return $this->hasRole(UserRoles::COLLABORATOR);
     }
 }
