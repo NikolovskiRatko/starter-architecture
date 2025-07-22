@@ -18,18 +18,18 @@ use Illuminate\Support\Facades\Route;
 Route::group([
     'middleware' => 'auth:sanctum'
 ], function () {
-    Route::group([
-        'prefix' => 'navigation',
-    ], function () {
-        Route::get('all', [NavigationController::class, 'getAll']);
-        Route::get('{id}', [NavigationController::class, 'get']);
-        Route::post('create', [NavigationController::class, 'create']);
-        Route::patch('{id}', [NavigationController::class, 'update']);
-        Route::delete('{id}', [NavigationController::class, 'delete']);
-        Route::patch('{id}/attach', [NavigationController::class, 'attachToModel']);
-        Route::patch('{id}/detach', [NavigationController::class, 'detachModel']);
-        Route::get('{id}/ancestors', [NavigationController::class, 'getAncestors']);
-        Route::get('{id}/descendants', [NavigationController::class, 'getDescendants']);
+    Route::prefix('navigations')->group(function () {
+        Route::get('/', [NavigationController::class, 'index']);
+        Route::get('{navigation}', [NavigationController::class, 'show']);
+        Route::post('/', [NavigationController::class, 'store']);
+        Route::patch('{navigation}', [NavigationController::class, 'update']);
+        Route::delete('{navigation}', [NavigationController::class, 'destroy']);
+
+        // Extra actions (keep using ID or refactor if needed)
+        Route::patch('{navigation}/attach', [NavigationController::class, 'attach']);
+        Route::patch('{navigation}/detach', [NavigationController::class, 'detach']);
+        Route::get('{navigation}/ancestors', [NavigationController::class, 'ancestors']);
+        Route::get('{navigation}/descendants', [NavigationController::class, 'descendants']);
     });
 
     Route::group([

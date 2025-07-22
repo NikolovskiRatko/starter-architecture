@@ -7,6 +7,11 @@ use App\Applications\User\Model\User;
 
 class NavigationPolicy
 {
+    public function viewAny(User $user): bool
+    {
+        return $user->isAdmin() || $user->isEditor();
+    }
+
     public function view(User $user, Navigation $navigation): bool
     {
         return $user->isAdmin() || $user->isEditor();
@@ -19,7 +24,7 @@ class NavigationPolicy
 
     public function update(User $user, Navigation $navigation): bool
     {
-        return $user->isAdmin() || $user->isEditor();
+        return $user->isAdmin();
     }
 
     public function delete(User $user, Navigation $navigation): bool
