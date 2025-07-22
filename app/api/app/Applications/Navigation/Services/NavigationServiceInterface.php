@@ -11,7 +11,7 @@ interface NavigationServiceInterface
     /**
      * Retrieve all navigations.
      *
-     * @return Collection|NavigationDTO[]
+     * @return Collection
      */
     public function getAllNavigations(): Collection;
 
@@ -34,11 +34,11 @@ interface NavigationServiceInterface
     /**
      * Update an existing navigation.
      *
-     * @param  int $navigationId
+     * @param  Navigation  $navigation
      * @param  array<string, mixed>  $data
      * @return Navigation
      */
-    public function updateNavigation(int $navigationId, array $data): Navigation;
+    public function updateNavigation(Navigation $navigation, array $data): Navigation;
 
     /**
      * Delete a navigation.
@@ -47,4 +47,55 @@ interface NavigationServiceInterface
      * @return bool|null
      */
     public function deleteNavigation(Navigation $navigation): ?bool;
+
+    /**
+     * Attach a navigation entry to a morphable model.
+     *
+     * @param  Navigation  $navigation
+     * @param  int  $modelId
+     * @param  string  $modelType
+     * @return Navigation
+     */
+    public function attachToModel(Navigation $navigation, int $modelId, string $modelType): Navigation;
+
+    /**
+     * Detach the morphable model from a navigation.
+     *
+     * @param  Navigation  $navigation
+     * @return Navigation
+     */
+    public function detachModel(Navigation $navigation): Navigation;
+
+    /**
+     * Get ancestors of a navigation.
+     *
+     * @param  Navigation  $navigation
+     * @return Collection
+     */
+    public function getAncestors(Navigation $navigation): Collection;
+
+    /**
+     * Get descendants of a navigation.
+     *
+     * @param  Navigation  $navigation
+     * @return Collection
+     */
+    public function getDescendants(Navigation $navigation): Collection;
+
+    /**
+     * Get all visible and live navigations.
+     *
+     * @return Collection
+     */
+    public function getLiveNavigations(): Collection;
+
+    /**
+     * Create a navigation and attach it to a model.
+     *
+     * @param  NavigationDTO  $dto
+     * @param  int  $modelId
+     * @param  string  $modelType
+     * @return NavigationDTO
+     */
+    public function createNavigationAndAttach(NavigationDTO $dto, int $modelId, string $modelType): NavigationDTO;
 }

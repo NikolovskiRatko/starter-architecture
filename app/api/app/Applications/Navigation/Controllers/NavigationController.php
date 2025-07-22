@@ -17,8 +17,11 @@ class NavigationController extends Controller
     public function index()
     {
         $this->authorize('viewAny', Navigation::class);
-        $navigations = $this->navigationService->getAllNavigations();
-        return response()->json($navigations->map->toArray());
+        return response()->json(
+            $this->navigationService
+                ->getAllNavigations()
+                ->map(fn($nav) => NavigationDTO::fromModel($nav)->toArray())
+        );
     }
 
     public function show(Navigation $navigation)
@@ -30,23 +33,29 @@ class NavigationController extends Controller
     public function store(NavigationRequest $request)
     {
         $this->authorize('create', Navigation::class);
+
         $navigationDTO = NavigationDTO::fromRequest($request);
         $navigation = $this->navigationService->createNavigation($navigationDTO->toArray());
+
         return response()->json($navigation, 201);
     }
 
     public function update(NavigationRequest $request, Navigation $navigation)
     {
         $this->authorize('update', $navigation);
+
         $navigationDTO = NavigationDTO::fromRequest($request);
-        $updatedNavigation = $this->navigationService->updateNavigation($navigation->id, $navigationDTO->toArray());
+        $updatedNavigation = $this->navigationService->updateNavigation($navigation, $navigationDTO->toArray());
+
         return response()->json($updatedNavigation);
     }
 
     public function destroy(Navigation $navigation)
     {
         $this->authorize('delete', $navigation);
+
         $this->navigationService->deleteNavigation($navigation);
+
         return response()->json(null, 204);
     }
 
@@ -61,6 +70,7 @@ class NavigationController extends Controller
                 'string',
                 function ($attribute, $value, $fail) {
                     $allowedModelTypes = array_values(config('navigation.model_types'));
+
                     if (!in_array($value, $allowedModelTypes, true)) {
                         $fail("The selected $attribute is invalid.");
                     }
@@ -69,7 +79,7 @@ class NavigationController extends Controller
         ]);
 
         $updated = $this->navigationService->attachToModel(
-            $navigation->id,
+            $navigation,
             $validated['model_id'],
             $validated['model_type']
         );
@@ -81,7 +91,7 @@ class NavigationController extends Controller
     {
         $this->authorize('update', $navigation);
 
-        $updated = $this->navigationService->detachModel($navigation->id);
+        $updated = $this->navigationService->detachModel($navigation);
 
         return response()->json($updated->toArray());
     }
@@ -89,12 +99,12 @@ class NavigationController extends Controller
     public function ancestors(Navigation $navigation)
     {
         $this->authorize('view', $navigation);
-        return response()->json($this->navigationService->getAncestors($navigation->id));
+        return response()->json($this->navigationService->getAncestors($navigation)->map->toArray());
     }
 
     public function descendants(Navigation $navigation)
     {
         $this->authorize('view', $navigation);
-        return response()->json($this->navigationService->getDescendants($navigation->id));
+        return response()->json($this->navigationService->getDescendants($navigation)->map->toArray());
     }
 }
