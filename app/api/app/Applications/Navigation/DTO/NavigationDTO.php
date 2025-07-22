@@ -6,6 +6,7 @@ use App\Applications\Navigation\Model\Navigation;
 use App\Applications\Navigation\Requests\NavigationRequest;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Validation\Rule;
 use Carbon\Carbon;
 use DateTime;
 
@@ -15,6 +16,7 @@ class NavigationDTO
     public string $title;
     public string $slug;
     public bool $authorized;
+    public int $website_id;
     public ?int $parent_id;
     public bool $visible;
     public ?DateTime $livedate;
@@ -68,7 +70,14 @@ class NavigationDTO
     {
         $rules = [
             'title' => 'required|string|max:255',
-            'slug' => 'required|string|max:255|unique:navigations,slug,' . ($data['id'] ?? '0'),
+            'slug' => [
+                Rule::requiredIf(fn() => isset($data['parent_id']) && $data['parent_id'] !== null),
+                'nullable',
+                'string',
+                Rule::unique('navigations')->where(function ($query) use ($data) {
+                    return $query->where('parent_id', $data['parent_id'] ?? null);
+                }),
+            ],
             'authorized' => 'boolean',
             'parent_id' => 'nullable|integer|exists:navigations,id',
             'visible' => 'boolean',
@@ -170,6 +179,24 @@ class NavigationDTO
             'path' => $this->path,
             'static' => $this->static,
         ];
+    }
+
+    public static function fromArray(array $data): self
+    {
+        self::validate($data);
+
+        return new self(
+            id: $data['id'] ?? 0,
+            title: $data['title'],
+            slug: $data['slug'],
+            authorized: $data['authorized'] ?? false,
+            parent_id: $data['parent_id'] ?? null,
+            visible: $data['visible'] ?? true,
+            livedate: isset($data['livedate']) ? new DateTime($data['livedate']) : Carbon::now(),
+            enddate: isset($data['enddate']) ? new DateTime($data['enddate']) : null,
+            content_id: $data['content_id'] ?? null,
+            content_type: $data['content_type'] ?? null
+        );
     }
 
     /**
