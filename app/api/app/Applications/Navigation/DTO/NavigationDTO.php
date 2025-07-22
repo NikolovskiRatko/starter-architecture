@@ -74,9 +74,11 @@ class NavigationDTO
                 Rule::requiredIf(fn() => isset($data['parent_id']) && $data['parent_id'] !== null),
                 'nullable',
                 'string',
-                Rule::unique('navigations')->where(function ($query) use ($data) {
-                    return $query->where('parent_id', $data['parent_id'] ?? null);
-                }),
+                Rule::unique('navigations')
+                    ->ignore($data['id'] ?? null) // ignore current record
+                    ->where(function ($query) use ($data) {
+                        return $query->where('parent_id', $data['parent_id'] ?? null);
+                    }),
             ],
             'authorized' => 'boolean',
             'parent_id' => 'nullable|integer|exists:navigations,id',

@@ -17,11 +17,14 @@ class NavigationRequest extends FormRequest
         return [
             'title' => ['required', 'string', 'max:255'],
             'slug' => [
-                Rule::requiredIf(fn () => $this->input('parent_id') !== null),
+                Rule::requiredIf(fn() => $this->input('parent_id') !== null),
                 'nullable',
                 'string',
-                'max:255',
-                'regex:/^[a-z0-9]+(?:-[a-z0-9]+)*$/',
+                Rule::unique('navigations')
+                    ->ignore($this->route('id')) // exclude current record
+                    ->where(function ($query) {
+                        return $query->where('parent_id', $this->input('parent_id'));
+                    }),
             ],
             'visible' => ['required', 'boolean'],
             'parent_id' => ['nullable', 'integer', 'exists:navigations,id'],
