@@ -59,6 +59,21 @@ class NavigationRequest extends FormRequest
             if ($query->exists()) {
                 $validator->errors()->add('slug', 'The slug must be unique per parent.');
             }
+
+            // ✅ Enforce only one navigation with parent_id = null
+            if (is_null($parentId)) {
+                $rootQuery = \App\Applications\Navigation\Model\Navigation::query()
+                    ->whereNull('parent_id')
+                    ->whereNull('deleted_at');
+
+                if ($currentId) {
+                    $rootQuery->where('id', '!=', $currentId);
+                }
+
+                if ($rootQuery->exists()) {
+                    $validator->errors()->add('parent_id', 'Only one root-level navigation (with no parent) is allowed.');
+                }
+            }
         });
     }
 

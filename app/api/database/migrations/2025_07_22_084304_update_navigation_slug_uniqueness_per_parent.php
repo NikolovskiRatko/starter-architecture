@@ -10,10 +10,8 @@ return new class extends Migration
     {
         Schema::table('navigations', function (Blueprint $table) {
             // Drop old unique constraint on slug
+            // We can use this unique constraint becuase we have soft deletes and MySql still take it into consideration the delted ones
             $table->dropUnique(['slug']);
-
-            // Add composite unique constraint on parent_id + slug
-            $table->unique(['parent_id', 'slug'], 'parent_slug_unique');
         });
     }
 
@@ -21,9 +19,6 @@ return new class extends Migration
     {
         Schema::table('navigations', function (Blueprint $table) {
             $table->dropUnique('parent_slug_unique');
-
-            // Restore old global unique index on slug
-            $table->unique('slug');
         });
     }
 };

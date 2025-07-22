@@ -16,6 +16,7 @@ export const NAVIGATION_MENU_ITEM_API_ENDPOINTS = {
 } as const;
 
 export const NAVIGATION_API_ENDPOINTS = {
-  get: (id: number) => `navigation/${id}`,
-  create: 'navigation/create',
+  get: (id: number) => `navigations/${id}`,
+  create: 'navigations',
+  all: 'navigations',
 } as const;
