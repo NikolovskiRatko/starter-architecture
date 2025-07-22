@@ -22,18 +22,24 @@ class NavigationController extends Controller
 
     public function getAll()
     {
+        $this->authorize('view', Navigation::class);
+
         $navigations = $this->navigationService->getAllNavigations();
         return response()->json($navigations->map->toArray());
     }
 
     public function get($id)
     {
+        $this->authorize('view', Navigation::class);
+
         $navigation = $this->navigationService->getNavigationById($id);
         return response()->json($navigation->toArray());
     }
 
     public function create(NavigationRequest $request)
     {
+        $this->authorize('create', Navigation::class);
+
         $navigationDTO = NavigationDTO::fromRequest($request);
         $navigation = $this->navigationService->createNavigation($navigationDTO->toArray());
         return response()->json($navigation, 201);
@@ -41,6 +47,8 @@ class NavigationController extends Controller
 
     public function update(Request $request)
     {
+        $this->authorize('update', Navigation::class);
+
         $navigationId = Route::current()->parameter('id');
         $navigationDTO = NavigationDTO::fromRequest($request);
         $updatedNavigation = $this->navigationService->updateNavigation($navigationId, $navigationDTO->toArray());
@@ -49,6 +57,8 @@ class NavigationController extends Controller
 
     public function delete(Navigation $navigation)
     {
+        $this->authorize('delete', Navigation::class);
+
         $this->navigationService->deleteNavigation($navigation);
         return response()->json(null, 204);
     }
@@ -62,13 +72,15 @@ class NavigationController extends Controller
      */
     public function attachToModel(int $id, Request $request)
     {
+        $this->authorize('update', Navigation::class);
+
         $validated = $request->validate([
             'model_id' => 'required|integer',
             'model_type' => [
                 'required',
                 'string',
                 function ($attribute, $value, $fail) {
-                    $allowedModelTypes = array_keys(config('navigation.model_types'));
+                    $allowedModelTypes = array_values(config('navigation.model_types'));
 
                     if (!in_array($value, $allowedModelTypes, true)) {
                         $fail("The selected $attribute is invalid.");
@@ -77,10 +89,11 @@ class NavigationController extends Controller
             ],
         ]);
 
-        // Convert alias to the full namespace
-        $modelType = config('navigation.model_types')[$validated['model_type']];
-
-        $navigation = $this->navigationService->attachToModel($id, $validated['model_id'], $modelType);
+        $navigation = $this->navigationService->attachToModel(
+            $id,
+            $validated['model_id'],
+            $validated['model_type']
+        );
 
         return response()->json($navigation->toArray());
     }
@@ -93,6 +106,8 @@ class NavigationController extends Controller
      */
     public function detachModel(int $id): JsonResponse
     {
+        $this->authorize('update', Navigation::class);
+
         $navigation = $this->navigationService->detachModel($id);
 
         return response()->json($navigation->toArray());
@@ -100,13 +115,19 @@ class NavigationController extends Controller
 
     public function getAncestors(int $id)
     {
+        $this->authorize('view', Navigation::class);
+
         $ancestors = $this->navigationService->getAncestors($id);
+
         return response()->json($ancestors);
     }
 
     public function getDescendants(int $id)
     {
+        $this->authorize('view', Navigation::class);
+
         $descendants = $this->navigationService->getDescendants($id);
+
         return response()->json($descendants);
     }
 }
