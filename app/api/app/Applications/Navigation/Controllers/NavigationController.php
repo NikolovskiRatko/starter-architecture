@@ -4,71 +4,72 @@ namespace App\Applications\Navigation\Controllers;
 
 use App\Applications\Navigation\DTO\NavigationDTO;
 use App\Applications\Navigation\Model\Navigation;
-use App\Applications\Navigation\Services\NavigationService;
 use App\Applications\Navigation\Requests\NavigationRequest;
+use App\Applications\Navigation\Services\NavigationService;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
 class NavigationController extends Controller
 {
-    protected $navigationService;
+    public function __construct(protected NavigationService $navigationService) {}
 
-    public function __construct(NavigationService $navigationService)
+    public function index()
     {
-        $this->navigationService = $navigationService;
+        $this->authorize('viewAny', Navigation::class);
+        return response()->json(
+            $this->navigationService
+                ->getAllNavigations()
+                ->map(fn($nav) => NavigationDTO::fromModel($nav)->toArray())
+        );
     }
 
-    public function getAll()
+    public function show(Navigation $navigation)
     {
-        $navigations = $this->navigationService->getAllNavigations();
-        return response()->json($navigations->map->toArray());
-    }
-
-    public function get($id)
-    {
-        $navigation = $this->navigationService->getNavigationById($id);
+        $this->authorize('view', $navigation);
         return response()->json($navigation->toArray());
     }
 
-    public function create(NavigationRequest $request)
+    public function store(NavigationRequest $request)
     {
+        $this->authorize('create', Navigation::class);
+
         $navigationDTO = NavigationDTO::fromRequest($request);
         $navigation = $this->navigationService->createNavigation($navigationDTO->toArray());
+
         return response()->json($navigation, 201);
     }
 
-    public function update(Request $request)
+    public function update(NavigationRequest $request, Navigation $navigation)
     {
-        $navigationId = Route::current()->parameter('id');
+        $this->authorize('update', $navigation);
+
         $navigationDTO = NavigationDTO::fromRequest($request);
-        $updatedNavigation = $this->navigationService->updateNavigation($navigationId, $navigationDTO->toArray());
+        $updatedNavigation = $this->navigationService->updateNavigation($navigation, $navigationDTO->toArray());
+
         return response()->json($updatedNavigation);
     }
 
-    public function delete(Navigation $navigation)
+    public function destroy(Navigation $navigation)
     {
+        $this->authorize('delete', $navigation);
+
         $this->navigationService->deleteNavigation($navigation);
+
         return response()->json(null, 204);
     }
 
-    /**
-     * Attach a navigation entry to another model (morph it).
-     *
-     * @param int $id
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function attachToModel(int $id, Request $request)
+    public function attach(Navigation $navigation, Request $request): JsonResponse
     {
+        $this->authorize('update', $navigation);
+
         $validated = $request->validate([
             'model_id' => 'required|integer',
             'model_type' => [
                 'required',
                 'string',
                 function ($attribute, $value, $fail) {
-                    $allowedModelTypes = array_keys(config('navigation.model_types'));
+                    $allowedModelTypes = array_values(config('navigation.model_types'));
 
                     if (!in_array($value, $allowedModelTypes, true)) {
                         $fail("The selected $attribute is invalid.");
@@ -77,36 +78,33 @@ class NavigationController extends Controller
             ],
         ]);
 
-        // Convert alias to the full namespace
-        $modelType = config('navigation.model_types')[$validated['model_type']];
+        $updated = $this->navigationService->attachToModel(
+            $navigation,
+            $validated['model_id'],
+            $validated['model_type']
+        );
 
-        $navigation = $this->navigationService->attachToModel($id, $validated['model_id'], $modelType);
-
-        return response()->json($navigation->toArray());
+        return response()->json($updated->toArray());
     }
 
-    /**
-     * Detach the morphable model from a navigation entry.
-     *
-     * @param int $id
-     * @return JsonResponse
-     */
-    public function detachModel(int $id): JsonResponse
+    public function detach(Navigation $navigation): JsonResponse
     {
-        $navigation = $this->navigationService->detachModel($id);
+        $this->authorize('update', $navigation);
 
-        return response()->json($navigation->toArray());
+        $updated = $this->navigationService->detachModel($navigation);
+
+        return response()->json($updated->toArray());
     }
 
-    public function getAncestors(int $id)
+    public function ancestors(Navigation $navigation)
     {
-        $ancestors = $this->navigationService->getAncestors($id);
-        return response()->json($ancestors);
+        $this->authorize('view', $navigation);
+        return response()->json($this->navigationService->getAncestors($navigation)->map->toArray());
     }
 
-    public function getDescendants(int $id)
+    public function descendants(Navigation $navigation)
     {
-        $descendants = $this->navigationService->getDescendants($id);
-        return response()->json($descendants);
+        $this->authorize('view', $navigation);
+        return response()->json($this->navigationService->getDescendants($navigation)->map->toArray());
     }
 }

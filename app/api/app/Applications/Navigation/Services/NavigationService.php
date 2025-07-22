@@ -5,21 +5,14 @@ namespace App\Applications\Navigation\Services;
 use App\Applications\Navigation\DTO\NavigationDTO;
 use App\Applications\Navigation\Repositories\NavigationRepositoryInterface;
 use App\Applications\Navigation\Model\Navigation;
-use Exception;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\DB;
+use InvalidArgumentException;
 
 class NavigationService implements NavigationServiceInterface
 {
-    /**
-     * @var NavigationRepositoryInterface
-     */
     protected NavigationRepositoryInterface $repository;
 
-    /**
-     * NavigationService constructor.
-     *
-     * @param  NavigationRepositoryInterface  $repository
-     */
     public function __construct(NavigationRepositoryInterface $repository)
     {
         $this->repository = $repository;
@@ -27,22 +20,14 @@ class NavigationService implements NavigationServiceInterface
 
     /**
      * Retrieve all navigations as DTOs.
-     *
-     * @return Collection|NavigationDTO[]
      */
     public function getAllNavigations(): Collection
     {
-        $navigations = $this->repository->all();
-
-        // Transform each navigation into a DTO
-        return new Collection(NavigationDTO::fromCollection($navigations));
+        return $this->repository->all();
     }
 
     /**
-     * Retrieve a single navigation by its ID.
-     *
-     * @param  int  $id
-     * @return NavigationDTO
+     * Retrieve a single navigation by ID and return as DTO.
      */
     public function getNavigationById(int $id): NavigationDTO
     {
@@ -52,9 +37,6 @@ class NavigationService implements NavigationServiceInterface
 
     /**
      * Create a new navigation.
-     *
-     * @param  array<string, mixed>  $data
-     * @return Navigation
      */
     public function createNavigation(array $data): Navigation
     {
@@ -63,22 +45,14 @@ class NavigationService implements NavigationServiceInterface
 
     /**
      * Update an existing navigation.
-     *
-     * @param  int  $navigationId
-     * @param  array<string, mixed>  $data
-     * @return Navigation
      */
-    public function updateNavigation(int $navigationId, array $data): Navigation
+    public function updateNavigation(Navigation $navigation, array $data): Navigation
     {
-        return $this->repository->update($navigationId, $data);
+        return $this->repository->updateModel($navigation, $data);
     }
 
     /**
      * Delete a navigation.
-     *
-     * @param Navigation $navigation
-     * @return bool|null
-     * @throws Exception
      */
     public function deleteNavigation(Navigation $navigation): ?bool
     {
@@ -86,31 +60,15 @@ class NavigationService implements NavigationServiceInterface
     }
 
     /**
-     * Attach a navigation entry to another model (morph it).
-     *
-     * @param int $navigationId
-     * @param int $modelId
-     * @param string $modelType
-     * @return Navigation
-     * @throws Exception
+     * Attach a navigation to a morphable model.
      */
-    public function attachToModel(int $navigationId, int $modelId, string $modelType): Navigation
+    public function attachToModel(Navigation $navigation, int $modelId, string $modelType): Navigation
     {
-        // Fetch the navigation entry
-        $navigation = $this->repository->findById($navigationId);
-
-        if (!$navigation) {
-            throw new Exception("Navigation entry not found");
-        }
-
-        // Dynamically resolve and find the model instance
         if (!class_exists($modelType)) {
-            throw new Exception("Invalid model type: {$modelType}");
+            throw new InvalidArgumentException("Invalid model type: {$modelType}");
         }
 
         $model = $modelType::findOrFail($modelId);
-
-        // Attach the morphable model
         $navigation->content()->associate($model);
         $navigation->save();
 
@@ -118,67 +76,51 @@ class NavigationService implements NavigationServiceInterface
     }
 
     /**
-     * Detach the morphable model from a navigation entry.
-     *
-     * @param int $navigationId
-     * @return Navigation
-     * @throws Exception
+     * Detach the morphable model from a navigation.
      */
-    public function detachModel(int $navigationId): Navigation
+    public function detachModel(Navigation $navigation): Navigation
     {
-        $navigation = $this->repository->findById($navigationId);
-
-        if (!$navigation) {
-            throw new Exception("Navigation entry not found");
-        }
-
-        // Detach the morphable model
         $navigation->content()->dissociate();
         $navigation->save();
 
         return $navigation;
     }
 
-    public function getAncestors(int $id): Collection
+    /**
+     * Get ancestors of a navigation.
+     */
+    public function getAncestors(Navigation $navigation): Collection
     {
-        $ancestors = $this->repository->findAncestors($id);
-
-        $ancestors->each(function ($ancestor) {
-            return NavigationDTO::fromModel($ancestor);
-        });
-
-        return $ancestors;
-    }
-
-    public function getDescendants(int $id): Collection
-    {
-        $descendants = $this->repository->findDescendants($id);
-
-        $descendants->each(function ($descendant) {
-            return NavigationDTO::fromModel($descendant);
-        });
-
-        return $descendants;
+        return $this->repository->findAncestors($navigation->id);
     }
 
     /**
-     * Fetch all visible navigations that are currently live.
-     *
-     * @return array
+     * Get descendants of a navigation.
      */
-    public function getLiveNavigations(): array
+    public function getDescendants(Navigation $navigation): Collection
     {
-        $navigations = $this->repository->findLiveNavigations();
-
-        return NavigationDTO::fromCollection($navigations);
+        return $this->repository->findDescendants($navigation->id);
     }
 
-    public function createNavigationAndAttach(NavigationDTO $navigationDTO, int $modelId, string $modelType): NavigationDTO
+    /**
+     * Fetch all live navigations (visible and within date range).
+     */
+    public function getLiveNavigations(): Collection
     {
-        $navigation = $this->repository->create($navigationDTO->toArray());
+        return $this->repository->findLiveNavigations();
+    }
 
-        $this->attachToModel($navigation->id, $modelId, $modelType);
+    /**
+     * Create a navigation and attach it to a model.
+     */
+    public function createNavigationAndAttach(NavigationDTO $dto, int $modelId, string $modelType): NavigationDTO
+    {
+        return DB::transaction(function () use ($dto, $modelId, $modelType) {
+            $navigation = $this->repository->create($dto->toArray());
 
-        return NavigationDTO::fromModel($navigation);
+            $this->attachToModel($navigation, $modelId, $modelType);
+
+            return NavigationDTO::fromModel($navigation);
+        });
     }
 }

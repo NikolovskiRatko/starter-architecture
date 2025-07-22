@@ -18,18 +18,6 @@ export const NAVIGATION_ROUTES_DATA: ModulesRoutesData<UsersRoutes> = {
     translationKey: 'navigation.main',
     authRoles: [USER_PERMISSIONS.readNavigation],
   },
-  menus: {
-    path: 'navigations/menus',
-    name: 'navigations.menus',
-    translationKey: 'navigation.menu.plural',
-    authRoles: [USER_PERMISSIONS.readNavigation],
-  },
-  menu: {
-    path: 'navigations/menu/:menuId',
-    name: 'navigations.menu',
-    translationKey: 'navigation.menu.main',
-    authRoles: [USER_PERMISSIONS.writeNavigation],
-  },
   editNavigation: {
     path: 'navigation/:navigationId',
     name: 'navigation.edit',
@@ -40,6 +28,18 @@ export const NAVIGATION_ROUTES_DATA: ModulesRoutesData<UsersRoutes> = {
     path: 'navigation/add',
     name: 'navigation.add',
     translationKey: 'navigation.main',
+    authRoles: [USER_PERMISSIONS.writeNavigation],
+  },
+  menus: {
+    path: 'menus',
+    name: 'menus',
+    translationKey: 'navigation.menu.plural',
+    authRoles: [USER_PERMISSIONS.readNavigation],
+  },
+  menu: {
+    path: 'menu/:menuId',
+    name: 'menu',
+    translationKey: 'navigation.menu.main',
     authRoles: [USER_PERMISSIONS.writeNavigation],
   },
 };
