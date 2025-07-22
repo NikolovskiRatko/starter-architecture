@@ -74,11 +74,6 @@ class NavigationDTO
                 Rule::requiredIf(fn() => isset($data['parent_id']) && $data['parent_id'] !== null),
                 'nullable',
                 'string',
-                Rule::unique('navigations')
-                    ->ignore($data['id'] ?? null) // ignore current record
-                    ->where(function ($query) use ($data) {
-                        return $query->where('parent_id', $data['parent_id'] ?? null);
-                    }),
             ],
             'authorized' => 'boolean',
             'parent_id' => 'nullable|integer|exists:navigations,id',
@@ -87,7 +82,29 @@ class NavigationDTO
             'enddate' => 'nullable|date|after_or_equal:livedate',
         ];
 
-        Validator::make($data, $rules)->validate();
+        Validator::make($data, $rules)->after(function ($validator) use ($data) {
+            $slug = $data['slug'] ?? '';
+            $parentId = $data['parent_id'] ?? null;
+            $currentId = $data['id'] ?? null;
+
+            $query = \App\Applications\Navigation\Model\Navigation::query()
+                ->where('slug', $slug)
+                ->where(function ($q) use ($parentId) {
+                    if (is_null($parentId)) {
+                        $q->whereNull('parent_id');
+                    } else {
+                        $q->where('parent_id', $parentId);
+                    }
+                });
+
+            if ($currentId) {
+                $query->where('id', '!=', $currentId);
+            }
+
+            if ($query->exists()) {
+                $validator->errors()->add('slug', 'The slug must be unique per parent.');
+            }
+        })->validate();
     }
 
     protected static function getAliasFromModelType(string $modelType): string
