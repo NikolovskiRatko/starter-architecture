@@ -32,13 +32,13 @@ export const NAVIGATION_ROUTES_DATA: ModulesRoutesData<UsersRoutes> = {
   },
   menus: {
     path: 'menus',
-    name: 'navigations.menus',
+    name: 'menus',
     translationKey: 'navigation.menu.plural',
     authRoles: [USER_PERMISSIONS.readNavigation],
   },
   menu: {
     path: 'menu/:menuId',
-    name: 'navigations.menu',
+    name: 'menu',
     translationKey: 'navigation.menu.main',
     authRoles: [USER_PERMISSIONS.writeNavigation],
   },
