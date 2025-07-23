@@ -11,12 +11,7 @@
     taggable?: boolean;
   }
 
-  const {
-    modelValue,
-    placeholder,
-    options,
-    taggable,
-  } = defineProps<FormSelectProps>();
+  const { modelValue, placeholder, options, taggable } = defineProps<FormSelectProps>();
 
   const emit = defineEmits<{
     (e: 'update:modelValue', value: string | string[] | null): void;

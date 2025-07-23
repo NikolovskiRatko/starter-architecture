@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useToast } from 'vue-toastification';
 import { USER_API_ENDPOINTS } from '../../constants';
 import type { GetUserResponse, CreateUserQuery } from '../../types';
-import { useAppErrors } from "@/composables";
+import { useAppErrors } from '@/composables';
 
 export const useCreateUser = () => {
   const toast = useToast();

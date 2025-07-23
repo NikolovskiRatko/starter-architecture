@@ -8,7 +8,7 @@ interface UseAppErrorsParams {
 
 export default function useAppErrors(params?: UseAppErrorsParams) {
   const toast = useToast();
-  const { t } = useI18n();;
+  const { t } = useI18n();
 
   const handleAPIError = (error: any) => {
     const errorMessage = getAPIErrorMessage(error, t);

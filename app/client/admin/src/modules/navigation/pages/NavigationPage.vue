@@ -23,17 +23,13 @@
   const validationSchema = yup.object().shape({
     title: yup.string().required('Title is required'),
     parent_id: yup
-        .number()
-        .nullable()
-        .transform((value, originalValue) =>
-            String(originalValue).trim() === '' ? null : value
-        ),
+      .number()
+      .nullable()
+      .transform((value, originalValue) => (String(originalValue).trim() === '' ? null : value)),
     slug: yup.string().when('parent_id', {
       is: (val: number | null) => val !== null,
       then: (schema) =>
-          schema
-              .required('Slug is required')
-              .matches(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Slug must be lowercase and use hyphens only'),
+        schema.required('Slug is required').matches(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Slug must be lowercase and use hyphens only'),
       otherwise: (schema) => schema.notRequired().nullable(),
     }),
     visible: yup.boolean().required(),
@@ -43,9 +39,9 @@
     initialValues: {
       visible: true,
       parent_id: null,
-      slug: ''
+      slug: '',
     },
-    validationSchema
+    validationSchema,
   });
 
   const { data, isLoading } = useNavigation(navigationId);
@@ -131,22 +127,8 @@
             :disabled-options="navigationId ? [navigationId] : undefined"
             :label="t('navigation.parent')"
           />
-          <FormInput
-              v-model="title"
-              name="title"
-              label="Title"
-              :disabled="isStatic"
-              is-inline
-              :error="errors.title"
-          />
-          <FormInput
-              v-model="slug"
-              name="slug"
-              label="Slug"
-              :disabled="isStatic"
-              :error="errors.slug"
-              is-inline
-          >
+          <FormInput v-model="title" name="title" label="Title" :disabled="isStatic" is-inline :error="errors.title" />
+          <FormInput v-model="slug" name="slug" label="Slug" :disabled="isStatic" :error="errors.slug" is-inline>
             <template v-slot:prependContent>
               {{ slugPrepend }}
             </template>
