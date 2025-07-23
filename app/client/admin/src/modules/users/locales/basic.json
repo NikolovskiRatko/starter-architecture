@@ -1,4 +1,5 @@
 {
+  "label": "Users",
   "user_status": "User status",
   "status": {
     "label": "Disable user",

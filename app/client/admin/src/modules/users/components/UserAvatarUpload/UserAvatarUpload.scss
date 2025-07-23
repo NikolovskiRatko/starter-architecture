@@ -67,9 +67,8 @@
     transition: var(--dui-transition);
 
     &:hover {
-      transition: var(--dui-transition);
-
       background-color: kt-brand-color();
+      transition: var(--dui-transition);
 
       i {
         color: kt-brand-color(inverse);

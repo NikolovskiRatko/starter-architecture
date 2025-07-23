@@ -50,12 +50,12 @@
       <form class="auth-base__form" @submit.prevent="submitHandler">
         <FormInput id="email" v-model="email" name="Email" placeholder="admin@example.com" :error="errors['email']" />
         <FormInput
-            id="email"
-            type="password"
-            v-model="password"
-            name="password"
-            placeholder="password"
-            :error="errors['password']"
+          id="email"
+          type="password"
+          v-model="password"
+          name="password"
+          placeholder="password"
+          :error="errors['password']"
         />
         <span v-if="authError" class="error invalid-feedback"> Authentication failed </span>
         <div class="row auth-base__extra">

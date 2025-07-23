@@ -65,7 +65,7 @@
 
     // Aside minimize mode
     .kt-header--fixed.aside--minimize & {
-      //padding: 0;
+      // padding: 0;
       justify-content: center;
 
       .kt-aside__brand-tools {
@@ -92,11 +92,12 @@
     }
 
     .kt-aside__brand-tools {
-      //@include kt-burger-icon-skin(kt-aside__brand-aside-toggler, (default: #484f66, hover: #ffffff, active: #ffffff) );
+      // @include kt-burger-icon-skin(kt-aside__brand-aside-toggler, (default: #484f66, hover: #ffffff, active: #ffffff) );
 
       .kt-aside__brand-aside-toggler {
         svg {
           color: black;
+
           @include kt-svg-icon-color(#494b74);
         }
 

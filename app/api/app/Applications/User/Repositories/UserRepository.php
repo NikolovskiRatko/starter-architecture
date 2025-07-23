@@ -92,7 +92,6 @@ class UserRepository implements UserRepositoryInterface
                 $subquery->where('users.first_name', 'like', '%' . $search . '%');
                 $subquery->orWhere('users.last_name', 'like', '%' . $search . '%');
                 $subquery->orWhere('users.email', 'like', '%' . $search . '%');
-                $subquery->orWhere('roles.name', 'like', '%' . $search . '%');
             });
         }
 

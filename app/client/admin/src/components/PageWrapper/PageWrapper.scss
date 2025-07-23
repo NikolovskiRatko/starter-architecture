@@ -35,7 +35,7 @@ $justify-content: (
     flex: 1;
     overflow: hidden auto;
 
-    //margin: 0 auto;
+    // margin: 0 auto;
 
     @each $size, $width in $content-sizes {
       &--#{$size} {

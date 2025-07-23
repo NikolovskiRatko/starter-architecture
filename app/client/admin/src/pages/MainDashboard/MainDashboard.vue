@@ -2,7 +2,6 @@
   import { IconAirpods, IconChartpie, IconDollar, IconLibrary } from '@starter-core/icons';
   import { ref, onMounted } from 'vue';
   import { PageWrapper } from '@/components';
-  // import { get } from "@/services/HTTP";
   import { useRootStore } from '@/store/root';
   import {
     PortletComponent,
@@ -12,7 +11,7 @@
     ContentLoader,
     AccordionContent,
     AccordionItem,
-    DashButton
+    DashButton,
   } from '@starter-core/dash-ui/src';
 
   // const categories = ref([]);

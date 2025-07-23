@@ -60,12 +60,12 @@
         <FormInput id="lastName" v-model="lastName" name="last_name" placeholder="Doe" :error="errors['last_name']" />
         <FormInput id="email" v-model="email" name="email" placeholder="admin@example.com" :error="errors['email']" />
         <FormInput
-            id="email"
-            type="password"
-            v-model="password"
-            name="password"
-            placeholder="Password"
-            :error="errors['password']"
+          id="email"
+          type="password"
+          v-model="password"
+          name="password"
+          placeholder="Password"
+          :error="errors['password']"
         />
         <span v-if="authError" class="error invalid-feedback"> Authentication failed </span>
         <div class="row auth-base__extra">

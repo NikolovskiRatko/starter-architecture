@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-  import type { ComputedRef } from "vue";
   import { IconMail } from '@starter-core/icons';
   import type { FormErrors } from 'vee-validate';
+  import type { ComputedRef } from 'vue';
   import { useI18n } from 'vue-i18n';
   import { FormInput } from '@starter-core/dash-ui/src';
 
