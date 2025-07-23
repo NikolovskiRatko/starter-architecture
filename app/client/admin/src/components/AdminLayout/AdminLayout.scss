@@ -21,7 +21,7 @@
     .kt-header--fixed.kt-subheader--fixed & {
       position: fixed;
 
-      //height: kt-get($subheader-config, fixed, height);
+      // height: kt-get($subheader-config, fixed, height);
       top: var(--dui-header-height-desktop);
       right: 0;
       left: 0;
@@ -66,19 +66,19 @@
     display: flex;
     flex-direction: column;
     grid-area: admin-layout-main;
-    transition: var(--dui-transition);
     overflow: hidden;
+    transition: var(--dui-transition);
 
     @include kt-desktop {
       &--aside-minimized {
         transition: var(--dui-transition);
 
-        //padding-left: var(--dui-aside-minimize-width);
+        // padding-left: var(--dui-aside-minimize-width);
       }
 
       // Fixed Content Head
       &--has-subheader#{$block}--fixed-subheader {
-        //padding-top: var(--dui-header-height-desktop + kt-get($subheader-config, fixed, height);
+        // padding-top: var(--dui-header-height-desktop + kt-get($subheader-config, fixed, height);
       }
     }
   }

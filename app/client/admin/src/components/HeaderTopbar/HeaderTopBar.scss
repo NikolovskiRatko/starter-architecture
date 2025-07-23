@@ -46,7 +46,6 @@ $header-top-bar-config: (
       width: $header-topbar-item-size;
       height: $header-topbar-item-size;
       cursor: pointer;
-
       transition: var(--dui-transition);
 
       @include kt-rounded {
@@ -54,10 +53,9 @@ $header-top-bar-config: (
       }
 
       i {
-        transition: var(--dui-transition);
-
         font-size: 1.4rem;
         color: #fff;
+        transition: var(--dui-transition);
       }
 
       svg {
@@ -149,14 +147,12 @@ $header-top-bar-config: (
     &:hover,
     &.show {
       .kt-header__topbar-icon {
+        background-color: rgba(#212029, 0.7);
         transition: var(--dui-transition);
 
-        background-color: rgba(#212029, 0.7);
-
         i {
-          transition: var(--dui-transition);
-
           color: #fff;
+          transition: var(--dui-transition);
         }
       }
 

@@ -18,16 +18,12 @@
     border-radius: 50%;
 
     .btn {
+      background-color: transparent;
       transition: var(--dui-transition);
 
-      background-color: transparent;
-
       i {
-        transition: var(--dui-transition);
-
         font-size: 1.4rem;
         color: kt-brand-color();
-
         transition: var(--dui-transition);
       }
     }
@@ -36,22 +32,19 @@
       background-color: kt-brand-color();
 
       i {
-        transition: var(--dui-transition);
-
         color: kt-brand-color(inverse);
+        transition: var(--dui-transition);
       }
     }
 
     .show .btn,
     .btn:hover {
+      background-color: #191b27;
       transition: var(--dui-transition);
 
-      background-color: #191b27;
-
       i {
-        transition: var(--dui-transition);
-
         color: kt-brand-color();
+        transition: var(--dui-transition);
       }
     }
   }
