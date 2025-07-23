@@ -1,18 +1,31 @@
 <script setup lang="ts">
   import VueSelect from 'vue-select';
+  import type { FormSelectOptions, FormSelectOnSearch } from '@/types';
   import 'vue-select/dist/vue-select.css';
   import './FormSelect.scss';
 
-  defineProps<{
+  interface FormSelectProps {
     modelValue: string | string[] | null;
-    options: (string | { label: string; value: string })[];
+    options: FormSelectOptions;
     placeholder?: string;
-    multiple?: boolean;
-  }>();
+    taggable?: boolean;
+  }
+
+  const {
+    modelValue,
+    placeholder,
+    options,
+    taggable,
+  } = defineProps<FormSelectProps>();
 
   const emit = defineEmits<{
     (e: 'update:modelValue', value: string | string[] | null): void;
+    (e: 'search', ...args: Parameters<FormSelectOnSearch>): void;
   }>();
+
+  const onSearch: FormSelectOnSearch = (search, loading) => {
+    emit('search', search, loading);
+  };
 </script>
 
 <template>
@@ -20,10 +33,10 @@
     :model-value="modelValue"
     :options="options"
     :placeholder="placeholder"
-    :multiple="multiple"
-    taggable
+    :taggable="taggable"
     :clearable="false"
     class="dui-form-select"
+    @search="onSearch"
     @update:modelValue="emit('update:modelValue', $event)"
   />
 </template>
