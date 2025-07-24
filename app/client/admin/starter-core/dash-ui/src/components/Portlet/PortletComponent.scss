@@ -9,7 +9,7 @@
   flex-grow: 1;
   flex-direction: column;
   box-shadow: var(--dui-elevate-shadow);
-  background-color: var(--dui-color-light);
+  background-color: var(--dui-color-body-background);
 
   @include kt-rounded {
     border-radius: var(--dui-border-radius);

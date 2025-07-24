@@ -73,7 +73,7 @@
       'kt-datatable__head--loaded': !isLoading,
     }"
   >
-    <TableRow>
+    <TableRow section="head">
       <template v-for="column in columns">
         <th
           v-if="column.sortable"

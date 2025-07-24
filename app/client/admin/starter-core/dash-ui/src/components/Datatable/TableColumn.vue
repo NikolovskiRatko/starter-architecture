@@ -22,7 +22,7 @@
       {
         'kt-datatable__cell--loaded': !isLoading,
         'kt-datatable__cell--error': hasError,
-        'kt-datatable__cell--even': isEvenRow,
+        'kt-datatable__cell--even-row': isEvenRow,
       },
     ]"
   >
