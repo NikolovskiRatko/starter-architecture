@@ -4,7 +4,7 @@
   import TableHead from "./TableHead.vue"
   import TableLoader from "./TableLoader.vue"
   import TableColumn from "./TableColumn.vue"
-  import type { DatatableColumns, TableQuery } from "./types";
+  import type { DatatableColumns, TableQuery } from "../../types";
   import { PortletComponent, PortletBody } from "../Portlet";
   import "./DatatableComponent.scss";
 

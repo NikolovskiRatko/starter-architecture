@@ -1,1 +1,3 @@
-export { default as useOnClickOutside } from './useOnClickOutside';
+export * from './useOnClickOutside';
+export * from "./useDatatable";
+export * from "./useQueryParams";

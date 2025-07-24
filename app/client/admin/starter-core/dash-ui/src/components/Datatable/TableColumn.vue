@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { inject } from "vue";
-  import type { TableSections } from "./types";
+  import type { TableSections } from "../../types";
   import "./TableColumn.scss";
 
   interface TableColumnProps {
@@ -22,7 +22,7 @@
       {
         'kt-datatable__cell--loaded': !isLoading,
         'kt-datatable__cell--error': hasError,
-        'kt-datatable__cell--even': isEvenRow,
+        'kt-datatable__cell--even-row': isEvenRow,
       },
     ]"
   >

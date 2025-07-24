@@ -383,3 +383,10 @@ template {
 [hidden] {
   display: none;
 }
+
+/*
+ * Reset th styles.
+ */
+th {
+  text-align: inherit;
+}

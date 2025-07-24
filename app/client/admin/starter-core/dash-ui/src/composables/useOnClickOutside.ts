@@ -1,7 +1,7 @@
 import { onBeforeUnmount, onMounted } from 'vue'
 import type { Ref, VueElement } from 'vue';
 
-export default function useOnClickOutside(
+export function useOnClickOutside(
     component: Ref<VueElement>,
     callback: () => void,
     skip?: boolean

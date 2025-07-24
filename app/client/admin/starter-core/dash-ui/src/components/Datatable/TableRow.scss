@@ -7,8 +7,9 @@
   table-layout: initial;
   width: 100%;
   border-bottom: 1px solid $row-border-color;
+  transition: background 0.3s ease;
 
-  &--hover:not(#{$block}--active) {
-    transition: background 0.3s ease;
+  &--hover#{$block}--body:not(#{$block}--active) {
+    background-color: $row-hover;
   }
 }

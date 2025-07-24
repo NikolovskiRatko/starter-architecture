@@ -15,8 +15,8 @@ $checkbox_bg: var(--dui-color-base-shape-1);
 $checkbox_checked_bg: var(--dui-color-base-shape-2);
 
 // Row colors
-$row-border-color: var(--dui-color-base-shape-1);
-$row-even: transparent;
+$row-border-color: var(--dui-color-base-shape-2);
+$row-even: var(--dui-color-base-shape-1);
 $row-hover: transparent;
 $row-active: var(--dui-gray-100);
 

@@ -21,17 +21,6 @@
     padding-right: $table-space;
   }
 
-  &:hover {
-    transition: background 0.3s ease;
-    background: $row-hover;
-
-    &:not(#{block}--active) {
-      // Both of these should be regarding the row been hovered or not active
-      transition: background 0.3s ease;
-      background: $row-hover;
-    }
-  }
-
   // i {
     // font-size: 1.4rem;
   // }
@@ -123,7 +112,7 @@
   }
 
   &--body {
-    font-weight: regular;
+    font-weight: var(--dui-font-weight-thin);
 
     &--check {
       > span {
