@@ -1,5 +1,5 @@
-import type { TableQuery } from "./types";
-import type { PaginationObject } from "../Pagination";
+import type { TableQuery } from "../types";
+import type { PaginationObject } from "../components/Pagination";
 
 export const INITIAL_PAGINATION: PaginationObject = {
   lastPage: 0,
@@ -21,4 +21,4 @@ export const DATATABLE_ORDER_DIRECTIONS = {
 export const INITIAL_QUERY_DATA: TableQuery = {
   length: 10,
   dir: DATATABLE_ORDER_DIRECTIONS.asc,
-};
+} as const;

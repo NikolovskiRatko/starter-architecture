@@ -1,8 +1,9 @@
 import { computed, type ComputedRef } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { DATATABLE_ORDER_DIRECTIONS, INITIAL_QUERY_DATA } from "../constants";
-import type { onPaginationChange } from "../../Pagination";
-import type { OrderDirection, TableQuery } from "../types";
+import type { onPaginationChange } from "../components/Pagination";
+import type { TableQuery } from "../types";
+import { useQueryParams, TRANSFORMS } from './useQueryParams';
 
 export function useDatatable<TCustom extends Record<string, string | undefined> = {}>(): {
   query: ComputedRef<TableQuery>;
@@ -13,41 +14,26 @@ export function useDatatable<TCustom extends Record<string, string | undefined> 
   const router = useRouter();
 
   const query = computed<TableQuery>(() => {
-    const queryObject = Object.assign({}, INITIAL_QUERY_DATA);
-    const { query: routeQuery } = route;
+    return useQueryParams<TableQuery>({
+      values: {
+        search: TRANSFORMS.toString,
+        dir: (value: string) => {
+          const isDirValue = Object.values(DATATABLE_ORDER_DIRECTIONS).indexOf(value) != -1
 
-    const page = Number(routeQuery.page);
-    const length = Number(routeQuery.length);
-    const column = routeQuery.column ? String(routeQuery.column) : null;
-    const dir = routeQuery.dir ? String(routeQuery.dir) : null;
-    const search = routeQuery.search ? String(routeQuery.search) : null;
-
-    if (page && !isNaN(page)) {
-      queryObject["page"] = page;
-    }
-
-    if (length && !isNaN(length)) {
-      queryObject["length"] = length;
-    }
-
-    if (column) {
-      queryObject["column"] = column;
-    }
-
-    if (search) {
-      queryObject["search"] = search;
-    }
-
-    if (
-      dir &&
-      Object.values(DATATABLE_ORDER_DIRECTIONS).indexOf(
-        dir as OrderDirection,
-      ) != -1
-    ) {
-      queryObject["dir"] = dir as OrderDirection;
-    }
-
-    return queryObject;
+          return isDirValue ? value : null;
+        },
+        column: TRANSFORMS.toString,
+        length: TRANSFORMS.toNumber,
+        page: TRANSFORMS.toNumber
+      },
+      defaultValues: {
+        search: null,
+        dir: INITIAL_QUERY_DATA.dir,
+        column: null,
+        length: INITIAL_QUERY_DATA.length,
+        page: 1
+      }
+    });
   });
 
   const customParams = computed<TCustom>(() => {

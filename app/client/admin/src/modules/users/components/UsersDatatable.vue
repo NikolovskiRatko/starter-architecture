@@ -5,12 +5,12 @@
   import UsersTableHeader from './UsersTableHeader.vue';
   import UsersTableRow from './UsersTableRow.vue';
   import {
-    useDatatable,
     DatatableComponent,
     DatatableFilters,
     DatatableHeader,
     PaginationComponent,
   } from '@starter-core/dash-ui/src';
+  import { useDatatable }  from '@starter-core/dash-ui/src/composables';
 
   const { query, onPaginationChange } = useDatatable();
 

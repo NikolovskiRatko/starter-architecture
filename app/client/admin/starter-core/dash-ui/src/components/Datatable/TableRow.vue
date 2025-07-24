@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { inject, ref, provide, computed } from "vue";
-  import type { TableSections } from "./types";
+  import type { TableSections } from "../../types";
   import "./TableRow.scss";
 
   interface TableRowProps {

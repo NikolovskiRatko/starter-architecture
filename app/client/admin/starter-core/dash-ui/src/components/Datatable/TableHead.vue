@@ -2,14 +2,14 @@
   import { inject } from "vue";
   import { useI18n } from "vue-i18n";
   import { useRoute, useRouter } from "vue-router";
-  import { DATATABLE_ORDER_DIRECTIONS } from "./constants";
+  import { DATATABLE_ORDER_DIRECTIONS } from "../../constants";
   import type {
     ColumnName,
     ColumnObject,
     DatatableColumns,
     OrderDirection,
     TableQuery,
-  } from "./types";
+  } from "../../types";
   import TableRow from "./TableRow.vue";
 
   interface TableHeadProps {
