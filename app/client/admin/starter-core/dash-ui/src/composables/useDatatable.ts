@@ -1,53 +1,56 @@
-import { computed, type ComputedRef } from "vue";
-import { useRoute, useRouter } from "vue-router";
-import { DATATABLE_ORDER_DIRECTIONS, INITIAL_QUERY_DATA } from "../constants";
-import type { onPaginationChange } from "../components/Pagination";
-import type { TableQuery } from "../types";
+import { computed, type ComputedRef } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import { DATATABLE_ORDER_DIRECTIONS, INITIAL_QUERY_DATA } from '../constants';
 import { useQueryParams, TRANSFORMS } from './useQueryParams';
+import type { TableQuery } from '../types';
+import type { onPaginationChange } from '../components/Pagination';
+import type { Transformers } from '../composables/useQueryParams';
 
-export function useDatatable<TCustom extends Record<string, string | undefined> = {}>(): {
-  query: ComputedRef<TableQuery>;
-  customParams: ComputedRef<TCustom>;
+type DatatableOptions<TCustom extends Record<string, any>> = {
+  values?: Transformers<TCustom>;
+  defaultValues?: Partial<TCustom>;
+};
+
+export function useDatatable<TCustom extends Record<string, any> = {}>(
+    options?: DatatableOptions<TCustom>
+): {
+  query: ComputedRef<TableQuery & TCustom>;
   onPaginationChange: onPaginationChange;
 } {
   const route = useRoute();
   const router = useRouter();
 
-  const query = computed<TableQuery>(() => {
-    return useQueryParams<TableQuery>({
-      values: {
-        search: TRANSFORMS.toString,
-        dir: (value: string) => {
-          const isDirValue = Object.values(DATATABLE_ORDER_DIRECTIONS).indexOf(value) != -1
+  const baseValues: Transformers<TableQuery> = {
+    search: TRANSFORMS.toString,
+    dir: (value: string) => {
+      const isValid = Object.values(DATATABLE_ORDER_DIRECTIONS).includes(value);
+      return isValid ? value : null;
+    },
+    column: TRANSFORMS.toString,
+    length: TRANSFORMS.toNumber,
+    page: TRANSFORMS.toNumber,
+  };
 
-          return isDirValue ? value : null;
+  const baseDefaults: TableQuery = {
+    search: null,
+    dir: INITIAL_QUERY_DATA.dir,
+    column: null,
+    length: INITIAL_QUERY_DATA.length,
+    page: 1,
+  };
+
+  const query = computed(() =>
+      useQueryParams<TableQuery & TCustom>({
+        values: {
+          ...baseValues,
+          ...(options?.values || {}),
         },
-        column: TRANSFORMS.toString,
-        length: TRANSFORMS.toNumber,
-        page: TRANSFORMS.toNumber
-      },
-      defaultValues: {
-        search: null,
-        dir: INITIAL_QUERY_DATA.dir,
-        column: null,
-        length: INITIAL_QUERY_DATA.length,
-        page: 1
-      }
-    });
-  });
-
-  const customParams = computed<TCustom>(() => {
-    const knownKeys = ["page", "length", "column", "dir", "search"];
-    const result: Record<string, string | undefined> = {};
-
-    Object.entries(route.query).forEach(([key, value]) => {
-      if (!knownKeys.includes(key)) {
-        result[key] = Array.isArray(value) ? value[0] : value;
-      }
-    });
-
-    return result as TCustom;
-  });
+        defaultValues: {
+          ...baseDefaults,
+          ...(options?.defaultValues || {}),
+        } as TableQuery & TCustom,
+      })
+  );
 
   const onPaginationChange: onPaginationChange = ({ limit, page }) => {
     router.push({
@@ -62,7 +65,6 @@ export function useDatatable<TCustom extends Record<string, string | undefined> 
 
   return {
     query,
-    customParams,
     onPaginationChange,
   };
 }
