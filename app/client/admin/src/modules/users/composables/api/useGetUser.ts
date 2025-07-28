@@ -1,10 +1,10 @@
-import { useQuery } from '@tanstack/vue-query';
+import { useQuery, type UseQueryReturnType } from '@tanstack/vue-query';
 import axios from 'axios';
 import { type ComputedRef } from 'vue';
 import { USER_API_ENDPOINTS, USER_CACHE_KEY } from '../../constants';
 import type { GetUserResponse } from '../../types';
 
-export const useGetUser = (userId?: ComputedRef<number>) => {
+export const useGetUser = (userId?: ComputedRef<number>): UseQueryReturnType<GetUserResponse, unknown> => {
   return useQuery({
     queryKey: [USER_CACHE_KEY, userId?.value],
     queryFn: async (): Promise<GetUserResponse> => {
