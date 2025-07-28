@@ -75,7 +75,7 @@ services:
     container_name: redis
     image: redis:alpine
     ports:
-      - ${HOST_MACHINE_REDIS_PORT}:6379
+      - 127.0.0.1:${HOST_MACHINE_REDIS_PORT}:6379
     volumes:
       - ${REDIS_DATA_DIR-./data/redis}:/data
     networks:
