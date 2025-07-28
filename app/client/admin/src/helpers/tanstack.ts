@@ -1,16 +1,26 @@
-import { type AxiosError } from 'axios';
+import type { AxiosError } from 'axios';
+import type { ComposerTranslation } from 'vue-i18n';
 import { useToast } from 'vue-toastification';
 import { getAPIErrorMessage } from './api';
 
-export const tanstackGenericOnErrorHandler = (error: AxiosError | object) => {
+const toast = useToast();
+
+export const tanstackGenericOnErrorHandler = (
+  error: AxiosError | object,
+  t?: ComposerTranslation
+) => {
   const message = getAPIErrorMessage(error);
-  const toast = useToast();
+
+  const showError = (msg: string) => {
+    const translated = t ? t(msg) : msg;
+    toast.error(translated);
+  };
 
   if (typeof message === 'string') {
-    toast.error(message);
+    showError(message);
   } else {
-    Object.values(message).forEach((string) => {
-      toast.error(string);
+    Object.values(message).forEach((msg) => {
+      showError(msg);
     });
   }
 };

@@ -7,3 +7,4 @@ export * from './userAgentCheck';
 export * from './inject';
 export * from './api';
 export * from './typeguards';
+export * from './tanstack';
