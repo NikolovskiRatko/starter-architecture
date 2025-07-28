@@ -1,4 +1,4 @@
-import { computed, type ComputedRef } from 'vue';
+import { type ComputedRef } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { DATATABLE_ORDER_DIRECTIONS, INITIAL_QUERY_DATA } from '../constants';
 import { useQueryParams, TRANSFORMS } from './useQueryParams';
@@ -22,9 +22,9 @@ export function useDatatable<TCustom extends Record<string, any> = {}>(
 
   const baseValues: Transformers<TableQuery> = {
     search: TRANSFORMS.toString,
-    dir: (value: string) => {
+    dir: (value: string| string[]) => {
       const isValid = Object.values(DATATABLE_ORDER_DIRECTIONS).includes(value);
-      return isValid ? value : null;
+      return isValid ? value : INITIAL_QUERY_DATA.dir;
     },
     column: TRANSFORMS.toString,
     length: TRANSFORMS.toNumber,
@@ -32,25 +32,21 @@ export function useDatatable<TCustom extends Record<string, any> = {}>(
   };
 
   const baseDefaults: TableQuery = {
-    search: null,
     dir: INITIAL_QUERY_DATA.dir,
-    column: null,
     length: INITIAL_QUERY_DATA.length,
     page: 1,
   };
 
-  const query = computed(() =>
-      useQueryParams<TableQuery & TCustom>({
-        values: {
-          ...baseValues,
-          ...(options?.values || {}),
-        },
-        defaultValues: {
-          ...baseDefaults,
-          ...(options?.defaultValues || {}),
-        } as TableQuery & TCustom,
-      })
-  );
+  const query = useQueryParams<TableQuery & TCustom>({
+    values: {
+      ...baseValues,
+      ...(options?.values || {}),
+    },
+    defaultValues: {
+      ...baseDefaults,
+      ...(options?.defaultValues || {}),
+    } as TableQuery & TCustom,
+  });
 
   const onPaginationChange: onPaginationChange = ({ limit, page }) => {
     router.push({
