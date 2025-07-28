@@ -4,13 +4,8 @@
   import { USERS_DATATABLE_COLUMNS } from '../constants';
   import UsersTableHeader from './UsersTableHeader.vue';
   import UsersTableRow from './UsersTableRow.vue';
-  import {
-    DatatableComponent,
-    DatatableFilters,
-    DatatableHeader,
-    PaginationComponent,
-  } from '@starter-core/dash-ui/src';
-  import { useDatatable }  from '@starter-core/dash-ui/src/composables';
+  import { DatatableComponent, DatatableFilters, DatatableHeader, PaginationComponent } from '@starter-core/dash-ui/src';
+  import { useDatatable } from '@starter-core/dash-ui/src/composables';
 
   const { query, onPaginationChange } = useDatatable();
 

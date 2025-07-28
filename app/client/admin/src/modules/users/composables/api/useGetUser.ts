@@ -4,9 +4,7 @@ import { type ComputedRef } from 'vue';
 import { USER_API_ENDPOINTS, USER_CACHE_KEY } from '../../constants';
 import type { GetUserResponse } from '../../types';
 
-export const useGetUser = (
-  userId?: ComputedRef<number>
-): UseQueryReturnType<GetUserResponse, unknown> => {
+export const useGetUser = (userId?: ComputedRef<number>): UseQueryReturnType<GetUserResponse, unknown> => {
   return useQuery({
     queryKey: [USER_CACHE_KEY, userId?.value],
     queryFn: async (): Promise<GetUserResponse> => {
