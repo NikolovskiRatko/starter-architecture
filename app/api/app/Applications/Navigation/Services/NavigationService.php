@@ -46,21 +46,33 @@ class NavigationService implements NavigationServiceInterface
 
     /**
      * Update an existing navigation.
+     * @throws ValidationException
      */
     public function updateNavigation(Navigation $navigation, array $data): Navigation
     {
         $originalParentId = $navigation->parent_id;
 
+        if (array_key_exists('parent_id', $data) && $data['parent_id'] !== $originalParentId) {
+            // Prevent circular reference: parent_id must not be one of its own descendants
+            $descendants = $this->repository->findDescendants($navigation->id)->pluck('id')->all();
+
+            if (in_array($data['parent_id'], $descendants)) {
+                throw ValidationException::withMessages([
+                    'parent_id' => 'Cannot assign a descendant as parent. This would create a circular reference.',
+                ]);
+            }
+        }
+
+        // Proceed with update
         $navigation->update($data);
 
-
+        // Rebuild tree if parent_id was changed
         if (array_key_exists('parent_id', $data) && $data['parent_id'] !== $originalParentId) {
             // Rebuild this navigation
             $this->repository->rebuildTreePaths($navigation->id);
 
             // Rebuild all descendants recursively
             $descendants = $this->repository->findDescendants($navigation->id);
-
             foreach ($descendants as $descendant) {
                 $this->repository->rebuildTreePaths($descendant->id);
             }
