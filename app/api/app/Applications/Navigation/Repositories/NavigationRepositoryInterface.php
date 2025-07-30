@@ -78,5 +78,36 @@ interface NavigationRepositoryInterface
      */
     public function doesSlugExist(string $slug): bool;
 
-    public function updateModel(Navigation $navigation, array $data): Navigation;
+    /**
+     * Load a navigation with its parent and treepath relations.
+     *
+     * @param int $id
+     * @return Navigation
+     */
+    public function findWithAncestors(int $id): Navigation;
+
+    /**
+     * Rebuild the navigation_treepath entries for a given navigation.
+     *
+     * @param int $navigationId
+     * @return void
+     */
+    public function rebuildTreePaths(int $navigationId): void;
+
+    /**
+     * Reassign all children of a navigation to a new parent.
+     *
+     * @param int $oldParentId
+     * @param int|null $newParentId
+     * @return void
+     */
+    public function reassignChildren(int $oldParentId, ?int $newParentId): void;
+
+    /**
+     * Get all direct children of a navigation by parent ID.
+     *
+     * @param int $parentId
+     * @return Collection
+     */
+    public function getChildren(int $parentId): Collection;
 }

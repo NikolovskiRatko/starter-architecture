@@ -3,6 +3,7 @@
 namespace App\Applications\Navigation\Repositories;
 
 use App\Applications\Navigation\Model\Navigation;
+use App\Applications\Navigation\Model\NavigationTreePath;
 use Illuminate\Database\Eloquent\Collection;
 
 /**
@@ -113,9 +114,79 @@ class NavigationRepository implements NavigationRepositoryInterface
         return $this->navigation::where('slug', $slug)->exists();
     }
 
-    public function updateModel(Navigation $navigation, array $data): Navigation
+    /**
+     * Rebuild the tree path entries for the given navigation.
+     *
+     * Removes all ancestor and descendant relationships for this navigation
+     * and rebuilds them based on its current parent hierarchy.
+     *
+     * @param int $navigationId
+     * @return void
+     */
+    public function rebuildTreePaths(int $navigationId): void
     {
-        $navigation->update($data);
-        return $navigation;
+        // Always work with fresh data
+        $navigation = $this->findById($navigationId);
+
+        // Clean up old paths
+        NavigationTreePath::where('descendant', $navigation->id)
+            ->orWhere('ancestor', $navigation->id)
+            ->delete();
+
+        // Add self-reference
+        NavigationTreePath::create([
+            'ancestor' => $navigation->id,
+            'descendant' => $navigation->id,
+            'path_length' => 0,
+        ]);
+
+        // Add paths from parent
+        if ($navigation->parent_id) {
+            $parentPaths = NavigationTreePath::where('descendant', $navigation->parent_id)->get();
+
+            foreach ($parentPaths as $path) {
+                NavigationTreePath::create([
+                    'ancestor' => $path->ancestor,
+                    'descendant' => $navigation->id,
+                    'path_length' => $path->path_length + 1,
+                ]);
+            }
+        }
+    }
+
+    /**
+     * Reassigns all direct children of the given navigation to a new parent.
+     *
+     * This is typically used when deleting a navigation to preserve its children
+     * by moving them up in the hierarchy.
+     *
+     * @param int $oldParentId
+     * @param int|null $newParentId
+     * @return void
+     */
+    public function reassignChildren(int $oldParentId, ?int $newParentId): void
+    {
+        $this->navigation::where('parent_id', $oldParentId)
+            ->update(['parent_id' => $newParentId]);
+    }
+
+    /**
+     * Get all direct children of a navigation by parent ID.
+     */
+    public function getChildren(int $parentId): Collection
+    {
+        return $this->navigation::where('parent_id', $parentId)->get();
+    }
+
+    public function doesSlugExistForParent(string $slug, ?int $parentId, ?int $excludeId = null): bool
+    {
+        $query = $this->navigation::where('slug', $slug)
+            ->where('parent_id', $parentId);
+
+        if ($excludeId) {
+            $query->where('id', '!=', $excludeId);
+        }
+
+        return $query->exists();
     }
 }

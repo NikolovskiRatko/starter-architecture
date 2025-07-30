@@ -7,6 +7,7 @@ use App\Applications\Navigation\Repositories\NavigationRepositoryInterface;
 use App\Applications\Navigation\Model\Navigation;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\ValidationException;
 use InvalidArgumentException;
 
 class NavigationService implements NavigationServiceInterface
@@ -45,18 +46,79 @@ class NavigationService implements NavigationServiceInterface
 
     /**
      * Update an existing navigation.
+     * @throws ValidationException
      */
     public function updateNavigation(Navigation $navigation, array $data): Navigation
     {
-        return $this->repository->updateModel($navigation, $data);
+        $originalParentId = $navigation->parent_id;
+
+        if (array_key_exists('parent_id', $data) && $data['parent_id'] !== $originalParentId) {
+            // Prevent circular reference: parent_id must not be one of its own descendants
+            $descendants = $this->repository->findDescendants($navigation->id)->pluck('id')->all();
+
+            if (in_array($data['parent_id'], $descendants)) {
+                throw ValidationException::withMessages([
+                    'parent_id' => 'Cannot assign a descendant as parent. This would create a circular reference.',
+                ]);
+            }
+        }
+
+        // Proceed with update
+        $navigation->update($data);
+
+        // Rebuild tree if parent_id was changed
+        if (array_key_exists('parent_id', $data) && $data['parent_id'] !== $originalParentId) {
+            // Rebuild this navigation
+            $this->repository->rebuildTreePaths($navigation->id);
+
+            // Rebuild all descendants recursively
+            $descendants = $this->repository->findDescendants($navigation->id);
+            foreach ($descendants as $descendant) {
+                $this->repository->rebuildTreePaths($descendant->id);
+            }
+        }
+
+        return $navigation;
     }
 
     /**
      * Delete a navigation.
+     * @throws ValidationException
      */
     public function deleteNavigation(Navigation $navigation): ?bool
     {
-        return $this->repository->delete($navigation);
+        // Step 1: Get current children before they get reassigned
+        $children = $this->repository->getChildren($navigation->id);
+
+        // Step 2: Validate that no child will conflict with an existing sibling under new parent
+        foreach ($children as $child) {
+            $conflict = $this->repository->doesSlugExistForParent(
+                $child->slug,
+                $navigation->parent_id,
+                $child->id // exclude self
+            );
+
+            if ($conflict) {
+                throw ValidationException::withMessages([
+                    'slug' => "Cannot delete navigation. Child '{$child->slug}' would conflict with an existing navigation under the parent.",
+                ]);
+            }
+        }
+
+        // Step 3: Reassign to the deleted navigation's parent
+        $this->repository->reassignChildren($navigation->id, $navigation->parent_id);
+
+        // Step 4: Delete the navigation
+        $result = $this->repository->delete($navigation);
+
+        // Step 5: Rebuild tree paths for previously collected children
+        if ($result) {
+            foreach ($children as $child) {
+                $this->repository->rebuildTreePaths($child->id);
+            }
+        }
+
+        return $result;
     }
 
     /**
