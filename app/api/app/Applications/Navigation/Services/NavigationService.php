@@ -7,6 +7,7 @@ use App\Applications\Navigation\Repositories\NavigationRepositoryInterface;
 use App\Applications\Navigation\Model\Navigation;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\ValidationException;
 use InvalidArgumentException;
 
 class NavigationService implements NavigationServiceInterface
@@ -70,22 +71,38 @@ class NavigationService implements NavigationServiceInterface
 
     /**
      * Delete a navigation.
+     * @throws ValidationException
      */
     public function deleteNavigation(Navigation $navigation): ?bool
     {
         // Step 1: Get current children before they get reassigned
-        $childIds = $this->repository->getChildren($navigation->id)->pluck('id')->all();
+        $children = $this->repository->getChildren($navigation->id);
 
-        // Step 2: Reassign to the deleted navigation's parent
+        // Step 2: Validate that no child will conflict with an existing sibling under new parent
+        foreach ($children as $child) {
+            $conflict = $this->repository->doesSlugExistForParent(
+                $child->slug,
+                $navigation->parent_id,
+                $child->id // exclude self
+            );
+
+            if ($conflict) {
+                throw ValidationException::withMessages([
+                    'slug' => "Cannot delete navigation. Child '{$child->slug}' would conflict with an existing navigation under the parent.",
+                ]);
+            }
+        }
+
+        // Step 3: Reassign to the deleted navigation's parent
         $this->repository->reassignChildren($navigation->id, $navigation->parent_id);
 
-        // Step 3: Delete the navigation
+        // Step 4: Delete the navigation
         $result = $this->repository->delete($navigation);
 
-        // Step 4: Rebuild tree paths for previously collected children
+        // Step 5: Rebuild tree paths for previously collected children
         if ($result) {
-            foreach ($childIds as $childId) {
-                $this->repository->rebuildTreePaths($childId);
+            foreach ($children as $child) {
+                $this->repository->rebuildTreePaths($child->id);
             }
         }
 

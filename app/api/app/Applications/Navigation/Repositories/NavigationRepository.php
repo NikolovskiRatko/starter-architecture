@@ -177,4 +177,16 @@ class NavigationRepository implements NavigationRepositoryInterface
     {
         return $this->navigation::where('parent_id', $parentId)->get();
     }
+
+    public function doesSlugExistForParent(string $slug, ?int $parentId, ?int $excludeId = null): bool
+    {
+        $query = $this->navigation::where('slug', $slug)
+            ->where('parent_id', $parentId);
+
+        if ($excludeId) {
+            $query->where('id', '!=', $excludeId);
+        }
+
+        return $query->exists();
+    }
 }

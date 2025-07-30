@@ -5,6 +5,7 @@ namespace App\Applications\Navigation\Services;
 use App\Applications\Navigation\DTO\NavigationDTO;
 use App\Applications\Navigation\Model\Navigation;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Validation\ValidationException;
 
 interface NavigationServiceInterface
 {
@@ -45,6 +46,7 @@ interface NavigationServiceInterface
      *
      * @param  Navigation  $navigation
      * @return bool|null
+     * @throws ValidationException
      */
     public function deleteNavigation(Navigation $navigation): ?bool;
 
