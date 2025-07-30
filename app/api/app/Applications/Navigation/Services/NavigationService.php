@@ -48,7 +48,24 @@ class NavigationService implements NavigationServiceInterface
      */
     public function updateNavigation(Navigation $navigation, array $data): Navigation
     {
-        return $this->repository->updateModel($navigation, $data);
+        $originalParentId = $navigation->parent_id;
+
+        $navigation->update($data);
+
+
+        if (array_key_exists('parent_id', $data) && $data['parent_id'] !== $originalParentId) {
+            // Rebuild this navigation
+            $this->repository->rebuildTreePaths($navigation->id);
+
+            // Rebuild all descendants recursively
+            $descendants = $this->repository->findDescendants($navigation->id);
+
+            foreach ($descendants as $descendant) {
+                $this->repository->rebuildTreePaths($descendant->id);
+            }
+        }
+
+        return $navigation;
     }
 
     /**
@@ -56,7 +73,23 @@ class NavigationService implements NavigationServiceInterface
      */
     public function deleteNavigation(Navigation $navigation): ?bool
     {
-        return $this->repository->delete($navigation);
+        // Step 1: Get current children before they get reassigned
+        $childIds = $this->repository->getChildren($navigation->id)->pluck('id')->all();
+
+        // Step 2: Reassign to the deleted navigation's parent
+        $this->repository->reassignChildren($navigation->id, $navigation->parent_id);
+
+        // Step 3: Delete the navigation
+        $result = $this->repository->delete($navigation);
+
+        // Step 4: Rebuild tree paths for previously collected children
+        if ($result) {
+            foreach ($childIds as $childId) {
+                $this->repository->rebuildTreePaths($childId);
+            }
+        }
+
+        return $result;
     }
 
     /**

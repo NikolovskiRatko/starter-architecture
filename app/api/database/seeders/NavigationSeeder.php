@@ -30,7 +30,7 @@ class NavigationSeeder extends Seeder
             'livedate' => now(),
             'enddate' => null,
             'parent_id' => $home->id,
-            'static' => true,
+            'static' => false,
         ]);
 
         // Create "Contact" navigation under "Home"
@@ -42,7 +42,7 @@ class NavigationSeeder extends Seeder
             'livedate' => now(),
             'enddate' => null,
             'parent_id' => $home->id,
-            'static' => true,
+            'static' => false,
         ]);
 
         // Add a child under "About Us"
@@ -54,7 +54,7 @@ class NavigationSeeder extends Seeder
             'livedate' => now(),
             'enddate' => null,
             'parent_id' => $aboutUs->id,
-            'static' => true,
+            'static' => false,
         ]);
 
         // Create "Top menu" and "Footer menu" containers
