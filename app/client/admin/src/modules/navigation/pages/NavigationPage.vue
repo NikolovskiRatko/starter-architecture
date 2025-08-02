@@ -37,7 +37,7 @@
 
   const { handleSubmit, errors, setValues, defineField } = useForm<NavigationForm>({
     initialValues: {
-      visible: true,
+      visible: 1,
       parent_id: null,
       slug: '',
     },

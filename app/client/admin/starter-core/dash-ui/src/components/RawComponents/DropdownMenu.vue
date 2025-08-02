@@ -3,7 +3,7 @@ import './DropdownMenu.scss';
 
 interface DropdownMenuProps {
   className?: string;
-  isVisible?: string;
+  isVisible?: boolean;
 }
 
 const { className, isVisible } = defineProps<DropdownMenuProps>();

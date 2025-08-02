@@ -4,6 +4,10 @@ export interface EloquentModelCommonFields {
   updatedAt: string;
 }
 
+export type ApiResponse<T> = {
+  data: T;
+};
+
 export interface ApiResponsePagination {
   total: number;
   count: number;
