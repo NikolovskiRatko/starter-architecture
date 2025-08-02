@@ -2,12 +2,25 @@ import type { FormDropdownOption } from '@starter-core/dash-ui/dist/components/F
 import { computed, type Ref } from 'vue';
 import type { Navigation } from '../types';
 
-export const useNavigationDropdownOptions = (navigations: Ref<Navigation[] | undefined>, disabledOptions?: number[]) => {
+export const useNavigationDropdownOptions = (
+  navigations: Ref<Navigation[] | undefined>,
+  disabledOptions?: Ref<number[] | undefined>
+) => {
   return computed<FormDropdownOption[]>(() => {
-    return (navigations.value ?? []).map((navigation) => ({
-      id: String(navigation.id),
-      name: navigation.title,
-      isDisabled: disabledOptions?.includes(navigation.id),
-    }));
+    const disabled = disabledOptions?.value ?? [];
+
+    const mappedOptions: FormDropdownOption[] = [
+      {
+        id: '0',
+        name: 'None',
+      },
+      ...(navigations.value ?? []).map((navigation) => ({
+        id: String(navigation.id),
+        name: navigation.title,
+        isDisabled: disabled.includes(navigation.id),
+      })),
+    ];
+
+    return mappedOptions;
   });
 };
