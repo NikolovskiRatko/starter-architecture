@@ -2,6 +2,7 @@ import { useQuery, useMutation, type UseQueryReturnType, useQueryClient } from '
 import axios from 'axios';
 import { computed } from 'vue';
 import type { Ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { useToast } from 'vue-toastification';
 import {
   NAVIGATION_MENU_API_ENDPOINTS,
@@ -19,6 +20,7 @@ import type {
   NavigationDeleteResult,
   ReorderNavigationItemQuery,
 } from '../types';
+import { tanstackGenericOnErrorHandler } from '@/helpers';
 
 export const useNavigationMenus = (): UseQueryReturnType<NavigationMenus, unknown> => {
   return useQuery({
@@ -27,24 +29,25 @@ export const useNavigationMenus = (): UseQueryReturnType<NavigationMenus, unknow
       const data = await axios.get(NAVIGATION_MENU_API_ENDPOINTS.getAll);
       return data.data;
     },
-    initialData: [],
+    placeholderData: () => [],
+    staleTime: 1000 * 60 * 5,
   });
 };
 
 export const useNavigationMenu = (menuId: Ref<number | undefined>): UseQueryReturnType<NavigationMenu, unknown> => {
-  const isEnabled = computed(() => !!menuId.value);
   return useQuery({
-    queryKey: [NAVIGATION_MENU_QUERY_KEY, menuId] as const,
+    queryKey: computed(() => [NAVIGATION_MENU_QUERY_KEY, menuId.value]),
     queryFn: async () => {
       const data = await axios.get(NAVIGATION_MENU_API_ENDPOINTS.get(menuId.value ?? 0));
       return data.data;
     },
-    initialData: [],
-    enabled: isEnabled,
+    placeholderData: () => [],
+    enabled: computed(() => !!menuId.value),
   });
 };
 
 export const useCreateNavigationMenu = () => {
+  const { t } = useI18n();
   const toast = useToast();
   const queryClient = useQueryClient();
 
@@ -59,14 +62,13 @@ export const useCreateNavigationMenu = () => {
       });
       toast.success('Navigation menu created!');
     },
-    onError: (error) => {
-      toast.error(error.message);
-    },
+    onError: (error) => tanstackGenericOnErrorHandler(error, t),
   });
 };
 
 export const useCreateNavigationMenuItem = () => {
   const toast = useToast();
+  const { t } = useI18n();
   const queryClient = useQueryClient();
 
   return useMutation({
@@ -81,15 +83,14 @@ export const useCreateNavigationMenuItem = () => {
       });
       toast.success('Navigation menu item created!');
     },
-    onError: (error) => {
-      toast.error(error.message);
-    },
+    onError: (error) => tanstackGenericOnErrorHandler(error, t),
   });
 };
 
 export const useDeleteNavigationMenuItem = () => {
   const queryClient = useQueryClient();
   const toast = useToast();
+  const { t } = useI18n();
 
   return useMutation({
     mutationFn: async (menuItemId: number): Promise<NavigationDeleteResult> => {
@@ -98,19 +99,18 @@ export const useDeleteNavigationMenuItem = () => {
     },
     onSuccess: async () => {
       queryClient.invalidateQueries({
-        queryKey: [NAVIGATION_MENU_QUERY_KEY],
+        queryKey: [NAVIGATION_MENUS_QUERY_KEY],
       });
       toast.success('Navigation menu item deleted!');
     },
-    onError: (error) => {
-      toast.error(error.message);
-    },
+    onError: (error) => tanstackGenericOnErrorHandler(error, t),
   });
 };
 
 export const useReorderNavigationMenuItem = () => {
   const queryClient = useQueryClient();
   const toast = useToast();
+  const { t } = useI18n();
 
   return useMutation({
     mutationFn: async ({ menuId, ...query }: ReorderNavigationItemQuery): Promise<{ success: boolean }> => {
@@ -121,10 +121,8 @@ export const useReorderNavigationMenuItem = () => {
       queryClient.invalidateQueries({
         queryKey: [NAVIGATION_MENU_QUERY_KEY],
       });
-      toast.success('Navigation menu item deleted!');
+      toast.success('Navigation menu item reordered!');
     },
-    onError: (error) => {
-      toast.error(error.message);
-    },
+    onError: (error) => tanstackGenericOnErrorHandler(error, t),
   });
 };

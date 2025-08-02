@@ -7,9 +7,9 @@ export const useNavigations = (): UseQueryReturnType<NavigationsResponse, unknow
   return useQuery({
     queryKey: [NAVIGATIONS_QUERY_KEY],
     queryFn: async () => {
-      const data = await axios.get(NAVIGATION_API_ENDPOINTS.all);
-      return data.data;
+      const data = await axios.get<NavigationsResponse>(NAVIGATION_API_ENDPOINTS.all);
+      return data.data.data;
     },
-    initialData: [],
+    placeholderData: [],
   });
 };

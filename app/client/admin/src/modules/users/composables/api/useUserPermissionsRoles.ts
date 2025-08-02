@@ -14,6 +14,6 @@ export const useUserPermissionsRoles = (): UseQueryReturnType<UserPermissionsRol
       const data = await axios.get('user/permissions-roles');
       return data.data;
     },
-    initialData: [],
+    placeholderData: [],
   });
 };
