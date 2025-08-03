@@ -6,11 +6,19 @@
   import { useRoute, useRouter } from 'vue-router';
   import * as yup from 'yup';
   import { PageWrapper, SubheaderTitle, PAGE_WRAPPER_SLOTS } from '../../../components';
-  import { NavigationsDropdown } from '../components';
   import { useNavigation, useNavigationCreate, useNavigations } from '../composables';
   import { NAVIGATION_ROUTES_DATA } from '../constants';
+  import { useNavigationDropdownOptions } from '../helpers';
   import type { NavigationForm } from '../types';
-  import { FormInput, FormSwitch, PortletComponent, PortletBody, DashButton, DashLink } from '@starter-core/dash-ui/src';
+  import {
+    FormInput,
+    FormSwitch,
+    PortletComponent,
+    PortletBody,
+    DashButton,
+    DashLink,
+    FormDropdownNumber,
+  } from '@starter-core/dash-ui/src';
 
   const { mutateAsync: createNavigation } = useNavigationCreate();
 
@@ -37,7 +45,7 @@
 
   const { handleSubmit, errors, setValues, defineField } = useForm<NavigationForm>({
     initialValues: {
-      visible: true,
+      visible: 1,
       parent_id: null,
       slug: '',
     },
@@ -46,6 +54,10 @@
 
   const { data, isLoading } = useNavigation(navigationId);
   const { data: navigations } = useNavigations();
+  const parentNavigationDropdownOptions = useNavigationDropdownOptions(
+    navigations,
+    computed(() => (navigationId?.value ? [navigationId.value] : undefined))
+  );
 
   watch(data, () => {
     if (data.value) {
@@ -121,11 +133,14 @@
     <PortletComponent :isLoading="isLoading">
       <PortletBody>
         <form autocomplete="off" @submit.prevent="submitHandler">
-          <NavigationsDropdown
+          <FormDropdownNumber
             v-if="!isStatic"
             v-model="parentId"
-            :disabled-options="navigationId ? [navigationId] : undefined"
+            id="navigation"
+            :options="parentNavigationDropdownOptions"
             :label="t('navigation.parent')"
+            :error="errors?.parent_id"
+            is-inline
           />
           <FormInput v-model="title" name="title" label="Title" :disabled="isStatic" is-inline :error="errors.title" />
           <FormInput v-model="slug" name="slug" label="Slug" :disabled="isStatic" :error="errors.slug" is-inline>

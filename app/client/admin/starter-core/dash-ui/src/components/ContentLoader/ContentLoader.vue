@@ -3,7 +3,7 @@ import { computed } from "vue";
 import "./ContentLoader.scss";
 
 interface ContentLoaderProps {
-  heightClass: string;
+  heightClass?: string;
   fullCont?: boolean;
   transparent?: boolean;
 }

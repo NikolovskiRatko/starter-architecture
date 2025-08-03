@@ -1,3 +1,5 @@
+import { ApiResponse } from '@/types';
+
 export interface Navigation {
   id: number;
   title: string;
@@ -10,9 +12,11 @@ export interface Navigation {
   parent_path: string;
   path: string;
   static: boolean;
+  website_id: number;
 }
 
 export type NavigationsResponse = Navigation[];
+export type NavigationsRawResponse = ApiResponse<NavigationsResponse>;
 
 export interface NavigationMenuItem {
   id: number;
