@@ -12,10 +12,11 @@ export interface Navigation {
   parent_path: string;
   path: string;
   static: boolean;
+  website_id: number;
 }
 
 export type NavigationsResponse = Navigation[];
-export type NavigationRawResponse = ApiResponse<NavigationsResponse>;
+export type NavigationsRawResponse = ApiResponse<NavigationsResponse>;
 
 export interface NavigationMenuItem {
   id: number;
