@@ -36,12 +36,40 @@ class NavigationService implements NavigationServiceInterface
         return NavigationDTO::fromModel($navigation);
     }
 
+    protected function computePath(Navigation $navigation): string
+    {
+        if (!$navigation->parent_id) {
+            return '/'; // Root navigation
+        }
+
+        $segments = [];
+
+        $current = $navigation;
+
+        while ($current && $current->parent_id) {
+            $segments[] = $current->slug;
+            $current = $this->repository->findById($current->parent_id);
+        }
+
+        $segments = array_reverse($segments);
+        return '/' . implode('/', $segments);
+    }
+
     /**
      * Create a new navigation.
      */
     public function createNavigation(array $data): Navigation
     {
-        return $this->repository->create($data);
+        // Temporarily create the model in memory to assign path before saving
+        $navigation = new Navigation($data);
+
+        // Compute path
+        $computedPath = $this->computePath($navigation);
+        $navigation->path = $computedPath;
+
+        $this->repository->save($navigation);
+
+        return $navigation;
     }
 
     /**

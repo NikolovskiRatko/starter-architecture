@@ -41,6 +41,11 @@ class NavigationRepository implements NavigationRepositoryInterface
         return $this->navigation::create($data);
     }
 
+    public function save(Navigation $navigation): bool
+    {
+        return $navigation->save();
+    }
+
     /**
      * Update an existing navigation model.
      */
