@@ -193,4 +193,14 @@ class NavigationRepository implements NavigationRepositoryInterface
 
         return $query->exists();
     }
+
+    public function findByPath(string $path): Navigation
+    {
+        // Ensure leading slash
+        $normalizedPath = '/' . ltrim($path, '/');
+
+        return $this->navigation::with('content')
+            ->where('path', $normalizedPath)
+            ->firstOrFail();
+    }
 }

@@ -225,4 +225,9 @@ class NavigationService implements NavigationServiceInterface
             return NavigationDTO::fromModel($navigation);
         });
     }
+
+    public function findByPath(string $path): Navigation
+    {
+        return $this->repository->findByPath($path);
+    }
 }
