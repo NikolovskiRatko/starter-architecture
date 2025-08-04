@@ -21,7 +21,7 @@ class Navigation extends Model
         'visible',
         'livedate',
         'enddate',
-        'static',
+        'static'
     ];
 
     protected static function boot()
@@ -130,36 +130,5 @@ class Navigation extends Model
     public function content()
     {
         return $this->morphTo();
-    }
-
-    /**
-     * Get the parent path for the navigation.
-     *
-     * @return string
-     */
-    public function getParentPathAttribute(): string
-    {
-        $ancestorSlugs = DB::table('navigation_treepath')
-            ->join('navigations', 'navigations.id', '=', 'navigation_treepath.ancestor')
-            ->where('navigation_treepath.descendant', $this->id)
-            ->where('navigation_treepath.ancestor', '!=', $this->id)
-            ->orderBy('navigation_treepath.path_length', 'DESC')
-            ->pluck('navigations.slug');
-
-        return $ancestorSlugs->implode('/');
-    }
-
-    /**
-     * Get the full path for the navigation.
-     *
-     * @return string
-     */
-    public function getPathAttribute(): string
-    {
-        // Use the parent path and append the current slug
-        $parentPath = $this->parent_path;
-        $separator = $parentPath && $this->slug ? '/' : '';
-
-        return '/' . ltrim(rtrim($parentPath . $separator . $this->slug, '/'), '/');
     }
 }

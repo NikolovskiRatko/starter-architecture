@@ -19,6 +19,9 @@ Route::group([
     'middleware' => 'auth:sanctum'
 ], function () {
     Route::prefix('navigations')->group(function () {
+        Route::get('by-path/{path}', [NavigationController::class, 'showByPath'])
+            ->where('path', '.*');
+
         Route::get('/', [NavigationController::class, 'index']);
         Route::get('{navigation}', [NavigationController::class, 'show']);
         Route::post('/', [NavigationController::class, 'store']);

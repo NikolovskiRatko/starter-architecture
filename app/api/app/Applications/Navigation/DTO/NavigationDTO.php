@@ -24,7 +24,6 @@ class NavigationDTO
     public ?int $content_id;
     public ?string $content_type;
     public ?array $content;
-    public ?string $parent_path;
     public ?string $path;
     public bool $static;
 
@@ -40,7 +39,6 @@ class NavigationDTO
         ?int $content_id = null,
         ?string $content_type = null,
         ?array $content = null,
-        ?string $parent_path = null,
         ?string $path = null,
         bool $static = false
     ) {
@@ -55,7 +53,6 @@ class NavigationDTO
         $this->content_id = $content_id;
         $this->content_type = $content_type;
         $this->content = $content;
-        $this->parent_path = $parent_path;
         $this->path = $path;
         $this->static = $static;
     }
@@ -126,14 +123,15 @@ class NavigationDTO
         return new self(
             id: $data['id'] ?? 0,
             title: $data['title'],
-            slug: $data['slug'] ?? '', // prevent key error when omitted
+            slug: $data['slug'] ?? '',
             authorized: $data['authorized'] ?? false,
             parent_id: $data['parent_id'] ?? null,
             visible: (bool)($data['visible'] ?? true),
             livedate: isset($data['livedate']) ? new DateTime($data['livedate']) : Carbon::now(),
             enddate: isset($data['enddate']) ? new DateTime($data['enddate']) : null,
             content_id: $data['content_id'] ?? null,
-            content_type: $data['content_type'] ?? null
+            content_type: $data['content_type'] ?? null,
+            static: $data['static'] ?? false
         );
     }
 
@@ -159,7 +157,6 @@ class NavigationDTO
                 ? self::getAliasFromModelType($navigation->content_type)
                 : null,
             content: $navigation->content ? $navigation->content->toArray() : null,
-            parent_path: $navigation->parent_path,
             path: $navigation->path,
             static: (bool) $navigation->static
         );
@@ -194,8 +191,6 @@ class NavigationDTO
             'content_id' => $this->content_id,
             'content_type' => $this->content_type,
             'content' => $this->content,
-            'parent_path' => $this->parent_path,
-            'path' => $this->path,
             'static' => $this->static,
         ];
     }
@@ -214,7 +209,9 @@ class NavigationDTO
             livedate: isset($data['livedate']) ? new DateTime($data['livedate']) : Carbon::now(),
             enddate: isset($data['enddate']) ? new DateTime($data['enddate']) : null,
             content_id: $data['content_id'] ?? null,
-            content_type: $data['content_type'] ?? null
+            content_type: $data['content_type'] ?? null,
+            path: $data['path'] ?? null,
+            static: $data['static'] ?? false
         );
     }
 

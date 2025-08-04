@@ -107,4 +107,13 @@ class NavigationController extends Controller
         $this->authorize('view', $navigation);
         return response()->json($this->navigationService->getDescendants($navigation)->map->toArray());
     }
+
+    public function showByPath(string $path): JsonResponse
+    {
+        $navigation = $this->navigationService->findByPath($path);
+
+        $this->authorize('view', $navigation);
+
+        return response()->json($navigation->toArray());
+    }
 }

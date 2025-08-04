@@ -41,6 +41,11 @@ class NavigationRepository implements NavigationRepositoryInterface
         return $this->navigation::create($data);
     }
 
+    public function save(Navigation $navigation): bool
+    {
+        return $navigation->save();
+    }
+
     /**
      * Update an existing navigation model.
      */
@@ -76,7 +81,8 @@ class NavigationRepository implements NavigationRepositoryInterface
         return $this->navigation::whereIn('id', function ($query) use ($id) {
             $query->select('ancestor')
                 ->from('navigation_treepath')
-                ->where('descendant', $id);
+                ->where('descendant', $id)
+                ->whereColumn('ancestor', '!=', 'descendant'); // exclude self
         })->get();
     }
 
@@ -88,7 +94,8 @@ class NavigationRepository implements NavigationRepositoryInterface
         return $this->navigation::whereIn('id', function ($query) use ($id) {
             $query->select('descendant')
                 ->from('navigation_treepath')
-                ->where('ancestor', $id);
+                ->where('ancestor', $id)
+                ->whereColumn('ancestor', '!=', 'descendant'); // exclude self
         })->get();
     }
 
@@ -125,13 +132,10 @@ class NavigationRepository implements NavigationRepositoryInterface
      */
     public function rebuildTreePaths(int $navigationId): void
     {
-        // Always work with fresh data
         $navigation = $this->findById($navigationId);
 
-        // Clean up old paths
-        NavigationTreePath::where('descendant', $navigation->id)
-            ->orWhere('ancestor', $navigation->id)
-            ->delete();
+        // Only remove paths where this nav is the descendant
+        NavigationTreePath::where('descendant', $navigation->id)->delete();
 
         // Add self-reference
         NavigationTreePath::create([
@@ -188,5 +192,15 @@ class NavigationRepository implements NavigationRepositoryInterface
         }
 
         return $query->exists();
+    }
+
+    public function findByPath(string $path): Navigation
+    {
+        // Ensure leading slash
+        $normalizedPath = '/' . ltrim($path, '/');
+
+        return $this->navigation::with('content')
+            ->where('path', $normalizedPath)
+            ->firstOrFail();
     }
 }
