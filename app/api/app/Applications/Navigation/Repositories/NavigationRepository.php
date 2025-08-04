@@ -81,7 +81,8 @@ class NavigationRepository implements NavigationRepositoryInterface
         return $this->navigation::whereIn('id', function ($query) use ($id) {
             $query->select('ancestor')
                 ->from('navigation_treepath')
-                ->where('descendant', $id);
+                ->where('descendant', $id)
+                ->whereColumn('ancestor', '!=', 'descendant'); // exclude self
         })->get();
     }
 
@@ -93,7 +94,8 @@ class NavigationRepository implements NavigationRepositoryInterface
         return $this->navigation::whereIn('id', function ($query) use ($id) {
             $query->select('descendant')
                 ->from('navigation_treepath')
-                ->where('ancestor', $id);
+                ->where('ancestor', $id)
+                ->whereColumn('ancestor', '!=', 'descendant'); // exclude self
         })->get();
     }
 
