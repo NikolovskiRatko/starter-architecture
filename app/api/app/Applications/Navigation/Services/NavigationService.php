@@ -79,9 +79,16 @@ class NavigationService implements NavigationServiceInterface
     public function updateNavigation(Navigation $navigation, array $data): Navigation
     {
         $originalParentId = $navigation->parent_id;
+        $originalSlug = $navigation->slug;
 
-        if (array_key_exists('parent_id', $data) && $data['parent_id'] !== $originalParentId) {
-            // Prevent circular reference: parent_id must not be one of its own descendants
+        // Detect parent change
+        $parentChanged = array_key_exists('parent_id', $data) && $data['parent_id'] !== $originalParentId;
+
+        // Detect slug change
+        $slugChanged = array_key_exists('slug', $data) && $data['slug'] !== $originalSlug;
+
+        // Prevent circular reference
+        if ($parentChanged) {
             $descendants = $this->repository->findDescendants($navigation->id)->pluck('id')->all();
 
             if (in_array($data['parent_id'], $descendants)) {
@@ -91,18 +98,23 @@ class NavigationService implements NavigationServiceInterface
             }
         }
 
-        // Proceed with update
+        // Perform update
         $navigation->update($data);
 
-        // Rebuild tree if parent_id was changed
-        if (array_key_exists('parent_id', $data) && $data['parent_id'] !== $originalParentId) {
-            // Rebuild this navigation
+        // If parent or slug changed, rebuild tree and update paths
+        if ($parentChanged || $slugChanged) {
+            // Rebuild tree for this navigation
             $this->repository->rebuildTreePaths($navigation->id);
 
-            // Rebuild all descendants recursively
+            // Recompute path
+            $navigation->path = $this->computePath($navigation);
+            $this->repository->save($navigation);
+
+            // Update descendants
             $descendants = $this->repository->findDescendants($navigation->id);
             foreach ($descendants as $descendant) {
-                $this->repository->rebuildTreePaths($descendant->id);
+                $descendant->path = $this->computePath($descendant);
+                $this->repository->save($descendant);
             }
         }
 

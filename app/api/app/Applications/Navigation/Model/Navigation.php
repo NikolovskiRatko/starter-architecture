@@ -21,8 +21,7 @@ class Navigation extends Model
         'visible',
         'livedate',
         'enddate',
-        'static',
-        'path',
+        'static'
     ];
 
     protected static function boot()

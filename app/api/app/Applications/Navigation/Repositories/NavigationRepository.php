@@ -132,13 +132,10 @@ class NavigationRepository implements NavigationRepositoryInterface
      */
     public function rebuildTreePaths(int $navigationId): void
     {
-        // Always work with fresh data
         $navigation = $this->findById($navigationId);
 
-        // Clean up old paths
-        NavigationTreePath::where('descendant', $navigation->id)
-            ->orWhere('ancestor', $navigation->id)
-            ->delete();
+        // Only remove paths where this nav is the descendant
+        NavigationTreePath::where('descendant', $navigation->id)->delete();
 
         // Add self-reference
         NavigationTreePath::create([

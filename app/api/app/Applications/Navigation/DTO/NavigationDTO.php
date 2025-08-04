@@ -131,7 +131,6 @@ class NavigationDTO
             enddate: isset($data['enddate']) ? new DateTime($data['enddate']) : null,
             content_id: $data['content_id'] ?? null,
             content_type: $data['content_type'] ?? null,
-            path: $data['path'] ?? null,
             static: $data['static'] ?? false
         );
     }
@@ -192,7 +191,6 @@ class NavigationDTO
             'content_id' => $this->content_id,
             'content_type' => $this->content_type,
             'content' => $this->content,
-            'path' => $this->path,
             'static' => $this->static,
         ];
     }
