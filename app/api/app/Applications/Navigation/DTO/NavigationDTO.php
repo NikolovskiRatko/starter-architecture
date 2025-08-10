@@ -192,6 +192,7 @@ class NavigationDTO
             'content_type' => $this->content_type,
             'content' => $this->content,
             'static' => $this->static,
+            'path' => $this->path,
         ];
     }
 
@@ -226,5 +227,14 @@ class NavigationDTO
         return array_map(function (Navigation $navigation) {
             return self::fromModel($navigation);
         }, $navigations->all());
+    }
+
+    public function toPublicArray(): array
+    {
+        return [
+            'title' => $this->title,
+            'path'  => $this->path,
+            'slug'  => $this->slug,
+        ];
     }
 }

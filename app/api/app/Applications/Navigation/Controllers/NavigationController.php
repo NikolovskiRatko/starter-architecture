@@ -112,6 +112,10 @@ class NavigationController extends Controller
     {
         $navigation = $this->navigationService->findByPath($path);
 
+        if (!$navigation) {
+            return response()->json(['message' => 'Navigation or content not found'], 404);
+        }
+
         $this->authorize('view', $navigation);
 
         return response()->json($navigation->toArray());
