@@ -226,7 +226,7 @@ class NavigationService implements NavigationServiceInterface
         });
     }
 
-    public function findByPath(string $path): Navigation
+    public function findByPath(string $path): Navigation | null
     {
         return $this->repository->findByPath($path);
     }
