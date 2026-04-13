@@ -1,27 +1,34 @@
-# Admin Panel (Vue.js Single Page Application)
+## Admin Panel
 
-Vue.js is a progressive JavaScript framework that helps build interactive user interfaces by combining a simple core library with an ecosystem of supporting tools for large-scale applications.
+This guide covers the local development and production build steps for the Vue.js Admin Panel single-page application.
 
-A single-page application in Vue.js is a web application that dynamically updates and renders only the necessary parts of the page as users interact, rather than reloading the entire page for each request, resulting in a fast and seamless user experience.
+## Development
 
-## Development Server
-
-For the Vuejs Admin Panel SPA start the app container by running:
+Start the shared Node container:
 
 ```shell
 docker exec -it node /bin/bash
 ```
 
-Then in folder within the node container **app/client/admin** run the following commands:
+Then run the application from the admin project directory:
 
 ```shell
-npm install && npm run dev
+cd /usr/app/client/admin
+npm install
+npm run dev
 ```
 
-## Production
+## Production Build
 
-Build the application for production:
+To build the Admin Panel for production, run:
 
-```bash
-npm install && npm run build
+```shell
+cd /usr/app/client/admin
+npm install
+npm run build
 ```
+
+## Notes
+
+- This application runs inside the shared `node` container used by the local Docker development environment.
+- For the full local setup flow, including Docker Compose startup, Laravel bootstrap, and browser testing, see the development environment guide in `infrastructure/dev_env/README.md`.

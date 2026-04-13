@@ -1,48 +1,75 @@
-##  Deployment Process
+## Terraform Provisioning
 
-###  Prerequisites
+This guide covers the Terraform-based infrastructure provisioning flow used in `infrastructure/terraform`.
 
-1. Install Terraform and Ansible locally
+## Prerequisites
 
-###  Cold Start Infrastructure as Code
+Before using this setup, make sure you have the following installed locally:
 
-1. Create DigitalOcean Personal Access Token
+- Terraform
+- Ansible
 
+## Provisioning Flow
+
+### 1. Create a DigitalOcean Personal Access Token
+
+Create a Personal Access Token in your DigitalOcean account:
+
+```text
 https://cloud.digitalocean.com/account/api/tokens
+```
 
-2. Create sensitive information files.
+### 2. Create the Sensitive Configuration Files
 
-For Terraform project create file **terraform.tfvars** in **infrastructure/terraform** with the DigitalOcean access token and the path to your ssh keys
+For the Terraform project, create a `terraform.tfvars` file in:
 
-For Host server create folder sensitive in **infrastructure/host** with the following files containing a single string:
+```text
+infrastructure/terraform
+```
 
-**.env** (This is the .env file for the hosted Laravel backend)
-**database_password**
-**domain_name**
-**supervisor_password**
+This file should contain the DigitalOcean access token and the paths to your SSH keys.
 
-For Jenkins server create folder sensitive in **infrastructure/jenkins** with the following files containing a single string:
+For the host provisioning layer, create a `sensitive` folder in:
 
-**admin_password**
-**database_password**
-**domain_name**
-**github_access_token**
+```text
+infrastructure/host
+```
 
-3. In folder **infrastructure/terraform** run Terraform commands:
-   
+Add the following files, each containing a single value:
+
+- `.env` — the environment file for the hosted Laravel back end
+- `database_password`
+- `domain_name`
+- `supervisor_password`
+
+For the Jenkins provisioning layer, create a `sensitive` folder in:
+
+```text
+infrastructure/jenkins
+```
+
+Add the following files, each containing a single value:
+
+- `admin_password`
+- `database_password`
+- `domain_name`
+- `github_access_token`
+
+### 3. Run Terraform
+
+From the `infrastructure/terraform` directory, run:
+
 ```shell
 terraform init
-```
-```shell
 terraform plan
-```
-```shell
 terraform apply
 ```
 
+## Jenkins Access
 
-Go to **jenkins.thestarter.net** and login with admin user
+After provisioning and configuration are complete, open the Jenkins instance in the browser and log in with the `admin` user and the configured `admin_password`.
 
-**admin**
+## Notes
 
-**(admin_password)**
+- This setup is intended for the broader `infrastructure` workflow.
+- Terraform is responsible for the initial infrastructure provisioning, while Ansible is used afterward to configure the provisioned hosts.

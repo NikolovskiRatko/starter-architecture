@@ -15,10 +15,10 @@
 ## 1. INTRODUCTION
 
 ### Purpose and Scope
-[**PENDING** – content to be filled here]
+[**PENDING** - content to be filled here]
 
 ### Audience
-[**PENDING** – content to be filled here]
+[**PENDING** - content to be filled here]
 
 ---
 
@@ -145,10 +145,10 @@ app/
    - Organized folder structure, promoting clarity and reusability
 
 #### Security Practices
-[**PENDING** – content to be filled here]
+[**PENDING** - content to be filled here]
 
 #### Documentation Guidelines
-[**PENDING** – content to be filled here]
+[**PENDING** - content to be filled here]
 
 ---
 
@@ -208,7 +208,7 @@ This outlines the local project setup.
      ```
 
 #### Testing Process
-[**PENDING** – content to be filled here]
+[**PENDING** - content to be filled here]
 
 ### Deployment Process
 
@@ -245,17 +245,17 @@ This outlines the local project setup.
    ```
 
 #### Monitoring and Logging
-[**PENDING** – content to be filled here]
+[**PENDING** - content to be filled here]
 
 ---
 
 ## 5. TROUBLESHOOTING AND ISSUE RESOLUTION
 
 **Common Issues**  
-[**PENDING** – content to be filled here]
+[**PENDING** - content to be filled here]
 
 **Debugging Techniques**  
-[**PENDING** – content to be filled here]
+[**PENDING** - content to be filled here]
 
 ---
 

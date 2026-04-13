@@ -1,46 +1,71 @@
-## Introduction
-Ansible is a modern configuration management tool that facilitates the task of setting up and maintaining remote servers, with a minimalist design intended to get users up and running quickly. Ansible uses an inventory file to keep track of which hosts are part of your infrastructure, and how to reach them for running commands and playbooks.
+## Jenkins Server Provisioning
 
-This is an Ansible playbook for installing Redmine 4.0.5 with plugins on Ubuntu 18.04.
+This guide covers the Ansible-based provisioning setup used in `infrastructure/jenkins`.
+
+## Overview
+
+Ansible is used to provision and configure the Jenkins server for the Starter Architecture infrastructure workflow. It uses an inventory file to define the hosts and connection details required to run playbooks over SSH.
 
 ## Prerequisites
 
-Before you work through this tutorial you need:
+Before using this setup, make sure you have the following:
 
-### 1. One Ansible Control Node
-   The Ansible control node is the machine we’ll use to connect to and control the Ansible hosts over SSH. In our case this is the native Ubuntu environment where we:
+### Ansible Control Node
 
-#### An SSH keypair associated with your control node’s non-root user with sudo privileges
+The Ansible control node is the machine used to connect to and automate the target host over SSH. In this project, that is typically your local Ubuntu environment.
 
-Useful resource (https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-20-04)
+Requirements:
 
-#### Install Ansible
+- an SSH key pair associated with your non-root user with sudo privileges
+- Ansible installed locally
 
-Installation documentation here ( https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installation-guide )
-also ( https://www.cyberciti.biz/faq/how-to-install-and-configure-latest-version-of-ansible-on-ubuntu-linux/ )
+Useful resources:
 
-### 2. Ansible Host
-   An Ansible host is any machine that your Ansible control node is configured to automate. The Ansible Host is essentially a remote Ubuntu 22.04 server that has the Ansible control node’s SSH public key added to the authorized_keys of a system user. This user can be either root or a regular user with sudo privileges.
+- SSH key setup: `https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-20-04`
+- Ansible installation: `https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installation-guide`
+- Ubuntu-focused Ansible setup: `https://www.cyberciti.biz/faq/how-to-install-and-configure-latest-version-of-ansible-on-ubuntu-linux/`
 
-####    1. Copy the inventory sample file and and edit the ip address of your Ansible Host.
+### Target Host
 
-Run this command in the ansible folder to test:
+The target host is the remote server that will be provisioned as the Jenkins server. In this setup, it is typically an Ubuntu server that has the control node's SSH public key added to the `authorized_keys` of a system user with sufficient privileges.
+
+## Verify the Setup
+
+Copy the inventory sample file, then edit it with the IP address of your target host.
+
+From the `infrastructure/jenkins` directory, you can verify the setup with the following commands.
+
+List the resolved inventory:
+
 ```shell
 ansible-inventory -i inventory --list
 ```
-Test the connection
+
+Test connectivity:
+
 ```shell
 ansible web -i inventory -m ping
 ```
-Test the connection by running a playbook
+
+Run the test playbook:
+
 ```shell
 ansible-playbook -i inventory test.yml
 ```
-####    2. Add .yml files with the proper configs in the /vars folder
 
-## Usage
+## Configuration
 
-To actually provision a LAMP environment, run the following playbook provided in the Starter Kit **infrastructure/jenkins** folder:
+Add the required `.yml` configuration files to the `vars` directory before running the provisioning playbook.
+
+## Provision the Jenkins Server
+
+To provision the Jenkins server, run the main playbook from the `infrastructure/jenkins` directory:
+
 ```shell
 ansible-playbook -i inventory starter.yml
 ```
+
+## Notes
+
+- This setup is intended for provisioning the Jenkins server used by the broader `infrastructure` workflow.
+- The Jenkins provisioning layer prepares the server with the dependencies and configuration required to run the Starter Architecture CI/CD environment.

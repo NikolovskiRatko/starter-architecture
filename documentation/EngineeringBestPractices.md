@@ -52,7 +52,7 @@
 
 # Engineering Best Practices
 
-## Phase 1 — **PLAN**
+## Phase 1 - **PLAN**
 
 **Processes**:
 1. Discovery / Product Roadmap (User Story Creation)  
@@ -68,7 +68,7 @@
 
 ---
 
-## Phase 2 — **BUILD AND DEVELOPMENT**
+## Phase 2 - **BUILD AND DEVELOPMENT**
 
 **Processes**:
 1. Local & Cloud Environments + Configuration Management (Git Repository extending the Starter Kit integration)  
@@ -93,7 +93,7 @@
 
 ---
 
-## Phase 3 — **CONTINUOUS INTEGRATION**
+## Phase 3 - **CONTINUOUS INTEGRATION**
 
 **Processes**:
 1. CI/CD Pipeline (Ansible playbook used for provisioning a Jenkins server responsible for running CI/CD pipelines for needed environments)  
@@ -107,7 +107,7 @@
 
 ---
 
-## Phase 4 — **TEST**
+## Phase 4 - **TEST**
 
 **Processes**:
 1. QA Workflow  
@@ -121,7 +121,7 @@
 
 ---
 
-## Phase 5 — **DEPLOY AND RELEASE**
+## Phase 5 - **DEPLOY AND RELEASE**
 
 **Processes**:
 1. Deployment Strategy (Ansible playbook used for deploying builds to hosting resources)  
@@ -138,7 +138,7 @@
 
 ---
 
-## Phase 6 — **SITE RELIABILITY ENGINEERING**
+## Phase 6 - **SITE RELIABILITY ENGINEERING**
 
 **Processes**:
 1. Code Quality Monitoring  

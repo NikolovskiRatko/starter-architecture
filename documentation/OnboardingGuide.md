@@ -1,12 +1,12 @@
 # THESTARTER.NET
 
 **Welcome to Starter Architecture**  
-We’re so glad you are interested in adopting the Starter Architecture approach! This guide is meant to provide specific information to help you set up your machine and build the Starter Architecture project for the first time. 
+We're so glad you are interested in adopting the Starter Architecture approach! This guide is meant to provide specific information to help you set up your machine and build the Starter Architecture project for the first time.
 
 ## WHO WE ARE
 
 ### Our mission
-Our mission is to provide developers with a streamlined and opinionated foundation for jumpstarting their projects using the Laravel and Vue.js stack. The Starter Architecture is an open-source enterprise solution designed to be ready out of the box, offering a fully integrated development environment that follows established industry best practices. By leveraging modern technologies such as Docker, Terraform, Ansible, and Jenkins, this architecture ensures consistency from development to deployment. With a strong focus on simplicity, scalability, and maintainability, the Starter Architecture adheres to coding standards across frontend, backend, and infrastructure layers. It enables developers to build robust, modular applications without having to reinvent the wheel—empowering teams to focus on the unique aspects of their projects while staying aligned with industry norms.
+Our mission is to provide developers with a streamlined and opinionated foundation for jumpstarting their projects using the Laravel and Vue.js stack. The Starter Architecture is an open-source enterprise solution designed to be ready out of the box, offering a fully integrated development environment that follows established industry best practices. By leveraging modern technologies such as Docker, Terraform, Ansible, and Jenkins, this architecture ensures consistency from development to deployment. With a strong focus on simplicity, scalability, and maintainability, the Starter Architecture adheres to coding standards across frontend, backend, and infrastructure layers. It enables developers to build robust, modular applications without having to reinvent the wheel-empowering teams to focus on the unique aspects of their projects while staying aligned with industry norms.
 
 ### The team
 Our team brings together a diverse group of developers, each with their unique strengths and contributions to the Starter Architecture.
@@ -20,21 +20,21 @@ Our team brings together a diverse group of developers, each with their unique s
 - **Jovan Dimovski**: A backend and frontend developer with strong expertise in Laravel and Nuxt.js, Jovan contributed to both the architecture and the development of complex features. His focus on performance optimization and CI/CD pipelines has been invaluable to the evolution of the project.  
   *LinkedIn:* [https://www.linkedin.com/in/jovan-dimovski-851905272/](https://www.linkedin.com/in/jovan-dimovski-851905272/)
 
-- **Goran Stefanovski**: A full-stack developer with experience in Laravel and Vue.js, Goran has contributed to both front-end designs and backend API functionalities. His focus on maintaining responsiveness and seamless integration has been key to the project’s development.  
+- **Goran Stefanovski**: A full-stack developer with experience in Laravel and Vue.js, Goran has contributed to both front-end designs and backend API functionalities. His focus on maintaining responsiveness and seamless integration has been key to the project's development.  
   *LinkedIn:* [https://www.linkedin.com/in/goranstefanovski/](https://www.linkedin.com/in/goranstefanovski/)
 
-- **Stefan Ugrenovikj**: Stefan’s experience with Laravel and Vue.js has helped him make substantial contributions to both the frontend and backend of the project. His work on feature development and legacy code refactoring has strengthened the overall quality and functionality of the architecture.  
+- **Stefan Ugrenovikj**: Stefan's experience with Laravel and Vue.js has helped him make substantial contributions to both the frontend and backend of the project. His work on feature development and legacy code refactoring has strengthened the overall quality and functionality of the architecture.  
   *LinkedIn:* [https://www.linkedin.com/in/stefan-ugrenovikj-0a3661189/](https://www.linkedin.com/in/stefan-ugrenovikj-0a3661189/)
 
 - **Aleksandra Mitrevska**: Specializing in frontend development, Aleksandra has been instrumental in ensuring responsive design and SEO optimization. Her skills in Nuxt and SCSS have helped enhance the project's user interface and accessibility.  
   *LinkedIn:* [https://www.linkedin.com/in/aleksandra-mitrevska-08b3131bb/](https://www.linkedin.com/in/aleksandra-mitrevska-08b3131bb/)
 
-- **Bozidar Spirkovski**: Bozidar’s contributions as a web developer have enhanced the project's structure and quality. His strong adherence to SOLID principles and focus on database management and Vue.js have helped improve the project’s stability and scalability.  
+- **Bozidar Spirkovski**: Bozidar's contributions as a web developer have enhanced the project's structure and quality. His strong adherence to SOLID principles and focus on database management and Vue.js have helped improve the project's stability and scalability.  
   *LinkedIn:* [https://www.linkedin.com/in/bozidar-spirkovski-78391123a/](https://www.linkedin.com/in/bozidar-spirkovski-78391123a/)
 
 Get to know your team by visiting our LinkedIn profiles!
 
-> "We don't just code, we create—unless it’s Friday, then we’re mostly debugging."
+> "We don't just code, we create-unless it's Friday, then we're mostly debugging."
 
 ---
 
@@ -47,37 +47,37 @@ In this tutorial, we will guide you through the steps required to install Ubuntu
 Go to the official Ubuntu website and download the version of Ubuntu you want to install (an .iso file).
 
 ### Create a Bootable USB (Linux version)
-1. **Insert your USB drive**: Make sure it’s at least 12GB in size and ensure you’ve backed up any important data, as this process will erase the contents of the drive.  
-2. **Open Startup Disk Creator**: Search for "Startup Disk Creator" in the Ubuntu application menu (you can press Super and type the name).  
-3. **Select the Source ISO and Destination USB Drive**: In the Startup Disk Creator, choose the Ubuntu ISO file as the Source disk image. Select your USB drive as the Disk to use.  
-4. **Click Make Startup Disk**: Confirm that you want to create the startup disk. The process will take a few minutes, depending on your USB speed.  
+1. **Insert your USB drive**: Make sure it's at least 12GB in size and ensure you've backed up any important data, as this process will erase the contents of the drive.
+2. **Open Startup Disk Creator**: Search for "Startup Disk Creator" in the Ubuntu application menu (you can press Super and type the name).
+3. **Select the Source ISO and Destination USB Drive**: In the Startup Disk Creator, choose the Ubuntu ISO file as the Source disk image. Select your USB drive as the Disk to use.
+4. **Click Make Startup Disk**: Confirm that you want to create the startup disk. The process will take a few minutes, depending on your USB speed.
 
 Once done, you can boot from the USB drive to install or try Ubuntu on another system.
 
 ### Create a Bootable USB (Windows version)
-1. **Insert your USB drive**: Make sure it’s at least 12GB in size and ensure you’ve backed up any important data, as this process will erase the contents of the drive.  
-2. **Download Rufus**: Go to the Rufus official website and download the latest version of Rufus. Rufus is a lightweight, free tool for creating bootable USB drives.  
-3. **Open Rufus**: Open Rufus after downloading and installing it. You may need to give administrative permission to run the program.  
-4. **Select USB Drive**: In Rufus, under the Device section, select the USB drive you inserted.  
-5. **Select Ubuntu ISO**: Click Select next to the "Boot selection" field, and locate the Ubuntu .iso file you downloaded.  
-6. **Start the Process**: Click Start to begin creating the bootable USB. Rufus will display a warning that all data on the USB drive will be destroyed. Confirm by clicking OK.  
+1. **Insert your USB drive**: Make sure it's at least 12GB in size and ensure you've backed up any important data, as this process will erase the contents of the drive.
+2. **Download Rufus**: Go to the Rufus official website and download the latest version of Rufus. Rufus is a lightweight, free tool for creating bootable USB drives.
+3. **Open Rufus**: Open Rufus after downloading and installing it. You may need to give administrative permission to run the program.
+4. **Select USB Drive**: In Rufus, under the Device section, select the USB drive you inserted.
+5. **Select Ubuntu ISO**: Click Select next to the "Boot selection" field, and locate the Ubuntu .iso file you downloaded.
+6. **Start the Process**: Click Start to begin creating the bootable USB. Rufus will display a warning that all data on the USB drive will be destroyed. Confirm by clicking OK.
 
 Once done, you can boot from the USB drive to install or try Ubuntu on another system.
 
 ### Boot from USB flash drive
-- Restart your computer and enter the BIOS/UEFI settings (usually by pressing a key like F1 for Thinkpad or F12, F2, F10, Del, or Esc during startup—this varies by manufacturer).  
-- Change the boot order to prioritize the USB drive.  
+- Restart your computer and enter the BIOS/UEFI settings (usually by pressing a key like F1 for Thinkpad or F12, F2, F10, Del, or Esc during startup-this varies by manufacturer).
+- Change the boot order to prioritize the USB drive.
 - Save and exit the BIOS/UEFI settings. Your computer should now boot from the USB drive, and you can either try or install Ubuntu from there. *(Press F12 to enter boot menu)*
 
 ### Installation Setup
 Next, you will be prompted to choose between the Normal installation and Minimal installation options. Choose **Normal installation**. In **Other options**, check both boxes and ensure you are able to remain connected to the internet throughout the installation.
 
 ### Disk Management Setup
-This screen allows you to configure your installation. If you would like Ubuntu to be the only operating system on your device, select **Erase disk and install Ubuntu**. Select manual disk partitioning and remove all partitions. Here’s a suggested partitioning approach to start fresh:
+This screen allows you to configure your installation. If you would like Ubuntu to be the only operating system on your device, select **Erase disk and install Ubuntu**. Select manual disk partitioning and remove all partitions. Here's a suggested partitioning approach to start fresh:
 
-- **EFI System Partition (/boot/efi):** 1 GB (FAT32).  
-- **Root Partition (/):** 20 - 30 GB (ext4).  
-- **Swap Partition:** 8 GB (or according to your system’s RAM).  
+- **EFI System Partition (/boot/efi):** 1 GB (FAT32).
+- **Root Partition (/):** 20 - 30 GB (ext4).
+- **Swap Partition:** 8 GB (or according to your system's RAM).
 - **Home Partition (/home):** Remaining space (ext4, optional but recommended).
 
 ### Choose your Location
@@ -85,12 +85,12 @@ Select your location and timezone from the map screen and click **Continue**. Th
 
 ### Create Login Details
 On this screen, you will be prompted to enter your name and the name of your computer as it will appear on the network. Finally, you will create a username and a strong password.  
-You can choose to log in automatically or require a password. If you are using your device whilst traveling, it’s recommended to keep automatic login disabled.
+You can choose to log in automatically or require a password. If you are using your device whilst traveling, it's recommended to keep automatic login disabled.
 
 ### Complete the Installation
 Now sit back and enjoy the slideshow as Ubuntu installs in the background!  
 Once the installation has completed, you will be prompted to restart your machine. Click **Restart Now**.  
-When you restart, you will be prompted to remove your USB flash drive from the device. Once you’ve done this, press **ENTER**.
+When you restart, you will be prompted to remove your USB flash drive from the device. Once you've done this, press **ENTER**.
 
 ---
 
@@ -159,7 +159,7 @@ sudo apt install curl
 ```
 # Git
 
-Git is the world’s most popular distributed version control system used by many open-source and commercial projects. It allows you to collaborate on projects with your fellow developers, keep track of your code changes, revert to previous stages, create branches, and more.
+Git is the world's most popular distributed version control system used by many open-source and commercial projects. It allows you to collaborate on projects with your fellow developers, keep track of your code changes, revert to previous stages, create branches, and more.
 
 **Install Git** by running the following commands:
 
@@ -316,7 +316,7 @@ Docker requires a few packages to allow apt to use packages over HTTPS. Install 
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 ```
 
-### Step 3: Add Docker’s Official GPG Key
+### Step 3: Add Docker's Official GPG Key
 
 ```shell
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -422,7 +422,7 @@ docker-compose --version
 ```
 
 **Step 4: Create a Symlink (Optional):**  
-If Docker Compose isn’t found after installation, you may need to create a symlink to `/usr/bin`:
+If Docker Compose isn't found after installation, you may need to create a symlink to `/usr/bin`:
 
 ```shell
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
@@ -442,7 +442,7 @@ Make sure you have the necessary dependencies installed for managing repositorie
 sudo apt install software-properties-common
 ```
 
-## Add Ansible’s Official PPA (Personal Package Archive)
+## Add Ansible's Official PPA (Personal Package Archive)
 
 ```shell
 sudo add-apt-repository --yes --update ppa:ansible/ansible
@@ -460,7 +460,7 @@ sudo apt install ansible
 ansible --version
 ```
 
-This will display the version of Ansible installed, confirming that it’s working properly.
+This will display the version of Ansible installed, confirming that it's working properly.
 
 ## Run Your First Ansible Command
 
@@ -470,7 +470,7 @@ Now that Ansible is installed, you can run a simple Ansible command to test it. 
 ansible localhost -m ping
 ```
 
-If it’s working correctly, you should see a **SUCCESS** message.
+If it's working correctly, you should see a **SUCCESS** message.
 
 ---
 
@@ -765,47 +765,55 @@ git clone git@github.com:NikolovskiRatko/starter-architecture.git
 
 ### Configure the environment variables
 
-Create environment variable files in the **infrastructure/dev_env** and **server/api** folders (use sample files as reference):
+Create environment variable files from the build-oriented templates:
 
 ```shell
-cp .env.sample .env
+cd infrastructure/dev_env
+cp .env.build .env
+cd ../../app/api
+cp .env.build .env
 ```
 
-> **HINT**: The `pwd` command stands for print working directory. It is one of the most basic and frequently used commands in Linux. When invoked, the command prints the complete path of the current working directory.
+Using PHPStorm or an IDE of your choice, verify the values in the generated env files.
 
-Using PHPStorm or an IDE of your choice, edit the `.env` file and enter the values for **DB_PASSWORD** (the password that you chose when installing MySQL) and **DOCUMENT_ROOT** (the output of running the `pwd` command within the **server** folder).
+For the Docker development environment, make sure the `DOCUMENT_ROOT` value in `infrastructure/dev_env/.env` is:
+
+```env
+DOCUMENT_ROOT=./../../app
+```
 
 ### Create empty folders
 
-In the **infrastructure/dev_env** folder run:
+In the `infrastructure/dev_env` folder run:
 
 ```shell
-mkdir data
-mkdir logs
+mkdir -p data/mysql data/redis logs/apache2 logs/mysql
 ```
 
 ### Build and start the docker containers
 
-In the **dev_env** folder from the terminal first run:
+In the `infrastructure/dev_env` folder run:
 
 ```shell
-docker-compose build
+docker compose build
+docker compose up -d
 ```
 
-This might take a few minutes, when finished run:
+At this stage the Docker containers should be running and are ready to be used to build and serve the Starter web application.
 
-```shell
-docker-compose up -d
-```
+### Test docker containers and mounts
 
-At this stage the docker containers should be running successfully and are ready to be used to build and serve the Starter web application.
-
-### Test docker containers
-
-In order to check if the docker containers are running properly, run:
+To check that the containers are running properly, run:
 
 ```shell
 docker ps
+```
+
+To verify that the project is mounted correctly inside the containers, run:
+
+```shell
+docker exec -it app bash -lc 'ls -la /var/www/html/starter/api'
+docker exec -it node bash -lc 'ls -la /usr/app/client/admin && ls -la /usr/app/client/public'
 ```
 
 ### Custom Domain Simulation
@@ -816,6 +824,19 @@ Adding **starter.test** allows you to simulate a real domain name for local appl
 
 ```shell
 sudo vim /etc/hosts
+```
+
+If your browser, OS, or shell uses an HTTP or HTTPS proxy, add the following to your local proxy bypass list:
+
+```text
+localhost,127.0.0.1,::1,starter.test
+```
+
+If `starter.test` opens a proxy or Squid error page instead of the application, test the local route directly:
+
+```shell
+curl --noproxy '*' -I http://starter.test
+curl --noproxy '*' -I http://starter.test/login
 ```
 
 ---

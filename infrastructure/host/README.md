@@ -1,46 +1,68 @@
-## Introduction
-Ansible is a modern configuration management tool that facilitates the task of setting up and maintaining remote servers, with a minimalist design intended to get users up and running quickly. Ansible uses an inventory file to keep track of which hosts are part of your infrastructure, and how to reach them for running commands and playbooks.
+## Host Provisioning
+
+This guide covers the Ansible-based host provisioning setup used in `infrastructure/host`.
+
+## Overview
+
+Ansible is used to provision and configure target servers for the Starter Architecture infrastructure workflow. It uses an inventory file to define the hosts and connection details required to run playbooks over SSH.
 
 ## Prerequisites
 
-Before you work through this tutorial you need:
+Before using this setup, make sure you have the following:
 
-### 1. One Ansible Control Node
-   The Ansible control node is the machine we’ll use to connect to and control the Ansible hosts over SSH. In our case this is the native Ubuntu environment where we:
+### Ansible Control Node
 
-#### An SSH keypair associated with your control node’s non-root user with sudo privileges
+The Ansible control node is the machine used to connect to and automate the target hosts over SSH. In this project, that is typically your local Ubuntu environment.
 
-Useful resource (https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-20-04)
+Requirements:
 
-#### Install Ansible
+- an SSH key pair associated with your non-root user with sudo privileges
+- Ansible installed locally
 
-Installation documentation here ( https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installation-guide )
-also ( https://www.cyberciti.biz/faq/how-to-install-and-configure-latest-version-of-ansible-on-ubuntu-linux/ )
+Useful resources:
 
-### 2. Ansible Host
-   An Ansible host is any machine that your Ansible control node is configured to automate. The Ansible Host is essentially a remote Ubuntu 22.04 server that has the Ansible control node’s SSH public key added to the authorized_keys of a system user. This user can be either root or a regular user with sudo privileges.
+- SSH key setup: `https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-20-04`
+- Ansible installation: `https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installation-guide`
+- Ubuntu-focused Ansible setup: `https://www.cyberciti.biz/faq/how-to-install-and-configure-latest-version-of-ansible-on-ubuntu-linux/`
 
-####    1. Edit the inventory file and set the ip address of your Ansible Host.
+### Ansible Host
 
-Run this command in the ansible folder to test:
+The Ansible host is the remote server that will be provisioned. In this setup, it is typically an Ubuntu server that has the control node's SSH public key added to the `authorized_keys` of a system user with sufficient privileges.
+
+## Verify the Setup
+
+Edit the inventory file and set the IP address of your target host.
+
+From the `infrastructure/host` directory, you can verify the setup with the following commands.
+
+List the resolved inventory:
+
 ```shell
 ansible-inventory -i inventory --list
 ```
-Test the connection
+
+Test connectivity:
+
 ```shell
 ansible web -i inventory -m ping
 ```
-Test the connection by running a playbook
+
+Run the test playbook:
+
 ```shell
 ansible-playbook -i inventory test.yml
 ```
 
-## Usage
+## Provision the Host
 
-To actually provision a LAMP environment, run the following playbook provided in the Starter Kit **infrastructure/host** folder:
+To provision the server, run the main playbook from the `infrastructure/host` directory:
+
 ```shell
 ansible-playbook -i inventory starter.yml
 ```
 
-## Conclusion
-That's it, now we can provision all of our LAMP environments using the Starter Kit Ansible project by simply configuring different variables for our different projects and this will allow us to have proper versioning of the environment using Git.
+## Notes
+
+- This setup is part of the broader `infrastructure` workflow.
+- The host provisioning layer prepares the server with the dependencies and configuration required to run the Starter Architecture application stack.
+- Versioning the Ansible configuration in Git helps keep the server setup reproducible and easier to maintain.

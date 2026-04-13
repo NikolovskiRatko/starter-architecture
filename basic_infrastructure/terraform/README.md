@@ -1,35 +1,58 @@
-##  Deployment Process
+## Terraform Provisioning
 
-###  Prerequisites
+This guide covers the Terraform-based infrastructure provisioning flow used in `basic_infrastructure/terraform`.
 
-1. Install Terraform and Ansible locally
+## Prerequisites
 
-###  Cold Start Infrastructure as Code
+Before using this setup, make sure you have the following installed locally:
 
-1. Create DigitalOcean Personal Access Token
+- Terraform
+- Ansible
 
+## Provisioning Flow
+
+### 1. Create a DigitalOcean Personal Access Token
+
+Create a Personal Access Token in your DigitalOcean account:
+
+```text
 https://cloud.digitalocean.com/account/api/tokens
+```
 
-2. Create sensitive information files.
+### 2. Create the Sensitive Configuration Files
 
-For Terraform project create file **terraform.tfvars** in **infrastructure/terraform** with the DigitalOcean access token and the path to your ssh keys
+For the Terraform project, create a `terraform.tfvars` file in:
 
-For Host server create folder sensitive in **infrastructure/host** with the following files containing a single string:
+```text
+basic_infrastructure/terraform
+```
 
-**.env** (This is the .env file for the hosted Laravel backend)
-**database_password**
-**domain_name**
-**supervisor_password**
+This file should contain the DigitalOcean access token and the paths to your SSH keys.
 
+For the host provisioning layer, create a `sensitive` folder in:
 
-3. In folder **infrastructure/terraform** run Terraform commands:
-   
+```text
+basic_infrastructure/host
+```
+
+Add the following files, each containing a single value:
+
+- `.env` — the environment file for the hosted Laravel back end
+- `database_password`
+- `domain_name`
+- `supervisor_password`
+
+### 3. Run Terraform
+
+From the `basic_infrastructure/terraform` directory, run:
+
 ```shell
 terraform init
-```
-```shell
 terraform plan
-```
-```shell
 terraform apply
 ```
+
+## Notes
+
+- This setup is intended for the single-project `basic_infrastructure` workflow.
+- Terraform is responsible for the initial infrastructure provisioning, while Ansible is used afterward to configure the provisioned host.

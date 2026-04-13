@@ -1,25 +1,35 @@
-# Public Content (Nuxt.js Single Page Application)
+## Public Content
 
-Nuxt is a framework for server-side rendering (SSR) Vue.js applications. It simplifies the development of universal or isomorphic web applications, providing SEO benefits and improved performance.
+This guide covers the local development and production build steps for the Nuxt public-facing application.
 
-## Development Server
+## Development
 
-For the Nuxt.js Public Content SSR start the app container by running:
+Start the shared Node container:
 
 ```shell
 docker exec -it node /bin/bash
 ```
 
-Then in folder within the node container **app/client/public** run the following commands:
+Then run the application from the public project directory:
 
 ```shell
-npm install && npm run dev
+cd /usr/app/client/public
+npm install
+npm run dev
 ```
 
-## Production
+## Production Build
 
-Build the application for production:
+To build the public application for production, run:
 
-```bash
-npm install && npm run build
+```shell
+cd /usr/app/client/public
+npm install
+npm run build
 ```
+
+## Notes
+
+- This application runs inside the shared `node` container used by the local Docker development environment.
+- The public application is a Nuxt SSR app.
+- For the full local setup flow, including Docker Compose startup, Laravel bootstrap, and browser testing, see the development environment guide in `infrastructure/dev_env/README.md`.

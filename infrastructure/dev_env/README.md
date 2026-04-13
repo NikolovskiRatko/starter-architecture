@@ -1,108 +1,217 @@
-##  Run Development Environment And Build Application (MANUALLY)
+## Run Development Environment And Build Application (MANUALLY)
 
-###  Prerequisites
+### Prerequisites
 
-1. Install Docker Compose and Git locally
-2. Append the dev domain name 127.0.0.1 starter.test in /etc/hosts:
+1. Install Docker, Docker Compose, and Git locally.
+2. Add the local development domain to `/etc/hosts` on your host machine:
+
 ```shell
 sudo vim /etc/hosts
 ```
 
-###  Build Development Environment
+Add:
 
-1. Create environment variable files in the **infrastructure/dev_env** and **app/api** folders (use sample files as reference)
-```shell
-cp .env.sample .env
+```text
+127.0.0.1 starter.test
 ```
 
-2. Make sure to configure the ports in the .env file if the local system uses the defaults
+### Proxy note for local development
+
+If `starter.test` opens a proxy / Squid error page, the domain is valid, but the request is being sent through a proxy instead of directly to Docker.
+
+Check for proxy variables:
+
 ```shell
-vim .env
+env | grep -i proxy
 ```
 
-3. Create empty folders in the **infrastructure/dev_env** folder by running:
+Temporarily bypass the proxy in the current shell:
 
 ```shell
-mkdir data
-mkdir logs
+unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY all_proxy ALL_PROXY
+export NO_PROXY=localhost,127.0.0.1,::1,starter.test
+export no_proxy=localhost,127.0.0.1,::1,starter.test
 ```
 
-4. In folder **infrastructure/dev_env** run:
+Verify the local URLs without proxy:
+
 ```shell
-docker-compose build
-docker-compose up -d
+curl --noproxy '*' -I http://starter.test
+curl --noproxy '*' -I http://starter.test/login
 ```
 
-5. Build the application using the respective Docker containers
-    For the **Laravel API** start the app container by running:
-    ```shell
-    docker exec -it app /bin/bash
-    ```
-    Then in folder within the app container **app/api** run the following commands:
-    ```shell
-    composer install && php artisan config:clear && php artisan view:clear && php artisan route:clear && composer dump-autoload && php artisan cache:clear && php artisan config:cache && php artisan route:cache
-    ```
-    Run these commands to migrate and populate the database:
-    ```shell
-    php artisan migrate:fresh && php artisan db:seed
-    ```
+If these work in the terminal but not in the browser, add this to your browser or OS proxy bypass list:
 
-    For the **Vuejs Admin Panel SPA** start the app container by running:
-    ```shell
-    docker exec -it node /bin/bash
-    ```
-    Then in folder within the node container **app/client/admin** run the following commands:
-    ```shell
-    npm install && npm run dev
-    ```
-   
-    For the **Nuxt Public Content SSR** start the app container by running:
-    ```shell
-    docker exec -it node /bin/bash
-    ```
-    Then in folder within the node container **app/client/public** run the following commands:
-    ```shell
-    npm install && npm run dev
-    ```
+```text
+localhost,127.0.0.1,::1,starter.test
+```
 
-### Tips
+These commands affect only the current shell session.
 
-If there is some issue with the docker configuration at this point and you have previously run an older configuration please try clearing the cache from the broken docker-compose version
+### Build Development Environment
+
+1. Create environment variable files from the build-oriented templates:
+
 ```shell
-docker stop $(docker ps -a -q)
-docker system prune -a
+cp .env.build .env
+cp ../../app/api/.env.build ../../app/api/.env
 ```
 
-To fix Permission issues for Laravel folder in folder **app/api** outside of docker containers:
-```shell
-sudo chown -R www-data. . && sudo setfacl -R -m u:$USER:rwx .
+2. Make sure the `DOCUMENT_ROOT` value in `infrastructure/dev_env/.env` points to the repo `app` folder:
+
+```env
+DOCUMENT_ROOT=./../../app
 ```
 
-OPTION 2
+3. Adjust ports in `infrastructure/dev_env/.env` if the defaults conflict with anything already running on your machine.
+
+4. Create the bind-mounted directories in `infrastructure/dev_env`:
+
 ```shell
-sudo chown -R $USER:www-data .
-```
-Then give both yourself and the webserver permissions:
-```shell
-sudo find . -type f -exec chmod 664 {} \;   
-sudo find . -type d -exec chmod 775 {} \;
+mkdir -p data/mysql data/redis logs/apache2 logs/mysql
 ```
 
-## Useful commands:
+5. From the `infrastructure/dev_env` directory, build and start the containers:
 
-Get a list of all running or failed containers
 ```shell
-docker ps -a
+docker compose build
+docker compose up -d
 ```
-To execute commands inside a container
+
+6. Verify that the project is mounted correctly inside the containers:
+
+```shell
+docker exec -it app bash -lc 'ls -la /var/www/html/starter/api'
+docker exec -it node bash -lc 'ls -la /usr/app/client/admin && ls -la /usr/app/client/public'
+```
+
+### Bootstrap the application
+
+#### Laravel API
+
 ```shell
 docker exec -it app /bin/bash
 ```
-Run a container for a service defined in the docker-compose.yaml file. You will have to execute this command from the **dev_env** folder
+
+Then run:
+
 ```shell
-docker-compose exec -it app node /bin/bash
+cd /var/www/html/starter/api
+composer install
 ```
-Clear all docker cache containers networks etc ... This will remove docker containers for other projects too not just starter
+
+```shell
+php artisan config:clear
+php artisan view:clear
+php artisan route:clear
+composer dump-autoload
+php artisan cache:clear
+php artisan config:cache
+php artisan route:cache
+```
+
+Note: `php artisan migrate:fresh` drops all tables and recreates the database. Use it only for a clean local setup.
+
+```shell
+php artisan migrate:fresh
+php artisan db:seed
+```
+
+
+#### Vue.js Admin Panel SPA
+
+Open a new terminal:
+
+```shell
+docker exec -it node /bin/bash
+```
+
+Then run:
+
+```shell
+cd /usr/app/client/admin
+npm install
+npm run dev
+```
+
+#### Nuxt Public Content SSR
+
+Open another terminal:
+
+```shell
+docker exec -it node /bin/bash
+```
+
+Then run:
+
+```shell
+cd /usr/app/client/public
+npm install
+npm run dev
+```
+
+### Test in the browser
+
+Open:
+
+- `http://starter.test`
+- `http://starter.test/login`
+
+If the domain opens a proxy or Squid error page instead of the application, test the local route directly:
+
+```shell
+curl --noproxy '*' -I http://starter.test
+curl --noproxy '*' -I http://starter.test/login
+```
+
+If these commands return `200 OK`, the local application is reachable and the remaining issue is in the browser or system proxy configuration.
+
+### Tips
+
+If you suspect an older broken Docker setup, stop and inspect containers first:
+
+```shell
+docker compose down
+docker ps -a
+```
+
+Use a full Docker prune only if you intentionally want to remove broader Docker state and you understand it can affect other projects:
+
 ```shell
 docker system prune -a
+```
+
+To fix permission issues for the Laravel folder in `app/api` outside of Docker containers:
+
+```shell
+sudo chown -R www-data. .
+sudo setfacl -R -m u:$USER:rwx .
+```
+
+Option 2:
+
+```shell
+sudo chown -R $USER:www-data .
+sudo find . -type f -exec chmod 664 {} \;
+sudo find . -type d -exec chmod 775 {} \;
+```
+
+## Useful commands
+
+Get a list of running or failed containers:
+
+```shell
+docker ps -a
+```
+
+Execute commands inside the app container:
+
+```shell
+docker exec -it app /bin/bash
+```
+
+Execute commands inside the node container:
+
+```shell
+docker exec -it node /bin/bash
 ```

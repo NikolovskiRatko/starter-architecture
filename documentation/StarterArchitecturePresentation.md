@@ -27,14 +27,14 @@ created by **thestarter.net**
 ### Technologies Used
 
 **Key Points**:
-- **Terraform** – Infrastructure as Code  
-- **Ansible** – Configuration Management  
-- **Docker** – Containerization  
-- **Docker Compose** – Development Environment  
-- **Jenkins** – Release Engineering  
-- **Laravel** – Back-end API  
-- **Vue.js** – Front-end SPA for Admin Panel  
-- **Nuxt** – Front-end SSR for Public Content  
+- **Terraform** - Infrastructure as Code  
+- **Ansible** - Configuration Management  
+- **Docker** - Containerization  
+- **Docker Compose** - Development Environment  
+- **Jenkins** - Release Engineering  
+- **Laravel** - Back-end API  
+- **Vue.js** - Front-end SPA for Admin Panel  
+- **Nuxt** - Front-end SSR for Public Content  
 
 
 ![Tech Stack](images/tech_stack.png "Tech Stack")
@@ -82,7 +82,7 @@ created by **thestarter.net**
 
 **Key Points**:
 - Automating and monitoring builds using Docker Compose environment and deployments using Ansible playbooks  
-- Docker Compose’s containerization allows for portability, isolation, and scalability  
+- Docker Compose's containerization allows for portability, isolation, and scalability  
 - Ansible playbooks can enforce security configurations and policies, and they also offer rollback capability in case of issues or failure  
 
 ![Jenkins](images/jenkins.png "Jenkins")

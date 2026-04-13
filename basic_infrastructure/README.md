@@ -1,6 +1,11 @@
-## Introduction
-This folder has the basic infrastucture for using the Starter approach for a single web application.
+## Basic Infrastructure
 
-It contains the terraform and ansible scripts for the creation and integration of the web server for hosting the application, as well as the means for deploying changes using the local machine.
+This folder contains the infrastructure and deployment setup for running a single Starter Architecture project.
 
-This is an approach more suited for the development of a single project based on the Starter boilerplate.
+It includes:
+
+- Terraform provisioning for the initial server setup
+- Ansible host provisioning and configuration
+- local-machine-driven deployment scripts and playbooks
+
+This workflow is intended for the single-project `basic_infrastructure` setup rather than the broader multi-project infrastructure approach.

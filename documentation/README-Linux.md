@@ -146,7 +146,7 @@ Before you begin, ensure you have the following software installed on your Linux
        lsb-release -y
      ```
 
-  3. **Add Docker’s Official GPG Key:**
+  3. **Add Docker's Official GPG Key:**
      
      ```bash
      curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
