@@ -56,7 +56,35 @@ Route::group([
     });
 });
 
-// Nuxt Routes
+// ---------------------------------------------------------------------------
+// Phase 2 sub-slice B — admin-context route group (canonical)
+// /api/admin/users/* and /api/admin/navigation/* mirror the existing
+// /api/user/* and /api/navigations/* groups. The legacy prefixes remain
+// alive (see routes/User/api.php and routes/Navigation/api.php) until the
+// admin SPA migrates in Phase 3.
+// ---------------------------------------------------------------------------
+Route::prefix('admin')
+    ->middleware(['auth:sanctum', 'permission:admin.access'])
+    ->group(function () {
+        require base_path('routes/admin/users.php');
+        require base_path('routes/admin/navigation.php');
+    });
+
+// Public-context authenticated routes — for the Nuxt dashboard built in Phase 4.
+Route::prefix('public')
+    ->middleware(['auth:sanctum', 'permission:public.access'])
+    ->group(function () {
+        require base_path('routes/public/dashboard.php');
+    });
+
+// Public unauthenticated content (renamed from /nuxt/* to /public-content/*).
+// The /nuxt/* prefix below is kept alive as a deprecated alias for one cycle.
+Route::prefix('public-content')->group(function () {
+    Route::get('/menu/{slug}', [NavigationController::class, 'get']);
+    Route::get('/navigation-routes', [NavigationController::class, 'getLiveNavigations']);
+});
+
+// DEPRECATED alias — to be removed once Nuxt and admin SPA both migrate.
 Route::group([
     'prefix' => 'nuxt',
 ], function () {
