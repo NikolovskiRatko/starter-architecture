@@ -51,6 +51,7 @@ Route::group([
     ], function () {
         Route::post('logout', [LoginController::class, 'logout']);
         Route::get('user', [LoginController::class, 'user']);
+        Route::get('me', [LoginController::class, 'me']);
         Route::get('refresh', [LoginController::class, 'refresh']);
     });
 });

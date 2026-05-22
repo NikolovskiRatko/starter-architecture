@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// AUTHORIZED ROUTES
+// AUTHORIZED ROUTES — admin-context: requires admin.access permission
 Route::group([
-    'middleware' => 'auth:sanctum'
+    'middleware' => ['auth:sanctum', 'permission:admin.access'],
 ], function () {
     Route::group([
         'prefix' => 'user',

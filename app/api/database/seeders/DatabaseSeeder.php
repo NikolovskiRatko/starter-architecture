@@ -2,75 +2,88 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Applications\User\Model\User;
-use App\Constants\UserPermissions;
-use App\Constants\UserRoles;
 use App\Constants\RolePermissionsMap;
+use App\Constants\UserRoles;
+use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
-use Faker\Factory as Faker;
 
 class DatabaseSeeder extends Seeder
 {
     const NUMBER_OF_FAKE_USERS = 100;
+
+    /**
+     * Static users seeded for every fresh environment.
+     *
+     * Each entry supplies a `roles` array so a single user may hold multiple
+     * roles (e.g. `admin-and-public@example.com` covers both access contexts).
+     */
     const STATIC_USERS = [
         [
-            "email" => "admin@example.com",
-            "name" => "Admin",
-            "role" => UserRoles::ADMIN,
-            "permissions" => RolePermissionsMap::MAP[UserRoles::ADMIN]
+            'email' => 'super-admin@example.com',
+            'name' => 'Super Admin',
+            'roles' => [UserRoles::SUPER_ADMIN],
         ],
         [
-            "email" => "editor@example.com",
-            "name" => "Editor",
-            "role" => UserRoles::EDITOR,
-            "permissions" => RolePermissionsMap::MAP[UserRoles::EDITOR]
+            'email' => 'admin@example.com',
+            'name' => 'Admin',
+            'roles' => [UserRoles::ADMIN],
         ],
         [
-            "email" => "collaborator@example.com",
-            "name" => "Collaborator",
-            "role" => UserRoles::COLLABORATOR,
-            "permissions" => RolePermissionsMap::MAP[UserRoles::COLLABORATOR]
+            'email' => 'editor@example.com',
+            'name' => 'Editor',
+            'roles' => [UserRoles::EDITOR],
+        ],
+        [
+            'email' => 'collaborator@example.com',
+            'name' => 'Collaborator',
+            'roles' => [UserRoles::COLLABORATOR],
+        ],
+        [
+            'email' => 'public-user@example.com',
+            'name' => 'Public User',
+            'roles' => [UserRoles::PUBLIC_USER],
+        ],
+        [
+            'email' => 'admin-and-public@example.com',
+            'name' => 'Admin And Public',
+            'roles' => [UserRoles::ADMIN, UserRoles::PUBLIC_USER],
         ],
     ];
 
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
         $faker = Faker::create();
         $password = Hash::make('password');
 
-        // Create permissions
         $allPermissions = collect(RolePermissionsMap::MAP)->flatten()->unique();
         foreach ($allPermissions as $permission) {
             Permission::create(['name' => $permission]);
         }
 
-        // Create three roles and assign created permissions
-        $roleIds = [];
-        $roles = array_values((new \ReflectionClass(UserRoles::class))->getConstants());
-        foreach ($roles as $userRole) {
-            $newRole = Role::create(['name' => $userRole])
+        $roleNames = array_values((new \ReflectionClass(UserRoles::class))->getConstants());
+        foreach ($roleNames as $userRole) {
+            Role::create(['name' => $userRole])
                 ->givePermissionTo(RolePermissionsMap::MAP[$userRole]);
-            array_push($roleIds, $newRole->id);
-        };
+        }
 
         foreach (self::STATIC_USERS as $staticUser) {
             $newUser = User::create([
                 'first_name' => $staticUser['name'],
                 'last_name' => $faker->lastName(),
                 'email' => $staticUser['email'],
-                'password' => $password
+                'password' => $password,
             ]);
 
-            $newUser->assignRole($staticUser['role']);
+            // assignRole accepts an array; goes through Spatie cache invalidation
+            $newUser->assignRole($staticUser['roles']);
         }
 
+        // Faker users — random single role. Use assignRole() (not roles()->attach())
+        // so Spatie's permission cache stays consistent.
         for ($i = 0; $i < self::NUMBER_OF_FAKE_USERS; $i++) {
             $user = User::create([
                 'first_name' => $faker->firstName,
@@ -79,8 +92,7 @@ class DatabaseSeeder extends Seeder
                 'password' => $password,
             ]);
 
-            // Assign a random role to the user
-            $user->roles()->attach($faker->randomElement($roleIds));
+            $user->assignRole($faker->randomElement($roleNames));
         }
     }
 }

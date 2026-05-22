@@ -2,15 +2,17 @@
 
 namespace App\Applications\User\Controllers;
 
+use App\Applications\Auth\DTO\AuthMeDTO;
+use App\Applications\User\DTO\UserDTO;
+use App\Applications\User\Services\LoginServiceInterface;
+use App\Applications\User\Services\UserService;
+use App\Constants\UserRoles;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Applications\User\DTO\UserDTO;
-use App\Constants\UserRoles;
-use App\Applications\User\Services\LoginServiceInterface;
-use App\Applications\User\Services\UserService;
 use Illuminate\Validation\ValidationException;
+use Laravel\Sanctum\PersonalAccessToken;
 
 /**
  * @property UserService $userService
@@ -80,6 +82,21 @@ class LoginController extends Controller
         //        $user->permissions = $user->permissions_array(); // Assuming permissions_array() is a method in your User model
 
         return response()->json($user);
+    }
+
+    /**
+     * Normalised identity payload for browser and token clients.
+     *
+     * Returns roles, permissions, and access contexts (`admin`, `public`) so
+     * a single endpoint can drive route guards across the admin SPA, the
+     * Nuxt public frontend, and any future mobile client.
+     */
+    public function me(Request $request): JsonResponse
+    {
+        $currentToken = $request->user()->currentAccessToken();
+        $tokenType = $currentToken instanceof PersonalAccessToken ? 'sanctum-pat' : 'cookie';
+
+        return response()->json(AuthMeDTO::fromModel($request->user(), $tokenType));
     }
 
     /**
