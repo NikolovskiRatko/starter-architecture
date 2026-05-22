@@ -10,16 +10,30 @@ return [
     |--------------------------------------------------------------------------
     |
     | Requests from the following domains / hosts will receive stateful API
-    | authentication cookies. Typically, these should include your local
-    | and production domains which access your API via a frontend SPA.
+    | authentication cookies. Entries must be hostnames (optionally with a
+    | port) — schemes like `http://` are stripped defensively so an env var
+    | of `http://starter.test` keeps working.
+    |
+    | The default list covers both the admin SPA (served alongside Laravel
+    | on APP_URL) and the Nuxt public frontend (NUXT_URL, default
+    | `http://starter.test:3030`).
     |
     */
 
-    'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', sprintf(
-        '%s%s',
+    'stateful' => collect(explode(',', (string) env('SANCTUM_STATEFUL_DOMAINS', sprintf(
+        '%s,%s,%s',
         'localhost,localhost:3000,127.0.0.1,127.0.0.1:8000,::1',
-        Sanctum::currentApplicationUrlWithPort()
-    ))),
+        parse_url((string) env('APP_URL', 'http://starter.test'), PHP_URL_HOST) ?: 'starter.test',
+        parse_url((string) env('NUXT_URL', 'http://starter.test:3030'), PHP_URL_HOST)
+            . (parse_url((string) env('NUXT_URL', 'http://starter.test:3030'), PHP_URL_PORT)
+                ? ':' . parse_url((string) env('NUXT_URL', 'http://starter.test:3030'), PHP_URL_PORT)
+                : '')
+    ))))
+        ->map(fn ($entry) => trim($entry))
+        ->map(fn ($entry) => preg_replace('#^https?://#', '', $entry))
+        ->filter()
+        ->values()
+        ->all(),
 
     /*
     |--------------------------------------------------------------------------
