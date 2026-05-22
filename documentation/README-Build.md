@@ -62,30 +62,34 @@ https://github.com/NikolovskiRatko/starter-architecture
 
 **Happy Coding! 🚀**
 
-### Available Makefile targets:
+### Available Makefile targets
 
-**make setup_env**         # Setup environment variables by copying .env.build to .env
+Run `make help` for the always-current list. Snapshot:
 
-**make build**             # Build Docker images
+**make setup_env**           # Copy `.env.build` → `.env` in `infrastructure/dev_env/` and `app/api/`; create the bind-mount subdirs (`data/{mysql,redis}`, `logs/{apache2,mysql}`)
 
-**make up**                # Start Docker containers in detached mode
+**make build**               # Build Docker images
 
-**make install_api**      # Install PHP dependencies and run Laravel setup inside app container
+**make up**                  # Start Docker containers in detached mode
 
-**make install_client_admin**    # Install Admin Panel SPA Vue.js dependencies inside node container
+**make install_api**         # Install PHP deps and run Laravel `config:clear` / `cache:clear` / `config:cache` cycle inside the `app` container
 
-**make install_client_public**    # Install Public Content SSR Nuxt.js dependencies inside node container
+**make install_client_admin**   # `npm install` inside the `node` container for the Vue SPA admin panel
 
-**make migrate_seed**      # Run Laravel migrations and seeders inside app container
+**make install_client_public**  # `npm install` inside the `node` container for the Nuxt SSR public app
 
-**make start_client_admin**      # Start Admin Panel SPA Vue.js development server inside node container
+**make migrate_seed**        # Run `php artisan migrate:fresh --seed` (DESTRUCTIVE — drops all tables; use only for clean local setup)
 
-**make start_client_public**      # Start Public Content SSR Nuxt.js development server inside node container
+**make start_client_admin**  # `npm run dev` for the Vue admin SPA (Vite on :5173, HMR)
 
-**make clean**            # Stop containers and prune Docker resources
+**make start_client_public** # `npm run dev` for the Nuxt SSR public app (:3030)
 
-**make fix_permissions**   # Fix file permissions for Laravel API
+**make down**                # Stop containers (safe, non-destructive)
 
-**make lint:fix**        # Run ESLint with auto-fix
+**make clean**               # `down` + `docker system prune -a -f` (WARNING: affects all Docker state on the machine, not just this project)
 
-**make full_setup**        # Run all setup steps sequentially
+**make fix_permissions**     # Opt-in: `chown` `app/api` so the host user + container's `www-data` both have write access. NOT part of `full_setup` because it needs `sudo`. Run only if you hit "Permission denied" errors.
+
+**make shell_app** / **make shell_node**  # Open a bash shell inside the named container
+
+**make full_setup**          # Non-interactive end-to-end: `setup_env` → `build` → `up` → `install_api` → `install_client_admin` → `install_client_public` → `migrate_seed`. No `sudo` required.
