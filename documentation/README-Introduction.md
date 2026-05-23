@@ -1,6 +1,10 @@
 ## Introduction
 Starter Architecture is a custom web application software project that follows a well defined and standardized technology stack and architectural principles.
 
+### Conventions
+
+- **Authentication & authorisation** — see [`AuthArchitecture.md`](AuthArchitecture.md) for the unified Sanctum + Spatie model, access-context design (`admin` / `public`), seeded accounts, and how to add new gated routes on each layer.
+
 ## Folder Structure
 
 The folder structure of the components is the following:
