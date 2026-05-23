@@ -1,19 +1,19 @@
 <script setup lang="ts">
-  import { useAuth } from '@websanova/vue-auth/src/v3.js';
+  import { storeToRefs } from 'pinia';
   import { computed } from 'vue';
   import { isTouchDevice } from '@/helpers';
   import { useRootStore } from '@/store/root';
+  import { useAuthStore } from '@/stores/auth';
   import 'bootstrap-4-grid/scss/grid.scss';
   import '@starter-core/dash-ui/src/assets/normalize.scss';
   import '@starter-core/dash-ui/src/assets/starter-variables.scss';
   import '@starter-core/dash-ui/src/assets/helpers.scss';
   import './App.scss';
 
-  const auth = useAuth();
+  const authStore = useAuthStore();
+  const { isInitialised } = storeToRefs(authStore);
   const rootStore = useRootStore();
   const touchDevice = isTouchDevice();
-
-  const isAuthLoaded = computed(() => auth.ready());
 
   const bodyStyles = computed(() => {
     const { isBodyOverflowing, modalOpen, scrollBarWidth, navMenuOpen } = rootStore.bodyClasses;
@@ -30,7 +30,7 @@
 
 <template>
   <router-view
-    v-show="isAuthLoaded"
+    v-show="isInitialised"
     :style="bodyStyles"
     :class="[
       'main-wrapper',
@@ -43,5 +43,4 @@
       },
     ]"
   />
-  <!-- Main tag from subview is displayed instead of this-->
 </template>

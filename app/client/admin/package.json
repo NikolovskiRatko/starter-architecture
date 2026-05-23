@@ -19,7 +19,6 @@
     "@starter-core/icons": "^1.0.1",
     "@tanstack/vue-query": "^5.24.1",
     "@vee-validate/yup": "^4.15.0",
-    "@websanova/vue-auth": "^4.2.1",
     "axios": "^1.6.7",
     "bootstrap-4-grid": "^3.4.0",
     "lodash": "^4.17.21",

@@ -1,40 +1,34 @@
 import axios from 'axios';
-import { useRouter } from 'vue-router';
 
-// baseUrl is a global variable, we get it through Laravel
+// baseUrl is a global injected by Laravel via the blade entry view.
 declare const baseUrl: string;
 
 axios.defaults.baseURL = baseUrl;
-axios.defaults.headers = {
-  'Content-type': 'application/json',
-};
+axios.defaults.headers.common['Content-Type'] = 'application/json';
+axios.defaults.headers.common['Accept'] = 'application/json';
+
+// SPA-cookie mode: send the session cookie on cross-origin requests and let
+// axios resolve CSRF from the Sanctum XSRF-TOKEN cookie automatically.
 axios.defaults.withCredentials = true;
-axios.defaults.validateStatus = function (status) {
-  return status === 401 || (status >= 200 && status < 300);
-};
+axios.defaults.xsrfCookieName = 'XSRF-TOKEN';
+axios.defaults.xsrfHeaderName = 'X-XSRF-TOKEN';
+
+// 422 validation errors arrive in `error.response.data` with the Laravel
+// shape `{ message, errors }`; reject with the body so callers see the
+// errors object directly. Everything else flows through untouched.
 axios.interceptors.response.use(
-  function (response) {
-    return response;
-  },
-  function (error) {
-    if (error.response.data.error == 'Unauthorized action') {
-      const router = useRouter();
-      router.push({
-        name: 'dashboard',
-      });
-    }
-    if (error.response.status == 422) {
-      // console.log(error.response.)
+  (response) => response,
+  (error) => {
+    if (error?.response?.status === 422) {
       return Promise.reject(error.response.data);
     }
     return Promise.reject(error);
   }
 );
 
-export default (app) => {
+export default (app: { axios?: typeof axios; $http?: typeof axios; config: { globalProperties: Record<string, unknown> } }) => {
   app.axios = axios;
   app.$http = axios;
-
   app.config.globalProperties.axios = axios;
   app.config.globalProperties.$http = axios;
 };

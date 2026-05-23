@@ -1,30 +1,38 @@
-import useAuth from '../../../composables/useAuth';
 import type { UserCheckBy } from '../types';
-import { useUserPermissionsRoles } from './api';
+import { useCan } from '@/composables/useCan';
+import { useAuthStore } from '@/stores/auth';
 
-// TODO: Update the user to return string for 'role' so we don't expose all roles to regular user
-// and we can avoid looping through roles array
+/**
+ * Backward-compatible permission/role check for component templates.
+ *
+ * Previous behaviour fetched a role catalog via /user/permissions-roles to
+ * resolve a role name → id and compare; that round-trip is removed. Role
+ * comparisons now match against the authoritative role id held in the
+ * auth store, populated at login. Permission comparisons run against the
+ * locally-cached permissions_array — no async dependency.
+ */
 export default function useUserCheck() {
-  const { permissionsArray, user } = useAuth();
-  const { data, isLoading } = useUserPermissionsRoles();
+  const { hasAnyPermission, hasPermission } = useCan();
+  const store = useAuthStore();
 
   const checkUser = (checkBy: UserCheckBy, checkFor: string | string[]): boolean => {
-    if (isLoading.value || !data.value) {
-      return false;
-    }
-
     if (checkBy === 'roles' && typeof checkFor === 'string') {
-      const { role } = user;
-      const checkForRoleObject = data.value.roles.find((role) => role.name === checkFor);
-
-      return role === Number(checkForRoleObject?.id);
+      // Legacy callers pass a role NAME for `roles` mode. The store keeps
+      // the role id only; resolve by name via the well-known seed mapping.
+      const ROLE_NAME_TO_ID: Record<string, number> = {
+        admin: 1,
+        editor: 2,
+        collaborator: 3,
+      };
+      const targetId = ROLE_NAME_TO_ID[checkFor];
+      return targetId !== undefined && store.roleId === targetId;
     }
 
     if (Array.isArray(checkFor)) {
-      return permissionsArray.value.some((permission) => checkFor.includes(permission));
+      return hasAnyPermission(checkFor);
     }
 
-    return permissionsArray.value.includes(checkFor);
+    return hasPermission(checkFor);
   };
 
   return { checkUser };

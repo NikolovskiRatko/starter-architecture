@@ -1,109 +1,65 @@
-import { useAuth as useAuthWebsanova } from '@websanova/vue-auth/src/v3.js';
-import type { AxiosResponse, AxiosError } from 'axios';
-import { computed, ref, reactive } from 'vue';
+import { storeToRefs } from 'pinia';
+import { computed, reactive, watchEffect } from 'vue';
 import { useRouter } from 'vue-router';
-import { getAPIErrorMessage } from '@/helpers';
 import type { AuthUser } from '@/modules/users/types';
+import { useAuthStore } from '@/stores/auth';
 import type { SignUpQuery, UseAuthLoginParams } from '@/types';
 
+/**
+ * Thin compatibility shim over the new Pinia auth store. Preserves the
+ * pre-existing public surface (login/logout/register/fetch/refresh/
+ * refreshUserData/isLoading/user/avatar/permissionsArray) so call sites
+ * across the SPA don't need to be touched.
+ *
+ * `user` is exposed as a reactive proxy object (not a Ref) so existing
+ * consumers that read `user.first_name` directly in <script setup>
+ * (e.g. UserProfileWidget) keep working without `.value` plumbing.
+ */
 export default function useAuth() {
-  const auth = useAuthWebsanova();
+  const store = useAuthStore();
   const router = useRouter();
-  const isLoading = ref(false);
+  const { isLoading, permissionsArray } = storeToRefs(store);
 
-  const user = reactive<AuthUser>(auth.user());
-  const permissionsArray = computed<Array<string>>(() => user.permissions_array);
-
-  async function fetch(): Promise<AuthUser> {
-    const updatedUser: AxiosResponse<AuthUser> = await auth.fetch();
-    Object.assign(user, updatedUser.data);
-
-    return updatedUser.data;
-  }
-
-  function refreshUserData(): void {
-    fetch().then((newUserData) => {
-      Object.assign(user, newUserData);
+  const user = reactive<Partial<AuthUser>>({});
+  watchEffect(() => {
+    Object.keys(user).forEach((key) => {
+      delete user[key as keyof AuthUser];
     });
-  }
-
-  async function refresh(): Promise<any> {
-    return auth.refresh();
-  }
+    if (store.user) {
+      Object.assign(user, store.user);
+    }
+  });
 
   function login(params: UseAuthLoginParams): Promise<AuthUser> {
-    const { data, remember, staySignedIn } = params;
-    isLoading.value = true;
-
-    return new Promise((resolve, reject) => {
-      auth
-        .login({
-          data,
-          remember,
-          staySignedIn,
-        })
-        .then((response: AxiosResponse<AuthUser>) => {
-          if (response.status === 200) {
-            const { first_name, last_name } = response.data;
-
-            if (remember) {
-              auth.remember(
-                JSON.stringify({
-                  name: `${first_name} ${last_name}`,
-                })
-              );
-            }
-
-            resolve(response.data);
-          }
-        })
-        .catch((error: AxiosError) => {
-          reject(getAPIErrorMessage(error));
-        })
-        .finally(() => {
-          isLoading.value = false;
-        });
-    });
+    const { email, password } = params.data;
+    return store.login({ email, password });
   }
 
   function register(data: SignUpQuery): Promise<AuthUser> {
-    isLoading.value = true;
-
-    return new Promise((resolve, reject) => {
-      auth
-        .register({ data })
-        .then((response: AxiosResponse<AuthUser>) => {
-          const token = response.headers?.authorization;
-          auth.token(token);
-          auth.fetch().then(() => {
-            router.push('/admin/dashboard');
-            resolve(response.data);
-          });
-        })
-        .catch((error: AxiosError) => {
-          reject(getAPIErrorMessage(error));
-        })
-        .finally(() => {
-          isLoading.value = false;
-        });
+    return store.register(data).then(async (me) => {
+      await router.push('/admin/dashboard');
+      return me;
     });
   }
 
-  function logout() {
-    return auth.logout({
-      redirect: {
-        name: 'login',
-      },
-    });
+  async function logout(): Promise<void> {
+    await store.logout();
+    await router.push({ name: 'login' });
   }
 
-  const avatar = computed(() => {
-    if (user?.avatar_thumbnail) {
-      return user.avatar_thumbnail;
-    }
+  function fetch(): Promise<AuthUser | null> {
+    return store.fetchMe();
+  }
 
-    return null;
-  });
+  function refreshUserData(): void {
+    void store.fetchMe();
+  }
+
+  function refresh(): Promise<AuthUser | null> {
+    return store.fetchMe();
+  }
+
+  const avatar = computed(() => store.user?.avatar_thumbnail ?? null);
 
   return {
     fetch,
