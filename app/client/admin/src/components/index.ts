@@ -6,6 +6,7 @@ export { default as AuthBase } from './AuthBase/AuthBase.vue';
 export { default as AdminHeader } from './AdminHeader/AdminHeader.vue';
 export { default as AdminSidebar } from './AdminSidebar/AdminSidebar.vue';
 export * from './AdminLayout';
+export * from './ConfirmDialog';
 export * from './TabbedContent';
 export * from './PageWrapper';
 export * from './FormSelect';

@@ -16,6 +16,10 @@
   const { checkUser } = useUserCheck();
   const { user, isEvenRow } = defineProps<UsersTableRowProps>();
 
+  const emit = defineEmits<{
+    delete: [user: GetUserResponse];
+  }>();
+
   const avatarSource = computed(() => {
     if (user.avatar_thumbnail) {
       return user.avatar_thumbnail;
@@ -70,9 +74,9 @@
         :icon="IconTrash"
         theme="danger"
         size="sm"
-        onclick="deleteUser(user, user.id)"
         is-pill
         is-icon
+        @click="emit('delete', user)"
       />
     </TableColumn>
   </TableRow>
